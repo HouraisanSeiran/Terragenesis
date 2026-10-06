@@ -1,0 +1,2 @@
+# Terragenesis
+一个基于terrain diffusion扩散算法的VDM三维生成算法

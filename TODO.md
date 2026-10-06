@@ -1,10 +1,18 @@
 # 工程 TODO
 
+## 2026-10-06 本轮新增交付
+
+- [x] 增加严格保存切片消费器：保留外环/孔洞、空域和正面积 sliver；拒绝有理非零但显示为零的多边形、非有限坐标、越界孔洞和重叠组件。
+- [x] 增加 composition03 只读切片消费审计；结果为 `candidate_consumer_only`，不改变 composition 的 `refused` 状态。
+- [x] 增加 VDM/三维几何纯 IO 导出：`td-vdm-geometry-io-review-v1`，绑定 geometry03/review/graph/geometry audit，保留17站、19断面、4实体和所有能力 false 标志；不导出水面。
+- [ ] 修复 composition03 sink 端口有理非零/GEOS 零面积诊断三角形，并重新完成独立全端口审计；禁止删面、snap、移动切面或放宽门槛。
+- [ ] 只有全端口独立审计通过后，才运行 faces-v2；之后重新定义并实现必要水动力，保留旧07/08/09拒绝证据。
+
 ## 2026-10-06 地表与地下闭环最新状态
 
 本节优先于历史。共享地表床已实际接受120节点/118接回弧/18分叉、最长1230m；统一0.175m细床333374唯一格/436tiles与3041.031556m³精确切岩账独立冷读通过。三维typed图已保存122节点/121弧；125.246807m潜入/洞道/复出样例经实际岩体Boolean打通，VDM多chart与19真实断面独立通过，1834.143489m³局部采样实体切岩另计。见[公开架构与接口](docs/hybrid-river-network.md)、[本轮证据/失败记录](.scratch/hybrid-river-network/round-20261006.md)。
 
-900s供水/尾水一维事件首场触发600s时间保护，未通过；正在新增精确分段断面反算适配与逐场checkpoint，不改物理、旧冻结依赖、600s/1GiB或1mm/1%门槛，不重跑旧全天/HLL。只读几何审查包已导出，网页导航未改。自然海口、全主流域细槽水力、独立跨精度、多洞道与完整三维产品仍开放；原source、Java/JAR、默认世界不改。
+必要水力尚未通过：07/08实际退出并保留时间精度/预算拒绝；08两个完整900s pulse的实际断面和逐cell账通过，但全历史head差1.871692mm、V差0.089751m³、配对link差0.226888m³未过门槛。09共同local datum在548.696942s触发RHS200001，0完整case。不能继续以收紧容差或换solver代替模型审查。实际18共享face的首包已冷审，14通过、洞口附近4拒绝；正在[新版本地表半臂实体接回](.scratch/hybrid-river-network/issues/02-surface-solid-composition.md)中修正采样岩顶与原生床线差异，保留真实polygon/三角壁角色，不删除cap冒充通过。无水力求解在途，不改26冻结依赖或放宽1mm/1%、1e-4m³、600s/1GiB。当前状态见[唯一检查点](.scratch/hybrid-river-network/checkpoint.md)。源码首批已实际上传GitHub，增量待完成。只读几何和18face审查图已导出，网页导航未改。自然海口、全主流域细槽/漫滩水力、独立跨精度、多洞道与完整三维产品仍开放；原source、Java/JAR、默认世界不改。
 
 ## 2026-10-06 接续轮最新状态
 

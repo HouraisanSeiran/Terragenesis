@@ -48,6 +48,13 @@ def export(index_pin, audit_pin, output):
                   "paired_link_tailwater_integral_m3", "parameters", "arrival_semantics", "boundary_scope")
         review["scenarios"][scenario] = {"saved_result": result_pin, **{key: result[key] for key in fields},
                                          "independent_report": audit["reports"][scenario]}
+        for key in ("numerical_version", "model_version", "integration", "accuracy_policy", "accuracy_level",
+                    "input_parameters_identity_sha256", "numerical_frame", "local_hydraulic_head_m",
+                    "local_tailwater_head_m", "friction_policy", "jacobian_policy", "inventory_policy",
+                    "saved_section_diagnostics", "instantaneous_flux_probes", "untraced_water_volume_m3",
+                    "paired_link_untraced_integral_m3", "outlet_untraced_out_m3", "dense_positivity_witness"):
+            if key in result:
+                review["scenarios"][scenario][key] = result[key]
     review["identity_sha256"] = digest(review)
     records["review.json"] = review
     case = {"schema": "td-hybrid-river-hydraulics-caseartifact-v1", "artifact_type": "saved_1d_hydraulics_review",

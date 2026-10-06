@@ -1,0 +1,17 @@
+{
+  "schema": "terragenesis-layer-manifest-v1",
+  "layer": "terrain_algorithm",
+  "status": "logical_boundary_root_layout_unchanged",
+  "workspace_root": "D:/codexwork/山川形意Terragenesis",
+  "paths": [
+    {"path": "terrain_pipeline", "role": "algorithm_source"},
+    {"path": "diffusion", "role": "terrain_diffusion_support"},
+    {"path": "vdm_diffusion", "role": "vdm_support"},
+    {"path": "tests", "role": "python_algorithm_tests"},
+    {"path": "web-preview", "role": "read_only_algorithm_review_frontend"},
+    {"path": "research", "role": "research_material"},
+    {"path": "docs", "role": "contracts_and_algorithm_docs"},
+    {"path": "verification", "role": "shared_immutable_evidence"}
+  ],
+  "future_migration": "Create an independent Python package and explicit workspace/verification configuration before moving source paths."
+}

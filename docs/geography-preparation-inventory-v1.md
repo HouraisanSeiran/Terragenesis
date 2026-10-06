@@ -1,0 +1,20 @@
+# Geography preparation inventory v1
+
+`terrain_pipeline.geography_preparation_inventory.prepare(root, limits=InventoryLimits())` explicitly scans and hashes regular files under the supplied source directory. It never follows symlinks or Windows reparse points. `save(manifest, destination)` validates and atomically replaces one JSON manifest. `load(source)` only parses and validates that saved JSON; it does not touch the source directory or derive terrain. The fixed CLI is `D:/anaconda/python.exe -X utf8 tools/verify_geography_preparation_inventory.py` and reads `D:/geography`. It runs the focused `unittest` suite and saves its log, implementation file SHA256 values, and before/after source inventory identities.
+
+The manifest records normalized relative path, extension type, byte count, SHA256, source class, bounded optional JSON/CSV and HDR/TFW metadata, resource totals, diagnostics, six fixed preparation requirements, and a SHA256 identity over the canonical payload. Classes are inventory labels, never evidence certification. Unknown papers and documents remain `unreviewed`; a README or filename claiming authority cannot upgrade that status. `source_dem_candidate` means an original local DEM file candidate, not independent proof of its accuracy or license. `area_selected_candidate` marks `funxi_control_section.json`: its reported 184.02 km2 upstream area came from an 184 km2 target area selection, so it is no certified control section. `funxi_coarse_basin.json` is merely a DEM derived candidate; its coarse 0.01 degree grid and 53.83 km2 reported area do not support an area selection claim.
+
+The bounded SRTM sidecar extracts record WGS84 horizontal wording and TFW angular pixel spacing of approximately 0.000833333333 degrees. TIFF internals are not parsed by this inventory; the separate 6000 x 6000 pixel observation needs independent verification. The `srtm30m` CSV name does not prove measured 30 m resolution. The vertical datum remains unverified. The CIAT SRTM v4.1 README describes hole filling and distribution restrictions; that text is a source claim, not an independent certification. Archive bytes are hashed only; this command does not test ZIP CRC or repair historically reported archive damage. The modeled climate CSV is read with `utf-8-sig`, so its BOM is accepted.
+
+| Required evidence | Available candidate files | Remaining limitation |
+| --- | --- | --- |
+| Real valid basin coverage | SRTM TIFF, basin report, coarse basin JSON | Coverage, actual basin boundary and outlet are not independently certified. |
+| Vertical datum | HDR, TFW, README | Horizontal WGS84 and angular spacing do not establish elevation datum. |
+| Independent river and tributaries | HydroRIVERS archive, DEM basin report | Regional vector and extracted network require local alignment and independent tributary validation. |
+| Mouth and coast | Mouth trace, control section JSON | DEM trace and proposed point cannot certify mouth/coast. |
+| Colocated sections and synchronous flow | Other-place valley sections, modeled Funxi climate/runoff | Neither provides colocated measured sections with synchronous discharge. |
+| Lake and dam boundaries | DEM depression comparison, geocoded reservoirs | No certified boundary conditions or operating rules. |
+
+`readiness.ready`, `real_basin_certified`, and `outlet_certified` remain false by schema. The inventory is a snapshot, not an executable certification gate. This says candidate materials exist but the specific development prerequisites are not cleared. No dependency download, remote access, data mutation, CRC analyzer, or terrain computation is part of this inventory.
+
+The default resource budget is 512 files, 512 directories, 2048 directory entries, 512 MiB total input, 128 MiB per file, and 64 KiB for each metadata extract. Hard ceilings prevent unbounded configuration. Failure raises `InventoryError` with a diagnostic; a failed save leaves any previous destination intact. Manifests larger than 1 MiB and malformed manifests are rejected on load. SHA256 is a snapshot identity, not proof of provenance; rechecking source bytes requires a new explicit `prepare`.

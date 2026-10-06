@@ -1,0 +1,17 @@
+{
+  "schema": "terragenesis-layer-manifest-v1",
+  "layer": "minecraft_mod",
+  "status": "logical_boundary_root_layout_unchanged",
+  "workspace_root": "D:/codexwork/山川形意Terragenesis",
+  "paths": [
+    {"path": "src/main/java", "role": "fabric_mod_source"},
+    {"path": "src/main/resources", "role": "fabric_mod_resources"},
+    {"path": "src/test/java", "role": "java_mod_tests"},
+    {"path": "build.gradle", "role": "gradle_build_entry"},
+    {"path": "settings.gradle", "role": "gradle_project_entry"},
+    {"path": "gradle.properties", "role": "gradle_properties"},
+    {"path": "dist", "role": "mod_distribution_config"},
+    {"path": "preview", "role": "minecraft_preview_material"}
+  ],
+  "future_migration": "Create and validate an independent Gradle project and algorithm-package consumer before moving Java sources."
+}

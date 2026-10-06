@@ -1,0 +1,63 @@
+plugins { id 'net.fabricmc.fabric-loom' version '1.18.2' }
+version = '0.14.0'
+group = 'com.remotemountains'
+base { archivesName = 'Terragenesis-26.3' }
+repositories { mavenCentral() }
+dependencies {
+    minecraft 'com.mojang:minecraft:26.3'
+    implementation 'net.fabricmc:fabric-loader:0.19.5'
+    implementation 'net.fabricmc.fabric-api:fabric-api:0.161.0+26.3'
+}
+java { toolchain.languageVersion = JavaLanguageVersion.of(25); withSourcesJar() }
+tasks.withType(JavaCompile).configureEach { options.release = 25; options.encoding = 'UTF-8' }
+processResources { inputs.property 'version', project.version; filesMatching('fabric.mod.json') { expand 'version': project.version } }
+tasks.named('jar') {
+    from('diffusion') { include '*.py'; into 'remotemountains-service/diffusion' }
+    from('tools/bootstrap_diffusion.py') { into 'remotemountains-service/tools' }
+    from('bootstrap-assets') { into 'remotemountains-service/bootstrap-assets' }
+    def bundledUpstream = 'vendor/terrain-diffusion-e8dcb4b1a834ab2f6b1a6f5256ed7c9f2f3e8230'
+    from(bundledUpstream) {
+        def inventory = file("${bundledUpstream}/inference-files.json")
+        include new groovy.json.JsonSlurper().parse(inventory) as String[]
+        into 'remotemountains-service/vendor/terrain-diffusion-e8dcb4b1a834ab2f6b1a6f5256ed7c9f2f3e8230'
+    }
+    from('vendor/terrain-diffusion-e8dcb4b1a834ab2f6b1a6f5256ed7c9f2f3e8230/LICENSE') {
+        into 'META-INF/licenses'; rename { 'terrain-diffusion-LICENSE.txt' }
+    }
+}
+tasks.register('verifyCore', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.core.CoreVerification' }
+tasks.named('test') { failOnNoDiscoveredTests = false }
+tasks.named('check') { dependsOn 'verifyCore' }
+tasks.register('verifyInstallation', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.diffusion.ManagedInstallationVerification' }
+tasks.named('check') { dependsOn 'verifyInstallation' }
+tasks.register('verifyRawRegion', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.region.RawRegionVerification' }
+tasks.named('check') { dependsOn 'verifyRawRegion' }
+tasks.register('verifyDerivedRegion', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.region.DerivedRegionVerification' }
+tasks.named('check') { dependsOn 'verifyDerivedRegion' }
+tasks.register('verifyRegionProcessor', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.region.processing.RegionProcessorVerification' }
+tasks.named('check') { dependsOn 'verifyRegionProcessor' }
+tasks.register('verifyHydrology3d', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.hydrology3d.RiverNetworkVerification' }
+tasks.named('check') { dependsOn 'verifyHydrology3d' }
+tasks.register('verifyDiffusion', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.core.DiffusionVerification' }
+tasks.named('check') { dependsOn 'verifyDiffusion' }
+tasks.register('verifyCliff', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.cliff.CliffVerification' }
+tasks.named('check') { dependsOn 'verifyCliff' }
+tasks.register('verifyDemo', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.core.DemoVerification' }
+tasks.named('check') { dependsOn 'verifyDemo' }
+tasks.register('verifyRegionalCliffs', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.cliff.RegionalCliffVerification' }
+tasks.named('check') { dependsOn 'verifyRegionalCliffs' }
+tasks.register('verifyRegion', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.prepared.RegionVerification' }
+tasks.named('check') { dependsOn 'verifyRegion' }
+tasks.register('verifyTerrainScale', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.core.TerrainScaleVerification' }
+tasks.named('check') { dependsOn 'verifyTerrainScale' }
+
+tasks.register('verifyWatershed', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.watershed.WatershedVerification' }
+tasks.named('check') { dependsOn 'verifyWatershed' }
+tasks.register('verifyWatershedHeightmap', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.watershed.WatershedHeightmapVerification' }
+tasks.named('check') { dependsOn 'verifyWatershedHeightmap' }
+tasks.register('verifyPreparedArtifact', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.prepared.PreparedArtifactVerification' }
+tasks.named('check') { dependsOn 'verifyPreparedArtifact' }
+tasks.register('verifyWatershedCliff', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.watershedcliff.WatershedCliffVerification' }
+tasks.named('check') { dependsOn 'verifyWatershedCliff' }
+tasks.register('verifyCanyon', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'com.remotemountains.canyon.CanyonVerification' }
+tasks.named('check') { dependsOn 'verifyCanyon' }

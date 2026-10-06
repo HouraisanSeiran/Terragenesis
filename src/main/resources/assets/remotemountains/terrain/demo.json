@@ -1,0 +1,20 @@
+{
+  "seconds": 13.76615309999761,
+  "native_resolution_m": 30,
+  "backend": "TerrainDiffusion/WorldPipeline",
+  "identity": "8837b7d97e766e95143a8bcee45f7d6dfabb2db799cd3d8aa89ba553749b5fe1",
+  "seed": "20260927",
+  "native_origin": [
+    -7680,
+    0
+  ],
+  "baked_sha256": "4c0bbfde68ff610282e6e571523209e09e224d34c391977271b93e8e059a12cd",
+  "origin": [
+    -256,
+    -256
+  ],
+  "spacing": 2,
+  "collar_blocks": 64,
+  "outside": "flat ocean floor y48",
+  "fixed_terrain_seed": true
+}

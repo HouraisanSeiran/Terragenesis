@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Terragenesis · 河网与 VDM 审查工作台</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="mark">TG</span><div><div class="eyebrow">TERRAGENESIS / REVIEW CONSOLE</div><h1>河网与 VDM 审查工作台</h1></div></div>
+  <div class="topnote"><span class="signal"></span><span id="bridgeStatus">只读证据 · 等待桥接</span></div>
+</header>
+<main class="shell">
+  <aside class="rail">
+    <nav class="workspace-tabs" aria-label="算法分类">
+      <button class="tab" data-category="terrain">地形输入</button>
+      <button class="tab" data-category="vdm">VDM 算法</button>
+      <button class="tab active" data-category="rivers">河网算法</button>
+    </nav>
+    <section class="control-section review-navigation">
+      <label for="reviewProject">审查项目</label><select id="reviewProject"></select>
+    </section>
+    <section class="control-section surface-controls hidden">
+      <label for="caseSelect">审查案例</label><select id="caseSelect"></select>
+      <div id="terrainVariantControls" class="hidden"><label for="terrainVariant">地形来源</label><select id="terrainVariant"><option value="raw">原始 TD 高度场</option><option value="processed">历史派生地形</option></select></div>
+      <div id="caseStatus" class="statusline"></div><p id="caseScope" class="muted"></p>
+    </section>
+    <section id="savedControls" class="control-section hidden">
+      <label for="savedPackage">保存数据包</label><select id="savedPackage"><option value="amr">AMR · 有限工程验收</option><option value="native">原生 30m · 同床保存链</option><option value="uniform">Uniform · 空间失败对照</option></select>
+      <label for="savedScenario">场景</label><select id="savedScenario"></select>
+      <label for="savedField">二维图层</label><select id="savedField"><option value="depth">平均水深 · m</option><option value="leaf">实际叶间距 · m</option><option value="bed">床面高程 · m</option></select>
+      <label for="savedPartition">共享边界切线</label><select id="savedPartition"><option value="central">四域中线 · z120 / x120</option><option value="mixed">混合精度 · z168 / x16</option></select>
+      <div id="savedStatus" class="statusline"></div>
+    </section>
+    <section class="control-section"><label>显示方式</label><div class="seg"><button id="view2d" class="active">二维地图</button><button id="view3d">三维表面</button></div></section>
+    <section class="control-section"><label>图层</label><div id="layers" class="checks"></div></section>
+    <section class="control-section"><label for="pickMode">点选模式</label><select id="pickMode"><option value="node">节点</option><option value="cell">网格单元</option><option value="graph">动态节点</option><option value="edge">河段</option></select></section>
+    <section class="control-section"><label for="verticalScale">三维垂直倍率 <output id="verticalLabel">1.00×</output></label><input id="verticalScale" type="range" min="0.25" max="5" step="0.25" value="1"></section>
+    <section id="timeSection" class="control-section hidden"><label for="timeRange">保存状态 <output id="timeStep">0 / 0</output></label><input id="timeRange" type="range" min="0" max="0" step="1" value="0"><div class="timeReadout"><span id="timeSeconds">t = —</span><button id="stepBack">上一状态</button><button id="play">播放</button><button id="stepForward">下一状态</button></div></section>
+    <section id="vdmControls" class="work-panel hidden">
+      <div class="panelKicker">局部几何预览</div><label for="vdmForm">形态</label><select id="vdmForm"></select>
+      <div class="field-grid"><label>幅度 <input id="vdmAmplitude" type="number" value="1.5" step="0.1"><small>米；局部细节幅度</small></label><label>波长 <input id="vdmWavelength" type="number" value="6" step="0.5"><small>米；相邻样点约束</small></label><label>曲率 <input id="vdmCurvature" type="number" value="0" step="0.1"><small>米；正外凸、负内凹</small></label><label>端差 <input id="vdmEndDifference" type="number" value="0" step="0.1"><small>米；有效段两端中心高程差</small></label><label>走向 ° <input id="vdmDirection" type="number" placeholder="继承" step="1"><small>0°东、90°南；空值继承</small></label><label>seed <input id="vdmSeed" type="number" value="7" step="1"><small>固定细节随机种子</small></label></div>
+      <button id="vdmSaved" class="secondary wide">读取选中形态的保存网格</button><button id="vdmPreview" class="primary wide">提交局部预览</button><div id="vdmStatus" class="statusline">保存形态与实时预览均为几何证据，不是水力认证。</div>
+    </section>
+    <section id="faultControls" class="work-panel hidden">
+      <div class="panelKicker">水平走滑断层 · 开放表面</div>
+      <label for="faultMode">几何状态</label><select id="faultMode"><option value="after">平移后</option><option value="before">平移前 · 已施加 VDM</option><option value="compare">前后对照</option></select>
+      <div class="field-grid"><label>走向 ° <input id="faultDirection" type="number" value="18" min="0" max="360" step="any" required></label><label>滑移 m <input id="faultSlip" type="number" value="4" min="-8" max="8" step="any" required></label><label>切面 X m <input id="faultX" type="number" value="-183648.5" step="any" required></label><label>切面 Z m <input id="faultZ" type="number" value="64591.5" step="any" required></label><label>过渡宽度 m <input id="faultTransition" type="number" value="6" min="1" max="30" step="any" required></label></div>
+      <label for="faultSide">移动侧</label><select id="faultSide"><option value="positive">正侧</option><option value="negative">负侧</option></select>
+      <button id="faultSaved" class="secondary wide">读取保存断层</button><button id="faultPreview" class="primary wide">生成断层预览</button><div id="faultStatus" class="statusline" role="status" aria-live="polite"></div>
+    </section>
+    <section id="tdSummary" class="work-panel hidden"><div class="panelKicker">TD 保存动态</div><p id="tdCatalogText" class="muted">逐页读取保存状态；不重跑求解器。</p><div id="tdStats"></div><div class="tdScenario"><label for="tdScenario">动态场景</label><select id="tdScenario"><option value="eastward">eastward · 25状态</option><option value="westward">westward · 25状态</option></select></div><label for="tdLayer">当前页图层</label><select id="tdLayer"><option value="depth">保存水深 m</option><option value="rain">该小时雨强 mm/h</option><option value="bed">原生床高程 m</option></select><div class="tdMetrics" id="tdMetrics"></div><p class="muted">0 状态为首小时起点，1–24 为相应小时末态；30 m 原生网格每 4 格取 1 格绘制。全域统计不按显示抽稀重算。旧诊断水面与河链来自另一固定来源，不叠到细步页上。</p></section>
+    <section id="basinControls" class="work-panel hidden"><div class="panelKicker">盆地与出口证据</div><p class="muted">三种候选都保持为诊断记录；自然海口尚未认证，不会自动升格为可发布结果。</p><div id="basinCandidates" class="candidate-list"></div><div id="basinLimitations" class="statusline"></div></section>
+  </aside>
+  <section class="stage"><div class="stage-head"><div><div class="panelKicker" id="viewTitle">河网算法</div><h2 id="viewSubtitle">读取固定保存结果</h2></div><button id="reset" class="quiet" title="重置相机视图">重置视图</button></div><div class="canvas-wrap"><canvas id="surface" aria-label="地形审查画布"></canvas><div id="error" class="error hidden" role="alert"></div><div id="loading" class="loading hidden">读取保存证据…</div></div><div class="stage-foot"><span id="coords">未选取</span><span id="stats"></span></div></section>
+  <aside class="inspector"><section><div class="panelKicker">选中内容</div><h2 id="selectionTitle">尚未选取</h2><pre id="selection">在地图点选节点、网格或动态边</pre></section><section id="chartSection"><div class="panelKicker">剖面／时间序列</div><select id="chartMetric"><option value="stage">stage / profile (m)</option><option value="storage">storage (m³)</option><option value="q">signed Q (m³/s)</option><option value="vh">V(h) saved knots</option></select><canvas id="chart" height="190"></canvas></section><section><div class="panelKicker">每域 / 全局保存 ledger</div><pre id="ledger"></pre></section><section><div class="panelKicker">证据与限制</div><div id="evidence" class="evidence"></div></section><section id="sourceRegistrySection"><div class="panelKicker">固定入口登记</div><div id="sourceRegistry" class="evidence"></div></section><section><div class="panelKicker">审查备注</div><textarea id="notes" rows="4" placeholder="只写入本次导出的审查记录，不会修改验收包"></textarea><button id="exportReview" class="primary wide">导出审查记录</button></section></aside>
+</main>
+<script type="importmap">{"imports":{"three":"/vendor/node_modules/three/build/three.module.js"}}</script>
+<script src="renderer.js"></script><script src="app.js"></script><script type="module" src="fault-surface.js"></script><script type="module" src="saved-surface.js"></script>
+</body></html>

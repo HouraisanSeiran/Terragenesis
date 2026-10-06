@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "remotemountains",
+  "version": "${version}",
+  "name": "Terragenesis（山川形意）",
+  "description": "四种地貌区域、独立气候与跨区域水系。",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.remotemountains.RemoteMountains"
+    ],
+    "client": [
+      "com.remotemountains.client.TerrainInstallClient"
+    ]
+  },
+  "mixins": [
+    {
+      "config": "remotemountains.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

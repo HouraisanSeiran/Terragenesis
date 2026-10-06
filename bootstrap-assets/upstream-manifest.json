@@ -1,0 +1,119 @@
+{
+  "repository": "https://github.com/xandergos/terrain-diffusion",
+  "revision": "e8dcb4b1a834ab2f6b1a6f5256ed7c9f2f3e8230",
+  "source": "vendor/terrain-diffusion-e8dcb4b1a834ab2f6b1a6f5256ed7c9f2f3e8230",
+  "inference_files": [
+    "LICENSE",
+    "README.md",
+    "terrain_diffusion/common/cli_helpers.py",
+    "terrain_diffusion/common/model_utils.py",
+    "terrain_diffusion/data/laplacian_encoder.py",
+    "terrain_diffusion/inference/api.py",
+    "terrain_diffusion/inference/minecraft_api.py",
+    "terrain_diffusion/inference/perlin_transform.py",
+    "terrain_diffusion/inference/portable_rng.py",
+    "terrain_diffusion/inference/postprocessing.py",
+    "terrain_diffusion/inference/random_sampler.py",
+    "terrain_diffusion/inference/relief_map.py",
+    "terrain_diffusion/inference/synthetic_map.py",
+    "terrain_diffusion/inference/tiff_export.py",
+    "terrain_diffusion/inference/world_generator.py",
+    "terrain_diffusion/inference/world_pipeline.py",
+    "terrain_diffusion/models/edm_autoencoder.py",
+    "terrain_diffusion/models/edm_unet.py",
+    "terrain_diffusion/models/mp_layers.py",
+    "terrain_diffusion/models/perceptron.py",
+    "terrain_diffusion/models/unet_block.py",
+    "terrain_diffusion/scheduler/dpmsolver.py"
+  ],
+  "files": {
+    "LICENSE": {
+      "bytes": 1073,
+      "sha256": "3756b0f0f45951e400ff4f5ebbc1d153360d0377316541d76f0987d2cbce92dd"
+    },
+    "README.md": {
+      "bytes": 9322,
+      "sha256": "ef9621625890f761dfceaae8ac5678027d004a6a913079f8fbccfbfd34fefb20"
+    },
+    "terrain_diffusion/common/cli_helpers.py": {
+      "bytes": 1063,
+      "sha256": "7ae3c0cbc57ec174e3cb8d5104ab6ef6449509e46b24a9e96bea28e9caa2e449"
+    },
+    "terrain_diffusion/common/model_utils.py": {
+      "bytes": 2183,
+      "sha256": "40ae5dde626f68a4b47c85f7ff33aaa64ef65b0a2537873a2db856e21d7c2634"
+    },
+    "terrain_diffusion/data/laplacian_encoder.py": {
+      "bytes": 4457,
+      "sha256": "c2e049bf87fe6ac04d07f8efcb873cf22ea1b5f423d0d0e71206e6689a6f1a59"
+    },
+    "terrain_diffusion/inference/api.py": {
+      "bytes": 9281,
+      "sha256": "ef31ef06f4c3ea71770c8bf3975f978dd1b6b801788dec8cb81099b7471053fe"
+    },
+    "terrain_diffusion/inference/minecraft_api.py": {
+      "bytes": 36290,
+      "sha256": "60fc8ecad881ad6c317c2f3f624b8c9d9f864977b8b5ab504d41fbc41236332d"
+    },
+    "terrain_diffusion/inference/perlin_transform.py": {
+      "bytes": 1462,
+      "sha256": "f2aa0e6997ec05cb60efb0985053ea3af4e8690fc9c2fe1a82192bda408699d9"
+    },
+    "terrain_diffusion/inference/portable_rng.py": {
+      "bytes": 3076,
+      "sha256": "367c86a3be2977a9046efec22373731e51c3202b64ef5068dd179c61a57efce1"
+    },
+    "terrain_diffusion/inference/postprocessing.py": {
+      "bytes": 11951,
+      "sha256": "8f2fa89aba4e5d3aa64e8b191230318e46d24cc85ab12d84ae0397c8997dcad6"
+    },
+    "terrain_diffusion/inference/random_sampler.py": {
+      "bytes": 9528,
+      "sha256": "cc3e117a5a5d072c20041b5b9f7c014d923204fc63e077a84ff8e1b6b9e7ef3b"
+    },
+    "terrain_diffusion/inference/relief_map.py": {
+      "bytes": 8951,
+      "sha256": "183fa13bed9c48917108630dc9f6a41f9d327687b5215e5c62bbf94d8918aaf0"
+    },
+    "terrain_diffusion/inference/synthetic_map.py": {
+      "bytes": 12286,
+      "sha256": "7a197b3f4594a4a5fc775b857bcdd471c00eb17f6706e44586b4d812388722a7"
+    },
+    "terrain_diffusion/inference/tiff_export.py": {
+      "bytes": 7800,
+      "sha256": "6958baa12a0b855c2c8f2da4ba80d9ba7e552824bbd9125e25bacab00c25fa6d"
+    },
+    "terrain_diffusion/inference/world_generator.py": {
+      "bytes": 3737,
+      "sha256": "25cd60a59a09a7e354523a8acb7f656d015442ed470ba10b3f340f0bf1c0b49b"
+    },
+    "terrain_diffusion/inference/world_pipeline.py": {
+      "bytes": 64556,
+      "sha256": "7d1f08f71bbd079f8a44f6e24afd31208411a758a7f73484233ca94d8a02a324"
+    },
+    "terrain_diffusion/models/edm_autoencoder.py": {
+      "bytes": 8402,
+      "sha256": "4b8897a0c96ed871000c2a125b164935c83b79ff4304d1fa9eb86751e3c768dd"
+    },
+    "terrain_diffusion/models/edm_unet.py": {
+      "bytes": 9865,
+      "sha256": "c57f054f100b033105cc0f24db73926543335fc6fb56c498d849dbc142c98e5f"
+    },
+    "terrain_diffusion/models/mp_layers.py": {
+      "bytes": 10535,
+      "sha256": "a8f5940393443fdd13bea08d0f419cf3227207ba5227c1cc707accbd9fbf868c"
+    },
+    "terrain_diffusion/models/perceptron.py": {
+      "bytes": 3033,
+      "sha256": "75541787f5c25b93f6f9eeabd4d1382499a010d00e5282777897006776c70277"
+    },
+    "terrain_diffusion/models/unet_block.py": {
+      "bytes": 7382,
+      "sha256": "31f19d7b282aac9e864d690279865478b4ff36dc7637ce5f9023bfc094ce1db1"
+    },
+    "terrain_diffusion/scheduler/dpmsolver.py": {
+      "bytes": 33941,
+      "sha256": "60417607635139cd228de00db6c979036fbd85f3ecee71b067e966596fdc7e9e"
+    }
+  }
+}

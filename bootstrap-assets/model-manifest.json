@@ -1,0 +1,39 @@
+{
+  "model": "xandergos/terrain-diffusion-30m",
+  "revision": "9ef8030cb805b433b98ec25c5dddefbac07a9e26",
+  "endpoint": "https://hf-mirror.com",
+  "files": {
+    "config.json": {
+      "bytes": 774,
+      "sha256": "c60f0b74d89317e64cfc623fbfdd828f1b5b2e50aa75020ac4001103381853bd"
+    },
+    "README.md": {
+      "bytes": 154,
+      "sha256": "e39f9535a74f88122343224c5c66977013dbc520cc685455ec7e020761859327"
+    },
+    "coarse_model/config.json": {
+      "bytes": 828,
+      "sha256": "3256a71d181dc3b10f7e44320920694b6aba1572ee5200872a503f89c8cbb3b4"
+    },
+    "coarse_model/diffusion_pytorch_model.safetensors": {
+      "bytes": 11200936,
+      "sha256": "f88cdc26c70a2c73ee4c91088b8cec3f45202fc452682ac759554b099c5c2f33"
+    },
+    "base_model/config.json": {
+      "bytes": 682,
+      "sha256": "2400da3c7bed5dbc331a0cfabd3f4a5a3c5c977d4c4b3fb1037f4e285d320598"
+    },
+    "base_model/diffusion_pytorch_model.safetensors": {
+      "bytes": 1014772076,
+      "sha256": "351d1b1a77cf32e15adc4f72ed5fd26d317340598329d35f5dce2ff6dbcce735"
+    },
+    "decoder_model/config.json": {
+      "bytes": 609,
+      "sha256": "fc69e7c75bcc8b92d687306cb38cca2868a6034cdf73ddf7cfbf7078af6ac55e"
+    },
+    "decoder_model/diffusion_pytorch_model.safetensors": {
+      "bytes": 111709108,
+      "sha256": "b6c7fa99f836ad75c514236c9529e18a68ea207ed59dd39fd1341fc9a8a03bcc"
+    }
+  }
+}

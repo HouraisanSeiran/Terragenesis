@@ -1,5 +1,97 @@
 # 工程 TODO
 
+## 2026-10-09 河网主线分类与形态事件
+
+- [x] 建立主线/legacy/adapter/audit/presentation/consumer模块登记，冻结新算法只进入metric主线。
+- [x] 建立统一`MorphologyEvent`契约，绑定父图/几何、水沙转移、材料账和重验声明。
+- [x] 实现`delta_growth`河口三角洲V1：沉积足迹、有限分汊候选和固体/孔隙/未解析账；保存产品冷读通过。
+- [x] 实现`cutoff`截弯取直V1：河颈检测、捷径、退役曲流和牛轭湖候选。
+- [x] 实现`bank_migration`外弯冲刷/内弯点坝候选及有限`bifurcation`辫状分汊候选。
+- [x] 实现`alluvial_fan`冲积扇和`floodplain_inundation`洪泛平原候选，保留storage proxy语义。
+- [x] 已生成真实TD256局部优先级1–6候选集 `verification/td-morphology-candidates/td256-20261010-01/`；来源、父图和局部解释身份已保存。
+- [x] 独立冷审通过：`verification/td-morphology-candidates/td256-20261010-01-audit-05/audit.json`；拓扑写回仍待后续门禁。
+- [ ] 完成两个真实TD局部案例的保存后冷审，再接入共同水面/床变主线。
+
+分类登记见 `docs/architecture/river-module-classification-20261009.md`，事件规格见 `.scratch/river-morphology/issues/01-delta-cutoff.md`。Minecraft保持后续消费子项目。
+
+## 2026-10-09 成熟库复用
+
+- [x] 接入固定 `pyflwdir==0.5.12` 的TD图分析：成熟库计算汇水面积、终端贡献域、Strahler等级；保留receiver和closed/unknown/规定边界语义。
+- [x] 新CLI实际消费TD256保存图，65,536格流向/贡献域/面积差异均0，450个闭合终端候选保留；9项针对性测试与标准包保存/冷读通过。
+- [ ] 后续按新增需求逐步调用后端，替换DEM路由前先匹配unknown、出口、格距及平地政策；不把独立外部填洼政策直接替换旧固定包。
+- [ ] 水动力/侵蚀内核继续专项评估成熟后端；Minecraft保留为后续消费子项目，本阶段不开发。
+
+使用和范围见 [成熟后端接口](docs/reference-routing.md)，本地任务 [.scratch/reference-routing/issues/01-pyflwdir-adapter.md](.scratch/reference-routing/issues/01-pyflwdir-adapter.md)。其他智能体在途河槽、湖泊、前端及冻结证据不在本轮写集。
+
+## 长期路线图接入
+
+长期阶段计划见 [`Terragenesis河流地貌长期路线图.md`](Terragenesis河流地貌长期路线图.md)，任务记录见 [.scratch/td-river-blueprint/issues/14-long-term-roadmap-integration.md](.scratch/td-river-blueprint/issues/14-long-term-roadmap-integration.md)。该路线图现在作为阶段依赖、状态命名和验收门槛的上位计划：阶段0–1对应 M0–M2，阶段2–3对应 M3–M4，阶段5对应 M6/12 的有界反馈，阶段9对应 Terraindiffusion 条件地形，阶段10对应 M7 多分辨率交换与发布审查。
+
+- [x] 接入长期路线图，保留其对主线冻结、真实调用链、单位/时间语义、未知边界和渲染层限制的约束。
+- [ ] 完成 13 全域几何后，按路线图阶段10启动 M7；阶段4一般分流、阶段6–8曲流/三角洲/局部三维岩体仍排在后续路线。
+
+## 2026-10-08 M3–M6补充接续进行中
+
+- [ ] 继续补充[11天然湖盆/回水](.scratch/td-river-blueprint/issues/11-natural-lake-merging-and-backwater.md)：TD256 2/.5 秒失败包保留；`.5/.125` 真实共同水面细化已通过固定1mm门槛，但仍限六叶瞬时平衡范围。
+- [x] 11 的 `.5/.125` 真实共同水面细化已通过固定 1mm 门槛，stage 差 0.539420mm；仅接受 TD256 六叶有限瞬时平衡范围，issue 仍开放。
+- [ ] 继续补充[13全域谷地河槽](.scratch/td-river-blueprint/issues/13-global-valley-channel-geometry.md)：45/45组件和623/673边已通过 tiled 冷审；50边全部因 owner divide 拒绝，27条中心线本身跨 owner、23条最小合法半径仍跨 owner，failure-prefix 保留，必须通过合法重路由或明确 scope exclusion。
+- [x] [12床变几何/水力重耦合](.scratch/td-river-blueprint/issues/12-morphology-recoupling.md)受限无湖范围验收完成；含湖、全域和拓扑变化仍依赖11/13。
+- [ ] 上述11/13实际验收后再开始[09 M7多精度交换](.scratch/td-river-blueprint/issues/09-resolution-exchange.md)。旧M3–M6限定验收有效，但本轮补充未完成项不能被旧证据覆盖。
+
+## 2026-10-08 Claude 蓝图 M5 / M6 限定基线完成
+
+- [x] [07 M5局部原床中心线/河床几何](.scratch/td-river-blueprint/issues/07-channel-geometry.md)与[08 M6单向冻结水流泥沙/Exner](.scratch/td-river-blueprint/issues/08-sediment-erosion.md)验收，见[实现、审查、独立参考与限制](docs/td-river-m5-m6-20261008.md)。共享fan4床面/真实断面、单一切岩账、入湖湿格保护、固体/孔隙/岩石分账及真实失败前缀完成。
+- [x] 183项相关回归+3项独立审查通过；禁10生成/求解入口联合冷审通过16份几何、10份泥沙与新几何水流映射，GLB结构及预览已核验。原TD/冻结D4/历史拒绝/Claude前端写集保留，无服务/GPU/游戏/Java启动。
+- [x] 真实1024局部弯道最大45度降到33.9011度，空间细化体积差0.006144%；同源256入湖0.25/0.125m差0.646393%。真实90m/900s泥沙事件床变0.02617745mm、粗细床差0.0000171231mm、出口差0.0228232%、固体残差-1.9984e-15m³。
+- [ ] 下一主线[09 M7多精度守恒交换](.scratch/td-river-blueprint/issues/09-resolution-exchange.md)。[11天然湖盆/回水](.scratch/td-river-blueprint/issues/11-natural-lake-merging-and-backwater.md)、[12床变后几何与水力重耦合](.scratch/td-river-blueprint/issues/12-morphology-recoupling.md)、[13全域谷地河槽扩展](.scratch/td-river-blueprint/issues/13-global-valley-channel-geometry.md)仍开放，共同阻塞10发布。局部形态改善不是全1024河网已自然化，冻结水流回放不认证变化床面的水力，全部认证标志false；前端仍为诊断标注、不代表细网格瞬时水面。
+
+## 2026-10-08 Claude 蓝图 M3 接续 / M4 有限湖盆耦合完成
+
+- [x] [06有限湖盆耦合基线](.scratch/td-river-blueprint/issues/06-lake-boundary-coupling.md)验收，见[实现、独立参考及限制](docs/td-river-m3-m4-coupling-20261008.md)。原床V(h)/反函数、多出口、共同步湖河交换、open/closed/unknown/stage/discharge边界、逐节点账及真实失败前缀完成；M3无湖行为兼容。
+- [x] 143项相关回归通过；三个细步独立参考误差0.0348894%、0.0950233%、0.0728230%。最终禁7生成/求解入口冷审通过11份保存产品，包含实际2s停止的容量失败前缀和独立边界案例。
+- [x] 同源真实256² TD与冻结D4映射：5格湖泊支撑和70格贡献域分开。900s事件水位细化差0.000960688mm、累计出口差0.284804%、残差-3.07e-12m³；密集/稀疏输出积分一致。初始储水为显式近溢流预置，首鞍点以上为固定直壁池近似；已有1024² M3证据保留。
+- [x] 此处历史下一主线[07谷地中心线/河床几何](.scratch/td-river-blueprint/issues/07-channel-geometry.md)的限定基线已在上节完成；全域直线/直角及天然湖盆仍为13/11开放任务。水力/自然出口/发布标志保持false，不将有限池推成天然湖岸或细网格瞬时水面。
+
+## 2026-10-08 Claude 蓝图 M3 与河线路径审查
+
+- [x] [M3限定河道储量/运动波基线](.scratch/td-river-blueprint/issues/05-channel-storage.md)完成，见[交付报告](docs/td-river-channel-m3-20261008.md)。显式物理矩形断面、Manning、CFL、逐节点账、真实失败前缀、求解后采样与独立冷读；单支流/Y解析与ODE参考通过，10m峰值失败保留，5m细化通过。
+- [x] 真实1024²来源上的96节点/3153.381m河段运行900s，局部水量17.903751m³逐格一次输入；2s/0.5s细化深差0.002519mm、累计出口差0.278665%，密集/稀疏末态与水量一致。只消费已有源/产流，无全域新求解、GPU或服务。
+- [x] 只读定位直线/直角：填洼D8等高边67,728条、最长等高直线4.03km，D4直角边对约20.98%。[任务07](.scratch/td-river-blueprint/issues/07-channel-geometry.md)增加谷地、盆地、曲率与拓扑约束，不把显示平滑作为修复。
+- [x] 119项相关新旧回归通过；最后资源检查修改后17项M3聚焦测试通过，最终禁8入口冷审验证8份轨迹与4份采样输出，原始TD文件和局部Q绑定通过。
+- [x] [M4湖泊储量/溢流及边界耦合](.scratch/td-river-blueprint/issues/06-lake-boundary-coupling.md)限定基线已在上节完成；下一项M5中心线/河床几何。水力/自然出口/发布标志仍false，不代表全流域天然断面或细网格瞬时水面；Claude前端在途改动保留。
+
+## 2026-10-08 Claude 蓝图 M1 / M2 完成
+
+- [x] 完成 M0 来源/tile 前提、M1 静态诊断排水与 M2 时间变产流，见[交付与真实TD验收](docs/td-river-milestones-1-2-20261008.md)。原床D8/独立泛洪D8/新边界适配D4、donors CSR、来源登记、跨tile空间降雨、独立密集/稀疏输出包；103项相关新旧测试通过。
+- [x] 真实1024²、30m TD原生地形联合验收与禁16个生成/求解入口的独立冷审通过；P=2,359,296m³，本地释放221,980.874475m³，联合残差−3.96e−9m³，密集/稀疏末状态和累计量一致。256固定来源同时通过；旧source/算法/D4包哈希不变，三张诊断预览已保存。
+- [x] [M3 河道储量与简化水动力](.scratch/td-river-blueprint/issues/05-channel-storage.md)已在上节完成限定基线，下一项M4。原床3333个闭合候选不代表实际湖面；泛洪最大114.14m仅改变工作面。CRS继续pending，水力/自然出口/发布标志保持false。服务、GPU、Java和游戏未重启，Claude前端写集保留。
+
+## 2026-10-07 按 Claude TD 河网实施建议接续
+
+- [x] 按[用户指定实施蓝图](Terraindiffusion河网算法完整实施建议.md)完成第一轮 A-F，见[报告与真实TD证据](docs/td-river-blueprint-first-round-20261007.md)：四契约、原床D8、边界/产流适配、保存冷读及68项新旧测试通过；全域输入147456m³，残差−2.51e−10m³。450个闭合候选保留，不作为湖面或河道水力；三个诊断预览已生成。
+- [ ] 按[阶段规格与依赖任务](.scratch/td-river-blueprint/spec.md)继续M7-M8；来源/tile、排水政策/forcing及M3-M6限定基线已在10月8日完成，之后为多精度、天然湖盆/回水、床变反馈与全域几何扩展。水力/自然口/发布标志保持false，CRS缺失保持pending_provenance。主协调负责审查、发布与验收；用户已指定GPT-6 Sol实施、同时最多3智能体含主协调。既有地下接回工作保留为独立任务。
+
+## 2026-10-07 河网算法主线接续
+
+- [ ] 按[接续规格与具体任务](.scratch/river-continuation-20261007/spec.md)补齐新洞道独立审计、完整地表接回端口及后续 face/必要水动力。主协调审查与集成，最多3智能体含主协调；用户本轮指定可用6luna，首次分派因账户不支持该模型失败。
+- [ ] 确认 Claude 最新修改/建议位置；当前已定位地下暗河 V1 和其后续文档，不将旧静态小沟包测试等同于完成河网主线。
+- [x] 完成[新洞道保存证据独立审计](.scratch/river-continuation-20261007/issues/01-saved-gallery-audit.md)：seed17实际TD包的四实体/材料、固定端点、VDM与空气路径通过，6项篡改/拒绝回归通过；完整端口、连续覆岩与水力仍待完成。
+
+## 2026-10-07 动态河网渲染后续审查
+
+- [ ] 按[动态河网渲染审查任务](.scratch/frontend-review/issues/03-dynamic-river-renderer-review.md)核对模块职责、`signedEdgeQ` 与箭头端点方向、初始状态与保存区间语义、三维诊断叠加限制、`window.surfaceRenderer.flowInterval()` 与点选兼容性，并评估二维网格/河网绘制/选择投影是否需要进一步拆分。
+- [x] 基于固定 Terrain Diffusion 地形生成静态自然河网候选并完成独立只读审计；交付目录为 `verification/natural-river-network/td-claude-review-20261007-01/`。当前仅有小沟候选，全部河段需细化，水力、自然出口和发布标志保持 false。
+
+## 2026-10-06 地下暗河 V1 与前端交付
+
+- [x] 实现固定真实山地窗口的种子洞道生成：侧向路径、宽度、洞顶 VDM 变化，固定两端；实际生成 cutter/rock_after/removed，不修改来源。
+- [x] 默认新包几何检查通过：125.323254m、切岩1885.050525m³、材料残差7.73e-12m³、9个覆岩核心断面；保存完整覆岩/空气路线/实际开口见证。
+- [x] 接入本工作区网页「河网算法 → 地下暗河 · 第一版生成」：2D/3D、透明岩体、剖切、站点、参数生成与审查导出；实际seed18新成果与旧包不变检查通过。
+- [ ] 自动洞口选址/地质约束路线发现、分叉汇合及多层地下水系。
+- [ ] 完整地表接回端口独立认证与必要水动力；保留composition03和07/08/09拒绝，不以几何生成冒称水力通过。
+
+接口与边界见 [地下暗河 V1](docs/underground-river-v1.md)。本版为固定125m样例的有界构造生成，非自动自然洞道发现；新参数成果尚未独立审计。`water=null`，水力/完整河网/自然出口标志均false。前端修改为用户本轮明确授权；原source、Java/JAR、默认世界不改。下方历史“网页未接入”不适用于本V1入口，其他未认证事项保持开放。
+
 ## 2026-10-06 本轮新增交付
 
 - [x] 增加严格保存切片消费器：保留外环/孔洞、空域和正面积 sliver；拒绝有理非零但显示为零的多边形、非有限坐标、越界孔洞和重叠组件。

@@ -1,7 +1,7 @@
 """Local read-only bridge plus explicit VDM preview/export endpoints.
 
-The bridge never runs hydrology replay, GPU inference, world writing, or cave generation.
-It reads fixed, hashed evidence roots and only permits the explicit local geometry preview.
+The bridge never runs hydrology replay, GPU inference, or world writing.
+Saved reads are read-only; bounded local geometry generation requires an explicit POST.
 """
 from __future__ import annotations
 
@@ -21,6 +21,11 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parents[1]
 WEB = ROOT / "web-preview"
 DATA = WEB / "data"
+# Browser contract tests load this module from the repository root rather than
+# executing serve.py from WEB. Keep domain-local imports resolvable in both
+# entry modes without changing the HTTP surface or source bindings.
+if str(WEB) not in sys.path:
+    sys.path.insert(0, str(WEB))
 VDM_FORMS = ROOT / "verification/metric-vdm-forms/run-20261003T101709799064Z/gallery.json"
 VDM_CONTROLS = ROOT / "verification/metric-vdm-controls/final-20261003T131348175Z/gallery.json"
 TD_CONFIG = ROOT / ".scratch/metric-vdm/td-channel-example.json"
@@ -153,7 +158,11 @@ def verify_entry(path: Path, expected: str | None = None):
 
 def fixed_catalog():
     import fault_preview
+    import morphology_preview
+    import underground_preview
     fault = fault_preview.catalog()
+    morphology = morphology_preview.catalog()
+    underground_case = underground_preview.saved_case()
     forms = vdm_gallery()
     controls = pinned_json(VDM_CONTROLS, "metric-vdm-forms-gallery-v1")
     execution_index()
@@ -171,6 +180,8 @@ def fixed_catalog():
             {"id": "td", "label": "TD 降雨河网", "status": "saved-dynamic-review"},
             {"id": "basin", "label": "盆地证据", "status": "diagnostic-not-certified"},
             {"id": "fault", "label": "水平走滑断层", "status": "diagnostic-real-cut", "defaults": fault["defaults"], "geometry": fault["geometry"]},
+            {"id": "morphology", "label": "真实TD · 形态候选", "status": morphology["status"]},
+            {"id": "underground", "label": "地下暗河 · 第一版生成", "status": underground_case["status"]},
             {"id": "surface", "label": "既有地表案例", "status": "legacy-preserved"},
         ],
         "vdm": {
@@ -203,12 +214,23 @@ def fixed_catalog():
             "comparison": read_json(BASIN_COMPARISON),
             "status": "diagnostic; natural outlet not certified",
         },
+        "morphology": morphology,
+        "underground": {
+            "schema": "td-underground-river-catalog-v1",
+            "status": underground_case["status"],
+            "identity_sha256": underground_case["identity_sha256"],
+            "parameters": underground_case["parameters"],
+            "source_pins": underground_case["source_pins"],
+            "capabilities": underground_case["capabilities"],
+            "water": None,
+        },
         "fault": fault,
         "limitations": [
             "VDM preview is a saved/explicit local geometry operation, not natural-outlet certification.",
             "VDM water_generated=false and hydraulic_ready=false in the fixed gallery.",
             "TD charts read saved records; they do not recompute hydrology.",
             "Fault preview performs an explicit real cut in memory; open surface only, no water or solver response.",
+            "Morphology and underground workspaces read bounded saved geometry; neither certifies natural hydraulics or publication.",
         ],
     }
 
@@ -336,6 +358,16 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
             path = urlparse(self.path).path
+            if path == "/api/morphology/case":
+                if urlparse(self.path).query:
+                    return self.send_json({"error": "morphology case accepts no client paths"}, 400)
+                import morphology_preview
+                return self.send_json(morphology_preview.saved_case())
+            if path == "/api/underground/case":
+                if urlparse(self.path).query:
+                    return self.send_json({"error": "underground case accepts no client paths"}, 400)
+                import underground_preview
+                return self.send_json(underground_preview.saved_case())
             if path == "/api/fault/case":
                 if urlparse(self.path).query:
                     return self.send_json({"error": "fault case accepts no client parameters"}, 400)
@@ -387,6 +419,20 @@ class Handler(BaseHTTPRequestHandler):
         try:
             path = urlparse(self.path).path
             length = int(self.headers.get("Content-Length", "0"))
+            if path == "/api/underground/generate":
+                if urlparse(self.path).query or not 1 <= length <= 1024:
+                    return self.send_json({"error": "invalid underground request size/query"}, 400)
+                origin = self.headers.get("Origin")
+                if origin and origin != "http://" + self.headers.get("Host", ""):
+                    return self.send_json({"error": "cross-origin generation is forbidden"}, 403)
+                import underground_preview
+                body = json.loads(self.rfile.read(length),
+                                  object_pairs_hook=underground_preview.unique_object,
+                                  parse_constant=underground_preview.reject_constant)
+                try:
+                    return self.send_json(underground_preview.generate(body))
+                except underground_preview.GenerationBusy as error:
+                    return self.send_json({"error": str(error), "status": "busy"}, 409)
             if path == "/api/fault/preview" and not 0 <= length <= 16 * 1024:
                 raise ValueError("request body budget exceeded")
             body = json.loads(self.rfile.read(length) or b"{}")
@@ -408,7 +454,8 @@ class Handler(BaseHTTPRequestHandler):
 
     def static(self, request_path):
         relative = request_path.lstrip("/") or "index.html"
-        allowed = {"index.html", "app.js", "renderer.js", "style.css", "saved-surface.js", "fault-surface.js",
+        allowed = {"index.html", "app.js", "renderer.js", "river-renderer.js", "style.css", "saved-surface.js", "fault-surface.js",
+            "underground-surface.js", "underground-contract.js",
             "vendor/node_modules/three/build/three.module.js", "vendor/node_modules/three/build/three.core.js",
             "vendor/node_modules/three/examples/jsm/controls/OrbitControls.js"}
         if relative.startswith("data/surface-review-v1/"):

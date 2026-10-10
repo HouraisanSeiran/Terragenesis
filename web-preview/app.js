@@ -1,11 +1,11 @@
 "use strict";
 const $=id=>document.getElementById(id);
-const ui=Object.fromEntries(['caseSelect','verticalScale','verticalLabel','caseStatus','caseScope','layers','timeSection','timeRange','timeStep','timeSeconds','view2d','view3d','reset','play','stepBack','stepForward','viewTitle','viewSubtitle','coords','stats','evidence','sourceRegistry','selectionTitle','selection','chart','chartSection','notes','exportReview','chartMetric','pickMode','ledger','error','loading','bridgeStatus','vdmControls','vdmForm','vdmSaved','vdmAmplitude','vdmWavelength','vdmCurvature','vdmEndDifference','vdmDirection','vdmSeed','vdmPreview','vdmStatus','faultControls','faultDirection','faultX','faultSlip','faultTransition','faultSide','faultDraft','faultStatus','tdSummary','tdCatalogText','tdStats','tdScenario','tdLayer','tdMetrics','basinControls','basinCandidates','basinLimitations'].map(id=>[id,$(id)]));
+const ui=Object.fromEntries(['caseSelect','verticalScale','verticalLabel','caseStatus','caseScope','layers','timeSection','timeRange','timeStep','timeSeconds','view2d','view3d','reset','play','stepBack','stepForward','viewTitle','viewSubtitle','coords','stats','evidence','sourceRegistry','selectionTitle','selection','chart','chartSection','notes','exportReview','chartMetric','pickMode','ledger','error','loading','bridgeStatus','vdmControls','vdmForm','vdmSaved','vdmAmplitude','vdmWavelength','vdmCurvature','vdmEndDifference','vdmDirection','vdmSeed','vdmPreview','vdmStatus','faultControls','faultDirection','faultX','faultSlip','faultTransition','faultSide','faultDraft','faultStatus','tdSummary','tdCatalogText','tdStats','tdScenario','tdLayer','tdMetrics','basinControls','basinCandidates','basinLimitations','morphologyControls','morphologyFeature','morphologyLayer','morphologyStatus'].map(id=>[id,$(id)]));
 let manifest=null, catalog=null, current=null, currentEntry=null, workspace='saved', timer=null, requestSerial=0, selection=null, basinComparison=null, tdPage=null, tdDirection='eastward';
 const reviewCategories={
     terrain:{label:'地形输入',projects:[{id:'terrain',label:'Terrain Diffusion · 保存高度场'},{id:'dem',label:'DEM 来源与范围 · 诊断对照'}]},
     vdm:{label:'VDM 算法',projects:[{id:'vdm',label:'岩壁形态与参数变形'},{id:'fault',label:'断层平移'}]},
-    rivers:{label:'河网算法',projects:[{id:'saved',label:'单域 AMR / 原生 / uniform 对照'},{id:'mosaic',label:'共享边界与跨精度 · 保存审查'},{id:'td',label:'降雨与动态水量 · 原生小时页'},{id:'basin',label:'盆地与出口 · diagnostic 候选'},{id:'surface',label:'历史工程案例 · 有限范围'}]},
+    rivers:{label:'河网算法',projects:[{id:'saved',label:'单域 AMR / 原生 / uniform 对照'},{id:'mosaic',label:'共享边界与跨精度 · 保存审查'},{id:'td',label:'降雨与动态水量 · 原生小时页'},{id:'basin',label:'盆地与出口 · diagnostic 候选'},{id:'morphology',label:'真实TD · 形态候选'},{id:'underground',label:'地下暗河 · 第一版生成'},{id:'surface',label:'历史工程案例 · 有限范围'}]},
 };
 const rememberedProjects={terrain:'terrain',vdm:'vdm',rivers:'saved'};
 function isSavedWorkspace(){return workspace==='saved'||workspace==='mosaic'}
@@ -34,13 +34,46 @@ function clearError(){ui.error.textContent='';ui.error.classList.add('hidden')}
 function stop(){if(timer!==null)clearInterval(timer);timer=null;if(ui.play)ui.play.textContent='播放'}
 function clearSelection(){selection=null;ui.selectionTitle.textContent='尚未选取';ui.selection.textContent='在地图点选节点、网格或动态边';ui.coords.textContent='未选取';if(ui.chart){ui.chart.getContext('2d').clearRect(0,0,ui.chart.width,ui.chart.height)}}
 function statusLabel(status){const value=String(status||'pending');if(value.startsWith('accepted'))return 'accepted 有界证据';if(value.startsWith('diagnostic'))return 'diagnostic 候选';if(value.includes('not_implemented')||value.includes('backend-pending'))return 'not_implemented 尚未实现';if(value.includes('draft'))return 'draft 草案';return 'pending / 未验收'}
+function riverCapability(c){
+    const metadata=c?.metadata||{}, evidence=c?.evidence||{};
+    return {
+        diagnosticOnly: metadata.diagnostic_only ?? evidence.diagnostic_only ?? true,
+        hydraulicReady: metadata.hydraulic_ready ?? evidence.hydraulic_ready ?? false,
+        naturalOutletVerified: metadata.natural_outlet_verified ?? evidence.natural_outlet_verified ?? false,
+        publishable: metadata.publishable ?? evidence.publishable ?? false,
+        artificialBoundaryOutlet: metadata.artificial_boundary_outlet ?? evidence.artificial_boundary_outlet ?? false,
+        unknownSemantics: metadata.unknown_semantics || evidence.unknown_semantics || '未知域外不追踪；仅记录域外出流',
+        waterSurfaceSource: metadata.water_surface_source || evidence.water_surface_source || '由保存证据定义；未自动推断',
+        dischargeSemantics: metadata.discharge_semantics || evidence.discharge_semantics || '需依据时间间隔与字段单位解释'
+    };
+}
+function renderRiverCapability(c){
+    if(!ui.evidence||!c)return;
+    const capability=riverCapability(c);
+    textLine(ui.evidence,'河网层级',c.graph?'诊断排水拓扑':c.channelGeometry?'候选中心线／有界河床几何':'保存水量或几何证据');
+    textLine(ui.evidence,'认证门槛',capability.publishable?'可发布（仍需复核）':'未认证；不可发布');
+    textLine(ui.evidence,'诊断模式',capability.diagnosticOnly?'是':'否');
+    textLine(ui.evidence,'动态水力',capability.hydraulicReady?'已准备':'未完成');
+    textLine(ui.evidence,'自然出口',capability.naturalOutletVerified?'已验证':'未验证');
+    textLine(ui.evidence,'人工边界出口',capability.artificialBoundaryOutlet?'存在':'未声明');
+    textLine(ui.evidence,'水面来源',capability.waterSurfaceSource);
+    textLine(ui.evidence,'流量语义',capability.dischargeSemantics);
+    textLine(ui.evidence,'域外语义',capability.unknownSemantics);
+}
 function sourceEntry(source){if(!source)return null;return typeof source==='string'?{path:source}:source}
 function renderSourceRegistry(){if(!ui.sourceRegistry)return;ui.sourceRegistry.replaceChildren();const groups=[['VDM 形态 gallery',catalog?.generatedFrom?.[1]],['TD 固定时间页',catalog?.td?.sources?.[1]],['原生水面快照',catalog?.td?.sources?.[2]],['河谷路径候选',catalog?.td?.sources?.[3]],['盆地候选对比',catalog?.basin?.source]];groups.forEach(([label,source])=>{const entry=sourceEntry(source);if(entry)textLine(ui.sourceRegistry,label,`${entry.path||'—'} · ${(entry.sha256||'').slice(0,12)}…`)})}
 function renderBasinComparison(){if(!ui.basinCandidates)return;ui.basinCandidates.replaceChildren();const comparison=basinComparison?.comparison||{},treatments=comparison.treatments||[];treatments.forEach(item=>{const row=document.createElement('div');row.className='candidate-row';const title=document.createElement('strong');title.textContent=item.label||item.candidate_id;const meta=document.createElement('span');meta.textContent=`${statusLabel(item.publishable?'accepted':'diagnostic_candidate')} · Δ ${Number(item.max_abs_delta_m||0).toFixed(4)} m · disturbance ${Number(item.disturbance_m3||0).toFixed(0)} m³`;row.append(title,meta);const reason=(item.rejection_reasons||[]).join('；');if(reason){const detail=document.createElement('small');detail.textContent=`未通过：${reason}`;row.append(detail)}ui.basinCandidates.append(row)});ui.basinLimitations.textContent=(comparison.limitations||[]).concat(comparison.decision?.reason||[]).join(' · ')||'自然海口未认证；水力耦合未完成'}
 function textLine(parent,label,value){const line=document.createElement('div');line.textContent=`${label}：${value??'—'}`;parent.append(line)}
 function evidence(c){ui.evidence.replaceChildren();const e=c?.evidence||c?.source||{};textLine(ui.evidence,'状态',statusLabel(e.status||c?.status));textLine(ui.evidence,'范围',e.scope||c?.metadata?.algorithm||'保存数据／显式局部预览');if(e.source)textLine(ui.evidence,'源',e.source.path||e.source.storage?.path);if(e.sha256||e.source?.sha256||e.source?.storage?.sha256)textLine(ui.evidence,'SHA256',e.sha256||e.source.sha256||e.source.storage.sha256);if(c?.identity)textLine(ui.evidence,'identity',c.identity);(e.limitations||catalog?.limitations||[]).slice(0,6).forEach((x,i)=>textLine(ui.evidence,i?'限制':'边界',x))}
-function layerControls(c){ui.layers.replaceChildren();const names=c?.kind==='mesh'?[['h0','参考面 H0'],['bed','VDM 床面'],['water','水面（若保存）'],['wet','湿润单元'],['domains','保护／域边界'],['footprint','来源 footprint']]:[['bed','床面'],['water','水面'],['wet','湿润层'],['edges','河网边'],['unknown','unknown／孔洞'],['footprint','来源 footprint']];if(c?.mesh?.reference)names.push(['displacement','VDM 位移向量']);for(const [key,label] of names){const wrap=document.createElement('label');const input=document.createElement('input');input.type='checkbox';input.dataset.layer=key;input.checked=!!surfaceRenderer.state.layers[key];input.onchange=()=>{surfaceRenderer.state.layers[key]=input.checked;surfaceRenderer.render()};wrap.append(input,label);ui.layers.append(wrap)}}
+function layerControls(c){ui.layers.replaceChildren();const names=c?.kind==='mesh'?[['h0','参考面 H0'],['bed','VDM 床面'],['water','水面（若保存）'],['wet','湿润单元'],['domains','保护／域边界'],['footprint','来源 footprint']]:dynamic(c)?[['bed','床面投影'],['water','保存水面／水位'],['wet','湿润层（若保存）'],['edges','诊断排水拓扑'],['unknown','unknown／孔洞'],['footprint','来源 footprint']]:[['bed','床面'],['water','水面'],['wet','湿润层'],['edges','河网边'],['unknown','unknown／孔洞'],['footprint','来源 footprint']];if(c?.mesh?.reference)names.push(['displacement','VDM 位移向量']);for(const [key,label] of names){const wrap=document.createElement('label');const input=document.createElement('input');input.type='checkbox';input.dataset.layer=key;input.checked=!!surfaceRenderer.state.layers[key];input.onchange=()=>{surfaceRenderer.state.layers[key]=input.checked;surfaceRenderer.render()};wrap.append(input,label);ui.layers.append(wrap)}}
 function normalizeMeshCase(payload){const m=payload.mesh||{},vertices=m.vertices||[],reference=m.reference||vertices,delta=m.displacement||vertices.map(()=>[0,0,0]);return {kind:'mesh',caseId:`vdm-${payload.kind||payload.form?.kind||'preview'}`,label:payload.label||payload.form?.kind||'VDM preview',mesh:{vertices,reference,displacement:delta,protected:m.protected||[],sourceChart:m.sourceChart||{},triangles:m.triangles||[],bed:vertices.map(v=>Number(v[1])),h0:reference.map(v=>Number(v[1])),wetCells:[],cellOwner:[],hydrologicOwner:[],cells:[],columns:0,water:[],wet:[]},evidence:{status:payload.schema==='vdm-case-v1'?'diagnostic_saved_geometry':'pending_geometry_preview',scope:'XYZ metric VDM; contiguous local chart for display; source topology remapped without interpolation; no generated water',source:payload.source,limitations:payload.report?.limitations||catalog?.limitations||[]},identity:payload.identity,variant:payload.variant,metadata:payload.metadata,report:payload.report}}
+function normalizeMorphologyCase(payload){
+    const terrain=payload.terrain, rows=terrain.height_m.length, columns=terrain.height_m[0].length, vertices=[],triangles=[];
+    for(let row=0;row<rows;row++)for(let column=0;column<columns;column++)vertices.push([terrain.origin_x_m+column*terrain.spacing_m,terrain.height_m[row][column],terrain.origin_z_m+row*terrain.spacing_m]);
+    for(let row=0;row<rows-1;row++)for(let column=0;column<columns-1;column++){const index=row*columns+column;triangles.push([index,index+1,index+columns+1],[index,index+columns+1,index+columns])}
+    const candidate=payload.candidates||{};
+    return {kind:'morphology',caseId:'td-morphology-candidates',label:'真实TD · 形态候选',mesh:{vertices,triangles,bed:terrain.height_m.flat(),h0:terrain.height_m.flat()},morphology:payload,metadata:{diagnostic_only:true,hydraulic_ready:false,natural_outlet_verified:false,publishable:false},evidence:{status:'candidate_set',scope:payload.interpretation,source:payload.source,limitations:['局部水陆和中心线为显式工程解释','候选未写回主RoutingGraph','水动力、自然出口和发布状态均未认证']},identity:payload.summary_body_sha256,terrain:terrain,candidate}
+}
 function populateSelect(){
     ui.caseSelect.replaceChildren();
     if(workspace==='terrain'){
@@ -56,12 +89,14 @@ function populateSelect(){
 }
 function setWorkspace(next){
     syncNavigation(next);
-    ++requestSerial;stop();window.savedSurface?.close();window.faultSurface?.close();workspace=next;
+    ++requestSerial;stop();window.savedSurface?.close();window.faultSurface?.close();window.undergroundSurface?.close();workspace=next;
     ui.exportReview.disabled=true;
     clearSelection();clearError();current=null;currentEntry=null;surfaceRenderer.state.case=null;surfaceRenderer.state.time=0;
     ui.stats.textContent='';ui.ledger.textContent='';ui.evidence.replaceChildren();ui.layers.replaceChildren();renderSourceRegistry();
     ui.loading.classList.add('hidden');surfaceRenderer.render();
     ui.vdmControls.classList.toggle('hidden',next!=='vdm');ui.faultControls.classList.toggle('hidden',next!=='fault');
+    $('undergroundControls').classList.toggle('hidden',next!=='underground');
+    ui.morphologyControls.classList.toggle('hidden',next!=='morphology');
     ui.tdSummary.classList.toggle('hidden',next!=='td');ui.basinControls.classList.toggle('hidden',next!=='basin');
     const cases=next==='surface'||next==='terrain'||next==='dem';
     document.querySelector('.surface-controls').classList.toggle('hidden',!cases);
@@ -90,6 +125,14 @@ function setWorkspace(next){
             evidence(current);ui.exportReview.disabled=false;
         }
         ui.ledger.textContent=JSON.stringify(basinComparison?.comparison||{},null,2);
+    }else if(next==='morphology'){
+        ui.viewTitle.textContent='河网算法 · 真实TD形态候选';ui.viewSubtitle.textContent='原始TD地形与局部候选叠加';
+        ui.pickMode.disabled=true;surfaceRenderer.state.view='2d';ui.view2d.classList.add('active');ui.view3d.classList.remove('active');loadMorphology();
+    }else if(next==='underground'){
+        ui.viewTitle.textContent='河网算法 · 地下暗河';ui.viewSubtitle.textContent='读取局部 XYZ 米制几何';
+        ui.pickMode.disabled=true;
+        surfaceRenderer.state.view='3d';ui.view3d.classList.add('active');ui.view2d.classList.remove('active');
+        loadUnderground();
     }else if(next==='fault'){
         ui.viewTitle.textContent='VDM 算法 · 断层平移';ui.viewSubtitle.textContent='读取真实断层局部网格';
         ui.pickMode.disabled=true;
@@ -102,6 +145,14 @@ function setWorkspace(next){
 async function loadVdmGallery(){if(ui.vdmForm.options.length)return;const gallery=catalog?.vdm?.forms;if(!gallery)return;for(const item of gallery.variants||[]){const option=document.createElement('option');option.value=item.kind;option.textContent=item.label||item.kind;ui.vdmForm.append(option)}}
 async function loadVdmCase(){const serial=++requestSerial;clearError();ui.exportReview.disabled=true;try{const payload=await json(`/api/vdm/case/${encodeURIComponent(ui.vdmForm.value||'layered_ledge')}`);if(serial!==requestSerial||workspace!=='vdm')return;current=normalizeMeshCase(payload);currentEntry=null;surfaceRenderer.state.case=current;surfaceRenderer.state.caseId=current.caseId;surfaceRenderer.state.time=0;clearSelection();layerControls(current);evidence(current);ui.viewTitle.textContent='VDM 算法 · 岩壁';ui.viewSubtitle.textContent=`${current.label} · 固定保存网格`;ui.stats.textContent=`${current.mesh.vertices.length} vertices · ${current.mesh.triangles.length} triangles · protected ${current.mesh.protected.filter(Boolean).length}`;ui.vdmStatus.textContent=`已读取固定形态 · identity ${String(payload.identity||'').slice(0,16)}…`;ui.exportReview.disabled=false;surfaceRenderer.resetCamera?.();surfaceRenderer.render()}catch(error){if(serial!==requestSerial)return;ui.vdmStatus.textContent='保存形态读取失败；没有回退到假资料';showError(error)}}
 async function loadBasinComparison(){try{basinComparison=await json('/api/basin/comparison');renderBasinComparison()}catch(error){ui.basinLimitations.textContent=`固定盆地证据读取失败：${error.message}`}}
+async function loadMorphology(){
+    const serial=++requestSerial;clearError();ui.exportReview.disabled=true;ui.loading.classList.remove('hidden');
+    try{
+        const payload=await json('/api/morphology/case');
+        if(serial!==requestSerial||workspace!=='morphology')return;
+        current=normalizeMorphologyCase(payload);currentEntry=null;surfaceRenderer.state.case=current;surfaceRenderer.state.caseId=current.caseId;surfaceRenderer.state.time=0;clearSelection();layerControls(current);evidence(current);renderRiverCapability(current);ui.stats.textContent=`TD局部窗口 ${payload.terrain.height_m.length}×${payload.terrain.height_m[0].length} · 30m · 候选 ${Object.keys(payload.candidates).length} 类`;ui.ledger.textContent=JSON.stringify({source:payload.source,parent_graph_identity_sha256:payload.parent_graph_identity_sha256,parent_geometry_identity_sha256:payload.parent_geometry_identity_sha256,capabilities:payload.capabilities,candidates:Object.fromEntries(Object.entries(payload.candidates).map(([name,value])=>[name,{status:value.status,event:value.event?.event_type,material_ledger:value.material_ledger,storage_proxy_m3:value.storage_proxy_m3}]))},null,2);ui.morphologyStatus.textContent=`已读取真实TD候选包 · ${payload.interpretation}`;ui.exportReview.disabled=false;surfaceRenderer.resetCamera?.();surfaceRenderer.render()
+    }catch(error){if(serial!==requestSerial)return;showError(error)}finally{if(serial===requestSerial&&workspace==='morphology')ui.loading.classList.add('hidden')}
+}
 async function previewVdm(){clearError();const serial=++requestSerial;ui.exportReview.disabled=true;ui.vdmStatus.textContent='正在请求显式局部几何预览…';try{const form={kind:ui.vdmForm.value||'layered_ledge',amplitude_m:Number(ui.vdmAmplitude.value),wavelength_m:Number(ui.vdmWavelength.value),surface_curvature_m:Number(ui.vdmCurvature.value),end_elevation_difference_m:Number(ui.vdmEndDifference.value),seed:Number(ui.vdmSeed.value)};if(ui.vdmDirection.value.trim()!=='')form.extension_direction_degrees=Number(ui.vdmDirection.value);const payload=await json('/api/vdm/preview',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({form})});if(serial!==requestSerial||workspace!=='vdm')return;current=normalizeMeshCase(payload);currentEntry=null;surfaceRenderer.state.case=current;surfaceRenderer.state.caseId=current.caseId;surfaceRenderer.state.time=0;clearSelection();layerControls(current);evidence(current);ui.vdmStatus.textContent=`预览完成 · identity ${String(payload.identity||'').slice(0,16)}…`;ui.stats.textContent=`${current.mesh.vertices.length} vertices · ${current.mesh.triangles.length} triangles`;ui.exportReview.disabled=false;surfaceRenderer.resetCamera?.();surfaceRenderer.render()}catch(error){if(serial!==requestSerial||workspace!=='vdm')return;ui.vdmStatus.textContent='预览失败；没有回退到假资料';showError(error)}}
 async function loadCase(file){
     const serial=++requestSerial;stop();clearSelection();clearError();ui.exportReview.disabled=true;ui.loading.classList.remove('hidden');
@@ -117,7 +168,7 @@ async function loadCase(file){
         }
         if(serial!==requestSerial)return;
         current=candidate;current.renderArtifact=artifact.record;currentEntry=entries.get(file);surfaceRenderer.state.case=current;surfaceRenderer.state.caseId=current.caseId;surfaceRenderer.state.time=0;
-        layerControls(current);evidence(current);ui.caseStatus.textContent=statusLabel(current.evidence?.status||currentEntry?.status);
+        layerControls(current);evidence(current);renderRiverCapability(current);ui.caseStatus.textContent=statusLabel(current.evidence?.status||currentEntry?.status);
         ui.caseScope.textContent=current.evidence?.scope||'';ui.viewSubtitle.textContent=current.label||current.caseId;
         ui.timeSection.classList.toggle('hidden',!dynamic(current));
         if(dynamic(current)){
@@ -205,16 +256,57 @@ function selectAt(event){
  const [best,dist]=nearestPoint(plot.p||[],x,y);if(best<0||dist>24**2)return;const point=current.mesh?.vertices?.[best]||current.graph?.coords?.[best]||null;let sourceAudit=null;if(current.mesh?.sourceAudit){const audit=current.mesh.sourceAudit,at=(key)=>audit[key]?.[best]??null;sourceAudit=[{node:best,clampedXZ:at('clamped_xz_m'),indices:at('indices'),weights:at('weights'),positiveMask:at('positive_mask'),validLandSupport:at('valid_land_support'),protectedSupport:at('protected_support'),engineeringStripDomain:at('engineering_strip_domain'),dryCutBank:at('dry_cut_bank_mask')}]}return publishSelection({type:'mesh-node',index:best,sourceCoordinates:point,sourceAudit});
 }
 function pick(event){if(event.button===0)selectAt(event)}
+let undergroundPending=0,undergroundGenerating=false;
+async function loadUnderground(generate=false){
+    if(workspace!=='underground')return;
+    if(generate&&undergroundGenerating){showError(Error('暗河生成仍在进行；请等待'));return}
+    const serial=++requestSerial;
+    undergroundPending=serial;if(generate)undergroundGenerating=true;
+    clearError();current=null;clearSelection();ui.exportReview.disabled=true;
+    $('undergroundStatus').textContent=generate?'正在生成；旧几何已清除':'正在读取保存几何';
+    for(const control of $('undergroundControls').querySelectorAll('button,input,select'))control.disabled=true;
+    ui.loading.classList.remove('hidden');window.undergroundSurface?.clear();
+    try{
+        await import('./underground-surface.js');
+        if(serial!==requestSerial||workspace!=='underground')return;
+        window.undergroundSurface.begin();
+        const parameters={seed:Number($('undergroundSeed').value),lateral_amplitude_m:Number($('undergroundLateral').value),width_scale:Number($('undergroundWidth').value),roof_variation_m:Number($('undergroundRoof').value)};
+        if(generate&&(!Object.values(parameters).every(Number.isFinite)||!Number.isSafeInteger(parameters.seed)||parameters.seed<0||parameters.seed>4294967295||parameters.width_scale<0.8||parameters.width_scale>1.2||parameters.lateral_amplitude_m<0||parameters.lateral_amplitude_m>3||parameters.roof_variation_m<0||parameters.roof_variation_m>0.5))throw Error('生成参数超出限定范围');
+        const payload=await json(generate?'/api/underground/generate':'/api/underground/case',generate?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(parameters)}:undefined);
+        if(serial!==requestSerial||workspace!=='underground')return;
+        window.undergroundSurface.load(payload);
+        for(const [id,key] of [['undergroundSeed','seed'],['undergroundWidth','width_scale'],['undergroundLateral','lateral_amplitude_m'],['undergroundRoof','roof_variation_m']]){
+            if(Number.isFinite(payload.parameters?.[key]))$(id).value=payload.parameters[key];
+        }
+        $('undergroundStatus').textContent=`${generate?'新几何已生成':'保存几何已读取'} · geometry_checked`;
+        ui.exportReview.disabled=false;
+    }catch(error){
+        if(serial!==requestSerial||workspace!=='underground')return;
+        window.undergroundSurface?.clear();$('undergroundStatus').textContent='读取／生成失败或被拒绝；当前无成果';showError(error);
+    }finally{
+        if(generate)undergroundGenerating=false;
+        if(undergroundPending===serial){
+            undergroundPending=0;
+            for(const control of $('undergroundControls').querySelectorAll('button,input,select'))control.disabled=false;
+            $('undergroundGenerate').disabled=undergroundGenerating;
+        }else if(!undergroundPending){$('undergroundGenerate').disabled=undergroundGenerating}
+        if(serial===requestSerial&&workspace==='underground'){window.undergroundSurface?.finish();ui.loading.classList.add('hidden')}
+    }
+}
+function renderWorkspace(){if(workspace==='underground'){window.undergroundSurface?.render();return}surfaceRenderer.render()}
 function init(){
     document.querySelectorAll('[data-category]').forEach(tab=>tab.onclick=()=>setWorkspace(rememberedProjects[tab.dataset.category]));
     $('reviewProject').onchange=()=>setWorkspace($('reviewProject').value);syncNavigation(workspace);
     $('terrainVariant').onchange=()=>{if(workspace==='terrain')loadCase(ui.caseSelect.value)};
     ui.caseSelect.onchange=()=>loadCase(ui.caseSelect.value);ui.tdScenario.onchange=()=>{tdDirection=ui.tdScenario.value;setWorkspace('td')};
     ui.tdLayer.onchange=()=>surfaceRenderer.render();ui.vdmForm.onchange=()=>{if(workspace==='vdm')loadVdmCase()};ui.vdmSaved.onclick=loadVdmCase;
-    ui.view2d.onclick=()=>{surfaceRenderer.state.view='2d';ui.view2d.classList.add('active');ui.view3d.classList.remove('active');surfaceRenderer.render()};
-    ui.view3d.onclick=()=>{surfaceRenderer.state.view='3d';ui.view3d.classList.add('active');ui.view2d.classList.remove('active');surfaceRenderer.render()};
-    ui.verticalScale.oninput=()=>{surfaceRenderer.state.vertical=Number(ui.verticalScale.value);ui.verticalLabel.textContent=`${surfaceRenderer.state.vertical.toFixed(2)}×`;surfaceRenderer.render()};
-    ui.reset.onclick=()=>{if(!isSavedWorkspace())surfaceRenderer.resetCamera?.()};
+    ui.morphologyFeature.onchange=()=>{if(workspace==='morphology')surfaceRenderer.render()};ui.morphologyLayer.onchange=()=>{if(workspace==='morphology')surfaceRenderer.render()};
+    ui.view2d.onclick=()=>{surfaceRenderer.state.view='2d';ui.view2d.classList.add('active');ui.view3d.classList.remove('active');renderWorkspace()};
+    ui.view3d.onclick=()=>{surfaceRenderer.state.view='3d';ui.view3d.classList.add('active');ui.view2d.classList.remove('active');renderWorkspace()};
+    ui.verticalScale.oninput=()=>{surfaceRenderer.state.vertical=Number(ui.verticalScale.value);ui.verticalLabel.textContent=`${surfaceRenderer.state.vertical.toFixed(2)}×`;renderWorkspace()};
+    ui.reset.onclick=()=>{if(workspace==='underground'){window.undergroundSurface?.resetCamera();return}if(!isSavedWorkspace())surfaceRenderer.resetCamera?.()};
+    $('undergroundSaved').onclick=()=>loadUnderground();$('undergroundGenerate').onclick=()=>loadUnderground(true);
+    for(const id of ['undergroundSeed','undergroundWidth','undergroundLateral','undergroundRoof'])$(id).addEventListener('input',()=>{if(workspace==='underground')$('undergroundStatus').textContent='参数未应用；当前几何仍绑定上次 identity'});
     ui.timeRange.oninput=()=>setTime(Number(ui.timeRange.value));ui.stepBack.onclick=()=>setTime(surfaceRenderer.state.time-1);ui.stepForward.onclick=()=>setTime(surfaceRenderer.state.time+1);
     ui.play.onclick=()=>{if(timer!==null){stop();return}timer=setInterval(()=>{const next=surfaceRenderer.state.time+1;if(next>Number(ui.timeRange.max)){stop();return}setTime(next)},1200);ui.play.textContent='暂停'};
     ui.chartMetric.onchange=drawChart;ui.exportReview.onclick=exportReview;ui.vdmPreview.onclick=previewVdm;$('faultPreview').onclick=draftFault;$('faultSaved').onclick=()=>loadFaultCase();
@@ -229,6 +321,7 @@ const reviewReady=(async()=>{
     }catch(error){ui.bridgeStatus.textContent='桥接读取失败';showError(error)}
 })();
 function reviewRecord(){
+    if(workspace==='underground')return window.undergroundSurface?.reviewRecord()||null;
     const category=Object.keys(reviewCategories).find(key=>reviewCategories[key].projects.some(item=>item.id===workspace));
     if(workspace==='fault')return window.faultSurface?.isLoading()?null:window.faultSurface?.reviewRecord();
     if(isSavedWorkspace()&&(!window.savedSurface.reviewRecord()||window.savedSurface.isLoading()))return null;
@@ -237,9 +330,13 @@ function reviewRecord(){
         timeIndex:surfaceRenderer.state.time,timeSeconds:workspace==='td'?surfaceRenderer.state.time*3600:current.timeseries?.timeSeconds?.[surfaceRenderer.state.time],
         camera:{yaw:surfaceRenderer.state.yaw,pitch:surfaceRenderer.state.pitch,zoom:surfaceRenderer.state.zoom,vertical:surfaceRenderer.state.vertical,panX:surfaceRenderer.state.panX,panY:surfaceRenderer.state.panY},
         selection,layers:{...surfaceRenderer.state.layers},view:surfaceRenderer.state.view,status:current?.evidence?.status||'pending',
+        riverCapabilities:riverCapability(current),
+        dynamicRiverOverlay:dynamic(current)?{enabled:surfaceRenderer.state.layers.edges!==false,layer:'diagnostic drainage topology',semantics:'graph edges are drawn on the bed projection; they do not represent a fine-grid instantaneous water surface or channel width',endpointConvention:'positive signedEdgeQ flows from graph.edges[index][0] to graph.edges[index][1]',dischargeSemantics:current.timeseries?.dischargeSemantics||current.timeseries?.signedEdgeQSemantics||null}:null,
         terrainVariant:current.kind==='legacy'?current.legacyMode:undefined,
         evidence:current.evidence||null};
     return {...record,category,workspace};
 }
 init();
-window.surfaceReview={load:loadCase,getSelection:()=>workspace==='fault'?window.faultSurface?.reviewRecord()?.selection:isSavedWorkspace()?window.savedSurface.reviewRecord()?.selection:selection,isPlaying:()=>timer!==null,selectAt,reviewRecord,navigate:setWorkspace,categories:reviewCategories,ready:reviewReady};
+window.surfaceReview={load:loadCase,getSelection:()=>workspace==='underground'?window.undergroundSurface?.reviewRecord()?.selection:workspace==='fault'?window.faultSurface?.reviewRecord()?.selection:isSavedWorkspace()?window.savedSurface.reviewRecord()?.selection:selection,isPlaying:()=>timer!==null,selectAt,reviewRecord,navigate:setWorkspace,categories:reviewCategories,ready:reviewReady};
+const initialWorkspace=new URLSearchParams(location.search).get('workspace');
+if(initialWorkspace==='underground'||initialWorkspace==='morphology')setWorkspace(initialWorkspace);

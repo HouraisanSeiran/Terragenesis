@@ -24,7 +24,7 @@ from tools.prepare_hybrid_river_hydraulics_v7 import (
 SCHEMA = "td-hybrid-river-hydraulics-preparation-v8"
 FROZEN_CODE = {**EARLIER_CODE,
                "terrain_pipeline/hybrid_river_hydraulics_v7.py": "9350f8efd3adcadb45924f5829a33c5eb1bf7c048dba5a73d343a4911d63c758",
-               "tools/prepare_hybrid_river_hydraulics_v7.py": "51823e8b39c06369b1fdad34569201eb5d3a7a3da2ea2ffde7a0facccb851846",
+               "tools/prepare_hybrid_river_hydraulics_v7.py": "eee00d865bac45b932a181b3e75264b2d6c6c7ecbeb5178531e72e97b18abce2",
                "tests/test_hybrid_river_hydraulics_v7.py": "4df514105470ad1df7bf4c43382a90823382478d316813fb1d8acf736958cc66"}
 NEW_CODE = ("terrain_pipeline/hybrid_river_hydraulics_v8.py", "tools/prepare_hybrid_river_hydraulics_v8.py",
             "tests/test_hybrid_river_hydraulics_v8.py")

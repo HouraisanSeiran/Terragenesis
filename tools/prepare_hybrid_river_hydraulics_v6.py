@@ -33,14 +33,14 @@ FROZEN_CODE = {
     "terrain_pipeline/hybrid_river_sections_v2.py": "a2dc77c77eee42620c8dd43822b48a40a30ba6dec8a957b8c25caed4ba4fe4ac",
     "tools/prepare_hybrid_river_hydraulics_v2.py": "bae884207976be09c341e3dfdf148cc4bd53ea63681b7492e5bbd9ea031b2829",
     "tests/test_hybrid_river_sections_v2.py": "b148f8c26c16721f4c187a714f8184452b6ba640ace21eca589f00515573ab8b",
-    "terrain_pipeline/hybrid_river_hydraulics_v3.py": "472f3114a235d8c68fe449b4a514beceb8069853722abeb1664c822473a7311d",
-    "tools/prepare_hybrid_river_hydraulics_v3.py": "a5a39e40b89eee6de525f50b3475f34e2036f4737f3f39dd061ccb389f0c9301",
+    "terrain_pipeline/hybrid_river_hydraulics_v3.py": "8ef6cf10d292accc0df83fd3a6f5dd1c1fce7a6d2afba4463813fd5a917fa296",
+    "tools/prepare_hybrid_river_hydraulics_v3.py": "c7f92d6dbfd40538f4b820731b1d9998810f8c307988caa2bc279c41bb73a048",
     "tests/test_hybrid_river_hydraulics_v3.py": "d1e6dd64db328de47c21d586363781ccfa2a7b50f850131e02280e0a81f81b2a",
     "terrain_pipeline/hybrid_river_hydraulics_v4.py": "18b34e7e505b786e3a8f0469ff9ce44fd337090eb9e71c7064167078e9c7cdcd",
-    "tools/prepare_hybrid_river_hydraulics_v4.py": "b04920036fcc17ce7a3a681df1e1beb96efc5faf2aa5c2ca810e507e18d2465e",
+    "tools/prepare_hybrid_river_hydraulics_v4.py": "c5052f94a3562f2f31648ffed9febc15a84d674f5981f7b368a23de3697d1a22",
     "tests/test_hybrid_river_hydraulics_v4.py": "afd1c59e756dfd7f9fa91b61adabc8fc5088ed346be7462b33e6aa7c5b74fb64",
     "terrain_pipeline/hybrid_river_hydraulics_v5.py": "b170ddc31f62cf0c2b369be1ac5cec2633cc33ffa636aefdc6295536e1153443",
-    "tools/prepare_hybrid_river_hydraulics_v5.py": "7c9430b42d43f31a3f249ef4dd956aa2365e5bcd82ce30f60b91666e1b8100d1",
+    "tools/prepare_hybrid_river_hydraulics_v5.py": "e39f5f6cbde34580bd0c948b3869f23131292ecea27267cf1c3b68521fd70260",
     "tests/test_hybrid_river_hydraulics_v5.py": "2bb9c3f1962e461eb4d8fb74cef2b49136d16dce334e1d5b44d2b8679a2d99eb",
 }
 NEW_CODE = ("terrain_pipeline/hybrid_river_hydraulics_v6.py", "tools/prepare_hybrid_river_hydraulics_v6.py", "tests/test_hybrid_river_hydraulics_v6.py")

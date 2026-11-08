@@ -1,5 +1,13 @@
 # 现行文档入口
 
+> **`.scratch/` 链接说明（2026-11-08）**：仓库只收录算法、测试、文档与图集索引。本地任务目录 `.scratch/<feature>/`（`spec.md`、`progress.md`、`review.md` 与验收证据）**不入库**，是有意的边界，见 [../CONTRIBUTING.md](../CONTRIBUTING.md#版本管理2026-11-08-收口) 与 [source-publication.md](source-publication.md)。
+>
+> 因此 `docs/` 下部分文件中的 `.scratch/...` 链接**只在本地工作区可打开，在 GitHub 上会返回 404**；这是预期行为，不代表文档缺失或结论无据。需要追溯时的替代读法：
+>
+> - 结论与摘要 → 看本文档索引列出的现行文档，或 [../TODO.md](../TODO.md) 的对应日期条目；
+> - 证据本身 → `verification/` 与 [验收图片/目录.md](../验收图片/目录.md)（索引入库，二进制留在工作区）；
+> - 任务原文 → 在本地工作区打开 `.scratch/<feature>/`。
+
 进度与任务总览仍以根目录 [TODO.md](../TODO.md) 为准；本页只整理**当前仍应优先阅读**的文档。过时报告已迁入 [archive/](archive/README.md)，不作为任务发布依据。
 
 ## 必读
@@ -44,7 +52,11 @@
 
 | 文档 | 用途 |
 | --- | --- |
-| [handovers/](handovers/) | 织梦 / RPG DEM 等跨项目交接 |
+| [handovers/ocean-monsoon-climate-map-requirements-20261108.md](handovers/ocean-monsoon-climate-map-requirements-20261108.md) | 板块→洋流/季风→气候分区→地图景观的详细需求、真实资料与六项实施任务（仅需求已完成） |
+| [handovers/textingdream-terrain-import-20261108.md](handovers/textingdream-terrain-import-20261108.md) | 织梦地形算法迁入快照、适用性判定与回迁建议（现行） |
+| [handovers/dream-world-terrain-requirements-20261103.md](handovers/dream-world-terrain-requirements-20261103.md) | 织梦消费侧世界 DEM / 水系需求 |
+| [handovers/](handovers/) | 其余 RPG DEM 等跨项目交接 |
+| [../third_party/textingdream-terrain-20261108/SOURCE.md](../third_party/textingdream-terrain-20261108/SOURCE.md) | 织梦地形源码冻结快照说明（非默认生产） |
 | [../vantaloom.md](../vantaloom.md) | 工作区接手与目录索引 |
 | [../.vantaloom/memory/](../.vantaloom/memory/) | 跨会话决策记忆（勿当规格全文） |
 

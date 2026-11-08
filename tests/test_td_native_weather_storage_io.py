@@ -10,10 +10,12 @@ import zipfile
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, save_bundle, load_bundle
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy, save_basin_hierarchy
-from terrain_pipeline.td_basin_source import make_td_source, save_td_source
-from terrain_pipeline.td_native_storm_forcing import generate_native_storm, fixed_storm
+from terrain_pipeline.common_infra import file_sha256, identity, save_bundle, load_bundle
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_topology import save_basin_hierarchy as save_basin_hierarchy
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_storage import save_td_source as save_td_source
+from terrain_pipeline.climate_forcing import generate_native_storm, fixed_storm
 from terrain_pipeline.td_native_weather_storage_io import load_native_weather_storage_index
 
 
@@ -48,7 +50,7 @@ class NativeWeatherStorageIoTests(unittest.TestCase):
             params = fixed_storm(source, direction)
             result = generate_native_storm(self.source_record, parameters=params)
             rain_path = self.root / (direction + ".npz")
-            from terrain_pipeline.td_native_storm_forcing import save_native_storm
+            from terrain_pipeline.climate_forcing import save_native_storm
             save_native_storm(rain_path, result)
             weather_cases[direction] = dict(record=dict(path=str(rain_path), expected_sha256=file_sha256(rain_path), expected_identity=result["identity_sha256"]), plan=result["metadata"]["plan"], forcing_identity=result["metadata"]["forcing_identity"])
             self.rains[direction] = result["arrays"]["rain_mm_h"]
@@ -132,7 +134,7 @@ class NativeWeatherStorageIoTests(unittest.TestCase):
 
     def test_partial_page_and_shape_rejected(self):
         page = json.loads((self.root / "index.json").read_text())["scenarios"]["eastward"]["pages"]["2.5"][0]
-        from terrain_pipeline.mountain_source_adapter import load_bundle
+        from terrain_pipeline.common_infra import load_bundle
         bundle = load_bundle(page["storage"]["path"], expected_sha256=page["storage"]["expected_sha256"], validator=lambda value: None)
         arrays = {name: value.copy() for name, value in bundle["arrays"].items()}; arrays["rain_mm_h"] = np.zeros((2, 3))
         Path(page["storage"]["path"]).unlink(); page["storage"] = write_bundle(Path(page["storage"]["path"]), arrays, bundle["metadata"])

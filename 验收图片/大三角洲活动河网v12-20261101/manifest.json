@@ -1,0 +1,94 @@
+{
+  "schema": "large-delta-publication-candidate-v1",
+  "status": "game-grade initial terrain/network accepted by main; explicit derived overlay, not default-world integration",
+  "source_identity": "c751a09a6f02e8c336b6b9b8fb4b11b5dc67386e9a8470b0b1d90858bf1ffb72",
+  "world_seed": 20261020,
+  "mouth": 5879,
+  "terrain_basis": "terrain-product-v2 actual native TD accommodation and finite geological initialization",
+  "terrain_sha256": "a777962e5599db5ce1ee6c6764c3afc8c60364a437be4c1d74393d910e6f4d7d",
+  "forcing_sha256": "66d986275ba343b9425e651389e9f06d9a4f52f0f09b9fa422a5df9ba4dafec1",
+  "algorithms": [
+    "terrain-product-v2",
+    "large_delta_active_network-v12: absolute-coordinate corridors, locally constrained rasterized curves, prescribed stages and steady kinematic settling"
+  ],
+  "coverage_status": "partial",
+  "grid": {
+    "origin_xz_m": [
+      -12570.0,
+      -59040.0
+    ],
+    "spacing_m": 30.0,
+    "shape_zx": [
+      2000,
+      2000
+    ],
+    "coordinates": "cell centres, x east, z south, metres"
+  },
+  "event": {
+    "duration_days": 30,
+    "inlet_q_m3_s": 27.657844334983547,
+    "known_local_catchment_km2": 2229.4287,
+    "external_water_and_sediment": "unknown, excluded",
+    "water_input_m3": 71689132.51627736,
+    "water_output_m3": 71689390.93013307,
+    "initial_water_storage_m3": 449422.15967906127,
+    "final_water_storage_m3": 449163.74582333316,
+    "active_solid_m3": 161.61942082569308,
+    "deposited_solid_m3": 156.03096703587897,
+    "mobile_solid_m3": 0.08695362643621088,
+    "exported_solid_m3": 5.501500163377942
+  },
+  "solid_ledger_m3": {
+    "formation_supply": 693094416.2372826,
+    "formation_unused": 24581983.263952136,
+    "formed_remaining_after_construction": 668080176.233199,
+    "recycled_formation_cover_construction_stock": 432256.74013153795,
+    "original_material_construction_stock_assumed_porosity_0_4": 75900.9972047183,
+    "active_source": 161.61942082569308,
+    "active_deposited": 156.03096703587897,
+    "active_mobile": 0.08695362643621088,
+    "active_export": 5.501500163377942,
+    "combined_inputs": 693170478.8539081,
+    "combined_outputs": 693170478.8539081,
+    "residual": 0.0
+  },
+  "consumer": {
+    "terrain_archive": "../../.scratch/large-delta-20261101/terrain-product-v2/terrain.npz",
+    "network_archive": "../../.scratch/large-delta-20261101/active-network-v12/network.npz",
+    "original_bed": "terrain:originalbed",
+    "formed_bed": "terrain:derivedbed",
+    "final_ocean": "terrain:final_sea_connected_ocean",
+    "valid": "terrain:valid",
+    "after_event_bed": "network:bed_m",
+    "river_surface": "network:water_surface_m",
+    "river_depth": "network:water_depth_m",
+    "sections": "network:centerline_sections",
+    "network_topology": "network:parent",
+    "caveat": "Raster channel and event changes occupy whole sample cells; analytic section widths and solid ledger are authoritative for physical volumes."
+  },
+  "figures": [
+    {
+      "path": "overview.png",
+      "terrain_basis": "terrain-product-v2 actual native TD accommodation and finite geological initialization",
+      "source_identity": "c751a09a6f02e8c336b6b9b8fb4b11b5dc67386e9a8470b0b1d90858bf1ffb72",
+      "coverage_status": "partial"
+    },
+    {
+      "path": "delta-detail.png",
+      "terrain_basis": "terrain-product-v2 actual native TD accommodation and finite geological initialization",
+      "source_identity": "c751a09a6f02e8c336b6b9b8fb4b11b5dc67386e9a8470b0b1d90858bf1ffb72",
+      "coverage_status": "partial"
+    },
+    {
+      "path": "junction-detail.png",
+      "terrain_basis": "terrain-product-v2 actual native TD accommodation and finite geological initialization",
+      "source_identity": "c751a09a6f02e8c336b6b9b8fb4b11b5dc67386e9a8470b0b1d90858bf1ffb72",
+      "coverage_status": "partial"
+    }
+  ],
+  "forcing_archive": "../../.scratch/large-delta-20261101/active-source-v1/forcing.npz",
+  "network_metrics": "../../.scratch/large-delta-20261101/active-network-v12/metrics.json",
+  "coverage_description": "124.1595 km2 linked newly dry area; 24.9237 km endpoint separation along 36.54 km connected path; narrow connections, not a uniformly broad fan",
+  "main_review": "../../.scratch/large-delta-20261101/main-review.md",
+  "main_checks": "../../.scratch/large-delta-20261101/main-final-checks.json"
+}

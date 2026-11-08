@@ -12,7 +12,7 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 
 
 def write_json(path, value):
@@ -106,7 +106,7 @@ class Pipeline:
 
     def baseline(self):
         weather = self.configuration["weather_index_record"]
-        result = self.call("baseline-run", "tools/verify_td_native_weather_storage_v10.py",
+        result = self.call("baseline-run", 'tools/verify_basin_storage_execution.py',
             ["--weather-index", weather["path"], "--weather-index-sha256", weather["expected_sha256"]])
         run = Path(result["run"]).resolve(strict=True)
         self.update(baseline_run=str(run))

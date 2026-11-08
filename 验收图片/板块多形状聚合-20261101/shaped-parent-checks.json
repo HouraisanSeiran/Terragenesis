@@ -1,0 +1,24 @@
+{
+  "identity": "b4c8bbdba29111b8c3ba3270e2f0d3a4fed3544655249fa07c506654b8ae6af9",
+  "deterministic_regeneration": true,
+  "old_products": [
+    {
+      "path": ".scratch\\plate-formation-coast-20261101\\compact-run-v3-final\\product.npz",
+      "identity": "97a7fc402e7d5d4ee4a0800f8a3b19430d634bb3c3a434c104ca2c7ce7bcf7c6",
+      "sha256": "547a5cf60ea567d2b76c149a1b127f7bafb90e724768f8097ab5649d8b5bdf6a"
+    },
+    {
+      "path": ".scratch\\plate-formation-coast-20261101\\formation-run-v2\\product.npz",
+      "identity": "9c0fc20c3c5d45174befd32f2da968a3906fbbed38d2e4cc1d020570c2e03269",
+      "sha256": "16473bafb55fab9ea0058b7cbea697800e721795f264d0ecea7b3c652c07ec36"
+    },
+    {
+      "path": ".scratch\\world-generation-sequence-20261101\\macro-run-v2\\product.npz",
+      "identity": "f17718232663ebe876b4a7bbedb77069bac83f4fda7f886e8f61842e71785ab3",
+      "sha256": "62960844e58a30d7d97ede4b3f6f262bf5243919e8ad606e41e070f0712ecadd"
+    }
+  ],
+  "old_core_and_micro_sites_unchanged": true,
+  "initial_crust_and_velocities_unchanged": true,
+  "max_relative_budget_residual": 4.3425550958521703e-16
+}

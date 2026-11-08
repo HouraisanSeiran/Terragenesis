@@ -11,6 +11,7 @@ class GridInput:
     origin: tuple[float, float]
     runoff: np.ndarray
     outlet_mask: np.ndarray
+    world_seed: int = 20261020
 
     def __post_init__(self) -> None:
         height = np.asarray(self.height, dtype=np.float64)
@@ -24,6 +25,9 @@ class GridInput:
             raise ValueError("spacing_blocks must be finite and positive")
         if len(self.origin) != 2 or not np.isfinite(self.origin).all():
             raise ValueError("origin must contain two finite world coordinates")
+        if (not isinstance(self.world_seed, (int, np.integer))
+                or isinstance(self.world_seed, (bool, np.bool_))):
+            raise ValueError("world_seed must be an integer")
         if not outlets.any():
             raise ValueError("At least one explicit outlet is required")
         height = height.copy()

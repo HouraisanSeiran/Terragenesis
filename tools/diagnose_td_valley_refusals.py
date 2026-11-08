@@ -7,9 +7,9 @@ from pathlib import Path
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.surface_rivers.metric_channel_geometry import _segment_box_distance
-from terrain_pipeline.surface_rivers.metric_network_geometry import load_network_geometry_plan
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.channel_geometry import _segment_box_distance
+from terrain_pipeline.channel_geometry import load_network_geometry_plan
 from terrain_pipeline.surface_rivers.metric_product import load_diagnostic_product
 from tools.verify_td_river_geometry import TD_DIRECTORY, TD_PRODUCT_ID, TD_PRODUCT_SHA, terrain_from_product
 

@@ -8,9 +8,9 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline import mountain_depression_geometry as geometry
-from terrain_pipeline import mountain_pool_network as pools
-from terrain_pipeline.mountain_lake_experiment import first_lake_ownership
+import terrain_pipeline.lake as geometry
+import terrain_pipeline.lake as pools
+from terrain_pipeline.lake import first_lake_ownership as first_lake_ownership
 from tools.verify_mountain_rainfall import load_source, response_units
 
 

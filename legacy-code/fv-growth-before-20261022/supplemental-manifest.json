@@ -1,0 +1,13 @@
+{
+  "schema": "FV-legacy-diagnostic-supplement-v1",
+  "scope": "Post-restart supplemental capture of original diagnosis tool; not part of original checkpoint implementation signatures",
+  "base_manifest_sha256": "f76ddcec2d4523ae9ef31f5da7ae03c1eb5e4aaa267797b590310940c739da70",
+  "files": [
+    {
+      "original_path": "tools/diagnose_fv_mpm_rejection.py",
+      "archive_path": "supplemental/tools/diagnose_fv_mpm_rejection.py",
+      "bytes": 11877,
+      "sha256": "c87c6880f0f8a5bd4600603218edd56e8c548678cce838e3a740923a713802d4"
+    }
+  ]
+}

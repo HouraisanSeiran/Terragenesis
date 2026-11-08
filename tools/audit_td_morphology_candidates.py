@@ -5,11 +5,13 @@ from pathlib import Path
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, load_bundle
-from terrain_pipeline.surface_rivers.metric_contracts import TerrainGrid
+from terrain_pipeline.common_infra import file_sha256, identity, load_bundle
+from terrain_pipeline.common_infra import TerrainGrid
 from terrain_pipeline.surface_rivers.metric_delta_product import load_delta_candidate_product
 from terrain_pipeline.surface_rivers.metric_morphology_events import event_from_record
-from terrain_pipeline.td_basin_source import PRIMARY_PATH, PRIMARY_SHA256, load_td_source
+from terrain_pipeline.basin_storage import PRIMARY_PATH as PRIMARY_PATH
+from terrain_pipeline.basin_storage import PRIMARY_SHA256 as PRIMARY_SHA256
+from terrain_pipeline.basin_storage import load_td_source as load_td_source
 
 
 SCHEMA = "td-real-morphology-candidate-set-v1"

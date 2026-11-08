@@ -1,0 +1,959 @@
+{
+  "schema": "large-delta-suite-case-v1",
+  "source": {
+    "schema": "large-delta-regional-source-v1",
+    "world_seed": 20261020,
+    "plate_identity": "b4c8bbdba29111b8c3ba3270e2f0d3a4fed3544655249fa07c506654b8ae6af9",
+    "shape_zx": [
+      256,
+      256
+    ],
+    "origin_xz_m": [
+      -200760,
+      -98880
+    ],
+    "spacing_m": 600,
+    "sea_m": 0,
+    "source_identity": "e86b76b114fd7d3092349c0e481c90821bd5ab4ccfdd216225f23861da1c093c",
+    "sampling": "absolute native centres, stride 20; no coordinate rescaling",
+    "files_sha256": {
+      "bed_m": "35626bb94e11a587e1715ca7023155f4543de49eab926d7bc4e1b5363c776a43",
+      "valid": "72bf42bd9c376d68820d774b6ce353f9fd4f71523379d25ad5aca0af4510e04e",
+      "ocean": "92cc13ada33f36699bcdce039c2312d5c0fc0ba4f52f9c9ba51d5e9b5565e818",
+      "unknown_wet": "f6f9b10752d4ed0f6cc9b9a1055a73a44a00cc3021e7ad54576d40c9d17b7b0e"
+    },
+    "pages": [
+      {
+        "page_xz": [
+          -8,
+          -4
+        ],
+        "identity": "d75dd4d3514495dcda0411ac1673b0abd2c931fc18320efb84d5cb7a4d9d2a3f",
+        "raw_td_sha256": "fac1d9407c941a95a65486b54bd33c74f8a2c1eb7b1664a6dc4971280d296ee2",
+        "manifest_sha256": "0ffe9fd02135e5af5cdee8055876f2d501cca2a97b15916dcafef918fe112db8",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-8_-4"
+      },
+      {
+        "page_xz": [
+          -7,
+          -4
+        ],
+        "identity": "145be14b3fe0ac7327ad79ea58b95aadaa53fb05afa3da2bea6c21aa54430352",
+        "raw_td_sha256": "606a406e78bab95c45b35233edc4c8d60ed52a9ddc7609216a2c25378a0efbe8",
+        "manifest_sha256": "50bcf380c2e77aaef6fc6553072fce8d2eb81b94f73734dd95cfd0095bbb147d",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-7_-4"
+      },
+      {
+        "page_xz": [
+          -6,
+          -4
+        ],
+        "identity": "925446956df94ca458fc477fb5128909acafd0c229aa315bf69091f1062a4967",
+        "raw_td_sha256": "44d4989d74126c4b72bafc726185c88d9d3c0d346a71af6991db17a50e832957",
+        "manifest_sha256": "8af79b6c9201bed32f063e5c125de6b9e87dd4fb5890b97792e0c6a3dca9cf79",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-6_-4"
+      },
+      {
+        "page_xz": [
+          -5,
+          -4
+        ],
+        "identity": "f86684257853abdbc64f601fbc858c90ff3d9fc0b7706564334e43f8ccf42753",
+        "raw_td_sha256": "bc2a0b665513e77e37dc3fcd13231109345f6a5504d0c99aa889ccad2583b53a",
+        "manifest_sha256": "60c7f04c4403c3b74d6a0e1b4e99210c7f90bd820f3c4aa159041b5acb71a4cb",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-5_-4"
+      },
+      {
+        "page_xz": [
+          -4,
+          -4
+        ],
+        "identity": "55a744992aac254451c497ac0612695106543c6e6ad9db718728cc0de3b88ecd",
+        "raw_td_sha256": "80d9509cea9712f116f7a2ca8f9af4917aeef9c6992ed3539d0ce72749455fbb",
+        "manifest_sha256": "e2b0fbe5db3951a0a99deb8452337283a719eda838eed14f7640f2291aaed0b5",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-4_-4"
+      },
+      {
+        "page_xz": [
+          -3,
+          -4
+        ],
+        "identity": "4bf59a2e766ff2d422b46625b840faac7b22b9bc6503d0099e59e4acf8fc9fab",
+        "raw_td_sha256": "a50d880cb4f323a1a29d9e837e66221883e19f39809545e75266f78e3313f470",
+        "manifest_sha256": "ce1a832e7b9343e4f7308273c77bcb491717fa14dc017a5b09e8263eae4800f0",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-3_-4"
+      },
+      {
+        "page_xz": [
+          -2,
+          -4
+        ],
+        "identity": "af27e1011a476608d45649ddfeccf9f2521ac66c78792053e00ea7542ab1e3a1",
+        "raw_td_sha256": "c13bee6c27e0520487d2c7937e4156a30e8d0e48dddd9762709bbd586adf213d",
+        "manifest_sha256": "d8bac0fd1b7150f254ca98a0d12fec6d56c898a8fb719b781269dab5e2d6e8d0",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-2_-4"
+      },
+      {
+        "page_xz": [
+          -1,
+          -4
+        ],
+        "identity": "f11031459bd3c9d862d8ca3133b8dfbea7ba1563c8536d5f6c9486899cd6e489",
+        "raw_td_sha256": "1f748c787f8354ded0643f490953b508fdf3e8f627033a4c5d7783c6f4413fa4",
+        "manifest_sha256": "60869847ea70f74b87efbf7fec502b648cf495b75c10090a248964125f710bc0",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-1_-4"
+      },
+      {
+        "page_xz": [
+          0,
+          -4
+        ],
+        "identity": "848365ce082074f9fe78d2ea6b0fdd2a76e16053266950a746c477d22122fb0c",
+        "raw_td_sha256": "cf471ad0b434c0b7dd1866f9e8971ff647e9e777d66df24b8f3b11166998e37b",
+        "manifest_sha256": "ea5632ceb74398d69291c481de49841957d50a2ebb681c91b7af6ce784d93984",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_+0_-4"
+      },
+      {
+        "page_xz": [
+          1,
+          -4
+        ],
+        "identity": "61a5faff87d38d7eb538b35015dc939eafd6728f7a5e4156b779ba45e71b8059",
+        "raw_td_sha256": "dffd65564b7777151a4f4e5adb03428446bcf8463321fa54ebcae9295a8f6801",
+        "manifest_sha256": "c40df746d6e13949ff68d1f4866c5f6846cb1f6271e63bf35a367a9fc3954001",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_+1_-4"
+      },
+      {
+        "page_xz": [
+          2,
+          -4
+        ],
+        "identity": "af26c18a88e23561023f8d30df357b419e2d1da954675a2402fc208764a855fd",
+        "raw_td_sha256": "691548e70d01c1afecfa859ad7ceab60f7bff542d47970d7bd066807a371928f",
+        "manifest_sha256": "c9d8d0fc44bd566d59bd97fd9cd266178995312a324a6112b2b2e898791ac3c7",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_+2_-4"
+      },
+      {
+        "page_xz": [
+          -8,
+          -3
+        ],
+        "identity": "38fdc6de57d4655932b51512bec0a3748f75876055624e41c64c78162cc6e1f4",
+        "raw_td_sha256": "3a609efcae96d6212944b4df798308ce954f77890228572d40485541034de782",
+        "manifest_sha256": "e10e611c501fecb46437a8f38a5a745de9682acd9ee1ec2cf9e6bf407e3f0dfd",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-8_-3"
+      },
+      {
+        "page_xz": [
+          -7,
+          -3
+        ],
+        "identity": "d2831fef3ef5618db194bcd8a42663f0bd2c80286751df8a6ef9785e5394f0c6",
+        "raw_td_sha256": "95e1e32a876bcda6fa1bc8ee45cd8fbee833901b06bfa7c631bdb680f863758f",
+        "manifest_sha256": "8d79de3a251542fed0ae307b53ca5faf7e1d9c3dee4c011a7d14bb81b6cf392a",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-7_-3"
+      },
+      {
+        "page_xz": [
+          -6,
+          -3
+        ],
+        "identity": "827d75953450911ebc64870cb1fd6ce1f324f0bee2d76d45265e7a4b31c30b3f",
+        "raw_td_sha256": "e4758ceaeda72e2159a54ce38f42ca4a375071a5cc218a21b5637d79baa1f8ef",
+        "manifest_sha256": "1505ec48c0e12208df1261614a0354c13fae04356dddfabaeb8228af4ffee94d",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-6_-3"
+      },
+      {
+        "page_xz": [
+          -5,
+          -3
+        ],
+        "identity": "7abd12dcc7ff17c5e5bf1c75fc87d5221cfa188fbed3b36c3d86de7a82ae7cbc",
+        "raw_td_sha256": "8d1f3e0ce9cbcac48c363807ab27a4c2b43fbc080c3da8db0ee2a2afdb90d55b",
+        "manifest_sha256": "1a48d5ca6a0bee03bb6ebb8640dab4eea2bae192c676b8245cac3112a9b1d755",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-5_-3"
+      },
+      {
+        "page_xz": [
+          -4,
+          -3
+        ],
+        "identity": "eff5b4e52ffb3c5a7e94d123da278a18fe90498026a1debb1128c80007f151bc",
+        "raw_td_sha256": "a867a347ccfd47c8ca77937d6e7b50522b0dcbe2865dacf72057885f3abef787",
+        "manifest_sha256": "2fef564caaa2229fd18f28866e93aedf2992f3fb773684a8d14b42b8f6a6e49e",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-4_-3"
+      },
+      {
+        "page_xz": [
+          -3,
+          -3
+        ],
+        "identity": "303e82249e1dc9f4d40d41de1424619cff80ae053946dcd5771a7ee236a739b3",
+        "raw_td_sha256": "f66473e0c6973fad83a8b251e30cb1224909e293c65adc91988d9f52d2f93c8e",
+        "manifest_sha256": "40de1697bbd484b32ea94906d4e847eb8c2e6780fc52431bbe0f60ddeb2777d9",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-3_-3"
+      },
+      {
+        "page_xz": [
+          -2,
+          -3
+        ],
+        "identity": "578d061603c0890a2c1ef2029eba05fb45dd7ec96cae622d8bc5bb181f92e03d",
+        "raw_td_sha256": "c00fd694c1686024cdb5697f3c7eb63720daa4599730423ec8295373b1d3c2c6",
+        "manifest_sha256": "99f81616838b8011e8a2753bd162971383eef3b681410e30d9bc6119f64164cb",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-2_-3"
+      },
+      {
+        "page_xz": [
+          -1,
+          -3
+        ],
+        "identity": "a65036bb926885d4eed5cd503ff3a72cbc4ef3b84d51c82af13fca930e790b0b",
+        "raw_td_sha256": "9435bd0b3df52834c273284c0cf3cf8bfec685755c6489a9f2c69285ba8117cc",
+        "manifest_sha256": "9ebce2debf19b16492bd87e5cc1c084d9d3770a1fcfef832ee89553c6adbf0b1",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-1_-3"
+      },
+      {
+        "page_xz": [
+          0,
+          -3
+        ],
+        "identity": "40e3dd8fb1b32f37e197bc800ac03aaee88f3eb41d074a6737714da8189d842e",
+        "raw_td_sha256": "e5a9f4abe2b9d7623ef3fe569bb2a6bd25eaa2748e7cced67c70119ee6ddf6fa",
+        "manifest_sha256": "5de3a0a332a2e1a5f5f66976895bc38f4065471c5bea031ba3914325a0dbb971",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_+0_-3"
+      },
+      {
+        "page_xz": [
+          1,
+          -3
+        ],
+        "identity": "92b6cbcd0099ede1d20702bf2bae913c7cbe7b78770cf2ad5ba01d55dc8b99b0",
+        "raw_td_sha256": "4a58f35ac5cdcbef28b114b4485e271a93bce12c7a88abab88aa4e986c37ea32",
+        "manifest_sha256": "621f6903f224532c56cdce110bfa463156214e4ce33b0237862a96500fc727eb",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_+1_-3"
+      },
+      {
+        "page_xz": [
+          2,
+          -3
+        ],
+        "identity": "cc7d1bc4c9f8a799f1ff5b2796126b3b2fd3a0f770e7484977709d9dbf6fb36d",
+        "raw_td_sha256": "9d4a55b0d6fc4785d61b7723a818570fe76a7c3c63a78abf2161783fad9380b5",
+        "manifest_sha256": "f3fb8691a44db47d3979eb81adc9eac7ffa40f3a4e5483a47dec819a60e74e4f",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_+2_-3"
+      },
+      {
+        "page_xz": [
+          -8,
+          -2
+        ],
+        "identity": "6d3a6f29d27b64610264670d5eb92cb7c4f885021982e13a6a429516cf35991c",
+        "raw_td_sha256": "1f531e9c7448af24895b479efd171f1f12ffd20d691bf4373dc5172bce79b515",
+        "manifest_sha256": "7fe6c7b6690daa12b49f3adab1cce41fae18e97b316aa0477144300a8d3f5b7f",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-8_-2"
+      },
+      {
+        "page_xz": [
+          -7,
+          -2
+        ],
+        "identity": "e97b9f3d47eff51bc867c6c606ce69eca285a808e01d5a656a68c373117c019c",
+        "raw_td_sha256": "fb71da8ebc8ce2f8f229d37fab23bb0193043925822c290d098029caa2904cd5",
+        "manifest_sha256": "ece3ed9f4174d57af0a7ef1320ee338772a87c4e4b276fa0aae6065594d4ab38",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-7_-2"
+      },
+      {
+        "page_xz": [
+          -6,
+          -2
+        ],
+        "identity": "422d063828a072910cb7e090849f52d95e35d7cb77f30e2a996f0831674fb376",
+        "raw_td_sha256": "1d4070f3582ca2cd76195e7fb0ca283bfa58aa04e4751b0a9986034b6f0786b1",
+        "manifest_sha256": "fd19b368a46f2721d55e54a8365aeb2ad96cf2307a898ee9f9f7c12b16115535",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-6_-2"
+      },
+      {
+        "page_xz": [
+          -5,
+          -2
+        ],
+        "identity": "c2f7869ed597ea4b8ba5aa7225da727905e8fabc2367e998400e61ebf2fb0ad0",
+        "raw_td_sha256": "0d7e9694dd0d2136d0e9314a30caadb61a0226de3deb9ac6778db22d7e1968ba",
+        "manifest_sha256": "fef1c5976380d74cf94419a6eb7b8e3ffcaf948d47ac5e615e48ab4fecd03d81",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-5_-2"
+      },
+      {
+        "page_xz": [
+          -4,
+          -2
+        ],
+        "identity": "440c4ab725da3740a7c4464790c6943aa49da52047a1afaa5c35d120e47f8e98",
+        "raw_td_sha256": "5737dea6014ba7b691b691276e816fe3dfe7cc142d35965cf538a000be819342",
+        "manifest_sha256": "2b2d36f50386fa9c8d53454de0d13e2751579ec72a9026d47108903066d65bc2",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-4_-2"
+      },
+      {
+        "page_xz": [
+          -3,
+          -2
+        ],
+        "identity": "cb09fad9d37de3f0aed5bf12791c364a27160efb6cafcc76be66d05664dab060",
+        "raw_td_sha256": "fffd6ba55e436c1ea07d2e4590282cf1260cc28c541647d4e0fe2e1deed659f0",
+        "manifest_sha256": "367eb5761922982c94a7d927a3a3d7c8dd3f2bbd1aaadce1cca12c08b55799d8",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-3_-2"
+      },
+      {
+        "page_xz": [
+          -2,
+          -2
+        ],
+        "identity": "f9df9b4abedfd77d9df72d3bfdb21bc71af51e1607f9aca936d2bc7d613dc521",
+        "raw_td_sha256": "ac73028bf15675ab1e4a40f27d374c7d4b980d333f0f154a40434cb0cc528a0b",
+        "manifest_sha256": "d0b216f7da4fc76167751320335e8db5b97b48e95349589d9644a3b8a2dcf782",
+        "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-2_-2"
+      },
+      {
+        "page_xz": [
+          -1,
+          -2
+        ],
+        "identity": "c6a53a9a8da7e64b1552b3e55bec4160b1bab2fb1168aa728198fbe6fcb9fbf9",
+        "raw_td_sha256": "1cef16361bdee79249226e94b3c168c3f4b9bd09b2fbf2b2bcf71b9624cd3893",
+        "manifest_sha256": "003d70fb8d96afd269221aa869f77515a802e37f21a8734f87b1ea48100e64c6",
+        "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_-2"
+      },
+      {
+        "page_xz": [
+          0,
+          -2
+        ],
+        "identity": "7c65605c93e0af43df3a94985112adbafb85358f510dd9ba1774241da8c7808a",
+        "raw_td_sha256": "f8384c10a2ab1e666bfaa9564a8ae1b77768f78cab9aa73972ca0dc8c9892c96",
+        "manifest_sha256": "221c00bb9a2580a01e3a585271a004f676df0edfc486204eb04de6df768d9a60",
+        "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_-2"
+      },
+      {
+        "page_xz": [
+          1,
+          -2
+        ],
+        "identity": "bb5e523d4190b3d7e19daa84734954b0f383e6c1b03594b5034f00db7bb4b46d",
+        "raw_td_sha256": "3d7ac61a38fee0e9105dd015715e1b8c9f1ed7c80fcaaed5b537453db8246fe7",
+        "manifest_sha256": "aad8481d965d0f3727510767d5ced8486d8efd636037613c46d6042ab712da65",
+        "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+1_-2"
+      },
+      {
+        "page_xz": [
+          2,
+          -2
+        ],
+        "identity": "fc08d9aeb370883f9606a43380d0ff9ab372a5875133cea46eac3be71469e41a",
+        "raw_td_sha256": "18ceff5c739babff8429afd6de4a1736459b3917e240cbb96d85d0e5839373bd",
+        "manifest_sha256": "1974a7add181fd36c7abf4b494c05e3247588398afa892a09787bc262cf186bf",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_+2_-2"
+      },
+      {
+        "page_xz": [
+          -8,
+          -1
+        ],
+        "identity": "1b48b56a731068260c539140c2c18d0a558573fb14b01c0503ef00d6bf8520ab",
+        "raw_td_sha256": "47f84006a7bf683e052dfffa5b56827284371bd510cfbc13ee53d534e956cd47",
+        "manifest_sha256": "5d6195f4d2cba5c14114f1335654eee4106d839edcfea4c7ce56729b69efbe48",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-8_-1"
+      },
+      {
+        "page_xz": [
+          -7,
+          -1
+        ],
+        "identity": "7d7bf533640fae7c63d39cf4e36ff788e4690e3be1fb6145386c79c5402b6ec8",
+        "raw_td_sha256": "25ee33c2ca93ba2b5b8d93b51b7cbd10ff37d132874a4bed109175012ee3ccce",
+        "manifest_sha256": "7cb374a3ca481efed5ff00b8959e4f74838e77dd52d2bd3831f4ab257c1314d9",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-7_-1"
+      },
+      {
+        "page_xz": [
+          -6,
+          -1
+        ],
+        "identity": "8b140a6a521b7c882ba51dfe5702550890210156993ced4f0a58ed952a329546",
+        "raw_td_sha256": "551dcd96cd81b74aa7c4722b8be58acad178d47d99de35bec7f1f93000c0268c",
+        "manifest_sha256": "dcd37a2d8ce8e1ea68d99f0a2d21672dd50bbace806cf833b0e69aac73d89a94",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-6_-1"
+      },
+      {
+        "page_xz": [
+          -5,
+          -1
+        ],
+        "identity": "1f25ccd5565f8eb020a05374d75a334d1cd30df724064f34ae278428506e44d5",
+        "raw_td_sha256": "8d44d29c55af91897ae6aa6a3579c666c4f2ec4933a10bb8a2b2f3e53a4e6f86",
+        "manifest_sha256": "a2601a37ea151fc3a44e187bf67be4842a971ea16876826de4d4fed67c6212ab",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-5_-1"
+      },
+      {
+        "page_xz": [
+          -4,
+          -1
+        ],
+        "identity": "5ee55f1be5f63ff4966fcfb0b1ef6dfbf320d411727ed07ba305ce7b1dc43fa8",
+        "raw_td_sha256": "123f479011deadc1e3ccefa21b316d6172bc548dc016df5c29fa9ed53cccfd15",
+        "manifest_sha256": "0fd8d115012de11691828e5880f99a65d7735412197aa23387d237a79a1b6937",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-4_-1"
+      },
+      {
+        "page_xz": [
+          -3,
+          -1
+        ],
+        "identity": "61569bdbc15cbd84c6cb7bd9f9dd2d47c499c64b3f7c872ef99966a423048454",
+        "raw_td_sha256": "47085e4c7618231579bab20478be61d5bd0e8554f38b56f3036558d91b982b2e",
+        "manifest_sha256": "0d9c894ed976a6cdf0ad6bf77293d866da9c15f4a6c6b44207d10a13b4d295a2",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-3_-1"
+      },
+      {
+        "page_xz": [
+          -2,
+          -1
+        ],
+        "identity": "f178a5ca82b2b22936841ec1e89de60092115961f93ae50797f9a2a199faa999",
+        "raw_td_sha256": "0e286d84ec3ecc351b17ed7905e4ff1bda5b116afeef77bd6157cff7297229d2",
+        "manifest_sha256": "bd2c1fea1202951271740abbb0bef266c58e4bb3ad6d11bbbe72b9cb3b05dc5a",
+        "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-2_-1"
+      },
+      {
+        "page_xz": [
+          -1,
+          -1
+        ],
+        "identity": "1ddb05a325179aadae5ddee4ed6b40ff3be239acb9975f0853bbb760d389e468",
+        "raw_td_sha256": "77705a39fb93397d22cebaeece6659e80f4a9d243ff1073cc9504651af480d33",
+        "manifest_sha256": "e90833603644318cbfab0f8f5780ad93e06dd2dde5196dff73fe611370c3f4b3",
+        "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_-1"
+      },
+      {
+        "page_xz": [
+          0,
+          -1
+        ],
+        "identity": "7ad4b2bfee232e4d65ab43a0c397d25f09e12d0746e02b799be5b46a973a5179",
+        "raw_td_sha256": "a0c0b5ee6cdd8c4b1cbd92781e82d91e5e8712515726a9d614d7ce809887df8f",
+        "manifest_sha256": "eccb987fe1a724dfb340315273120ce8b160887c20d80270eb000514ab5f5261",
+        "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_-1"
+      },
+      {
+        "page_xz": [
+          1,
+          -1
+        ],
+        "identity": "4b419beb1060e61687bc3e450d9afefe1a03e8da77fe62edace45583145becfd",
+        "raw_td_sha256": "baded6af5b64bc7312a634976126eb30b415e80319a84e24d367de3156cba099",
+        "manifest_sha256": "1ca1f29e64d37b7dd69337e133ed8953f4c2d0d0a713a30df6702d6adf6121e7",
+        "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+1_-1"
+      },
+      {
+        "page_xz": [
+          2,
+          -1
+        ],
+        "identity": "ca205269aeb739c0b94f1e0464a0a716acedad1f1eff09a200cc70a5e602df76",
+        "raw_td_sha256": "638495bfce1e7696eda59f9f64d892101a089a77cd5e2c25151542b9293bc3c3",
+        "manifest_sha256": "9194ac685a54e9a32c187d9ae2a565f746e98a382f4d5bf9cf03b0849dcf69b4",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_+2_-1"
+      },
+      {
+        "page_xz": [
+          -8,
+          0
+        ],
+        "identity": "01b4e7404c30eb0e9c97df90deddcaa312f11d47ce0f5f1cfc01d921bef320a5",
+        "raw_td_sha256": "abd9f037f734cad3c040767d6716f07200fe92a3fbd2d813ec0522c002f6d35e",
+        "manifest_sha256": "64b1e1694b6f0778779bb403860b9a6bc67b71e6dde4b7b5e03a53c6d1d005e9",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-8_+0"
+      },
+      {
+        "page_xz": [
+          -7,
+          0
+        ],
+        "identity": "db8e72980185b4ac96fb3feb7d8af29aa00994fcd093ff0ec952ea018b8e0e6e",
+        "raw_td_sha256": "5559c7d8ad2c37a17fe916ebc8e7145e8e907cc0229270a0952ef31fc52c1244",
+        "manifest_sha256": "f2b3e8ac4579706b32d72b29d288015c82447e3961f81c6c58f5e64649aa58ad",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-7_+0"
+      },
+      {
+        "page_xz": [
+          -6,
+          0
+        ],
+        "identity": "6514e14358fe7499a89f900b471da28659dcdeace82a646dfd2b8d204e7895c7",
+        "raw_td_sha256": "ca672a834dd98756b2a82a89b82dda02f3a6e0b1abd76e56384b4a2c1303dffe",
+        "manifest_sha256": "4269de1aed6645d57a0a2941ee2ac3e831bcbe5c4eb0a942621f977b08801aa3",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-6_+0"
+      },
+      {
+        "page_xz": [
+          -5,
+          0
+        ],
+        "identity": "edd8f3f150acaa6741e5f581b9a722180c4615855a9f0361df4bd9302ecaa575",
+        "raw_td_sha256": "5ee95385bd600e5e5acc25bdb5254e2367f01cf11221eb9e7bded9a610f41d95",
+        "manifest_sha256": "92ab22be541598482010e62714b4f0a050a80dd3d75107cd321231fbf75847fc",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-5_+0"
+      },
+      {
+        "page_xz": [
+          -4,
+          0
+        ],
+        "identity": "59a9510e70a125a8f8323ada4a7a76b69a75e9cba2ba7bba8011cfdc8c9b0697",
+        "raw_td_sha256": "290e026ac8b58a3ab496c74fcd9b5fd4c55e7659a7f536dc4f9aaf12ef4ee181",
+        "manifest_sha256": "8da0519065414087b6ac6e8cd6c7049c69814e9f1e4ee23ebce8711084a5bc71",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-4_+0"
+      },
+      {
+        "page_xz": [
+          -3,
+          0
+        ],
+        "identity": "294370a0acaa5f5b7dcdb779c65a73a23d24b15e1bcaeea8967e1a081762b380",
+        "raw_td_sha256": "e6ba873a756098a43be8f314e823a875b1741654912a137266843b18f2193986",
+        "manifest_sha256": "56c8feb70420dfbe9fd1289253968eb024ae5d8cd26478cb019ffbc8224db7c1",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-3_+0"
+      },
+      {
+        "page_xz": [
+          -2,
+          0
+        ],
+        "identity": "44ac688aff376758a39960a4eff717a33b860c35d81e86493621290e990bb5c2",
+        "raw_td_sha256": "a3eded58df83ba2faf5a074bdb420e4a554b1b745f994056cc75bea629e8e65e",
+        "manifest_sha256": "40667b1dbbe4ca78ad73835a084f48cbb9f7a60e669b284b329c76bcf16d0d10",
+        "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-2_+0"
+      },
+      {
+        "page_xz": [
+          -1,
+          0
+        ],
+        "identity": "a4b5a09c2f232b30598896567f5bd02815207a09635fa618c51a44f8a8c64bad",
+        "raw_td_sha256": "46a59645068cd8a9c413939a256b44a8b341c468da830d7e42d278e25080f59f",
+        "manifest_sha256": "7df387601f02756d8dde00a2bcb50c641f3b5bfc1faa0687f7f67a801512a887",
+        "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_+0"
+      },
+      {
+        "page_xz": [
+          0,
+          0
+        ],
+        "identity": "ed91c6c3806c4446f56c987f68bb4c1293f8eacca1ef651a994301e9016d0eda",
+        "raw_td_sha256": "adf0cbb99bd9c98af164925ffa96d8ae29f22e2bc1f64b2a5634f0c9f964f9c6",
+        "manifest_sha256": "0575ed6267c0dc55a132d5e2a2daef835190e48deff174700b412aa7e79a0d92",
+        "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_+0"
+      },
+      {
+        "page_xz": [
+          1,
+          0
+        ],
+        "identity": "1638414cdf75815d0e765487ac1c617a5bfeb9d208d3df5ae988d4a177d72353",
+        "raw_td_sha256": "fe0dea799624b6f3a5b4d5626f492a3b3336c3f2d4e6ae1f2dd6ddb1f65641b8",
+        "manifest_sha256": "a989102d6c3a323aa72d0f532bd4175c61efcb71fc4fd8a698b0e5a2752f5325",
+        "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+1_+0"
+      },
+      {
+        "page_xz": [
+          2,
+          0
+        ],
+        "identity": "419d0ffa365a91a479a88b12a125427e0441c048c1bd5f6e67c2a257280bc497",
+        "raw_td_sha256": "11afd99850c8da7b1c8c0d12698b6477e2b8712d3b68afc41fe70358c9492c12",
+        "manifest_sha256": "f8d247e64f29af803fed8e0757e5c3b861f07bbe53344670d4261b6c2213104b",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-page-2-0"
+      },
+      {
+        "page_xz": [
+          -8,
+          1
+        ],
+        "identity": "fb9aff692ccd733a129b330622ffa3f1b4c579e33df4f7068f8c7d3e9004776e",
+        "raw_td_sha256": "57bf5385fc8a7b6fe0d7e470ab3d92e2ac8e3cc517f122cee0fe1454ea333828",
+        "manifest_sha256": "9976faf336afe3e1c3a63de8d8baa8f19737a7b8da9bea783c416de1c00af451",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-8_+1"
+      },
+      {
+        "page_xz": [
+          -7,
+          1
+        ],
+        "identity": "ae5b87a1796917b4645e59954bf81060cca7c399e9d8c2ada6e6079afe6f7c4e",
+        "raw_td_sha256": "f2da6f192231604d99a64e84e4741dfc0072e53017b25ecc28314c98dffb1029",
+        "manifest_sha256": "8187535e6c7a7cf1c0e2e0c0bc6d8fd7ec6ca245fbd4aa3fbfb71e2b9741bb62",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-7_+1"
+      },
+      {
+        "page_xz": [
+          -6,
+          1
+        ],
+        "identity": "663750a731b3186eed304a6e5239da637ad21ccdbb1330b39f2e10e7646bffd7",
+        "raw_td_sha256": "69d6380d98b5ce5d7fd672b98046df2faf5fa95bd3378843e6b4320978981f44",
+        "manifest_sha256": "90720988dc1c44a3581e7fd464d3134196acc7de4a561257fa5b2771fd0c3426",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-6_+1"
+      },
+      {
+        "page_xz": [
+          -5,
+          1
+        ],
+        "identity": "42b084bbb43df814f8384f207077a0415bb943b227089fe1754dc5d816ef72e5",
+        "raw_td_sha256": "e4f7c0315766aa33937a3a440d417db97f91230ca1154335fdf1b18924a98609",
+        "manifest_sha256": "60b290df900c4dafe51eb3042247bdf27b916b5bd9ac014c259ef4569097622c",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-5_+1"
+      },
+      {
+        "page_xz": [
+          -4,
+          1
+        ],
+        "identity": "243a8cc3535a65a839333f6a9faf4af03fa11b5cd07aca2573c96c6894769a14",
+        "raw_td_sha256": "a0abf14588777d1fb707a2969da5b9c7bb62cbe64efdfd7b82a3bcf76bedc31e",
+        "manifest_sha256": "e3677a39e41f1905daba206f11d475b7564ce8ab94e9751bc24095d9e1ba4a59",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-4_+1"
+      },
+      {
+        "page_xz": [
+          -3,
+          1
+        ],
+        "identity": "2fa410d9ec21b444b98580f3e89b948c0b058ee0f2b8463814ed5b6a654a0362",
+        "raw_td_sha256": "9943280d471b913886b346ea8c03e60d5db378069b809c4b491fa65250d6a7a4",
+        "manifest_sha256": "21bf096eea0fba931ecca0c3d5fe5d1fdfe8c972c2f72210a56bb959a9ec1a8c",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-3_+1"
+      },
+      {
+        "page_xz": [
+          -2,
+          1
+        ],
+        "identity": "6623c44ef06a55cc34c06ac1f858306cd880467949b5f5253386bd69747dde6e",
+        "raw_td_sha256": "1e5735a36338a1148d39cb590f4debb900aad7d463c0339c72df0c476d326bf1",
+        "manifest_sha256": "ae965d4a02f45e269a0f62b54fa058785c1d3a45d442f82a3150f6fcc36f1a0c",
+        "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-2_+1"
+      },
+      {
+        "page_xz": [
+          -1,
+          1
+        ],
+        "identity": "32ba9e650affd732fa2ae11e6976be484bf88914d773cd536e96a6932a7d2b39",
+        "raw_td_sha256": "bd2c5247e1c4d91257b47233a8f4edbb2d9d765d6798f1c0effe8bc82ef12b7b",
+        "manifest_sha256": "8f0b94d3fe74b340085d9ae499f485df9fa54c4fd7051b5588ed8bdc16d76801",
+        "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_+1"
+      },
+      {
+        "page_xz": [
+          0,
+          1
+        ],
+        "identity": "359465521eca2cd72e6707287fe895f52c0e2f3513075827a4da18413e86516f",
+        "raw_td_sha256": "174787798846fc2a64144c8718cfa94af372eaf51372395f761624473796519f",
+        "manifest_sha256": "e8074a30b628338eedaa4fa8930629b19fd695bc69af3be68f756a040dd98207",
+        "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_+1"
+      },
+      {
+        "page_xz": [
+          1,
+          1
+        ],
+        "identity": "200fe5ea541bf300fcd2f6e7d2c6c1795c6fd853d9f0e1ca4e2bedd296077776",
+        "raw_td_sha256": "be1b456bd101ab31e386f29d120734dd1468b47469f4436ca84c33017106eb76",
+        "manifest_sha256": "e520a5b65135aa8c7ed2fe0669dc94234a103674c55e56e63b9c5cd083263148",
+        "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+1_+1"
+      },
+      {
+        "page_xz": [
+          2,
+          1
+        ],
+        "identity": "71efeeb7462a818d3f5ea180e8425af416d7ab74e24fb79da1ea7790548b1d98",
+        "raw_td_sha256": "436791b21129503606eb86b41663af1991384837bb42a14077f736e3611e7db0",
+        "manifest_sha256": "ed7b3078688caba53aadccbaa939431b032c4d9bda6d8cc494aa961b6a367c46",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_+2_+1"
+      },
+      {
+        "page_xz": [
+          -8,
+          2
+        ],
+        "identity": "50d07d1e614c18c5fd79c58a9670ca748d38f248102b71d4a5f871409a2c7a4a",
+        "raw_td_sha256": "4b16fff259c0452b5a44f0c8d91f0eab978187c9fc91d8dafe1017fd50ed1e9b",
+        "manifest_sha256": "6be06a4c0e61b74f51f56eb15393a63a3ac342bbd0adc38f868d7d0c924a3f1b",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-8_+2"
+      },
+      {
+        "page_xz": [
+          -7,
+          2
+        ],
+        "identity": "12902b19d2b7c8b2328cc2cd57496dd49c3b46791b6b4e7bbd6b035a8fd15504",
+        "raw_td_sha256": "0144ff4d13d05d9125d0eb9feb2f123ea056826177094b56d786b1dd3bf1b52f",
+        "manifest_sha256": "8b5d588cdd8740ac86daba252af85ec3c6ca82016a4770c57fcf770e58a71922",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-7_+2"
+      },
+      {
+        "page_xz": [
+          -6,
+          2
+        ],
+        "identity": "947ba4cd497b7fe156d783fc6ffe9a30388bea701ed09f19be12daaf8668f399",
+        "raw_td_sha256": "bb208bc66d22fbef62742a7eca9efd77329f54a186c8be0191414ad7cfd3c62d",
+        "manifest_sha256": "ef6e361ed19c4bd8a19093a1c7188d90900608ae4b4335b4fb173fd235c81957",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-6_+2"
+      },
+      {
+        "page_xz": [
+          -5,
+          2
+        ],
+        "identity": "6002a30c3071cd006c7c15ab36ee8baa5270afe238783c7bbbdc3bd63c8ed7b8",
+        "raw_td_sha256": "d36033133a7d1f7874c846b8f08d34e0e4dd2466e8728471486881f2fcf0addf",
+        "manifest_sha256": "4061a99c9c979de3c13c98e570862ec6f7819f11aeb80f62f8d6c50e20871b95",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-5_+2"
+      },
+      {
+        "page_xz": [
+          -4,
+          2
+        ],
+        "identity": "61542ef178707c15bc7fcf684081da7b6e81909b37cc0bde77c06c88c2918cf2",
+        "raw_td_sha256": "a93520d34deb9d7eb103b0a1027c3d2025de07d366dd33f8132b1ebf65f79ec2",
+        "manifest_sha256": "2eb6571f288bd116945e129a03cdd236a09d534bc6d092b4f4da0390bc0f0950",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-4_+2"
+      },
+      {
+        "page_xz": [
+          -3,
+          2
+        ],
+        "identity": "26eb4a1f5b2693d57aeb29ce38cfe020a762b90f624c520621d54907f7f8c813",
+        "raw_td_sha256": "ad048d34d5c71c763c02fe047bf01d724d16b9d118cd1a93dfc57a5e30e17ab2",
+        "manifest_sha256": "aeeb5e99c6f27008013260840d52445b4149d756f86107198ba1ed32e16b035e",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-3_+2"
+      },
+      {
+        "page_xz": [
+          -2,
+          2
+        ],
+        "identity": "6957873907decd7937598a84ce5c44a3decbbb80e238a657200c563ea614054d",
+        "raw_td_sha256": "d576b1f7bd1ed0005d7edeae083d122a6e567db57e13069ab3b009aec4dec87c",
+        "manifest_sha256": "c6043ee794bebec9f443fee744738de4e0045c0468e9f3548f6023ba55c1b9af",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-2_+2"
+      },
+      {
+        "page_xz": [
+          -1,
+          2
+        ],
+        "identity": "c4715fe49a049b30e5c1ac8026c7533dcc9f481bf119cc70df8159f1963a1a9a",
+        "raw_td_sha256": "4ba1fff465b58945566d14734690574b7e3041f0fa63a87fd82bdf12a8e67ff5",
+        "manifest_sha256": "8053d24f75ad95d4def4a683cc5431608ecbe0124d1e8b906db3783aa3208833",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_-1_+2"
+      },
+      {
+        "page_xz": [
+          0,
+          2
+        ],
+        "identity": "3100dd258fe9071eff14c18cb6a7df9680530d0b0832c858a5ee95e5b2c64311",
+        "raw_td_sha256": "98c67eb54523cae61ce0a1c6b4dfa4f68573208c2624a50f0bd9c5d6aed98222",
+        "manifest_sha256": "963427191753056b2899d8c7c94c477109053ac03ef5d2c33916a6769bae8dd0",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_+0_+2"
+      },
+      {
+        "page_xz": [
+          1,
+          2
+        ],
+        "identity": "c91c67f12a5006dfecf881e54c1bdab497779a6f1ce6ed90a8dec51099afebd3",
+        "raw_td_sha256": "806b4561f1a29c1130652d0c220581e7f0231cd78b409d4c523703c8761fb05e",
+        "manifest_sha256": "3b8877a5757c4d570f4793f46c47eb9d90943f103616747d8906b28bbbef3d70",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_+1_+2"
+      },
+      {
+        "page_xz": [
+          2,
+          2
+        ],
+        "identity": "d3deabb7dec040775f543dc1101c6cfa3ad532a74aef8ee298e460617b67a71c",
+        "raw_td_sha256": "a5c0bd41d08b605c1728f3c363a2e5e6054985a78336f7a0d0c430f1ab882965",
+        "manifest_sha256": "df58e50c55b0c8d427a59979ed4e322321e8a686c5e56b65462bf79dc8872f33",
+        "path": ".scratch\\delta-scale-suite-20261102\\source-pages\\page_+2_+2"
+      }
+    ],
+    "seam_overlap": {
+      "max_abs_m": 0.8564453125,
+      "rms_m": 0.01471952121627507,
+      "samples": 35651584
+    },
+    "parent_region": {
+      "path": ".scratch\\delta-scale-suite-20261102\\source-case300",
+      "manifest_sha256": "b81acbf22a2a7b595022d37252bbef988f009ab243b0a4e863fd9f329806515f"
+    },
+    "known": [
+      "actual generated TD",
+      "fixed owner grid",
+      "finite source coverage"
+    ],
+    "assumed": [
+      "boundary wet seed inherits frozen macro ocean; 4-neighbour connectivity at 600m is finite-domain approximation"
+    ],
+    "ocean_note": "Only negative components connected to frozen macro ocean boundary seeds; other negative cells are unknown_wet.",
+    "stats": {
+      "valid_cells": 65536,
+      "ocean_cells": 28736,
+      "unknown_wet_cells": 0,
+      "shallow_ocean_minus_50_to_0_cells": 626
+    },
+    "algorithm_sha256": "f4ec8fa04795f39f9d23d1504edd0d9969a6f74c7adbb09051fa421e098bb245"
+  },
+  "regional_source_manifest_sha256": "ad910ae4138e275dcbce6bc152a9e12ce6fbfd508d53fc2680d19df69f10e835",
+  "scenario": {
+    "name": "120km-td-multilobe",
+    "anchor_xz_m": [
+      -124560,
+      -18480
+    ],
+    "radius_m": 70000,
+    "catchment_km2": 400000,
+    "denudation_m": 20,
+    "delivery_fraction": 0.5,
+    "discharge_m3_s": 4000,
+    "porosity": 0.4,
+    "toe_depth_m": 1000,
+    "plain_slope_m_per_m": 4e-05,
+    "coastal_plain_height_m": 0.7,
+    "full_fill_depth_fraction": 0.8,
+    "lobes_xzr_m": [
+      [
+        -155000,
+        -10000,
+        36000
+      ],
+      [
+        -95000,
+        -10000,
+        36000
+      ]
+    ]
+  },
+  "hydrology": "Chosen scenario, not measured external flow: runoff 0.31536 m/year; solid event input 0.2 m3/s.",
+  "initialization": {
+    "required_solid_m3": 378381660270.1847,
+    "retained_solid_m3": 378381660270.1847,
+    "unplaced_solid_m3": 3621618339729.8154,
+    "landform_area_m2": 1231920000.0,
+    "landform_span_zx_m": [
+      47400,
+      114000
+    ],
+    "core_2km_area_m2": 587880000.0,
+    "core_2km_span_zx_m": [
+      33600,
+      97800
+    ],
+    "max_interior_distance_m": 7823.042886243179,
+    "anchor_cell_zx": [
+      134,
+      127
+    ],
+    "plain_target_elevation_range_m": [
+      0.7001142880467424,
+      3.5
+    ]
+  },
+  "solid_inventory_m3": 4000000000000.0,
+  "network": {
+    "outlet_zx": [
+      [
+        143,
+        23
+      ],
+      [
+        145,
+        52
+      ],
+      [
+        146,
+        114
+      ],
+      [
+        173,
+        172
+      ],
+      [
+        154,
+        134
+      ],
+      [
+        132,
+        84
+      ],
+      [
+        120,
+        31
+      ]
+    ],
+    "inlet_zx": [
+      146,
+      164
+    ],
+    "corridor_seed": 2362353700475141390,
+    "branch_count": 13,
+    "length_m": 189502.61430571217,
+    "river_span_zx_m": [
+      31800,
+      90600
+    ],
+    "plain_fraction_within_2km_of_reach": 0.5257159555815313,
+    "all_2km_core_fraction_within_2km_of_reach": 0.6414294367050273,
+    "max_initial_stage_above_uncut_land_m": -0.11310190316146623,
+    "deposit_excavation_bulk_m3": 575063504.8163054,
+    "original_excavation_bulk_m3": 1080000.0,
+    "excavation_disposition": "Tracked separately as removed bulk; not reused as formation supply."
+  },
+  "event": {
+    "river_node_count": 13,
+    "water_residual_m3": 7.599592208862305e-07,
+    "solid_residual_m3": 4.10909706261009e-09,
+    "source_water_m3": 172800000.0,
+    "sea_water_in_m3": 3805835.375447474,
+    "sea_water_out_m3": 190473509.79907805,
+    "source_solid_m3": 8640.0,
+    "sea_solid_out_m3": 2236.9168330711354,
+    "timestep_s": 5.0,
+    "comparison_timestep_s": 2.5,
+    "hourly_stage_max_difference_m": 0.014940860105723708
+  },
+  "sections_columns": [
+    "reach",
+    "x_m",
+    "z_m",
+    "row",
+    "column",
+    "stage_m",
+    "width_m",
+    "nominal_depth_m",
+    "discharge_m3_s",
+    "cut_bed_m"
+  ],
+  "event_scope": "12 h M2/S2 reduced storage graph of represented river reaches and idealized -4 m offshore buffers; no geographic coastal bathymetry, floodplain or regional ocean solve. Event bed response is in event.npz, not applied to the regional raster.",
+  "caveat": "1000 m bounded accommodation is explicit scenario fill over source TD, not native shoreline. Grid spacing 600 m does not resolve all analytic channel widths. Original cut retained separately.",
+  "output_sha256": {
+    "product.npz": "a8011f3c45d3ba0b468dfa428c78b294ab880b5753799a90c49d1b0321d1a398",
+    "event.npz": "423e33d8f652f8892b9954312c54802630b0e7203b39efe5be553257c5f57c39"
+  }
+}

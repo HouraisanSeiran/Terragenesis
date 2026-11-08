@@ -12,21 +12,22 @@ sys.path.insert(0,str(ROOT))
 
 import numpy as np
 
-from terrain_pipeline.mountain_depression_geometry import load_mountain_geometry
-from terrain_pipeline.mountain_lake_coupling import (
-    build_group_topology,couple_rainfall,group_lake_specs,load_coupling,save_coupling,validate_coupling,
-)
-from terrain_pipeline.mountain_source_adapter import file_sha256,load_legacy_source
-from terrain_pipeline.mountain_storm_forcing import (
-    StormParameters,generate_forcing,interval_mean_mm_h,load_forcing,save_forcing,validate_forcing,
-)
-from terrain_pipeline.rainfall_runoff import RunoffParameters
+from terrain_pipeline.lake import load_mountain_geometry as load_mountain_geometry
+from terrain_pipeline.lake import build_group_topology as build_group_topology
+from terrain_pipeline.lake import couple_rainfall as couple_rainfall
+from terrain_pipeline.lake import group_lake_specs as group_lake_specs
+from terrain_pipeline.lake import load_coupling as load_coupling
+from terrain_pipeline.lake import save_coupling as save_coupling
+from terrain_pipeline.lake import validate_coupling as validate_coupling
+from terrain_pipeline.common_infra import file_sha256, load_legacy_source
+from terrain_pipeline.climate_forcing import StormParameters, storm_generate_forcing as generate_forcing, interval_mean_mm_h, storm_load_forcing as load_forcing, save_forcing, validate_forcing
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
 from tools.verify_mountain_lake_coupling import audit_browser,export_review_case
 from tools.verify_mountain_source_adapter import assert_unchanged,snapshot,write_json
 
 
 FROZEN=ROOT/"verification/mountain-lake-coupling/frozen-20261001-A-v3"
-DELIVERY=("terrain_pipeline/mountain_storm_forcing.py","tests/test_mountain_storm_forcing.py",
+DELIVERY=("terrain_pipeline/climate_forcing.py","tests/test_mountain_storm_forcing.py",
     "tools/verify_mountain_storm_forcing.py","docs/mountain-storm-forcing-v1.md")
 B_MANIFEST=ROOT/"verification/mountain-depression-geometry/frozen-20261001T070426687355Z/static-freeze-manifest.json"
 B_OLD="f1173c702a150b2865b11be53e13ee950dd47be74172a829701f60659c576d6d"
@@ -36,14 +37,14 @@ B_NEW="6be2f275de2907183a214903f35fc7742d34a7f26141c1757b036cd42e477694"
 def check_frozen_compatibility(frozen_hashes):
     for name,digest in frozen_hashes.items():
         actual=file_sha256(ROOT/name)
-        if name=="terrain_pipeline/mountain_depression_geometry.py":
+        if name=='terrain_pipeline/lake.py':
             if digest!=B_OLD or actual!=B_NEW:
                 raise ValueError("geometry compatibility exception is only the explicitly accepted old/new pair")
         elif actual!=digest:
             raise ValueError("A-v3 frozen non-geometry source changed: "+name)
     if not B_MANIFEST.is_file():
         raise ValueError("B frozen static manifest required")
-    return {"file":"terrain_pipeline/mountain_depression_geometry.py","A_v3_sha256":B_OLD,
+    return {"file":'terrain_pipeline/lake.py',"A_v3_sha256":B_OLD,
         "compatible_static_validator_sha256":B_NEW,"B_static_freeze_manifest":str(B_MANIFEST),
         "B_manifest_sha256":file_sha256(B_MANIFEST),
         "coordinator_authorization":"explicit old/new geometry exception after independent cold-load normal/pressure1378 1345-state tests; no other exception"}
@@ -112,7 +113,7 @@ def verify(destination):
             if "arrays" not in result:
                 failure={key:value for key,value in result.items() if key!="lake_failure"}
                 if "lake_failure" in result:
-                    from terrain_pipeline.lake_routing import save_lake_routing
+                    from terrain_pipeline.lake import save_lake_routing as save_lake_routing
 
                     save_lake_routing(result["lake_failure"],destination/f"{name}-failed-lake.npz")
                     failure["lake_diagnostic"]=result["lake_failure"]["diagnostic"]
@@ -185,7 +186,7 @@ def verify(destination):
                 "no_window_normalization":True}
         report["frozen_after"]=assert_unchanged(before)
         report["A_v3_non_geometry_delivery_unchanged"]=all(file_sha256(ROOT/name)==digest for name,digest in frozen_hashes.items()
-            if name!="terrain_pipeline/mountain_depression_geometry.py")
+            if name!='terrain_pipeline/lake.py')
         if compatibility!=check_frozen_compatibility(frozen_hashes):
             raise RuntimeError("B compatibility changed during weather verification")
         report["delivery_source_sha256"]=delivery_before
@@ -218,7 +219,7 @@ def plot_weather(destination,name,east,south,peak_map,parameters):
 
 
 def write_review(destination,report):
-    from terrain_pipeline.mountain_source_adapter import publish_bytes
+    from terrain_pipeline.common_infra import publish_bytes
     import html
 
     options="".join(f'<option value="pressure_mountain-{name}">{name}</option>' for name,case in report["cases"].items() if case.get("dynamic_water_solved"))
@@ -248,7 +249,7 @@ def main():
 
 def prepare_forcing_only(destination):
     """Use externally pinned saved selection; do not import or call B geometry APIs."""
-    from terrain_pipeline.mountain_source_adapter import checked_archive
+    from terrain_pipeline.common_infra import checked_archive
 
     if destination.exists():
         raise FileExistsError(destination)

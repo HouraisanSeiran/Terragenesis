@@ -1,0 +1,1440 @@
+{
+  "schema": "zero-reference-tool-archive-v1",
+  "schema_extensions": "archive_path 为仓库相对完整路径；增加 sha256_after_move、text_references_by_category、archive_reason、r0_verdict",
+  "created": "2026-11-05",
+  "batch": "R1-3-tools-generated-list-only",
+  "description": "tools：仅被生成清单（module-map/catalog）提及",
+  "scope": "R1 低风险归档：SHA pin=0、无活跃 import、与快照 zip 字节一致；只移动不改内容。回退依据 dist/Terragenesis-algorithms-20261105.zip（SHA256 70D6346311A3CEBE4E1BD7FB7152295D1A65C93561359800E54F779F1BA4149C）。",
+  "manifest_sha256_note": "Per-file SHA256 below is the pinned trust anchor; verify before use.",
+  "files": [
+    {
+      "source_path": "tools/analyze_extended_river_coast.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/analyze_extended_river_coast.py",
+      "bytes": 9745,
+      "sha256": "488975860015aba11319daa4f442c9a76bead4f9e42fdcbfcdf76c163169b2d2",
+      "sha256_after_move": "488975860015aba11319daa4f442c9a76bead4f9e42fdcbfcdf76c163169b2d2",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2(单个前缀)",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/analyze_extended_river_coast.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/assess_td_lake_entry_raster_readiness.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/assess_td_lake_entry_raster_readiness.py",
+      "bytes": 5165,
+      "sha256": "ab6306dfdcdaa5777e600b140880f8ccf9d3c9530bde97ba293af7424f18f596",
+      "sha256_after_move": "ab6306dfdcdaa5777e600b140880f8ccf9d3c9530bde97ba293af7424f18f596",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2(单个前缀)",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/assess_td_lake_entry_raster_readiness.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/audit_finite_multiyear_source.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/audit_finite_multiyear_source.py",
+      "bytes": 4957,
+      "sha256": "83958d47092d14f22955ad350e1f375fe16918cf6c08ddb2d65ade7944084fd6",
+      "sha256_after_move": "83958d47092d14f22955ad350e1f375fe16918cf6c08ddb2d65ade7944084fd6",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/audit_finite_multiyear_source.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/audit_global_tiles.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/audit_global_tiles.py",
+      "bytes": 1715,
+      "sha256": "a0bf7b38f8eafb33ad29549c87eed0fc35d72e31f6579ebe65dd8e10548b66e5",
+      "sha256_after_move": "a0bf7b38f8eafb33ad29549c87eed0fc35d72e31f6579ebe65dd8e10548b66e5",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/audit_global_tiles.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/audit_td_compiled_driver.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/audit_td_compiled_driver.py",
+      "bytes": 5558,
+      "sha256": "e9c3757e6c6c02f59a8c8b7af91a64bba3cfbcabc95e02bba24fdaf86f16b6d1",
+      "sha256_after_move": "e9c3757e6c6c02f59a8c8b7af91a64bba3cfbcabc95e02bba24fdaf86f16b6d1",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/audit_td_compiled_driver.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/audit_td_fine_bed_material.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/audit_td_fine_bed_material.py",
+      "bytes": 2552,
+      "sha256": "3051627b6ad363534e3f10b7b660530eacc01690693bec71b29daaac2298ee93",
+      "sha256_after_move": "3051627b6ad363534e3f10b7b660530eacc01690693bec71b29daaac2298ee93",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/audit_td_fine_bed_material.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/audit_td_monotone_component.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/audit_td_monotone_component.py",
+      "bytes": 1547,
+      "sha256": "c07ab90b6eb5bcec77a61392835a0821b244e50c735f81a956477e950a7d108e",
+      "sha256_after_move": "c07ab90b6eb5bcec77a61392835a0821b244e50c735f81a956477e950a7d108e",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/audit_td_monotone_component.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/audit_td_native_channel_surface.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/audit_td_native_channel_surface.py",
+      "bytes": 7440,
+      "sha256": "9eff3875b0e439728f67260bc0deab86d0f49621b573418510c53279e48fd807",
+      "sha256_after_move": "9eff3875b0e439728f67260bc0deab86d0f49621b573418510c53279e48fd807",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/audit_td_native_channel_surface.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/audit_td_native_channel_surface_browser.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/audit_td_native_channel_surface_browser.py",
+      "bytes": 4939,
+      "sha256": "c5da54e727a6f6a60f90d0de86199efd374f78ca109a2d8da79e54b9b8ab30ec",
+      "sha256_after_move": "c5da54e727a6f6a60f90d0de86199efd374f78ca109a2d8da79e54b9b8ab30ec",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/audit_td_native_channel_surface_browser.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/audit_td_river_network_expansion.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/audit_td_river_network_expansion.py",
+      "bytes": 6500,
+      "sha256": "2d37108311349d563d0d4d02c797abd2e55dffbd8b47a5cb979cde1915d55a2b",
+      "sha256_after_move": "2d37108311349d563d0d4d02c797abd2e55dffbd8b47a5cb979cde1915d55a2b",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/audit_td_river_network_expansion.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/audit_td_valley_network_union.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/audit_td_valley_network_union.py",
+      "bytes": 11321,
+      "sha256": "55192ba2c2202bf2ae27b02be50f22be90bb13eabdd6898c0df5b6d89b08b71c",
+      "sha256_after_move": "55192ba2c2202bf2ae27b02be50f22be90bb13eabdd6898c0df5b6d89b08b71c",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/audit_td_valley_network_union.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/benchmark_incident_wave_vectorized.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/benchmark_incident_wave_vectorized.py",
+      "bytes": 4312,
+      "sha256": "cd0950e4d60f98e490e8a1216e299bb7218e8ec62b44bb9c72838f25e90bf971",
+      "sha256_after_move": "cd0950e4d60f98e490e8a1216e299bb7218e8ec62b44bb9c72838f25e90bf971",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/benchmark_incident_wave_vectorized.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/benchmark_single_domain_v7_acceleration.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/benchmark_single_domain_v7_acceleration.py",
+      "bytes": 3663,
+      "sha256": "9e5a2024c57224740313263dc28e452c6b7e33cb880288804dbc6e9be225aa17",
+      "sha256_after_move": "9e5a2024c57224740313263dc28e452c6b7e33cb880288804dbc6e9be225aa17",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/benchmark_single_domain_v7_acceleration.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/combine_river_reference_inventories.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/combine_river_reference_inventories.py",
+      "bytes": 2168,
+      "sha256": "0c390b44b83c03a81e1fb3682bfe3f4f05769fdeed0682191255ce73ebafbf53",
+      "sha256_after_move": "0c390b44b83c03a81e1fb3682bfe3f4f05769fdeed0682191255ce73ebafbf53",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2(单个前缀)",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/combine_river_reference_inventories.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/compare_coarse_vs_fine_routing.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/compare_coarse_vs_fine_routing.py",
+      "bytes": 7305,
+      "sha256": "21ef400a21ef9bb3d244016bdeb6b77061588fcf40eeb913c0e780ea2414bb95",
+      "sha256_after_move": "21ef400a21ef9bb3d244016bdeb6b77061588fcf40eeb913c0e780ea2414bb95",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/compare_coarse_vs_fine_routing.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/confirm_height_budget_v4.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/confirm_height_budget_v4.py",
+      "bytes": 8360,
+      "sha256": "109a42da416b7684499d77570d84578071b3e50e5b79278372b7cfa8890dde08",
+      "sha256_after_move": "109a42da416b7684499d77570d84578071b3e50e5b79278372b7cfa8890dde08",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2(单个前缀)",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/confirm_height_budget_v4.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/deep_test_td_natural_river.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/deep_test_td_natural_river.py",
+      "bytes": 4282,
+      "sha256": "39fdd63b9d0dc7526f97e201eb33ceebefa899e1be963d25f4a11a835b2cdf5a",
+      "sha256_after_move": "39fdd63b9d0dc7526f97e201eb33ceebefa899e1be963d25f4a11a835b2cdf5a",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2(单个前缀)",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/deep_test_td_natural_river.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/diagnose_single_domain_lake_roundoff.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/diagnose_single_domain_lake_roundoff.py",
+      "bytes": 6589,
+      "sha256": "1b5024cf8f96776e0cc1cc25d049f56917d22e44ee8da48696bf055c3d831072",
+      "sha256_after_move": "1b5024cf8f96776e0cc1cc25d049f56917d22e44ee8da48696bf055c3d831072",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/diagnose_single_domain_lake_roundoff.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/diagnose_td_entry_bank_fill.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/diagnose_td_entry_bank_fill.py",
+      "bytes": 11413,
+      "sha256": "9c2430c5b796cb7bc8116525b6c7235b6cc974aa2e415c1680100e1d032a9fa0",
+      "sha256_after_move": "9c2430c5b796cb7bc8116525b6c7235b6cc974aa2e415c1680100e1d032a9fa0",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/diagnose_td_entry_bank_fill.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/diagnose_td_entry_saved_response.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/diagnose_td_entry_saved_response.py",
+      "bytes": 4499,
+      "sha256": "223a9aa5e3533f98a26bfe9217c096dccb52e0673e2b3263e9936ce2a0da063a",
+      "sha256_after_move": "223a9aa5e3533f98a26bfe9217c096dccb52e0673e2b3263e9936ce2a0da063a",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/diagnose_td_entry_saved_response.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/diagnose_td_flat_routing.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/diagnose_td_flat_routing.py",
+      "bytes": 4446,
+      "sha256": "dca95c9d30b2860edd18d277e780c2406e1f47066ca592d792d6fe68103c48c1",
+      "sha256_after_move": "dca95c9d30b2860edd18d277e780c2406e1f47066ca592d792d6fe68103c48c1",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/diagnose_td_flat_routing.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/diagnose_td_generated_geometry.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/diagnose_td_generated_geometry.py",
+      "bytes": 4579,
+      "sha256": "4e86cf4371bfe3ef44fc72f40975e7a221881ccb6139f54cfce4b03d520686f1",
+      "sha256_after_move": "4e86cf4371bfe3ef44fc72f40975e7a221881ccb6139f54cfce4b03d520686f1",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/diagnose_td_generated_geometry.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/diagnose_td_native_weather_hotspot.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/diagnose_td_native_weather_hotspot.py",
+      "bytes": 2869,
+      "sha256": "9e9c2cf8d2d1f6993699d79fa5a188fcef45d7bccd2cdfcc9b8e0020275a1ae1",
+      "sha256_after_move": "9e9c2cf8d2d1f6993699d79fa5a188fcef45d7bccd2cdfcc9b8e0020275a1ae1",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/diagnose_td_native_weather_hotspot.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/diagnose_td_native_weather_partition.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/diagnose_td_native_weather_partition.py",
+      "bytes": 8046,
+      "sha256": "95f62c9ee50107f1da644fcc330271ba3a719c7ff72530a07fcd4579e7e35707",
+      "sha256_after_move": "95f62c9ee50107f1da644fcc330271ba3a719c7ff72530a07fcd4579e7e35707",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/diagnose_td_native_weather_partition.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/diagnose_td_spatial_water_refinement.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/diagnose_td_spatial_water_refinement.py",
+      "bytes": 6022,
+      "sha256": "1c29e0010d6bb15907c4b58e58d69b7dd55e30469ffa303e227d1feb99c961bd",
+      "sha256_after_move": "1c29e0010d6bb15907c4b58e58d69b7dd55e30469ffa303e227d1feb99c961bd",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/diagnose_td_spatial_water_refinement.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/diagnose_td_v4_hotspot.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/diagnose_td_v4_hotspot.py",
+      "bytes": 6447,
+      "sha256": "14da8228fff56070a754dbcd1d76f9ed225165846708da61549ae9fe76c5d677",
+      "sha256_after_move": "14da8228fff56070a754dbcd1d76f9ed225165846708da61549ae9fe76c5d677",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/diagnose_td_v4_hotspot.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/diagnose_td_valley_component.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/diagnose_td_valley_component.py",
+      "bytes": 9235,
+      "sha256": "2e2e9b821a6656e552d3ef2ffbfccfe45cdfcfa53e0d14f2f50e6710b661707e",
+      "sha256_after_move": "2e2e9b821a6656e552d3ef2ffbfccfe45cdfcfa53e0d14f2f50e6710b661707e",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/diagnose_td_valley_component.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/export_region_base.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/export_region_base.py",
+      "bytes": 2890,
+      "sha256": "0309f30f572dcc1b674c601549d84e69261cdf18cfc4463bcfad1854762624ca",
+      "sha256_after_move": "0309f30f572dcc1b674c601549d84e69261cdf18cfc4463bcfad1854762624ca",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/export_region_base.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/export_td_native_channel_surface_review.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/export_td_native_channel_surface_review.py",
+      "bytes": 837,
+      "sha256": "91df33fb5f9f5d3ec4e6e4975b81614ca83c26a2c46be12d2654675f2a257ce1",
+      "sha256_after_move": "91df33fb5f9f5d3ec4e6e4975b81614ca83c26a2c46be12d2654675f2a257ce1",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/export_td_native_channel_surface_review.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/export_td_ported_network_review.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/export_td_ported_network_review.py",
+      "bytes": 25166,
+      "sha256": "3eb94be969e5b4fc7b206052b53bd4380dc122f273094cb5b85544441d7eb046",
+      "sha256_after_move": "3eb94be969e5b4fc7b206052b53bd4380dc122f273094cb5b85544441d7eb046",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/export_td_ported_network_review.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/export_td_shared_port_channel_review.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/export_td_shared_port_channel_review.py",
+      "bytes": 41625,
+      "sha256": "510fa6c26bce4257f8094023428a6097d41eef211e7ac496b55fd2131708df1c",
+      "sha256_after_move": "510fa6c26bce4257f8094023428a6097d41eef211e7ac496b55fd2131708df1c",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/export_td_shared_port_channel_review.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/export_vdm_contract_fixture.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/export_vdm_contract_fixture.py",
+      "bytes": 434,
+      "sha256": "cf108fa1c439efd2bf4b859790a0fb89be64ecd3bfe21bbb5e730c7410aee4a9",
+      "sha256_after_move": "cf108fa1c439efd2bf4b859790a0fb89be64ecd3bfe21bbb5e730c7410aee4a9",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/export_vdm_contract_fixture.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/extend_river_coast_window.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/extend_river_coast_window.py",
+      "bytes": 3417,
+      "sha256": "87ee223bc68fab56454b3a1cfa0eb2b1aefd1e7e612e0340933f32a7f5930ac1",
+      "sha256_after_move": "87ee223bc68fab56454b3a1cfa0eb2b1aefd1e7e612e0340933f32a7f5930ac1",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2(单个前缀)",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/extend_river_coast_window.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/generate_td_river_previews.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/generate_td_river_previews.py",
+      "bytes": 6410,
+      "sha256": "71850f8179a30187c94574ed60e9bcf6e84717f13ebff65211a03b8f19a95c64",
+      "sha256_after_move": "71850f8179a30187c94574ed60e9bcf6e84717f13ebff65211a03b8f19a95c64",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/generate_td_river_previews.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/inspect_natural_landward_sources.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/inspect_natural_landward_sources.py",
+      "bytes": 4128,
+      "sha256": "4b1953ab0229edff6f6d3d4ce4a565199fd64b22c65388d32d61c1f5495429b5",
+      "sha256_after_move": "4b1953ab0229edff6f6d3d4ce4a565199fd64b22c65388d32d61c1f5495429b5",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/inspect_natural_landward_sources.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/native_water_sediment_reference.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/native_water_sediment_reference.py",
+      "bytes": 2129,
+      "sha256": "8015524273fbac7d7365337870b3e17b9d2de377c9c6c35e9dfd19f959843c1c",
+      "sha256_after_move": "8015524273fbac7d7365337870b3e17b9d2de377c9c6c35e9dfd19f959843c1c",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2(单个前缀)",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/native_water_sediment_reference.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/plot_river_fix.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/plot_river_fix.py",
+      "bytes": 2159,
+      "sha256": "70de056e13a05b8182144c3cb37a85b9f8358590e9b3f1cf43ab324c349535d6",
+      "sha256_after_move": "70de056e13a05b8182144c3cb37a85b9f8358590e9b3f1cf43ab324c349535d6",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/plot_river_fix.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/plot_td_native_channel_tiles.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/plot_td_native_channel_tiles.py",
+      "bytes": 3665,
+      "sha256": "69fb7c5dd940768eb5a7c1c6f26fc9d288c478f144f4918c9b1b11c9f75bd897",
+      "sha256_after_move": "69fb7c5dd940768eb5a7c1c6f26fc9d288c478f144f4918c9b1b11c9f75bd897",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/plot_td_native_channel_tiles.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/plot_td_native_channel_valley_paths.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/plot_td_native_channel_valley_paths.py",
+      "bytes": 4262,
+      "sha256": "1fb8a68480198ad5b5e634c763622b9a56eec2a44fbc12b270e7af89830e65b7",
+      "sha256_after_move": "1fb8a68480198ad5b5e634c763622b9a56eec2a44fbc12b270e7af89830e65b7",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/plot_td_native_channel_valley_paths.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/plot_td_refinement_review.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/plot_td_refinement_review.py",
+      "bytes": 5062,
+      "sha256": "19b57c2fe30c2522420ca7e437e02861986e3f7fb7902418122eefef377abca5",
+      "sha256_after_move": "19b57c2fe30c2522420ca7e437e02861986e3f7fb7902418122eefef377abca5",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/plot_td_refinement_review.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/preflight_large_scale_surface.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/preflight_large_scale_surface.py",
+      "bytes": 1040,
+      "sha256": "b277cf2f0cc4a8f17d056ad2e89025177ddee9756b1b26583d667c524e22a8e5",
+      "sha256_after_move": "b277cf2f0cc4a8f17d056ad2e89025177ddee9756b1b26583d667c524e22a8e5",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/preflight_large_scale_surface.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/prepare_climate_data.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/prepare_climate_data.py",
+      "bytes": 697,
+      "sha256": "878ccbab1a513a63060009caab5a7c7a3c60c2381b8a99ee5ad9e7ec5523132c",
+      "sha256_after_move": "878ccbab1a513a63060009caab5a7c7a3c60c2381b8a99ee5ad9e7ec5523132c",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/prepare_climate_data.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/prepare_frozen_terrain_paths.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/prepare_frozen_terrain_paths.py",
+      "bytes": 3904,
+      "sha256": "dab00692daea6f774e806edd27ac6375886e29c042a81489fa00d0e8ff8f6975",
+      "sha256_after_move": "dab00692daea6f774e806edd27ac6375886e29c042a81489fa00d0e8ff8f6975",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/prepare_frozen_terrain_paths.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/prepare_real_import_fixture.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/prepare_real_import_fixture.py",
+      "bytes": 1625,
+      "sha256": "a1f27630d0bc36f90df892c8e240e4c10d9a5571689039f976ca0ac1bda39369",
+      "sha256_after_move": "a1f27630d0bc36f90df892c8e240e4c10d9a5571689039f976ca0ac1bda39369",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/prepare_real_import_fixture.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/prepare_td_fine_bed_material.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/prepare_td_fine_bed_material.py",
+      "bytes": 1916,
+      "sha256": "52540fb78e61c2e74b07071ef076290379f2a4ae43604d978fbb8cfd32b34e47",
+      "sha256_after_move": "52540fb78e61c2e74b07071ef076290379f2a4ae43604d978fbb8cfd32b34e47",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/prepare_td_fine_bed_material.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/prepare_td_lake_interface_continuous_bed.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/prepare_td_lake_interface_continuous_bed.py",
+      "bytes": 1593,
+      "sha256": "d9ad88cae9fb70b92a2b2fca4b93815a13fb3a1e71c087ae3118b09fa344e5d5",
+      "sha256_after_move": "d9ad88cae9fb70b92a2b2fca4b93815a13fb3a1e71c087ae3118b09fa344e5d5",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/prepare_td_lake_interface_continuous_bed.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/prepare_td_natural_outlet_certification.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/prepare_td_natural_outlet_certification.py",
+      "bytes": 1128,
+      "sha256": "1a210177ddc7c1f8e71113ae3ceff9fd5b9432ffdb32f9e0466b0c7506983320",
+      "sha256_after_move": "1a210177ddc7c1f8e71113ae3ceff9fd5b9432ffdb32f9e0466b0c7506983320",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/prepare_td_natural_outlet_certification.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/preview_region_processing.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/preview_region_processing.py",
+      "bytes": 7134,
+      "sha256": "0e088f5b26caea47890af699ec4d880340b0f50cd8aec95a722da380b57ad5ac",
+      "sha256_after_move": "0e088f5b26caea47890af699ec4d880340b0f50cd8aec95a722da380b57ad5ac",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/preview_region_processing.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/reevaluate_height_policy.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/reevaluate_height_policy.py",
+      "bytes": 6447,
+      "sha256": "f3ec680a4da0a92f63addf81d8de979c2f6552579b94c3ca6cba865b34c249b8",
+      "sha256_after_move": "f3ec680a4da0a92f63addf81d8de979c2f6552579b94c3ca6cba865b34c249b8",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2(单个前缀)",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/reevaluate_height_policy.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/render_cliff_erosion.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/render_cliff_erosion.py",
+      "bytes": 5726,
+      "sha256": "de85c095c342c3931054280861d63639f3789d393557b97e49a9f204e6d30dd8",
+      "sha256_after_move": "de85c095c342c3931054280861d63639f3789d393557b97e49a9f204e6d30dd8",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/render_cliff_erosion.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/render_regional_cliffs.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/render_regional_cliffs.py",
+      "bytes": 1451,
+      "sha256": "bf92ee3891e3a143beb91dc18a4b9c6609a311a2f3b49b928c58e28dd4cf1331",
+      "sha256_after_move": "bf92ee3891e3a143beb91dc18a4b9c6609a311a2f3b49b928c58e28dd4cf1331",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/render_regional_cliffs.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/render_tuned_terrain.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/render_tuned_terrain.py",
+      "bytes": 6922,
+      "sha256": "4d83a42b379f54a3d618dd3b3628165a2ce7cfe1e89888ef9ba289c1f5d59108",
+      "sha256_after_move": "4d83a42b379f54a3d618dd3b3628165a2ce7cfe1e89888ef9ba289c1f5d59108",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/render_tuned_terrain.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/render_upstream_sediment_outputs.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/render_upstream_sediment_outputs.py",
+      "bytes": 1492,
+      "sha256": "ee7201ad95d21ddb7d47a7bc38f80d41b14e747268b71a845a7f833057ea6eeb",
+      "sha256_after_move": "ee7201ad95d21ddb7d47a7bc38f80d41b14e747268b71a845a7f833057ea6eeb",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/render_upstream_sediment_outputs.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/scan_diffusion_land.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/scan_diffusion_land.py",
+      "bytes": 1059,
+      "sha256": "5b52f47a3bf923f4a521616fa9de39a5b97757890d26d7d73fd404fac68fcbca",
+      "sha256_after_move": "5b52f47a3bf923f4a521616fa9de39a5b97757890d26d7d73fd404fac68fcbca",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2(单个前缀)",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/scan_diffusion_land.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/split_components.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/split_components.py",
+      "bytes": 5916,
+      "sha256": "171cb9c189b07ab0cbf0e8479966e2965ade167ad6d25a0841426ffc582eb2f3",
+      "sha256_after_move": "171cb9c189b07ab0cbf0e8479966e2965ade167ad6d25a0841426ffc582eb2f3",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2(单个前缀)",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/split_components.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/summarize_height_budget_benchmark.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/summarize_height_budget_benchmark.py",
+      "bytes": 6857,
+      "sha256": "7adc86831d77b374d91527e40fa7d5e92660f23f3b3c254bd55000aa127b3dda",
+      "sha256_after_move": "7adc86831d77b374d91527e40fa7d5e92660f23f3b3c254bd55000aa127b3dda",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2(单个前缀)",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/summarize_height_budget_benchmark.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/update_watershed_readme.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/update_watershed_readme.py",
+      "bytes": 4139,
+      "sha256": "af049cb2b1e413121143c010b2c3d4061b322e3d22800686c74e2a31de0d2a5c",
+      "sha256_after_move": "af049cb2b1e413121143c010b2c3d4061b322e3d22800686c74e2a31de0d2a5c",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2(单个前缀)",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/update_watershed_readme.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/verify_dh_terrain_order.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/verify_dh_terrain_order.py",
+      "bytes": 1930,
+      "sha256": "cb0595e57c20f8069079233d8cbf7c12845387d4945261d0f21be382fb91c964",
+      "sha256_after_move": "cb0595e57c20f8069079233d8cbf7c12845387d4945261d0f21be382fb91c964",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/verify_dh_terrain_order.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/verify_fine_domain_mixed_seams.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/verify_fine_domain_mixed_seams.py",
+      "bytes": 3691,
+      "sha256": "992a4e33fcfabefe7f3aa861af1e42b30aca6d961e260f7857ef10be9a0757af",
+      "sha256_after_move": "992a4e33fcfabefe7f3aa861af1e42b30aca6d961e260f7857ef10be9a0757af",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/verify_fine_domain_mixed_seams.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/verify_fine_domain_saved_exchange.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/verify_fine_domain_saved_exchange.py",
+      "bytes": 3998,
+      "sha256": "dd6eb9afbb7d69078f3ac45c35f41f73abf926c933984b3d7205dc037d44ff92",
+      "sha256_after_move": "dd6eb9afbb7d69078f3ac45c35f41f73abf926c933984b3d7205dc037d44ff92",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/verify_fine_domain_saved_exchange.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/verify_lake_routing.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/verify_lake_routing.py",
+      "bytes": 9425,
+      "sha256": "87e749ea53d55a7d70d9afa4eecc863cae84d81b0aee2a4bd26ed97b143540c2",
+      "sha256_after_move": "87e749ea53d55a7d70d9afa4eecc863cae84d81b0aee2a4bd26ed97b143540c2",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/verify_lake_routing.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/verify_morphology_feedback_reference.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/verify_morphology_feedback_reference.py",
+      "bytes": 12994,
+      "sha256": "95c8ac8799d8600e2d86aa2197e331121fc23654ec5e2ea7e8805dc34775a820",
+      "sha256_after_move": "95c8ac8799d8600e2d86aa2197e331121fc23654ec5e2ea7e8805dc34775a820",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/verify_morphology_feedback_reference.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/verify_surface_network_large_benchmark.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/verify_surface_network_large_benchmark.py",
+      "bytes": 2160,
+      "sha256": "b02a3da0a2df0c5c03768f74a833c31a59af1157bb654a017b6dc7852f0e80b8",
+      "sha256_after_move": "b02a3da0a2df0c5c03768f74a833c31a59af1157bb654a017b6dc7852f0e80b8",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/verify_surface_network_large_benchmark.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/verify_surface_network_recovery.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/verify_surface_network_recovery.py",
+      "bytes": 8041,
+      "sha256": "9a176894529cc886666933aaf154a141a2b2d3944ee4832257490edfda9114ac",
+      "sha256_after_move": "9a176894529cc886666933aaf154a141a2b2d3944ee4832257490edfda9114ac",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/verify_surface_network_recovery.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/verify_td_equilibrium_lake_extension.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/verify_td_equilibrium_lake_extension.py",
+      "bytes": 11676,
+      "sha256": "dd1e560dc0ced90cc7d159298a8040cba6e185c0a592231dfa846ce525b497ba",
+      "sha256_after_move": "dd1e560dc0ced90cc7d159298a8040cba6e185c0a592231dfa846ce525b497ba",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/verify_td_equilibrium_lake_extension.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/verify_td_river_network_expansion.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/verify_td_river_network_expansion.py",
+      "bytes": 9713,
+      "sha256": "4800565bcdccb5c5ba7933c79373d48269f9c21220aebb8f552fa5669d28bfc2",
+      "sha256_after_move": "4800565bcdccb5c5ba7933c79373d48269f9c21220aebb8f552fa5669d28bfc2",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/verify_td_river_network_expansion.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/verify_td_valley_incision_extension.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/verify_td_valley_incision_extension.py",
+      "bytes": 6976,
+      "sha256": "c5ad55e5bddc497e7a0106ca48391bce4e61fa98ab7327dc45d1896995d9dc56",
+      "sha256_after_move": "c5ad55e5bddc497e7a0106ca48391bce4e61fa98ab7327dc45d1896995d9dc56",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/verify_td_valley_incision_extension.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tools/verify_valley_budget.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-3-tools-generated-list-only/tools/verify_valley_budget.py",
+      "bytes": 2284,
+      "sha256": "09b60058ba7a6e81155424d9047cf796fa089ec8d22820eae3883e36437eb6f4",
+      "sha256_after_move": "09b60058ba7a6e81155424d9047cf796fa089ec8d22820eae3883e36437eb6f4",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "tools：仅被生成清单（module-map/catalog）提及",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/verify_valley_budget.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    }
+  ],
+  "not_moved": []
+}

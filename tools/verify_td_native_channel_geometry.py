@@ -11,7 +11,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 from terrain_pipeline.td_native_channel_geometry import (
     build_channel_geometry, load_channel_geometry, load_geometry_inputs, save_channel_geometry,
 )

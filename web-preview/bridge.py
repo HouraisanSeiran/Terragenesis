@@ -79,7 +79,7 @@ def vdm_gallery():
 
 
 def bounded_form(body: dict):
-    from terrain_pipeline.metric_vdm_forms import FormRecipe
+    from terrain_pipeline.vdm_cuts import FormRecipe as FormRecipe
     if not isinstance(body, dict) or set(body) - {"kind", "amplitude_m", "wavelength_m", "seed", "surface_curvature_m", "end_elevation_difference_m", "extension_direction_degrees"}:
         raise ValueError("invalid VDM form fields")
     kind = body.get("kind", "layered_ledge")
@@ -265,7 +265,7 @@ def vdm_case(kind: str):
     report_path = pinned_path(report_record)
     report = pinned_json(report_path, "td-channel-vdm-preparation-v1", report_record["expected_sha256"])
     sys.path.insert(0, str(ROOT))
-    from terrain_pipeline.metric_vdm_forms import load_formed_vdm
+    from terrain_pipeline.vdm_cuts import load_formed_vdm as load_formed_vdm
     result = load_formed_vdm(directory, expected_sha256=record["expected_sha256"], expected_identity=record["expected_identity"])
     return {
         "schema": "vdm-case-v1", "kind": kind, "label": variant.get("label", kind),
@@ -280,11 +280,11 @@ def preview_vdm(body: dict):
     """Build a geometry preview through the protected channel entry point."""
     sys.path.insert(0, str(ROOT))
     import numpy as np
-    from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
+    from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
     from terrain_pipeline.td_native_channel_surface import load_channel_surface
-    from terrain_pipeline.metric_vdm import CliffRecipe
-    from terrain_pipeline.metric_vdm_forms import FormRecipe
-    from terrain_pipeline.td_channel_vdm import build_channel_vdm
+    from terrain_pipeline.vdm_cuts import CliffRecipe as CliffRecipe
+    from terrain_pipeline.vdm_cuts import FormRecipe as FormRecipe
+    from terrain_pipeline.vdm_cuts import build_channel_vdm as build_channel_vdm
 
     config = read_json(TD_CONFIG)
     verify_entry(TD_CONFIG, vdm_gallery()["configuration"]["expected_sha256"])
@@ -318,7 +318,7 @@ def td_page(direction: str, hour: int):
     if checkpoint_path: verify_entry(checkpoint_path, checkpoint["expected_sha256"])
     sys.path.insert(0, str(ROOT))
     import numpy as np
-    from terrain_pipeline.td_basin_storage_v10_io import load_storage
+    from terrain_pipeline.basin_storage import storagev10_load_storage as load_storage
     loaded = load_storage(storage_path, expected_sha256=storage["expected_sha256"], expected_identity=storage["expected_identity"])
     arrays, metadata = loaded["arrays"], loaded["metadata"]
     height = arrays["height_m"]

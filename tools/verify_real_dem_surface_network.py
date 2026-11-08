@@ -10,8 +10,9 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.dem_domain import prepare_dem_candidate
-from terrain_pipeline.real_dem_surface_network import build_real_dem_network, validate_real_dem_network
+from terrain_pipeline.td_source import prepare_dem_candidate
+from terrain_pipeline.drainage import build_real_dem_network as build_real_dem_network
+from terrain_pipeline.drainage import validate_real_dem_network as validate_real_dem_network
 
 
 def main() -> int:

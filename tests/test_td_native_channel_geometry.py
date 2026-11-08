@@ -6,10 +6,15 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.td_basin_source import make_td_source
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy, save_basin_hierarchy
-from terrain_pipeline.td_basin_storage_v10_io import PROFILE, STATES, LEDGERS, FLUX, save_storage
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_topology import save_basin_hierarchy as save_basin_hierarchy
+from terrain_pipeline.basin_storage import STORAGEV10_PROFILE as PROFILE
+from terrain_pipeline.basin_storage import STATES as STATES
+from terrain_pipeline.basin_storage import LEDGERS as LEDGERS
+from terrain_pipeline.basin_storage import FLUX as FLUX
+from terrain_pipeline.basin_storage import storagev10_save_storage as save_storage
 from terrain_pipeline.td_native_channel_geometry import (
     GeometryRecipe, build_channel_geometry, load_channel_geometry, load_geometry_inputs,
     save_channel_geometry, validate_channel_geometry,

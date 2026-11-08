@@ -3,7 +3,7 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity
+from terrain_pipeline.common_infra import identity
 from terrain_pipeline.td_ported_junction import build_ported_junction
 
 

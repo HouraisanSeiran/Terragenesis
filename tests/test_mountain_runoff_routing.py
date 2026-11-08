@@ -10,7 +10,7 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline import mountain_runoff_routing as routing
+import terrain_pipeline.runoff as routing
 
 
 def inputs_fixture():
@@ -28,9 +28,9 @@ def routed(inputs=None, dt=30.):
 
 
 def archive_unchecked(path, result):
-    manifest = {"metadata": result["metadata"], "hashes": {key: routing._hash(result[key]) for key in routing.ARRAY_KEYS}}
+    manifest = {"metadata": result["metadata"], "hashes": {key: routing._hash(result[key]) for key in routing.MOUNTAIN_ROUTING_ARRAY_KEYS}}
     np.savez_compressed(path, manifest=np.frombuffer(json.dumps(manifest).encode(), dtype=np.uint8),
-                        **{key: result[key] for key in routing.ARRAY_KEYS})
+                        **{key: result[key] for key in routing.MOUNTAIN_ROUTING_ARRAY_KEYS})
 
 
 class MountainRunoffRoutingTests(unittest.TestCase):
@@ -67,7 +67,7 @@ class MountainRunoffRoutingTests(unittest.TestCase):
             with patch.object(routing, "build_reaches", side_effect=AssertionError("assembly")), \
                  patch.object(routing, "route_local_discharge", side_effect=AssertionError("solve")):
                 loaded = routing.load_routing_npz(path, trusted_inputs=inputs_fixture(), source_binding={"source": "test"})
-            for key in routing.ARRAY_KEYS:
+            for key in routing.MOUNTAIN_ROUTING_ARRAY_KEYS:
                 np.testing.assert_array_equal(loaded[key], result[key])
 
     def test_static_rejects_wrong_first_downstream_even_recounted(self):

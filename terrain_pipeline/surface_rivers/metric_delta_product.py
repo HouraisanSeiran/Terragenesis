@@ -10,14 +10,19 @@ import math
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity, load_bundle, readonly, save_bundle
-from .metric_contracts import TerrainGrid
+from terrain_pipeline.common_infra import identity, load_bundle, readonly, save_bundle
+from terrain_pipeline.common_infra import RoutingGraph, TerrainGrid
 from .metric_delta import DeltaConfig, build_delta_candidate
 from .metric_morphology_events import event_from_record
 
 
-SCHEMA = "terragenesis-delta-candidate-product-v1"
+SCHEMA = "terragenesis-delta-candidate-product-v2"
+LEGACY_SCHEMA = "terragenesis-delta-candidate-product-v1"
 ALGORITHM = "bounded-metric-delta-growth-candidate-v1"
+GRAPH_SCHEMA = "terragenesis-delta-candidate-product-v3"
+GRAPH_ALGORITHM = "source-graph-metric-delta-growth-candidate-v2"
+_GRAPH_ARRAYS = ("receiver", "order_downstream_first", "valid_mask", "edge_length_m",
+                 "edge_slope", "outlet_kind", "lake_id")
 MAX_BYTES = 128 * 1024 * 1024
 _ARRAYS = (
     "terrain_elevation_m", "terrain_valid_mask", "land_mask", "water_mask",
@@ -35,6 +40,14 @@ _CAPABILITIES = {"topology_mutation": False, "hydrodynamics": False,
                  "sediment_recompute": False, "natural_outlet": False,
                  "publishable": False}
 _UNITS = {"elevation": "m", "solid": "m3", "porous_deposit": "m3"}
+_BOUNDARY_EVIDENCE = {
+    "land_water_classification": "caller_supplied_unverified",
+    "upstream_path": "caller_supplied_unverified",
+    "natural_outlet_verified": False,
+    "water_forcing_bound": False,
+    "sediment_forcing_bound": False,
+    "revalidation_required": ["topology", "geometry", "hydraulics", "sediment", "outlet"],
+}
 
 
 def _sha(value, name):
@@ -131,16 +144,19 @@ def _result_arrays(terrain, land_mask, water_mask, main_path, result):
 
 def build_delta_candidate_product(terrain, land_mask, water_mask, main_path, sediment_solid_m3,
                                   parent_graph_identity_sha256, parent_geometry_identity_sha256,
-                                  config=DeltaConfig()):
+                                  config=DeltaConfig(), *, source_graph=None, source_geometry=None):
     result = build_delta_candidate(terrain, land_mask, water_mask, main_path, sediment_solid_m3,
-                                   parent_graph_identity_sha256, parent_geometry_identity_sha256, config)
+                                   parent_graph_identity_sha256, parent_geometry_identity_sha256, config,
+                                   source_graph=source_graph, source_geometry=source_geometry)
     return make_delta_candidate_product(terrain, land_mask, water_mask, main_path,
                                         sediment_solid_m3, parent_graph_identity_sha256,
-                                        parent_geometry_identity_sha256, result)
+                                        parent_geometry_identity_sha256, result,
+                                        source_graph=source_graph, source_geometry=source_geometry)
 
 
 def make_delta_candidate_product(terrain, land_mask, water_mask, main_path, sediment_solid_m3,
-                                 parent_graph_identity_sha256, parent_geometry_identity_sha256, result):
+                                 parent_graph_identity_sha256, parent_geometry_identity_sha256, result, *,
+                                 source_graph=None, source_geometry=None):
     if not isinstance(terrain, TerrainGrid) or not isinstance(result, dict):
         raise ValueError("TerrainGrid and candidate result required")
     shape = terrain.elevation_m.shape
@@ -175,7 +191,22 @@ def make_delta_candidate_product(terrain, land_mask, water_mask, main_path, sedi
         "revalidation_required": list(_REVALIDATION),
         "capabilities": dict(_CAPABILITIES),
         "units": dict(_UNITS),
+        "boundary_evidence": {**_BOUNDARY_EVIDENCE,
+                              "revalidation_required": list(_BOUNDARY_EVIDENCE["revalidation_required"])},
     }
+    if source_graph is not None or source_geometry is not None:
+        metadata["schema"] = GRAPH_SCHEMA
+        metadata["algorithm"] = GRAPH_ALGORITHM
+        if source_graph is not None:
+            if source_geometry is not None or not isinstance(source_graph, RoutingGraph):
+                raise ValueError("select one upstream source graph or geometry")
+            arrays.update({"source_graph_" + name: getattr(source_graph, name) for name in _GRAPH_ARRAYS})
+            metadata["source_graph"] = {"terrain_identity_sha256": source_graph.terrain_identity_sha256,
+                                        "boundary_identity_sha256": source_graph.boundary_identity_sha256,
+                                        "policy": source_graph.policy}
+        else:
+            from .metric_morphology_coupling import _pack
+            _pack(arrays, metadata, "source_geometry", source_geometry)
     arrays = {name: readonly(value) for name, value in arrays.items()}
     product = {"arrays": arrays, "metadata": metadata,
                "identity_sha256": identity(arrays, metadata)}
@@ -187,15 +218,35 @@ def validate_delta_candidate_product(product):
     if not isinstance(product, dict) or set(product) != {"arrays", "metadata", "identity_sha256"}:
         raise ValueError("invalid delta candidate product")
     arrays, metadata = product["arrays"], product["metadata"]
-    if (set(arrays) != set(_ARRAYS) or not isinstance(metadata, dict)
-            or set(metadata) != _METADATA or metadata["schema"] != SCHEMA
-            or metadata["algorithm"] != ALGORITHM
+    graph_version = metadata.get("schema") == GRAPH_SCHEMA
+    source_graph = source_geometry = None
+    extra_arrays, extra_metadata = set(), set()
+    if graph_version:
+        if ("source_graph" in metadata) == ("source_geometry" in metadata):
+            raise ValueError("saved delta requires one source graph or geometry")
+        if "source_graph" in metadata:
+            extra_arrays = {"source_graph_" + name for name in _GRAPH_ARRAYS}
+            extra_metadata = {"source_graph"}
+            source_graph = RoutingGraph(**{name: arrays["source_graph_" + name] for name in _GRAPH_ARRAYS},
+                                        **metadata["source_graph"])
+        else:
+            from .metric_morphology_coupling import _unpack
+            extra_arrays, extra_metadata = {"source_geometry__payload"}, {"source_geometry"}
+            source_geometry = _unpack(arrays, metadata, "source_geometry")
+    if (set(arrays) != set(_ARRAYS) | extra_arrays or not isinstance(metadata, dict)
+            or metadata.get("schema") not in (SCHEMA, LEGACY_SCHEMA, GRAPH_SCHEMA)
+            or set(metadata) != (_METADATA | {"boundary_evidence"} | extra_metadata
+                                 if metadata.get("schema") != LEGACY_SCHEMA else _METADATA)
+            or metadata["algorithm"] != (GRAPH_ALGORITHM if graph_version else ALGORITHM)
             or metadata["status"] != "candidate"
             or product["identity_sha256"] != identity(arrays, metadata)):
         raise ValueError("delta candidate schema or identity mismatch")
     if (metadata["units"] != _UNITS or metadata["capabilities"] != _CAPABILITIES
             or metadata["revalidation_required"] != list(_REVALIDATION)):
         raise ValueError("delta candidate units/capability/revalidation mismatch")
+    # Historical v1 candidates retain their identity and remain uncertified.
+    if "boundary_evidence" in metadata and metadata["boundary_evidence"] != _BOUNDARY_EVIDENCE:
+        raise ValueError("delta caller supplied boundary evidence cannot certify a natural outlet")
     if (not isinstance(metadata["sediment_input_solid_m3"], (int, float))
             or isinstance(metadata["sediment_input_solid_m3"], bool)
             or not math.isfinite(metadata["sediment_input_solid_m3"])
@@ -228,13 +279,14 @@ def validate_delta_candidate_product(product):
         raise ValueError("invalid saved main path")
     if np.any(main_path < 0) or np.any(main_path[:, 0] >= shape[0]) or np.any(main_path[:, 1] >= shape[1]):
         raise ValueError("main path outside terrain")
-    for first, second in zip(main_path, main_path[1:]):
-        if np.max(np.abs(second - first)) != 1:
-            raise ValueError("main path is not 8-connected")
-    transitions = [(tuple(first), tuple(second)) for first, second in zip(main_path, main_path[1:])
-                   if arrays["land_mask"][tuple(first)] and arrays["water_mask"][tuple(second)]]
-    if not transitions or tuple(metadata["mouth_cell"]) != transitions[-1][1]:
-        raise ValueError("saved mouth does not match land-to-water path")
+    if not graph_version:
+        for first, second in zip(main_path, main_path[1:]):
+            if np.max(np.abs(second - first)) != 1:
+                raise ValueError("main path is not 8-connected")
+        transitions = [(tuple(first), tuple(second)) for first, second in zip(main_path, main_path[1:])
+                       if arrays["land_mask"][tuple(first)] and arrays["water_mask"][tuple(second)]]
+        if not transitions or tuple(metadata["mouth_cell"]) != transitions[-1][1]:
+            raise ValueError("saved mouth does not match land-to-water path")
     candidates = _decode_candidates(arrays, metadata)
     mouth = tuple(metadata["mouth_cell"])
     component = arrays["water_component_mask"]
@@ -277,8 +329,10 @@ def validate_delta_candidate_product(product):
     rebuilt = build_delta_candidate(terrain, arrays["land_mask"], arrays["water_mask"],
                                     tuple(map(tuple, main_path.tolist())), metadata["sediment_input_solid_m3"],
                                     metadata["parent_graph_identity_sha256"],
-                                    metadata["parent_geometry_identity_sha256"], config)
+                                    metadata["parent_geometry_identity_sha256"], config,
+                                    source_graph=source_graph, source_geometry=source_geometry)
     if (rebuilt["event"].identity_sha256 != event.identity_sha256
+            or rebuilt["mouth_cell"] != mouth
             or not np.array_equal(rebuilt["height_delta_m"], delta)
             or not np.array_equal(rebuilt["deposit_mask"], arrays["deposit_mask"])
             or not np.array_equal(rebuilt["water_component_mask"], component)

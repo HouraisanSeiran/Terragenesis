@@ -1,3 +1,4 @@
+from terrain_pipeline.surface_domain import recover_surface_network as _m4_module_recover_surface_network
 from concurrent.futures import ThreadPoolExecutor
 from copy import deepcopy
 from dataclasses import replace
@@ -12,21 +13,23 @@ import zipfile
 
 import numpy as np
 
-from terrain_pipeline.channel_inundation import InundationRecipe
-from terrain_pipeline.channel_reroute import RerouteRecipe
-from terrain_pipeline.channel_stage import StageRecipe
-from terrain_pipeline.lake_routing import LakeRoutingRecipe
-from terrain_pipeline.local_channel_sections import SectionRecipe
-from terrain_pipeline.metric_channel_plan import ChannelRecipe, plan_channel
-from terrain_pipeline.network_valley import NetworkValleyRecipe
-from terrain_pipeline.surface_network_prepare import SurfaceNetworkBudget
-from terrain_pipeline.surface_network_recovery import FineGrid, RecoveryRecipe
-from terrain_pipeline.surface_lake_network import (
-    LakeRiverSeam, SurfaceLakeNetworkRecipe, evaluate_surface_lake_network,
-    load_surface_lake_network, save_surface_lake_network, surface_lake_network_hash,
-    validate_surface_lake_network,
-)
-from terrain_pipeline.valley_geometry import ValleyGeometryRecipe
+from terrain_pipeline.surface_hydraulics import InundationRecipe
+from terrain_pipeline.surface_hydraulics import RerouteRecipe
+from terrain_pipeline.surface_hydraulics import StageRecipe
+from terrain_pipeline.lake import LakeRoutingRecipe as LakeRoutingRecipe
+from terrain_pipeline.channel_geometry import SectionRecipe
+from terrain_pipeline.channel_geometry import ChannelRecipe, plan_channel
+from terrain_pipeline.channel_geometry import NetworkValleyRecipe
+from terrain_pipeline.surface_domain import SurfaceNetworkBudget
+from terrain_pipeline.surface_domain import FineGrid, RecoveryRecipe
+from terrain_pipeline.lake import LakeRiverSeam as LakeRiverSeam
+from terrain_pipeline.lake import SurfaceLakeNetworkRecipe as SurfaceLakeNetworkRecipe
+from terrain_pipeline.lake import evaluate_surface_lake_network as evaluate_surface_lake_network
+from terrain_pipeline.lake import load_surface_lake_network as load_surface_lake_network
+from terrain_pipeline.lake import save_surface_lake_network as save_surface_lake_network
+from terrain_pipeline.lake import surface_lake_network_hash as surface_lake_network_hash
+from terrain_pipeline.lake import validate_surface_lake_network as validate_surface_lake_network
+from terrain_pipeline.channel_geometry import ValleyGeometryRecipe
 
 
 def joint_case(inflows=(2., 4.), initial_stage=10., original_local=.01):
@@ -173,7 +176,7 @@ class SurfaceLakeNetworkTests(unittest.TestCase):
 
     def test_lake_failure_never_runs_downstream(self):
         case = joint_case(inflows=(100.,))
-        with patch("terrain_pipeline.surface_lake_network.recover_surface_network", side_effect=AssertionError("called")):
+        with patch('terrain_pipeline.surface_domain.recover_surface_network', side_effect=AssertionError("called")):
             result = evaluate_surface_lake_network(**case)
         self.assert_failed(result, "lake_scenario_failed")
         self.assertEqual(result["trace"], [])
@@ -200,8 +203,8 @@ class SurfaceLakeNetworkTests(unittest.TestCase):
         self.assert_failed(evaluate_surface_lake_network(**case), "downstream_recovery_failed")
 
     def test_tailwater_submerges_spill_rejects_one_way_assumption(self):
-        import terrain_pipeline.surface_lake_network as module
-        real = module.recover_surface_network
+        import terrain_pipeline.lake as module
+        real = _m4_module_recover_surface_network
 
         def high_tailwater(*args, **kwargs):
             result = deepcopy(real(*args, **kwargs))
@@ -256,7 +259,7 @@ class SurfaceLakeNetworkTests(unittest.TestCase):
                         dict(max_lake_cells=48), dict(max_total_lake_work=50)):
             case = joint_case()
             case["recipe"] = replace(case["recipe"], **changes)
-            with patch("terrain_pipeline.surface_lake_network._validated_plan", side_effect=AssertionError("copied")):
+            with patch('terrain_pipeline.lake._validated_plan', side_effect=AssertionError("copied")):
                 with self.assertRaises(ValueError):
                     evaluate_surface_lake_network(**case)
 
@@ -297,8 +300,8 @@ class SurfaceLakeNetworkTests(unittest.TestCase):
             evaluate_surface_lake_network(**case)
 
     def test_final_recovered_injection_must_be_active_and_wet(self):
-        import terrain_pipeline.surface_lake_network as module
-        real = module.recover_surface_network
+        import terrain_pipeline.lake as module
+        real = _m4_module_recover_surface_network
 
         def inactive_injection(*args, **kwargs):
             result = deepcopy(real(*args, **kwargs))
@@ -375,13 +378,13 @@ class SurfaceLakeNetworkTests(unittest.TestCase):
             with zipfile.ZipFile(path, "w") as archive:
                 for name, data in members.items():
                     archive.writestr(name, data)
-            with patch("terrain_pipeline.surface_lake_network.np.load", side_effect=AssertionError("allocated")):
+            with patch('terrain_pipeline.lake._m4_surface_lake_network_np.load', side_effect=AssertionError("allocated")):
                 with self.assertRaises(ValueError):
                     load_surface_lake_network(path)
 
     def test_zero_lake_outflow_with_existing_high_tailwater_rejected(self):
-        import terrain_pipeline.surface_lake_network as module
-        real = module.recover_surface_network
+        import terrain_pipeline.lake as module
+        real = _m4_module_recover_surface_network
 
         def high_existing_tailwater(*args, **kwargs):
             recovered = deepcopy(real(*args, **kwargs))
@@ -410,7 +413,7 @@ class SurfaceLakeNetworkTests(unittest.TestCase):
     def test_retained_memory_preflight_before_downstream_recovery(self):
         case = joint_case()
         case["recipe"] = replace(case["recipe"], max_retained_bytes=500000)
-        with patch("terrain_pipeline.surface_lake_network.recover_surface_network", side_effect=AssertionError("allocated")):
+        with patch('terrain_pipeline.surface_domain.recover_surface_network', side_effect=AssertionError("allocated")):
             result = evaluate_surface_lake_network(**case)
         self.assert_failed(result, "joint_retained_memory_exhausted")
         self.assertEqual(result["summary"]["committed_steps"], 0)
@@ -425,14 +428,14 @@ class SurfaceLakeNetworkTests(unittest.TestCase):
         result = evaluate_surface_lake_network(**joint_case())
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "bytes.npz"
-            with patch("terrain_pipeline.surface_lake_network.MAX_ARCHIVE_BYTES", 100), patch(
-                    "terrain_pipeline.surface_lake_network.np.savez_compressed", side_effect=AssertionError("compressed")):
+            with patch('terrain_pipeline.lake.NETWORK_MAX_ARCHIVE_BYTES', 100), patch(
+                    'terrain_pipeline.lake._m4_surface_lake_network_np.savez_compressed', side_effect=AssertionError("compressed")):
                 with self.assertRaises(ValueError):
                     save_surface_lake_network(result, path)
             self.assertEqual(list(Path(temporary).iterdir()), [])
 
     def test_load_rehashed_forged_q_and_status_semantically_rejected(self):
-        import terrain_pipeline.surface_lake_network as module
+        import terrain_pipeline.lake as module
         result = evaluate_surface_lake_network(**joint_case())
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "rehashed.npz"
@@ -444,18 +447,18 @@ class SurfaceLakeNetworkTests(unittest.TestCase):
                     forged["transfer_feasible"] = False
                 forged["identity_sha256"] = surface_lake_network_hash(forged)
                 arrays = {}
-                tree = module._tree(forged, arrays)
+                tree = module.network_tree(forged, arrays)
                 import hashlib
                 manifest = dict(format_version=1, tree=tree,
-                                tree_sha256=hashlib.sha256(module._json(tree).encode("utf-8")).hexdigest())
-                np.savez_compressed(path, manifest=np.asarray(module._json(manifest)), **arrays)
+                                tree_sha256=hashlib.sha256(module.network_json(tree).encode("utf-8")).hexdigest())
+                np.savez_compressed(path, manifest=np.asarray(module.network_json(manifest)), **arrays)
                 with self.assertRaisesRegex(ValueError, "replay"):
                     load_surface_lake_network(path)
 
     def test_interrupted_save_never_leaves_partial_destination(self):
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "interrupted.npz"
-            with patch("terrain_pipeline.surface_lake_network.np.savez_compressed", side_effect=OSError("injected")):
+            with patch('terrain_pipeline.lake._m4_surface_lake_network_np.savez_compressed', side_effect=OSError("injected")):
                 with self.assertRaises(OSError):
                     save_surface_lake_network(evaluate_surface_lake_network(**joint_case()), path)
             self.assertEqual(list(Path(temporary).iterdir()), [])

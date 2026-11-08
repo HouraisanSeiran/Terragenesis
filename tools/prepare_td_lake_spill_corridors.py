@@ -7,7 +7,8 @@ from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from terrain_pipeline.td_lake_spill_corridor import build_lake_spill_corridors, save_lake_spill_corridors
+from terrain_pipeline.basin_topology import build_lake_spill_corridors as build_lake_spill_corridors
+from terrain_pipeline.basin_topology import save_lake_spill_corridors as save_lake_spill_corridors
 
 
 def file_hash(path):

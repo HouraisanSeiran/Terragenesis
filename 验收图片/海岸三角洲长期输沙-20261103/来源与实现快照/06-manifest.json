@@ -1,0 +1,53 @@
+{
+  "schema": "coastal-marine-base-v1",
+  "algorithm_version": "coast-following-v2",
+  "source_identity": "4fc3ec6ac77d2ea49dafa2242b5012871ee8c61b8d5b23f155d48ca3acff1a01",
+  "source_manifest_sha256": "b81acbf22a2a7b595022d37252bbef988f009ab243b0a4e863fd9f329806515f",
+  "source_files_sha256": {
+    "bed_m": "efd166803fb98e0b606c0ac508663ec0bccd6c81f8efc1888e90c3a9b6ed4793",
+    "valid": "4af1727edae26da2d72a35677e67cbe2397d80c6d647f0b673ccd3d99741c890",
+    "ocean": "7868529b51d87e81f946865ea7e8b36e4daccb41c264b1a4259da59abc5f9b25",
+    "unknown_wet": "2b6cac4b2a2e47be7ea6029d42a4730ad67affbfc9e7bb89ae9ac68e046f87d0"
+  },
+  "source_path": "D:\\codexwork\\\u5c71\u5ddd\u5f62\u610fTerragenesis\\.scratch\\delta-scale-suite-20261102\\source-case300",
+  "plate_identity": "b4c8bbdba29111b8c3ba3270e2f0d3a4fed3544655249fa07c506654b8ae6af9",
+  "plate_path": "D:\\codexwork\\\u5c71\u5ddd\u5f62\u610fTerragenesis\\.scratch\\plate-formation-coast-20261101\\shaped-run-v4\\product.npz",
+  "plate_file_sha256": "7f1fa9e6aa5fe327000f1e850ad24ddddf20ffb3bf20d996259ba183af2c3ed3",
+  "world_seed": 20261020,
+  "origin_xz_m": [
+    -245760,
+    -122880
+  ],
+  "spacing_m": 600,
+  "shape_zx": [
+    359,
+    564
+  ],
+  "coordinate_convention": "cell centres, x east, z south, arrays [z,x]",
+  "parameters": {
+    "min_width_m": 18000.0,
+    "max_width_m": 55000.0,
+    "break_depth_m": 160.0,
+    "relief_limit_m": 55.0,
+    "context_scale_m": 12000.0,
+    "edge_fade_m": 12000.0
+  },
+  "scenario": "source morphology and frozen model crust mapped to assumed shelf geometry; no sediment inventory",
+  "files_sha256": {
+    "source_bed": "efd166803fb98e0b606c0ac508663ec0bccd6c81f8efc1888e90c3a9b6ed4793",
+    "derived_base_bed": "9651c3b8812fac595d0be6b72be38baa041dbfd17d8a335786822631e6a7a8eb",
+    "final_bed": "9651c3b8812fac595d0be6b72be38baa041dbfd17d8a335786822631e6a7a8eb",
+    "valid": "4af1727edae26da2d72a35677e67cbe2397d80c6d647f0b673ccd3d99741c890",
+    "source_ocean": "7868529b51d87e81f946865ea7e8b36e4daccb41c264b1a4259da59abc5f9b25",
+    "classification": "229bd0f3c8f9f556f6f4a64dc1d15e046c1fc73daadcb6899da585935b139f09",
+    "shoreline": "a57f2d0a59fcdaf20f8d410babe4c23c2a0a8e4d376818daf85c6aa3762f6f88",
+    "coast_distance_m": "23650b42176e969f1071443600472d585e1107e7b2e1207652ed9bd972e622fa",
+    "shelf_width_m": "a8c7f6259cca11314b7bf3bcdb8c0ef2552cca0651b9047336d7c68fa3b9a91a",
+    "shelf_break_depth_m": "92285ea4dd3b102310cc9f0bbea48104bbd38971cd82a0045705eaacb60a8000",
+    "shelf_slope": "6fc36dc39ec8ad9b35f5eb46a1c59b3759b3bbd9246e7c9c44c26595c32c5efa",
+    "base_change_m": "09a1bdbfc8792d03ea5f7af44ced2962eb9e986e76fa0a66dd243747ee39ec08",
+    "continental_fraction": "6ab5422cb5eed517a72cd08ae58890b47133c03afd81f5b407f308705fdcc1e5",
+    "crust_thickness_m": "d2f5f5277f822e0f933a149be02e5b2d698d30c615d8c0a0f160cb299d6df3e5"
+  },
+  "identity": "a306c5127b7510e5f6b7e1359cfb36dfd342c3023cb7dc576a4f6cb97436c60c"
+}

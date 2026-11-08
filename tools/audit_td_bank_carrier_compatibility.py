@@ -14,7 +14,7 @@ import psutil
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, load_bundle, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, identity, load_bundle, publish_bytes
 
 BANK_INDEX = ROOT / "verification/natural-river-network/source-conforming-banks-v3-entry-20261006-01/index.json"
 BANK_SHA = "8f9ef4d8190a637fc5c46ad165fb48c680f3cf5b2b5b834c90929e5bf4384654"

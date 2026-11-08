@@ -1,0 +1,178 @@
+{
+  "pass": true,
+  "world_seed": 20261020,
+  "source_product": "D:\\codexwork\\\u5c71\u5ddd\u5f62\u610fTerragenesis\\.scratch\\plate-formation-coast-20261101\\coast-original-v4",
+  "source_product_identity": "42a50c3b13f8f4169002438e879d54e53fb094cff9bde9dd7659bfebe4336c60",
+  "images": {
+    "new-overview.png": {
+      "sha256": "08246c9c25fcd2b543a62ce07d323a98866d33fceb260175c4cd299fe64f64fe",
+      "terrain_basis": "saved Terrain Diffusion raw field, original macro conditioning",
+      "terrain_identity": "b11092789e5077fbe7c61926b2b1c0788ef22065edf2597035a13abe506ee607",
+      "raw_path": "D:\\codexwork\\\u5c71\u5ddd\u5f62\u610fTerragenesis\\.scratch\\world-acceptance-64km-20261031\\run-v1\\terrain\\raw_td_30m.npy",
+      "raw_file_sha256": "1dfa01dbb798fa698a7a68a1fc820e33e90606a67c79c2a6498967440ea35aaa",
+      "coastal_product_identity": "42a50c3b13f8f4169002438e879d54e53fb094cff9bde9dd7659bfebe4336c60",
+      "algorithms": [
+        "coastal-bed-v1",
+        "final-bed-marine-connectivity"
+      ],
+      "coverage_status": "complete_in_window",
+      "bounds_xmin_xmax_zmax_zmin_km": [
+        125.985,
+        190.065,
+        32.025,
+        -32.055
+      ],
+      "physical_spacing_m": 30,
+      "display_sample_spacing_m": 60,
+      "time": "static initial bed",
+      "rendering": "terrain coloration only, shared terrain_map_style bands; NW light, vertical exaggeration 1; marine depth colors saturate at 35m; no vegetation, materials or snow inferred",
+      "coordinates": "cell centres; x east, z south; north at top"
+    },
+    "legacy-overview.png": {
+      "sha256": "5c4ad66918ae6277dcfadb6025644562bf916ec5f34705ddb64eed0708ebdec8",
+      "terrain_basis": "saved Terrain Diffusion raw field, original macro conditioning",
+      "terrain_identity": "b11092789e5077fbe7c61926b2b1c0788ef22065edf2597035a13abe506ee607",
+      "raw_path": "D:\\codexwork\\\u5c71\u5ddd\u5f62\u610fTerragenesis\\.scratch\\world-acceptance-64km-20261031\\run-v1\\terrain\\raw_td_30m.npy",
+      "raw_file_sha256": "1dfa01dbb798fa698a7a68a1fc820e33e90606a67c79c2a6498967440ea35aaa",
+      "coastal_product_identity": "42a50c3b13f8f4169002438e879d54e53fb094cff9bde9dd7659bfebe4336c60",
+      "algorithms": [
+        "legacy-hardlock",
+        "final-bed-marine-connectivity"
+      ],
+      "coverage_status": "complete_in_window",
+      "bounds_xmin_xmax_zmax_zmin_km": [
+        125.985,
+        190.065,
+        32.025,
+        -32.055
+      ],
+      "physical_spacing_m": 30,
+      "display_sample_spacing_m": 60,
+      "time": "static initial bed",
+      "rendering": "terrain coloration only, shared terrain_map_style bands; NW light, vertical exaggeration 1; marine depth colors saturate at 35m; no vegetation, materials or snow inferred",
+      "coordinates": "cell centres; x east, z south; north at top"
+    },
+    "comparison-64km.png": {
+      "sha256": "8733e93a4c775c1e19cf360bd6e5aef5b6e605242d9a6b4b804021fecc8c97e2",
+      "terrain_basis": "saved Terrain Diffusion raw field, original macro conditioning",
+      "terrain_identity": "b11092789e5077fbe7c61926b2b1c0788ef22065edf2597035a13abe506ee607",
+      "raw_path": "D:\\codexwork\\\u5c71\u5ddd\u5f62\u610fTerragenesis\\.scratch\\world-acceptance-64km-20261031\\run-v1\\terrain\\raw_td_30m.npy",
+      "raw_file_sha256": "1dfa01dbb798fa698a7a68a1fc820e33e90606a67c79c2a6498967440ea35aaa",
+      "coastal_product_identity": "42a50c3b13f8f4169002438e879d54e53fb094cff9bde9dd7659bfebe4336c60",
+      "algorithms": [
+        "legacy-hardlock",
+        "coastal-bed-v1",
+        "final-bed-marine-connectivity"
+      ],
+      "coverage_status": "complete_in_window",
+      "bounds_xmin_xmax_zmax_zmin_km": [
+        125.985,
+        190.065,
+        32.025,
+        -32.055
+      ],
+      "physical_spacing_m": 30,
+      "display_sample_spacing_m": 60,
+      "time": "static initial bed",
+      "rendering": "terrain coloration only, shared terrain_map_style bands; NW light, vertical exaggeration 1; marine depth colors saturate at 35m; no vegetation, materials or snow inferred",
+      "coordinates": "cell centres; x east, z south; north at top"
+    },
+    "comparison-coast-detail.png": {
+      "sha256": "d789b642a31e1a2c1b2c8a33b1dc3ef26fdef658886b511775f3dfd9d12a03e3",
+      "terrain_basis": "saved Terrain Diffusion raw field, original macro conditioning",
+      "terrain_identity": "b11092789e5077fbe7c61926b2b1c0788ef22065edf2597035a13abe506ee607",
+      "raw_path": "D:\\codexwork\\\u5c71\u5ddd\u5f62\u610fTerragenesis\\.scratch\\world-acceptance-64km-20261031\\run-v1\\terrain\\raw_td_30m.npy",
+      "raw_file_sha256": "1dfa01dbb798fa698a7a68a1fc820e33e90606a67c79c2a6498967440ea35aaa",
+      "coastal_product_identity": "42a50c3b13f8f4169002438e879d54e53fb094cff9bde9dd7659bfebe4336c60",
+      "algorithms": [
+        "legacy-hardlock",
+        "coastal-bed-v1",
+        "zero-metre-contour",
+        "final-bed-marine-connectivity"
+      ],
+      "coverage_status": "complete_in_window",
+      "bounds_xmin_xmax_zmax_zmin_km": [
+        155.985,
+        176.985,
+        6.945,
+        -14.055
+      ],
+      "physical_spacing_m": 30,
+      "display_sample_spacing_m": 30,
+      "time": "static initial bed",
+      "rendering": "terrain coloration only, shared terrain_map_style bands; NW light, vertical exaggeration 1; marine depth colors saturate at 35m; no vegetation, materials or snow inferred",
+      "coordinates": "cell centres; x east, z south; north at top"
+    },
+    "bed-difference.png": {
+      "sha256": "1c267d7c28268f2a5305ad6c3ff324110790d9b1f3f7a944477637b20b0767fa",
+      "terrain_basis": "saved Terrain Diffusion raw field, original macro conditioning",
+      "terrain_identity": "b11092789e5077fbe7c61926b2b1c0788ef22065edf2597035a13abe506ee607",
+      "raw_path": "D:\\codexwork\\\u5c71\u5ddd\u5f62\u610fTerragenesis\\.scratch\\world-acceptance-64km-20261031\\run-v1\\terrain\\raw_td_30m.npy",
+      "raw_file_sha256": "1dfa01dbb798fa698a7a68a1fc820e33e90606a67c79c2a6498967440ea35aaa",
+      "coastal_product_identity": "42a50c3b13f8f4169002438e879d54e53fb094cff9bde9dd7659bfebe4336c60",
+      "algorithms": [
+        "legacy-hardlock",
+        "coastal-bed-v1"
+      ],
+      "coverage_status": "complete_in_window",
+      "bounds_xmin_xmax_zmax_zmin_km": [
+        125.985,
+        190.065,
+        32.025,
+        -32.055
+      ],
+      "physical_spacing_m": 30,
+      "display_sample_spacing_m": 60,
+      "time": "static initial bed",
+      "rendering": "Signed elevation difference, common symmetric -200 to 200m scale; no hillshade",
+      "coordinates": "cell centres; x east, z south; north at top"
+    }
+  },
+  "metrics": {
+    "sea_to_land_cells": 81005,
+    "land_to_sea_cells": 7838,
+    "difference_min_m": -17.924072265625,
+    "difference_max_m": 199.9850616455078,
+    "classification_counts": {
+      "0": 0,
+      "1": 3061661,
+      "2": 1500348,
+      "3": 487
+    },
+    "review_window_all_valid": true,
+    "sea_to_land_area_km2": 72.9045,
+    "land_to_sea_area_km2": 7.0542
+  },
+  "land_band_edges_m": [
+    0.0,
+    50.0,
+    100.0,
+    200.0,
+    300.0,
+    500.0,
+    750.0,
+    1000.0,
+    1500.0,
+    2000.0,
+    3000.0,
+    4000.0,
+    6000.0,
+    8000.0
+  ],
+  "land_band_colors": [
+    "#2f7d4f",
+    "#48975a",
+    "#6cae63",
+    "#93c172",
+    "#bcd07f",
+    "#e0dc8a",
+    "#e6c877",
+    "#d9ae68",
+    "#c3965f",
+    "#a8825f",
+    "#9c8570",
+    "#cfc9c1",
+    "#f4f3f0"
+  ],
+  "scope": "Coastal initial bed only; sediment, tidal evolution and new plate-conditioned TD not run"
+}

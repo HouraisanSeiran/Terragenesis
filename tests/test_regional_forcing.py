@@ -4,9 +4,10 @@ import json
 from pathlib import Path
 from unittest.mock import patch
 import numpy as np
-from terrain_pipeline.regional_surface_forcing import advance_soil, preflight, load_forcing
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.rainfall_runoff import RunoffParameters, simulate_rainfall_runoff
+from terrain_pipeline.climate_forcing import advance_soil, regional_preflight as preflight, regional_load_forcing as load_forcing
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+from terrain_pipeline.runoff import simulate_rainfall_runoff as simulate_rainfall_runoff
 from terrain_pipeline.regional_surface_review import read_bounded_json
 
 CANONICAL_FORCING = Path(__file__).resolve().parents[1] / 'verification/regional-forcing/run-20261001T095608600719Z'
@@ -52,7 +53,7 @@ class RegionalForcingTests(unittest.TestCase):
         root = Path(__file__).resolve().parents[1]
         directory = CANONICAL_FORCING / 'dry'
         meta = canonical_manifest()
-        with patch('terrain_pipeline.regional_surface_forcing.advance_soil', side_effect=AssertionError('cold read advanced')), patch('terrain_pipeline.regional_surface_forcing.generate_forcing', side_effect=AssertionError('cold generated')), patch('terrain_pipeline.regional_surface_forcing.interval_mean_mm_h', side_effect=AssertionError('cold weather')):
+        with patch('terrain_pipeline.climate_forcing.advance_soil', side_effect=AssertionError('cold read advanced')), patch('terrain_pipeline.climate_forcing.regional_generate_forcing', side_effect=AssertionError('cold generated')), patch('terrain_pipeline.climate_forcing.interval_mean_mm_h', side_effect=AssertionError('cold weather')):
             loaded = load_forcing(directory, expected_manifest_sha256=DRY_MANIFEST_SHA, source_identity=SOURCE_IDENTITY)
         try:
             self.assertEqual(loaded['runoff_volume_m3'].shape, (288, 256, 256))
@@ -68,7 +69,7 @@ class RegionalForcingTests(unittest.TestCase):
             ('uniform_heavy', '699a34ee51a68d98aa99a1c63a0cc9435845a2fb315a9e51b0f9343b3a839bbc', 16986931.2),
         )
         for name, digest, rain in cases:
-            with self.subTest(case=name), patch('terrain_pipeline.regional_surface_forcing.advance_soil', side_effect=AssertionError('cold advanced')):
+            with self.subTest(case=name), patch('terrain_pipeline.climate_forcing.advance_soil', side_effect=AssertionError('cold advanced')):
                 loaded = load_forcing(CANONICAL_FORCING / name, expected_manifest_sha256=digest,
                     source_identity=SOURCE_IDENTITY)
                 try:

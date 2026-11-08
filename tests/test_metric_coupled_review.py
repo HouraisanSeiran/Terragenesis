@@ -5,16 +5,16 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
+from terrain_pipeline.common_infra import file_sha256, identity
 from terrain_pipeline.surface_rivers.metric_boundary_coupling import (
     BoundarySeries, CoupledForcing, solve_coupled,
 )
-from terrain_pipeline.surface_rivers.metric_channel_state import ChannelConfig, ChannelNetwork
+from terrain_pipeline.channel_geometry import ChannelConfig, ChannelNetwork
 from terrain_pipeline.surface_rivers.metric_coupled_product import (
     load_coupled_product, make_coupled_product, validate_coupled_product,
     save_coupled_product,
 )
-from terrain_pipeline.surface_rivers.metric_lake_storage import LakeStorage
+from terrain_pipeline.lake import LakeStorage as LakeStorage
 
 
 def closed_network(*, count=1, bed=0., length=10., width=2., depth=10.):

@@ -1,6 +1,7 @@
 import unittest
 import numpy as np
-from terrain_pipeline.lake_balance import LakeBalanceRecipe, evaluate_lake_balance
+from terrain_pipeline.lake import LakeBalanceRecipe as LakeBalanceRecipe
+from terrain_pipeline.lake import evaluate_lake_balance as evaluate_lake_balance
 
 
 def basin_fixture():

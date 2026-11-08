@@ -13,9 +13,14 @@ sys.path.insert(0, str(ROOT))
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_source import PRIMARY_PATH, PRIMARY_SHA256, load_td_source, save_td_source
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy, load_basin_hierarchy, save_basin_hierarchy
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_storage import PRIMARY_PATH as PRIMARY_PATH
+from terrain_pipeline.basin_storage import PRIMARY_SHA256 as PRIMARY_SHA256
+from terrain_pipeline.basin_storage import load_td_source as load_td_source
+from terrain_pipeline.basin_storage import save_td_source as save_td_source
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_topology import save_basin_hierarchy as save_basin_hierarchy
 
 
 def verify(destination):
@@ -65,7 +70,7 @@ def verify(destination):
         "artifacts": {"source.npz": file_sha256(source_path), "hierarchy.npz": file_sha256(hierarchy_path),
                       "inventory.json": file_sha256(destination / "inventory.json")},
         "code_sha256": {name: file_sha256(ROOT / name) for name in (
-            "terrain_pipeline/td_basin_source.py", "terrain_pipeline/td_basin_hierarchy.py",
+            'terrain_pipeline/basin_storage.py', 'terrain_pipeline/basin_topology.py',
             "tests/test_td_basin_source_hierarchy.py", "tools/verify_td_basin_source_hierarchy.py")},
         "statistics": {"valid_cells": int(arrays["valid_mask"].sum()), "area_m2": float(arrays["valid_mask"].sum() * source["metadata"]["spacing_m"] ** 2),
             "nodes": len(parent), "leaves": len(leaves), "roots": roots.tolist(), "merge_nodes": int((children_count > 0).sum()),

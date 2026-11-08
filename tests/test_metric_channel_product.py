@@ -6,14 +6,14 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
+from terrain_pipeline.common_infra import file_sha256, identity
 from terrain_pipeline.surface_rivers.metric_channel_product import (
     load_channel_product, make_channel_product, sample_channel_output,
     save_channel_product, validate_channel_product, save_channel_output,
     load_channel_output, validate_channel_output,
 )
-from terrain_pipeline.surface_rivers.metric_channel_solver import solve_channel
-from terrain_pipeline.surface_rivers.metric_channel_state import ChannelConfig, ChannelForcing, ChannelNetwork
+from terrain_pipeline.surface_hydraulics import solve_channel
+from terrain_pipeline.channel_geometry import ChannelConfig, ChannelForcing, ChannelNetwork
 
 
 class _Fixture:
@@ -24,6 +24,7 @@ def closed_fixture():
     network = _Fixture()
     network.receiver = np.array([-1], np.int64)
     network.length_m = np.array([10.])
+    network.receiver_distance_m = np.array([0.])
     network.width_m = np.array([2.])
     network.bed_elevation_m = np.array([5.])
     network.bed_slope = np.array([0.])
@@ -59,6 +60,62 @@ def closed_fixture():
 
 
 class ChannelProductTests(unittest.TestCase):
+    def test_rehashed_geometry_rejected_in_trace_and_sampled_output(self):
+        network = ChannelNetwork(np.array([1, -1], np.int64), np.array([5., 5.]),
+            np.ones(2), np.array([1., 0.]), np.full(2, .1), np.full(2, .05),
+            np.full(2, 3.), np.array(["interior", "open_outflow"]), "a" * 64,
+            "test", "test", receiver_distance_m=np.array([10., 0.]))
+        forcing = ChannelForcing(np.array([0., .1]), np.zeros((1, 2)), "b" * 64)
+        product = make_channel_product(network, forcing, solve_channel(network, forcing))
+        sampled = sample_channel_output(product, np.array([0., .1]))
+        for bundle, validator in ((product, validate_channel_product), (sampled, validate_channel_output)):
+            self.assertTrue(validator(bundle))
+            for bed in ([0., 0.], [0., 1.], [1., .999]):
+                altered = deepcopy(bundle)
+                altered["arrays"]["network_bed_elevation_m"] = np.array(bed)
+                altered["identity_sha256"] = identity(altered["arrays"], altered["metadata"])
+                with self.subTest(validator=validator.__name__, bed=bed), self.assertRaisesRegex(ValueError, "downhill|inconsistent"):
+                    validator(altered)
+            for key, value in (("network_bed_slope", np.array([1., .1])),
+                               ("network_receiver_distance_m", np.array([5., 0.]))):
+                altered = deepcopy(bundle)
+                altered["arrays"][key] = value
+                altered["identity_sha256"] = identity(altered["arrays"], altered["metadata"])
+                with self.subTest(key=key), self.assertRaisesRegex(ValueError, "inconsistent"):
+                    validator(altered)
+            altered = deepcopy(bundle)
+            altered["arrays"].update(network_receiver=np.array([-1, 0], np.int64),
+                network_terminal_kind=np.array(["open_outflow", "interior"]),
+                network_receiver_distance_m=np.array([0., 10.]))
+            altered["identity_sha256"] = identity(altered["arrays"], altered["metadata"])
+            with self.assertRaisesRegex(ValueError, "downhill"):
+                validator(altered)
+        self.assertEqual(sampled["metadata"]["geometry_semantics"]["open_outflow_slope"],
+                         "prescribed_positive_boundary_gradient_no_receiver")
+
+    def test_legacy_geometry_validation_does_not_rewrite_identity(self):
+        from terrain_pipeline.surface_rivers.metric_channel_product import LEGACY_SEMANTICS
+        network = ChannelNetwork(np.array([1, -1], np.int64), np.full(2, 10.),
+            np.ones(2), np.array([1., 0.]), np.full(2, .1), np.full(2, .05),
+            np.full(2, 3.), np.array(["interior", "open_outflow"]), "a" * 64, "test", "test")
+        forcing = ChannelForcing(np.array([0., .1]), np.zeros((1, 2)), "b" * 64)
+        product = make_channel_product(network, forcing, solve_channel(network, forcing))
+        sampled = sample_channel_output(product, np.array([0., .1]))
+        product["arrays"].pop("network_receiver_distance_m")
+        product["metadata"].update(schema="terragenesis-channel-diagnostic-v1", semantics=LEGACY_SEMANTICS)
+        sampled["arrays"].pop("network_receiver_distance_m")
+        sampled["metadata"].update(schema="terragenesis-channel-output-v1")
+        sampled["metadata"].pop("geometry_semantics")
+        for bundle, validator in ((product, validate_channel_product), (sampled, validate_channel_output)):
+            bundle["identity_sha256"] = identity(bundle["arrays"], bundle["metadata"])
+            before = bundle["identity_sha256"]
+            self.assertTrue(validator(bundle))
+            self.assertEqual(before, identity(bundle["arrays"], bundle["metadata"]))
+            bundle["arrays"]["network_length_m"] = np.full(2, 5.)
+            bundle["identity_sha256"] = identity(bundle["arrays"], bundle["metadata"])
+            with self.assertRaisesRegex(ValueError, "inconsistent"):
+                validator(bundle)
+
     def test_output_resource_budget_rejects_before_state_allocation(self):
         network, forcing, result = closed_fixture()
         product = make_channel_product(network, forcing, result)
@@ -70,7 +127,7 @@ class ChannelProductTests(unittest.TestCase):
 
     def test_cold_validator_rejects_rehashed_physics_and_scope_changes(self):
         network = ChannelNetwork(np.array([1, -1], np.int64), np.array([10., 10.]),
-                                 np.array([2., 2.]), np.array([5., 4.]),
+                                 np.array([2., 2.]), np.array([5., 4.9]),
                                  np.array([.01, .01]), np.array([.05, .05]),
                                  np.array([3., 3.]), np.array(["interior", "open_outflow"]),
                                  "a" * 64, "test-rectangular", "test-manning")

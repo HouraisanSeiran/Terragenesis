@@ -11,7 +11,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.dem_domain import load_dem_candidate
+from terrain_pipeline.td_source import load_dem_candidate
 from tools import verify_real_dem_rainfall_routing as exporter
 from tools.verify_real_dem_outlet_classification import DEFAULT_CANDIDATE, canonical_bytes, check_unchanged, read_json, source_record
 

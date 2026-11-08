@@ -4,11 +4,12 @@ from pathlib import Path
 import json
 import numpy as np
 from .contracts import GridInput
-from .drainage import route, accumulate
-from .channel import carve_channels
+from terrain_pipeline.drainage import route as route
+from terrain_pipeline.drainage import accumulate as accumulate
+from terrain_pipeline.channel_geometry import carve_channels
 from .postvalidate import geometry_issues
 
-RECIPE = "surface-routing-width-channel-v4"
+RECIPE = "surface-routing-irregular-channel-v6"
 
 
 @dataclass(frozen=True)
@@ -29,7 +30,8 @@ class SurfaceRiverProduct:
 
 def process(grid: GridInput, threshold_q: float, max_incision: float = 4.0,
             diagnostics=None) -> SurfaceRiverProduct:
-    routing = route(grid.height, grid.outlet_mask, grid.spacing_blocks)
+    routing = route(grid.height, grid.outlet_mask, grid.spacing_blocks,
+                    origin_world_xz=grid.origin, world_seed=grid.world_seed)
     budget = accumulate(routing, grid.runoff, grid.spacing_blocks)
     if abs(budget.residual) > 1e-7 * max(1.0, budget.input_total):
         raise AssertionError("Surface drainage did not conserve input flow")
@@ -54,6 +56,8 @@ def process(grid: GridInput, threshold_q: float, max_incision: float = 4.0,
     height = channels.height
     metadata = {
         "recipe": RECIPE,
+        "routing_algorithm": "irregular_Delaunay_priority_flood_v1",
+        "world_seed": int(grid.world_seed),
         "origin_world_xz": list(grid.origin),
         "spacing_blocks": grid.spacing_blocks,
         "threshold_q": threshold_q,

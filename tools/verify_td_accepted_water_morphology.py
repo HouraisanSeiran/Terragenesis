@@ -7,7 +7,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
 from terrain_pipeline.td_hour_pages_acceptance_io import _memory
 from tests.test_td_accepted_water_morphology import AcceptedWaterMorphologyTests
 
@@ -21,8 +21,8 @@ if __name__ == "__main__":
         recoupling_required=True, selection="baseline pending", hydraulic_ready=False, transient_converged=False, publishable=False)
     names = ("terrain_pipeline/td_accepted_water_morphology.py", "tests/test_td_accepted_water_morphology.py",
         "tools/verify_td_accepted_water_morphology.py", ".scratch/terrain-framework/td-accepted-water-morphology-spec-v1.md",
-        "terrain_pipeline/td_basin_morphology.py", "terrain_pipeline/td_material_field.py",
-        "terrain_pipeline/td_hour_pages_acceptance_io.py", "terrain_pipeline/td_basin_source.py", "terrain_pipeline/td_basin_hierarchy.py")
+        "terrain_pipeline/td_basin_morphology.py", "terrain_pipeline/geology.py",
+        "terrain_pipeline/td_hour_pages_acceptance_io.py", 'terrain_pipeline/basin_storage.py', 'terrain_pipeline/basin_topology.py')
     report["code_sha256"] = {name: file_sha256(ROOT / name) for name in names}
     publish_bytes(directory / "report.json", json.dumps(report, indent=2).encode())
     print(json.dumps(dict(path=str(directory / "report.json"), sha256=file_sha256(directory / "report.json"))))

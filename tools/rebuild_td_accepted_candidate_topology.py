@@ -17,17 +17,19 @@ sys.path.insert(0, str(ROOT))
 import numpy as np
 import psutil
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
 from terrain_pipeline.td_accepted_water_morphology import load_accepted_water_morphology, KINDS, FLAGS
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy, save_basin_hierarchy, load_basin_hierarchy
-from terrain_pipeline.td_basin_source import load_td_source_bundle
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_topology import save_basin_hierarchy as save_basin_hierarchy
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_storage import load_td_source_bundle as load_td_source_bundle
 from terrain_pipeline.td_hour_pages_acceptance_io import _json, _sha
 from terrain_pipeline.td_surface_reaches import _hash, _plain
 
 SCHEMA = "td-accepted-candidate-topology-review-v1"
 DEPENDENCIES = ("tools/rebuild_td_accepted_candidate_topology.py",
     "terrain_pipeline/td_accepted_water_morphology.py", "terrain_pipeline/td_hour_pages_acceptance_io.py",
-    "terrain_pipeline/td_basin_hierarchy.py", "terrain_pipeline/td_basin_source.py",
+    'terrain_pipeline/basin_topology.py', 'terrain_pipeline/basin_storage.py',
     "terrain_pipeline/mountain_source_adapter.py")
 REVIEW_FLAGS = {**FLAGS, "publishable": False}
 

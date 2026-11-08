@@ -1,12 +1,14 @@
-"""Pinned, read-only v10 native-grid sizing and window preparation."""
+"""Pinned, read-only historical v10 native-grid sizing and window preparation."""
 
 import json
 import math
 from pathlib import Path
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_basin_source import PRIMARY_PATH, PRIMARY_SHA256, load_td_source_bundle
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_storage import PRIMARY_PATH as PRIMARY_PATH
+from terrain_pipeline.basin_storage import PRIMARY_SHA256 as PRIMARY_SHA256
+from terrain_pipeline.basin_storage import load_td_source_bundle as load_td_source_bundle
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -48,8 +50,8 @@ def _pin_inputs():
              and inputs.get("chunk_max_face_steps") == 6000000000,
              "v10 run-inputs contract changed")
     for name, snippets in EVIDENCE.items():
-        path = ROOT / name
-        _require(file_sha256(path) == inputs["code_sha256"].get(name), "actual v10 code pin changed: " + name)
+        path = ROOT / "legacy-code/frozen-sources-20261105" / name
+        _require(file_sha256(path) == inputs["code_sha256"].get(name), "historical v10 code pin changed: " + name)
         text = path.read_text(encoding="utf-8")
         _require(all(snippet in text for snippet in snippets), "v10 source limit changed: " + name)
     _require(Path(PRIMARY_PATH).is_file() and file_sha256(PRIMARY_PATH) == PRIMARY_SHA256,
@@ -160,6 +162,8 @@ def preflight(sizes=SIZES):
             "origin_m_xz": source["metadata"]["origin_m_xz"],
             "actual_code_sha256": {name: inputs["code_sha256"][name] for name in EVIDENCE},
             "actual_code_evidence": EVIDENCE, "sizes": cases,
+            "source_evidence_kind": "historical_frozen_snapshot",
+            "source_evidence_root": "legacy-code/frozen-sources-20261105",
             "windowed_execution_requires": ["hourly native rain streaming with stable full-forcing identity",
                 "tile halo state synchronization per SSP-RK2 stage", "unique global face owners and deterministic cross-window exchange",
                 "native checkpoint/restart and complete resource monitor"],

@@ -13,7 +13,7 @@ import psutil
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 from tools.continue_td_weather_pipeline import write_json, check_pins
 
 

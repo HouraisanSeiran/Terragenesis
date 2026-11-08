@@ -12,8 +12,8 @@ from scipy.integrate import solve_ivp
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline import td_basin_transport_v6 as transport
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+import terrain_pipeline.basin_storage as transport
 
 
 def audit():
@@ -73,7 +73,7 @@ def audit():
             "seed": 20261002, "cases": cases, "all_passed": all(case["passed"] for case in cases),
             "reference": "independent NumPy threshold ODE integrated with DOP853; never calls production stage derivative",
             "substeps_s": [.1, .05, .025, .0125], "duration_s": 4., "hydraulic_ready": False,
-            "solver_sha256": file_sha256(ROOT / "terrain_pipeline/td_basin_transport_v6.py"), "auditor_sha256": file_sha256(__file__),
+            "solver_sha256": file_sha256(ROOT / 'terrain_pipeline/basin_storage.py'), "auditor_sha256": file_sha256(__file__),
             "limitations": "Unforced nonlinear 3x4 wet/dry, saddle and open-boundary transport. Does not verify full-domain forcing or actual momentum."}
 
 

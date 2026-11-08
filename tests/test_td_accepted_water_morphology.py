@@ -10,12 +10,13 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, load_bundle
-from terrain_pipeline.rainfall_runoff import RunoffParameters
-from terrain_pipeline.td_basin_source import make_td_source, save_td_source
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
+from terrain_pipeline.common_infra import file_sha256, load_bundle
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_storage import save_td_source as save_td_source
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
 from terrain_pipeline.td_basin_morphology import load_morphology, save_morphology
-from terrain_pipeline.td_material_field import make_material_field, save_material_field
+from terrain_pipeline.geology import make_material_field, save_material_field
 from terrain_pipeline.td_accepted_water_morphology import (
     export_accepted_water_morphology, load_accepted_water_morphology, rebuild_accepted_candidate, _hash,
 )
@@ -126,7 +127,7 @@ class AcceptedWaterMorphologyTests(unittest.TestCase):
         record = json.loads(original_index)["candidates"]["valley_incision"]
         source_path = Path(record["source"]["path"])
         original_source = source_path.read_bytes()
-        from terrain_pipeline.td_basin_source import load_td_source_bundle
+        from terrain_pipeline.basin_storage import load_td_source_bundle as load_td_source_bundle
         source = load_td_source_bundle(**record["source"])
         bed = source["arrays"]["height_m"].copy()
         bed[0, 0] += .01
@@ -147,7 +148,7 @@ class AcceptedWaterMorphologyTests(unittest.TestCase):
         morphology = load_morphology(**record["morphology"])
         arrays = {name: values.copy() for name, values in morphology["arrays"].items()}
         arrays["routed_volume_m3"][0, 1] += .001
-        from terrain_pipeline.td_material_field import _bundle
+        from terrain_pipeline.geology import _material_bundle as _bundle
         forged = _bundle(arrays, morphology["metadata"])
         morphology_path.unlink()
         save_morphology(forged, morphology_path)
@@ -199,7 +200,7 @@ assert 'numba' not in sys.modules
             if name in arrays:
                 metadata["ledger"][name] = float(arrays[name].sum())
         metadata["ledger"]["solid_residual_m3"] = metadata["ledger"]["source_solid_m3"] - metadata["ledger"]["deposited_solid_m3"] - metadata["ledger"]["stored_solid_m3"] - metadata["ledger"]["exported_solid_m3"]
-        from terrain_pipeline.td_material_field import _bundle
+        from terrain_pipeline.geology import _material_bundle as _bundle
         forged = _bundle(arrays, metadata)
         target = Path(record["morphology"]["path"])
         target.unlink()

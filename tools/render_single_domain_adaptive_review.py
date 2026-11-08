@@ -20,9 +20,9 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 import numpy as np
 import psutil
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
 from terrain_pipeline.single_domain_surface_consumer import load_consumer_manifest
-from terrain_pipeline.surface_adaptive_water import load_consumer_adaptive_frame
+from terrain_pipeline.adaptive_mesh import load_consumer_adaptive_frame
 
 
 def render(manifest_path, manifest_sha256, output):
@@ -87,7 +87,7 @@ def render(manifest_path, manifest_sha256, output):
         peak_private_bytes=int(getattr(memory, "peak_pagefile", memory.vms)))
     if resource["elapsed_s"]>1800 or max(resource["peak_rss_bytes"], resource["peak_private_bytes"])>1073741824:
         raise RuntimeError("saved review resource budget exceeded")
-    if any(name=="numba" or name.startswith("numba.") or name=="terrain_pipeline.surface_adaptive_execution" for name in sys.modules):
+    if any(name=="numba" or name.startswith("numba.") or name=='terrain_pipeline.adaptive_mesh' for name in sys.modules):
         raise RuntimeError("saved review imported solver")
     report = dict(schema="single-domain-adaptive-saved-review-v1", source_manifest=dict(
         path=str(Path(manifest_path).resolve()), expected_sha256=manifest_sha256),

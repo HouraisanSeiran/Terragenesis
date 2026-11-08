@@ -16,16 +16,14 @@ sys.path.insert(0, str(ROOT))
 
 import numpy as np
 
-from terrain_pipeline.single_domain_fine_geometry import (
-    build_fine_geometry, coarsen_cell_field, save_fine_geometry,
-)
-from terrain_pipeline.single_domain_fine_hydraulics import run_fine_hydraulics
-from terrain_pipeline.single_domain_fine_io import save_fine_run
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.regional_surface_hydraulics import SurfaceBudget
+from terrain_pipeline.fine_subgrid import build_fine_geometry, coarsen_cell_field, save_fine_geometry
+from terrain_pipeline.fine_subgrid import run_fine_hydraulics
+from terrain_pipeline.fine_subgrid import save_fine_run
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.surface_hydraulics import SurfaceBudget
 from tools.run_single_domain_fine_stage import (SOURCE, WINDOW, GATES, BUDGETS,
     THREADS, backend_code_files, freeze_execution_code, comparison, json_record, record, resources)
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 
 
 def diagnose(output, *, backend, duration_s=30., max_dt_s=.025):

@@ -10,12 +10,13 @@ import uuid
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, load_bundle, validate_source
-from terrain_pipeline.surface_rivers.metric_contracts import BoundaryGrid, RainfallForcing, TerrainGrid
+from terrain_pipeline.common_infra import file_sha256, load_bundle, validate_source
+from terrain_pipeline.common_infra import BoundaryGrid, RainfallForcing, TerrainGrid
 from terrain_pipeline.surface_rivers.metric_product import (
     build_diagnostic_product, load_diagnostic_product, save_diagnostic_product,
 )
-from terrain_pipeline.td_basin_source import PRIMARY_PATH, PRIMARY_SHA256
+from terrain_pipeline.basin_storage import PRIMARY_PATH as PRIMARY_PATH
+from terrain_pipeline.basin_storage import PRIMARY_SHA256 as PRIMARY_SHA256
 from terrain_pipeline.surface_rivers.metric_large_source import load_large_td_source
 
 

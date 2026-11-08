@@ -6,9 +6,10 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.surface_rivers.metric_channel_state import ChannelConfig, ChannelNetwork
-from terrain_pipeline.surface_rivers.metric_lake_storage import LakeStorage, LakeOutlet
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.channel_geometry import ChannelConfig, ChannelNetwork
+from terrain_pipeline.lake import LakeStorage as LakeStorage
+from terrain_pipeline.lake import LakeOutlet as LakeOutlet
 from terrain_pipeline.surface_rivers.metric_boundary_coupling import BoundarySeries, CoupledForcing, solve_coupled
 from terrain_pipeline.surface_rivers.metric_coupled_product import (
     make_coupled_product, load_coupled_product, save_coupled_product, sample_coupled_output, validate_coupled_product,

@@ -10,17 +10,16 @@ import tempfile
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, load_bundle, save_bundle
-from terrain_pipeline.surface_rivers.metric_bank_braiding import (
-    BankPointbarConfig, BraidedConfig, build_bank_pointbar_candidate,
-    build_braided_candidate)
-from terrain_pipeline.surface_rivers.metric_contracts import TerrainGrid
-from terrain_pipeline.surface_rivers.metric_cutoff import CutoffConfig, find_cutoff_candidate
+from terrain_pipeline.common_infra import file_sha256, identity, load_bundle, save_bundle
+from terrain_pipeline.channel_geometry import BankPointbarConfig, BraidedConfig, build_bank_pointbar_candidate, build_braided_candidate
+from terrain_pipeline.common_infra import TerrainGrid
+from terrain_pipeline.channel_geometry import CutoffConfig, find_cutoff_candidate
 from terrain_pipeline.surface_rivers.metric_delta import DeltaConfig
 from terrain_pipeline.surface_rivers.metric_delta_product import save_delta_candidate_product
-from terrain_pipeline.surface_rivers.metric_fan_floodplain import (
-    FanFloodplainConfig, build_alluvial_fan_candidate, build_floodplain_candidate)
-from terrain_pipeline.td_basin_source import PRIMARY_PATH, PRIMARY_SHA256, load_td_source
+from terrain_pipeline.channel_geometry import FanFloodplainConfig, build_alluvial_fan_candidate, build_floodplain_candidate
+from terrain_pipeline.basin_storage import PRIMARY_PATH as PRIMARY_PATH
+from terrain_pipeline.basin_storage import PRIMARY_SHA256 as PRIMARY_SHA256
+from terrain_pipeline.basin_storage import load_td_source as load_td_source
 
 
 ROOT = Path(__file__).resolve().parents[1]

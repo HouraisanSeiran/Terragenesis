@@ -8,12 +8,10 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.rainfall_runoff import _strict_json
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.runoff import _strict_json as _strict_json
 from terrain_pipeline.td_natural_bed_identity import natural_bed_shape_identity
-from terrain_pipeline.td_natural_channel_geometry import (
-    load_natural_channel_geometry, load_natural_channel_window,
-)
+from terrain_pipeline.channel_geometry import load_natural_channel_geometry, load_natural_channel_window
 from terrain_pipeline.td_natural_river_network import load_natural_river_network
 from tools.export_td_natural_river_review import MAX_REVIEW_BYTES
 

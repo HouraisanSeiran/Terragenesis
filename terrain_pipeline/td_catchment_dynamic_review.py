@@ -7,11 +7,12 @@ from pathlib import Path
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy, validate_basin_hierarchy
-from terrain_pipeline.td_basin_storage_dispatch_io import load_storage
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_topology import validate_basin_hierarchy as validate_basin_hierarchy
+from terrain_pipeline.basin_storage import dispatch_load_storage as load_storage
 from terrain_pipeline.td_surface_reaches import _storage_match, _plain, _freeze, _hash, _checked_surface_reaches
-from terrain_pipeline.td_basin_spill_network import _read_json
+from terrain_pipeline.basin_topology import _read_json as _read_json
 
 SCHEMA = "td-catchment-dynamic-review-v1"
 MAX_PAGE_BYTES = 8 * 1024 * 1024
@@ -112,7 +113,7 @@ def _pages(hierarchy, storage, reaches=None):
 
 
 def _index(hierarchy, storage, inputs, pages, reaches=None, escape_record=None):
-    from terrain_pipeline.td_basin_spill_network import _leaf_graph
+    from terrain_pipeline.basin_topology import _leaf_graph as _leaf_graph
     leaf_nodes = _leaf_graph(hierarchy, None)["leaf_nodes"]
     result = {"schema": SCHEMA, "algorithm": "exclusive-contribution-owner-saved-frame-bincount-v1", "inputs": inputs,
               "storage_version": {name: storage["metadata"].get(name) for name in ("algorithm", "work_profile", "dt_s", "substep_s")},
@@ -149,8 +150,8 @@ def export_catchment_dynamic_review(records, directory, *, reaches=None, escape_
     if directory.exists():
         raise FileExistsError(directory)
     if escape_record is not None:
-        from terrain_pipeline.td_basin_escape_plan import load_basin_escape_plan
-        from terrain_pipeline.td_basin_spill_network import _leaf_graph
+        from terrain_pipeline.basin_topology import load_basin_escape_plan as load_basin_escape_plan
+        from terrain_pipeline.basin_topology import _leaf_graph as _leaf_graph
         load_basin_escape_plan(**escape_record, hierarchy=hierarchy, contribution_leaf_graph=_leaf_graph(hierarchy, None))
     pages = []
     for page in _pages(hierarchy, storage, reaches):
@@ -179,8 +180,8 @@ def load_catchment_dynamic_review(path, *, expected_sha256, expected_identity, r
         raise ValueError("dynamic external identity mismatch")
     hierarchy, storage = _load_inputs(records)
     if escape_record is not None:
-        from terrain_pipeline.td_basin_escape_plan import load_basin_escape_plan
-        from terrain_pipeline.td_basin_spill_network import _leaf_graph
+        from terrain_pipeline.basin_topology import load_basin_escape_plan as load_basin_escape_plan
+        from terrain_pipeline.basin_topology import _leaf_graph as _leaf_graph
         load_basin_escape_plan(**escape_record, hierarchy=hierarchy, contribution_leaf_graph=_leaf_graph(hierarchy, None))
     pages = result["pages"]
     if len(pages) != len(storage["arrays"]["depth_m"]) or {entry.name for entry in path.parent.glob("frame-*.json")} != {pin["file"] for pin in pages}:

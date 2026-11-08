@@ -1,0 +1,305 @@
+{
+  "terrain_basis": "saved checkpoint bed = derived TD base plus saved sediment; no synthetic relief",
+  "source_manifest_sha256": "a9941744fd2cc3f903f742a5e2538c0ddcd47fb4a891df8b396da05d5821f39a",
+  "source_identity": "454292b47a107628748a3ba7d76093cbd2d7df4785884490f55418f9ebe368ce",
+  "source_sha256": "c41b43e751a744419a21e5e70cc3fa36553312da471ee3a6993313a67dbaf983",
+  "source_td_pages": [
+    {
+      "page_xz": [
+        -2,
+        -2
+      ],
+      "identity": "f9df9b4abedfd77d9df72d3bfdb21bc71af51e1607f9aca936d2bc7d613dc521",
+      "raw_td_sha256": "ac73028bf15675ab1e4a40f27d374c7d4b980d333f0f154a40434cb0cc528a0b",
+      "manifest_sha256": "d0b216f7da4fc76167751320335e8db5b97b48e95349589d9644a3b8a2dcf782",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-2_-2"
+    },
+    {
+      "page_xz": [
+        -1,
+        -2
+      ],
+      "identity": "c6a53a9a8da7e64b1552b3e55bec4160b1bab2fb1168aa728198fbe6fcb9fbf9",
+      "raw_td_sha256": "1cef16361bdee79249226e94b3c168c3f4b9bd09b2fbf2b2bcf71b9624cd3893",
+      "manifest_sha256": "003d70fb8d96afd269221aa869f77515a802e37f21a8734f87b1ea48100e64c6",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_-2"
+    },
+    {
+      "page_xz": [
+        0,
+        -2
+      ],
+      "identity": "7c65605c93e0af43df3a94985112adbafb85358f510dd9ba1774241da8c7808a",
+      "raw_td_sha256": "f8384c10a2ab1e666bfaa9564a8ae1b77768f78cab9aa73972ca0dc8c9892c96",
+      "manifest_sha256": "221c00bb9a2580a01e3a585271a004f676df0edfc486204eb04de6df768d9a60",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_-2"
+    },
+    {
+      "page_xz": [
+        1,
+        -2
+      ],
+      "identity": "bb5e523d4190b3d7e19daa84734954b0f383e6c1b03594b5034f00db7bb4b46d",
+      "raw_td_sha256": "3d7ac61a38fee0e9105dd015715e1b8c9f1ed7c80fcaaed5b537453db8246fe7",
+      "manifest_sha256": "aad8481d965d0f3727510767d5ced8486d8efd636037613c46d6042ab712da65",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+1_-2"
+    },
+    {
+      "page_xz": [
+        -2,
+        -1
+      ],
+      "identity": "f178a5ca82b2b22936841ec1e89de60092115961f93ae50797f9a2a199faa999",
+      "raw_td_sha256": "0e286d84ec3ecc351b17ed7905e4ff1bda5b116afeef77bd6157cff7297229d2",
+      "manifest_sha256": "bd2c1fea1202951271740abbb0bef266c58e4bb3ad6d11bbbe72b9cb3b05dc5a",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-2_-1"
+    },
+    {
+      "page_xz": [
+        -1,
+        -1
+      ],
+      "identity": "1ddb05a325179aadae5ddee4ed6b40ff3be239acb9975f0853bbb760d389e468",
+      "raw_td_sha256": "77705a39fb93397d22cebaeece6659e80f4a9d243ff1073cc9504651af480d33",
+      "manifest_sha256": "e90833603644318cbfab0f8f5780ad93e06dd2dde5196dff73fe611370c3f4b3",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_-1"
+    },
+    {
+      "page_xz": [
+        0,
+        -1
+      ],
+      "identity": "7ad4b2bfee232e4d65ab43a0c397d25f09e12d0746e02b799be5b46a973a5179",
+      "raw_td_sha256": "a0c0b5ee6cdd8c4b1cbd92781e82d91e5e8712515726a9d614d7ce809887df8f",
+      "manifest_sha256": "eccb987fe1a724dfb340315273120ce8b160887c20d80270eb000514ab5f5261",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_-1"
+    },
+    {
+      "page_xz": [
+        1,
+        -1
+      ],
+      "identity": "4b419beb1060e61687bc3e450d9afefe1a03e8da77fe62edace45583145becfd",
+      "raw_td_sha256": "baded6af5b64bc7312a634976126eb30b415e80319a84e24d367de3156cba099",
+      "manifest_sha256": "1ca1f29e64d37b7dd69337e133ed8953f4c2d0d0a713a30df6702d6adf6121e7",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+1_-1"
+    },
+    {
+      "page_xz": [
+        -2,
+        0
+      ],
+      "identity": "44ac688aff376758a39960a4eff717a33b860c35d81e86493621290e990bb5c2",
+      "raw_td_sha256": "a3eded58df83ba2faf5a074bdb420e4a554b1b745f994056cc75bea629e8e65e",
+      "manifest_sha256": "40667b1dbbe4ca78ad73835a084f48cbb9f7a60e669b284b329c76bcf16d0d10",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-2_+0"
+    },
+    {
+      "page_xz": [
+        -1,
+        0
+      ],
+      "identity": "a4b5a09c2f232b30598896567f5bd02815207a09635fa618c51a44f8a8c64bad",
+      "raw_td_sha256": "46a59645068cd8a9c413939a256b44a8b341c468da830d7e42d278e25080f59f",
+      "manifest_sha256": "7df387601f02756d8dde00a2bcb50c641f3b5bfc1faa0687f7f67a801512a887",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_+0"
+    },
+    {
+      "page_xz": [
+        0,
+        0
+      ],
+      "identity": "ed91c6c3806c4446f56c987f68bb4c1293f8eacca1ef651a994301e9016d0eda",
+      "raw_td_sha256": "adf0cbb99bd9c98af164925ffa96d8ae29f22e2bc1f64b2a5634f0c9f964f9c6",
+      "manifest_sha256": "0575ed6267c0dc55a132d5e2a2daef835190e48deff174700b412aa7e79a0d92",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_+0"
+    },
+    {
+      "page_xz": [
+        1,
+        0
+      ],
+      "identity": "1638414cdf75815d0e765487ac1c617a5bfeb9d208d3df5ae988d4a177d72353",
+      "raw_td_sha256": "fe0dea799624b6f3a5b4d5626f492a3b3336c3f2d4e6ae1f2dd6ddb1f65641b8",
+      "manifest_sha256": "a989102d6c3a323aa72d0f532bd4175c61efcb71fc4fd8a698b0e5a2752f5325",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+1_+0"
+    },
+    {
+      "page_xz": [
+        -2,
+        1
+      ],
+      "identity": "6623c44ef06a55cc34c06ac1f858306cd880467949b5f5253386bd69747dde6e",
+      "raw_td_sha256": "1e5735a36338a1148d39cb590f4debb900aad7d463c0339c72df0c476d326bf1",
+      "manifest_sha256": "ae965d4a02f45e269a0f62b54fa058785c1d3a45d442f82a3150f6fcc36f1a0c",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-2_+1"
+    },
+    {
+      "page_xz": [
+        -1,
+        1
+      ],
+      "identity": "32ba9e650affd732fa2ae11e6976be484bf88914d773cd536e96a6932a7d2b39",
+      "raw_td_sha256": "bd2c5247e1c4d91257b47233a8f4edbb2d9d765d6798f1c0effe8bc82ef12b7b",
+      "manifest_sha256": "8f0b94d3fe74b340085d9ae499f485df9fa54c4fd7051b5588ed8bdc16d76801",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_+1"
+    },
+    {
+      "page_xz": [
+        0,
+        1
+      ],
+      "identity": "359465521eca2cd72e6707287fe895f52c0e2f3513075827a4da18413e86516f",
+      "raw_td_sha256": "174787798846fc2a64144c8718cfa94af372eaf51372395f761624473796519f",
+      "manifest_sha256": "e8074a30b628338eedaa4fa8930629b19fd695bc69af3be68f756a040dd98207",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_+1"
+    },
+    {
+      "page_xz": [
+        1,
+        1
+      ],
+      "identity": "200fe5ea541bf300fcd2f6e7d2c6c1795c6fd853d9f0e1ca4e2bedd296077776",
+      "raw_td_sha256": "be1b456bd101ab31e386f29d120734dd1468b47469f4436ca84c33017106eb76",
+      "manifest_sha256": "e520a5b65135aa8c7ed2fe0669dc94234a103674c55e56e63b9c5cd083263148",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+1_+1"
+    }
+  ],
+  "source_algorithm": "fixed-owner-nearest30-parent-edge-overlap-v2",
+  "checkpoints": {
+    "initial": {
+      "prefix": ".scratch\\delta-large-acceptance-20261103\\final-initial",
+      "sha256": {
+        ".json": "baafcf0d00147df88774ea03d1201c3f0e6a29a8a7f03753e2c3399d552f2591",
+        ".npz": "4ac17a1f377d411a7f982140f319a872404a3d7ae21d83a4ae454184089c6c0c"
+      }
+    },
+    "formed": {
+      "prefix": ".scratch\\delta-large-acceptance-20261103\\final-event",
+      "sha256": {
+        ".json": "fe22fcb3c5fc5844f57c44dcf9dde8c43ffb0c6f5136d2c0f800f9ee6709a112",
+        ".npz": "2bb691c7216863c3516a3e2d7511ce6101cdb1f9ae5090904bf33feb2677940c"
+      }
+    },
+    "final": {
+      "prefix": ".scratch\\delta-large-acceptance-20261103\\final-event",
+      "sha256": {
+        ".json": "fe22fcb3c5fc5844f57c44dcf9dde8c43ffb0c6f5136d2c0f800f9ee6709a112",
+        ".npz": "2bb691c7216863c3516a3e2d7511ce6101cdb1f9ae5090904bf33feb2677940c"
+      }
+    }
+  },
+  "origin_xz_m": [
+    -39900.0,
+    -39900.0
+  ],
+  "spacing_m": 200.0,
+  "native_spacing_m": 30,
+  "world_seed": 20261020,
+  "times": {
+    "initial": {
+      "formation_equivalent_years": 0.0,
+      "physical_time_s": 190800.0
+    },
+    "formed": {
+      "formation_equivalent_years": 2.0,
+      "physical_time_s": 280800.0
+    },
+    "final": {
+      "formation_equivalent_years": 2.0,
+      "physical_time_s": 280800.0
+    }
+  },
+  "algorithms": {
+    "ocean": "classify_ocean at 0 m",
+    "hillshade": "terrain_map_style.physical_hillshade, NW light, vertical exaggeration 1.5; seabed shade clipped below -1000 m",
+    "land_ramp_m": [
+      -20,
+      0,
+      2,
+      5,
+      20,
+      100,
+      500,
+      2000,
+      5000
+    ],
+    "sea_ramp_m": [
+      -10000,
+      -1000,
+      -100,
+      -20,
+      -5,
+      0
+    ],
+    "routes": "saved river_hydraulics nodes intersect hydraulic_sections and valid route adjacent pairs; Q>0 and stage>section bed"
+  },
+  "coverage_status": "partial",
+  "display": {
+    "water_width_points": 1.8,
+    "water_outline_points": 3.1,
+    "actual_route_widths_m": {
+      "initial": [],
+      "formed": [
+        {
+          "route": 1,
+          "width_m": 56.570875284865245,
+          "q_m3_s": 72.90402205759801
+        },
+        {
+          "route": 2,
+          "width_m": 47.2540475335049,
+          "q_m3_s": 48.873809275342914
+        },
+        {
+          "route": 3,
+          "width_m": 36.907990557264,
+          "q_m3_s": 28.222168667059083
+        }
+      ],
+      "final": [
+        {
+          "route": 1,
+          "width_m": 56.570875284865245,
+          "q_m3_s": 72.90402205759801
+        },
+        {
+          "route": 2,
+          "width_m": 47.2540475335049,
+          "q_m3_s": 48.873809275342914
+        },
+        {
+          "route": 3,
+          "width_m": 36.907990557264,
+          "q_m3_s": 28.222168667059083
+        }
+      ]
+    },
+    "body_bbox_xmin_xmax_zmin_zmax_km": [
+      -8.3,
+      3.9,
+      3.1,
+      12.9
+    ],
+    "body_definition": "source-ocean initial positive bed within 5 km of formed active route plus active route",
+    "detail_window_xmin_xmax_zmin_zmax_km": [
+      -12.2,
+      7.8,
+      -2.0,
+      18.0
+    ],
+    "history_file_sha256": "8a119292fba078b9d70eaa4cac2ed11ab976ea61402a21dc453650ec9ff5194a"
+  },
+  "change_m": {
+    "minimum": -0.10033154862125537,
+    "maximum": 3.0935264273970304,
+    "colour_limit_abs": 3.0935264273970304
+  },
+  "image": "detail.png",
+  "image_sha256": "f257ce17e37bee0c3d18c45b03866658007121ec8ba8553a3df30f11d9e5ab08",
+  "coverage_notes": "unknown_wet shown separately, actual water may overlay; history is geometry only, no recomputed water; historical inventory is not new supply",
+  "rendered_stages": [
+    "final-event"
+  ],
+  "primary_is_post_event": true
+}

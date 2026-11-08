@@ -1,0 +1,90 @@
+{
+  "source_identity": "d041c7d0a73888ac4a53653f02098659cd7ce8a0c5c4c2209f3064265dacfd77",
+  "final_prefix": ".scratch\\delta-hundred-km-20261103\\network-v3-mouth-extension-v3-final",
+  "physical_time_s": 270000.0,
+  "source_product": ".scratch\\delta-hundred-km-20261103\\wide-shelf\\product",
+  "files": {
+    "01-区域主图.json": {
+      "sha256": "62498331406832091cb301c96f9ecd6ea8a396902ff6d2fb5f76d255e3be7343",
+      "bytes": 4409
+    },
+    "01-区域主图.png": {
+      "sha256": "c6916b7c6a0c8b6f17b542bbce7ff5d7b3a26c7d42c2de1ea8f15eef42adf3cd",
+      "bytes": 183457
+    },
+    "02-初末床变.json": {
+      "sha256": "5b8b25f8f6e19bfa76663ea002cfacb0edf525014acc75346e99f3b9db0e208f",
+      "bytes": 3815
+    },
+    "02-初末床变.png": {
+      "sha256": "1d3dfc19ff1ae6c059ce313dddc7ae22cca6858a07af75dc7149013ec0dfd8dc",
+      "bytes": 95471
+    },
+    "03-同床潮位.json": {
+      "sha256": "a26baf54458b60c94a97afa1effa4bd448365ce363e7341adb314f51553e3d32",
+      "bytes": 6813
+    },
+    "03-同床潮位.png": {
+      "sha256": "d3648ce9e7a8a2a05f7568447b1e152a41fb8d00518808a17e1b40157b577702",
+      "bytes": 214146
+    },
+    "04-海口分汊.json": {
+      "sha256": "37368d790063af322e07dd44c939d053a22bd76685ca804c19076b82cd1b5766",
+      "bytes": 4385
+    },
+    "04-海口分汊.png": {
+      "sha256": "164d8e486bc8f3dbf41b814fe1e08707d0875ada69eb493c3c1da0ca043a125c",
+      "bytes": 226677
+    },
+    "dem.npz": {
+      "sha256": "2cc754212621bbcf535230c2e87fc862536362d29d760c7e786c2526054738c6",
+      "bytes": 975281
+    },
+    "interface-handoff.md": {
+      "sha256": "2acb5236e798f732c70c76ae137a8c9b46e2aa70b592cc0a7b6ec6aef13823b3",
+      "bytes": 5153
+    },
+    "main-engineering-review.md": {
+      "sha256": "ee5515a337f1a2c5154f7b7d714261d5b21e3afae50b48e21d9f9e5b191e2204",
+      "bytes": 3834
+    },
+    "main-final-accept.json": {
+      "sha256": "9b742f1153e694add5dd18b225b49a97b4f7039d673d8df58cd4f12fbbe7f7e0",
+      "bytes": 10799
+    },
+    "mouth-extension-v3-case-report.json": {
+      "sha256": "5400fb7a6d68612b0b2c29adcb0c32afb84c6ae69df92bfdb1f204201a4f549a",
+      "bytes": 12297
+    },
+    "README.md": {
+      "sha256": "0093d504934585199ca1043a590cb8796b08deca4a3c65ddc1c573ed38306c52",
+      "bytes": 4005
+    },
+    "render-summary.json": {
+      "sha256": "1f2e2769a96c7811d8842f9205521049c55e0092c2fe8d9edbe080733d38d181",
+      "bytes": 4847
+    },
+    "state.json": {
+      "sha256": "658c502f27d8a9e4936d6cec40b1edc710f3f56c5b74786195e1c16b0c31d30c",
+      "bytes": 893168
+    },
+    "state.npz": {
+      "sha256": "e27c08001f3e28c84cc52ab1cb55acea02479e56a4790a4d38f769c06c9b321c",
+      "bytes": 2767201
+    },
+    "world-scope-review.md": {
+      "sha256": "21f52bb40560c8e691c1da8e45d1a47bb03cf5bd4f2a781f1c9ba0efe7b295d7",
+      "bytes": 2310
+    }
+  },
+  "total_bytes_without_manifest": 5418068,
+  "code_sha256": {
+    "coastal_delta_multicell.py": "56d9b90a091325f22155f4d163a723a390909b1ff10b292278abf437c5a62ce2",
+    "coastal_delta_node_inventory.py": "fe70fb3e98625185cd2a9cb598b14c1683d6ff95308ea896574f21a9ba59bea9",
+    "coastal_delta_evolution.py": "5ed54184277298b603b3344c2ad7ec8663c7dae92e74864d99e68618516ae301",
+    "coastal_delta_branching.py": "01d12b4ee524219612d26af9c0210e3386f0488f2be02c96a8db2c6834260113",
+    "coastal_delta_avulsion.py": "aae53d02883adc3f96e9dc98efff857eb7c6239c5dffb2321911c58ff5ab864a",
+    "coastal_delta_mouth_extension.py": "47ebf9824d3b767039031632f1c45e9a768a4ae446336e93a20da497227e8d48"
+  },
+  "scope": "finite game-grade case; natural morphology pending user review"
+}

@@ -1,0 +1,91 @@
+{
+  "source_identity": "c751a09a6f02e8c336b6b9b8fb4b11b5dc67386e9a8470b0b1d90858bf1ffb72",
+  "world_seed": 20261020,
+  "terrain_manifest_sha256": "7ce130fbba28c8ecfa4030c740583e9a61ef0566c48f15a8480fb396e2a6ccc3",
+  "terrain_files_sha256": {
+    "bed_m": "eb37ec4d383137e61412d5d2411bf5370c3aa942de6e825df4dbebb48a3e8f45",
+    "raw_td_m": "eb37ec4d383137e61412d5d2411bf5370c3aa942de6e825df4dbebb48a3e8f45",
+    "valid_mask": "c87466771a911899c0687bc0aeec34e2a14efdb1b2ed8d282a6f7a15e6c720c3",
+    "ocean_mask": "ee6fd7f367469feab8047564d13b4e8ecf3b2947b20098eb9d6cac97a0613a68",
+    "closed_below_sea_mask": "80ef1165c9a29f13fcc08a8653a36c964a951127badafd1c21828536f749bd53",
+    "unknown_mask": "f4903829bcd77c0e520739e700a8c98465c6ca6b0b2fcef82f7cf6c0d5180d6c",
+    "climate_base": "4928b201efdd91c8f7360a6a7030c9cb50c5324ebeff02726cdff19162a451cf"
+  },
+  "event_manifest_sha256": "647ad086109ef17e9ace69d9daf70e083971fd912418bed30d34b57d3bd17599",
+  "network_manifest_sha256": "c8183928e65e27884253831212349f95bb3dd9a7118353dfe533b90f53c48e66",
+  "event_relative_path": ".scratch/river-upgrade-20261101/native-event-v3",
+  "network_relative_path": ".scratch/river-upgrade-20261101/native-network-v4",
+  "terrain_relative_path": ".scratch/river-upgrade-20261101/terrain-v3",
+  "lowland_relative_path": ".scratch/river-upgrade-20261101/native-lowland-v1",
+  "lowland_manifest_sha256": "519a0626f36c97eb2a547a71442e0039989603a91d000818a323f55e0194f46e",
+  "bounds_xz_m": [
+    -26170,
+    23830,
+    -19990,
+    30010
+  ],
+  "time_seconds": 2592000,
+  "terrain_spacing_m": 30,
+  "local_portrayal_spacing_m": 1,
+  "construction_grid_spacing_m": 5,
+  "scenario": "saved corrected native-event-v3, two 15-day intervals",
+  "network_status": "v4 accepted prescribed sections and paths; seven unresolved edges marked",
+  "figures": {
+    "native-50km-final.png": "4d556b09ab4d1bf79285e08c08dfd3c9c3f8eb3d4227139b02415468ae720632",
+    "native-delta-final-detail.png": "c3f7a9301495d0024b09274e19dd1e712cca504961e6fbb10a7d8513c9b83b6b"
+  },
+  "input_files": {
+    ".scratch/river-upgrade-20261101/native-event-v3/node_water_m3.npy": "3677042b3b461a0c606990feca21f1d0dffd7538c3373ca416a822c9df4f04f0",
+    ".scratch/river-upgrade-20261101/native-event-v3/mouth_water_m3.npy": "187331d0b1e90317f89c601c5b8b0cd43bb5f254df57a2373d45b798a5140a12",
+    ".scratch/river-upgrade-20261101/native-event-v3/pool_level_m.npy": "25778e140823688b3c0d79cc2002b558135c329d8a36ad887555f7d42bede699",
+    ".scratch/river-upgrade-20261101/native-event-v3/pool_storage_m3.npy": "314ada622686f9226ebdfee25a9135dd1bb8914acd8c14bd13dd60f3d450ef6b",
+    ".scratch/river-upgrade-20261101/native-event-v3/pool_capacity_m3.npy": "c3d141f23ed2ae918ae32a3de34cbff8f0fe757bfd67a83f0e6cd18a6a44e308",
+    ".scratch/river-upgrade-20261101/native-network-v4/node_id.npy": "045602dc9d7caebae30c42a862e6f1d5d38613edf7ffc2bc4d0c20811aa5f2d5",
+    ".scratch/river-upgrade-20261101/native-network-v4/node_xz_m.npy": "e394788204d114e3ca68c5629ae94d176baa2cd0981ebdcbea4bf97cb8d3507a",
+    ".scratch/river-upgrade-20261101/native-network-v4/node_bed_m.npy": "b3d10e1cb09e76e09d505dc54e5880af54b4c06928267cf4a23366019e697b7c",
+    ".scratch/river-upgrade-20261101/native-network-v4/node_stage_m.npy": "1c40039e722eaa18c6edd56ea695532c1878c009f7a43d9970a29e5b080e6440",
+    ".scratch/river-upgrade-20261101/native-network-v4/node_width_m.npy": "01f42153c6bdcd0f0b0e0c52348b36be266e74567d3a07cc211fa6cfacfa1f5c",
+    ".scratch/river-upgrade-20261101/native-network-v4/edge_nodes.npy": "0a2b5dcaa2f6c89d3962b77e6afca508d7d701227c938a51db44ac80e2f9566a",
+    ".scratch/river-upgrade-20261101/native-network-v4/edge_status.npy": "3e7cf3760db60441523b7f8ae1e3029d90cd27c9ea7dc6f38c3e377994335827",
+    ".scratch/river-upgrade-20261101/native-network-v4/inlet_offsets.npy": "ed080f0d5a094bcd990345a1c2a39a257fde5e7a54ded16c0864b8c99f07e12d",
+    ".scratch/river-upgrade-20261101/native-network-v4/inlet_node_id.npy": "e07bac0cc198b117c9971fe686669096036aed3e502080eb735926dc8cd28994",
+    ".scratch/river-upgrade-20261101/native-network-v4/wet_link_offsets.npy": "f8f78a9750eef8e13cc584b7f49bd971e24e454a71cb26a13abd7a3a2afe5195",
+    ".scratch/river-upgrade-20261101/native-network-v4/wet_link_node_id.npy": "52c2457dfb387511e07eec34ab40866b25c9b8a941717398e34aceb1e4a3c84a",
+    ".scratch/river-upgrade-20261101/native-network-v4/corridor_offsets.npy": "036566a9d9e677d06bda31c73eca5094d7f2ff6b289ce18055d6af3a0d26dc33",
+    ".scratch/river-upgrade-20261101/native-network-v4/corridor_node_id.npy": "d12947d6baef45882683036db2635e8b35b92c98b229941755db2d307cdfaeb5",
+    ".scratch/river-upgrade-20261101/native-network-v4/marine_offsets.npy": "80a5e835254344f03cda6159665db923d20e75c92b7d42f9686ce8bf4876cb86",
+    ".scratch/river-upgrade-20261101/native-network-v4/marine_node_id.npy": "1f1737dc31fe848ddd8ef400f83a538b65bc27e7731eda98bb0c2250e02104d6",
+    ".scratch/river-upgrade-20261101/native-network-v4/lake_wet_mask.npy": "0fef1ed25d3a8b135d29dd8fdacc3bd1c686251a84776aab0dda437877fe188a",
+    ".scratch/river-upgrade-20261101/native-lowland-v1/channel_mask.npy": "91cacda9d7836445f28a8be07eb50e23603abaff3358b719a94ef2fdcb78b5e2",
+    ".scratch/river-upgrade-20261101/native-event-v1/time_seconds.npy": "8d47df49fdbdd73e77bb09805fa3eaf8e6f06cf269e8a9aac5657327bb26efc7",
+    ".scratch/river-upgrade-20261101/native-final-routing-v1/derived/mouth_id.npy": "6545c75e57a67a36dada5b1a36e1b75ed51a2a1f6e98bc4a919a8f5be89ef339",
+    ".scratch/river-upgrade-20261101/native-final-routing-v1/derived/pool_anchor.npy": "dfc2b54002be601737d13c316059c2110f6097271765f4d93c5668b254d66b53"
+  },
+  "output_files": {
+    "delta-v2.npz": "305aef2f604ab546a422973f97908f0c6f4c96ac4a6756b985ed66b1bde0c5a6",
+    "retained-sediment.npz": "ef643a4a328224807d3aa63282c26fad4c5ce88b4b0857de3273518eeaef6e20",
+    "subgrid-portrayal.npz": "4a2fbd912b4db4fb39328e99587178f14f99bea4438226c9c4f3c855a88e5d48",
+    "manifest.json": "c7d5102804cc9c289e1a09659e5bebf9a23696ef60f4fa6c9c8bb967c932b4d3",
+    "verification.json": "a1e439ca65682db5cbd5da5d55ec7684756db5074d859a2fe54e17304a4415c2",
+    "unresolved-edges.json": "09fce976381133b607018ce335c9eeca63bd0ee4e42ff701c1f4cfdf4325fe99"
+  },
+  "parameters": {
+    "world_seed": 20261020,
+    "event_seconds": [
+      0,
+      1296000,
+      2592000
+    ],
+    "water_partition": "branch width proportional",
+    "settling_velocity_m_s": 0.0001,
+    "porosity": 0.35,
+    "construction_cut_cap_m": 6,
+    "construction_bulk_cap_m3": 1000,
+    "outlet_depth_m": 0.4,
+    "velocity_cap_m_s": 3,
+    "local_alluvium_depth_m": 0.25,
+    "rock_floor_depth_m": 1,
+    "hardness": 0.5
+  },
+  "coverage_scope": "v4 prescribed bounded channels and lake paths; seven unresolved minor edges marked; delta is finite initialized geometry, not mature naturally evolved landform"
+}

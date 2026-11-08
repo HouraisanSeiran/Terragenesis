@@ -1,0 +1,1530 @@
+{
+  "schema": "project-acceptance-atlas-v1",
+  "declaration": "SYNTHETIC MODEL VISUALIZATION / NOT SATELLITE OBSERVATION",
+  "inputs": {
+    ".scratch/river-generation-review/real-lakes-42km/registry.json": {
+      "sha256": "bc6c908613fa2e4dd92e4ac14f0ee91f51d5ed3a4f38cb8aaf6e0df4009340e3",
+      "bytes": 2696
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/manifest.json": {
+      "sha256": "c903dcbb39289f3fdc120e1c1e7db9bc91220421251e5d4bd8550bbdaef0b0cc",
+      "bytes": 1496286
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-41500.npz": {
+      "sha256": "81bfb24bd843fa7265b618b1e053ddba6eae0790bd372159cd4490840a33235a",
+      "bytes": 8366523
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-41500.npz": {
+      "sha256": "e95221a11bd359ae302c955905c91820463bdc6b036fbab4e5dff327285e033c",
+      "bytes": 8380509
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-41500.npz": {
+      "sha256": "c89893d0f0c0280c3c78f2706654de4589ab15e749d5ebcf5f80da816d99f1e1",
+      "bytes": 6128396
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42012.npz": {
+      "sha256": "72fd640a221328255b18e2eecacdaef049558e37671ee8d3e158cef558cb7c58",
+      "bytes": 8372041
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42012.npz": {
+      "sha256": "ccb37b30458ffbb65ab0b3a82fb03d5dd25b833cd3d9324d9f24c175cc67365a",
+      "bytes": 8308425
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42012.npz": {
+      "sha256": "b288190441aed7bff60b913d41a61d4149831014e8e3bb30078a263dfd16e701",
+      "bytes": 6160151
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42524.npz": {
+      "sha256": "a30c35b395b5a41afc21f365b3a84967ff18d797af725145a94ff21d4378e0fc",
+      "bytes": 6093706
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42524.npz": {
+      "sha256": "830e627b52bc33414e510f33e9b46705110c1e5f6587e22ffa6d9589e7076235",
+      "bytes": 6105089
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42524.npz": {
+      "sha256": "7859e9d2803aba89a3d9c68e9726f73fa1120e81b15cc9f0a536b75bb597ffee",
+      "bytes": 4533229
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43400-41500.npz": {
+      "sha256": "3ed57099d4ac84d13f718603980e3311a8d193975b5fa5a0c764048fd4d37aef",
+      "bytes": 11056244
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43912-41500.npz": {
+      "sha256": "39caed35eac27fbb086c844b7d7f9c3b232cdc45fd251ed88b2ddaa5829b69de",
+      "bytes": 10954603
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-44424-41500.npz": {
+      "sha256": "81963f9cfffcfb805524ba84841639aaf65f86b0528beae918118fdada87869b",
+      "bytes": 8043987
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43400-42012.npz": {
+      "sha256": "41c91acd8d45338f141f886177c2ad16a56187af2a63d1afd3bdb7f8606954e0",
+      "bytes": 10984908
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43912-42012.npz": {
+      "sha256": "35e9fee96665d17a4eda42b4b116bfb94fa86fb3a56edaf631abdf941b472b2b",
+      "bytes": 10859704
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-44424-42012.npz": {
+      "sha256": "e73309306a57a275f56e3e7d48330faf600b9b6c8692696eb8c4569137630901",
+      "bytes": 8033693
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43400-42524.npz": {
+      "sha256": "e894cdc123a51894299aeecbc008acee6e0decf4be9f9e58f79741da56d235da",
+      "bytes": 8112936
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43912-42524.npz": {
+      "sha256": "64a230759f4024e57a908f143889f4375b1bad6c941518f80b622ce902e8111b",
+      "bytes": 7994635
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-44424-42524.npz": {
+      "sha256": "ebb4fa26bb06db0841c6efbe3bba9a51c7f3f31d11e43ef190a22c79fdc88a8d",
+      "bytes": 5962573
+    },
+    ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water/river-network.npz": {
+      "sha256": "693bf0261728033bd443d17bfb0a5a5a458679598b261cdebf1c4de4907d22d9",
+      "bytes": 120563752
+    },
+    ".scratch/stage2-world-integration/seasonal-verification-v4/driver.npz": {
+      "sha256": "66ca48246c6060c25a483f050682eead14361cdfe02e5ec389030b109e434b4a",
+      "bytes": 472533
+    },
+    ".scratch/stage2-world-integration/seasonal-verification-v4/forcing.json": {
+      "sha256": "5e14368692fd7c7144aae2df30e1630fd10ea4d458d0e552df55dc0f834895ca",
+      "bytes": 261
+    },
+    ".scratch/stage2-world-integration/seasonal-verification-v4/initial.npz": {
+      "sha256": "e82e9f35855430cbd02c2ac1196adfebb843f807a8dfa58c40cba794cc82bec2",
+      "bytes": 717471
+    },
+    ".scratch/stage2-world-integration/seasonal-verification-v4/final.npz": {
+      "sha256": "c4f033604474f75121994e10a14e3e906848c87d873f327bedb8acf3c7c5628f",
+      "bytes": 1696140
+    },
+    ".scratch/stage2-finish-20261030/g6-evidence/product.npz": {
+      "sha256": "3ae0cb29959c836c9262da75b9bb6ffae8cefe4ba4be7271534214f9eb572f84",
+      "bytes": 1661413
+    },
+    ".scratch/stage2-g9-g20/verification-reviewed/inland/product.npz": {
+      "sha256": "82066c488f755f5bc2118315a12929b120dcddc7947530672fc2dce8d0b4df5e",
+      "bytes": 464932
+    },
+    ".scratch/delta-process-natural-20261031/run-v1/result.npz": {
+      "sha256": "df8806646e2788cd55e52086a2133083c0108803e0897398d303f675b5d7db1e",
+      "bytes": 20470419
+    },
+    ".scratch/delta-process-natural-20261031/run-v1/summary.json": {
+      "sha256": "e1aa5db3bec3f6283ef735a32616dad59fc044b740e0f9a0a462ba31a8c85fc9",
+      "bytes": 66220
+    },
+    ".scratch/delta-process-natural-20261031/tides-v1/tides.npz": {
+      "sha256": "78f398e040dcc7312e3876361ad62b64d85e24c5d3d9c4f3503f4f9032770a0f",
+      "bytes": 21336791
+    },
+    ".scratch/delta-process-natural-20261031/tides-v1/summary.json": {
+      "sha256": "f264c3e39bf4208cb570618fc48c379cb24260727e14975c57c90a3866a8340b",
+      "bytes": 31035
+    },
+    ".scratch/hydrological-planning-domain/stylized-mouth-16km-20261017-09/scene.npz": {
+      "sha256": "bc2e3e6630fae5ba26265d0383061fbfe41fc18625910560f7ccbc440c708e6f",
+      "bytes": 51860348
+    }
+  },
+  "figures": [
+    {
+      "file": "01-terrain-basis.png",
+      "title": "42 km saved terrain basis and composition",
+      "sources": [
+        ".scratch/river-generation-review/real-lakes-42km/registry.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/manifest.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42524.npz"
+      ],
+      "source_shape_zx": [
+        1400,
+        1400
+      ],
+      "native_spacing_m": 30,
+      "extent_world_km": [
+        1301.985,
+        1343.985,
+        1286.985,
+        1244.985
+      ],
+      "output_pixels_wh": [
+        2295,
+        720
+      ],
+      "display": "nearest raster; no invented terrain detail; line widths may be enlarged",
+      "render_scale": "world km axes and metric scale bar; screen/print scale depends on display size",
+      "fields": [
+        {
+          "label": "Macro basis",
+          "unit": "m",
+          "range": [
+            1004.3591459147361,
+            1080.1238143371042
+          ],
+          "color_limits": [
+            337.54046630859375,
+            2023.0487060546875
+          ]
+        },
+        {
+          "label": "Original saved TD",
+          "unit": "m",
+          "range": [
+            337.54046630859375,
+            2023.0487060546875
+          ],
+          "color_limits": [
+            337.54046630859375,
+            2023.0487060546875
+          ]
+        },
+        {
+          "label": "Composed terrain",
+          "unit": "m",
+          "range": [
+            956.5126264248474,
+            1194.819085869042
+          ],
+          "color_limits": [
+            337.54046630859375,
+            2023.0487060546875
+          ]
+        }
+      ],
+      "scenario": "seed 20261020 | native 30 m | composed = macro + saved TD residual; original TD is immutable",
+      "sha256": "83007f58ef093a752d80d4cb929e7544defcc1364ead14172689195417743db8",
+      "terrain_basis": "saved_td_generated",
+      "algorithms": [
+        "macro_layout",
+        "terrain_diffusion_composition"
+      ],
+      "coverage_status": "partial",
+      "terrain_identity": "ce6e607dccf59e8dbaa221ad3a6c5dd390de63e984ea8de7a7ba5fd4f6ef971a",
+      "terrain_provenance": "Hash-verified saved TD composition tiles and current irregular graph; climate driver retains original TD source/support hashes.",
+      "terrain_sources": [
+        ".scratch/river-generation-review/real-lakes-42km/registry.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/manifest.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42524.npz"
+      ]
+    },
+    {
+      "file": "02-current-irregular-rivers.png",
+      "title": "42 km current irregular river graph and modelled lakes",
+      "sources": [
+        ".scratch/river-generation-review/real-lakes-42km/registry.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/manifest.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43400-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43912-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-44424-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43400-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43912-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-44424-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43400-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43912-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-44424-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water/river-network.npz"
+      ],
+      "source_shape_zx": [
+        1400,
+        1400
+      ],
+      "native_spacing_m": 30,
+      "extent_world_km": [
+        1301.985,
+        1343.985,
+        1286.985,
+        1244.985
+      ],
+      "output_pixels_wh": [
+        1650,
+        1500
+      ],
+      "display": "nearest raster; no invented terrain detail; line widths may be enlarged",
+      "render_scale": "world km axes and metric scale bar; screen/print scale depends on display size",
+      "fields": [
+        {
+          "quantity": "representative discharge",
+          "unit": "m3/s",
+          "threshold": 0.005
+        }
+      ],
+      "scenario": "Static 0.5 m/year runoff scenario; Q >= 0.005 m3/s shown (587/171802 reaches). All tributary contribution retained.\nCyan = routing lines, enlarged display width, NOT observed wet channel width; lake mask = modelled storage; unresolved boundaries remain pending.",
+      "sha256": "8cb8622b386be4dc6984aea2a8db1a134754b8189350028525368e97588573bd",
+      "terrain_basis": "saved_td_generated",
+      "algorithms": [
+        "terrain_diffusion",
+        "irregular_routing",
+        "lake_storage"
+      ],
+      "coverage_status": "partial",
+      "terrain_identity": "ce6e607dccf59e8dbaa221ad3a6c5dd390de63e984ea8de7a7ba5fd4f6ef971a",
+      "terrain_provenance": "Hash-verified saved TD composition tiles and current irregular graph; climate driver retains original TD source/support hashes.",
+      "terrain_sources": [
+        ".scratch/river-generation-review/real-lakes-42km/registry.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/manifest.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42524.npz"
+      ]
+    },
+    {
+      "file": "03-derived-bed.png",
+      "title": "Derived bed and excavation (same saved 42 km source)",
+      "sources": [
+        ".scratch/river-generation-review/real-lakes-42km/registry.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/manifest.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43400-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43912-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-44424-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43400-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43912-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-44424-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43400-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-43912-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/water-44424-42524.npz"
+      ],
+      "source_shape_zx": [
+        1400,
+        1400
+      ],
+      "native_spacing_m": 30,
+      "extent_world_km": [
+        1301.985,
+        1343.985,
+        1286.985,
+        1244.985
+      ],
+      "output_pixels_wh": [
+        2295,
+        1440
+      ],
+      "display": "nearest raster; no invented terrain detail; line widths may be enlarged",
+      "render_scale": "world km axes and metric scale bar; screen/print scale depends on display size",
+      "fields": [
+        {
+          "label": "Derived bed",
+          "unit": "m",
+          "range": [
+            956.5126264248474,
+            1194.819085869042
+          ],
+          "color_limits": [
+            956.5126264248474,
+            1194.819085869042
+          ]
+        },
+        {
+          "label": "Saved cut depth",
+          "unit": "m",
+          "range": [
+            0,
+            4
+          ],
+          "color_limits": [
+            0,
+            4
+          ]
+        },
+        {
+          "label": "Unresolved basin mask",
+          "unit": "0/1",
+          "range": [
+            0,
+            1
+          ],
+          "color_limits": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "Unknown upstream mask",
+          "unit": "0/1",
+          "range": [
+            0,
+            1
+          ],
+          "color_limits": [
+            0,
+            1
+          ]
+        }
+      ],
+      "scenario": "Static design bed; not a long-term erosion simulation. Pending basin and unknown-upstream masks are distinct saved fields; both remain visible.",
+      "sha256": "2525aedde1efa3d79e95615184ecddc1d37f3dbc2e16b40c6c852b0250088779",
+      "terrain_basis": "saved_td_generated",
+      "algorithms": [
+        "terrain_diffusion",
+        "derived_bed",
+        "basin_masks"
+      ],
+      "coverage_status": "partial",
+      "terrain_identity": "ce6e607dccf59e8dbaa221ad3a6c5dd390de63e984ea8de7a7ba5fd4f6ef971a",
+      "terrain_provenance": "Hash-verified saved TD composition tiles and current irregular graph; climate driver retains original TD source/support hashes.",
+      "terrain_sources": [
+        ".scratch/river-generation-review/real-lakes-42km/registry.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/manifest.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42524.npz"
+      ]
+    },
+    {
+      "file": "04-seasonal-temperature.png",
+      "title": "G3 synthetic seasonal temperature on real saved terrain",
+      "sources": [
+        ".scratch/stage2-world-integration/seasonal-verification-v4/driver.npz"
+      ],
+      "source_shape_zx": [
+        64,
+        64
+      ],
+      "native_spacing_m": 30,
+      "extent_world_km": [
+        1310.985,
+        1312.905,
+        1264.905,
+        1262.985
+      ],
+      "output_pixels_wh": [
+        2295,
+        1440
+      ],
+      "display": "nearest raster; no invented terrain detail; line widths may be enlarged",
+      "render_scale": "world km axes and metric scale bar; screen/print scale depends on display size",
+      "fields": [
+        {
+          "label": "Month 1",
+          "unit": "degC",
+          "range": [
+            20.640144820952923,
+            21.275402110776508
+          ],
+          "color_limits": [
+            -2.2734480229228655,
+            21.275402110776508
+          ]
+        },
+        {
+          "label": "Month 4",
+          "unit": "degC",
+          "range": [
+            7.080132308017911,
+            7.9516747946242905
+          ],
+          "color_limits": [
+            -2.2734480229228655,
+            21.275402110776508
+          ]
+        },
+        {
+          "label": "Month 7",
+          "unit": "degC",
+          "range": [
+            -2.2734480229228655,
+            -1.5136615346680564
+          ],
+          "color_limits": [
+            -2.2734480229228655,
+            21.275402110776508
+          ]
+        },
+        {
+          "label": "Month 10",
+          "unit": "degC",
+          "range": [
+            10.979784373102994,
+            12.00167625361036
+          ],
+          "color_limits": [
+            -2.2734480229228655,
+            21.275402110776508
+          ]
+        }
+      ],
+      "scenario": "Same extent and colour limits. Synthetic fixed 365-day calendar; seasonal variation, NOT long-term climate change.",
+      "sha256": "b6e229b83b9f4c4465350f404988049b292d8592fb9c8e555b6eaf32cd653d77",
+      "terrain_basis": "saved_td_generated",
+      "algorithms": [
+        "terrain_diffusion",
+        "seasonal_temperature"
+      ],
+      "coverage_status": "partial",
+      "terrain_identity": "ce6e607dccf59e8dbaa221ad3a6c5dd390de63e984ea8de7a7ba5fd4f6ef971a",
+      "terrain_provenance": "Hash-verified saved TD composition tiles and current irregular graph; climate driver retains original TD source/support hashes.",
+      "terrain_sources": [
+        ".scratch/river-generation-review/real-lakes-42km/registry.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/manifest.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42524.npz"
+      ]
+    },
+    {
+      "file": "05-computed-precipitation.png",
+      "title": "G4 actual vapour transport: controlled uplift comparison",
+      "sources": [
+        ".scratch/stage2-world-integration/seasonal-verification-v4/driver.npz",
+        ".scratch/stage2-world-integration/seasonal-verification-v4/forcing.json"
+      ],
+      "source_shape_zx": [
+        64,
+        64
+      ],
+      "native_spacing_m": 30,
+      "extent_world_km": [
+        1310.985,
+        1312.905,
+        1264.905,
+        1262.985
+      ],
+      "output_pixels_wh": [
+        1530,
+        720
+      ],
+      "display": "nearest raster; no invented terrain detail; line widths may be enlarged",
+      "render_scale": "world km axes and metric scale bar; screen/print scale depends on display size",
+      "fields": [
+        {
+          "label": "Uplift disabled",
+          "unit": "mm / 1 h",
+          "range": [
+            0,
+            0
+          ],
+          "color_limits": [
+            0,
+            0.015853438710298498
+          ]
+        },
+        {
+          "label": "Saved ridge / uplift enabled",
+          "unit": "mm / 1 h",
+          "range": [
+            0,
+            0.015853438710298498
+          ],
+          "color_limits": [
+            0,
+            0.015853438710298498
+          ]
+        }
+      ],
+      "scenario": "NEW CPU calculation from saved driver: t=0..3600 s, initial vapour=0; west wind 1 m/s; external 10 kg/s per inlet face; gain 0 vs 0.01.\nFixed engineering boundary scenario, not a stochastic climate product or annual rain; identical extent and colour limits.",
+      "sha256": "1b36dfecc2d2794c1fa7f526ab5120949bb0aabf7b0c8806b43ccff12aa8a4a8",
+      "terrain_basis": "saved_td_generated",
+      "algorithms": [
+        "terrain_diffusion",
+        "climate_transport"
+      ],
+      "coverage_status": "partial",
+      "terrain_identity": "ce6e607dccf59e8dbaa221ad3a6c5dd390de63e984ea8de7a7ba5fd4f6ef971a",
+      "terrain_provenance": "Hash-verified saved TD composition tiles and current irregular graph; climate driver retains original TD source/support hashes.",
+      "terrain_sources": [
+        ".scratch/river-generation-review/real-lakes-42km/registry.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/manifest.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42524.npz"
+      ]
+    },
+    {
+      "file": "06-ridge-climate-support.png",
+      "title": "G4 complete saved terrain support and computed thermal field",
+      "sources": [
+        ".scratch/stage2-world-integration/seasonal-verification-v4/driver.npz"
+      ],
+      "source_shape_zx": [
+        64,
+        64
+      ],
+      "native_spacing_m": 30,
+      "extent_world_km": [
+        1310.985,
+        1312.905,
+        1264.905,
+        1262.985
+      ],
+      "output_pixels_wh": [
+        2295,
+        720
+      ],
+      "display": "nearest raster; no invented terrain detail; line widths may be enlarged",
+      "render_scale": "world km axes and metric scale bar; screen/print scale depends on display size",
+      "fields": [
+        {
+          "label": "Local composed bed",
+          "unit": "m",
+          "range": [
+            1019.327500135485,
+            1110.82523064782
+          ],
+          "color_limits": [
+            1019.327500135485,
+            1110.82523064782
+          ]
+        },
+        {
+          "label": "Original 15 km ridge gradient",
+          "unit": "m/m",
+          "range": [
+            -0.0025797591408945057,
+            0.0018855539585811583
+          ],
+          "color_limits": [
+            -0.0025797591408945057,
+            0.0018855539585811583
+          ]
+        },
+        {
+          "label": "Actual first-hour temperature",
+          "unit": "degC",
+          "range": [
+            20.39129076568595,
+            20.980671083762772
+          ],
+          "color_limits": [
+            20.39129076568595,
+            20.980671083762772
+          ]
+        }
+      ],
+      "scenario": "Gradient derived using full original 15 km scale / three ridge taps; image window 1.92 km is not the halo extent",
+      "sha256": "1a8b4a1d3e7be0b4aaca8f2b5b4e26b2772e008217fdb912b3541c27a184df7e",
+      "terrain_basis": "saved_td_generated",
+      "algorithms": [
+        "terrain_diffusion",
+        "climate_transport",
+        "orographic_refinement"
+      ],
+      "coverage_status": "partial",
+      "terrain_identity": "ce6e607dccf59e8dbaa221ad3a6c5dd390de63e984ea8de7a7ba5fd4f6ef971a",
+      "terrain_provenance": "Hash-verified saved TD composition tiles and current irregular graph; climate driver retains original TD source/support hashes.",
+      "terrain_sources": [
+        ".scratch/river-generation-review/real-lakes-42km/registry.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/manifest.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42524.npz"
+      ]
+    },
+    {
+      "file": "07-snow-seasonal-event.png",
+      "title": "G7 saved snow event, initial and final",
+      "sources": [
+        ".scratch/stage2-world-integration/seasonal-verification-v4/initial.npz",
+        ".scratch/stage2-world-integration/seasonal-verification-v4/final.npz"
+      ],
+      "source_shape_zx": [
+        64,
+        64
+      ],
+      "native_spacing_m": 30,
+      "extent_world_km": [
+        1310.985,
+        1312.905,
+        1264.905,
+        1262.985
+      ],
+      "output_pixels_wh": [
+        1530,
+        720
+      ],
+      "display": "nearest raster; no invented terrain detail; line widths may be enlarged",
+      "render_scale": "world km axes and metric scale bar; screen/print scale depends on display size",
+      "fields": [
+        {
+          "label": "Initial SWE",
+          "unit": "mm water equivalent",
+          "range": [
+            0,
+            20
+          ],
+          "color_limits": [
+            0,
+            20
+          ]
+        },
+        {
+          "label": "Final SWE",
+          "unit": "mm water equivalent",
+          "range": [
+            0,
+            9.741517016034146
+          ],
+          "color_limits": [
+            0,
+            20
+          ]
+        }
+      ],
+      "scenario": "Saved 0 to 10800 physical seconds (3 h); same real TD / irregular graph source. Initial 20 mm SWE is DECLARED, not observed or climate generated.",
+      "sha256": "a0573dba688d3a53b61d785e36a0285798a7abfddabc5d6bf8eeef68834cb801",
+      "terrain_basis": "saved_td_generated",
+      "algorithms": [
+        "terrain_diffusion",
+        "seasonal_snow"
+      ],
+      "coverage_status": "mechanism_only",
+      "terrain_identity": "ce6e607dccf59e8dbaa221ad3a6c5dd390de63e984ea8de7a7ba5fd4f6ef971a",
+      "terrain_provenance": "Hash-verified saved TD composition tiles and current irregular graph; climate driver retains original TD source/support hashes.",
+      "terrain_sources": [
+        ".scratch/river-generation-review/real-lakes-42km/registry.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/manifest.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42524.npz"
+      ]
+    },
+    {
+      "file": "08-water-inventories.png",
+      "title": "G5 / G11 saved water inventories",
+      "sources": [
+        ".scratch/stage2-world-integration/seasonal-verification-v4/final.npz"
+      ],
+      "source_shape_zx": [
+        64,
+        64
+      ],
+      "native_spacing_m": 30,
+      "extent_world_km": [
+        1310.985,
+        1312.905,
+        1264.905,
+        1262.985
+      ],
+      "output_pixels_wh": [
+        2295,
+        1440
+      ],
+      "display": "nearest raster; no invented terrain detail; line widths may be enlarged",
+      "render_scale": "world km axes and metric scale bar; screen/print scale depends on display size",
+      "fields": [
+        {
+          "label": "Root-zone water",
+          "unit": "mm",
+          "range": [
+            0,
+            17.05575661771746
+          ],
+          "color_limits": [
+            0,
+            17.05575661771746
+          ]
+        },
+        {
+          "label": "Fast runoff store",
+          "unit": "mm",
+          "range": [
+            0,
+            0
+          ],
+          "color_limits": [
+            0,
+            0
+          ]
+        },
+        {
+          "label": "Slow runoff store",
+          "unit": "mm",
+          "range": [
+            0,
+            2.9383590881420503
+          ],
+          "color_limits": [
+            0,
+            2.9383590881420503
+          ]
+        },
+        {
+          "label": "Groundwater (zero in this case)",
+          "unit": "m3/cell",
+          "range": [
+            0,
+            0
+          ],
+          "color_limits": [
+            0,
+            0
+          ]
+        }
+      ],
+      "scenario": "Saved 0 to 10800 physical seconds (3 h); same real TD / irregular graph source. Initial 20 mm SWE is DECLARED, not observed or climate generated. Root-zone/fast/slow/groundwater are separate stocks; zero groundwater is not missing data.",
+      "sha256": "c3b8bfb2e6dc07fab27529e8c6acba22fe4c4298440b7715a6733bab247ea081",
+      "terrain_basis": "saved_td_generated",
+      "algorithms": [
+        "terrain_diffusion",
+        "seasonal_process",
+        "environment_consumer"
+      ],
+      "coverage_status": "mechanism_only",
+      "terrain_identity": "ce6e607dccf59e8dbaa221ad3a6c5dd390de63e984ea8de7a7ba5fd4f6ef971a",
+      "terrain_provenance": "Hash-verified saved TD composition tiles and current irregular graph; climate driver retains original TD source/support hashes.",
+      "terrain_sources": [
+        ".scratch/river-generation-review/real-lakes-42km/registry.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/manifest.json",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-41500.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42012.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43400-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-43912-42524.npz",
+        ".scratch/river-generation-review/real-lakes-42km/versions/3e2381055b1a403a9e854cf4ba6d6f29/composition-44424-42524.npz"
+      ]
+    },
+    {
+      "file": "09-soil-vegetation.png",
+      "title": "G2 / G6 / G9 / G15 material and vegetation response",
+      "sources": [
+        ".scratch/stage2-finish-20261030/g6-evidence/product.npz"
+      ],
+      "source_shape_zx": [
+        64,
+        64
+      ],
+      "native_spacing_m": 30,
+      "extent_world_km": [
+        1310.985,
+        1312.905,
+        1264.905,
+        1262.985
+      ],
+      "output_pixels_wh": [
+        2295,
+        720
+      ],
+      "display": "nearest raster; no invented terrain detail; line widths may be enlarged",
+      "render_scale": "world km axes and metric scale bar; screen/print scale depends on display size",
+      "fields": [
+        {
+          "label": "Allocated soil solid",
+          "unit": "m3 solid/cell",
+          "range": [
+            0,
+            30
+          ],
+          "color_limits": [
+            0,
+            30
+          ]
+        },
+        {
+          "label": "Parent solid inventory",
+          "unit": "m3 solid/cell",
+          "range": [
+            0,
+            320.6490000363502
+          ],
+          "color_limits": [
+            0,
+            320.6490000363502
+          ]
+        },
+        {
+          "label": "Biomass carbon",
+          "unit": "kg C/cell",
+          "range": [
+            0,
+            0.00029915878975228527
+          ],
+          "color_limits": [
+            0,
+            0.00029915878975228527
+          ]
+        }
+      ],
+      "scenario": "Saved G6 causal engineering scenario at t=7200 s; soil allocation and ecological parameters declared, not field observations. Classes/suitability saved in manifest.",
+      "sha256": "6fdf7a22b59478acfa05ba26d873d49e992dfdfec8e5a644aa0e24e2c82d3eec",
+      "terrain_basis": "saved_td_generated",
+      "algorithms": [
+        "terrain_diffusion",
+        "soil_inventory",
+        "succession"
+      ],
+      "coverage_status": "mechanism_only",
+      "terrain_identity": "ce6e607dccf59e8dbaa221ad3a6c5dd390de63e984ea8de7a7ba5fd4f6ef971a",
+      "terrain_provenance": {
+        "external_receiver_cells": 44,
+        "kind": "saved_generated_TD_terrain_not_observation",
+        "lithology": "same-world sample_lithology_points at native account anchors, seed20261020; graph position offset retained separately",
+        "manifest_sha256": "c903dcbb39289f3fdc120e1c1e7db9bc91220421251e5d4bd8550bbdaef0b0cc",
+        "mask_tiles": [
+          {
+            "file": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\river-generation-review\\real-lakes-42km\\versions\\3e2381055b1a403a9e854cf4ba6d6f29\\water-43400-42012.npz",
+            "sha256": "41c91acd8d45338f141f886177c2ad16a56187af2a63d1afd3bdb7f8606954e0"
+          },
+          {
+            "file": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\river-generation-review\\real-lakes-42km\\versions\\3e2381055b1a403a9e854cf4ba6d6f29\\composition-43400-42012.npz",
+            "sha256": "72fd640a221328255b18e2eecacdaef049558e37671ee8d3e158cef558cb7c58"
+          }
+        ],
+        "mesh_policy": "saved full-source irregular adjacency restricted to window; real saved node coordinates",
+        "network_sha256": "693bf0261728033bd443d17bfb0a5a5a458679598b261cdebf1c4de4907d22d9",
+        "ocean_identity": "unchanged hash-verified saved water tile ocean_mask; no edge-to-ocean inference",
+        "porosity": "regolith engineering porosity0.35; G2 bedrock_porosity is a separate read-only property",
+        "registry_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\river-generation-review\\real-lakes-42km\\registry.json",
+        "registry_sha256": "bc6c908613fa2e4dd92e4ac14f0ee91f51d5ed3a4f38cb8aaf6e0df4009340e3",
+        "routing_policy": "source terminals include external handoff/ocean; no external regeneration",
+        "solubility": "same-world G2 properties_at at native account anchors; original rock-table solubility",
+        "source_pages": [
+          {
+            "path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\fine-terrain-40km\\td-pages\\td-page-41981-41364-2049.npz",
+            "sha256": "7fcfc426d970cbe9b77cb4221661b1f5f8001d7a3f6b06189041a3f01d1a7142"
+          },
+          {
+            "path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\fine-terrain-40km\\td-pages\\td-page-43981-41364-2049.npz",
+            "sha256": "6bf2594c3796466764e66ed44cfe06d951b77bef705eec71553262dc9a0ebcaf"
+          }
+        ],
+        "source_world_identity": "ce6e607dccf59e8dbaa221ad3a6c5dd390de63e984ea8de7a7ba5fd4f6ef971a",
+        "window_row_col_size": [
+          600,
+          300,
+          64
+        ]
+      },
+      "terrain_note": "Separate saved TD window and declared finite process forcing; not a continuation of seasonal-v4."
+    },
+    {
+      "file": "10-environment-mechanisms.png",
+      "title": "G12 / G13 / G14 / G16 / G20 saved finite mechanisms",
+      "sources": [
+        ".scratch/stage2-g9-g20/verification-reviewed/inland/product.npz"
+      ],
+      "source_shape_zx": [
+        33,
+        33
+      ],
+      "native_spacing_m": 30,
+      "extent_world_km": [
+        1317.345,
+        1318.335,
+        1248.615,
+        1247.625
+      ],
+      "output_pixels_wh": [
+        2295,
+        1440
+      ],
+      "display": "nearest raster; no invented terrain detail; line widths may be enlarged",
+      "render_scale": "world km axes and metric scale bar; screen/print scale depends on display size",
+      "fields": [
+        {
+          "label": "Frozen ground temperature",
+          "unit": "degC",
+          "range": [
+            0,
+            0
+          ],
+          "color_limits": [
+            0,
+            0
+          ]
+        },
+        {
+          "label": "Absorbed radiation energy",
+          "unit": "J/m2",
+          "range": [
+            0,
+            3982898.295491535
+          ],
+          "color_limits": [
+            0,
+            3982898.295491535
+          ]
+        },
+        {
+          "label": "Loose aeolian solid",
+          "unit": "m3 solid/cell",
+          "range": [
+            0,
+            0.06097888565810601
+          ],
+          "color_limits": [
+            0,
+            0.06097888565810601
+          ]
+        },
+        {
+          "label": "Organic carbon",
+          "unit": "kg C/cell",
+          "range": [
+            0,
+            900.0212046156515
+          ],
+          "color_limits": [
+            0,
+            900.0212046156515
+          ]
+        },
+        {
+          "label": "Dissolved salt",
+          "unit": "kg/cell",
+          "range": [
+            0,
+            0
+          ],
+          "color_limits": [
+            0,
+            0
+          ]
+        },
+        {
+          "label": "Habitat population",
+          "unit": "individuals/cell",
+          "range": [
+            0,
+            0.000988630157088008
+          ],
+          "color_limits": [
+            0,
+            0.000988630157088008
+          ]
+        }
+      ],
+      "scenario": "Explicit engineering forcing and initial stocks; t=7200 s. Separate saved world identity, not a seasonal-v4 continuation or natural climatology.",
+      "sha256": "1a0159d1d4cf4813982e2fd880b9abd0584fd41a5dc4f5caadb1a2d4172e622d",
+      "terrain_basis": "saved_td_generated",
+      "algorithms": [
+        "terrain_diffusion",
+        "environment_processes"
+      ],
+      "coverage_status": "mechanism_only",
+      "terrain_identity": "ce6e607dccf59e8dbaa221ad3a6c5dd390de63e984ea8de7a7ba5fd4f6ef971a",
+      "terrain_provenance": {
+        "external_receiver_cells": 38,
+        "kind": "saved_generated_TD_terrain_not_observation",
+        "lithology": "same-world sample_lithology_points at native account anchors, seed20261020; graph position offset retained separately",
+        "manifest_sha256": "e7c89de0c56a02b643357f6fcb0f99860991858981e9624af8087fd02564fe4a",
+        "mask_tiles": [
+          {
+            "file": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\river-generation-review\\real-lakes-small\\versions\\cafc7247332d49d9a3a7c58431840cf7\\water-43880-41500.npz",
+            "sha256": "bef708f712153c2e3dee2e91c6ac0fa1cf26b1e1edd8608ad2141d9e41667053"
+          },
+          {
+            "file": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\river-generation-review\\real-lakes-small\\versions\\cafc7247332d49d9a3a7c58431840cf7\\composition-43880-41500.npz",
+            "sha256": "4e464c3c77eff7fd173b19359f0d8241f5dcb813c859942c7eb599944a79acd8"
+          }
+        ],
+        "mesh_policy": "saved full-source irregular adjacency restricted to window; real saved node coordinates",
+        "network_sha256": "6a05357f1f1d9c8b16ad14786e8e93aa3234e11b363917d5aecac472b65e2103",
+        "ocean_identity": "unchanged saved node_terminal_kind==4; no edge-to-ocean inference",
+        "porosity": "declared engineering regolith porosity0.35; not a sampled material property",
+        "registry_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\river-generation-review\\real-lakes-small\\registry.json",
+        "registry_sha256": "0fcb207ecfd8eefc79415cdeed7100923459ea7025ff193f6e31fc45e2ccc32c",
+        "routing_policy": "source terminals include external handoff/ocean; no external regeneration",
+        "solubility": "declared engineering fraction0.2; existing lithology API does not supply solubility",
+        "source_pages": [
+          {
+            "path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\fine-terrain-40km\\td-pages\\td-page-41981-41364-2049.npz",
+            "sha256": "7fcfc426d970cbe9b77cb4221661b1f5f8001d7a3f6b06189041a3f01d1a7142"
+          },
+          {
+            "path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\fine-terrain-40km\\td-pages\\td-page-43981-41364-2049.npz",
+            "sha256": "6bf2594c3796466764e66ed44cfe06d951b77bef705eec71553262dc9a0ebcaf"
+          }
+        ],
+        "source_world_identity": "ce6e607dccf59e8dbaa221ad3a6c5dd390de63e984ea8de7a7ba5fd4f6ef971a",
+        "window_row_col_size": [
+          88,
+          32,
+          33
+        ]
+      },
+      "terrain_note": "Separate saved TD window and declared finite process forcing; not a continuation of seasonal-v4."
+    },
+    {
+      "file": "11-latest-delta-remote.png",
+      "title": "Latest corrected delta: saved bed and actual wet mask",
+      "sources": [
+        ".scratch/delta-process-natural-20261031/run-v1/result.npz",
+        ".scratch/delta-process-natural-20261031/run-v1/summary.json"
+      ],
+      "source_shape_zx": [
+        800,
+        800
+      ],
+      "native_spacing_m": 20,
+      "extent_world_km": [
+        367.88,
+        383.88,
+        -1416.12,
+        -1432.12
+      ],
+      "output_pixels_wh": [
+        1500,
+        1500
+      ],
+      "display": "nearest raster; no invented terrain detail; line widths may be enlarged",
+      "render_scale": "world km axes and metric scale bar; screen/print scale depends on display size",
+      "fields": [
+        {
+          "water_depth_unit": "m",
+          "wet_pixels": 219251,
+          "max_bed_change_m": 0.4239354555375669
+        }
+      ],
+      "scenario": "Constructed initial distributaries and marine plain; saved computed deposition and hydraulic water. Synthetic depth tint, constant drawing sun 315/45 deg; no fabricated vegetation or spectral signal.\nNot natural self-formed channels; monthly forcing chronology is a model scenario, not a climate forecast.",
+      "sha256": "a65ae3e1d2e6dc6abe2db99d3c4a74e1aa3dc645d0738cbbed54ec3ed61e4d10",
+      "terrain_basis": "td_derived_engineered",
+      "algorithms": [
+        "terrain_diffusion_source",
+        "delta_solver"
+      ],
+      "coverage_status": "partial",
+      "terrain_sources": [
+        ".scratch/hydrological-planning-domain/stylized-mouth-16km-20261017-09/scene.npz"
+      ],
+      "terrain_provenance": {
+        "source_scene_sha256": "bc2e3e6630fae5ba26265d0383061fbfe41fc18625910560f7ccbc440c708e6f",
+        "source_terrain_identity": "Inherited base_bed_m from source scene; original terrain is not regenerated by current world seed",
+        "accepted_bed_source_hashes": {
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\report.json": "874b01d0680cec7e376a4ad4290ba54b0e07fa0dda33fcf56501ea289adca695",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-000-a17fe100e76b.npz": "4ac5b9184ec63654de94b895a0fbf57d15a1ab585bee980cbc68a659aa4e9a46",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-001-0f3eca0eaa5e.npz": "9a7de73a1a11b5cf8e8953cb31367f61efac91036f046a68dbb5463d509a13e5",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-002-74a753c283f6.npz": "ef16df74a0fe9dbf718a4feb8df6c15f4921e94e698a1e0a97f588765f9b9f2f",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-003-3045c6608a35.npz": "d73accdc0f91ba9bf25b1ccde5a770500c00054e5f9e3845d10be4c49cb61b5b",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-004-8ef3130d1305.npz": "0e864a07a46b5b5b19466ff22a15158594b48fa6a2f511809cab6d6aa48b1f5c",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-005-515e87f74787.npz": "f2fabd9ff7554f104b1c0e308f803da4be122d96d005e9cdcedaa491a23df3c3",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-006-5eef072eba59.npz": "9ccf50d1025e1df46eacb58670a9e332a4a6fa65c7a5ca09899f48589483bc6d",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-007-42ec8b6f6a41.npz": "6da2ea3f451230981216cd5f5be4bc2581bbfc2b3444da409bebb981d84d4b68",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-008-b698abc903cf.npz": "bea9b30c9707dc7b1e789673e270851fe7d842668ca8d9470cfa5e32476e2bad",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-009-ca9dbc157816.npz": "4e17d2db5252b5a5195c509104117374e21fa49a4224c3979b1cff8ea8467d35",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-010-3de93404999b.npz": "1e094e3b3997483f9992dab8cc3a8fe3fa8818870b3853329f9b2d5b91d8c79e",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-011-156e7e214c65.npz": "b339255c8eaabeace9f447ce917e2cc8b5cca9946eae2a2217068944b400908a",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-012-9ae644e0a9c3.npz": "b34edfa4471f531bcfc310715ad4ce373bfca9c6bba118ab2e928664ad1f2a1a",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-013-1bd908a2c6ba.npz": "6f694d15aa69e35ccbae5adfa9b14ab761e0e428535eb69cab5c2fd5dc2a3aba",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-014-6b10762bedb7.npz": "bb2d6b5e8881bb00098c1fb74c2c3b40cdeed20a3aefc5e05d1b3ac229b14b43",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-015-7c420bfdf8ed.npz": "9895e3eb337d762ab81b3c94f500006a0f9ebe8a1d8aba30e7d286d122f2e035",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-016-e02b5167df74.npz": "12f52626928a0818f5282ad2343d43b53996888f651037c1402ea57189d2947b",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-017-cac19194d813.npz": "051b23095922c80f7ace1a841cf8cc8cdfb8bd040caea371608a33a60d2b89cc",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-018-51133f38d1b1.npz": "043cc91d6abe4e43d8cd2ddacace46fc0f36636d2e607864538c82381a366b9a",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-019-bb68520f6b87.npz": "c0f2f16499008813bcf8b638ef25f65bba893c0e1b9fb03fe8faeeb8301ec92f",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-020-513c93a69a58.npz": "a93aab998577bee80b7f523ba1b1e47c4ee7e3701dc040fdafa0c5b733aca4c6",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-021-c5f7c35ca339.npz": "1d91633f780a638a704da00d6a024f1b4e72c5a37281f6fbc0ce1a7f99fb7c8f",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-022-5096e7f2fe78.npz": "056d1d0629983970993c627bace3ef37b95cd60dfd58c64596f8545a8779730a",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-023-758ec7d5e462.npz": "0702ac4112e1fba8f41858370041ed700cca1098e1a898d62a74bb01f4b72049",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-024-bcc55d342175.npz": "0d75d9987437f9460aa80e168f7fc69ce0dc6a7d83b3429d63a06d8081c3c8bc",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-025-35ed0220a970.npz": "1dac45e3f5cffa44210b44e9463b05c8e518307ceda9b565945b76f835e51503",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-026-b8e42653cdb0.npz": "01d580495753ea706e3d3d9b74434ee9be9b73052d512fdfb07a4ed6782802a6",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-027-fc387bcbebde.npz": "28b6620ea5df11c8fd6d48751382ebed1de2bd26cc789a817ff58a174a7dd1a3",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-028-438c6d66da3d.npz": "aa2608f7734c32c95f04d84c8e189199afec725780bfbd985aab232df0f37da2",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\detail.npz": "6ae9d436a073ecd64c5f554f27c62ba0248ead1c6ccdbf08c225762ae2387784"
+        },
+        "input_hashes": {
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\v5-lake-20261014-02\\plan.npz": "17a1c53699604e00d303a1fa20153bbf770fe52f739a80152390062bd6786959",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\large-td-confluence-20261014-03\\native-routing.npz": "4f6ffcbcc9baf54ecf4ce8dc91c6afb094b181a0d7f7641e753eff1d1bf2a53f",
+          "D:\\codexwork\\山川形意Terragenesis\\.scratch\\hydrological-planning-domain\\saved-bed-mouth-20261016-01\\centerline.npz": "fe6359ace5e6ddc55261605da5718655e7c66e7b50e2751c72759ffb5ff0444f",
+          "D:\\codexwork\\山川形意Terragenesis\\.scratch\\hydrological-planning-domain\\saved-river-seasonal-supply-20261016-01\\supply.npz": "9801f0d950bf7450e1b1a58d2122f609e6352496a43460f8874f551b111f2bfa",
+          "D:\\codexwork\\山川形意Terragenesis\\.scratch\\hydrological-planning-domain\\saved-river-seasonal-supply-20261016-01\\summary.json": "15247ef0dfc6d79ee96ed4e1c9c151843e9bb8efa26b5eff4532673f73b246b7",
+          "D:\\codexwork\\山川形意Terragenesis\\.scratch\\hydrological-planning-domain\\stylized-mouth-16km-20261016-02\\scene.npz": "69e965b2bef200a75e17f32b4167e71bb78bbe4a1a71e11d9b685c7b3fa20b5c"
+        }
+      },
+      "terrain_note": "TD-derived engineered terrain: inherited base = macro + 0.35 TD residual (maximum checked error 2.84e-14 m); initial bed equals saved scene bed. Engineering construction changed 212644 of 640000 cells, with fill about 1.4586e9 m3 and cut about 2.867e7 m3. This is not unmodified TD or naturally formed distributaries.",
+      "terrain_validation": {
+        "base_formula": "macro_bed_m + 0.35 * td_residual_m",
+        "max_formula_error_m": 2.84e-14,
+        "initial_bed_equals_scene_bed": true,
+        "engineered_changed_cells": 212644,
+        "total_cells": 640000,
+        "engineered_fill_m3_approx": 1458600000,
+        "engineered_cut_m3_approx": 28670000
+      },
+      "forcing_source": "Inherited original water/sediment history is an engineering boundary scenario; it is not newly computed climate forcing."
+    },
+    {
+      "file": "12-delta-tidal-states.png",
+      "title": "G8 / G19 saved tidal water snapshots",
+      "sources": [
+        ".scratch/delta-process-natural-20261031/tides-v1/tides.npz",
+        ".scratch/delta-process-natural-20261031/tides-v1/summary.json"
+      ],
+      "source_shape_zx": [
+        800,
+        800
+      ],
+      "native_spacing_m": 20,
+      "extent_world_km": [
+        367.88,
+        383.88,
+        -1416.12,
+        -1432.12
+      ],
+      "output_pixels_wh": [
+        1530,
+        720
+      ],
+      "display": "nearest raster; no invented terrain detail; line widths may be enlarged",
+      "render_scale": "world km axes and metric scale bar; screen/print scale depends on display size",
+      "fields": [
+        {
+          "label": "t=78246 s, stage mean 62.9 m",
+          "unit": "wet 0/1",
+          "range": [
+            0,
+            1
+          ],
+          "color_limits": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "t=55890 s, stage mean 63.9 m",
+          "unit": "wet 0/1",
+          "range": [
+            0,
+            1
+          ],
+          "color_limits": [
+            0,
+            1
+          ]
+        }
+      ],
+      "scenario": "Latest corrected downstream tidal creek geometry; actual saved finite-volume wet snapshots, not bed-below-tide reachability. Same categorical colour scale.",
+      "sha256": "3199958ed4a542cecda9da7eaeb0556a09857182c58348814b6582a673a6f227",
+      "terrain_basis": "td_derived_engineered",
+      "algorithms": [
+        "terrain_diffusion_source",
+        "coastal_tidal_solver"
+      ],
+      "coverage_status": "partial",
+      "terrain_sources": [
+        ".scratch/hydrological-planning-domain/stylized-mouth-16km-20261017-09/scene.npz"
+      ],
+      "terrain_provenance": {
+        "source_scene_sha256": "bc2e3e6630fae5ba26265d0383061fbfe41fc18625910560f7ccbc440c708e6f",
+        "source_terrain_identity": "Inherited base_bed_m from source scene; original terrain is not regenerated by current world seed",
+        "accepted_bed_source_hashes": {
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\report.json": "874b01d0680cec7e376a4ad4290ba54b0e07fa0dda33fcf56501ea289adca695",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-000-a17fe100e76b.npz": "4ac5b9184ec63654de94b895a0fbf57d15a1ab585bee980cbc68a659aa4e9a46",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-001-0f3eca0eaa5e.npz": "9a7de73a1a11b5cf8e8953cb31367f61efac91036f046a68dbb5463d509a13e5",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-002-74a753c283f6.npz": "ef16df74a0fe9dbf718a4feb8df6c15f4921e94e698a1e0a97f588765f9b9f2f",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-003-3045c6608a35.npz": "d73accdc0f91ba9bf25b1ccde5a770500c00054e5f9e3845d10be4c49cb61b5b",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-004-8ef3130d1305.npz": "0e864a07a46b5b5b19466ff22a15158594b48fa6a2f511809cab6d6aa48b1f5c",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-005-515e87f74787.npz": "f2fabd9ff7554f104b1c0e308f803da4be122d96d005e9cdcedaa491a23df3c3",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-006-5eef072eba59.npz": "9ccf50d1025e1df46eacb58670a9e332a4a6fa65c7a5ca09899f48589483bc6d",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-007-42ec8b6f6a41.npz": "6da2ea3f451230981216cd5f5be4bc2581bbfc2b3444da409bebb981d84d4b68",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-008-b698abc903cf.npz": "bea9b30c9707dc7b1e789673e270851fe7d842668ca8d9470cfa5e32476e2bad",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-009-ca9dbc157816.npz": "4e17d2db5252b5a5195c509104117374e21fa49a4224c3979b1cff8ea8467d35",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-010-3de93404999b.npz": "1e094e3b3997483f9992dab8cc3a8fe3fa8818870b3853329f9b2d5b91d8c79e",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-011-156e7e214c65.npz": "b339255c8eaabeace9f447ce917e2cc8b5cca9946eae2a2217068944b400908a",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-012-9ae644e0a9c3.npz": "b34edfa4471f531bcfc310715ad4ce373bfca9c6bba118ab2e928664ad1f2a1a",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-013-1bd908a2c6ba.npz": "6f694d15aa69e35ccbae5adfa9b14ab761e0e428535eb69cab5c2fd5dc2a3aba",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-014-6b10762bedb7.npz": "bb2d6b5e8881bb00098c1fb74c2c3b40cdeed20a3aefc5e05d1b3ac229b14b43",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-015-7c420bfdf8ed.npz": "9895e3eb337d762ab81b3c94f500006a0f9ebe8a1d8aba30e7d286d122f2e035",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-016-e02b5167df74.npz": "12f52626928a0818f5282ad2343d43b53996888f651037c1402ea57189d2947b",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-017-cac19194d813.npz": "051b23095922c80f7ace1a841cf8cc8cdfb8bd040caea371608a33a60d2b89cc",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-018-51133f38d1b1.npz": "043cc91d6abe4e43d8cd2ddacace46fc0f36636d2e607864538c82381a366b9a",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-019-bb68520f6b87.npz": "c0f2f16499008813bcf8b638ef25f65bba893c0e1b9fb03fe8faeeb8301ec92f",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-020-513c93a69a58.npz": "a93aab998577bee80b7f523ba1b1e47c4ee7e3701dc040fdafa0c5b733aca4c6",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-021-c5f7c35ca339.npz": "1d91633f780a638a704da00d6a024f1b4e72c5a37281f6fbc0ce1a7f99fb7c8f",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-022-5096e7f2fe78.npz": "056d1d0629983970993c627bace3ef37b95cd60dfd58c64596f8545a8779730a",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-023-758ec7d5e462.npz": "0702ac4112e1fba8f41858370041ed700cca1098e1a898d62a74bb01f4b72049",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-024-bcc55d342175.npz": "0d75d9987437f9460aa80e168f7fc69ce0dc6a7d83b3429d63a06d8081c3c8bc",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-025-35ed0220a970.npz": "1dac45e3f5cffa44210b44e9463b05c8e518307ceda9b565945b76f835e51503",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-026-b8e42653cdb0.npz": "01d580495753ea706e3d3d9b74434ee9be9b73052d512fdfb07a4ed6782802a6",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-027-fc387bcbebde.npz": "28b6620ea5df11c8fd6d48751382ebed1de2bd26cc789a817ff58a174a7dd1a3",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\piece-028-438c6d66da3d.npz": "aa2608f7734c32c95f04d84c8e189199afec725780bfbd985aab232df0f37da2",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\full-edges-v5-20261014-03\\edge-8470-8600-v7-shared-sections-owned-halo2\\detail.npz": "6ae9d436a073ecd64c5f554f27c62ba0248ead1c6ccdbf08c225762ae2387784"
+        },
+        "input_hashes": {
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\v5-lake-20261014-02\\plan.npz": "17a1c53699604e00d303a1fa20153bbf770fe52f739a80152390062bd6786959",
+          "D:\\codexwork\\山川形意Terragenesis\\verification\\hydrological-planning-domain\\large-td-confluence-20261014-03\\native-routing.npz": "4f6ffcbcc9baf54ecf4ce8dc91c6afb094b181a0d7f7641e753eff1d1bf2a53f",
+          "D:\\codexwork\\山川形意Terragenesis\\.scratch\\hydrological-planning-domain\\saved-bed-mouth-20261016-01\\centerline.npz": "fe6359ace5e6ddc55261605da5718655e7c66e7b50e2751c72759ffb5ff0444f",
+          "D:\\codexwork\\山川形意Terragenesis\\.scratch\\hydrological-planning-domain\\saved-river-seasonal-supply-20261016-01\\supply.npz": "9801f0d950bf7450e1b1a58d2122f609e6352496a43460f8874f551b111f2bfa",
+          "D:\\codexwork\\山川形意Terragenesis\\.scratch\\hydrological-planning-domain\\saved-river-seasonal-supply-20261016-01\\summary.json": "15247ef0dfc6d79ee96ed4e1c9c151843e9bb8efa26b5eff4532673f73b246b7",
+          "D:\\codexwork\\山川形意Terragenesis\\.scratch\\hydrological-planning-domain\\stylized-mouth-16km-20261016-02\\scene.npz": "69e965b2bef200a75e17f32b4167e71bb78bbe4a1a71e11d9b685c7b3fa20b5c"
+        }
+      },
+      "terrain_note": "TD-derived engineered terrain: inherited base = macro + 0.35 TD residual (maximum checked error 2.84e-14 m); initial bed equals saved scene bed. Engineering construction changed 212644 of 640000 cells, with fill about 1.4586e9 m3 and cut about 2.867e7 m3. This is not unmodified TD or naturally formed distributaries.",
+      "terrain_validation": {
+        "base_formula": "macro_bed_m + 0.35 * td_residual_m",
+        "max_formula_error_m": 2.84e-14,
+        "initial_bed_equals_scene_bed": true,
+        "engineered_changed_cells": 212644,
+        "total_cells": 640000,
+        "engineered_fill_m3_approx": 1458600000,
+        "engineered_cut_m3_approx": 28670000
+      },
+      "forcing_source": "Inherited original water/sediment history is an engineering boundary scenario; it is not newly computed climate forcing."
+    },
+    {
+      "file": "13-joint-td-environment.png",
+      "title": "Same TD window: soil allocation, root water and vegetation jointly consumed",
+      "sources": [
+        ".scratch/stage2-finish-20261030/g6-evidence/product.npz"
+      ],
+      "source_shape_zx": [
+        64,
+        64
+      ],
+      "native_spacing_m": 30,
+      "extent_world_km": [
+        1310.985,
+        1312.905,
+        1264.905,
+        1262.985
+      ],
+      "output_pixels_wh": [
+        1800,
+        1500
+      ],
+      "display": "nearest raster; no invented terrain detail; line widths may be enlarged",
+      "render_scale": "world km axes and metric scale bar; screen/print scale depends on display size",
+      "fields": [
+        {
+          "label": "Allocated soil solid",
+          "unit": "m3 solid/cell",
+          "range": [
+            0,
+            30
+          ]
+        },
+        {
+          "label": "Root-zone water",
+          "unit": "m3 water/cell",
+          "range": [
+            0,
+            25.00857337430846
+          ]
+        },
+        {
+          "label": "Actual biomass carbon",
+          "unit": "kg C/cell",
+          "range": [
+            0,
+            0.00029915878975228527
+          ]
+        }
+      ],
+      "scenario": "One saved G6 product, world and physical time 7200 s; G2/G9 material -> soil allocation + root water -> G6/G15 biomass. Declared causal engineering scenario; no seasonal-v4 states mixed in.",
+      "sha256": "acc89407f310a79f9e5f20937aa367bbe158f5c4651647150879d7906ca36f34",
+      "terrain_basis": "saved_td_generated",
+      "algorithms": [
+        "terrain_diffusion",
+        "soil_inventory",
+        "root_zone_water",
+        "land_cover_consumer",
+        "succession"
+      ],
+      "coverage_status": "mechanism_only",
+      "terrain_identity": "ce6e607dccf59e8dbaa221ad3a6c5dd390de63e984ea8de7a7ba5fd4f6ef971a",
+      "terrain_provenance": {
+        "external_receiver_cells": 44,
+        "kind": "saved_generated_TD_terrain_not_observation",
+        "lithology": "same-world sample_lithology_points at native account anchors, seed20261020; graph position offset retained separately",
+        "manifest_sha256": "c903dcbb39289f3fdc120e1c1e7db9bc91220421251e5d4bd8550bbdaef0b0cc",
+        "mask_tiles": [
+          {
+            "file": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\river-generation-review\\real-lakes-42km\\versions\\3e2381055b1a403a9e854cf4ba6d6f29\\water-43400-42012.npz",
+            "sha256": "41c91acd8d45338f141f886177c2ad16a56187af2a63d1afd3bdb7f8606954e0"
+          },
+          {
+            "file": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\river-generation-review\\real-lakes-42km\\versions\\3e2381055b1a403a9e854cf4ba6d6f29\\composition-43400-42012.npz",
+            "sha256": "72fd640a221328255b18e2eecacdaef049558e37671ee8d3e158cef558cb7c58"
+          }
+        ],
+        "mesh_policy": "saved full-source irregular adjacency restricted to window; real saved node coordinates",
+        "network_sha256": "693bf0261728033bd443d17bfb0a5a5a458679598b261cdebf1c4de4907d22d9",
+        "ocean_identity": "unchanged hash-verified saved water tile ocean_mask; no edge-to-ocean inference",
+        "porosity": "regolith engineering porosity0.35; G2 bedrock_porosity is a separate read-only property",
+        "registry_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\river-generation-review\\real-lakes-42km\\registry.json",
+        "registry_sha256": "bc6c908613fa2e4dd92e4ac14f0ee91f51d5ed3a4f38cb8aaf6e0df4009340e3",
+        "routing_policy": "source terminals include external handoff/ocean; no external regeneration",
+        "solubility": "same-world G2 properties_at at native account anchors; original rock-table solubility",
+        "source_pages": [
+          {
+            "path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\fine-terrain-40km\\td-pages\\td-page-41981-41364-2049.npz",
+            "sha256": "7fcfc426d970cbe9b77cb4221661b1f5f8001d7a3f6b06189041a3f01d1a7142"
+          },
+          {
+            "path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\fine-terrain-40km\\td-pages\\td-page-43981-41364-2049.npz",
+            "sha256": "6bf2594c3796466764e66ed44cfe06d951b77bef705eec71553262dc9a0ebcaf"
+          }
+        ],
+        "source_world_identity": "ce6e607dccf59e8dbaa221ad3a6c5dd390de63e984ea8de7a7ba5fd4f6ef971a",
+        "window_row_col_size": [
+          600,
+          300,
+          64
+        ]
+      },
+      "terrain_note": "Separate saved TD window and declared finite process forcing; not a continuation of seasonal-v4."
+    }
+  ],
+  "world_identity": "ce6e607dccf59e8dbaa221ad3a6c5dd390de63e984ea8de7a7ba5fd4f6ef971a",
+  "network_algorithm": "irregular_shared_node_continuous_sections_v1",
+  "climate_driver_identity": "e29f96a2544490facdeb0e8b86309d2e3c3a5411b59967af8a0a41184444b697",
+  "g4_ledgers": [
+    {
+      "inflow_kg": 2304000,
+      "recycle_kg": 0,
+      "precipitation_kg": 0,
+      "outflow_kg": 1075200,
+      "nondepositing_kg": 0,
+      "storage_change_kg": 1228800,
+      "closure_residual_kg": 0,
+      "closure_tolerance_kg": 0.002304,
+      "closure_ok": true,
+      "substeps": 120,
+      "max_cfl": 1
+    },
+    {
+      "inflow_kg": 2304000,
+      "recycle_kg": 0,
+      "precipitation_kg": 7513.406151193147,
+      "outflow_kg": 1070165.3296131727,
+      "nondepositing_kg": 0,
+      "storage_change_kg": 1226321.2642356341,
+      "closure_residual_kg": 0,
+      "closure_tolerance_kg": 0.002304,
+      "closure_ok": true,
+      "substeps": 120,
+      "max_cfl": 1
+    }
+  ],
+  "g6_land_cover_fields": [
+    "active_mask",
+    "adapter",
+    "algorithm",
+    "columns",
+    "cover_classes",
+    "family_temperature_c",
+    "field_status",
+    "growth_support_factor",
+    "horizontal_area_m2",
+    "identity",
+    "land_cover",
+    "land_cover_index",
+    "limitations",
+    "material_solid_m3",
+    "normalised_material",
+    "normalised_temperature",
+    "normalised_water",
+    "parameters",
+    "parameters_identity_sha256",
+    "porosity",
+    "schema",
+    "soil_thickness_bulk_m",
+    "soil_water_capacity_mm",
+    "soil_water_capacity_source",
+    "suitability",
+    "unallocated_parent_potential_solid_m3",
+    "units",
+    "water_capacity_reference_mm",
+    "water_ratio_of_capacity",
+    "water_state_shape",
+    "water_state_total_mm"
+  ],
+  "coverage_groups": {
+    "complete_in_window": [],
+    "partial": [
+      "01-terrain-basis.png",
+      "02-current-irregular-rivers.png",
+      "03-derived-bed.png",
+      "04-seasonal-temperature.png",
+      "05-computed-precipitation.png",
+      "06-ridge-climate-support.png",
+      "11-latest-delta-remote.png",
+      "12-delta-tidal-states.png"
+    ],
+    "mechanism_only": [
+      "07-snow-seasonal-event.png",
+      "08-water-inventories.png",
+      "09-soil-vegetation.png",
+      "10-environment-mechanisms.png",
+      "13-joint-td-environment.png"
+    ],
+    "not_available": []
+  },
+  "coverage": {
+    "R1-R9": "saved original/composed/derived beds, current irregular topology, representative Q, modelled lakes, declared dynamic delta; no new certification of every river capability",
+    "G1-G9": "terrain, G2/G9 parent/soil, seasonal temperature, actual G4 condensation, separate water stocks, G6 biomass, SWE, delta/coast",
+    "G10-G20": "finite mechanism fields from reviewed saved product; no natural long-term validation; G17 river capture remains paused"
+  },
+  "limitations": [
+    "No observed remote-sensing or spectral calibration; colour is cartographic.",
+    "Seasonal-v4 elapsed time is three hours, not climate change.",
+    "Old large-world-first-pass/disk-connected-lakes-v1 registry is D8 priority flood; excluded from current graph figure.",
+    "No full-world hydrology, long-term climatic trend, natural delta emergence or game acceptance claimed.",
+    "Some environment fields are constant/zero; figures preserve their actual magnitude and separate scenario identities."
+  ]
+}

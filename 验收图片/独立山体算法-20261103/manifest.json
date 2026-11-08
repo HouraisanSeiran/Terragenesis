@@ -1,0 +1,436 @@
+{
+  "source_family": "independent_procedural_mountains",
+  "world_seed": 20260903,
+  "description": "Generic morphology-inspired geometric candidates; not real peaks, geology simulation, TD terrain, or hydrology.",
+  "coverage_status": "complete_in_window",
+  "origin_m_xz": [
+    0.0,
+    0.0
+  ],
+  "shape_zx": [
+    401,
+    401
+  ],
+  "spacing_m": 60.0,
+  "view_selection": "Fixed default origin [0, 0] m, chosen before inspecting heights; custom origin and spacing are explicit.",
+  "coordinates": "planar X east, Z south, metres",
+  "height_units": "m",
+  "source_hashes_sha256": {
+    "terrain_pipeline/procedural_mountains.py": "4f9afc89524c2076ae788c1ca665a36c0e511e99a0cf7f221e12c2e8fc3f7a28",
+    "terrain_pipeline/advanced_terrain_filter.py": "e0dc26f2e5405f28cec05465b44a0d76bcf278d1d2bb8a732ab446f92ef3b4f3",
+    "diffusion/geographic_noise.py": "7b0667dc26dcfc153267c9affb9f30831711d417a8c22232fd36ae8af37a50e1",
+    "terrain_pipeline/world_seed.py": "ff3c7ae6e1480222a18e564d880fbb1fe857dc4410d2fae6fe401e839d749fa4",
+    "tools/prepare_procedural_mountains.py": "606f2bc48b9574f92c7907936c92b1965c4eaa7008cf09124bb1915971e18dcc",
+    "terrain_pipeline/terrain_map_style.py": "5ba2a8256fcf4f7d66f38cddadd7c7d33aeea9978053af96f41e2b52b9550ff6"
+  },
+  "rasters": [
+    {
+      "file": "granite_dome_base.npz",
+      "sha256": "b9b8e5a6eb463ad4df6b1960c24c9c83a7293fc386fb5bc5289850f7059c16fc",
+      "family": "granite_dome",
+      "detail_strength": 0.0,
+      "min_m": 286.23705615816743,
+      "max_m": 2387.769174699628
+    },
+    {
+      "file": "granite_dome_detail.npz",
+      "sha256": "5be81ea81c93aee07ac3c2f03efda4dc0ead9ef20e009fb2bf27b2296984944d",
+      "family": "granite_dome",
+      "detail_strength": 0.35,
+      "min_m": 273.5598648206023,
+      "max_m": 2406.5010942776794
+    },
+    {
+      "file": "layered_massif_base.npz",
+      "sha256": "2d020ed27c50afe2d91f23af200b439fe9fe6fd3603ebc704ed907b3f43e7a57",
+      "family": "layered_massif",
+      "detail_strength": 0.0,
+      "min_m": 141.59789834915807,
+      "max_m": 2561.1206972386767
+    },
+    {
+      "file": "layered_massif_detail.npz",
+      "sha256": "58fdcc85d8894ed41f9b7a48d84f429c7d7b05547baa2509ab07c92907bd0ddc",
+      "family": "layered_massif",
+      "detail_strength": 0.35,
+      "min_m": 66.42372913531227,
+      "max_m": 2572.360357286856
+    },
+    {
+      "file": "glacial_horn_base.npz",
+      "sha256": "92ee90320c54de27a188120e1af28ec6a099a4b99dda3bda4c9c1c68c09f3668",
+      "family": "glacial_horn",
+      "detail_strength": 0.0,
+      "min_m": 86.5423159922872,
+      "max_m": 2832.03091230232
+    },
+    {
+      "file": "glacial_horn_detail.npz",
+      "sha256": "54b539e0054194ce17b00883d8cfaa3ee62045150413f9696d825cdebcc17b65",
+      "family": "glacial_horn",
+      "detail_strength": 0.35,
+      "min_m": 48.091120809285854,
+      "max_m": 2868.21128572573
+    },
+    {
+      "file": "mixed_base.npz",
+      "sha256": "e182d5e4dc3ab5e6497964819b549f76b4aae67c291c16d2118fc4736e65717f",
+      "family": "mixed",
+      "detail_strength": 0.0,
+      "min_m": 216.58911180394992,
+      "max_m": 2820.3896673400195
+    },
+    {
+      "file": "mixed_detail.npz",
+      "sha256": "d61d2566ee2d4e202796a494c2f3cbe5a3b4e00b37972fc902117e202bd06756",
+      "family": "mixed",
+      "detail_strength": 0.35,
+      "min_m": 158.68542686186552,
+      "max_m": 2856.8301690572694
+    }
+  ],
+  "core_metadata_by_family": {
+    "granite_dome": {
+      "algorithm": "procedural-mountains-v3",
+      "status": "candidate",
+      "world_seed": 20260903,
+      "subseeds": {
+        "base-noise": 1785292835379719697,
+        "regional-noise": 11326366209500821504,
+        "advanced-phacelle": 10860721302913963045
+      },
+      "seed_derivation": {
+        "noise": "sha256(terragenesis-procedural-mountains-v1|world_seed|purpose), first 8 bytes big-endian",
+        "advanced-phacelle": "sha256(advanced-terrain-filter-v1:world_seed:phacelle), first 8 bytes little-endian"
+      },
+      "coordinates": "metres; X east, Z south; arrays [z, x]",
+      "origin_m_xz": [
+        0.0,
+        0.0
+      ],
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "config": {
+        "world_seed": 20260903,
+        "family": "granite_dome",
+        "detail_strength": 0.35
+      },
+      "advanced_filter": {
+        "algorithm": "advanced-terrain-filter-v2-stable-hash",
+        "amplitude_m": 350.0,
+        "wavelength_m": 1800.0,
+        "octaves": 3,
+        "gain": 0.5,
+        "lacunarity": 2.0,
+        "gully_weight": 0.5,
+        "detail": 1.5,
+        "rounding": [
+          0.1,
+          0.0,
+          0.1,
+          2.0
+        ],
+        "onset": [
+          1.25,
+          1.25,
+          2.8,
+          1.5
+        ],
+        "assumed_slope": [
+          0.7,
+          1.0
+        ],
+        "cell_scale": 0.7,
+        "normalization": 0.5,
+        "hash_mode": "stable"
+      },
+      "dependency_bound": "fixed octaves of 4-corner value noise; fixed 30 m slope and 600 m relief offsets; fixed advanced filter kernel",
+      "claims": "mechanism-inspired geometric candidate; not a simulated geological history",
+      "limitations": "single-valued height field; no caves, overhangs, drainage or naturalness certification"
+    },
+    "layered_massif": {
+      "algorithm": "procedural-mountains-v3",
+      "status": "candidate",
+      "world_seed": 20260903,
+      "subseeds": {
+        "base-noise": 1785292835379719697,
+        "regional-noise": 11326366209500821504,
+        "advanced-phacelle": 10860721302913963045
+      },
+      "seed_derivation": {
+        "noise": "sha256(terragenesis-procedural-mountains-v1|world_seed|purpose), first 8 bytes big-endian",
+        "advanced-phacelle": "sha256(advanced-terrain-filter-v1:world_seed:phacelle), first 8 bytes little-endian"
+      },
+      "coordinates": "metres; X east, Z south; arrays [z, x]",
+      "origin_m_xz": [
+        0.0,
+        0.0
+      ],
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "config": {
+        "world_seed": 20260903,
+        "family": "layered_massif",
+        "detail_strength": 0.35
+      },
+      "advanced_filter": {
+        "algorithm": "advanced-terrain-filter-v2-stable-hash",
+        "amplitude_m": 350.0,
+        "wavelength_m": 1800.0,
+        "octaves": 3,
+        "gain": 0.5,
+        "lacunarity": 2.0,
+        "gully_weight": 0.5,
+        "detail": 1.5,
+        "rounding": [
+          0.1,
+          0.0,
+          0.1,
+          2.0
+        ],
+        "onset": [
+          1.25,
+          1.25,
+          2.8,
+          1.5
+        ],
+        "assumed_slope": [
+          0.7,
+          1.0
+        ],
+        "cell_scale": 0.7,
+        "normalization": 0.5,
+        "hash_mode": "stable"
+      },
+      "dependency_bound": "fixed octaves of 4-corner value noise; fixed 30 m slope and 600 m relief offsets; fixed advanced filter kernel",
+      "claims": "mechanism-inspired geometric candidate; not a simulated geological history",
+      "limitations": "single-valued height field; no caves, overhangs, drainage or naturalness certification"
+    },
+    "glacial_horn": {
+      "algorithm": "procedural-mountains-v3",
+      "status": "candidate",
+      "world_seed": 20260903,
+      "subseeds": {
+        "base-noise": 1785292835379719697,
+        "regional-noise": 11326366209500821504,
+        "advanced-phacelle": 10860721302913963045
+      },
+      "seed_derivation": {
+        "noise": "sha256(terragenesis-procedural-mountains-v1|world_seed|purpose), first 8 bytes big-endian",
+        "advanced-phacelle": "sha256(advanced-terrain-filter-v1:world_seed:phacelle), first 8 bytes little-endian"
+      },
+      "coordinates": "metres; X east, Z south; arrays [z, x]",
+      "origin_m_xz": [
+        0.0,
+        0.0
+      ],
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "config": {
+        "world_seed": 20260903,
+        "family": "glacial_horn",
+        "detail_strength": 0.35
+      },
+      "advanced_filter": {
+        "algorithm": "advanced-terrain-filter-v2-stable-hash",
+        "amplitude_m": 350.0,
+        "wavelength_m": 1800.0,
+        "octaves": 3,
+        "gain": 0.5,
+        "lacunarity": 2.0,
+        "gully_weight": 0.5,
+        "detail": 1.5,
+        "rounding": [
+          0.1,
+          0.0,
+          0.1,
+          2.0
+        ],
+        "onset": [
+          1.25,
+          1.25,
+          2.8,
+          1.5
+        ],
+        "assumed_slope": [
+          0.7,
+          1.0
+        ],
+        "cell_scale": 0.7,
+        "normalization": 0.5,
+        "hash_mode": "stable"
+      },
+      "dependency_bound": "fixed octaves of 4-corner value noise; fixed 30 m slope and 600 m relief offsets; fixed advanced filter kernel",
+      "claims": "mechanism-inspired geometric candidate; not a simulated geological history",
+      "limitations": "single-valued height field; no caves, overhangs, drainage or naturalness certification"
+    },
+    "mixed": {
+      "algorithm": "procedural-mountains-v3",
+      "status": "candidate",
+      "world_seed": 20260903,
+      "subseeds": {
+        "base-noise": 1785292835379719697,
+        "regional-noise": 11326366209500821504,
+        "advanced-phacelle": 10860721302913963045
+      },
+      "seed_derivation": {
+        "noise": "sha256(terragenesis-procedural-mountains-v1|world_seed|purpose), first 8 bytes big-endian",
+        "advanced-phacelle": "sha256(advanced-terrain-filter-v1:world_seed:phacelle), first 8 bytes little-endian"
+      },
+      "coordinates": "metres; X east, Z south; arrays [z, x]",
+      "origin_m_xz": [
+        0.0,
+        0.0
+      ],
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "config": {
+        "world_seed": 20260903,
+        "family": "mixed",
+        "detail_strength": 0.35
+      },
+      "advanced_filter": {
+        "algorithm": "advanced-terrain-filter-v2-stable-hash",
+        "amplitude_m": 350.0,
+        "wavelength_m": 1800.0,
+        "octaves": 3,
+        "gain": 0.5,
+        "lacunarity": 2.0,
+        "gully_weight": 0.5,
+        "detail": 1.5,
+        "rounding": [
+          0.1,
+          0.0,
+          0.1,
+          2.0
+        ],
+        "onset": [
+          1.25,
+          1.25,
+          2.8,
+          1.5
+        ],
+        "assumed_slope": [
+          0.7,
+          1.0
+        ],
+        "cell_scale": 0.7,
+        "normalization": 0.5,
+        "hash_mode": "stable"
+      },
+      "dependency_bound": "fixed octaves of 4-corner value noise; fixed 30 m slope and 600 m relief offsets; fixed advanced filter kernel",
+      "claims": "mechanism-inspired geometric candidate; not a simulated geological history",
+      "limitations": "single-valued height field; no caves, overhangs, drainage or naturalness certification"
+    }
+  },
+  "images": {
+    "overview.png": {
+      "width_px": 2080,
+      "height_px": 624,
+      "nonblank": true,
+      "sha256": "f387eb3d93340732c535730cc301897662974af88c0dafd4c321b2535a30e373"
+    },
+    "oblique.png": {
+      "width_px": 2080,
+      "height_px": 1040,
+      "nonblank": true,
+      "sha256": "3ac1cccbd1a9e011064c2a5071486f1dd89d17d9c4733983cc556684cacea337"
+    },
+    "physical_aspect.png": {
+      "width_px": 1040,
+      "height_px": 780,
+      "nonblank": true,
+      "sha256": "41e859f6bd634950f8b013d5f00251e287e7d512f6b26a1c1193244a42733e9a"
+    },
+    "sections.png": {
+      "width_px": 2080,
+      "height_px": 910,
+      "nonblank": true,
+      "sha256": "d7d9a71dae9e3e27a16c1f116a6d2eb3bef83ebccdc4d13465d92618d586095c"
+    },
+    "stages.png": {
+      "width_px": 1800,
+      "height_px": 1680,
+      "nonblank": true,
+      "sha256": "84d4122727b977a45199dc5643063ea22f12539a79875e930500c09dc1a87bc4"
+    },
+    "processes.png": {
+      "width_px": 1560,
+      "height_px": 480,
+      "nonblank": true,
+      "sha256": "4ba1c39e6e998baaa5535c8474144c00d86d367f84a8e211d5b09637e3463632"
+    }
+  },
+  "elevation_scale_m": [
+    48.091120809285854,
+    2868.21128572573
+  ],
+  "rendering": {
+    "light": [
+      -0.5,
+      -0.5,
+      0.7071067811865476
+    ],
+    "oblique_azimuth_degrees": [
+      -60,
+      120
+    ],
+    "oblique_elevation_degrees": 25,
+    "oblique_box_aspect": [
+      1,
+      1,
+      0.35
+    ],
+    "oblique_vertical_exaggeration": 2.9785964812775556,
+    "physical_aspect_image": "physical_aspect.png (1:1:1)",
+    "surface_stride_samples": 3,
+    "materials": "grayscale geometry only for oblique"
+  },
+  "benchmark": {
+    "file": "benchmark.json",
+    "sha256": "f6da4ed98505670621384d8e61fc3316ea4f85d53529f2b1cb0b04e2b9376f68"
+  },
+  "advanced_filter_upstream": {
+    "url": "https://github.com/lpmitchell/AdvancedTerrainErosion",
+    "commit": "57e79cc331d17e2a45c897bea9c4c022d1fc5551",
+    "license": "MPL-2.0",
+    "scope": "pointwise NumPy port; not water or sediment simulation",
+    "hash_change": "Default stable integer hash intentionally differs from upstream float Hash2 to avoid far-coordinate collapse; upstream mode remains available for comparison."
+  },
+  "optional_processes": {
+    "npz": "processes.npz",
+    "npz_sha256": "98d022e02c3683831e84d3cc5f50c65989bbcb85ee2ff39343fb88c9a2395cc4",
+    "metadata": "processes.json",
+    "metadata_sha256": "2bae2f3ab2e789f629429dbf0a3fdb2e5416ea69f8fc1b272092633b6187d9a5",
+    "timing": {
+      "seconds": 4.669041400000424,
+      "tracemalloc_peak_bytes": 18690753,
+      "sampled_process_rss_peak_bytes": 290758656
+    },
+    "render_timing": {
+      "seconds": 2.1290316000013263,
+      "tracemalloc_peak_bytes": 8462664,
+      "sampled_process_rss_peak_bytes": 301563904
+    },
+    "source_hashes_sha256": {
+      "terrain_pipeline/procedural_mountain_processes.py": "0c386d7478b93d0607f45c50b65ca4cd1851ccf181bd25efdd0f3dcfece33885",
+      "terrain_pipeline/surface_rivers/metric_drainage.py": "0dfde4b88ab798d8e269f4df3d0ffd39f2896cd25ae64ab077c822239af759af",
+      "terrain_pipeline/surface_rivers/metric_fluvial_morphodynamics.py": "a718d16f78c9e537a6b83ea425727ce6be0beb3949e79a4d1a72a18237e13fdb",
+      "terrain_pipeline/surface_rivers/metric_contracts.py": "863f29d4e7a22765215815c36bee2be21b2e395838fad28aa093f74fcf0f36e8",
+      "terrain_pipeline/bounded_glacier.py": "991bbdc2f42acacfb72f4b24322ba594141c9cc9edc01eb358de357e3c75b731"
+    }
+  },
+  "image_check_scope": "dimensions and nonblank pixels only; morphology requires human review"
+}

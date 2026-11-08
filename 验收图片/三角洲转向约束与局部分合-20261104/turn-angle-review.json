@@ -1,0 +1,6427 @@
+{
+  "mode": "read-only frozen constructed initial, no evolution",
+  "definition": "0 degrees straight, 90 right angle; actual XZ coordinate vectors; each unique physical incoming/outgoing pair, including cross-arm rejoin continuation",
+  "checkpoint": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-angle-600s\\final",
+  "baseline": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-morphology-acceptance-20261104\\network-initial-b\\initial.json",
+  "physical_edge_count": 171,
+  "unique_turn_pair_count": 173,
+  "at_or_above_90_count": 0,
+  "max_turn_deg": 87.40431812281324,
+  "reversed_actual_flow_edges": [],
+  "stagnant_edges_excluded_from_actual_flow_turns": [],
+  "checks": {
+    "all_physical_edges_have_saved_q": true,
+    "all_saved_flows_positive": true,
+    "no_zero_length_edges": true
+  },
+  "violations": [],
+  "all_turns": [
+    {
+      "from_zx": [
+        170,
+        132
+      ],
+      "at_zx": [
+        169,
+        133
+      ],
+      "to_zx": [
+        170,
+        134
+      ],
+      "from_xz_m": [
+        -6720.34385790487,
+        10022.145112073711
+      ],
+      "at_xz_m": [
+        -6626.9832364360755,
+        9978.674628762792
+      ],
+      "to_xz_m": [
+        -6516.890929740306,
+        10025.584141395322
+      ],
+      "turn_deg": 48.04607667496562,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        170,
+        120
+      ],
+      "at_zx": [
+        170,
+        121
+      ],
+      "to_zx": [
+        170,
+        122
+      ],
+      "from_xz_m": [
+        -7951.142743967532,
+        10023.242720702734
+      ],
+      "at_xz_m": [
+        -7876.277956150115,
+        10039.130153038866
+      ],
+      "to_xz_m": [
+        -7773.605992671964,
+        10031.963254652392
+      ],
+      "turn_deg": 15.974264683247824,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        170,
+        121
+      ],
+      "at_zx": [
+        170,
+        122
+      ],
+      "to_zx": [
+        170,
+        123
+      ],
+      "from_xz_m": [
+        -7876.277956150115,
+        10039.130153038866
+      ],
+      "at_xz_m": [
+        -7773.605992671964,
+        10031.963254652392
+      ],
+      "to_xz_m": [
+        -7674.384632480451,
+        10077.869132310347
+      ],
+      "turn_deg": 28.821140420977677,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1499.9999999999998,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        170,
+        122
+      ],
+      "at_zx": [
+        170,
+        123
+      ],
+      "to_zx": [
+        170,
+        124
+      ],
+      "from_xz_m": [
+        -7773.605992671964,
+        10031.963254652392
+      ],
+      "at_xz_m": [
+        -7674.384632480451,
+        10077.869132310347
+      ],
+      "to_xz_m": [
+        -7550.519707921578,
+        10052.30214949958
+      ],
+      "turn_deg": 36.49079547672231,
+      "incoming_q_m3_s": 1499.9999999999998,
+      "outgoing_q_m3_s": 1499.9999999999998,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        170,
+        123
+      ],
+      "at_zx": [
+        170,
+        124
+      ],
+      "to_zx": [
+        170,
+        125
+      ],
+      "from_xz_m": [
+        -7674.384632480451,
+        10077.869132310347
+      ],
+      "at_xz_m": [
+        -7550.519707921578,
+        10052.30214949958
+      ],
+      "to_xz_m": [
+        -7428.348377400603,
+        10071.393779901953
+      ],
+      "turn_deg": 20.544383668314055,
+      "incoming_q_m3_s": 1499.9999999999998,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        170,
+        124
+      ],
+      "at_zx": [
+        170,
+        125
+      ],
+      "to_zx": [
+        170,
+        126
+      ],
+      "from_xz_m": [
+        -7550.519707921578,
+        10052.30214949958
+      ],
+      "at_xz_m": [
+        -7428.348377400603,
+        10071.393779901953
+      ],
+      "to_xz_m": [
+        -7370.2324164215515,
+        10019.379115431595
+      ],
+      "turn_deg": 50.710763727594085,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        170,
+        125
+      ],
+      "at_zx": [
+        170,
+        126
+      ],
+      "to_zx": [
+        170,
+        127
+      ],
+      "from_xz_m": [
+        -7428.348377400603,
+        10071.393779901953
+      ],
+      "at_xz_m": [
+        -7370.2324164215515,
+        10019.379115431595
+      ],
+      "to_xz_m": [
+        -7246.279120873002,
+        10048.04386178997
+      ],
+      "turn_deg": 54.85003137339551,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1499.9999999999998,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        170,
+        126
+      ],
+      "at_zx": [
+        170,
+        127
+      ],
+      "to_zx": [
+        170,
+        128
+      ],
+      "from_xz_m": [
+        -7370.2324164215515,
+        10019.379115431595
+      ],
+      "at_xz_m": [
+        -7246.279120873002,
+        10048.04386178997
+      ],
+      "to_xz_m": [
+        -7160.143246753515,
+        10039.038557842972
+      ],
+      "turn_deg": 18.989464316219387,
+      "incoming_q_m3_s": 1499.9999999999998,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        170,
+        127
+      ],
+      "at_zx": [
+        170,
+        128
+      ],
+      "to_zx": [
+        170,
+        129
+      ],
+      "from_xz_m": [
+        -7246.279120873002,
+        10048.04386178997
+      ],
+      "at_xz_m": [
+        -7160.143246753515,
+        10039.038557842972
+      ],
+      "to_xz_m": [
+        -7082.602963889051,
+        10068.066260569527
+      ],
+      "turn_deg": 26.492167248726222,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1499.9999999999998,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        170,
+        128
+      ],
+      "at_zx": [
+        170,
+        129
+      ],
+      "to_zx": [
+        170,
+        130
+      ],
+      "from_xz_m": [
+        -7160.143246753515,
+        10039.038557842972
+      ],
+      "at_xz_m": [
+        -7082.602963889051,
+        10068.066260569527
+      ],
+      "to_xz_m": [
+        -6948.915964127638,
+        10026.737038531593
+      ],
+      "turn_deg": 37.702659545342414,
+      "incoming_q_m3_s": 1499.9999999999998,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        170,
+        129
+      ],
+      "at_zx": [
+        170,
+        130
+      ],
+      "to_zx": [
+        170,
+        131
+      ],
+      "from_xz_m": [
+        -7082.602963889051,
+        10068.066260569527
+      ],
+      "at_xz_m": [
+        -6948.915964127638,
+        10026.737038531593
+      ],
+      "to_xz_m": [
+        -6835.078331253257,
+        10065.09138910577
+      ],
+      "turn_deg": 35.79872880730246,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        170,
+        130
+      ],
+      "at_zx": [
+        170,
+        131
+      ],
+      "to_zx": [
+        170,
+        132
+      ],
+      "from_xz_m": [
+        -6948.915964127638,
+        10026.737038531593
+      ],
+      "at_xz_m": [
+        -6835.078331253257,
+        10065.09138910577
+      ],
+      "to_xz_m": [
+        -6720.34385790487,
+        10022.145112073711
+      ],
+      "turn_deg": 39.14116388691779,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        170,
+        131
+      ],
+      "at_zx": [
+        170,
+        132
+      ],
+      "to_zx": [
+        169,
+        133
+      ],
+      "from_xz_m": [
+        -6835.078331253257,
+        10065.09138910577
+      ],
+      "at_xz_m": [
+        -6720.34385790487,
+        10022.145112073711
+      ],
+      "to_xz_m": [
+        -6626.9832364360755,
+        9978.674628762792
+      ],
+      "turn_deg": 4.4461991350584364,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        169,
+        133
+      ],
+      "at_zx": [
+        170,
+        134
+      ],
+      "to_zx": [
+        170,
+        135
+      ],
+      "from_xz_m": [
+        -6626.9832364360755,
+        9978.674628762792
+      ],
+      "at_xz_m": [
+        -6516.890929740306,
+        10025.584141395322
+      ],
+      "to_xz_m": [
+        -6459.670208002248,
+        10034.071250803301
+      ],
+      "turn_deg": 14.641760067655479,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        170,
+        134
+      ],
+      "at_zx": [
+        170,
+        135
+      ],
+      "to_zx": [
+        171,
+        136
+      ],
+      "from_xz_m": [
+        -6516.890929740306,
+        10025.584141395322
+      ],
+      "at_xz_m": [
+        -6459.670208002248,
+        10034.071250803301
+      ],
+      "to_xz_m": [
+        -6383.306366635002,
+        10136.602284279736
+      ],
+      "turn_deg": 44.88498346637167,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        170,
+        135
+      ],
+      "at_zx": [
+        171,
+        136
+      ],
+      "to_zx": [
+        172,
+        136
+      ],
+      "from_xz_m": [
+        -6459.670208002248,
+        10034.071250803301
+      ],
+      "at_xz_m": [
+        -6383.306366635002,
+        10136.602284279736
+      ],
+      "to_xz_m": [
+        -6360.04552446165,
+        10248.298050127958
+      ],
+      "turn_deg": 24.914472918700714,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        171,
+        136
+      ],
+      "at_zx": [
+        172,
+        136
+      ],
+      "to_zx": [
+        173,
+        136
+      ],
+      "from_xz_m": [
+        -6383.306366635002,
+        10136.602284279736
+      ],
+      "at_xz_m": [
+        -6360.04552446165,
+        10248.298050127958
+      ],
+      "to_xz_m": [
+        -6371.52614483862,
+        10374.715500590755
+      ],
+      "turn_deg": 16.952901480654987,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        172,
+        136
+      ],
+      "at_zx": [
+        173,
+        136
+      ],
+      "to_zx": [
+        174,
+        136
+      ],
+      "from_xz_m": [
+        -6360.04552446165,
+        10248.298050127958
+      ],
+      "at_xz_m": [
+        -6371.52614483862,
+        10374.715500590755
+      ],
+      "to_xz_m": [
+        -6373.218467759291,
+        10418.041245262644
+      ],
+      "turn_deg": 2.9522292844736544,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        173,
+        136
+      ],
+      "at_zx": [
+        174,
+        136
+      ],
+      "to_zx": [
+        175,
+        136
+      ],
+      "from_xz_m": [
+        -6371.52614483862,
+        10374.715500590755
+      ],
+      "at_xz_m": [
+        -6373.218467759291,
+        10418.041245262644
+      ],
+      "to_xz_m": [
+        -6325.547342105186,
+        10538.271811092798
+      ],
+      "turn_deg": 23.865066545440705,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        174,
+        136
+      ],
+      "at_zx": [
+        175,
+        136
+      ],
+      "to_zx": [
+        176,
+        137
+      ],
+      "from_xz_m": [
+        -6373.218467759291,
+        10418.041245262644
+      ],
+      "at_xz_m": [
+        -6325.547342105186,
+        10538.271811092798
+      ],
+      "to_xz_m": [
+        -6270.25076121897,
+        10622.333655225035
+      ],
+      "turn_deg": 11.70904680159413,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        175,
+        136
+      ],
+      "at_zx": [
+        176,
+        137
+      ],
+      "to_zx": [
+        177,
+        137
+      ],
+      "from_xz_m": [
+        -6325.547342105186,
+        10538.271811092798
+      ],
+      "at_xz_m": [
+        -6270.25076121897,
+        10622.333655225035
+      ],
+      "to_xz_m": [
+        -6266.107826005647,
+        10725.180323052236
+      ],
+      "turn_deg": 31.030473751854068,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        176,
+        137
+      ],
+      "at_zx": [
+        177,
+        137
+      ],
+      "to_zx": [
+        177,
+        138
+      ],
+      "from_xz_m": [
+        -6270.25076121897,
+        10622.333655225035
+      ],
+      "at_xz_m": [
+        -6266.107826005647,
+        10725.180323052236
+      ],
+      "to_xz_m": [
+        -6183.48481389645,
+        10770.044301984472
+      ],
+      "turn_deg": 59.191431271986986,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        177,
+        137
+      ],
+      "at_zx": [
+        177,
+        138
+      ],
+      "to_zx": [
+        178,
+        138
+      ],
+      "from_xz_m": [
+        -6266.107826005647,
+        10725.180323052236
+      ],
+      "at_xz_m": [
+        -6183.48481389645,
+        10770.044301984472
+      ],
+      "to_xz_m": [
+        -6154.8423241462415,
+        10845.963969540438
+      ],
+      "turn_deg": 40.82803996078746,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 1500.0,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        177,
+        138
+      ],
+      "at_zx": [
+        178,
+        138
+      ],
+      "to_zx": [
+        178,
+        139
+      ],
+      "from_xz_m": [
+        -6183.48481389645,
+        10770.044301984472
+      ],
+      "at_xz_m": [
+        -6154.8423241462415,
+        10845.963969540438
+      ],
+      "to_xz_m": [
+        -6035.460862135109,
+        10875.18883192159
+      ],
+      "turn_deg": 55.57421374567374,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 766.5978881565175,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 2,
+      "junction_kind": "fork",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        177,
+        138
+      ],
+      "at_zx": [
+        178,
+        138
+      ],
+      "to_zx": [
+        179,
+        138
+      ],
+      "from_xz_m": [
+        -6183.48481389645,
+        10770.044301984472
+      ],
+      "at_xz_m": [
+        -6154.8423241462415,
+        10845.963969540438
+      ],
+      "to_xz_m": [
+        -6163.135574223169,
+        10967.785258936276
+      ],
+      "turn_deg": 24.564695559106518,
+      "incoming_q_m3_s": 1500.0,
+      "outgoing_q_m3_s": 733.4021118434825,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 2,
+      "junction_kind": "fork",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        178,
+        138
+      ],
+      "at_zx": [
+        178,
+        139
+      ],
+      "to_zx": [
+        179,
+        140
+      ],
+      "from_xz_m": [
+        -6154.8423241462415,
+        10845.963969540438
+      ],
+      "at_xz_m": [
+        -6035.460862135109,
+        10875.18883192159
+      ],
+      "to_xz_m": [
+        -5932.29632512233,
+        10928.004061092293
+      ],
+      "turn_deg": 13.35462324679518,
+      "incoming_q_m3_s": 766.5978881565175,
+      "outgoing_q_m3_s": 766.5978881565175,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        178,
+        138
+      ],
+      "at_zx": [
+        179,
+        138
+      ],
+      "to_zx": [
+        180,
+        138
+      ],
+      "from_xz_m": [
+        -6154.8423241462415,
+        10845.963969540438
+      ],
+      "at_xz_m": [
+        -6163.135574223169,
+        10967.785258936276
+      ],
+      "to_xz_m": [
+        -6138.860485536509,
+        11042.334979903873
+      ],
+      "turn_deg": 21.93095657100636,
+      "incoming_q_m3_s": 733.4021118434825,
+      "outgoing_q_m3_s": 733.4021118434827,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        178,
+        139
+      ],
+      "at_zx": [
+        179,
+        140
+      ],
+      "to_zx": [
+        179,
+        141
+      ],
+      "from_xz_m": [
+        -6035.460862135109,
+        10875.18883192159
+      ],
+      "at_xz_m": [
+        -5932.29632512233,
+        10928.004061092293
+      ],
+      "to_xz_m": [
+        -5833.067550907915,
+        10934.776239553676
+      ],
+      "turn_deg": 23.205964530942154,
+      "incoming_q_m3_s": 766.5978881565175,
+      "outgoing_q_m3_s": 766.5978881565175,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        179,
+        140
+      ],
+      "at_zx": [
+        179,
+        141
+      ],
+      "to_zx": [
+        179,
+        142
+      ],
+      "from_xz_m": [
+        -5932.29632512233,
+        10928.004061092293
+      ],
+      "at_xz_m": [
+        -5833.067550907915,
+        10934.776239553676
+      ],
+      "to_xz_m": [
+        -5778.830450093987,
+        10920.147092206593
+      ],
+      "turn_deg": 18.999208631676947,
+      "incoming_q_m3_s": 766.5978881565175,
+      "outgoing_q_m3_s": 766.5978881565175,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        179,
+        141
+      ],
+      "at_zx": [
+        179,
+        142
+      ],
+      "to_zx": [
+        179,
+        143
+      ],
+      "from_xz_m": [
+        -5833.067550907915,
+        10934.776239553676
+      ],
+      "at_xz_m": [
+        -5778.830450093987,
+        10920.147092206593
+      ],
+      "to_xz_m": [
+        -5676.428707867024,
+        10965.958433028733
+      ],
+      "turn_deg": 39.19718385691026,
+      "incoming_q_m3_s": 766.5978881565175,
+      "outgoing_q_m3_s": 766.5978881565175,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        179,
+        142
+      ],
+      "at_zx": [
+        179,
+        143
+      ],
+      "to_zx": [
+        179,
+        144
+      ],
+      "from_xz_m": [
+        -5778.830450093987,
+        10920.147092206593
+      ],
+      "at_xz_m": [
+        -5676.428707867024,
+        10965.958433028733
+      ],
+      "to_xz_m": [
+        -5522.9267145800395,
+        10984.697846919864
+      ],
+      "turn_deg": 17.142063305809124,
+      "incoming_q_m3_s": 766.5978881565175,
+      "outgoing_q_m3_s": 766.5978881565175,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        179,
+        143
+      ],
+      "at_zx": [
+        179,
+        144
+      ],
+      "to_zx": [
+        180,
+        145
+      ],
+      "from_xz_m": [
+        -5676.428707867024,
+        10965.958433028733
+      ],
+      "at_xz_m": [
+        -5522.9267145800395,
+        10984.697846919864
+      ],
+      "to_xz_m": [
+        -5460.614762912577,
+        11062.359298212865
+      ],
+      "turn_deg": 44.29786913191518,
+      "incoming_q_m3_s": 766.5978881565175,
+      "outgoing_q_m3_s": 766.5978881565175,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        180,
+        157
+      ],
+      "at_zx": [
+        179,
+        158
+      ],
+      "to_zx": [
+        179,
+        159
+      ],
+      "from_xz_m": [
+        -4273.434641188404,
+        11047.840513906656
+      ],
+      "at_xz_m": [
+        -4145.395649367364,
+        10954.981974813294
+      ],
+      "to_xz_m": [
+        -4027.981351692416,
+        10972.317669933034
+      ],
+      "turn_deg": 44.349776520912435,
+      "incoming_q_m3_s": 97.5154064068386,
+      "outgoing_q_m3_s": 97.5154064068386,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 1,
+      "outgoing_new_group": 1,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        179,
+        158
+      ],
+      "at_zx": [
+        179,
+        159
+      ],
+      "to_zx": [
+        180,
+        160
+      ],
+      "from_xz_m": [
+        -4145.395649367364,
+        10954.981974813294
+      ],
+      "at_xz_m": [
+        -4027.981351692416,
+        10972.317669933034
+      ],
+      "to_xz_m": [
+        -3956.9674330052053,
+        11046.845180621536
+      ],
+      "turn_deg": 37.984151819218894,
+      "incoming_q_m3_s": 97.5154064068386,
+      "outgoing_q_m3_s": 97.5154064068386,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 1,
+      "outgoing_new_group": 1,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        179,
+        138
+      ],
+      "at_zx": [
+        180,
+        138
+      ],
+      "to_zx": [
+        180,
+        139
+      ],
+      "from_xz_m": [
+        -6163.135574223169,
+        10967.785258936276
+      ],
+      "at_xz_m": [
+        -6138.860485536509,
+        11042.334979903873
+      ],
+      "to_xz_m": [
+        -6084.624098351399,
+        11065.75937654159
+      ],
+      "turn_deg": 48.60432001985721,
+      "incoming_q_m3_s": 733.4021118434827,
+      "outgoing_q_m3_s": 145.20568001712283,
+      "incoming_kind": "old",
+      "outgoing_kind": "new",
+      "incoming_new_group": null,
+      "outgoing_new_group": 0,
+      "in_degree": 1,
+      "out_degree": 2,
+      "junction_kind": "fork",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        179,
+        138
+      ],
+      "at_zx": [
+        180,
+        138
+      ],
+      "to_zx": [
+        181,
+        138
+      ],
+      "from_xz_m": [
+        -6163.135574223169,
+        10967.785258936276
+      ],
+      "at_xz_m": [
+        -6138.860485536509,
+        11042.334979903873
+      ],
+      "to_xz_m": [
+        -6130.432703270474,
+        11181.77899491368
+      ],
+      "turn_deg": 14.577768545444902,
+      "incoming_q_m3_s": 733.4021118434827,
+      "outgoing_q_m3_s": 588.1964318263599,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 2,
+      "junction_kind": "fork",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        180,
+        138
+      ],
+      "at_zx": [
+        180,
+        139
+      ],
+      "to_zx": [
+        181,
+        140
+      ],
+      "from_xz_m": [
+        -6138.860485536509,
+        11042.334979903873
+      ],
+      "at_xz_m": [
+        -6084.624098351399,
+        11065.75937654159
+      ],
+      "to_xz_m": [
+        -5945.556088495245,
+        11166.210350790458
+      ],
+      "turn_deg": 12.481914218806368,
+      "incoming_q_m3_s": 145.20568001712283,
+      "outgoing_q_m3_s": 145.2056800171228,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 0,
+      "outgoing_new_group": 0,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        179,
+        144
+      ],
+      "at_zx": [
+        180,
+        145
+      ],
+      "to_zx": [
+        181,
+        146
+      ],
+      "from_xz_m": [
+        -5522.9267145800395,
+        10984.697846919864
+      ],
+      "at_xz_m": [
+        -5460.614762912577,
+        11062.359298212865
+      ],
+      "to_xz_m": [
+        -5345.9534509298965,
+        11129.702556291762
+      ],
+      "turn_deg": 20.831348663202917,
+      "incoming_q_m3_s": 766.5978881565175,
+      "outgoing_q_m3_s": 766.5978881565175,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        181,
+        151
+      ],
+      "at_zx": [
+        180,
+        151
+      ],
+      "to_zx": [
+        180,
+        152
+      ],
+      "from_xz_m": [
+        -4847.472253020888,
+        11168.273179196378
+      ],
+      "at_xz_m": [
+        -4815.8959606777025,
+        11070.871323504884
+      ],
+      "to_xz_m": [
+        -4719.9417322094705,
+        11051.941344324776
+      ],
+      "turn_deg": 60.877967274130235,
+      "incoming_q_m3_s": 97.5154064068386,
+      "outgoing_q_m3_s": 97.5154064068386,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 1,
+      "outgoing_new_group": 1,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        180,
+        151
+      ],
+      "at_zx": [
+        180,
+        152
+      ],
+      "to_zx": [
+        180,
+        153
+      ],
+      "from_xz_m": [
+        -4815.8959606777025,
+        11070.871323504884
+      ],
+      "at_xz_m": [
+        -4719.9417322094705,
+        11051.941344324776
+      ],
+      "to_xz_m": [
+        -4674.049344309119,
+        11039.06665774608
+      ],
+      "turn_deg": 4.510896555176249,
+      "incoming_q_m3_s": 97.5154064068386,
+      "outgoing_q_m3_s": 97.5154064068386,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 1,
+      "outgoing_new_group": 1,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        180,
+        152
+      ],
+      "at_zx": [
+        180,
+        153
+      ],
+      "to_zx": [
+        180,
+        154
+      ],
+      "from_xz_m": [
+        -4719.9417322094705,
+        11051.941344324776
+      ],
+      "at_xz_m": [
+        -4674.049344309119,
+        11039.06665774608
+      ],
+      "to_xz_m": [
+        -4527.411298803934,
+        11018.55992662358
+      ],
+      "turn_deg": 7.710023281638339,
+      "incoming_q_m3_s": 97.5154064068386,
+      "outgoing_q_m3_s": 97.5154064068386,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 1,
+      "outgoing_new_group": 1,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        180,
+        153
+      ],
+      "at_zx": [
+        180,
+        154
+      ],
+      "to_zx": [
+        180,
+        155
+      ],
+      "from_xz_m": [
+        -4674.049344309119,
+        11039.06665774608
+      ],
+      "at_xz_m": [
+        -4527.411298803934,
+        11018.55992662358
+      ],
+      "to_xz_m": [
+        -4473.726011115222,
+        11064.394188198265
+      ],
+      "turn_deg": 48.45027016231112,
+      "incoming_q_m3_s": 97.5154064068386,
+      "outgoing_q_m3_s": 97.5154064068386,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 1,
+      "outgoing_new_group": 1,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        180,
+        154
+      ],
+      "at_zx": [
+        180,
+        155
+      ],
+      "to_zx": [
+        180,
+        156
+      ],
+      "from_xz_m": [
+        -4527.411298803934,
+        11018.55992662358
+      ],
+      "at_xz_m": [
+        -4473.726011115222,
+        11064.394188198265
+      ],
+      "to_xz_m": [
+        -4318.797198293076,
+        11040.594621689223
+      ],
+      "turn_deg": 49.222606681026235,
+      "incoming_q_m3_s": 97.5154064068386,
+      "outgoing_q_m3_s": 97.5154064068386,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 1,
+      "outgoing_new_group": 1,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        180,
+        155
+      ],
+      "at_zx": [
+        180,
+        156
+      ],
+      "to_zx": [
+        180,
+        157
+      ],
+      "from_xz_m": [
+        -4473.726011115222,
+        11064.394188198265
+      ],
+      "at_xz_m": [
+        -4318.797198293076,
+        11040.594621689223
+      ],
+      "to_xz_m": [
+        -4273.434641188404,
+        11047.840513906656
+      ],
+      "turn_deg": 17.80864169684684,
+      "incoming_q_m3_s": 97.5154064068386,
+      "outgoing_q_m3_s": 97.5154064068386,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 1,
+      "outgoing_new_group": 1,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        180,
+        156
+      ],
+      "at_zx": [
+        180,
+        157
+      ],
+      "to_zx": [
+        179,
+        158
+      ],
+      "from_xz_m": [
+        -4318.797198293076,
+        11040.594621689223
+      ],
+      "at_xz_m": [
+        -4273.434641188404,
+        11047.840513906656
+      ],
+      "to_xz_m": [
+        -4145.395649367364,
+        10954.981974813294
+      ],
+      "turn_deg": 45.026343368967545,
+      "incoming_q_m3_s": 97.5154064068386,
+      "outgoing_q_m3_s": 97.5154064068386,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 1,
+      "outgoing_new_group": 1,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        179,
+        159
+      ],
+      "at_zx": [
+        180,
+        160
+      ],
+      "to_zx": [
+        181,
+        160
+      ],
+      "from_xz_m": [
+        -4027.981351692416,
+        10972.317669933034
+      ],
+      "at_xz_m": [
+        -3956.9674330052053,
+        11046.845180621536
+      ],
+      "to_xz_m": [
+        -3954.7330844147486,
+        11115.375988184534
+      ],
+      "turn_deg": 41.749676004746995,
+      "incoming_q_m3_s": 97.5154064068386,
+      "outgoing_q_m3_s": 97.5154064068386,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 1,
+      "outgoing_new_group": 1,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        180,
+        138
+      ],
+      "at_zx": [
+        181,
+        138
+      ],
+      "to_zx": [
+        182,
+        139
+      ],
+      "from_xz_m": [
+        -6138.860485536509,
+        11042.334979903873
+      ],
+      "at_xz_m": [
+        -6130.432703270474,
+        11181.77899491368
+      ],
+      "to_xz_m": [
+        -6069.065494182255,
+        11269.760481697458
+      ],
+      "turn_deg": 31.43716505928504,
+      "incoming_q_m3_s": 588.1964318263599,
+      "outgoing_q_m3_s": 588.1964318263599,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        180,
+        139
+      ],
+      "at_zx": [
+        181,
+        140
+      ],
+      "to_zx": [
+        181,
+        141
+      ],
+      "from_xz_m": [
+        -6084.624098351399,
+        11065.75937654159
+      ],
+      "at_xz_m": [
+        -5945.556088495245,
+        11166.210350790458
+      ],
+      "to_xz_m": [
+        -5835.893914195489,
+        11174.063465889461
+      ],
+      "turn_deg": 31.74509738546988,
+      "incoming_q_m3_s": 145.2056800171228,
+      "outgoing_q_m3_s": 145.2056800171228,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 0,
+      "outgoing_new_group": 0,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        181,
+        140
+      ],
+      "at_zx": [
+        181,
+        141
+      ],
+      "to_zx": [
+        182,
+        142
+      ],
+      "from_xz_m": [
+        -5945.556088495245,
+        11166.210350790458
+      ],
+      "at_xz_m": [
+        -5835.893914195489,
+        11174.063465889461
+      ],
+      "to_xz_m": [
+        -5734.330350005617,
+        11235.669367105933
+      ],
+      "turn_deg": 27.14387925096938,
+      "incoming_q_m3_s": 145.2056800171228,
+      "outgoing_q_m3_s": 145.20568001712283,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 0,
+      "outgoing_new_group": 0,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        180,
+        145
+      ],
+      "at_zx": [
+        181,
+        146
+      ],
+      "to_zx": [
+        181,
+        147
+      ],
+      "from_xz_m": [
+        -5460.614762912577,
+        11062.359298212865
+      ],
+      "at_xz_m": [
+        -5345.9534509298965,
+        11129.702556291762
+      ],
+      "to_xz_m": [
+        -5222.561619247463,
+        11155.398063822833
+      ],
+      "turn_deg": 18.663369667076925,
+      "incoming_q_m3_s": 766.5978881565175,
+      "outgoing_q_m3_s": 370.5694928475704,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 2,
+      "junction_kind": "fork",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        180,
+        145
+      ],
+      "at_zx": [
+        181,
+        146
+      ],
+      "to_zx": [
+        182,
+        146
+      ],
+      "from_xz_m": [
+        -5460.614762912577,
+        11062.359298212865
+      ],
+      "at_xz_m": [
+        -5345.9534509298965,
+        11129.702556291762
+      ],
+      "to_xz_m": [
+        -5367.555271094903,
+        11225.076712703798
+      ],
+      "turn_deg": 72.3352079853685,
+      "incoming_q_m3_s": 766.5978881565175,
+      "outgoing_q_m3_s": 396.02839530894704,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 2,
+      "junction_kind": "fork",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        181,
+        146
+      ],
+      "at_zx": [
+        181,
+        147
+      ],
+      "to_zx": [
+        181,
+        148
+      ],
+      "from_xz_m": [
+        -5345.9534509298965,
+        11129.702556291762
+      ],
+      "at_xz_m": [
+        -5222.561619247463,
+        11155.398063822833
+      ],
+      "to_xz_m": [
+        -5156.247663033041,
+        11147.046865111462
+      ],
+      "turn_deg": 18.94105401127837,
+      "incoming_q_m3_s": 370.5694928475704,
+      "outgoing_q_m3_s": 370.5694928475704,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        181,
+        147
+      ],
+      "at_zx": [
+        181,
+        148
+      ],
+      "to_zx": [
+        181,
+        149
+      ],
+      "from_xz_m": [
+        -5222.561619247463,
+        11155.398063822833
+      ],
+      "at_xz_m": [
+        -5156.247663033041,
+        11147.046865111462
+      ],
+      "to_xz_m": [
+        -5027.802420107293,
+        11136.273012110296
+      ],
+      "turn_deg": 2.383029038862278,
+      "incoming_q_m3_s": 370.5694928475704,
+      "outgoing_q_m3_s": 370.56949284757036,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        181,
+        148
+      ],
+      "at_zx": [
+        181,
+        149
+      ],
+      "to_zx": [
+        181,
+        150
+      ],
+      "from_xz_m": [
+        -5156.247663033041,
+        11147.046865111462
+      ],
+      "at_xz_m": [
+        -5027.802420107293,
+        11136.273012110296
+      ],
+      "to_xz_m": [
+        -4934.583185011706,
+        11184.810738486252
+      ],
+      "turn_deg": 32.29994011085354,
+      "incoming_q_m3_s": 370.56949284757036,
+      "outgoing_q_m3_s": 370.56949284757036,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        181,
+        149
+      ],
+      "at_zx": [
+        181,
+        150
+      ],
+      "to_zx": [
+        181,
+        151
+      ],
+      "from_xz_m": [
+        -5027.802420107293,
+        11136.273012110296
+      ],
+      "at_xz_m": [
+        -4934.583185011706,
+        11184.810738486252
+      ],
+      "to_xz_m": [
+        -4847.472253020888,
+        11168.273179196378
+      ],
+      "turn_deg": 38.254639021687076,
+      "incoming_q_m3_s": 370.56949284757036,
+      "outgoing_q_m3_s": 370.56949284757036,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        181,
+        150
+      ],
+      "at_zx": [
+        181,
+        151
+      ],
+      "to_zx": [
+        180,
+        151
+      ],
+      "from_xz_m": [
+        -4934.583185011706,
+        11184.810738486252
+      ],
+      "at_xz_m": [
+        -4847.472253020888,
+        11168.273179196378
+      ],
+      "to_xz_m": [
+        -4815.8959606777025,
+        11070.871323504884
+      ],
+      "turn_deg": 61.28865977378631,
+      "incoming_q_m3_s": 370.56949284757036,
+      "outgoing_q_m3_s": 97.5154064068386,
+      "incoming_kind": "old",
+      "outgoing_kind": "new",
+      "incoming_new_group": null,
+      "outgoing_new_group": 1,
+      "in_degree": 1,
+      "out_degree": 2,
+      "junction_kind": "fork",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        181,
+        150
+      ],
+      "at_zx": [
+        181,
+        151
+      ],
+      "to_zx": [
+        181,
+        152
+      ],
+      "from_xz_m": [
+        -4934.583185011706,
+        11184.810738486252
+      ],
+      "at_xz_m": [
+        -4847.472253020888,
+        11168.273179196378
+      ],
+      "to_xz_m": [
+        -4741.200421868897,
+        11179.45024427833
+      ],
+      "turn_deg": 16.75335585282011,
+      "incoming_q_m3_s": 370.56949284757036,
+      "outgoing_q_m3_s": 273.05408644073174,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 2,
+      "junction_kind": "fork",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        181,
+        151
+      ],
+      "at_zx": [
+        181,
+        152
+      ],
+      "to_zx": [
+        181,
+        153
+      ],
+      "from_xz_m": [
+        -4847.472253020888,
+        11168.273179196378
+      ],
+      "at_xz_m": [
+        -4741.200421868897,
+        11179.45024427833
+      ],
+      "to_xz_m": [
+        -4617.243490620943,
+        11181.847544836244
+      ],
+      "turn_deg": 4.896020315883042,
+      "incoming_q_m3_s": 273.05408644073174,
+      "outgoing_q_m3_s": 273.05408644073174,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        181,
+        152
+      ],
+      "at_zx": [
+        181,
+        153
+      ],
+      "to_zx": [
+        182,
+        154
+      ],
+      "from_xz_m": [
+        -4741.200421868897,
+        11179.45024427833
+      ],
+      "at_xz_m": [
+        -4617.243490620943,
+        11181.847544836244
+      ],
+      "to_xz_m": [
+        -4527.9385011432305,
+        11236.533072528206
+      ],
+      "turn_deg": 30.373090666851525,
+      "incoming_q_m3_s": 273.05408644073174,
+      "outgoing_q_m3_s": 273.0540864407318,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        180,
+        160
+      ],
+      "at_zx": [
+        181,
+        160
+      ],
+      "to_zx": [
+        182,
+        160
+      ],
+      "from_xz_m": [
+        -3956.9674330052053,
+        11046.845180621536
+      ],
+      "at_xz_m": [
+        -3954.7330844147486,
+        11115.375988184534
+      ],
+      "to_xz_m": [
+        -3963.004089660842,
+        11282.514549311927
+      ],
+      "turn_deg": 4.70040838557079,
+      "incoming_q_m3_s": 97.5154064068386,
+      "outgoing_q_m3_s": 97.51540640683862,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 1,
+      "outgoing_new_group": 1,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        181,
+        138
+      ],
+      "at_zx": [
+        182,
+        139
+      ],
+      "to_zx": [
+        183,
+        139
+      ],
+      "from_xz_m": [
+        -6130.432703270474,
+        11181.77899491368
+      ],
+      "at_xz_m": [
+        -6069.065494182255,
+        11269.760481697458
+      ],
+      "to_xz_m": [
+        -6018.146601035461,
+        11330.846146719528
+      ],
+      "turn_deg": 4.9175883944745875,
+      "incoming_q_m3_s": 588.1964318263599,
+      "outgoing_q_m3_s": 588.1964318263599,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        181,
+        141
+      ],
+      "at_zx": [
+        182,
+        142
+      ],
+      "to_zx": [
+        183,
+        143
+      ],
+      "from_xz_m": [
+        -5835.893914195489,
+        11174.063465889461
+      ],
+      "at_xz_m": [
+        -5734.330350005617,
+        11235.669367105933
+      ],
+      "to_xz_m": [
+        -5671.213009064743,
+        11334.238192994277
+      ],
+      "turn_deg": 26.127084538257197,
+      "incoming_q_m3_s": 145.20568001712283,
+      "outgoing_q_m3_s": 145.2056800171228,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 0,
+      "outgoing_new_group": 0,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        181,
+        146
+      ],
+      "at_zx": [
+        182,
+        146
+      ],
+      "to_zx": [
+        183,
+        146
+      ],
+      "from_xz_m": [
+        -5345.9534509298965,
+        11129.702556291762
+      ],
+      "at_xz_m": [
+        -5367.555271094903,
+        11225.076712703798
+      ],
+      "to_xz_m": [
+        -5328.768985687895,
+        11342.343912234533
+      ],
+      "turn_deg": 31.063619161616565,
+      "incoming_q_m3_s": 396.02839530894704,
+      "outgoing_q_m3_s": 396.02839530894704,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        181,
+        153
+      ],
+      "at_zx": [
+        182,
+        154
+      ],
+      "to_zx": [
+        182,
+        155
+      ],
+      "from_xz_m": [
+        -4617.243490620943,
+        11181.847544836244
+      ],
+      "at_xz_m": [
+        -4527.9385011432305,
+        11236.533072528206
+      ],
+      "to_xz_m": [
+        -4477.399726793635,
+        11250.393508602756
+      ],
+      "turn_deg": 16.144560807371658,
+      "incoming_q_m3_s": 273.0540864407318,
+      "outgoing_q_m3_s": 273.05408644073174,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        182,
+        154
+      ],
+      "at_zx": [
+        182,
+        155
+      ],
+      "to_zx": [
+        182,
+        156
+      ],
+      "from_xz_m": [
+        -4527.9385011432305,
+        11236.533072528206
+      ],
+      "at_xz_m": [
+        -4477.399726793635,
+        11250.393508602756
+      ],
+      "to_xz_m": [
+        -4321.390388669592,
+        11239.80262065388
+      ],
+      "turn_deg": 19.220116467284768,
+      "incoming_q_m3_s": 273.05408644073174,
+      "outgoing_q_m3_s": 273.05408644073174,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        182,
+        155
+      ],
+      "at_zx": [
+        182,
+        156
+      ],
+      "to_zx": [
+        182,
+        157
+      ],
+      "from_xz_m": [
+        -4477.399726793635,
+        11250.393508602756
+      ],
+      "at_xz_m": [
+        -4321.390388669592,
+        11239.80262065388
+      ],
+      "to_xz_m": [
+        -4239.976996877395,
+        11268.573358326994
+      ],
+      "turn_deg": 23.346572395497866,
+      "incoming_q_m3_s": 273.05408644073174,
+      "outgoing_q_m3_s": 273.0540864407318,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        182,
+        156
+      ],
+      "at_zx": [
+        182,
+        157
+      ],
+      "to_zx": [
+        182,
+        158
+      ],
+      "from_xz_m": [
+        -4321.390388669592,
+        11239.80262065388
+      ],
+      "at_xz_m": [
+        -4239.976996877395,
+        11268.573358326994
+      ],
+      "to_xz_m": [
+        -4165.056302487257,
+        11284.363497432856
+      ],
+      "turn_deg": 7.5615647114631335,
+      "incoming_q_m3_s": 273.0540864407318,
+      "outgoing_q_m3_s": 273.05408644073174,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        182,
+        157
+      ],
+      "at_zx": [
+        182,
+        158
+      ],
+      "to_zx": [
+        183,
+        158
+      ],
+      "from_xz_m": [
+        -4239.976996877395,
+        11268.573358326994
+      ],
+      "at_xz_m": [
+        -4165.056302487257,
+        11284.363497432856
+      ],
+      "to_xz_m": [
+        -4123.047046705372,
+        11316.332772227344
+      ],
+      "turn_deg": 25.369963360445123,
+      "incoming_q_m3_s": 273.05408644073174,
+      "outgoing_q_m3_s": 273.05408644073174,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        181,
+        160
+      ],
+      "at_zx": [
+        182,
+        160
+      ],
+      "to_zx": [
+        183,
+        160
+      ],
+      "from_xz_m": [
+        -3954.7330844147486,
+        11115.375988184534
+      ],
+      "at_xz_m": [
+        -3963.004089660842,
+        11282.514549311927
+      ],
+      "to_xz_m": [
+        -3976.2213806810237,
+        11343.975038197521
+      ],
+      "turn_deg": 9.30378480559266,
+      "incoming_q_m3_s": 97.51540640683862,
+      "outgoing_q_m3_s": 97.5154064068386,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 1,
+      "outgoing_new_group": 1,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        182,
+        139
+      ],
+      "at_zx": [
+        183,
+        139
+      ],
+      "to_zx": [
+        184,
+        140
+      ],
+      "from_xz_m": [
+        -6069.065494182255,
+        11269.760481697458
+      ],
+      "at_xz_m": [
+        -6018.146601035461,
+        11330.846146719528
+      ],
+      "to_xz_m": [
+        -5972.906808104021,
+        11428.327719096218
+      ],
+      "turn_deg": 14.918080124163087,
+      "incoming_q_m3_s": 588.1964318263599,
+      "outgoing_q_m3_s": 588.1964318263599,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        182,
+        142
+      ],
+      "at_zx": [
+        183,
+        143
+      ],
+      "to_zx": [
+        184,
+        144
+      ],
+      "from_xz_m": [
+        -5734.330350005617,
+        11235.669367105933
+      ],
+      "at_xz_m": [
+        -5671.213009064743,
+        11334.238192994277
+      ],
+      "to_xz_m": [
+        -5567.913119664118,
+        11430.489992502058
+      ],
+      "turn_deg": 14.389854573985104,
+      "incoming_q_m3_s": 145.2056800171228,
+      "outgoing_q_m3_s": 145.2056800171228,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 0,
+      "outgoing_new_group": 0,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        182,
+        146
+      ],
+      "at_zx": [
+        183,
+        146
+      ],
+      "to_zx": [
+        184,
+        147
+      ],
+      "from_xz_m": [
+        -5367.555271094903,
+        11225.076712703798
+      ],
+      "at_xz_m": [
+        -5328.768985687895,
+        11342.343912234533
+      ],
+      "to_xz_m": [
+        -5280.275638301457,
+        11441.034659191537
+      ],
+      "turn_deg": 7.866262114097438,
+      "incoming_q_m3_s": 396.02839530894704,
+      "outgoing_q_m3_s": 396.02839530894704,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        182,
+        158
+      ],
+      "at_zx": [
+        183,
+        158
+      ],
+      "to_zx": [
+        183,
+        159
+      ],
+      "from_xz_m": [
+        -4165.056302487257,
+        11284.363497432856
+      ],
+      "at_xz_m": [
+        -4123.047046705372,
+        11316.332772227344
+      ],
+      "to_xz_m": [
+        -4072.4903613164915,
+        11338.7916089987
+      ],
+      "turn_deg": 13.31906810849387,
+      "incoming_q_m3_s": 273.05408644073174,
+      "outgoing_q_m3_s": 273.0540864407318,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        183,
+        158
+      ],
+      "at_zx": [
+        183,
+        159
+      ],
+      "to_zx": [
+        183,
+        160
+      ],
+      "from_xz_m": [
+        -4123.047046705372,
+        11316.332772227344
+      ],
+      "at_xz_m": [
+        -4072.4903613164915,
+        11338.7916089987
+      ],
+      "to_xz_m": [
+        -3976.2213806810237,
+        11343.975038197521
+      ],
+      "turn_deg": 20.870254729414505,
+      "incoming_q_m3_s": 273.0540864407318,
+      "outgoing_q_m3_s": 273.0540864407318,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        182,
+        160
+      ],
+      "at_zx": [
+        183,
+        160
+      ],
+      "to_zx": [
+        183,
+        161
+      ],
+      "from_xz_m": [
+        -3963.004089660842,
+        11282.514549311927
+      ],
+      "at_xz_m": [
+        -3976.2213806810237,
+        11343.975038197521
+      ],
+      "to_xz_m": [
+        -3880.070052157076,
+        11369.615917100902
+      ],
+      "turn_deg": 87.20509899912999,
+      "incoming_q_m3_s": 97.5154064068386,
+      "outgoing_q_m3_s": 370.56949284757036,
+      "incoming_kind": "new",
+      "outgoing_kind": "old",
+      "incoming_new_group": 1,
+      "outgoing_new_group": null,
+      "in_degree": 2,
+      "out_degree": 1,
+      "junction_kind": "rejoin",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        183,
+        159
+      ],
+      "at_zx": [
+        183,
+        160
+      ],
+      "to_zx": [
+        183,
+        161
+      ],
+      "from_xz_m": [
+        -4072.4903613164915,
+        11338.7916089987
+      ],
+      "at_xz_m": [
+        -3976.2213806810237,
+        11343.975038197521
+      ],
+      "to_xz_m": [
+        -3880.070052157076,
+        11369.615917100902
+      ],
+      "turn_deg": 11.84969743717829,
+      "incoming_q_m3_s": 273.0540864407318,
+      "outgoing_q_m3_s": 370.56949284757036,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 2,
+      "out_degree": 1,
+      "junction_kind": "rejoin",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        183,
+        160
+      ],
+      "at_zx": [
+        183,
+        161
+      ],
+      "to_zx": [
+        183,
+        162
+      ],
+      "from_xz_m": [
+        -3976.2213806810237,
+        11343.975038197521
+      ],
+      "at_xz_m": [
+        -3880.070052157076,
+        11369.615917100902
+      ],
+      "to_xz_m": [
+        -3755.3007538246384,
+        11359.605869907084
+      ],
+      "turn_deg": 19.518635951681226,
+      "incoming_q_m3_s": 370.56949284757036,
+      "outgoing_q_m3_s": 370.56949284757036,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        183,
+        161
+      ],
+      "at_zx": [
+        183,
+        162
+      ],
+      "to_zx": [
+        184,
+        163
+      ],
+      "from_xz_m": [
+        -3880.070052157076,
+        11369.615917100902
+      ],
+      "at_xz_m": [
+        -3755.3007538246384,
+        11359.605869907084
+      ],
+      "to_xz_m": [
+        -3681.728978240546,
+        11417.557501948662
+      ],
+      "turn_deg": 42.81401996029412,
+      "incoming_q_m3_s": 370.56949284757036,
+      "outgoing_q_m3_s": 370.56949284757036,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        183,
+        139
+      ],
+      "at_zx": [
+        184,
+        140
+      ],
+      "to_zx": [
+        185,
+        141
+      ],
+      "from_xz_m": [
+        -6018.146601035461,
+        11330.846146719528
+      ],
+      "at_xz_m": [
+        -5972.906808104021,
+        11428.327719096218
+      ],
+      "to_xz_m": [
+        -5875.136014026572,
+        11543.046737988669
+      ],
+      "turn_deg": 15.544397406866453,
+      "incoming_q_m3_s": 588.1964318263599,
+      "outgoing_q_m3_s": 588.1964318263599,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        183,
+        143
+      ],
+      "at_zx": [
+        184,
+        144
+      ],
+      "to_zx": [
+        185,
+        145
+      ],
+      "from_xz_m": [
+        -5671.213009064743,
+        11334.238192994277
+      ],
+      "at_xz_m": [
+        -5567.913119664118,
+        11430.489992502058
+      ],
+      "to_xz_m": [
+        -5469.544719972734,
+        11546.415090160717
+      ],
+      "turn_deg": 6.706508418493622,
+      "incoming_q_m3_s": 145.2056800171228,
+      "outgoing_q_m3_s": 145.2056800171228,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 0,
+      "outgoing_new_group": 0,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        183,
+        146
+      ],
+      "at_zx": [
+        184,
+        147
+      ],
+      "to_zx": [
+        184,
+        148
+      ],
+      "from_xz_m": [
+        -5328.768985687895,
+        11342.343912234533
+      ],
+      "at_xz_m": [
+        -5280.275638301457,
+        11441.034659191537
+      ],
+      "to_xz_m": [
+        -5154.515273440525,
+        11475.54732430042
+      ],
+      "turn_deg": 48.48604519103721,
+      "incoming_q_m3_s": 396.02839530894704,
+      "outgoing_q_m3_s": 396.02839530894704,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        147
+      ],
+      "at_zx": [
+        184,
+        148
+      ],
+      "to_zx": [
+        184,
+        149
+      ],
+      "from_xz_m": [
+        -5280.275638301457,
+        11441.034659191537
+      ],
+      "at_xz_m": [
+        -5154.515273440525,
+        11475.54732430042
+      ],
+      "to_xz_m": [
+        -5068.9789952545,
+        11477.21612764297
+      ],
+      "turn_deg": 14.22829700675259,
+      "incoming_q_m3_s": 396.02839530894704,
+      "outgoing_q_m3_s": 114.76018228624666,
+      "incoming_kind": "old",
+      "outgoing_kind": "new",
+      "incoming_new_group": null,
+      "outgoing_new_group": 2,
+      "in_degree": 1,
+      "out_degree": 2,
+      "junction_kind": "fork",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        147
+      ],
+      "at_zx": [
+        184,
+        148
+      ],
+      "to_zx": [
+        185,
+        148
+      ],
+      "from_xz_m": [
+        -5280.275638301457,
+        11441.034659191537
+      ],
+      "at_xz_m": [
+        -5154.515273440525,
+        11475.54732430042
+      ],
+      "to_xz_m": [
+        -5130.171596458852,
+        11542.5782453441
+      ],
+      "turn_deg": 54.69446414051168,
+      "incoming_q_m3_s": 396.02839530894704,
+      "outgoing_q_m3_s": 281.2682130227004,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 2,
+      "junction_kind": "fork",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        148
+      ],
+      "at_zx": [
+        184,
+        149
+      ],
+      "to_zx": [
+        184,
+        150
+      ],
+      "from_xz_m": [
+        -5154.515273440525,
+        11475.54732430042
+      ],
+      "at_xz_m": [
+        -5068.9789952545,
+        11477.21612764297
+      ],
+      "to_xz_m": [
+        -4964.1953549626405,
+        11417.305041100617
+      ],
+      "turn_deg": 30.876883773592933,
+      "incoming_q_m3_s": 114.76018228624666,
+      "outgoing_q_m3_s": 114.76018228624666,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 2,
+      "outgoing_new_group": 2,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        149
+      ],
+      "at_zx": [
+        184,
+        150
+      ],
+      "to_zx": [
+        184,
+        151
+      ],
+      "from_xz_m": [
+        -5068.9789952545,
+        11477.21612764297
+      ],
+      "at_xz_m": [
+        -4964.1953549626405,
+        11417.305041100617
+      ],
+      "to_xz_m": [
+        -4861.085676273201,
+        11435.253220403196
+      ],
+      "turn_deg": 39.63366083282448,
+      "incoming_q_m3_s": 114.76018228624666,
+      "outgoing_q_m3_s": 114.76018228624666,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 2,
+      "outgoing_new_group": 2,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        150
+      ],
+      "at_zx": [
+        184,
+        151
+      ],
+      "to_zx": [
+        185,
+        152
+      ],
+      "from_xz_m": [
+        -4964.1953549626405,
+        11417.305041100617
+      ],
+      "at_xz_m": [
+        -4861.085676273201,
+        11435.253220403196
+      ],
+      "to_xz_m": [
+        -4734.35294783897,
+        11527.186607872296
+      ],
+      "turn_deg": 26.08309600705115,
+      "incoming_q_m3_s": 114.76018228624666,
+      "outgoing_q_m3_s": 114.76018228624666,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 2,
+      "outgoing_new_group": 2,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        183,
+        162
+      ],
+      "at_zx": [
+        184,
+        163
+      ],
+      "to_zx": [
+        184,
+        164
+      ],
+      "from_xz_m": [
+        -3755.3007538246384,
+        11359.605869907084
+      ],
+      "at_xz_m": [
+        -3681.728978240546,
+        11417.557501948662
+      ],
+      "to_xz_m": [
+        -3550.888506054067,
+        11458.562458386694
+      ],
+      "turn_deg": 20.826280456312364,
+      "incoming_q_m3_s": 370.56949284757036,
+      "outgoing_q_m3_s": 370.5694928475703,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        163
+      ],
+      "at_zx": [
+        184,
+        164
+      ],
+      "to_zx": [
+        184,
+        165
+      ],
+      "from_xz_m": [
+        -3681.728978240546,
+        11417.557501948662
+      ],
+      "at_xz_m": [
+        -3550.888506054067,
+        11458.562458386694
+      ],
+      "to_xz_m": [
+        -3454.21790523481,
+        11481.294181640982
+      ],
+      "turn_deg": 4.168324073977617,
+      "incoming_q_m3_s": 370.5694928475703,
+      "outgoing_q_m3_s": 370.56949284757036,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        164
+      ],
+      "at_zx": [
+        184,
+        165
+      ],
+      "to_zx": [
+        184,
+        166
+      ],
+      "from_xz_m": [
+        -3550.888506054067,
+        11458.562458386694
+      ],
+      "at_xz_m": [
+        -3454.21790523481,
+        11481.294181640982
+      ],
+      "to_xz_m": [
+        -3364.8697345807236,
+        11456.012850465828
+      ],
+      "turn_deg": 29.03150729553116,
+      "incoming_q_m3_s": 370.56949284757036,
+      "outgoing_q_m3_s": 370.56949284757036,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        165
+      ],
+      "at_zx": [
+        184,
+        166
+      ],
+      "to_zx": [
+        184,
+        167
+      ],
+      "from_xz_m": [
+        -3454.21790523481,
+        11481.294181640982
+      ],
+      "at_xz_m": [
+        -3364.8697345807236,
+        11456.012850465828
+      ],
+      "to_xz_m": [
+        -3221.161625564586,
+        11474.172950886821
+      ],
+      "turn_deg": 23.001194537815984,
+      "incoming_q_m3_s": 370.56949284757036,
+      "outgoing_q_m3_s": 370.5694928475703,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        166
+      ],
+      "at_zx": [
+        184,
+        167
+      ],
+      "to_zx": [
+        184,
+        168
+      ],
+      "from_xz_m": [
+        -3364.8697345807236,
+        11456.012850465828
+      ],
+      "at_xz_m": [
+        -3221.161625564586,
+        11474.172950886821
+      ],
+      "to_xz_m": [
+        -3120.8664269088104,
+        11448.638922709828
+      ],
+      "turn_deg": 21.485600596526346,
+      "incoming_q_m3_s": 370.5694928475703,
+      "outgoing_q_m3_s": 370.56949284757036,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        167
+      ],
+      "at_zx": [
+        184,
+        168
+      ],
+      "to_zx": [
+        184,
+        169
+      ],
+      "from_xz_m": [
+        -3221.161625564586,
+        11474.172950886821
+      ],
+      "at_xz_m": [
+        -3120.8664269088104,
+        11448.638922709828
+      ],
+      "to_xz_m": [
+        -3043.5507514667815,
+        11473.796383962317
+      ],
+      "turn_deg": 32.30760282052056,
+      "incoming_q_m3_s": 370.56949284757036,
+      "outgoing_q_m3_s": 370.5694928475703,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        168
+      ],
+      "at_zx": [
+        184,
+        169
+      ],
+      "to_zx": [
+        184,
+        170
+      ],
+      "from_xz_m": [
+        -3120.8664269088104,
+        11448.638922709828
+      ],
+      "at_xz_m": [
+        -3043.5507514667815,
+        11473.796383962317
+      ],
+      "to_xz_m": [
+        -2973.7289594305707,
+        11473.881794293724
+      ],
+      "turn_deg": 17.954090286411585,
+      "incoming_q_m3_s": 370.5694928475703,
+      "outgoing_q_m3_s": 370.56949284757036,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        169
+      ],
+      "at_zx": [
+        184,
+        170
+      ],
+      "to_zx": [
+        184,
+        171
+      ],
+      "from_xz_m": [
+        -3043.5507514667815,
+        11473.796383962317
+      ],
+      "at_xz_m": [
+        -2973.7289594305707,
+        11473.881794293724
+      ],
+      "to_xz_m": [
+        -2824.548443859879,
+        11444.342373010502
+      ],
+      "turn_deg": 11.270414326828561,
+      "incoming_q_m3_s": 370.56949284757036,
+      "outgoing_q_m3_s": 370.5694928475703,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        170
+      ],
+      "at_zx": [
+        184,
+        171
+      ],
+      "to_zx": [
+        184,
+        172
+      ],
+      "from_xz_m": [
+        -2973.7289594305707,
+        11473.881794293724
+      ],
+      "at_xz_m": [
+        -2824.548443859879,
+        11444.342373010502
+      ],
+      "to_xz_m": [
+        -2765.506624833153,
+        11445.483508714022
+      ],
+      "turn_deg": 12.307577742107226,
+      "incoming_q_m3_s": 370.5694928475703,
+      "outgoing_q_m3_s": 370.56949284757036,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        140
+      ],
+      "at_zx": [
+        185,
+        141
+      ],
+      "to_zx": [
+        186,
+        141
+      ],
+      "from_xz_m": [
+        -5972.906808104021,
+        11428.327719096218
+      ],
+      "at_xz_m": [
+        -5875.136014026572,
+        11543.046737988669
+      ],
+      "to_xz_m": [
+        -5837.467392434241,
+        11647.143514970972
+      ],
+      "turn_deg": 20.54649011632651,
+      "incoming_q_m3_s": 588.1964318263599,
+      "outgoing_q_m3_s": 588.1964318263598,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        144
+      ],
+      "at_zx": [
+        185,
+        145
+      ],
+      "to_zx": [
+        186,
+        145
+      ],
+      "from_xz_m": [
+        -5567.913119664118,
+        11430.489992502058
+      ],
+      "at_xz_m": [
+        -5469.544719972734,
+        11546.415090160717
+      ],
+      "to_xz_m": [
+        -5453.272257066989,
+        11673.86050365116
+      ],
+      "turn_deg": 33.04005656113993,
+      "incoming_q_m3_s": 145.2056800171228,
+      "outgoing_q_m3_s": 145.2056800171228,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 0,
+      "outgoing_new_group": 0,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        148
+      ],
+      "at_zx": [
+        185,
+        148
+      ],
+      "to_zx": [
+        186,
+        149
+      ],
+      "from_xz_m": [
+        -5154.515273440525,
+        11475.54732430042
+      ],
+      "at_xz_m": [
+        -5130.171596458852,
+        11542.5782453441
+      ],
+      "to_xz_m": [
+        -5048.294028792361,
+        11655.20439953204
+      ],
+      "turn_deg": 16.05705744467999,
+      "incoming_q_m3_s": 281.2682130227004,
+      "outgoing_q_m3_s": 281.26821302270037,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        184,
+        151
+      ],
+      "at_zx": [
+        185,
+        152
+      ],
+      "to_zx": [
+        186,
+        153
+      ],
+      "from_xz_m": [
+        -4861.085676273201,
+        11435.253220403196
+      ],
+      "at_xz_m": [
+        -4734.35294783897,
+        11527.186607872296
+      ],
+      "to_xz_m": [
+        -4672.802116531079,
+        11645.180675435959
+      ],
+      "turn_deg": 26.493932538027742,
+      "incoming_q_m3_s": 114.76018228624666,
+      "outgoing_q_m3_s": 114.76018228624666,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 2,
+      "outgoing_new_group": 2,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        185,
+        141
+      ],
+      "at_zx": [
+        186,
+        141
+      ],
+      "to_zx": [
+        187,
+        142
+      ],
+      "from_xz_m": [
+        -5875.136014026572,
+        11543.046737988669
+      ],
+      "at_xz_m": [
+        -5837.467392434241,
+        11647.143514970972
+      ],
+      "to_xz_m": [
+        -5758.892456727275,
+        11728.965982819318
+      ],
+      "turn_deg": 23.946860582861333,
+      "incoming_q_m3_s": 588.1964318263598,
+      "outgoing_q_m3_s": 588.1964318263598,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        185,
+        145
+      ],
+      "at_zx": [
+        186,
+        145
+      ],
+      "to_zx": [
+        187,
+        146
+      ],
+      "from_xz_m": [
+        -5469.544719972734,
+        11546.415090160717
+      ],
+      "at_xz_m": [
+        -5453.272257066989,
+        11673.86050365116
+      ],
+      "to_xz_m": [
+        -5377.813810779113,
+        11728.674869827191
+      ],
+      "turn_deg": 46.728414517024554,
+      "incoming_q_m3_s": 145.2056800171228,
+      "outgoing_q_m3_s": 145.2056800171228,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 0,
+      "outgoing_new_group": 0,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        185,
+        148
+      ],
+      "at_zx": [
+        186,
+        149
+      ],
+      "to_zx": [
+        187,
+        149
+      ],
+      "from_xz_m": [
+        -5130.171596458852,
+        11542.5782453441
+      ],
+      "at_xz_m": [
+        -5048.294028792361,
+        11655.20439953204
+      ],
+      "to_xz_m": [
+        -5022.594810747707,
+        11743.485396965114
+      ],
+      "turn_deg": 19.785954987443233,
+      "incoming_q_m3_s": 281.26821302270037,
+      "outgoing_q_m3_s": 281.2682130227004,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        185,
+        152
+      ],
+      "at_zx": [
+        186,
+        153
+      ],
+      "to_zx": [
+        187,
+        154
+      ],
+      "from_xz_m": [
+        -4734.35294783897,
+        11527.186607872296
+      ],
+      "at_xz_m": [
+        -4672.802116531079,
+        11645.180675435959
+      ],
+      "to_xz_m": [
+        -4555.28472486284,
+        11740.79727432676
+      ],
+      "turn_deg": 23.318391023837304,
+      "incoming_q_m3_s": 114.76018228624666,
+      "outgoing_q_m3_s": 114.76018228624667,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 2,
+      "outgoing_new_group": 2,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        186,
+        141
+      ],
+      "at_zx": [
+        187,
+        142
+      ],
+      "to_zx": [
+        188,
+        143
+      ],
+      "from_xz_m": [
+        -5837.467392434241,
+        11647.143514970972
+      ],
+      "at_xz_m": [
+        -5758.892456727275,
+        11728.965982819318
+      ],
+      "to_xz_m": [
+        -5682.051032285956,
+        11854.357304748273
+      ],
+      "turn_deg": 12.33959690343397,
+      "incoming_q_m3_s": 588.1964318263598,
+      "outgoing_q_m3_s": 588.1964318263599,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        186,
+        145
+      ],
+      "at_zx": [
+        187,
+        146
+      ],
+      "to_zx": [
+        188,
+        146
+      ],
+      "from_xz_m": [
+        -5453.272257066989,
+        11673.86050365116
+      ],
+      "at_xz_m": [
+        -5377.813810779113,
+        11728.674869827191
+      ],
+      "to_xz_m": [
+        -5342.317731506795,
+        11844.622158198072
+      ],
+      "turn_deg": 36.98323946887002,
+      "incoming_q_m3_s": 145.2056800171228,
+      "outgoing_q_m3_s": 145.2056800171228,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 0,
+      "outgoing_new_group": 0,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        186,
+        149
+      ],
+      "at_zx": [
+        187,
+        149
+      ],
+      "to_zx": [
+        187,
+        150
+      ],
+      "from_xz_m": [
+        -5048.294028792361,
+        11655.20439953204
+      ],
+      "at_xz_m": [
+        -5022.594810747707,
+        11743.485396965114
+      ],
+      "to_xz_m": [
+        -4916.258982799505,
+        11771.389171630059
+      ],
+      "turn_deg": 59.065775827280454,
+      "incoming_q_m3_s": 281.2682130227004,
+      "outgoing_q_m3_s": 281.2682130227004,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        187,
+        149
+      ],
+      "at_zx": [
+        187,
+        150
+      ],
+      "to_zx": [
+        188,
+        151
+      ],
+      "from_xz_m": [
+        -5022.594810747707,
+        11743.485396965114
+      ],
+      "at_xz_m": [
+        -4916.258982799505,
+        11771.389171630059
+      ],
+      "to_xz_m": [
+        -4865.214281496491,
+        11838.027536912143
+      ],
+      "turn_deg": 37.8444650416764,
+      "incoming_q_m3_s": 281.2682130227004,
+      "outgoing_q_m3_s": 281.2682130227004,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        186,
+        153
+      ],
+      "at_zx": [
+        187,
+        154
+      ],
+      "to_zx": [
+        188,
+        154
+      ],
+      "from_xz_m": [
+        -4672.802116531079,
+        11645.180675435959
+      ],
+      "at_xz_m": [
+        -4555.28472486284,
+        11740.79727432676
+      ],
+      "to_xz_m": [
+        -4523.068640261558,
+        11846.49331373883
+      ],
+      "turn_deg": 33.91570530795799,
+      "incoming_q_m3_s": 114.76018228624667,
+      "outgoing_q_m3_s": 114.76018228624667,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 2,
+      "outgoing_new_group": 2,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        187,
+        142
+      ],
+      "at_zx": [
+        188,
+        143
+      ],
+      "to_zx": [
+        189,
+        143
+      ],
+      "from_xz_m": [
+        -5758.892456727275,
+        11728.965982819318
+      ],
+      "at_xz_m": [
+        -5682.051032285956,
+        11854.357304748273
+      ],
+      "to_xz_m": [
+        -5637.393695192195,
+        11935.020127515972
+      ],
+      "turn_deg": 2.530288463980161,
+      "incoming_q_m3_s": 588.1964318263599,
+      "outgoing_q_m3_s": 588.1964318263598,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        187,
+        146
+      ],
+      "at_zx": [
+        188,
+        146
+      ],
+      "to_zx": [
+        189,
+        146
+      ],
+      "from_xz_m": [
+        -5377.813810779113,
+        11728.674869827191
+      ],
+      "at_xz_m": [
+        -5342.317731506795,
+        11844.622158198072
+      ],
+      "to_xz_m": [
+        -5383.939293669453,
+        11919.600925906132
+      ],
+      "turn_deg": 46.056584697514566,
+      "incoming_q_m3_s": 145.2056800171228,
+      "outgoing_q_m3_s": 145.2056800171228,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 0,
+      "outgoing_new_group": 0,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        187,
+        150
+      ],
+      "at_zx": [
+        188,
+        151
+      ],
+      "to_zx": [
+        188,
+        152
+      ],
+      "from_xz_m": [
+        -4916.258982799505,
+        11771.389171630059
+      ],
+      "at_xz_m": [
+        -4865.214281496491,
+        11838.027536912143
+      ],
+      "to_xz_m": [
+        -4774.310871198157,
+        11880.139920653712
+      ],
+      "turn_deg": 27.691394029218692,
+      "incoming_q_m3_s": 281.2682130227004,
+      "outgoing_q_m3_s": 281.2682130227004,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        188,
+        151
+      ],
+      "at_zx": [
+        188,
+        152
+      ],
+      "to_zx": [
+        189,
+        152
+      ],
+      "from_xz_m": [
+        -4865.214281496491,
+        11838.027536912143
+      ],
+      "at_xz_m": [
+        -4774.310871198157,
+        11880.139920653712
+      ],
+      "to_xz_m": [
+        -4764.239420011391,
+        11976.284057392162
+      ],
+      "turn_deg": 59.16322075215164,
+      "incoming_q_m3_s": 281.2682130227004,
+      "outgoing_q_m3_s": 281.26821302270037,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        187,
+        154
+      ],
+      "at_zx": [
+        188,
+        154
+      ],
+      "to_zx": [
+        188,
+        155
+      ],
+      "from_xz_m": [
+        -4555.28472486284,
+        11740.79727432676
+      ],
+      "at_xz_m": [
+        -4523.068640261558,
+        11846.49331373883
+      ],
+      "to_xz_m": [
+        -4479.04155564456,
+        11876.720831177054
+      ],
+      "turn_deg": 38.57662790243026,
+      "incoming_q_m3_s": 114.76018228624667,
+      "outgoing_q_m3_s": 114.76018228624667,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 2,
+      "outgoing_new_group": 2,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        188,
+        154
+      ],
+      "at_zx": [
+        188,
+        155
+      ],
+      "to_zx": [
+        189,
+        155
+      ],
+      "from_xz_m": [
+        -4523.068640261558,
+        11846.49331373883
+      ],
+      "at_xz_m": [
+        -4479.04155564456,
+        11876.720831177054
+      ],
+      "to_xz_m": [
+        -4456.373403072629,
+        11982.367415533228
+      ],
+      "turn_deg": 43.41771158654784,
+      "incoming_q_m3_s": 114.76018228624667,
+      "outgoing_q_m3_s": 114.76018228624667,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 2,
+      "outgoing_new_group": 2,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        188,
+        143
+      ],
+      "at_zx": [
+        189,
+        143
+      ],
+      "to_zx": [
+        190,
+        143
+      ],
+      "from_xz_m": [
+        -5682.051032285956,
+        11854.357304748273
+      ],
+      "at_xz_m": [
+        -5637.393695192195,
+        11935.020127515972
+      ],
+      "to_xz_m": [
+        -5640.898637103865,
+        12039.454184787593
+      ],
+      "turn_deg": 30.892416555823168,
+      "incoming_q_m3_s": 588.1964318263598,
+      "outgoing_q_m3_s": 588.1964318263599,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        189,
+        146
+      ],
+      "at_zx": [
+        189,
+        145
+      ],
+      "to_zx": [
+        190,
+        144
+      ],
+      "from_xz_m": [
+        -5383.939293669453,
+        11919.600925906132
+      ],
+      "at_xz_m": [
+        -5443.852956327373,
+        11974.796679928106
+      ],
+      "to_xz_m": [
+        -5550.696862811478,
+        12015.247734394208
+      ],
+      "turn_deg": 21.916328884163782,
+      "incoming_q_m3_s": 145.2056800171228,
+      "outgoing_q_m3_s": 145.20568001712283,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 0,
+      "outgoing_new_group": 0,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        188,
+        146
+      ],
+      "at_zx": [
+        189,
+        146
+      ],
+      "to_zx": [
+        189,
+        145
+      ],
+      "from_xz_m": [
+        -5342.317731506795,
+        11844.622158198072
+      ],
+      "at_xz_m": [
+        -5383.939293669453,
+        11919.600925906132
+      ],
+      "to_xz_m": [
+        -5443.852956327373,
+        11974.796679928106
+      ],
+      "turn_deg": 18.31187782301125,
+      "incoming_q_m3_s": 145.2056800171228,
+      "outgoing_q_m3_s": 145.2056800171228,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 0,
+      "outgoing_new_group": 0,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        188,
+        152
+      ],
+      "at_zx": [
+        189,
+        152
+      ],
+      "to_zx": [
+        190,
+        153
+      ],
+      "from_xz_m": [
+        -4774.310871198157,
+        11880.139920653712
+      ],
+      "at_xz_m": [
+        -4764.239420011391,
+        11976.284057392162
+      ],
+      "to_xz_m": [
+        -4684.9264503208415,
+        12047.859704355125
+      ],
+      "turn_deg": 41.955330396727945,
+      "incoming_q_m3_s": 281.26821302270037,
+      "outgoing_q_m3_s": 281.26821302270037,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        188,
+        155
+      ],
+      "at_zx": [
+        189,
+        155
+      ],
+      "to_zx": [
+        190,
+        156
+      ],
+      "from_xz_m": [
+        -4479.04155564456,
+        11876.720831177054
+      ],
+      "at_xz_m": [
+        -4456.373403072629,
+        11982.367415533228
+      ],
+      "to_xz_m": [
+        -4372.498004604992,
+        12045.082530728247
+      ],
+      "turn_deg": 41.1037826442695,
+      "incoming_q_m3_s": 114.76018228624667,
+      "outgoing_q_m3_s": 114.76018228624667,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 2,
+      "outgoing_new_group": 2,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        189,
+        143
+      ],
+      "at_zx": [
+        190,
+        143
+      ],
+      "to_zx": [
+        191,
+        143
+      ],
+      "from_xz_m": [
+        -5637.393695192195,
+        11935.020127515972
+      ],
+      "at_xz_m": [
+        -5640.898637103865,
+        12039.454184787593
+      ],
+      "to_xz_m": [
+        -5620.099536161451,
+        12133.847941363443
+      ],
+      "turn_deg": 14.348417686100085,
+      "incoming_q_m3_s": 588.1964318263599,
+      "outgoing_q_m3_s": 733.4021118434825,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 2,
+      "out_degree": 1,
+      "junction_kind": "rejoin",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        190,
+        144
+      ],
+      "at_zx": [
+        190,
+        143
+      ],
+      "to_zx": [
+        191,
+        143
+      ],
+      "from_xz_m": [
+        -5550.696862811478,
+        12015.247734394208
+      ],
+      "at_xz_m": [
+        -5640.898637103865,
+        12039.454184787593
+      ],
+      "to_xz_m": [
+        -5620.099536161451,
+        12133.847941363443
+      ],
+      "turn_deg": 87.40431812281324,
+      "incoming_q_m3_s": 145.2056800171228,
+      "outgoing_q_m3_s": 733.4021118434825,
+      "incoming_kind": "new",
+      "outgoing_kind": "old",
+      "incoming_new_group": 0,
+      "outgoing_new_group": null,
+      "in_degree": 2,
+      "out_degree": 1,
+      "junction_kind": "rejoin",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        189,
+        145
+      ],
+      "at_zx": [
+        190,
+        144
+      ],
+      "to_zx": [
+        190,
+        143
+      ],
+      "from_xz_m": [
+        -5443.852956327373,
+        11974.796679928106
+      ],
+      "at_xz_m": [
+        -5550.696862811478,
+        12015.247734394208
+      ],
+      "to_xz_m": [
+        -5640.898637103865,
+        12039.454184787593
+      ],
+      "turn_deg": 5.714742337507946,
+      "incoming_q_m3_s": 145.20568001712283,
+      "outgoing_q_m3_s": 145.2056800171228,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 0,
+      "outgoing_new_group": 0,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        189,
+        152
+      ],
+      "at_zx": [
+        190,
+        153
+      ],
+      "to_zx": [
+        191,
+        153
+      ],
+      "from_xz_m": [
+        -4764.239420011391,
+        11976.284057392162
+      ],
+      "at_xz_m": [
+        -4684.9264503208415,
+        12047.859704355125
+      ],
+      "to_xz_m": [
+        -4617.629156276838,
+        12120.449377646164
+      ],
+      "turn_deg": 5.102115691507191,
+      "incoming_q_m3_s": 281.26821302270037,
+      "outgoing_q_m3_s": 281.2682130227004,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        189,
+        155
+      ],
+      "at_zx": [
+        190,
+        156
+      ],
+      "to_zx": [
+        191,
+        156
+      ],
+      "from_xz_m": [
+        -4456.373403072629,
+        11982.367415533228
+      ],
+      "at_xz_m": [
+        -4372.498004604992,
+        12045.082530728247
+      ],
+      "to_xz_m": [
+        -4325.46807857735,
+        12140.637433642021
+      ],
+      "turn_deg": 27.00853585289043,
+      "incoming_q_m3_s": 114.76018228624667,
+      "outgoing_q_m3_s": 114.76018228624667,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 2,
+      "outgoing_new_group": 2,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        190,
+        143
+      ],
+      "at_zx": [
+        191,
+        143
+      ],
+      "to_zx": [
+        192,
+        143
+      ],
+      "from_xz_m": [
+        -5640.898637103865,
+        12039.454184787593
+      ],
+      "at_xz_m": [
+        -5620.099536161451,
+        12133.847941363443
+      ],
+      "to_xz_m": [
+        -5630.385568738154,
+        12230.654932142575
+      ],
+      "turn_deg": 18.49131082190812,
+      "incoming_q_m3_s": 733.4021118434825,
+      "outgoing_q_m3_s": 733.4021118434825,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        190,
+        153
+      ],
+      "at_zx": [
+        191,
+        153
+      ],
+      "to_zx": [
+        192,
+        154
+      ],
+      "from_xz_m": [
+        -4684.9264503208415,
+        12047.859704355125
+      ],
+      "at_xz_m": [
+        -4617.629156276838,
+        12120.449377646164
+      ],
+      "to_xz_m": [
+        -4562.9946351631115,
+        12257.75575941596
+      ],
+      "turn_deg": 21.1356258989082,
+      "incoming_q_m3_s": 281.2682130227004,
+      "outgoing_q_m3_s": 281.2682130227004,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        190,
+        156
+      ],
+      "at_zx": [
+        191,
+        156
+      ],
+      "to_zx": [
+        192,
+        157
+      ],
+      "from_xz_m": [
+        -4372.498004604992,
+        12045.082530728247
+      ],
+      "at_xz_m": [
+        -4325.46807857735,
+        12140.637433642021
+      ],
+      "to_xz_m": [
+        -4277.648263311167,
+        12282.69573399228
+      ],
+      "turn_deg": 7.601033967101686,
+      "incoming_q_m3_s": 114.76018228624667,
+      "outgoing_q_m3_s": 114.76018228624667,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 2,
+      "outgoing_new_group": 2,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        191,
+        143
+      ],
+      "at_zx": [
+        192,
+        143
+      ],
+      "to_zx": [
+        193,
+        143
+      ],
+      "from_xz_m": [
+        -5620.099536161451,
+        12133.847941363443
+      ],
+      "at_xz_m": [
+        -5630.385568738154,
+        12230.654932142575
+      ],
+      "to_xz_m": [
+        -5680.428324709849,
+        12358.380018403364
+      ],
+      "turn_deg": 15.330179987899628,
+      "incoming_q_m3_s": 733.4021118434825,
+      "outgoing_q_m3_s": 351.10049988731197,
+      "incoming_kind": "old",
+      "outgoing_kind": "new",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 2,
+      "junction_kind": "fork",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        191,
+        143
+      ],
+      "at_zx": [
+        192,
+        143
+      ],
+      "to_zx": [
+        193,
+        144
+      ],
+      "from_xz_m": [
+        -5620.099536161451,
+        12133.847941363443
+      ],
+      "at_xz_m": [
+        -5630.385568738154,
+        12230.654932142575
+      ],
+      "to_xz_m": [
+        -5573.4601926802225,
+        12376.94869903173
+      ],
+      "turn_deg": 27.326944228298434,
+      "incoming_q_m3_s": 733.4021118434825,
+      "outgoing_q_m3_s": 382.30161195617063,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 2,
+      "junction_kind": "fork",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        191,
+        153
+      ],
+      "at_zx": [
+        192,
+        154
+      ],
+      "to_zx": [
+        193,
+        155
+      ],
+      "from_xz_m": [
+        -4617.629156276838,
+        12120.449377646164
+      ],
+      "at_xz_m": [
+        -4562.9946351631115,
+        12257.75575941596
+      ],
+      "to_xz_m": [
+        -4445.743399495282,
+        12352.410877703089
+      ],
+      "turn_deg": 29.388874420180525,
+      "incoming_q_m3_s": 281.2682130227004,
+      "outgoing_q_m3_s": 281.2682130227004,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        191,
+        156
+      ],
+      "at_zx": [
+        192,
+        157
+      ],
+      "to_zx": [
+        193,
+        158
+      ],
+      "from_xz_m": [
+        -4325.46807857735,
+        12140.637433642021
+      ],
+      "at_xz_m": [
+        -4277.648263311167,
+        12282.69573399228
+      ],
+      "to_xz_m": [
+        -4149.248654639763,
+        12343.89793640115
+      ],
+      "turn_deg": 45.910687631479696,
+      "incoming_q_m3_s": 114.76018228624667,
+      "outgoing_q_m3_s": 114.76018228624667,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 2,
+      "outgoing_new_group": 2,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        192,
+        143
+      ],
+      "at_zx": [
+        193,
+        143
+      ],
+      "to_zx": [
+        194,
+        142
+      ],
+      "from_xz_m": [
+        -5630.385568738154,
+        12230.654932142575
+      ],
+      "at_xz_m": [
+        -5680.428324709849,
+        12358.380018403364
+      ],
+      "to_xz_m": [
+        -5756.217091514941,
+        12424.718329484886
+      ],
+      "turn_deg": 27.40889631252404,
+      "incoming_q_m3_s": 351.10049988731197,
+      "outgoing_q_m3_s": 351.10049988731197,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        192,
+        143
+      ],
+      "at_zx": [
+        193,
+        144
+      ],
+      "to_zx": [
+        194,
+        144
+      ],
+      "from_xz_m": [
+        -5630.385568738154,
+        12230.654932142575
+      ],
+      "at_xz_m": [
+        -5573.4601926802225,
+        12376.94869903173
+      ],
+      "to_xz_m": [
+        -5530.086650953203,
+        12448.102560248804
+      ],
+      "turn_deg": 10.103545505291793,
+      "incoming_q_m3_s": 382.30161195617063,
+      "outgoing_q_m3_s": 382.30161195617063,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        192,
+        154
+      ],
+      "at_zx": [
+        193,
+        155
+      ],
+      "to_zx": [
+        194,
+        156
+      ],
+      "from_xz_m": [
+        -4562.9946351631115,
+        12257.75575941596
+      ],
+      "at_xz_m": [
+        -4445.743399495282,
+        12352.410877703089
+      ],
+      "to_xz_m": [
+        -4364.417678421908,
+        12417.473622424914
+      ],
+      "turn_deg": 0.25266440851018096,
+      "incoming_q_m3_s": 281.2682130227004,
+      "outgoing_q_m3_s": 281.26821302270037,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        192,
+        157
+      ],
+      "at_zx": [
+        193,
+        158
+      ],
+      "to_zx": [
+        194,
+        158
+      ],
+      "from_xz_m": [
+        -4277.648263311167,
+        12282.69573399228
+      ],
+      "at_xz_m": [
+        -4149.248654639763,
+        12343.89793640115
+      ],
+      "to_xz_m": [
+        -4129.422260508423,
+        12421.014326552166
+      ],
+      "turn_deg": 50.09669461639082,
+      "incoming_q_m3_s": 114.76018228624667,
+      "outgoing_q_m3_s": 114.76018228624667,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 2,
+      "outgoing_new_group": 2,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        193,
+        143
+      ],
+      "at_zx": [
+        194,
+        142
+      ],
+      "to_zx": [
+        195,
+        142
+      ],
+      "from_xz_m": [
+        -5680.428324709849,
+        12358.380018403364
+      ],
+      "at_xz_m": [
+        -5756.217091514941,
+        12424.718329484886
+      ],
+      "to_xz_m": [
+        -5718.7463181831345,
+        12562.202001208494
+      ],
+      "turn_deg": 64.04967711521668,
+      "incoming_q_m3_s": 351.10049988731197,
+      "outgoing_q_m3_s": 351.10049988731197,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        193,
+        144
+      ],
+      "at_zx": [
+        194,
+        144
+      ],
+      "to_zx": [
+        195,
+        145
+      ],
+      "from_xz_m": [
+        -5573.4601926802225,
+        12376.94869903173
+      ],
+      "at_xz_m": [
+        -5530.086650953203,
+        12448.102560248804
+      ],
+      "to_xz_m": [
+        -5472.889931676981,
+        12555.878277500922
+      ],
+      "turn_deg": 3.410444805956855,
+      "incoming_q_m3_s": 382.30161195617063,
+      "outgoing_q_m3_s": 382.30161195617063,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        193,
+        155
+      ],
+      "at_zx": [
+        194,
+        156
+      ],
+      "to_zx": [
+        194,
+        157
+      ],
+      "from_xz_m": [
+        -4445.743399495282,
+        12352.410877703089
+      ],
+      "at_xz_m": [
+        -4364.417678421908,
+        12417.473622424914
+      ],
+      "to_xz_m": [
+        -4252.16643208962,
+        12457.145443858464
+      ],
+      "turn_deg": 19.19631907762314,
+      "incoming_q_m3_s": 281.26821302270037,
+      "outgoing_q_m3_s": 281.2682130227004,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        194,
+        156
+      ],
+      "at_zx": [
+        194,
+        157
+      ],
+      "to_zx": [
+        195,
+        158
+      ],
+      "from_xz_m": [
+        -4364.417678421908,
+        12417.473622424914
+      ],
+      "at_xz_m": [
+        -4252.16643208962,
+        12457.145443858464
+      ],
+      "to_xz_m": [
+        -4183.5492961035425,
+        12555.00494503563
+      ],
+      "turn_deg": 35.49820502232299,
+      "incoming_q_m3_s": 281.2682130227004,
+      "outgoing_q_m3_s": 281.2682130227004,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        193,
+        158
+      ],
+      "at_zx": [
+        194,
+        158
+      ],
+      "to_zx": [
+        195,
+        158
+      ],
+      "from_xz_m": [
+        -4149.248654639763,
+        12343.89793640115
+      ],
+      "at_xz_m": [
+        -4129.422260508423,
+        12421.014326552166
+      ],
+      "to_xz_m": [
+        -4183.5492961035425,
+        12555.00494503563
+      ],
+      "turn_deg": 36.41511581253283,
+      "incoming_q_m3_s": 114.76018228624667,
+      "outgoing_q_m3_s": 114.76018228624667,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": 2,
+      "outgoing_new_group": 2,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        194,
+        142
+      ],
+      "at_zx": [
+        195,
+        142
+      ],
+      "to_zx": [
+        196,
+        143
+      ],
+      "from_xz_m": [
+        -5756.217091514941,
+        12424.718329484886
+      ],
+      "at_xz_m": [
+        -5718.7463181831345,
+        12562.202001208494
+      ],
+      "to_xz_m": [
+        -5656.578418846113,
+        12668.431587183879
+      ],
+      "turn_deg": 15.091604436673295,
+      "incoming_q_m3_s": 351.10049988731197,
+      "outgoing_q_m3_s": 351.10049988731197,
+      "incoming_kind": "new",
+      "outgoing_kind": "new",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        194,
+        144
+      ],
+      "at_zx": [
+        195,
+        145
+      ],
+      "to_zx": [
+        196,
+        145
+      ],
+      "from_xz_m": [
+        -5530.086650953203,
+        12448.102560248804
+      ],
+      "at_xz_m": [
+        -5472.889931676981,
+        12555.878277500922
+      ],
+      "to_xz_m": [
+        -5465.428555572516,
+        12643.421909303357
+      ],
+      "turn_deg": 23.08338567731673,
+      "incoming_q_m3_s": 382.30161195617063,
+      "outgoing_q_m3_s": 382.30161195617063,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        194,
+        157
+      ],
+      "at_zx": [
+        195,
+        158
+      ],
+      "to_zx": [
+        196,
+        159
+      ],
+      "from_xz_m": [
+        -4252.16643208962,
+        12457.145443858464
+      ],
+      "at_xz_m": [
+        -4183.5492961035425,
+        12555.00494503563
+      ],
+      "to_xz_m": [
+        -4066.1012256009035,
+        12664.463089616835
+      ],
+      "turn_deg": 11.979317555645107,
+      "incoming_q_m3_s": 281.2682130227004,
+      "outgoing_q_m3_s": 396.0283953089471,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 2,
+      "out_degree": 1,
+      "junction_kind": "rejoin",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        194,
+        158
+      ],
+      "at_zx": [
+        195,
+        158
+      ],
+      "to_zx": [
+        196,
+        159
+      ],
+      "from_xz_m": [
+        -4129.422260508423,
+        12421.014326552166
+      ],
+      "at_xz_m": [
+        -4183.5492961035425,
+        12555.00494503563
+      ],
+      "to_xz_m": [
+        -4066.1012256009035,
+        12664.463089616835
+      ],
+      "turn_deg": 69.01349816430867,
+      "incoming_q_m3_s": 114.76018228624667,
+      "outgoing_q_m3_s": 396.0283953089471,
+      "incoming_kind": "new",
+      "outgoing_kind": "old",
+      "incoming_new_group": 2,
+      "outgoing_new_group": null,
+      "in_degree": 2,
+      "out_degree": 1,
+      "junction_kind": "rejoin",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        195,
+        142
+      ],
+      "at_zx": [
+        196,
+        143
+      ],
+      "to_zx": [
+        197,
+        143
+      ],
+      "from_xz_m": [
+        -5718.7463181831345,
+        12562.202001208494
+      ],
+      "at_xz_m": [
+        -5656.578418846113,
+        12668.431587183879
+      ],
+      "to_xz_m": [
+        -5664.07276049986,
+        12767.96289309033
+      ],
+      "turn_deg": 34.643149411507295,
+      "incoming_q_m3_s": 351.10049988731197,
+      "outgoing_q_m3_s": 351.1004998873119,
+      "incoming_kind": "new",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        195,
+        145
+      ],
+      "at_zx": [
+        196,
+        145
+      ],
+      "to_zx": [
+        197,
+        145
+      ],
+      "from_xz_m": [
+        -5472.889931676981,
+        12555.878277500922
+      ],
+      "at_xz_m": [
+        -5465.428555572516,
+        12643.421909303357
+      ],
+      "to_xz_m": [
+        -5464.923875522684,
+        12716.16727810395
+      ],
+      "turn_deg": 4.474076971788074,
+      "incoming_q_m3_s": 382.30161195617063,
+      "outgoing_q_m3_s": 382.30161195617063,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        195,
+        158
+      ],
+      "at_zx": [
+        196,
+        159
+      ],
+      "to_zx": [
+        197,
+        160
+      ],
+      "from_xz_m": [
+        -4183.5492961035425,
+        12555.00494503563
+      ],
+      "at_xz_m": [
+        -4066.1012256009035,
+        12664.463089616835
+      ],
+      "to_xz_m": [
+        -3969.67801309466,
+        12745.677315217437
+      ],
+      "turn_deg": 2.8769317142718673,
+      "incoming_q_m3_s": 396.0283953089471,
+      "outgoing_q_m3_s": 396.0283953089471,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        196,
+        143
+      ],
+      "at_zx": [
+        197,
+        143
+      ],
+      "to_zx": [
+        198,
+        142
+      ],
+      "from_xz_m": [
+        -5656.578418846113,
+        12668.431587183879
+      ],
+      "at_xz_m": [
+        -5664.07276049986,
+        12767.96289309033
+      ],
+      "to_xz_m": [
+        -5720.377528243694,
+        12844.134290510736
+      ],
+      "turn_deg": 32.16522642518029,
+      "incoming_q_m3_s": 351.1004998873119,
+      "outgoing_q_m3_s": 351.10049988731197,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        196,
+        145
+      ],
+      "at_zx": [
+        197,
+        145
+      ],
+      "to_zx": [
+        198,
+        145
+      ],
+      "from_xz_m": [
+        -5465.428555572516,
+        12643.421909303357
+      ],
+      "at_xz_m": [
+        -5464.923875522684,
+        12716.16727810395
+      ],
+      "to_xz_m": [
+        -5418.246743590914,
+        12850.931453377538
+      ],
+      "turn_deg": 18.706629525201883,
+      "incoming_q_m3_s": 382.30161195617063,
+      "outgoing_q_m3_s": 382.30161195617063,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        196,
+        159
+      ],
+      "at_zx": [
+        197,
+        160
+      ],
+      "to_zx": [
+        198,
+        161
+      ],
+      "from_xz_m": [
+        -4066.1012256009035,
+        12664.463089616835
+      ],
+      "at_xz_m": [
+        -3969.67801309466,
+        12745.677315217437
+      ],
+      "to_xz_m": [
+        -3866.503233992794,
+        12824.72358249996
+      ],
+      "turn_deg": 2.649226800763002,
+      "incoming_q_m3_s": 396.0283953089471,
+      "outgoing_q_m3_s": 396.0283953089471,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        197,
+        143
+      ],
+      "at_zx": [
+        198,
+        142
+      ],
+      "to_zx": [
+        199,
+        142
+      ],
+      "from_xz_m": [
+        -5664.07276049986,
+        12767.96289309033
+      ],
+      "at_xz_m": [
+        -5720.377528243694,
+        12844.134290510736
+      ],
+      "to_xz_m": [
+        -5758.850372184485,
+        12980.062233095703
+      ],
+      "turn_deg": 20.66770611659541,
+      "incoming_q_m3_s": 351.10049988731197,
+      "outgoing_q_m3_s": 351.10049988731197,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        197,
+        145
+      ],
+      "at_zx": [
+        198,
+        145
+      ],
+      "to_zx": [
+        199,
+        145
+      ],
+      "from_xz_m": [
+        -5464.923875522684,
+        12716.16727810395
+      ],
+      "at_xz_m": [
+        -5418.246743590914,
+        12850.931453377538
+      ],
+      "to_xz_m": [
+        -5423.334508575042,
+        12975.877621903732
+      ],
+      "turn_deg": 21.435895977883863,
+      "incoming_q_m3_s": 382.30161195617063,
+      "outgoing_q_m3_s": 382.30161195617063,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        197,
+        160
+      ],
+      "at_zx": [
+        198,
+        161
+      ],
+      "to_zx": [
+        198,
+        162
+      ],
+      "from_xz_m": [
+        -3969.67801309466,
+        12745.677315217437
+      ],
+      "at_xz_m": [
+        -3866.503233992794,
+        12824.72358249996
+      ],
+      "to_xz_m": [
+        -3753.820023430478,
+        12827.111069364415
+      ],
+      "turn_deg": 36.24337091226306,
+      "incoming_q_m3_s": 396.0283953089471,
+      "outgoing_q_m3_s": 396.0283953089471,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        198,
+        161
+      ],
+      "at_zx": [
+        198,
+        162
+      ],
+      "to_zx": [
+        198,
+        163
+      ],
+      "from_xz_m": [
+        -3866.503233992794,
+        12824.72358249996
+      ],
+      "at_xz_m": [
+        -3753.820023430478,
+        12827.111069364415
+      ],
+      "to_xz_m": [
+        -3655.898628560443,
+        12826.882472750909
+      ],
+      "turn_deg": 1.3475347267128877,
+      "incoming_q_m3_s": 396.0283953089471,
+      "outgoing_q_m3_s": 396.0283953089471,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        198,
+        142
+      ],
+      "at_zx": [
+        199,
+        142
+      ],
+      "to_zx": [
+        200,
+        142
+      ],
+      "from_xz_m": [
+        -5720.377528243694,
+        12844.134290510736
+      ],
+      "at_xz_m": [
+        -5758.850372184485,
+        12980.062233095703
+      ],
+      "to_xz_m": [
+        -5747.322106453903,
+        13028.777061445018
+      ],
+      "turn_deg": 29.11755554638279,
+      "incoming_q_m3_s": 351.10049988731197,
+      "outgoing_q_m3_s": 351.10049988731197,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        198,
+        145
+      ],
+      "at_zx": [
+        199,
+        145
+      ],
+      "to_zx": [
+        200,
+        146
+      ],
+      "from_xz_m": [
+        -5418.246743590914,
+        12850.931453377538
+      ],
+      "at_xz_m": [
+        -5423.334508575042,
+        12975.877621903732
+      ],
+      "to_xz_m": [
+        -5367.2957843902195,
+        13051.551683962507
+      ],
+      "turn_deg": 38.85274180467325,
+      "incoming_q_m3_s": 382.30161195617063,
+      "outgoing_q_m3_s": 382.30161195617063,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        199,
+        142
+      ],
+      "at_zx": [
+        200,
+        142
+      ],
+      "to_zx": [
+        201,
+        142
+      ],
+      "from_xz_m": [
+        -5758.850372184485,
+        12980.062233095703
+      ],
+      "at_xz_m": [
+        -5747.322106453903,
+        13028.777061445018
+      ],
+      "to_xz_m": [
+        -5764.090129297043,
+        13159.35745743308
+      ],
+      "turn_deg": 20.631390556229125,
+      "incoming_q_m3_s": 351.10049988731197,
+      "outgoing_q_m3_s": 351.1004998873119,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        199,
+        145
+      ],
+      "at_zx": [
+        200,
+        146
+      ],
+      "to_zx": [
+        201,
+        146
+      ],
+      "from_xz_m": [
+        -5423.334508575042,
+        12975.877621903732
+      ],
+      "at_xz_m": [
+        -5367.2957843902195,
+        13051.551683962507
+      ],
+      "to_xz_m": [
+        -5319.622456629637,
+        13178.748607888863
+      ],
+      "turn_deg": 15.974998731955349,
+      "incoming_q_m3_s": 382.30161195617063,
+      "outgoing_q_m3_s": 382.30161195617063,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        200,
+        142
+      ],
+      "at_zx": [
+        201,
+        142
+      ],
+      "to_zx": [
+        202,
+        142
+      ],
+      "from_xz_m": [
+        -5747.322106453903,
+        13028.777061445018
+      ],
+      "at_xz_m": [
+        -5764.090129297043,
+        13159.35745743308
+      ],
+      "to_xz_m": [
+        -5732.6461050492435,
+        13217.736766037215
+      ],
+      "turn_deg": 35.625003496867386,
+      "incoming_q_m3_s": 351.1004998873119,
+      "outgoing_q_m3_s": 351.10049988731197,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        200,
+        146
+      ],
+      "at_zx": [
+        201,
+        146
+      ],
+      "to_zx": [
+        202,
+        147
+      ],
+      "from_xz_m": [
+        -5367.2957843902195,
+        13051.551683962507
+      ],
+      "at_xz_m": [
+        -5319.622456629637,
+        13178.748607888863
+      ],
+      "to_xz_m": [
+        -5257.702908981761,
+        13222.519128607883
+      ],
+      "turn_deg": 34.1977941406823,
+      "incoming_q_m3_s": 382.30161195617063,
+      "outgoing_q_m3_s": 382.30161195617063,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        201,
+        142
+      ],
+      "at_zx": [
+        202,
+        142
+      ],
+      "to_zx": [
+        203,
+        142
+      ],
+      "from_xz_m": [
+        -5764.090129297043,
+        13159.35745743308
+      ],
+      "at_xz_m": [
+        -5732.6461050492435,
+        13217.736766037215
+      ],
+      "to_xz_m": [
+        -5719.966853558024,
+        13375.738985198319
+      ],
+      "turn_deg": 23.719611838047776,
+      "incoming_q_m3_s": 351.10049988731197,
+      "outgoing_q_m3_s": 351.10049988731197,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        201,
+        146
+      ],
+      "at_zx": [
+        202,
+        147
+      ],
+      "to_zx": [
+        203,
+        147
+      ],
+      "from_xz_m": [
+        -5319.622456629637,
+        13178.748607888863
+      ],
+      "at_xz_m": [
+        -5257.702908981761,
+        13222.519128607883
+      ],
+      "to_xz_m": [
+        -5246.060376005667,
+        13341.622546688333
+      ],
+      "turn_deg": 49.16075234502654,
+      "incoming_q_m3_s": 382.30161195617063,
+      "outgoing_q_m3_s": 382.30161195617063,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        202,
+        142
+      ],
+      "at_zx": [
+        203,
+        142
+      ],
+      "to_zx": [
+        204,
+        142
+      ],
+      "from_xz_m": [
+        -5732.6461050492435,
+        13217.736766037215
+      ],
+      "at_xz_m": [
+        -5719.966853558024,
+        13375.738985198319
+      ],
+      "to_xz_m": [
+        -5746.061997692266,
+        13480.986755498876
+      ],
+      "turn_deg": 18.51310959444921,
+      "incoming_q_m3_s": 351.10049988731197,
+      "outgoing_q_m3_s": 351.10049988731197,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        202,
+        147
+      ],
+      "at_zx": [
+        203,
+        147
+      ],
+      "to_zx": [
+        204,
+        147
+      ],
+      "from_xz_m": [
+        -5257.702908981761,
+        13222.519128607883
+      ],
+      "at_xz_m": [
+        -5246.060376005667,
+        13341.622546688333
+      ],
+      "to_xz_m": [
+        -5226.138233488062,
+        13422.211531226716
+      ],
+      "turn_deg": 8.302509926996157,
+      "incoming_q_m3_s": 382.30161195617063,
+      "outgoing_q_m3_s": 382.30161195617063,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        203,
+        142
+      ],
+      "at_zx": [
+        204,
+        142
+      ],
+      "to_zx": [
+        205,
+        142
+      ],
+      "from_xz_m": [
+        -5719.966853558024,
+        13375.738985198319
+      ],
+      "at_xz_m": [
+        -5746.061997692266,
+        13480.986755498876
+      ],
+      "to_xz_m": [
+        -5781.252164990366,
+        13567.83410721554
+      ],
+      "turn_deg": 8.132466609666196,
+      "incoming_q_m3_s": 351.10049988731197,
+      "outgoing_q_m3_s": 351.1004998873119,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        203,
+        147
+      ],
+      "at_zx": [
+        204,
+        147
+      ],
+      "to_zx": [
+        205,
+        148
+      ],
+      "from_xz_m": [
+        -5246.060376005667,
+        13341.622546688333
+      ],
+      "at_xz_m": [
+        -5226.138233488062,
+        13422.211531226716
+      ],
+      "to_xz_m": [
+        -5165.776525205804,
+        13521.527576441333
+      ],
+      "turn_deg": 17.404627037312046,
+      "incoming_q_m3_s": 382.30161195617063,
+      "outgoing_q_m3_s": 382.30161195617063,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        204,
+        142
+      ],
+      "at_zx": [
+        205,
+        142
+      ],
+      "to_zx": [
+        206,
+        141
+      ],
+      "from_xz_m": [
+        -5746.061997692266,
+        13480.986755498876
+      ],
+      "at_xz_m": [
+        -5781.252164990366,
+        13567.83410721554
+      ],
+      "to_xz_m": [
+        -5816.279076621455,
+        13640.53552222969
+      ],
+      "turn_deg": 3.666788050862979,
+      "incoming_q_m3_s": 351.1004998873119,
+      "outgoing_q_m3_s": 351.10049988731197,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        204,
+        147
+      ],
+      "at_zx": [
+        205,
+        148
+      ],
+      "to_zx": [
+        206,
+        148
+      ],
+      "from_xz_m": [
+        -5226.138233488062,
+        13422.211531226716
+      ],
+      "at_xz_m": [
+        -5165.776525205804,
+        13521.527576441333
+      ],
+      "to_xz_m": [
+        -5137.992737750281,
+        13643.57296298641
+      ],
+      "turn_deg": 18.465257502269125,
+      "incoming_q_m3_s": 382.30161195617063,
+      "outgoing_q_m3_s": 382.30161195617063,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        205,
+        142
+      ],
+      "at_zx": [
+        206,
+        141
+      ],
+      "to_zx": [
+        207,
+        141
+      ],
+      "from_xz_m": [
+        -5781.252164990366,
+        13567.83410721554
+      ],
+      "at_xz_m": [
+        -5816.279076621455,
+        13640.53552222969
+      ],
+      "to_xz_m": [
+        -5831.686256493452,
+        13753.502854044513
+      ],
+      "turn_deg": 17.957931522342136,
+      "incoming_q_m3_s": 351.10049988731197,
+      "outgoing_q_m3_s": 351.10049988731197,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        205,
+        148
+      ],
+      "at_zx": [
+        206,
+        148
+      ],
+      "to_zx": [
+        207,
+        149
+      ],
+      "from_xz_m": [
+        -5165.776525205804,
+        13521.527576441333
+      ],
+      "at_xz_m": [
+        -5137.992737750281,
+        13643.57296298641
+      ],
+      "to_xz_m": [
+        -5069.416006641407,
+        13720.81724866739
+      ],
+      "turn_deg": 28.773471416555786,
+      "incoming_q_m3_s": 382.30161195617063,
+      "outgoing_q_m3_s": 382.30161195617063,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        206,
+        141
+      ],
+      "at_zx": [
+        207,
+        141
+      ],
+      "to_zx": [
+        208,
+        141
+      ],
+      "from_xz_m": [
+        -5816.279076621455,
+        13640.53552222969
+      ],
+      "at_xz_m": [
+        -5831.686256493452,
+        13753.502854044513
+      ],
+      "to_xz_m": [
+        -5829.007430708019,
+        13859.457563892416
+      ],
+      "turn_deg": 9.214718584718563,
+      "incoming_q_m3_s": 351.10049988731197,
+      "outgoing_q_m3_s": 351.10049988731197,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        207,
+        141
+      ],
+      "at_zx": [
+        208,
+        141
+      ],
+      "to_zx": [
+        209,
+        141
+      ],
+      "from_xz_m": [
+        -5831.686256493452,
+        13753.502854044513
+      ],
+      "at_xz_m": [
+        -5829.007430708019,
+        13859.457563892416
+      ],
+      "to_xz_m": [
+        -5816.763445363363,
+        13957.766855917225
+      ],
+      "turn_deg": 5.651091743628831,
+      "incoming_q_m3_s": 351.10049988731197,
+      "outgoing_q_m3_s": 351.10049988731197,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    },
+    {
+      "from_zx": [
+        208,
+        141
+      ],
+      "at_zx": [
+        209,
+        141
+      ],
+      "to_zx": [
+        210,
+        141
+      ],
+      "from_xz_m": [
+        -5829.007430708019,
+        13859.457563892416
+      ],
+      "at_xz_m": [
+        -5816.763445363363,
+        13957.766855917225
+      ],
+      "to_xz_m": [
+        -5819.814668356142,
+        14044.120878898335
+      ],
+      "turn_deg": 9.123018243169831,
+      "incoming_q_m3_s": 351.10049988731197,
+      "outgoing_q_m3_s": 351.1004998873119,
+      "incoming_kind": "old",
+      "outgoing_kind": "old",
+      "incoming_new_group": null,
+      "outgoing_new_group": null,
+      "in_degree": 1,
+      "out_degree": 1,
+      "junction_kind": "ordinary",
+      "at_or_above_90": false
+    }
+  ],
+  "inputs_sha256": {
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-angle-600s\\final.json": "7dea23b1eec29e3c057dd248035e9e6d53b259b7a857645124b0e909de770adb",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-angle-600s\\final.npz": "bdee5d9286888a8c4f582235233ba187da7504a1be88815d9c92191db52b03a0",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-morphology-acceptance-20261104\\network-initial-b\\initial.json": "66f630241088a82c9bf52497592e94fb6e39391f86144c677f345f5669920b8f",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\audit_turn_angles.py": "21c43b623d7879e11bdff78a591d76b81c74499d02c9679fbce50b3747ed37d7"
+  }
+}

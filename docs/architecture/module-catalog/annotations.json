@@ -1,0 +1,5434 @@
+{
+  "tests/test_world_disk_water.py": {
+    "purpose": "磁盘洪泛/平地与既有核逐格对照、双湖蓄溢及河槽行为、异常资源关闭测试。",
+    "role": "test",
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G1"
+  },
+  "tests/test_world_disk_catchment.py": {
+    "purpose": "磁盘原床汇水与原生湖盆未知边界/泄漏计数对照。",
+    "role": "test",
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/world_water_formation.py": {
+    "purpose": "合成床面接现有洼地、认证湖盆、有限蓄满溢流与岩性河槽核；分别保存普通汇流和实际溢流路径，待定状态传播至稳定，逐盆地及全域水量记账。",
+    "role": "water-formation",
+    "stage": "S1/R6；S1/R2；S1/R3；S1/R4；S1/R5；S1/R7；S1/R9；S2/G1"
+  },
+  "tools/prepare_world_terrain_water.py": {
+    "purpose": "固定真实TD源先整体合成再裁有效内域，按海洋型/千湖型接水文，显式准备四阶段数组和图像。",
+    "role": "offline-tool",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G1"
+  },
+  "tools/query_world_terrain_water.py": {
+    "purpose": "校验已保存地形水体产品身份和形状后按原生世界坐标冷读；不启动生成。",
+    "role": "query-tool",
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_world_water_formation.py": {
+    "purpose": "双盆地水位及库存积分、真实解析床双湖溢流、全海/干地、待定状态多轮传播和岸缘保护测试。",
+    "role": "test",
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G1"
+  },
+  "tests/test_world_terrain_water_cli.py": {
+    "purpose": "合成源页完整prepare/render/冷读和身份错配拒绝，源边带及滤波余量接线测试；不冒真实TD推理。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "terrain_pipeline/world_water_layout.py": {
+    "purpose": "固定世界坐标的大陆/千岛/千湖连续多尺度布局；有限世界按固定全域样本确定水比阈值，无限模式使用固定参考范围；不生成TD、不认证水文拓扑。",
+    "role": "world-layout",
+    "stage": "S2/G1；S1/R1；S1/R2"
+  },
+  "diffusion/world_layout_conditioning.py": {
+    "purpose": "连续布局场转换为湖盆岸坡TD条件通道，确定性选岸边局部页并遵守上游signed-sqrt输入协议；气候为声明占位。",
+    "role": "layout-conditioning",
+    "stage": "S2/G1；S1/R1；S1/R2；S2/G3；S2/G4"
+  },
+  "tools/inspect_world_water_layout_page.py": {
+    "purpose": "读取已保存TD页，比较实际高程与设计水陆分类及声明水位，生成统计和三栏图；不认证湖盆闭合或溢出口。",
+    "role": "offline-tool",
+    "stage": "X4"
+  },
+  "tests/test_inspect_world_water_layout_page.py": {
+    "purpose": "以合成页面检查高程与水域分类错配统计、显式水位和CLI图片输出及输入失败行为。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "diffusion/world_layout_backend.py": {
+    "purpose": "独立新布局单页TD入口，绝对坐标与一致种子、Windows spawn和资源停止；默认PID监测，WDDM不可测时拒绝；显式allocator选项仅限PyTorch配额/峰值，不覆盖驱动和其他进程。",
+    "role": "layout-generation-backend",
+    "stage": "S1/R1；S1/R9；S2/G1"
+  },
+  "tools/prepare_world_water_layout_page.py": {
+    "purpose": "准备12,288km可配置有限布局中的单张原生30m页，保存原生页、布局水体分类及来源；支持不推理dry-run。",
+    "role": "offline-tool",
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1；S2/G3；S2/G4"
+  },
+  "tools/render_world_water_layout.py": {
+    "purpose": "CPU生成有限世界水陆概览并报告采样水域比例；概览不是全幅30m生成。",
+    "role": "offline-tool",
+    "stage": "X4；S1/R1；S1/R2；S2/G1；S2/G3；S2/G4"
+  },
+  "terrain_pipeline/surface_rivers/large_world_river_geometry.py": {
+    "purpose": "复用原生D8/累计、精确节点岩性和既有流量宽深核，按完整性生成有限派生河床；海湖保护、未知上游pending、保存冷读查询，未接动态侵蚀。",
+    "role": "river-geometry-adapter",
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "tools/prepare_large_world_river_geometry.py": {
+    "purpose": "真实原生页与可选保存河网接声明年均径流、岩性和河槽宽深；新布局水体分类校验、保存产品与独立重绘。",
+    "role": "offline-tool",
+    "stage": "X4；S1/R1；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/query_large_world_river_geometry.py": {
+    "purpose": "按原生世界坐标只读查询保存河槽，未知贡献与水域单独返回。",
+    "role": "offline-tool",
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/verify_large_world_erosion.py": {
+    "purpose": "独立两节点两小时未标定动态侵蚀对照，改变Q/硬度并报告有限库存和逐窗床变；不接大世界默认生成。",
+    "role": "audit-tool",
+    "stage": "X4；S1/R6；S1/R7；S1/R8"
+  },
+  "tests/test_large_world_layout.py": {
+    "purpose": "三模式12,288km有限范围比例与同坐标分窗一致性、TD绝对条件索引测试。",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R2；S2/G1；S2/G3；S2/G4"
+  },
+  "tests/test_world_layout_process.py": {
+    "purpose": "CPU spawn大结果/失败/超时、显存不可测拒绝和seed一致性测试；不运行GPU。",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1；S2/G3；S2/G4"
+  },
+  "tests/test_large_world_river_geometry.py": {
+    "purpose": "河槽接线Q及床岸硬度响应、pending冷读、负坐标精确岩性、水域保护和合成页CLI集成。",
+    "role": "test",
+    "stage": "X4；S1/R4；S1/R6；S1/R9；S2/G2"
+  },
+  "tests/test_verify_large_world_erosion.py": {
+    "purpose": "未耗尽材料的流量/硬度侵蚀响应、固体账和下一窗床面水力反馈测试。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "tests/test_metric_environment_query.py": {
+    "purpose": "环境联合查询policy分派、真实DEM格对齐/覆盖、来源与landform值身份、单调调用顺序/缓存独立、30m土壤和预算拒绝的行为回归；不要求局地分类有区分度。",
+    "role": "test",
+    "stage": "X4；S1/R5；S2/G2；S2/G3；S2/G4；S2/G5；S2/G6；S2/G7；S2/G9；S2/G14"
+  },
+  "terrain_pipeline/surface_rivers/finite_river_product.py": {
+    "purpose": "稳定自含有限河网产品的基本完整性冷读与世界坐标/物理时间只读查询，显式恢复重建已验域和布局；默认读保存量不求解、不加载TD，不冒无限世界认证。",
+    "role": "finite-product-reader-and-codec",
+    "stage": "S1/R9"
+  },
+  "tools/prepare_finite_river_sample.py": {
+    "purpose": "将已独立验收M1-M3数值和检查点晋升为稳定有限产品，绑定数据/源码身份并无覆盖发布；不重算物理或生成TD。",
+    "role": "finite-product-promotion",
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
+  },
+  "tests/test_finite_river_product.py": {
+    "purpose": "有限产品默认消费、域/时刻/坐标拒绝、只读数据不变、显式恢复和不存在产品不回退的行为回归。",
+    "role": "test",
+    "stage": "X4；S1/R9"
+  },
+  "tests/test_publish_domain_bundle.py": {
+    "purpose": "现Python CLI默认有限产品消费与仅显式legacy-coarse执行历史粗链的分派，以及历史发布原断言的回归。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "terrain_pipeline/surface_rivers/finite_river_block_schedule.py": {
+    "purpose": "同一完整有限域按cell就绪跨2/4空间块调度土壤产流与D8端口一次交付，确定性归并，保存绑定前缀水账的interval末完整检查点并冷恢复；不含时延、脏状态或默认消费。",
+    "role": "finite-block-scheduler-and-checkpoint",
+    "stage": "X2；S1/R9"
+  },
+  "tests/test_finite_river_block_schedule.py": {
+    "purpose": "实际异序块派发、跨块循环的格级DAG、端口去重/逐块水账、非零初态和恢复累计/末边界非法状态拒绝的行为对照。",
+    "role": "test",
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
+  },
+  "terrain_pipeline/surface_rivers/finite_river_event.py": {
+    "purpose": "在已验上游闭合有限域复用土壤桶与D8累计，推进有限事件真实产流及湖库存，精确V(h)和水账；拒绝裁断入边，准稳态无河槽库存/时延，不含默认消费或恢复认证。",
+    "role": "finite-event-supply-orchestration",
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "tests/test_finite_river_event.py": {
+    "purpose": "有限事件土壤供水、端口一次交付、湖库容反函数、裁断上游拒绝和超容量不改输入的正负行为回归。",
+    "role": "test",
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
+  },
+  "terrain_pipeline/surface_rivers/metric_highland_sources.py": {
+    "purpose": "固定30m世界规则下筛选高地D4源区及严格D8首次贡献跨越河头，分离源区与上游完整性并独立校验身份/拒绝表；仅几何候选，不认证来水或常年河。",
+    "role": "highland-source-geometry",
+    "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/prepare_highland_sources.py": {
+    "purpose": "显式D/H/E/V支持的页pin与NPY头预算、安全准备和完整冷读，暂存验证后Windows无覆盖提交；开发一致性与留出角色分开，不提供实际水文认证。",
+    "role": "bounded-source-prepare-reader",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_metric_highland_sources.py": {
+    "purpose": "高地门/世界成员/首次贡献河头/去重依赖、未知传播与来源身份重封攻击测试；不以几何候选代实际供水。",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_prepare_highland_sources.py": {
+    "purpose": "源区声明支持、分配前预算、冷读重复来源逐份绑定、重封拒绝及原子提交失败/竞态对偶测试。",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/review_world_reaches.py": {
+    "purpose": "先验JSON/支持预算/NPY头后读取已保存结构域，复用河段核并独立逐段核对承接与计数，输出全root/段分类和真实坐标图及纵剖；不做产流、蓄溢或自然域认证。",
+    "role": "structural-review-and-viewer",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_review_world_reaches.py": {
+    "purpose": "结构河段分类/断头拒绝/空通道原路径、分配前预算与NPY头、图例画布边界和PNG尺寸的合成对偶测试。",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_world_domains.py": {
+    "purpose": "在预声明P2预算内复用严格D8与累计核，构造世界坐标成员、唯一owner、未知传播和结构主干候选并重算验证；retained仍待盆地证据，不认证自然水文域。",
+    "role": "bounded-structural-domain-adapter",
+    "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_world_reaches.py": {
+    "purpose": "把已验证的有限结构域分为有向河段，保存段间与终端边、世界ID及父有序主干投影；raw与channel节点/边分报，不提供湖泊库存或物理出口认证。",
+    "role": "bounded-reach-network-adapter",
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "tools/prepare_world_domains.py": {
+    "purpose": "显式读取固定种子30m页来源并准备有界结构域候选，独立审计后在Windows不覆写提交；60秒审计限时与RSS软观测分开，不是默认无限世界入口。",
+    "role": "explicit-structural-prepare",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/audit_world_domains.py": {
+    "purpose": "不import生产terrain_pipeline的独立结构审计，先验NPY头预算再读数组，复算D8/成员/未知/主干/候选ID并绑定support副本；同版双完整root跨窗比较，零可比不PASS。",
+    "role": "independent-structural-audit",
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_metric_world_domains.py": {
+    "purpose": "有限结构域世界成员、ID、owner、上游未知、NaN往返、预算和重封派生篡改拒绝回归；不是湖或自然域认证。",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_metric_world_reaches.py": {
+    "purpose": "河段有向承接、单格/空通道、北西向主干顺序、节点边长度与父完整路径独立绑定及篡改拒绝测试。",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tests/test_audit_world_domains.py": {
+    "purpose": "独立结构审计字段必填/support副本一致性/有限高程/分配前头预算、空比较拒绝、真实攻击形状和提交失败门回归。",
+    "role": "test",
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/build_module_map.py": {
+    "purpose": "静态模块作用与引用图台账生成，UTF8-BOM解析和原字节SHA分离，解析相对/包导入；pin仅已扫描verification下界，不代替动态消费者或双pin核查。",
+    "role": "catalog-maintenance",
+    "stage": "X4"
+  },
+  "tests/test_build_module_map.py": {
+    "purpose": "临时隔离源码树测试BOM/CRLF原字节SHA、相对与包导入真实边、语法降级和台账生成，不修改工作区算法。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "tools/native_30m_saved_source.py": {
+    "purpose": "读取外部SHA约束的保存装配，核seed/30m/原点/覆盖及receiver与严格D8一致；不复用旧Q，不冒充原始TD页真实性证明。",
+    "role": "saved-source-adapter",
+    "stage": "X4；S1/R1；S1/R5；S1/R9；S2/G5"
+  },
+  "tools/native_30m_diagnostic_only.py": {
+    "purpose": "单独保存和冷读声明裸雨换算诊断图，固定is_product=false并拒绝其冒充土壤桶/设计Q/水力水沙全链。",
+    "role": "diagnostic-only-io",
+    "stage": "X4；S1/R1；S1/R9"
+  },
+  "tools/native_30m_selection_contract.py": {
+    "purpose": "记录实际河段选择器默认规则，在冷读时重算完整候选表、选中掩码与标量，不改变原选区算法。",
+    "role": "selection-contract-validation",
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/native_30m_event_config.py": {
+    "purpose": "校验72项声明风暴与已有RunoffParameters覆盖，拒绝非法状态并归一为可复跑配置；不新增产流机制或标定。",
+    "role": "event-configuration",
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tests/test_native_30m_saved_source.py": {
+    "purpose": "保存装配seed/spacing/origin/SHA、缺receiver和错误拓扑拒绝、旧Q不复用及共用后续链测试。",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R9"
+  },
+  "tests/test_native_30m_scenario_cli.py": {
+    "purpose": "显式窗口/原点/步数/stride确实派发、默认1337不缩窗、未知场景和粗条件/跳冷读旋钮拒绝测试。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "tests/test_native_30m_diagnostic_only.py": {
+    "purpose": "纯合成及真实小worker验证诊断profile无土壤桶和河段水沙、元数据重封拒绝及full scope不可用。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "tests/test_native_30m_selection_contract.py": {
+    "purpose": "实际规则默认值及候选表/掩码/标量重封篡改不能绕过重算的合成测试。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "tests/test_native_30m_event_config.py": {
+    "purpose": "声明风暴和土壤参数覆盖的校验、配置身份、CLI实际传值、非法初始状态早拒及水桶/裸雨可分辨测试。",
+    "role": "test",
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tests/test_native_30m_entry_guards.py": {
+    "purpose": "AST核对原生工具无直接粗条件/GPU导入或字面量scratch脚本生产加载；不冒充完整动态导入证明。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "tests/test_native_30m_rejection_contract.py": {
+    "purpose": "注入错误HRU面积和路由映射验证拒绝，核私有D8不调用粗规划与预算原因次序/未实现stage语义。",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tools/native_30m_graph_reference.py": {
+    "purpose": "阿里云DeepSeek生成、输入门经审查的独立有限图Kahn遍历，核对已知Q和未知传播，不import生产累积核。",
+    "role": "independent-reference",
+    "stage": "X4"
+  },
+  "tools/native_30m_section_reference.py": {
+    "purpose": "阿里云DeepSeek生成的独立矩形Manning正常水深二分参照，不将正常流深冒充满岸或回水。",
+    "role": "independent-reference",
+    "stage": "X4"
+  },
+  "tools/audit_native_30m_spatial.py": {
+    "purpose": "外部数值pin约束下安全读取保存数组，新进程独立核对全有限图Q、未知/节点归属和正常水深输水关系；不import被测图/水力核。",
+    "role": "independent-audit",
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tests/test_native_30m_spatial_reference.py": {
+    "purpose": "独立图参照的逐源路径对照、未知锥、环及非法目标测试，正常水深解析/单调性/输水回代测试。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "tools/native_30m_bundle_validation.py": {
+    "purpose": "冷读后重算拓扑/完整汇水和侧向归属，验证节点逐子步local Q及水力到水沙父子输入/库存与诊断事件绑定；不修复数据或更换算法。",
+    "role": "cross-stage-validation",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/native_30m_sources.py": {
+    "purpose": "仅来源重建清单的严格字段/参数校验、外部SHA及原始页pin验证；不消费旧派生目录。",
+    "role": "source-request-codec",
+    "stage": "X4"
+  },
+  "tools/native_30m_query.py": {
+    "purpose": "对已冷读有限河流包执行逐点和scope私有副本查询，整次拒绝未知/越界/语义不符及retained冒充自然出口，普查完整窗口。",
+    "role": "read-only-consumer",
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/native_30m_resources.py": {
+    "purpose": "计算前预算与阶段内current RSS采样、采样失败及限额通知；不是OS硬内存配额或整个进程树总峰值。",
+    "role": "resource-observer",
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/native_30m_compute_worker.py": {
+    "purpose": "独立进程按固定来源参数调用已有河流链，只写候选与阶段资源报告；超RSS/时长停止，不发布最终目录。",
+    "role": "bounded-compute-worker",
+    "stage": "X4"
+  },
+  "tools/native_30m_hydraulic_reference.py": {
+    "purpose": "阿里云DeepSeek生成的独立矩形Manning参照，用保存体积与几何核对水力状态，不import被测水力核。",
+    "role": "independent-reference",
+    "stage": "X4"
+  },
+  "tools/native_30m_declarations.py": {
+    "purpose": "从保存数值推导正式有限包的时窗、原始节点供给、实际参数和能力边界，供冷读逐项绑定；不是独立物理认证。",
+    "role": "release-declarations",
+    "stage": "X4"
+  },
+  "tests/test_native_30m_bundle_validation.py": {
+    "purpose": "纯合成拓扑/侧向归属/子步强迫重封篡改与水力水沙父子状态反例。",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R9"
+  },
+  "tests/test_native_30m_sources.py": {
+    "purpose": "来源清单外部pin、原始页改变、source-only不读取旧结果与严格rerun拒损坏测试。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "tests/test_native_30m_query.py": {
+    "purpose": "scope私有副本、批量整次拒绝、坐标时窗和诊断事件重封来源绑定合成测试。",
+    "role": "test",
+    "stage": "X4；S1/R9"
+  },
+  "tests/test_native_30m_resources.py": {
+    "purpose": "预算早拒、阶段RSS与历史高水位分离、采样失败不伪报0及超限通知测试。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "tests/test_native_30m_compute_worker.py": {
+    "purpose": "计算worker隔离、实际子进程内存预算拒绝、超时和失败不提交最终目录测试。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "tests/test_native_30m_hydraulic_reference.py": {
+    "purpose": "独立矩形Manning解析对照、干床、非法输入、保存状态篡改及更新床正反对照测试。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "tests/test_native_30m_declarations.py": {
+    "purpose": "正式有限声明的实际节点供给、时窗、坡度状态、未标定参数及未实现能力绑定测试。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "terrain_pipeline/surface_rivers/native_30m_source.py": {
+    "purpose": "校验固定种子原生30m TD页SHA并复用跨页装配与严格下坡D8，保留边缘未知；不生成地形、不认证跨窗路由。",
+    "role": "native-source-adapter",
+    "stage": "S1/R1；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/native_30m_reach_selection.py": {
+    "purpose": "按声明的完整汇水、主槽和资源预算规则选取有限原生河段，保留候选及拒绝原因。",
+    "role": "bounded-reach-selection",
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/native_30m_reach_chain.py": {
+    "purpose": "编排既有单调联合切槽与节点Manning水沙床变，按局部产流及汇水归属注入；初始PL网格不动态重切。",
+    "role": "bounded-coupling-adapter",
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "tools/native_30m_bundle_reader.py": {
+    "purpose": "严格冷读有限30m候选，核对文件与阶段身份、跨文件坐标/时段/事件绑定并复算诊断Q；不重放水沙数值核。",
+    "role": "bounded-product-reader",
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/publish_native_30m_bundle.py": {
+    "purpose": "显式原生30m有限链CLI：构造候选、独立审计后原子发布、从源页重跑和只读摘要；不是阶段一认证或默认无限世界入口。",
+    "role": "explicit-native-cli",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
+  },
+  "tools/audit_native_30m_bundle.py": {
+    "purpose": "独立进程安全解包原始trace，复算水、固体和逐节点Exner三账并执行失败硬门，不import被测水沙床变核。",
+    "role": "independent-audit",
+    "stage": "X4"
+  },
+  "tools/view_native_30m_bundle.py": {
+    "purpose": "只读保存的有限候选地形、PL切深、累计里程纵剖及真实毫米床变并检查地形面板像素；不生成或修改地貌。",
+    "role": "saved-product-viewer",
+    "stage": "X4"
+  },
+  "tests/test_native_30m_source.py": {
+    "purpose": "原生页校验、装配、严格拓扑与非法输入拒绝回归。",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_native_30m_reach_selection.py": {
+    "purpose": "有限原生汇水和河段选取的合成及拒绝回归。",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_native_30m_runoff.py": {
+    "purpose": "声明汇水土壤桶、时延设计Q与诊断Q语义分离及守恒回归。",
+    "role": "test",
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tests/test_native_30m_reach_chain.py": {
+    "purpose": "切槽与已有水沙床变编排的同源绑定、局地产流注入和拒绝回归。",
+    "role": "test",
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_native_30m_audit_gates.py": {
+    "purpose": "三账硬门拒绝NaN、负库存、非零残差及总体抵消的局部床变错误。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "tests/test_native_30m_bundle.py": {
+    "purpose": "严格JSON、发布失败原子性、CLI拒绝与真实候选跨文件语义篡改回归；真实数据缺失明确跳过。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "tests/test_native_30m_packed_archive.py": {
+    "purpose": "打包trace的零填充、安全布局、dtype、越界、身份和非有限值回归。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "terrain_pipeline/surface_rivers/metric_network_discharge_product.py": {
+    "purpose": "将有限联合图诊断流量封装为来源与坐标绑定的冷读产品，复算派生数组并拒绝不完整消费请求；不认证输入来源真实性或自然出口水力。",
+    "role": "product-io",
+    "stage": "S1/R9"
+  },
+  "tests/test_metric_network_discharge_product.py": {
+    "purpose": "联合诊断流量产品身份、冷读复算、未知上游消费拒绝、负世界坐标及分配前预算回归。",
+    "role": "test",
+    "stage": "X4；S1/R9"
+  },
+  "tests/test_audit_network_accumulation.py": {
+    "purpose": "审计工具到联合流量产品层的裁剪断边未知、负世界原点和冷读保存集成测试。",
+    "role": "test",
+    "stage": "X4；S1/R9"
+  },
+  "tools/audit_network_accumulation.py": {
+    "purpose": "冷读固定种子30m TD receiver，复用噪波雨量执行有限联合汇流；裁区独立逐源路径核算，保存已知Q与完整性掩码，不覆盖旧源。",
+    "role": "audit-tool",
+    "stage": "X4；S1/R9；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tests/test_metric_network_accumulation.py": {
+    "purpose": "有限联合汇流的独立逐源路径对照、重复汇流、环拒绝、未知传播、预算与存储顺序测试。",
+    "role": "test",
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_domain_closure.py": {
+    "purpose": "在固定世界锚定的有限依赖内判定海陆、出口和领土，保留闭合/未知拒绝；不是无限远上游精确水力求解。",
+    "role": "domain-planning",
+    "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_domain_pipeline.py": {
+    "purpose": "将坐标查询按出口去重为域产品，保存数组、身份和逐点拒绝，并提供重载校验。",
+    "role": "product-io",
+    "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_domain_flow.py": {
+    "purpose": "域水量账本与本地产流拓扑累计；瓦片尺度证据不能自动认证跨瓦片累计输运。",
+    "role": "water-budget",
+    "stage": "S1/R5；S1/R4；S1/R9；S2/G5"
+  },
+  "terrain_pipeline/surface_rivers/metric_domain_sediment.py": {
+    "purpose": "有限风化来源、泥沙起动/运移/沉积与出口账；与完整沿程河道水动力认证分开。",
+    "role": "sediment-budget",
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_domain_coupled.py": {
+    "purpose": "将水量、流量代理、宽深、剪切和输沙容量用于限制起动，保存水沙耦合账本；参数标定与产物认证另验。",
+    "role": "coupling",
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_domain_bed_feedback.py": {
+    "purpose": "耦合沉积库存到派生床高的限定反馈，固体/孔隙换算与父账绑定；既有空间摊分不代表完整侵蚀水力闭环。",
+    "role": "bed-feedback",
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_contracts.py": {
+    "purpose": "米制地形、来源、有效/未知掩码与边界/时间等核心数据契约，非法输入与身份校验。",
+    "role": "contracts",
+    "stage": "S1/shared"
+  },
+  "terrain_pipeline/surface_rivers/metric_sediment.py": {
+    "purpose": "绑定几何及水流身份的有限泥沙输运/侵蚀/沉积和材料库存、保存校验；冻结水流的适用范围须单独声明。",
+    "role": "sediment",
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_bed_update.py": {
+    "purpose": "松散固体与岩石库存到床高的换算及床变拒绝；孔隙换算一次，不自行重算水力。",
+    "role": "bed-inventory",
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_morphology_coupling.py": {
+    "purpose": "有限水流、泥沙、床变及下一时段几何/水力的耦合与重验，保持父身份与失败状态。",
+    "role": "coupling",
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_fv_growth_core.py": {
+    "purpose": "显式GrowthOperators公共FV步进，保持床载、坡移、悬沙、再悬浮与水场联合提交顺序；不克隆旧版globals。",
+    "role": "shared-numerical-core",
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_fv_growth_coupling_v4.py": {
+    "purpose": "当前v4有限载体床载/波场等算子装配入口，调用公共步进；保持v4物理限制，不代表自然三角洲形态完成。",
+    "role": "current-fv-assembly",
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "tools/natural_fv_growth_state_io.py": {
+    "purpose": "current FV检查点完整状态、参数绑定、源码闭包/外部SHA及载体合同校验；显式冷迁移保留旧来源。",
+    "role": "checkpoint-codec",
+    "stage": "X4"
+  },
+  "tools/natural_fv_growth_scheduler.py": {
+    "purpose": "FV区间trial调度、拒绝二分重试与完整chunk提交，核对库存/时长/源额度及失败最后检查点。",
+    "role": "transaction-scheduler",
+    "stage": "X4；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_natural_fv_growth.py": {
+    "purpose": "默认current-v4 FV命令薄入口；历史v1/v3执行不透明回退，须显式legacy。",
+    "role": "current-cli",
+    "stage": "X4"
+  },
+  "tools/publish_domain_bundle.py": {
+    "purpose": "Python默认读取稳定有限河网产品并按世界点/物理时间查询真实Q和湖库存，显式checkpoint恢复发布独立结果；旧粗规划发布仅legacy-coarse，不自动回退或生成TD。",
+    "role": "default-finite-sample-consumer",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
+  },
+  "tools/replay_natural_fv_growth_legacy.py": {
+    "purpose": "验证可信FV原源码/模板归档，显式历史版本执行与原检查点读取；不进入默认当前生成路径。",
+    "role": "explicit-legacy-tool",
+    "stage": "X4"
+  },
+  "tools/single_domain_legacy_entrypoints.py": {
+    "purpose": "显式加载已退休浅水v4/v8薄入口及冻结依赖，不替换活跃模块或默认搜索路径。",
+    "role": "explicit-legacy-tool",
+    "stage": "X4"
+  },
+  "tools/build_module_catalog.py": {
+    "purpose": "静态扫描一方源码、抽取说明/符号/本地导入并生成逐文件管理表；check检测台账漂移，不import算法。",
+    "role": "catalog-maintenance",
+    "stage": "X4"
+  },
+  "terrain_pipeline/surface_rivers/metric_cross_region.py": {
+    "purpose": "真实30m页的跨区一致性判据：重叠逐点相等、加载顺序不变、窗口边界永不当作出口；不生成地形也不替代水力。",
+    "role": "cross-region-consistency",
+    "stage": "S1/R4；S1/R3；S1/R5；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_depression_gate.py": {
+    "purpose": "30m微洼地溢流判定门：区分真湖盆与河流必须穿过的水洼，只在派生工作曲面抬升、不写床面；判据参数仍待定稿。",
+    "role": "domain-planning",
+    "stage": "S1/R2；S1/R3；S1/R6"
+  },
+  "tests/hybrid_hydraulics_fixtures.py": {
+    "purpose": "固定合成水力夹具，供当前共享模型的测试共用；不含真实地形或验收记录。",
+    "role": "test",
+    "stage": "X4；S1/R7；S3/V4；S3/V8"
+  },
+  "tests/test_fine_terrain_40km_lake.py": {
+    "purpose": "40km湖盆验收行为测试：闭合盆、窗口收敛、A(h)/V(h)与独立复算一致、截断窗不得当湖。",
+    "role": "test",
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_metric_cross_region.py": {
+    "purpose": "跨区一致性行为测试：只断言任何页对都必须成立的性质，真实2049页由audit工具测量。",
+    "role": "test",
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_metric_depression_gate.py": {
+    "purpose": "微洼地门行为测试：合成属性断言与真实页记录数分开；归档页缺失时明确跳过而非静默通过。",
+    "role": "test",
+    "stage": "X4；S1/R2；S1/R3；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_physical_backend_window_budget.py": {
+    "purpose": "TD后端显式窗口预算测试：超预算须带原因码拒绝，不得静默降采样或拆分；旧513用例仍受理。",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R9；S2/G1"
+  },
+  "tests/test_scan_40km_area.py": {
+    "purpose": "40km选区规则测试：按原因拒绝候选，不得因尺寸不匹配而静默选取更小盆地；含坐标单位误用的回归。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "tools/audit_cross_region_consistency.py": {
+    "purpose": "在真实2049页上执行规范4.3跨区验收并写出报告、摘要与冷读脚本；报告数字全部由本次运行产出。",
+    "role": "audit-tool",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G1"
+  },
+  "tools/generate_td_support_pages.py": {
+    "purpose": "为收敛门生成TD支撑页；靠确定性(seed,绝对坐标)扩取地形，不降容差也不改选小盆地。",
+    "role": "offline-tool",
+    "stage": "S1/R1"
+  },
+  "tools/report_40km_candidates.py": {
+    "purpose": "渲染40km选区全部候选表，保证每个被评估候选都带结果出现；不重新测量也不改写结论。",
+    "role": "audit-tool",
+    "stage": "S1/R4"
+  },
+  "tools/scan_40km_area.py": {
+    "purpose": "按声明规则在固定种子真实TD地形上选定40km@30m有界验收区：闭合、不触边、多窗口收敛；不挑选好看的位置。",
+    "role": "offline-tool",
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_fine_terrain_40km_reach.py": {
+    "purpose": "40km@30m河段验收行为测试：断言选区规则与拒绝码、断面深度是水力学解而非常数、三本账各自单位下闭合、床变用体积恒等式、未执行项必须声明为未执行。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "tools/verify_native_30m_product.py": {
+    "purpose": "对已发布有限30m产品聚合运行既有inspect/audit/point子进程，核对冷读身份、源码漂移与独立审计报告一致后原子写验收报告；本身不复算数值，不是阶段认证。",
+    "role": "acceptance-report-cli",
+    "stage": "X4"
+  },
+  "tests/test_verify_native_30m_product.py": {
+    "purpose": "以假子进程输出验证验收报告正反例：审计/空间参照未过、数值或发布身份不一致、源码漂移须拒绝且不落盘，输出已存在或指向bundle内部时早拒。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "tests/test_native_30m_requested_selection.py": {
+    "purpose": "调用方指定出口的选区测试：保留完整候选普查与默认排序，非法/窗外/非候选/被拒出口拒绝，并核对选区规则身份与不支持语义拒绝。",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_native_30m_envelope_gates.py": {
+    "purpose": "小型envelope归档的重封攻击测试：能力位升级、未知真值能力、对象/结构dtype及路径逃逸须拒绝；该夹具只对envelope门有效，不代表完整数值包。",
+    "role": "test",
+    "stage": "X4"
+  },
+  "diffusion/world_demand_backend.py": {
+    "purpose": "Fixed physical TD page grid and supervised on-demand generation; resume pinned pages and retain failure records.",
+    "role": "source-generation",
+    "stage": "S1/R1；S1/R9；S2/G1"
+  },
+  "tools/prepare_world_terrain_region.py": {
+    "purpose": "Explicit finite-world demand planning, missing-page generation and joint terrain-water preparation; optional disk store supports tiled IO beyond the legacy in-memory limit.",
+    "role": "offline-tool",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G1"
+  },
+  "tools/query_world_terrain_region.py": {
+    "purpose": "Read saved values, owning basin and spill links by world coordinates; verify ordinary or disk-tiled products without generation, retaining readonly legacy access.",
+    "role": "query-tool",
+    "stage": "X4；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9；S2/G1"
+  },
+  "tests/test_world_demand_backend.py": {
+    "purpose": "CPU tests of fixed page planning, supervised failure, generation identity and source-page resume.",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R9；S2/G1"
+  },
+  "terrain_pipeline/td_source.py": {
+    "purpose": "固定TD可信源的连续宏观基底与局部残差合成；全有限世界海洋分量规划、精确场岸线、过滤halo内固定裁切；千湖无预置水体。；显式大域磁盘预算、分块TD合成与不可变发布；相邻请求统一求解，冷读校验保存块。；Assemble trusted pinned TD support, verify overlaps and compose window-independent macro plus TD residual.；Persist immutable region versions; bind preparation revision to world identity, merge adjacent requests and keep source/prepared coverage separate.",
+    "role": "terrain-composition；region-storage",
+    "stage": "S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "terrain_pipeline/drainage.py": {
+    "purpose": "磁盘映射全域优先洪泛、D8、有限盆地蓄满溢流和带邻域的河槽生成，内部IO块不充当水文出口。；以磁盘原床严格D8归属核验盆地未知上游和成员泄漏，等价复用原生湖盆汇水语义。；在已装配有限receiver拓扑上确定性累计已知诊断流量并向下游传播上游未知标记；不重算D8、不认证联合路由或无限世界。",
+    "role": "water-formation；basin-certification；water-budget",
+    "stage": "S1/R4；S1/R2；S1/R3；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_td_source_regions.py": {
+    "purpose": "跨存储块冷读、缓存命中、合成/求解失败隔离与真实求解的相邻扩展顺序一致性。；宏观/TD残差合成、双窗裁切一致、原源保留、海洋分量与非格线海岸采样测试。；Trusted overlap, source-family consistency, halo completeness, finite boundary and query-window consistency.；Persistent expansion, cache hit, old preparation revision rejection, failure isolation, CPU CLI cold reads and minimal missing-page selection.",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1"
+  },
+  "terrain_pipeline/surface_hydraulics.py": {
+    "purpose": "按盆地拓扑交接有限水量，先蓄至容量再溢流；保留待定盆地已知来水，循环不污染独立分支。；以区间土壤桶释水驱动有限域原床运动波候选；不能据此声称已消费并验证R6切槽床。；有界河道DAG库存、Manning基线传播、CFL与失败前缀；不是完整回水或无限河网认证。；Solve a finite joint terrain region; expose local/spill absolute receivers, positive spill-edge crossings and downstream basin-chain destinations.",
+    "role": "basin-transfer；bounded-hydraulics；water-formation",
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "tests/test_surface_hydraulics.py": {
+    "purpose": "下游部分蓄水、已知溢流进入待定盆地、循环隔离及水量守恒测试。；Cross-tile local/spill edges, absolute coordinates, downstream basin categories and finite-region boundary uncertainty.",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/environment_query.py": {
+    "purpose": "绝对30m坐标批量组合现气候/材料/岩性/土壤代理/群系，绑定输入和依赖源码身份；实测DEM雨影缺覆盖时明确pending/背景估计，精确请求内缓存；不推进动态ET、植被或默认世界。",
+    "role": "same-coordinate-environment-query",
+    "stage": "X2；S1/R9；S2/G2；S2/G3；S2/G4；S2/G5；S2/G6"
+  },
+  "terrain_pipeline/runoff.py": {
+    "purpose": "对选定汇水调用已有土壤桶与reach时延路由，分别记录声明风暴设计峰值和瞬时诊断Q。",
+    "role": "runoff-adapter",
+    "stage": "S1/R5；S2/G5"
+  },
+  "terrain_pipeline/channel_geometry.py": {
+    "purpose": "装配既有宽度律、正常水深及固定坐标硬度的有限河段断面；不宣称满岸几何或标定。",
+    "role": "section-adapter",
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "tests/test_channel_geometry.py": {
+    "purpose": "有限断面宽深与坐标、参数及设计流量绑定回归。",
+    "role": "test",
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8"
+  },
+  "terrain_pipeline/lake.py": {
+    "purpose": "有限湖盆库容—水位/湿面积与库存契约，为河湖端口与溢流提供可审计状态。",
+    "role": "lake-storage",
+    "stage": "S1/R6；S1/R7；S1/R9"
+  },
+  "tools/frozen_vdm_fault.py": {
+    "purpose": "验证断层v1可信归档并在私有命名空间显式复验完整旧生成和旧codec。",
+    "role": "explicit-legacy-tool",
+    "stage": "X4"
+  },
+  "terrain_pipeline/vdm_cuts.py": {
+    "purpose": "当前断层recipe类型与选择权重公共职责，不保留v1完整生成算法。；保留已变形VDM来源的局部断层切割，保存边来源与插值证据；只认证已声明的局部几何范围。",
+    "role": "shared-geometry-core；current-local-geometry",
+    "stage": "S3/V1；S2/G2；S3/V5；S3/V8"
+  },
+  "terrain_pipeline/hybrid_geometry.py": {
+    "purpose": "从原生half-arm/prism及实体执行主Boolean并保存材料/阶段，不包含历史portal算法；current完整G2仍受精确表示门阻塞。",
+    "role": "boolean-stage",
+    "stage": "S3/V1；S3/V2；S3/V3；S3/V5；S3/V6；S3/V8"
+  },
+  "tools/prepare_hybrid_geometry.py": {
+    "purpose": "受控fresh Boolean到最新rational端口/审计/faces集成入口；现有run04严格拒绝，不能声明完整链通过。",
+    "role": "current-integration-blocked",
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9；S3/V1；S3/V2；S3/V3；S3/V5；S3/V6；S3/V8"
+  },
+  "tools/frozen_hybrid_geometry.py": {
+    "purpose": "可信历史几何源码与数据根分离的显式复验适配；固定stage冷读有证据，全部旧下游链尚未完整迁移。",
+    "role": "explicit-legacy-tool",
+    "stage": "X4"
+  },
+  "terrain_pipeline/climate_forcing.py": {
+    "purpose": "v2合成气候修正层：风、地形抬升/雨影及温雨诊断；接口验收不等于生产季节水文默认接线。",
+    "role": "climate",
+    "stage": "S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "terrain_pipeline/soil_water.py": {
+    "purpose": "材料厚度、坡度与年降雨输入的土壤合成条件代理；available_water不等同动态ET闭合含水量。",
+    "role": "soil-proxy",
+    "stage": "S2/G5；S1/R5；S2/G6；S2/G7；S2/G9"
+  },
+  "terrain_pipeline/special_terrain.py": {
+    "purpose": "节理胞多边形柱体与VDM柱壁雕刻的离线闭合实体原型；截面/体积证据不等于全局自交和无限世界接线通过。",
+    "role": "offline-volume-prototype",
+    "stage": "S3/V7；S3/V1；S3/V2；S3/V3；S3/V5；S3/V6；S3/V8"
+  },
+  "terrain_pipeline/hybrid_hydraulics.py": {
+    "purpose": "有界水力共享类型、断面几何与对照契约；只提供当前族公共结构，不自行求解。；当前解析原生断面Radau核，保持v6数值策略；是VC-04收敛后的当前实现，历史版本须经显式legacy工具复验。",
+    "role": "shared-numerical-core；bounded-hydraulics",
+    "stage": "S1/R7；S3/V4；S3/V8"
+  },
+  "tests/test_frozen_hybrid_hydraulics.py": {
+    "purpose": "混合水力的字节一致、当前v8等价与历史隔离门；验证收敛未改变现有产物语义。；选择性运行的原始源码回归，仅经冻结加载器执行；不进默认测试路径。",
+    "role": "test",
+    "stage": "X4；S1/R7；S3/V1；S3/V2；S3/V3；S3/V4；S3/V5；S3/V6；S3/V8"
+  },
+  "tools/frozen_hybrid_hydraulics.py": {
+    "purpose": "显式字节校验的历史水力复演加载器；永不作为默认后端。",
+    "role": "explicit-legacy-tool",
+    "stage": "X4"
+  },
+  "tools/hybrid_hydraulics_records.py": {
+    "purpose": "当前水力准备辅助，独立于历史求解器入口；只做装配不做数值求解。",
+    "role": "shared-preparation",
+    "stage": "X4；S1/R7；S3/V1；S3/V2；S3/V3；S3/V4；S3/V5；S3/V6；S3/V8"
+  },
+  "tools/replay_frozen_hybrid_hydraulics.py": {
+    "purpose": "显式历史水力复演CLI；当前生成不会选择它。",
+    "role": "explicit-legacy-tool",
+    "stage": "X4"
+  },
+  "build.gradle": {
+    "stage": "X4"
+  },
+  "diffusion/__init__.py": {
+    "stage": "S1/R1；S1/R9；S2/G1"
+  },
+  "diffusion/__main__.py": {
+    "stage": "S1/R1；S1/R9；S2/G1"
+  },
+  "diffusion/backend.py": {
+    "stage": "S1/R1；S1/R9；S2/G1"
+  },
+  "diffusion/config.py": {
+    "stage": "S1/R9；S1/R1；S2/G1"
+  },
+  "diffusion/geographic_noise.py": {
+    "stage": "S2/G1；S1/R1；S1/R2；S2/G3；S2/G4"
+  },
+  "diffusion/geography.py": {
+    "stage": "S2/G1；S1/R1；S1/R2；S2/G3；S2/G4"
+  },
+  "diffusion/geography_physical.py": {
+    "stage": "S2/G1；S1/R1；S1/R2；S2/G3；S2/G4"
+  },
+  "diffusion/geography_v2.py": {
+    "stage": "S2/G1；S1/R1；S1/R2；S2/G3；S2/G4"
+  },
+  "diffusion/geography_v3.py": {
+    "stage": "S2/G1；S1/R1；S1/R2；S2/G3；S2/G4"
+  },
+  "diffusion/geography_v4.py": {
+    "stage": "S2/G1；S1/R1；S1/R2；S2/G3；S2/G4"
+  },
+  "diffusion/geography_v5.py": {
+    "stage": "S2/G1；S1/R1；S1/R2；S2/G3；S2/G4"
+  },
+  "diffusion/paths.py": {
+    "stage": "S1/R9；S1/R1；S2/G1"
+  },
+  "diffusion/physical_backend.py": {
+    "stage": "S1/R1；S1/R9；S2/G1"
+  },
+  "diffusion/physical_config.py": {
+    "stage": "S1/R9；S1/R1；S2/G1"
+  },
+  "diffusion/plate_td_backend.py": {
+    "stage": "S1/R1；S1/R9；S2/G1"
+  },
+  "diffusion/plate_td_conditioning.py": {
+    "stage": "S2/G1；S1/R1；S1/R2；S2/G3；S2/G4"
+  },
+  "diffusion/preview.py": {
+    "stage": "X3；S1/R1；S2/G1"
+  },
+  "diffusion/service.py": {
+    "stage": "S1/R1；S1/R9；S2/G1"
+  },
+  "diffusion/store.py": {
+    "stage": "S1/R9；S1/R1；S2/G1"
+  },
+  "settings.gradle": {
+    "stage": "X4"
+  },
+  "src/main/java/com/remotemountains/RemoteMountains.java": {
+    "stage": "S4/J6"
+  },
+  "src/main/java/com/remotemountains/canyon/CanyonCliffLayout.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/canyon/CanyonCliffModifier.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/canyon/CanyonCliffStyle.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/client/LandformMode.java": {
+    "stage": "S4/J5"
+  },
+  "src/main/java/com/remotemountains/client/LandformSettingsScreen.java": {
+    "stage": "S4/J5"
+  },
+  "src/main/java/com/remotemountains/client/TerrainInstallClient.java": {
+    "stage": "S4/J5"
+  },
+  "src/main/java/com/remotemountains/client/TerrainInstallScreen.java": {
+    "stage": "S4/J5"
+  },
+  "src/main/java/com/remotemountains/client/TerrainPreflight.java": {
+    "stage": "S4/J5"
+  },
+  "src/main/java/com/remotemountains/client/TerrainPreflightScreen.java": {
+    "stage": "S4/J5"
+  },
+  "src/main/java/com/remotemountains/client/mixin/CreateWorldPreflightMixin.java": {
+    "stage": "S4/J5"
+  },
+  "src/main/java/com/remotemountains/client/mixin/LandformPresetEditorMixin.java": {
+    "stage": "S4/J5"
+  },
+  "src/main/java/com/remotemountains/client/mixin/WorldLoadPreflightMixin.java": {
+    "stage": "S4/J5"
+  },
+  "src/main/java/com/remotemountains/cliff/CliffErosionSolver.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/cliff/CliffGeometry.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/cliff/CliffPatch.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/cliff/CliffPipeline.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/cliff/CliffPlacement.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/cliff/CliffSettings.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/cliff/CliffVdmModifier.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/cliff/ErosionStatistics.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/cliff/RegionalCliffLayout.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/cliff/RegionalCliffModifier.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/cliff/RunoffBoundary.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/cliff/SurfaceRunoffSolver.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/cliff/Vec3.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/cliff/VoronoiRockField.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/cliff/WaterDetachment.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/BaseTerrainSource.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/core/CaveModel.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/ClimateModel.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/Hydrology.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/InselbergShape.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/KarstShape.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/Landform.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/LandformShape.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/Landscape.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/Noise.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/PillarShape.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/PrototypeTerrainSource.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/core/Regions.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/RiftShape.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/ShapePrimitives.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/Terrain.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/TerrainModeDescriptor.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/TerrainModeRegistry.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/TerrainPreparation.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/TerrainScale.java": {
+    "stage": "S4/J2"
+  },
+  "src/main/java/com/remotemountains/core/TerrainSourceFactory.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/core/TerrainTileCache.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/diffusion/BakedTerrainSource.java": {
+    "stage": "S4/J1"
+  },
+  "src/main/java/com/remotemountains/diffusion/DemoLandformField.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/diffusion/DemoLandformSource.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/diffusion/DiffusionBootstrapAssets.java": {
+    "stage": "S4/J5"
+  },
+  "src/main/java/com/remotemountains/diffusion/DiffusionClient.java": {
+    "stage": "S4/J5"
+  },
+  "src/main/java/com/remotemountains/diffusion/DiffusionServiceManager.java": {
+    "stage": "S4/J5"
+  },
+  "src/main/java/com/remotemountains/diffusion/DiffusionServiceSources.java": {
+    "stage": "S4/J5"
+  },
+  "src/main/java/com/remotemountains/diffusion/DiffusionTerrainSource.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/diffusion/DiffusionTile.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/diffusion/ManagedTerrainInstallation.java": {
+    "stage": "S4/J5"
+  },
+  "src/main/java/com/remotemountains/diffusion/PerlinLandformVariation.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/diffusion/PortablePythonInstaller.java": {
+    "stage": "S4/J5"
+  },
+  "src/main/java/com/remotemountains/diffusion/TerrainSources.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/erosion3d/Erosion3d.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/erosion3d/ErosionConfig.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/erosion3d/ErosionResult.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/erosion3d/Point3.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/erosion3d/SedimentLedger.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/erosion3d/SurfaceSample.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/erosion3d/SweptPath.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/hydrology3d/Point3.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/hydrology3d/RiverConfig.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/hydrology3d/RiverNetwork.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/hydrology3d/RiverNetworkJson.java": {
+    "stage": "S4/J1"
+  },
+  "src/main/java/com/remotemountains/hydrology3d/RiverNode.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/hydrology3d/RiverReach.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/prepared/PreparedArtifact.java": {
+    "stage": "S4/J1"
+  },
+  "src/main/java/com/remotemountains/prepared/PreparedSurfaceModifier.java": {
+    "stage": "S4/J1"
+  },
+  "src/main/java/com/remotemountains/prepared/PreparedTerrainExporter.java": {
+    "stage": "S4/J1"
+  },
+  "src/main/java/com/remotemountains/prepared/PreparedTerrainSource.java": {
+    "stage": "S4/J1"
+  },
+  "src/main/java/com/remotemountains/prepared/PreparedVdmSource.java": {
+    "stage": "S4/J1"
+  },
+  "src/main/java/com/remotemountains/region/DerivedRegionArtifact.java": {
+    "stage": "S4/J1"
+  },
+  "src/main/java/com/remotemountains/region/DerivedRegionTerrainSource.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/region/MetricProcessedTerrainSource.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/region/RawRegionArtifact.java": {
+    "stage": "S4/J1"
+  },
+  "src/main/java/com/remotemountains/region/RawRegionTerrainSource.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/region/RegionArtifact.java": {
+    "stage": "S4/J1"
+  },
+  "src/main/java/com/remotemountains/region/RegionConfig.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/region/RegionExport.java": {
+    "stage": "S4/J1"
+  },
+  "src/main/java/com/remotemountains/region/RegionLandformLayout.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/region/RegionRuntime.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/region/RegionTerrainSource.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/region/processing/GaussianFilter.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/region/processing/LandformClassifier.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/region/processing/LandformPolicies.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/region/processing/ProcessedTile.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/region/processing/ProcessingConfig.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/region/processing/RegionFeatures.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/region/processing/RegionProcessor.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/region/processing/SurfaceProtection.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/vdm/CliffSculptor.java": {
+    "stage": "S4/J2"
+  },
+  "src/main/java/com/remotemountains/vdm/DensityColumn.java": {
+    "stage": "S4/J2"
+  },
+  "src/main/java/com/remotemountains/vdm/Displacement.java": {
+    "stage": "S4/J2"
+  },
+  "src/main/java/com/remotemountains/vdm/GeneratedVdmSource.java": {
+    "stage": "S4/J2"
+  },
+  "src/main/java/com/remotemountains/vdm/OptionalVdmSource.java": {
+    "stage": "S4/J2"
+  },
+  "src/main/java/com/remotemountains/vdm/SurfaceModifier.java": {
+    "stage": "S4/J2"
+  },
+  "src/main/java/com/remotemountains/vdm/VdmBuilder.java": {
+    "stage": "S4/J2"
+  },
+  "src/main/java/com/remotemountains/vdm/VdmFile.java": {
+    "stage": "S4/J2"
+  },
+  "src/main/java/com/remotemountains/vdm/VdmTerrainSource.java": {
+    "stage": "S4/J2"
+  },
+  "src/main/java/com/remotemountains/vdm/VdmVoxelizer.java": {
+    "stage": "S4/J2"
+  },
+  "src/main/java/com/remotemountains/vdm/VectorDisplacementMap.java": {
+    "stage": "S4/J2"
+  },
+  "src/main/java/com/remotemountains/watershed/DrainageGraph.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/watershed/MountainRelief.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/watershed/RiverProfile.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/watershed/WatershedTerrainSource.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/watershedcliff/WatershedCliffModifier.java": {
+    "stage": "S4/J3"
+  },
+  "src/main/java/com/remotemountains/world/CanyonWorldVerification.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/world/CliffWorldVerification.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/world/RegionalCliffWorldVerification.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/world/RemoteGenerator.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/world/SurfacePalette.java": {
+    "stage": "S4/J2"
+  },
+  "src/main/java/com/remotemountains/world/TallWorldVerification.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/world/TerrainBiomeSource.java": {
+    "stage": "S4/J2"
+  },
+  "src/main/java/com/remotemountains/world/VerificationProbe.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/world/WatershedWorldVerification.java": {
+    "stage": "S4/J4"
+  },
+  "src/main/java/com/remotemountains/world/WorldGenerationStatus.java": {
+    "stage": "S4/J4"
+  },
+  "src/test/java/com/remotemountains/canyon/CanyonPreview.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/canyon/CanyonVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/cliff/CliffPreviewExporter.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/cliff/CliffVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/cliff/RegionalCliffVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/core/ClientMixinLoadVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/core/CoreVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/core/DemoVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/core/DiffusionVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/core/IrregularHydrologyVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/core/LandformComparison.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/core/PreviewExporter.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/core/TerrainModeRegistryVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/core/TerrainScaleVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/core/TerrainTileCacheVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/diffusion/FirstInstallProbe.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/diffusion/ManagedInstallationVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/diffusion/ManagedServiceVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/diffusion/ProfileMismatchVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/erosion3d/Erosion3dVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/hydrology3d/RiverNetworkVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/prepared/DerivedConcurrencyVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/prepared/DerivedRegionVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/prepared/PreparedArtifactVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/prepared/PreparedShowcaseVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/prepared/RawRegionVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/prepared/RegionVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/region/MetricProcessedVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/region/RealSampleImportVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/region/processing/RegionProcessingCli.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/region/processing/RegionProcessorVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/watershed/WatershedHeightmapVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/watershed/WatershedPreview.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/watershed/WatershedVerification.java": {
+    "stage": "S4/J6"
+  },
+  "src/test/java/com/remotemountains/watershedcliff/WatershedCliffVerification.java": {
+    "stage": "S4/J6"
+  },
+  "start-diffusion.ps1": {
+    "stage": "X4"
+  },
+  "terrain_pipeline/__init__.py": {
+    "stage": "X1；S1/R1；S1/R9；S3/V8"
+  },
+  "terrain_pipeline/adaptive_mesh.py": {
+    "stage": "S1/R6；S1/R7；S3/V1"
+  },
+  "terrain_pipeline/artifacts/__init__.py": {
+    "stage": "X1；S1/R1；S1/R9；S3/V1；S3/V8"
+  },
+  "terrain_pipeline/artifacts/contracts.py": {
+    "stage": "X1；S1/R1；S1/R9；S3/V1；S3/V8"
+  },
+  "terrain_pipeline/basin_storage.py": {
+    "stage": "S1/R6；S1/R5；S1/R7；S1/R9"
+  },
+  "terrain_pipeline/basin_topology.py": {
+    "stage": "S1/R4；S1/R2；S1/R3；S1/R6"
+  },
+  "terrain_pipeline/coastal_delta_avulsion.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_bank_formation.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_branch_attachment.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_branching.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_deposition_scaling.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_evolution.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_formation.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_geological.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_geological_network.py": {
+    "stage": "S1/R6；S1/R8；S2/G8"
+  },
+  "terrain_pipeline/coastal_delta_graph_hydraulics.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_growth.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_hydraulic_capacity.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_hydraulic_event.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_hydraulics.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_lobes.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_morphology.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_mouth_extension.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_multicell.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_multicell_avulsion.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_network_plan.py": {
+    "stage": "S1/R6；S1/R3；S1/R8；S2/G8"
+  },
+  "terrain_pipeline/coastal_delta_node_inventory.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_pipeline.py": {
+    "stage": "X2；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_plain.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_product.py": {
+    "stage": "S1/R9；S1/R6；S1/R7；S1/R8；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_regional.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/coastal_delta_routes.py": {
+    "stage": "S1/R6；S1/R2；S1/R8；S2/G8"
+  },
+  "terrain_pipeline/coastal_delta_window.py": {
+    "stage": "S1/R1；S1/R2；S1/R9；S2/G8"
+  },
+  "terrain_pipeline/coastal_marine_base.py": {
+    "stage": "S2/G8；S1/R8；S1/R9；S2/G19"
+  },
+  "terrain_pipeline/coastal_marine_longterm.py": {
+    "stage": "S2/G8；S1/R8；S1/R9；S2/G19"
+  },
+  "terrain_pipeline/coastal_marine_product.py": {
+    "stage": "S2/G8；S1/R8；S1/R9；S2/G19"
+  },
+  "terrain_pipeline/coastal_marine_sediment.py": {
+    "stage": "S2/G8；S1/R8；S1/R9；S2/G19"
+  },
+  "terrain_pipeline/coastal_river_connector.py": {
+    "stage": "S2/G8；S1/R8；S1/R9；S2/G19"
+  },
+  "terrain_pipeline/coastal_terrain.py": {
+    "stage": "S2/G1；S1/R1；S1/R2；S2/G8"
+  },
+  "terrain_pipeline/common_infra.py": {
+    "stage": "X1；S1/R1；S1/R9；S3/V1；S3/V8"
+  },
+  "terrain_pipeline/complete_delta.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/conversion.py": {
+    "stage": "S4/J2；S3/V8"
+  },
+  "terrain_pipeline/delta_network_site.py": {
+    "stage": "S1/R1；S1/R6；S2/G8"
+  },
+  "terrain_pipeline/delta_network_skeleton.py": {
+    "stage": "S1/R6；S1/R8；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/delta_network_skeleton_v2.py": {
+    "stage": "S1/R6；S1/R8；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/delta_network_skeleton_v3.py": {
+    "stage": "S1/R6；S1/R8；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/delta_network_skeleton_v4.py": {
+    "stage": "S1/R6；S1/R8；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/delta_network_terrain.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/delta_network_terrain_v2.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/delta_network_terrain_v3.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/delta_network_terrain_v4.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/delta_tidal_validation.py": {
+    "stage": "S1/R7；S1/R9；S2/G19"
+  },
+  "terrain_pipeline/environment_coastal_delta.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/environment_contract.py": {
+    "stage": "X1；S1/R9；S2/G2；S2/G3；S2/G4；S2/G5；S2/G6；S2/G7；S2/G9"
+  },
+  "terrain_pipeline/environment_delta_fv.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/environment_delta_source.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/environment_processes.py": {
+    "stage": "S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "terrain_pipeline/environment_product.py": {
+    "stage": "X2；S1/R5；S1/R7；S1/R8；S1/R9；S2/G2；S2/G3；S2/G4；S2/G5；S2/G6；S2/G7；S2/G8；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "terrain_pipeline/environment_regional_hydraulics.py": {
+    "stage": "S1/R7；S1/R8；S1/R9；S2/G5；S2/G6"
+  },
+  "terrain_pipeline/fictional_world_overview.py": {
+    "stage": "S2/G1；S1/R1；S1/R2；S1/R6"
+  },
+  "terrain_pipeline/fine_subgrid.py": {
+    "stage": "S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/geology.py": {
+    "stage": "S2/G2"
+  },
+  "terrain_pipeline/hydrology_detail.py": {
+    "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/hydrology_detail_conditioning.py": {
+    "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/hydrology_detail_projection.py": {
+    "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/hydrology_detail_ridge.py": {
+    "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/hydrology_detail_tributaries.py": {
+    "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/hydrology_detail_tributary_finite.py": {
+    "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/hydrology_macro_channel_feasibility.py": {
+    "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/hydrology_planning.py": {
+    "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/island_mountains.py": {
+    "stage": "S2/G1；S1/R1；S2/G8"
+  },
+  "terrain_pipeline/large_delta_active_network.py": {
+    "stage": "S1/R6；S1/R8；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_active_source.py": {
+    "stage": "S1/R8；S1/R5；S1/R9；S2/G8"
+  },
+  "terrain_pipeline/large_delta_coupled.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_evolution.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_formation_source.py": {
+    "stage": "S1/R8；S1/R1；S1/R5；S2/G8"
+  },
+  "terrain_pipeline/large_delta_forward.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_landform_prototype.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_landform_regional.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_landform_v2.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_shelf_fan.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_shelf_product.py": {
+    "stage": "S1/R9；S1/R6；S1/R7；S1/R8；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_shelf_scenario.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_source.py": {
+    "stage": "S1/R5；S1/R1；S1/R9；S2/G5"
+  },
+  "terrain_pipeline/large_delta_state.py": {
+    "stage": "S1/R9；S1/R6；S1/R7；S1/R8；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_suite.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_suite_event.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_suite_network.py": {
+    "stage": "S1/R6；S1/R8；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_suite_source.py": {
+    "stage": "S1/R1；S1/R9；S2/G8"
+  },
+  "terrain_pipeline/large_delta_suite_tidal.py": {
+    "stage": "S2/G19；S1/R7；S2/G8"
+  },
+  "terrain_pipeline/large_delta_terrain_product.py": {
+    "stage": "S1/R9；S1/R6；S1/R7；S1/R8；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_tidal_dynamics.py": {
+    "stage": "S1/R7；S1/R6；S2/G19"
+  },
+  "terrain_pipeline/large_delta_tidal_product.py": {
+    "stage": "S1/R9；S1/R6；S1/R7；S1/R8；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_tidal_product_v4.py": {
+    "stage": "S1/R9；S1/R6；S1/R7；S1/R8；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_delta_tidal_reconstruction.py": {
+    "stage": "S1/R7；S1/R9；S2/G19"
+  },
+  "terrain_pipeline/large_delta_tidal_source.py": {
+    "stage": "S1/R1；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/large_scale_resource_preflight.py": {
+    "stage": "X2；S1/R9"
+  },
+  "terrain_pipeline/large_scale_surface_network.py": {
+    "stage": "S1/R4；S1/R3；S1/R5；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/large_scale_surface_tiles.py": {
+    "stage": "S1/R9；S1/R1；S1/R4；S1/R6"
+  },
+  "terrain_pipeline/large_surface_network_validation.py": {
+    "stage": "S1/R9；S1/R3；S1/R4；S1/R6"
+  },
+  "terrain_pipeline/legacy_region.py": {
+    "stage": "S1/R9；S4/J1"
+  },
+  "terrain_pipeline/metric_region.py": {
+    "stage": "S2/G1；S1/R1；S1/R9；S3/V8"
+  },
+  "terrain_pipeline/metric_region_storage.py": {
+    "stage": "S1/R9；S2/G1；S3/V8"
+  },
+  "terrain_pipeline/minecraft_export.py": {
+    "stage": "S4/J1；S1/R9；S3/V8"
+  },
+  "terrain_pipeline/minecraft_preset.py": {
+    "stage": "S4/J2；S1/R9"
+  },
+  "terrain_pipeline/mountain_forms.py": {
+    "stage": "S2/G1；S1/R1"
+  },
+  "terrain_pipeline/native_hierarchical_delta.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/natural_outlet_certification.py": {
+    "stage": "S1/R2；S1/R3；S1/R7"
+  },
+  "terrain_pipeline/new_world_delta.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/new_world_game_connectivity.py": {
+    "stage": "S1/R6；S1/R2；S1/R4；S1/R7"
+  },
+  "terrain_pipeline/new_world_game_delta.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/new_world_game_hydrology.py": {
+    "stage": "S1/R4；S1/R3；S1/R5；S1/R9"
+  },
+  "terrain_pipeline/new_world_game_river_detail.py": {
+    "stage": "S1/R6；S1/R7；S1/R8"
+  },
+  "terrain_pipeline/new_world_hydrology.py": {
+    "stage": "S1/R4；S1/R3；S1/R5；S1/R9"
+  },
+  "terrain_pipeline/new_world_native_event.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/new_world_native_event_correction.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/new_world_native_event_v3.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/new_world_native_geometry.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/new_world_native_network.py": {
+    "stage": "S1/R4；S1/R3；S1/R5；S1/R9"
+  },
+  "terrain_pipeline/new_world_native_network_v2.py": {
+    "stage": "S1/R4；S1/R3；S1/R5；S1/R9"
+  },
+  "terrain_pipeline/new_world_native_network_v3.py": {
+    "stage": "S1/R4；S1/R3；S1/R5；S1/R9"
+  },
+  "terrain_pipeline/new_world_native_network_v4.py": {
+    "stage": "S1/R4；S1/R3；S1/R5；S1/R9"
+  },
+  "terrain_pipeline/new_world_native_water.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/new_world_river_acceptance.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/new_world_river_lifecycle.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/new_world_river_scene.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/new_world_rivers.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/new_world_sediment.py": {
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/new_world_stage1.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/new_world_stage1_checkpoint.py": {
+    "stage": "S1/R9"
+  },
+  "terrain_pipeline/new_world_stage1_derived_phases.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/ocean_island_consumers.py": {
+    "stage": "S2/G1；S1/R2；S2/G8"
+  },
+  "terrain_pipeline/ocean_islands.py": {
+    "stage": "S2/G1；S1/R2；S2/G8"
+  },
+  "terrain_pipeline/procedural_mountain_erosion.py": {
+    "stage": "S2/G1"
+  },
+  "terrain_pipeline/real_dem_outlet_classification.py": {
+    "stage": "S1/R2；S1/R3"
+  },
+  "terrain_pipeline/regional_hydraulics_archive.py": {
+    "stage": "S1/R9"
+  },
+  "terrain_pipeline/regional_hydraulics_mesh.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/regional_surface_review.py": {
+    "stage": "X3；S1/R9"
+  },
+  "terrain_pipeline/regional_surface_source.py": {
+    "stage": "S1/R1；S1/R9"
+  },
+  "terrain_pipeline/river_connectivity_audit.py": {
+    "stage": "S1/R6；S1/R7；S1/R9"
+  },
+  "terrain_pipeline/shallow_water.py": {
+    "stage": "S1/R7；S1/R9"
+  },
+  "terrain_pipeline/single_domain_surface_archive.py": {
+    "stage": "S1/R9"
+  },
+  "terrain_pipeline/single_domain_surface_consumer.py": {
+    "stage": "S1/R9"
+  },
+  "terrain_pipeline/skeleton_mountains.py": {
+    "stage": "S2/G1；S1/R1"
+  },
+  "terrain_pipeline/surface_domain.py": {
+    "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/surface_identity.py": {
+    "stage": "X1；S1/R1；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/__init__.py": {
+    "stage": "X1；S1/R1；S1/R9；S3/V8"
+  },
+  "terrain_pipeline/surface_rivers/backbone_shape_fidelity.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/branches.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/bridge.py": {
+    "stage": "S1/R6；S1/R4"
+  },
+  "terrain_pipeline/surface_rivers/contracts.py": {
+    "stage": "S1/R1；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/delta.py": {
+    "stage": "S1/R8；S1/R6；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/diagnostics.py": {
+    "stage": "X3；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/hydraulics.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_backbone_precompute.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_backbone_product.py": {
+    "stage": "S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_boundary_coupling.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_channel_product.py": {
+    "stage": "S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_coast_bounded_delta.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_coastal_transport.py": {
+    "stage": "S2/G8；S1/R8；S1/R9；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_cohort_calibration.py": {
+    "stage": "S1/R6"
+  },
+  "terrain_pipeline/surface_rivers/metric_coupled_product.py": {
+    "stage": "S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_delta.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_delta_product.py": {
+    "stage": "S1/R9；S1/R6；S1/R7；S1/R8；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_delta_sediment_product.py": {
+    "stage": "S1/R9；S1/R6；S1/R7；S1/R8；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_distribution_calibration.py": {
+    "stage": "S1/R6"
+  },
+  "terrain_pipeline/surface_rivers/metric_domain_closed_gate.py": {
+    "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_dynamic_feedback.py": {
+    "stage": "S1/R8；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_fluvial_delta.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_fluvial_distributary.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_fluvial_morphodynamics.py": {
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_fluvial_native_routers.py": {
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_fluvial_slope_stability.py": {
+    "stage": "S1/R8；S2/G10"
+  },
+  "terrain_pipeline/surface_rivers/metric_fluvial_water_diagnostic.py": {
+    "stage": "S1/R7；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_fluvial_water_repair.py": {
+    "stage": "S1/R7；S1/R8"
+  },
+  "terrain_pipeline/surface_rivers/metric_fv_bedload_v4.py": {
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_fv_coastal_coupling.py": {
+    "stage": "S2/G8；S1/R8；S1/R9；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_fv_coastal_sediment.py": {
+    "stage": "S2/G8；S1/R8；S1/R9；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_fv_exchange_v3.py": {
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_fv_incident_wave_vectorized.py": {
+    "stage": "S2/G19；S2/G8"
+  },
+  "terrain_pipeline/surface_rivers/metric_fv_suspended_supply.py": {
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_integrated_delta.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_large_source.py": {
+    "stage": "S1/R1；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_morphology_events.py": {
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_morphology_product.py": {
+    "stage": "S1/R9；S1/R6；S1/R7；S1/R8；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_morphology_topology.py": {
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_natural_delta.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_natural_delta_continuation.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_naturalness_audit.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_output.py": {
+    "stage": "S1/R5；S1/R4；S1/R9；S2/G5"
+  },
+  "terrain_pipeline/surface_rivers/metric_product.py": {
+    "stage": "S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_reference_erosion.py": {
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_resolution_exchange.py": {
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_resolution_series.py": {
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_river_dominant_delta.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_river_release.py": {
+    "stage": "S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_saved_river_supply.py": {
+    "stage": "S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_source.py": {
+    "stage": "S1/R1；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_stylized_wetland.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_td_delta_initialization.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_td_generated_rivers.py": {
+    "stage": "S1/R4；S1/R1；S1/R5；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_td_generated_source.py": {
+    "stage": "S1/R1；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_td_native_planning.py": {
+    "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_td_single_source_review.py": {
+    "stage": "S1/R1；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/metric_tidal_creek_construction.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_tidal_island_geometry.py": {
+    "stage": "S1/R6；S1/R8；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_tide_wave_morphology.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/metric_upstream_sediment.py": {
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/surface_rivers/metric_water_cycle.py": {
+    "stage": "S1/R5；S1/R4；S1/R9；S2/G5"
+  },
+  "terrain_pipeline/surface_rivers/native_30m_hydrology_event.py": {
+    "stage": "S1/R5；S1/R4；S1/R9；S2/G5"
+  },
+  "terrain_pipeline/surface_rivers/native_30m_hydrology_ledger.py": {
+    "stage": "S1/R5；S1/R4；S1/R9；S2/G5"
+  },
+  "terrain_pipeline/surface_rivers/natural_outlet_status.py": {
+    "stage": "S1/R2；S1/R3；S1/R6"
+  },
+  "terrain_pipeline/surface_rivers/pipeline.py": {
+    "stage": "X2；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/postvalidate.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/transport.py": {
+    "stage": "S2/G8；S1/R8；S1/R9；S2/G19"
+  },
+  "terrain_pipeline/surface_rivers/water.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/world_channel_dynamics.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/world_channel_graph.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/surface_rivers/world_grid_bed_coupling.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/td_accepted_water_morphology.py": {
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/td_basin_morphology.py": {
+    "stage": "S1/R8；S1/R6；S1/R7"
+  },
+  "terrain_pipeline/td_bounded_conditioning.py": {
+    "stage": "S1/R6；S1/R1；S1/R8"
+  },
+  "terrain_pipeline/td_candidate_weather_jobs.py": {
+    "stage": "X2；S1/R5；S1/R7；S1/R9；S2/G5"
+  },
+  "terrain_pipeline/td_catchment_dynamic_review.py": {
+    "stage": "X3；S1/R9"
+  },
+  "terrain_pipeline/td_entry_pulse_execution_v2.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/td_entry_pulse_incremental.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/td_entry_pulse_propagation.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/td_entry_shallow_water.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/td_fine_bed_hydraulics.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/td_fine_bed_material.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/td_fine_bed_raster.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/td_fine_bed_shards.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/td_hour_pages_acceptance_io.py": {
+    "stage": "S1/R9"
+  },
+  "terrain_pipeline/td_hour_pages_review.py": {
+    "stage": "S1/R9"
+  },
+  "terrain_pipeline/td_native_channel_geometry.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/td_native_channel_surface.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/td_native_channel_surface_review.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/td_native_channel_tiles.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/td_native_channel_valley_paths.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/td_native_domain_partition.py": {
+    "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
+  },
+  "terrain_pipeline/td_native_dynamic_scale_preflight.py": {
+    "stage": "X3；S1/R9"
+  },
+  "terrain_pipeline/td_native_partition_transport.py": {
+    "stage": "S2/G8；S1/R8；S1/R9；S2/G19"
+  },
+  "terrain_pipeline/td_native_water_surface.py": {
+    "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
+  },
+  "terrain_pipeline/td_native_weather_storage_inputs.py": {
+    "stage": "S1/R5；S1/R9；S2/G5"
+  },
+  "terrain_pipeline/td_native_weather_storage_io.py": {
+    "stage": "S1/R9"
+  },
+  "terrain_pipeline/td_native_weather_storage_v10_io.py": {
+    "stage": "S1/R9"
+  },
+  "terrain_pipeline/td_native_weather_v10_review.py": {
+    "stage": "S1/R9"
+  },
+  "terrain_pipeline/td_natural_bed_identity.py": {
+    "stage": "S1/R1；S1/R9"
+  },
+  "terrain_pipeline/td_natural_outlet_certification.py": {
+    "stage": "S1/R2；S1/R3；S1/R6"
+  },
+  "terrain_pipeline/td_natural_river_network.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/td_ported_junction.py": {
+    "stage": "S1/R6；S3/V1"
+  },
+  "terrain_pipeline/td_ported_network_composition.py": {
+    "stage": "S1/R4；S1/R3；S1/R5；S1/R9"
+  },
+  "terrain_pipeline/td_shared_channel_fine.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/td_shared_port_channel.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/td_surface_reaches.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/td_surface_river_edges.py": {
+    "stage": "S1/R6；S1/R4；S1/R9"
+  },
+  "terrain_pipeline/td_weather_checkpoint_recovery.py": {
+    "stage": "S1/R9"
+  },
+  "terrain_pipeline/tectonic.py": {
+    "stage": "S2/G1；S1/R1；S1/R2；S2/G2"
+  },
+  "terrain_pipeline/terrain_map_style.py": {
+    "stage": "X3"
+  },
+  "terrain_pipeline/underground_rivers.py": {
+    "stage": "S3/V4；S1/R6；S3/V1；S3/V3；S3/V8"
+  },
+  "terrain_pipeline/world_acceptance_delta.py": {
+    "stage": "S1/R8；S1/R6；S1/R7；S1/R9；S2/G8；S2/G19"
+  },
+  "terrain_pipeline/world_irregular_channels.py": {
+    "stage": "S1/R6；S1/R4；S1/R7"
+  },
+  "terrain_pipeline/world_river_network_io.py": {
+    "stage": "S1/R9；S1/R4；S1/R6"
+  },
+  "tests/environment_ecology_fixtures.py": {
+    "stage": "X4"
+  },
+  "tests/metric_vdm_fault_fixtures.py": {
+    "stage": "X4；S2/G2；S3/V1；S3/V5；S3/V8"
+  },
+  "tests/test_adaptive_mesh.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S3/V1"
+  },
+  "tests/test_artifact_bundles.py": {
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tests/test_audit_river_on_demand_contract.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_audit_single_domain_surface.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_audit_td_accepted_morphology.py": {
+    "stage": "X4；S2/G2"
+  },
+  "tests/test_audit_td_accepted_topology.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_audit_td_candidate_weather.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_audit_td_compiled_probes.py": {
+    "stage": "X4"
+  },
+  "tests/test_audit_td_continuation_final.py": {
+    "stage": "X4"
+  },
+  "tests/test_audit_td_generated_rivers.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R5；S1/R6；S1/R8；S1/R9"
+  },
+  "tests/test_audit_td_hour_pages_binary.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tests/test_audit_td_hourly_seams.py": {
+    "stage": "X4"
+  },
+  "tests/test_audit_td_morphology_candidates.py": {
+    "stage": "X4"
+  },
+  "tests/test_audit_td_native_channel_path_continuity.py": {
+    "stage": "X4"
+  },
+  "tests/test_audit_td_native_channel_tiles.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_audit_td_native_storm.py": {
+    "stage": "X4；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tests/test_audit_td_native_water_surface.py": {
+    "stage": "X4"
+  },
+  "tests/test_audit_td_native_weather_storage.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tests/test_audit_td_river_geometry_sediment.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_audit_td_storage_continuation.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_backbone_shape_fidelity.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_basin_forcing.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G5"
+  },
+  "tests/test_basin_storage.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G5"
+  },
+  "tests/test_basin_storage_execution.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G5"
+  },
+  "tests/test_basin_storage_io.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G2；S2/G5"
+  },
+  "tests/test_basin_storage_profiles.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G5"
+  },
+  "tests/test_basin_weather_pages.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tests/test_bootstrap_diffusion.py": {
+    "stage": "X4"
+  },
+  "tests/test_bounded_glacier.py": {
+    "stage": "X4；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_bounded_ocean_coast.py": {
+    "stage": "X4；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_build_td_detail_terrain.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_climate_transport.py": {
+    "stage": "X4；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tests/test_coast_bounded_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_along_path_cut.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_annual_capacity.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_avulsion.py": {
+    "stage": "X4；S1/R2；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_bank_formation.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_branch_attachment.py": {
+    "stage": "X4；S1/R2；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_branching.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_deposition_scaling.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_dynamic_plan.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_evolution.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_formation.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_geological.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_geological_network.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_graph_hydraulics.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_graph_integration.py": {
+    "stage": "X4；S1/R2；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_growth.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_hydraulic_capacity.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_hydraulics.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_initial_direction.py": {
+    "stage": "X4；S1/R2；S1/R6；S1/R8；S2/G8"
+  },
+  "tests/test_coastal_delta_irregular_consumers.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_irregular_path.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R8；S1/R9；S2/G8"
+  },
+  "tests/test_coastal_delta_lobes.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_mouth_extension.py": {
+    "stage": "X4；S1/R2；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_mouth_multicell.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_multicell.py": {
+    "stage": "X4；S1/R2；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_multicell_avulsion.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_node_inventory.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_plain.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_regional.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_routes.py": {
+    "stage": "X4；S1/R2；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_delta_window.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_marine_base.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R8；S1/R9；S2/G1；S2/G2；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_marine_longterm.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_marine_sediment.py": {
+    "stage": "X4；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_river_connector.py": {
+    "stage": "X4；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_coastal_terrain.py": {
+    "stage": "X4；S1/R1；S1/R2；S2/G1；S2/G8"
+  },
+  "tests/test_common_infra.py": {
+    "stage": "X4"
+  },
+  "tests/test_compare_hydrology_projection_naturalness.py": {
+    "stage": "X4"
+  },
+  "tests/test_compare_td_river_shapes.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_complete_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_continue_td_weather_pipeline.py": {
+    "stage": "X4"
+  },
+  "tests/test_delta_distributary_trial.py": {
+    "stage": "X4"
+  },
+  "tests/test_delta_forms.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_delta_network_skeleton.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R6；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_delta_network_skeleton_v2.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_delta_network_skeleton_v3.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_delta_network_skeleton_v4.py": {
+    "stage": "X4；S1/R1；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_delta_tidal_validation.py": {
+    "stage": "X4；S1/R7；S1/R9；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_diffusion.py": {
+    "stage": "X4；S1/R1；S1/R9；S2/G1"
+  },
+  "tests/test_drainage_diagnostic.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_drainage_equivalence.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1"
+  },
+  "tests/test_drainage_graph.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_drainage_strict.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tests/test_drainage_surface.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_dynamic_feedback.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_environment_climate_driver.py": {
+    "stage": "X4；S1/R7；S1/R8；S1/R9；S2/G3；S2/G4；S2/G5；S2/G6；S2/G14"
+  },
+  "tests/test_environment_coastal_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5；S2/G6；S2/G8；S2/G19"
+  },
+  "tests/test_environment_coastal_exchange.py": {
+    "stage": "X4；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_environment_context.py": {
+    "stage": "X4；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_environment_contract_equivalence.py": {
+    "stage": "X4"
+  },
+  "tests/test_environment_defaults.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G3；S2/G4；S2/G5；S2/G6；S2/G7；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_environment_delta_fv.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_environment_delta_source.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5；S2/G6；S2/G8；S2/G19"
+  },
+  "tests/test_environment_ecology_integration.py": {
+    "stage": "X4；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_environment_energy_processes.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_environment_explicit_handoff.py": {
+    "stage": "X4"
+  },
+  "tests/test_environment_groundwater.py": {
+    "stage": "X4；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_environment_habitat.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_environment_land_cover.py": {
+    "stage": "X4；S1/R5；S2/G5；S2/G6；S2/G7；S2/G9"
+  },
+  "tests/test_environment_land_cover_coupling.py": {
+    "stage": "X4；S1/R5；S2/G5；S2/G6；S2/G7；S2/G9"
+  },
+  "tests/test_environment_mass_processes.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_environment_material_source.py": {
+    "stage": "X4；S2/G2；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_environment_network_transition.py": {
+    "stage": "X4；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_environment_process_product.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_environment_process_protocol.py": {
+    "stage": "X4；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_environment_processes_cli.py": {
+    "stage": "X4"
+  },
+  "tests/test_environment_regional_hydraulics.py": {
+    "stage": "X4；S1/R7；S1/R8；S1/R9；S2/G5；S2/G6"
+  },
+  "tests/test_environment_seasonal_air.py": {
+    "stage": "X4；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tests/test_environment_seasonal_coupling.py": {
+    "stage": "X4；S1/R5；S1/R7；S1/R8；S1/R9；S2/G3；S2/G4；S2/G5；S2/G6；S2/G7；S2/G9；S2/G14"
+  },
+  "tests/test_environment_soil_chemistry.py": {
+    "stage": "X4；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_environment_succession.py": {
+    "stage": "X4；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tests/test_environment_world_product.py": {
+    "stage": "X4"
+  },
+  "tests/test_export_td_candidate_bounded_review.py": {
+    "stage": "X4"
+  },
+  "tests/test_export_vdm_geometry_io_review.py": {
+    "stage": "X4"
+  },
+  "tests/test_fault_preview_bridge.py": {
+    "stage": "X4"
+  },
+  "tests/test_fictional_world_overview.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R6；S2/G1"
+  },
+  "tests/test_fine_subgrid.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
+  },
+  "tests/test_finite_multiyear_source.py": {
+    "stage": "X4；S1/R7；S1/R8"
+  },
+  "tests/test_fluvial_delta_region_budget.py": {
+    "stage": "X4"
+  },
+  "tests/test_formative_section.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_frozen_hybrid_geometry.py": {
+    "stage": "X4；S3/V1；S3/V2；S3/V3；S3/V5；S3/V6；S3/V8"
+  },
+  "tests/test_frozen_terrain_centerline.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_fv_bedload_v4.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_fv_coastal_sediment.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_fv_current_runner_migration.py": {
+    "stage": "X4；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_fv_growth_v3.py": {
+    "stage": "X4"
+  },
+  "tests/test_fv_incident_wave_vectorized.py": {
+    "stage": "X4；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_fv_legacy_replay.py": {
+    "stage": "X4"
+  },
+  "tests/test_fv_suspended_growth.py": {
+    "stage": "X4"
+  },
+  "tests/test_geography.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1；S2/G3；S2/G4"
+  },
+  "tests/test_geography_v2.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1；S2/G3；S2/G4"
+  },
+  "tests/test_geography_v3.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1；S2/G3；S2/G4"
+  },
+  "tests/test_geography_v4.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1；S2/G3；S2/G4"
+  },
+  "tests/test_geography_v5.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1；S2/G3；S2/G4"
+  },
+  "tests/test_geology_properties.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R9；S2/G2"
+  },
+  "tests/test_geology_strata.py": {
+    "stage": "X4；S2/G2"
+  },
+  "tests/test_global_river_reference_sources.py": {
+    "stage": "X4"
+  },
+  "tests/test_hybrid_geometry.py": {
+    "stage": "X4；S1/R7；S3/V1；S3/V2；S3/V3；S3/V4；S3/V5；S3/V6；S3/V8"
+  },
+  "tests/test_hybrid_geometry_saved_audit.py": {
+    "stage": "X4；S3/V1；S3/V2；S3/V3；S3/V5；S3/V6；S3/V8"
+  },
+  "tests/test_hybrid_hydraulics.py": {
+    "stage": "X4；S1/R7；S3/V4；S3/V8"
+  },
+  "tests/test_hybrid_hydraulics_saved_audit.py": {
+    "stage": "X4；S1/R7；S3/V4；S3/V8"
+  },
+  "tests/test_hybrid_kernels_equivalence.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S3/V1；S3/V2；S3/V3；S3/V4；S3/V5；S3/V6；S3/V7；S3/V8"
+  },
+  "tests/test_hydrology_detail.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9；S2/G1；S2/G3；S2/G4"
+  },
+  "tests/test_hydrology_detail_projection.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1"
+  },
+  "tests/test_hydrology_detail_tributaries.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_hydrology_detail_tributary_finite.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_hydrology_large_preview.py": {
+    "stage": "X4"
+  },
+  "tests/test_hydrology_macro_channel_feasibility.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_hydrology_planning.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_hydrology_planning_naturalness.py": {
+    "stage": "X4"
+  },
+  "tests/test_hydrology_seasonal.py": {
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tests/test_hydrology_seasonal_hybrid.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tests/test_hydrology_shared_section_support.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_hydrovector_evidence.py": {
+    "stage": "X4"
+  },
+  "tests/test_integrated_delta_discharge.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8"
+  },
+  "tests/test_island_mountains.py": {
+    "stage": "X4；S1/R1；S2/G1；S2/G8"
+  },
+  "tests/test_lake_balance.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_lake_river_connector.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_lake_routing.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_large_delta_active_network.py": {
+    "stage": "X4；S1/R6；S1/R8；S2/G8；S2/G19"
+  },
+  "tests/test_large_delta_active_source.py": {
+    "stage": "X4；S1/R5；S1/R8；S1/R9；S2/G8"
+  },
+  "tests/test_large_delta_evolution.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_large_delta_formation_source.py": {
+    "stage": "X4；S1/R1；S1/R5；S1/R6；S1/R7；S1/R8；S2/G8"
+  },
+  "tests/test_large_delta_forward.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_large_delta_initial_cover.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_large_delta_shelf_product.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_large_delta_shelf_scenario.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_large_delta_source.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_large_delta_state.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_large_delta_suite.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_large_delta_suite_network.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_large_delta_suite_tidal.py": {
+    "stage": "X4；S1/R6；S1/R7；S2/G8；S2/G19"
+  },
+  "tests/test_large_delta_terrain_product.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_large_delta_tidal_dynamics.py": {
+    "stage": "X4；S1/R6；S1/R7；S2/G19"
+  },
+  "tests/test_large_delta_tidal_reconstruction.py": {
+    "stage": "X4；S1/R7；S1/R9；S2/G19"
+  },
+  "tests/test_large_delta_tidal_segmented.py": {
+    "stage": "X4；S1/R1；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_large_delta_tidal_source.py": {
+    "stage": "X4；S1/R1；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_large_delta_trial.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_large_scale_resource_preflight.py": {
+    "stage": "X4"
+  },
+  "tests/test_large_scale_surface_network.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_large_scale_surface_tiles.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_large_surface_network.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_legacy_region.py": {
+    "stage": "X4；S1/R9；S4/J1"
+  },
+  "tests/test_legacy_source_isolation.py": {
+    "stage": "X4；S1/R7；S1/R9；S2/G2；S3/V1；S3/V5；S3/V8"
+  },
+  "tests/test_metric_backbone_precompute.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_metric_backbone_product.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_metric_biome_climate.py": {
+    "stage": "X4；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tests/test_metric_boundary_coupling.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_metric_budget_centerline.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_metric_channel_product.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_metric_climate_refinement.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tests/test_metric_coastal_transport.py": {
+    "stage": "X4；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_metric_cohort_calibration.py": {
+    "stage": "X4；S1/R6"
+  },
+  "tests/test_metric_coupled_product.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_metric_coupled_review.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_metric_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_metric_delta_graph_inlet.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_metric_delta_product.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_metric_delta_sediment_product.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_metric_design_barycentric_batch.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_metric_design_merge_groups.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R5；S1/R6；S1/R8；S1/R9"
+  },
+  "tests/test_metric_distribution_calibration.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_metric_domain_bed_feedback.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_metric_domain_closed_gate.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_metric_domain_closure.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_metric_domain_coupled.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
+  },
+  "tests/test_metric_domain_eligibility.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_metric_domain_flow.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tests/test_metric_domain_pipeline.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_metric_domain_sediment.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_metric_equilibrium_lake_support.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_metric_event_response.py": {
+    "stage": "X4；S1/R5；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tests/test_metric_extension_review.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_metric_fan_floodplain.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_metric_flat_distance.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_metric_fluvial_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_metric_fluvial_diffusion_ablation.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8"
+  },
+  "tests/test_metric_fluvial_distributary.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_metric_fluvial_inlet_weights.py": {
+    "stage": "X4；S1/R7；S1/R8"
+  },
+  "tests/test_metric_fluvial_morphodynamics.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G10；S2/G19"
+  },
+  "tests/test_metric_fluvial_slope_stability.py": {
+    "stage": "X4；S1/R8；S2/G10"
+  },
+  "tests/test_metric_fluvial_water_repair.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_metric_geometry_sediment_review.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_metric_integrated_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_metric_lake_channel_coupling.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_metric_lake_storage.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_metric_large_runoff.py": {
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tests/test_metric_large_source.py": {
+    "stage": "X4；S1/R1；S1/R9"
+  },
+  "tests/test_metric_local_budget_centerline.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_metric_lowland_runoff.py": {
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tests/test_metric_morphology_coupling.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_metric_morphology_events.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8"
+  },
+  "tests/test_metric_morphology_products.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_metric_morphology_topology.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8"
+  },
+  "tests/test_metric_natural_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_metric_natural_lakes.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_metric_noise_forcing.py": {
+    "stage": "X4；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tests/test_metric_pet_et.py": {
+    "stage": "X4；S1/R5；S2/G3；S2/G4；S2/G5；S2/G6；S2/G7；S2/G9；S2/G14"
+  },
+  "tests/test_metric_reference_erosion.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8"
+  },
+  "tests/test_metric_reference_routing.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_metric_region.py": {
+    "stage": "X4；S1/R1；S1/R9；S2/G1；S3/V8"
+  },
+  "tests/test_metric_resolution_exchange.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_metric_resolution_series.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_metric_river_contracts.py": {
+    "stage": "X4"
+  },
+  "tests/test_metric_river_dominant_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_metric_river_forcing.py": {
+    "stage": "X4；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tests/test_metric_river_output.py": {
+    "stage": "X4；S1/R4；S1/R5；S1/R9；S2/G5"
+  },
+  "tests/test_metric_river_policy_comparison.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_metric_river_product.py": {
+    "stage": "X4；S1/R5；S1/R9；S2/G5"
+  },
+  "tests/test_metric_river_release.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tests/test_metric_river_runoff.py": {
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tests/test_metric_river_source.py": {
+    "stage": "X4；S1/R1；S1/R9"
+  },
+  "tests/test_metric_saved_river_supply.py": {
+    "stage": "X4；S1/R5；S1/R9；S2/G5"
+  },
+  "tests/test_metric_sediment.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8"
+  },
+  "tests/test_metric_soil_condition.py": {
+    "stage": "X4；S1/R5；S2/G5；S2/G6；S2/G7；S2/G9"
+  },
+  "tests/test_metric_stylized_wetland.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_metric_support_distance.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_metric_td_delta_initialization.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_metric_td_generated_rivers.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R5；S1/R6；S1/R8；S1/R9"
+  },
+  "tests/test_metric_td_generated_source.py": {
+    "stage": "X4；S1/R1；S1/R9"
+  },
+  "tests/test_metric_td_native_planning.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_metric_td_single_source_review.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
+  },
+  "tests/test_metric_terrain_centerline.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R5；S1/R6；S1/R8；S1/R9"
+  },
+  "tests/test_metric_tide_wave_morphology.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_metric_upstream_sediment.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8"
+  },
+  "tests/test_metric_vdm_fault.py": {
+    "stage": "X4；S2/G2；S3/V1；S3/V5；S3/V8"
+  },
+  "tests/test_metric_vdm_fault_migration.py": {
+    "stage": "X4；S2/G2；S3/V1；S3/V5；S3/V8"
+  },
+  "tests/test_metric_water_cycle.py": {
+    "stage": "X4；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
+  },
+  "tests/test_minecraft_export.py": {
+    "stage": "X4；S1/R9；S3/V8；S4/J1"
+  },
+  "tests/test_minecraft_preset.py": {
+    "stage": "X4；S1/R9；S4/J2"
+  },
+  "tests/test_module_catalog.py": {
+    "stage": "X4"
+  },
+  "tests/test_mountain_depression_geometry.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_mountain_fine_geometry.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_mountain_fine_storage.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_mountain_forms.py": {
+    "stage": "X4；S1/R1；S1/R2；S2/G1；S2/G2；S2/G3；S2/G4"
+  },
+  "tests/test_mountain_lake_coupling.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_mountain_pool_network.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_mountain_rainfall.py": {
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tests/test_mountain_runoff_routing.py": {
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tests/test_mountain_source_adapter.py": {
+    "stage": "X4"
+  },
+  "tests/test_mountain_storm_100m.py": {
+    "stage": "X4"
+  },
+  "tests/test_mountain_storm_forcing.py": {
+    "stage": "X4；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tests/test_mountain_storm_hru_scale.py": {
+    "stage": "X4"
+  },
+  "tests/test_native_30m_finite_domain_acceptance.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_native_30m_hydrology_account.py": {
+    "stage": "X4；S1/R4；S1/R5；S1/R9；S2/G5"
+  },
+  "tests/test_native_30m_hydrology_synthetic_baselines.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G5"
+  },
+  "tests/test_native_30m_infinite_certification_matrix.py": {
+    "stage": "X4；S1/R1；S1/R3；S1/R4；S1/R5；S1/R9；S2/G1；S2/G5"
+  },
+  "tests/test_native_30m_lakes.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_native_30m_natural_outlet_status.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R6；S1/R9"
+  },
+  "tests/test_native_30m_review_rejection_cases.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tests/test_native_30m_terminal_rule_acceptance.py": {
+    "stage": "X4"
+  },
+  "tests/test_native_30m_unknown_cone_acceptance.py": {
+    "stage": "X4；S1/R1；S1/R9"
+  },
+  "tests/test_native_hierarchical_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_native_product_invariants.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_natural_delta_construction.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_natural_delta_continuation.py": {
+    "stage": "X4"
+  },
+  "tests/test_natural_delta_expanded_initial.py": {
+    "stage": "X4"
+  },
+  "tests/test_natural_delta_fv_water.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_natural_delta_wide.py": {
+    "stage": "X4"
+  },
+  "tests/test_natural_outlet_certification.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R7"
+  },
+  "tests/test_new_world_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_new_world_game_connectivity.py": {
+    "stage": "X4；S1/R2；S1/R4；S1/R6；S1/R7"
+  },
+  "tests/test_new_world_game_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_new_world_game_fine_lake.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_new_world_game_hydrology.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_new_world_game_river_detail.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8"
+  },
+  "tests/test_new_world_hydrology.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R9"
+  },
+  "tests/test_new_world_native_event.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_new_world_native_geometry.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_new_world_native_lowland.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tests/test_new_world_native_network.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R9"
+  },
+  "tests/test_new_world_native_network_v2.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R9"
+  },
+  "tests/test_new_world_native_network_v3.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_new_world_native_network_v4.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R9"
+  },
+  "tests/test_new_world_native_water.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G1"
+  },
+  "tests/test_new_world_river_acceptance.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G1"
+  },
+  "tests/test_new_world_river_lifecycle.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_new_world_river_scene.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G1"
+  },
+  "tests/test_new_world_rivers.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_new_world_sediment.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_new_world_stage1.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1"
+  },
+  "tests/test_new_world_stage1_derived_phases.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_new_world_stage1_flood_phases.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_ocean_island_consumers.py": {
+    "stage": "X4；S1/R2；S2/G1；S2/G8"
+  },
+  "tests/test_ocean_islands.py": {
+    "stage": "X4；S1/R2；S2/G1；S2/G8"
+  },
+  "tests/test_physical_generation.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1；S2/G3；S2/G4"
+  },
+  "tests/test_pillars3d_preview.py": {
+    "stage": "X4"
+  },
+  "tests/test_plot_td_native_water_surface.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_prepare_basin_candidate_comparison.py": {
+    "stage": "X4"
+  },
+  "tests/test_prepare_hydrology_algorithm_release.py": {
+    "stage": "X4"
+  },
+  "tests/test_prepare_hydrology_full_edges.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_prepare_hydrology_full_window_beds.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_prepare_hydrology_hybrid_lake.py": {
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tests/test_prepare_hydrology_projection_source.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_prepare_hydrology_v5_lake.py": {
+    "stage": "X4"
+  },
+  "tests/test_prepare_mountain_forms.py": {
+    "stage": "X4；S1/R1；S1/R2；S2/G1；S2/G2"
+  },
+  "tests/test_prepare_river_reference_baseline.py": {
+    "stage": "X4"
+  },
+  "tests/test_prepare_td_delta_sediment_candidate.py": {
+    "stage": "X4"
+  },
+  "tests/test_prepare_td_morphology_candidates.py": {
+    "stage": "X4"
+  },
+  "tests/test_prepare_td_reference_routing.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_prepare_td_river_diagnostic.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tests/test_project_acceptance_render.py": {
+    "stage": "X4"
+  },
+  "tests/test_publish_td_accepted_review.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_read_domain_joint_candidate.py": {
+    "stage": "X4"
+  },
+  "tests/test_real_dem_flat_routing.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_real_dem_flat_routing_export.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_real_dem_outlet_classification.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1"
+  },
+  "tests/test_real_dem_outlet_classification_export.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tests/test_real_dem_rainfall_routing.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tests/test_real_dem_rainfall_routing_export.py": {
+    "stage": "X4"
+  },
+  "tests/test_real_dem_review_export.py": {
+    "stage": "X4"
+  },
+  "tests/test_real_dem_river_3d_adapter_export.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_real_dem_surface_network.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_real_dem_tiled_network.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1"
+  },
+  "tests/test_real_dem_tiled_network_export.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1"
+  },
+  "tests/test_real_world_tributary.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_regional_forcing.py": {
+    "stage": "X4；S1/R5；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tests/test_regional_hydraulics_archive.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_regional_review.py": {
+    "stage": "X4；S1/R1；S1/R9"
+  },
+  "tests/test_regional_review_diagnostics.py": {
+    "stage": "X4"
+  },
+  "tests/test_regional_review_landing.py": {
+    "stage": "X4"
+  },
+  "tests/test_regional_source.py": {
+    "stage": "X4；S1/R1；S1/R9"
+  },
+  "tests/test_regional_source_network.py": {
+    "stage": "X4；S1/R1；S1/R9"
+  },
+  "tests/test_render_new_world_river_acceptance.py": {
+    "stage": "X4"
+  },
+  "tests/test_render_remote_sensing.py": {
+    "stage": "X4"
+  },
+  "tests/test_review_large_td_confluence.py": {
+    "stage": "X4"
+  },
+  "tests/test_review_td_channel_geometry.py": {
+    "stage": "X4"
+  },
+  "tests/test_review_td_lowland_runoff.py": {
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tests/test_river_branches_delta.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_river_connectivity_audit.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_river_reference_conditions.py": {
+    "stage": "X4"
+  },
+  "tests/test_runoff.py": {
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tests/test_saved_graph_lowland.py": {
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tests/test_seasonal_snow_ice.py": {
+    "stage": "X4；S1/R5；S2/G5；S2/G6；S2/G7；S2/G9"
+  },
+  "tests/test_shallow_water.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_single_domain_legacy_entrypoints.py": {
+    "stage": "X4；S1/R7；S1/R9"
+  },
+  "tests/test_single_domain_linear_storage_audit.py": {
+    "stage": "X4"
+  },
+  "tests/test_single_domain_surface_archive.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tests/test_single_domain_surface_consumer.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tests/test_single_domain_surface_geometry.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_skeleton_mountains.py": {
+    "stage": "X4；S1/R1；S2/G1"
+  },
+  "tests/test_special_surface_preview.py": {
+    "stage": "X4"
+  },
+  "tests/test_special_terrain.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S3/V1；S3/V2；S3/V3；S3/V5；S3/V6；S3/V7；S3/V8"
+  },
+  "tests/test_srharness_mdbench_bridge.py": {
+    "stage": "X4"
+  },
+  "tests/test_srharness_windows_import.py": {
+    "stage": "X4"
+  },
+  "tests/test_stage1_native_checkpoint.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_stage1_saved_replay.py": {
+    "stage": "X4"
+  },
+  "tests/test_surface_domain.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G1"
+  },
+  "tests/test_surface_lake_network.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_surface_review_browser.py": {
+    "stage": "X4"
+  },
+  "tests/test_surface_review_export.py": {
+    "stage": "X4"
+  },
+  "tests/test_surface_river_diagnostics.py": {
+    "stage": "X4；S1/R1；S1/R9；S2/G1；S3/V8"
+  },
+  "tests/test_surface_river_transport.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_surface_rivers.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_surface_routing_frame.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1"
+  },
+  "tests/test_td_1024_source.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_accepted_candidate_topology.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_accepted_water_morphology.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G2；S2/G5"
+  },
+  "tests/test_td_basin_breach.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S2/G2"
+  },
+  "tests/test_td_basin_candidates.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G2"
+  },
+  "tests/test_td_basin_escape_plan.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_basin_morphology.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S2/G2"
+  },
+  "tests/test_td_basin_overflow.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_basin_overflow_implicit.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_basin_overflow_radau.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_basin_reception.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_basin_review.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G2"
+  },
+  "tests/test_td_basin_runoff_exchange.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G5"
+  },
+  "tests/test_td_basin_source_hierarchy.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_basin_spill_network.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_bounded_conditioning.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G2"
+  },
+  "tests/test_td_candidate_weather_jobs.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_td_catchment_dynamic_review.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_entry_pulse_incremental.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_td_entry_pulse_propagation.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_td_entry_shallow_water.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_td_fine_bed_material.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_td_fine_bed_raster.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_td_fine_bed_shards.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_td_generated_publication.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_hour_pages_acceptance_io.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G5"
+  },
+  "tests/test_td_hour_pages_review.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_td_independent_forcing_reference.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_lake_entry_taper.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_lake_interface_continuous_bed.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_lake_outlet_forest.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6"
+  },
+  "tests/test_td_lake_spill_corridor.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6"
+  },
+  "tests/test_td_lake_spill_geometry.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_lithology_field.py": {
+    "stage": "X4；S2/G2"
+  },
+  "tests/test_td_material_field.py": {
+    "stage": "X4；S2/G2"
+  },
+  "tests/test_td_morphology_candidates.py": {
+    "stage": "X4；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_td_native_channel_geometry.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_native_channel_surface.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_td_native_channel_surface_review.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_td_native_channel_tiles.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_td_native_channel_valley_paths.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_td_native_domain_partition.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_td_native_dynamic_scale_preflight.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_native_partition_transport.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_td_native_storm_forcing.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tests/test_td_native_water_surface.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_td_native_weather_storage_inputs.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G5"
+  },
+  "tests/test_td_native_weather_storage_io.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tests/test_td_natural_bed_identity.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_natural_outlet_certification.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R6"
+  },
+  "tests/test_td_natural_river_baseline.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tests/test_td_natural_river_delivery.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_natural_river_escape.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_natural_river_network.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_noise_water_cycle.py": {
+    "stage": "X4；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
+  },
+  "tests/test_td_ported_junction.py": {
+    "stage": "X4；S1/R6；S3/V1"
+  },
+  "tests/test_td_ported_junction_saved_audit.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_ported_junction_saved_audit_v2.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_ported_junction_saved_audit_v3.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_ported_network_composition.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S3/V1"
+  },
+  "tests/test_td_ported_network_saved_audit.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_radau_audit.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_river_bottom_budget.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_river_resume.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R5；S1/R6；S1/R8；S1/R9"
+  },
+  "tests/test_td_runoff_exchange_audit.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_shared_channel_fine.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_td_shared_channel_fine_saved_audit.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_shared_port_channel.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_td_shared_port_channel_saved_audit.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_td_source_acceptance.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tests/test_td_source_conforming_saved_audit_v3.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_source_dem.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tests/test_td_source_fine_terrain.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R6；S1/R7；S1/R9；S2/G1；S2/G3；S2/G4"
+  },
+  "tests/test_td_source_inventory.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tests/test_td_source_mosaic.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tests/test_td_source_terrain.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tests/test_td_spatial_consistency.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_stable_spill_paths.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G2"
+  },
+  "tests/test_td_stage4_falsification.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_stage_review.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_surface_reaches.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_surface_river_edges.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_td_valley_global_tiled.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_valley_scope_exclusion.py": {
+    "stage": "X4"
+  },
+  "tests/test_td_weather_checkpoint_recovery.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tests/test_td_weather_wet_partition_causality.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_tectonic.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1；S2/G2；S2/G3；S2/G4；S2/G8"
+  },
+  "tests/test_terrain_artifacts.py": {
+    "stage": "X4"
+  },
+  "tests/test_terrain_map_style.py": {
+    "stage": "X4"
+  },
+  "tests/test_terrain_pipeline.py": {
+    "stage": "X4；S3/V1；S3/V8；S4/J2"
+  },
+  "tests/test_tidal_creek_construction.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_underground_preview_bridge.py": {
+    "stage": "X4"
+  },
+  "tests/test_underground_rivers.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S3/V1；S3/V2；S3/V3；S3/V4；S3/V5；S3/V6；S3/V8"
+  },
+  "tests/test_upstream_sediment_connector.py": {
+    "stage": "X4"
+  },
+  "tests/test_usgs_channel_reference.py": {
+    "stage": "X4"
+  },
+  "tests/test_vdm_cuts.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9；S2/G2；S3/V1；S3/V5；S3/V8"
+  },
+  "tests/test_vdm_diffusion.py": {
+    "stage": "X4；S1/R1；S1/R9；S2/G1；S3/V1；S3/V8"
+  },
+  "tests/test_vdm_gallery_sections.py": {
+    "stage": "X4"
+  },
+  "tests/test_verify_fluvial_channel_remobilization.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_verify_fluvial_distributary.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_verify_fluvial_morphodynamics.py": {
+    "stage": "X4"
+  },
+  "tests/test_verify_frozen_sources.py": {
+    "stage": "X4"
+  },
+  "tests/test_verify_native_ownership.py": {
+    "stage": "X4"
+  },
+  "tests/test_verify_river_dominant_saved_source.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_verify_td_partition_transport_saved_page.py": {
+    "stage": "X4"
+  },
+  "tests/test_weathering_soil_inventory.py": {
+    "stage": "X4；S1/R5；S2/G5；S2/G6；S2/G7；S2/G9"
+  },
+  "tests/test_web_preview_river_results.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tests/test_world_acceptance_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tests/test_world_acceptance_processes.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G3；S2/G4；S2/G5；S2/G6；S2/G7；S2/G9；S2/G14"
+  },
+  "tests/test_world_channel_dynamics.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_world_channel_graph.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_world_full_reach.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_world_grid_bed.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tests/test_world_irregular_channels.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R9"
+  },
+  "tests/test_world_layout_conditioning.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1；S2/G3；S2/G4"
+  },
+  "tests/test_world_river_display.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tests/test_world_river_network_io.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G1"
+  },
+  "tests/test_world_water_layout.py": {
+    "stage": "X4；S1/R1；S1/R2；S2/G1"
+  },
+  "tools/assemble_single_domain_stage_acceptance.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tools/audit_adaptive_mesh.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9；S3/V1"
+  },
+  "tools/audit_basin_forcing.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/audit_domain_candidate_bundle.py": {
+    "stage": "X4"
+  },
+  "tools/audit_domain_coupled.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
+  },
+  "tools/audit_domain_flow.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tools/audit_domain_sediment.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/audit_hybrid_geometry.py": {
+    "stage": "X4；S3/V1；S3/V2；S3/V3；S3/V5；S3/V6；S3/V8"
+  },
+  "tools/audit_hybrid_hydraulics.py": {
+    "stage": "X4；S1/R7；S3/V4；S3/V8"
+  },
+  "tools/audit_hydrology_planning_naturalness.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/audit_hydrovector_evidence.py": {
+    "stage": "X4"
+  },
+  "tools/audit_large_delta_tidal_v4.py": {
+    "stage": "X4；S1/R1；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/audit_native_30m_finite_domain.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/audit_native_30m_hydrology.py": {
+    "stage": "X4"
+  },
+  "tools/audit_native_30m_infinite_certification.py": {
+    "stage": "X4"
+  },
+  "tools/audit_native_30m_outlets.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/audit_native_map_chains.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/audit_native_v4_corridors.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R9"
+  },
+  "tools/audit_natural_delta_continuation.py": {
+    "stage": "X4"
+  },
+  "tools/audit_natural_fv_coastal.py": {
+    "stage": "X4"
+  },
+  "tools/audit_natural_mouth_evidence.py": {
+    "stage": "X4"
+  },
+  "tools/audit_new_world_game_connectivity.py": {
+    "stage": "X4；S1/R2；S1/R4；S1/R6；S1/R7"
+  },
+  "tools/audit_real_dem_tailwater.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G1"
+  },
+  "tools/audit_river_backbone.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tools/audit_river_connectivity.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/audit_river_on_demand_consistency.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/audit_river_reference_conditions.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tools/audit_saved_source_conforming_banks.py": {
+    "stage": "X4"
+  },
+  "tools/audit_shallow_water.py": {
+    "stage": "X4；S1/R7；S1/R9"
+  },
+  "tools/audit_single_domain_fine_stage.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
+  },
+  "tools/audit_single_domain_surface.py": {
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tools/audit_special_terrain.py": {
+    "stage": "X4；S3/V1；S3/V2；S3/V3；S3/V5；S3/V6；S3/V7；S3/V8"
+  },
+  "tools/audit_stage_a_outlets.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1"
+  },
+  "tools/audit_stage_b_flats.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1"
+  },
+  "tools/audit_stage_c_water.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tools/audit_stage_e_geometry.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tools/audit_td_accepted_morphology.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8"
+  },
+  "tools/audit_td_accepted_topology.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_bank_carrier_compatibility.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_basin_generation.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_basin_spill_network.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_candidate_coupling.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_candidate_weather.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/audit_td_catchment_dynamic_review.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_compiled_execution.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G5"
+  },
+  "tools/audit_td_compiled_probes.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_conditioning_comparison.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G2；S2/G5"
+  },
+  "tools/audit_td_continuation_final.py": {
+    "stage": "X4；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/audit_td_continuation_spill_activity.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_entry_pulse_incremental.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/audit_td_entry_pulse_propagation.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/audit_td_entry_pulse_review.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_entry_shallow_water.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/audit_td_escape_reference.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_face_numerics.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/audit_td_fine_bed_raster.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6"
+  },
+  "tools/audit_td_fine_bed_shards.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6"
+  },
+  "tools/audit_td_forcing_roundoff.py": {
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tools/audit_td_full_refinement.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_generated_rivers.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/audit_td_hotspot_exchange.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/audit_td_hour_pages_binary.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_hourly_seams.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_lake_spill_corridors.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_lake_spill_graph.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_material_field.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_morphology_candidates.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/audit_td_native_channel_geometry.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/audit_td_native_channel_path_continuity.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_native_channel_tiles.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/audit_td_native_channel_valley_paths.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/audit_td_native_storm.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_native_water_surface.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/audit_td_native_weather_final.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/audit_td_native_weather_storage.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_native_weather_v10.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_native_weather_v10_final.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/audit_td_natural_river_network.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/audit_td_original_bed_overflow.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/audit_td_ported_junction.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6"
+  },
+  "tools/audit_td_ported_junction_v2.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6"
+  },
+  "tools/audit_td_ported_junction_v3.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6"
+  },
+  "tools/audit_td_ported_network_composition_v3.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6"
+  },
+  "tools/audit_td_radau_overflow.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/audit_td_refinement_hotspots.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_refinement_prefix.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_resolution_exchange.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8"
+  },
+  "tools/audit_td_river_channel.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tools/audit_td_river_geometry_sediment.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/audit_td_river_lake_coupling.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/audit_td_river_path_shape.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/audit_td_runoff_exchange.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/audit_td_shared_channel_fine.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/audit_td_shared_port_channel.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/audit_td_simultaneous_transport.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/audit_td_source_conforming_banks.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6"
+  },
+  "tools/audit_td_source_conforming_banks_v3.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6"
+  },
+  "tools/audit_td_storage_continuation.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_storage_sensitivity.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_surface_reaches.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/audit_td_symmetric_forcing.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G5"
+  },
+  "tools/audit_td_threshold_pair.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_v10_temporal_refinement.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G5"
+  },
+  "tools/audit_td_watershed_connectivity.py": {
+    "stage": "X4"
+  },
+  "tools/audit_td_watershed_geometry.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/audit_td_weather_causality.py": {
+    "stage": "X4"
+  },
+  "tools/audit_underground_rivers.py": {
+    "stage": "X4；S1/R6；S3/V1；S3/V3；S3/V4；S3/V8"
+  },
+  "tools/audit_usgs_channel_reference.py": {
+    "stage": "X4"
+  },
+  "tools/audit_vdm_fault.py": {
+    "stage": "X4；S2/G2；S3/V1；S3/V5；S3/V8"
+  },
+  "tools/benchmark_height_budget.py": {
+    "stage": "X4；S1/R1；S1/R9；S2/G1；S3/V8"
+  },
+  "tools/benchmark_height_budget_v5.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1；S2/G3；S2/G4；S3/V8"
+  },
+  "tools/bootstrap_diffusion.py": {
+    "stage": "X4"
+  },
+  "tools/build_fine_terrain.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R9；S2/G1"
+  },
+  "tools/build_game_fine_lake.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/build_local.py": {
+    "stage": "X4"
+  },
+  "tools/build_new_world_game_channel_bed.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/build_new_world_game_channel_bed_v2.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/build_td_detail_terrain.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9；S2/G1；S2/G3；S2/G4"
+  },
+  "tools/census_domain_closures.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/census_domain_coupled.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/check_context_usage.py": {
+    "stage": "X4"
+  },
+  "tools/check_native_products.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/client_ui_probe.py": {
+    "stage": "X4"
+  },
+  "tools/compare_hydrology_projection_naturalness.py": {
+    "stage": "X4"
+  },
+  "tools/compare_natural_delta_fv_water.py": {
+    "stage": "X4"
+  },
+  "tools/compare_natural_fv_growth_controls.py": {
+    "stage": "X4"
+  },
+  "tools/compare_td_river_shapes.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R5；S1/R6；S1/R8；S1/R9"
+  },
+  "tools/complete_game_hydro_lifecycle.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/complete_td_entry_pulse_incremental.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/continue_natural_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/continue_td_v10_refinement_after_baseline.py": {
+    "stage": "X4"
+  },
+  "tools/continue_td_weather_pipeline.py": {
+    "stage": "X4"
+  },
+  "tools/create_resources.py": {
+    "stage": "X4"
+  },
+  "tools/delta_reference_metrics.py": {
+    "stage": "X4"
+  },
+  "tools/diagnose_fv_coastal_front.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/diagnose_fv_mpm_rejection.py": {
+    "stage": "X4"
+  },
+  "tools/diagnose_installation.py": {
+    "stage": "X4"
+  },
+  "tools/diagnose_natural_delta_hydraulics.py": {
+    "stage": "X4；S1/R7；S1/R8"
+  },
+  "tools/diagnose_natural_delta_spreading.py": {
+    "stage": "X4"
+  },
+  "tools/diagnose_natural_fv_morphology.py": {
+    "stage": "X4"
+  },
+  "tools/diagnose_natural_fv_residual_water.py": {
+    "stage": "X4"
+  },
+  "tools/diagnose_river_feasibility.py": {
+    "stage": "X4；S1/R1；S1/R9；S2/G1；S3/V8"
+  },
+  "tools/diagnose_single_domain_fine.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/diagnose_td_natural_river_escape.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/diagnose_td_refinement_onset.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/diagnose_td_river_bottom_budget.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R5；S1/R6；S1/R8；S1/R9"
+  },
+  "tools/diagnose_td_source_bank_boundaries.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6"
+  },
+  "tools/diagnose_td_v10_saved_refinement.py": {
+    "stage": "X4"
+  },
+  "tools/diagnose_td_valley_refusals.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/download_model.py": {
+    "stage": "X4"
+  },
+  "tools/experiment_basin_forcing.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/experiment_td_weather_causality.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/export_hybrid_geometry_review.py": {
+    "stage": "X4"
+  },
+  "tools/export_hybrid_hydraulics_review.py": {
+    "stage": "X4"
+  },
+  "tools/export_metric_minecraft.py": {
+    "stage": "X4；S1/R9；S3/V8；S4/J1"
+  },
+  "tools/export_real_dem_review.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tools/export_regions.py": {
+    "stage": "X4"
+  },
+  "tools/export_single_domain_adaptive_consumer.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S3/V1"
+  },
+  "tools/export_single_domain_fine_consumer.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/export_td_candidate_bounded_review.py": {
+    "stage": "X4"
+  },
+  "tools/export_td_conditioning_review.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/export_td_entry_pulse_partial_review.py": {
+    "stage": "X4"
+  },
+  "tools/export_td_entry_pulse_review.py": {
+    "stage": "X4"
+  },
+  "tools/export_td_entry_shallow_water_review.py": {
+    "stage": "X4"
+  },
+  "tools/export_td_natural_river_review.py": {
+    "stage": "X4；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tools/export_td_natural_river_review_v2.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tools/export_td_overflow_accounting.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/export_td_ported_junction_review.py": {
+    "stage": "X4"
+  },
+  "tools/export_td_stable_basin_reception.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/export_td_v10_accepted_review.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tools/export_td_watershed_inspection.py": {
+    "stage": "X4"
+  },
+  "tools/export_vdm_cuts_review.py": {
+    "stage": "X4"
+  },
+  "tools/finalize_td_generated_batch03.py": {
+    "stage": "X4"
+  },
+  "tools/fluvial_delta_region_budget.py": {
+    "stage": "X4"
+  },
+  "tools/freeze_td_execution_code.py": {
+    "stage": "X4"
+  },
+  "tools/generate_fictional_world_overview.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R6；S2/G1"
+  },
+  "tools/generate_river_domains.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/generate_td_1024_source.py": {
+    "stage": "X4；S1/R1；S1/R9；S2/G1"
+  },
+  "tools/generate_td_noise_validation.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tools/generate_td_real_bio_validation.py": {
+    "stage": "X4；S1/R1；S1/R9；S2/G1"
+  },
+  "tools/generate_td_terrain_rivers.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R5；S1/R6；S1/R8；S1/R9"
+  },
+  "tools/hybrid_cave_saved_audit.py": {
+    "stage": "X4"
+  },
+  "tools/hybrid_exact_solid_saved_audit.py": {
+    "stage": "X4"
+  },
+  "tools/hybrid_geometry_audit_base.py": {
+    "stage": "X4"
+  },
+  "tools/hybrid_geometry_face_checks.py": {
+    "stage": "X4"
+  },
+  "tools/hybrid_geometry_records.py": {
+    "stage": "X4；S3/V1；S3/V2；S3/V3；S3/V5；S3/V6；S3/V8"
+  },
+  "tools/hybrid_geometry_saved_checks.py": {
+    "stage": "X4"
+  },
+  "tools/hybrid_interval_winding_saved_audit.py": {
+    "stage": "X4"
+  },
+  "tools/hybrid_saved_slice_geometry_adapter.py": {
+    "stage": "X4"
+  },
+  "tools/hybrid_surface_resume_saved_audit.py": {
+    "stage": "X4"
+  },
+  "tools/inspect_natural_delta_wide_result.py": {
+    "stage": "X4"
+  },
+  "tools/inspect_natural_fv_growth.py": {
+    "stage": "X4"
+  },
+  "tools/inspect_new_world_game_bed_pool.py": {
+    "stage": "X4"
+  },
+  "tools/measure_natural_delta_submergence.py": {
+    "stage": "X4"
+  },
+  "tools/module_categories.py": {
+    "stage": "X4"
+  },
+  "tools/monitor_native_event_v2.py": {
+    "stage": "X4"
+  },
+  "tools/monitor_native_event_v3.py": {
+    "stage": "X4"
+  },
+  "tools/monitor_native_event_v3_reader.py": {
+    "stage": "X4"
+  },
+  "tools/monitor_new_world_native_event.py": {
+    "stage": "X4"
+  },
+  "tools/monitor_new_world_native_lowland.py": {
+    "stage": "X4"
+  },
+  "tools/natural_fv_growth_interval.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/nbt_reader.py": {
+    "stage": "X4"
+  },
+  "tools/plot_td_accepted_morphology.py": {
+    "stage": "X4"
+  },
+  "tools/plot_td_continuation_review.py": {
+    "stage": "X4"
+  },
+  "tools/plot_td_native_channel_geometry.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/plot_td_native_storm.py": {
+    "stage": "X4"
+  },
+  "tools/plot_td_native_water_surface.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/prepare_basin_candidate_comparison.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/prepare_channel_vdm.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9；S2/G2；S3/V1；S3/V5；S3/V8"
+  },
+  "tools/prepare_climate_matched_river_reference.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tools/prepare_coast_bounded_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/prepare_coastal_archipelago.py": {
+    "stage": "X4；S1/R1；S1/R2；S2/G1；S2/G8"
+  },
+  "tools/prepare_coastal_detail.py": {
+    "stage": "X4；S1/R1；S1/R2；S2/G1；S2/G8"
+  },
+  "tools/prepare_coastal_terrain.py": {
+    "stage": "X4；S1/R1；S1/R2；S2/G1；S2/G8"
+  },
+  "tools/prepare_environment_processes.py": {
+    "stage": "X4；S1/R7；S1/R8；S1/R9；S2/G5；S2/G6"
+  },
+  "tools/prepare_environment_regional_hydraulics.py": {
+    "stage": "X4；S1/R7；S1/R8；S1/R9；S2/G5；S2/G6"
+  },
+  "tools/prepare_environment_snapshot.py": {
+    "stage": "X4；S1/R5；S2/G5；S2/G6；S2/G7；S2/G9"
+  },
+  "tools/prepare_environment_world.py": {
+    "stage": "X4；S1/R5；S2/G2；S2/G3；S2/G4；S2/G5；S2/G6；S2/G7；S2/G9；S2/G14"
+  },
+  "tools/prepare_height_budget_samples.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1；S2/G3；S2/G4；S3/V8；S4/J1"
+  },
+  "tools/prepare_height_budget_v4.py": {
+    "stage": "X4；S1/R1；S1/R9；S2/G1；S3/V8；S4/J1"
+  },
+  "tools/prepare_hybrid_hydraulics.py": {
+    "stage": "X4；S1/R7；S3/V1；S3/V2；S3/V3；S3/V4；S3/V5；S3/V6；S3/V8"
+  },
+  "tools/prepare_hydrology_algorithm_release.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tools/prepare_hydrology_domains.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1；S2/G5"
+  },
+  "tools/prepare_hydrology_full_edges.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1；S2/G5"
+  },
+  "tools/prepare_hydrology_v5_lake.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tools/prepare_island_mountains.py": {
+    "stage": "X4；S1/R1；S1/R2；S2/G1；S2/G8"
+  },
+  "tools/prepare_mountain_belts.py": {
+    "stage": "X4；S1/R1；S1/R2；S2/G1；S2/G2"
+  },
+  "tools/prepare_mountain_forms.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1"
+  },
+  "tools/prepare_native_delta_v2.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/prepare_native_event_v2.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/prepare_native_event_v3.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/prepare_native_map_final.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/prepare_native_map_geometry.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/prepare_native_map_window.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/prepare_native_network.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R9"
+  },
+  "tools/prepare_native_network_v2.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R9"
+  },
+  "tools/prepare_native_network_v3.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R9"
+  },
+  "tools/prepare_native_network_v4.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R9"
+  },
+  "tools/prepare_native_v4_corridors.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R9"
+  },
+  "tools/prepare_natural_delta_expanded_geometry.py": {
+    "stage": "X4"
+  },
+  "tools/prepare_natural_delta_expanded_initial.py": {
+    "stage": "X4"
+  },
+  "tools/prepare_natural_delta_wide_initial.py": {
+    "stage": "X4"
+  },
+  "tools/prepare_new_world_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/prepare_new_world_game_delta_probe.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/prepare_new_world_game_delta_reach.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/prepare_new_world_game_delta_v1.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/prepare_new_world_game_hydrology.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R9"
+  },
+  "tools/prepare_new_world_hydrology.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R9"
+  },
+  "tools/prepare_new_world_native_water.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/prepare_new_world_river_acceptance.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/prepare_new_world_river_scene.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/prepare_new_world_rivers.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/prepare_new_world_stage1.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/prepare_new_world_stage1_flood.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tools/prepare_ocean_islands.py": {
+    "stage": "X4；S1/R2；S2/G1；S2/G8"
+  },
+  "tools/prepare_plate_source.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1；S2/G2；S2/G3；S2/G4"
+  },
+  "tools/prepare_ridge_breakup.py": {
+    "stage": "X4；S1/R1；S2/G1"
+  },
+  "tools/prepare_river_backbone.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/prepare_river_reference_baseline.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tools/prepare_saved_bed_grid.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/prepare_saved_river_supply.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tools/prepare_single_domain_consumer.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tools/prepare_single_domain_surface.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/prepare_source_conforming_banks.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/prepare_special_terrain.py": {
+    "stage": "X4；S3/V1；S3/V2；S3/V3；S3/V5；S3/V6；S3/V7；S3/V8"
+  },
+  "tools/prepare_stylized_river_mouth.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/prepare_td_conditioning_comparison.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G2；S2/G5"
+  },
+  "tools/prepare_td_delta_sediment_candidate.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/prepare_td_entry_pulse_propagation.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/prepare_td_entry_shallow_water.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/prepare_td_fine_bed_raster.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/prepare_td_fine_bed_shards.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/prepare_td_lake_entry_tapers.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/prepare_td_lake_spill_corridors.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6"
+  },
+  "tools/prepare_td_lake_spill_graph.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/prepare_td_morphology_candidates.py": {
+    "stage": "X4；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/prepare_td_natural_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/prepare_td_natural_river_network.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/prepare_td_original_bed_overflow.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/prepare_td_ported_junction.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S3/V1"
+  },
+  "tools/prepare_td_ported_network_composition.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S3/V1"
+  },
+  "tools/prepare_td_radau_overflow.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/prepare_td_reference_routing.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/prepare_td_resolution_exchange.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/prepare_td_river_diagnostic.py": {
+    "stage": "X4；S1/R1；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/prepare_td_runoff_exchange.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/prepare_td_shaped_valley.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/prepare_td_shared_channel_fine.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/prepare_td_shared_port_channel.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/prepare_td_stable_spill_paths.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G2"
+  },
+  "tools/prepare_td_stage_review.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/prepare_td_watershed_geometry.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/prepare_tectonic.py": {
+    "stage": "X4；S1/R1；S1/R2；S2/G1；S2/G2"
+  },
+  "tools/prepare_underground_rivers.py": {
+    "stage": "X4；S1/R6；S3/V1；S3/V2；S3/V3；S3/V4；S3/V5；S3/V6；S3/V8"
+  },
+  "tools/prepare_upstream_sediment_supply.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/prepare_vdm_fault.py": {
+    "stage": "X4；S2/G2；S3/V1；S3/V5；S3/V8"
+  },
+  "tools/prepare_vdm_gallery.py": {
+    "stage": "X4"
+  },
+  "tools/prepare_world_acceptance.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tools/prepare_world_acceptance_processes.py": {
+    "stage": "X4"
+  },
+  "tools/prepare_world_source_mosaic.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tools/prepare_world_terrain.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tools/preview_delta_td_tide_wave.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/preview_geography.py": {
+    "stage": "X4；S1/R1；S1/R2；S2/G1；S2/G3；S2/G4"
+  },
+  "tools/preview_natural_fv_landscape.py": {
+    "stage": "X4"
+  },
+  "tools/preview_river_experiments.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/preview_special_terrain.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S3/V1；S3/V2；S3/V3；S3/V5；S3/V6；S3/V7；S3/V8"
+  },
+  "tools/preview_surface_rivers.py": {
+    "stage": "X4"
+  },
+  "tools/probe_tuned_terrain.py": {
+    "stage": "X4；S1/R1；S1/R9；S2/G1"
+  },
+  "tools/publish_td_accepted_review.py": {
+    "stage": "X4；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/query_environment_processes.py": {
+    "stage": "X4"
+  },
+  "tools/query_environment_world.py": {
+    "stage": "X4"
+  },
+  "tools/query_river_backbone.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tools/read_domain_joint_candidate.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/rebuild_td_accepted_candidate_topology.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/record_td_valley_scope_exclusion.py": {
+    "stage": "X4"
+  },
+  "tools/recover_natural_fv_growth_v3_prefix.py": {
+    "stage": "X4"
+  },
+  "tools/recover_td_entry_pulse_diagnostic.py": {
+    "stage": "X4"
+  },
+  "tools/refine_new_world_game_river_detail.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8"
+  },
+  "tools/render_complete_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/render_delta_comparison.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/render_delta_distributary_trial.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/render_delta_forms.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/render_delta_mouth_16km.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/render_environment_world.py": {
+    "stage": "X4；S1/R5；S2/G5；S2/G6；S2/G7；S2/G9"
+  },
+  "tools/render_hydrology_domains.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tools/render_hydrology_large_preview.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R8；S1/R9"
+  },
+  "tools/render_hydrology_seasonal.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tools/render_large_delta_tidal.py": {
+    "stage": "X4"
+  },
+  "tools/render_large_delta_tidal_v4.py": {
+    "stage": "X4"
+  },
+  "tools/render_large_delta_trial.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/render_native_delta_subgrid.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/render_native_delta_v2.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/render_native_map.py": {
+    "stage": "X4"
+  },
+  "tools/render_native_map_final.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/render_natural_delta_evolution.py": {
+    "stage": "X4"
+  },
+  "tools/render_natural_delta_growth.py": {
+    "stage": "X4"
+  },
+  "tools/render_natural_fv_process.py": {
+    "stage": "X4"
+  },
+  "tools/render_natural_mouth_primary_pages.py": {
+    "stage": "X4"
+  },
+  "tools/render_new_world_delta_subgrid.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/render_new_world_game_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/render_project_acceptance.py": {
+    "stage": "X4；S1/R7；S1/R8；S1/R9；S2/G5；S2/G6"
+  },
+  "tools/render_remote_sensing.py": {
+    "stage": "X4"
+  },
+  "tools/render_single_domain_adaptive_review.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9；S3/V1"
+  },
+  "tools/render_td_basin_audit.py": {
+    "stage": "X4"
+  },
+  "tools/render_td_generated_rivers.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R5；S1/R6；S1/R8；S1/R9"
+  },
+  "tools/render_terrain_map.py": {
+    "stage": "X4；S3/V1；S3/V2；S3/V3；S3/V5；S3/V6；S3/V7；S3/V8"
+  },
+  "tools/render_tidal_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/render_world_acceptance.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R6；S1/R7；S1/R8；S1/R9；S2/G1；S2/G8；S2/G19"
+  },
+  "tools/render_world_river_acceptance.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tools/repair_td_generated_precision.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R5；S1/R6；S1/R8；S1/R9"
+  },
+  "tools/repair_td_river_shapes.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R5；S1/R6；S1/R8；S1/R9；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tools/review_large_td_confluence.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tools/review_saved_bed_mouth.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/review_td_channel_geometry.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1；S2/G3；S2/G4；S2/G5"
+  },
+  "tools/review_td_lowland_runoff.py": {
+    "stage": "X4；S1/R5；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tools/review_td_single_source_river.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R5；S1/R9；S2/G5"
+  },
+  "tools/run_complete_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_cross_region_tributary.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/run_delta_distributary_trial.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_delta_forms.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_delta_fv_morphology.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_delta_network_v1.py": {
+    "stage": "X4；S1/R1；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_delta_network_v2.py": {
+    "stage": "X4；S1/R1；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_delta_network_v3.py": {
+    "stage": "X4；S1/R1；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_delta_network_v4.py": {
+    "stage": "X4；S1/R1；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_environment_coastal_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5；S2/G6；S2/G8；S2/G19"
+  },
+  "tools/run_environment_delta_fv.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_feedback_landward_case.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_finite_multiyear_source.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8"
+  },
+  "tools/run_floodplain_2d.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/run_integrated_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_large_delta_trial.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_native_final_routing.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/run_natural_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_natural_delta_fv_coastal.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_natural_delta_fv_water.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/run_natural_delta_wide.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_natural_fv_growth_v4.py": {
+    "stage": "X4"
+  },
+  "tools/run_new_world_native_event.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/run_new_world_native_lowland.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/run_real_world_full_reach.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G2；S2/G5"
+  },
+  "tools/run_real_world_tributary.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
+  },
+  "tools/run_single_domain_adaptive_stage.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S3/V1"
+  },
+  "tools/run_single_domain_fine_stage.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/run_srharness_mdbench_bridge.py": {
+    "stage": "X4"
+  },
+  "tools/run_td_candidate_weather_jobs.py": {
+    "stage": "X4"
+  },
+  "tools/run_td_coastal_delta.py": {
+    "stage": "X4；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/run_td_v10_temporal_refinement.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G5"
+  },
+  "tools/setup_diffusion.py": {
+    "stage": "X4"
+  },
+  "tools/surface_execution_guards.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S3/V1"
+  },
+  "tools/survey_global_river_climate.py": {
+    "stage": "X4"
+  },
+  "tools/td_entry_saved_audit.py": {
+    "stage": "X4"
+  },
+  "tools/td_ported_junction_saved_audit.py": {
+    "stage": "X4"
+  },
+  "tools/td_ported_junction_saved_audit_v2.py": {
+    "stage": "X4"
+  },
+  "tools/td_ported_junction_saved_audit_v3.py": {
+    "stage": "X4"
+  },
+  "tools/td_ported_network_saved_audit.py": {
+    "stage": "X4"
+  },
+  "tools/td_shared_channel_fine_saved_audit.py": {
+    "stage": "X4"
+  },
+  "tools/td_shared_port_channel_saved_audit.py": {
+    "stage": "X4"
+  },
+  "tools/try_new_world_game_bed_reroutes.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8"
+  },
+  "tools/update_native_event_channel.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_basin_storage.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G5"
+  },
+  "tools/verify_basin_storage_execution.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G5"
+  },
+  "tools/verify_biome_climate_distribution.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9；S2/G1；S2/G3；S2/G4；S2/G5；S2/G14；S3/V8"
+  },
+  "tools/verify_channel_centerline.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/verify_channel_joint.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_client_mixins.py": {
+    "stage": "X4"
+  },
+  "tools/verify_delta_fv_bar_recession.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/verify_delta_fv_coastal_controls.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/verify_delta_tides.py": {
+    "stage": "X4；S1/R7；S1/R9；S2/G19"
+  },
+  "tools/verify_diffusion_server.py": {
+    "stage": "X4"
+  },
+  "tools/verify_dynamic_surface_hydraulics.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_environment_processes.py": {
+    "stage": "X4；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20"
+  },
+  "tools/verify_environment_regional_hydraulics.py": {
+    "stage": "X4；S1/R7；S1/R8；S1/R9；S2/G5；S2/G6"
+  },
+  "tools/verify_environment_seasonal.py": {
+    "stage": "X4；S1/R7；S1/R8；S1/R9；S2/G2；S2/G3；S2/G4；S2/G5；S2/G6；S2/G14"
+  },
+  "tools/verify_erosion3d.py": {
+    "stage": "X4"
+  },
+  "tools/verify_erosion_server.py": {
+    "stage": "X4"
+  },
+  "tools/verify_fault_preview_frontend.py": {
+    "stage": "X4"
+  },
+  "tools/verify_fine_domain_mosaic.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R9；S3/V1"
+  },
+  "tools/verify_first_install.py": {
+    "stage": "X4"
+  },
+  "tools/verify_fluvial_channel_remobilization.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/verify_fluvial_delta.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/verify_fluvial_distributary.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/verify_fluvial_morphodynamics.py": {
+    "stage": "X4；S1/R8；S2/G10"
+  },
+  "tools/verify_frozen_sources.py": {
+    "stage": "X4"
+  },
+  "tools/verify_game_hydro_lifecycle.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/verify_geography_inventory.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tools/verify_lake_river_connector.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/verify_large_surface_network.py": {
+    "stage": "X4；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/verify_legacy_region.py": {
+    "stage": "X4；S1/R9；S4/J1"
+  },
+  "tools/verify_local_channel_sections.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/verify_managed_diffusion.py": {
+    "stage": "X4"
+  },
+  "tools/verify_metric_recipe_gate.py": {
+    "stage": "X4；S1/R1；S1/R9；S2/G1；S3/V8"
+  },
+  "tools/verify_metric_region.py": {
+    "stage": "X4；S1/R1；S1/R9；S2/G1；S3/V8"
+  },
+  "tools/verify_metric_rivers.py": {
+    "stage": "X4；S1/R1；S1/R4；S1/R6；S1/R9；S2/G1；S3/V8"
+  },
+  "tools/verify_mountain_depression_geometry.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/verify_mountain_lake_coupling.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G5"
+  },
+  "tools/verify_mountain_rainfall.py": {
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tools/verify_mountain_round_acceptance.py": {
+    "stage": "X4"
+  },
+  "tools/verify_mountain_runoff_routing.py": {
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tools/verify_mountain_source_adapter.py": {
+    "stage": "X4；S1/R1；S1/R9；S2/G1"
+  },
+  "tools/verify_mountain_storm_100m.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tools/verify_mountain_storm_60m.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tools/verify_mountain_storm_forcing.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tools/verify_mountain_storm_hru_scale.py": {
+    "stage": "X4；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tools/verify_mountain_storm_play_review.py": {
+    "stage": "X4"
+  },
+  "tools/verify_mountain_storm_review.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R9；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tools/verify_native_delta_v2.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/verify_native_event_v3_reader.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_native_map_final.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/verify_native_ownership.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_new_world_game_hydrology.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/verify_new_world_native_event.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/verify_new_world_native_lowland.py": {
+    "stage": "X4"
+  },
+  "tools/verify_physical_generation.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1；S2/G3；S2/G4；S4/J2"
+  },
+  "tools/verify_pillars3d_browser.mjs": {
+    "stage": "X4"
+  },
+  "tools/verify_real_dem_flat_routing.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
+  },
+  "tools/verify_real_dem_outlet_classification.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R9；S2/G1"
+  },
+  "tools/verify_real_dem_rainfall_routing.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
+  },
+  "tools/verify_real_dem_surface_network.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1"
+  },
+  "tools/verify_real_dem_tiled_network.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1"
+  },
+  "tools/verify_regional_forcing.py": {
+    "stage": "X4；S1/R1；S1/R5；S1/R9；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tools/verify_regional_review.py": {
+    "stage": "X4；S1/R1；S1/R9"
+  },
+  "tools/verify_regional_review_diagnostics.py": {
+    "stage": "X4"
+  },
+  "tools/verify_regional_review_dry_saved.py": {
+    "stage": "X4；S1/R1；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_regional_review_landing.py": {
+    "stage": "X4"
+  },
+  "tools/verify_regional_review_saved.py": {
+    "stage": "X4；S1/R1；S1/R9"
+  },
+  "tools/verify_regional_round_acceptance.py": {
+    "stage": "X4；S1/R5；S2/G5"
+  },
+  "tools/verify_regional_source.py": {
+    "stage": "X4；S1/R1；S1/R9"
+  },
+  "tools/verify_regional_source_network.py": {
+    "stage": "X4；S1/R1；S1/R9"
+  },
+  "tools/verify_regions.py": {
+    "stage": "X4"
+  },
+  "tools/verify_review_navigation_camera.py": {
+    "stage": "X4"
+  },
+  "tools/verify_river_bed_ribbons.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G1；S3/V1；S3/V3；S3/V4；S3/V8"
+  },
+  "tools/verify_river_dominant_saved_source.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/verify_saved_surface_frontend.py": {
+    "stage": "X4"
+  },
+  "tools/verify_server.py": {
+    "stage": "X4"
+  },
+  "tools/verify_service_required.py": {
+    "stage": "X4"
+  },
+  "tools/verify_single_domain_fine_cold_io.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_special_surface_browser.mjs": {
+    "stage": "X4"
+  },
+  "tools/verify_stage1_saved_replay.py": {
+    "stage": "X4"
+  },
+  "tools/verify_surface_adaptive_cold_io.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S2/G5；S3/V1"
+  },
+  "tools/verify_surface_centerline_prepare.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/verify_surface_coast_drop.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R9"
+  },
+  "tools/verify_surface_cross_domain.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R9"
+  },
+  "tools/verify_surface_cross_domain_td.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R9"
+  },
+  "tools/verify_surface_development_readiness.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R9"
+  },
+  "tools/verify_surface_domain_mosaic.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R9"
+  },
+  "tools/verify_surface_domain_prepare.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R9"
+  },
+  "tools/verify_surface_dynamic_prepare.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R9"
+  },
+  "tools/verify_surface_engineering_prepare.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R9"
+  },
+  "tools/verify_surface_fine_mosaic.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R9"
+  },
+  "tools/verify_surface_hydraulics.py": {
+    "stage": "X4；S1/R1；S1/R6；S1/R7；S1/R8；S1/R9；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tools/verify_surface_integrated_acceptance.py": {
+    "stage": "X4"
+  },
+  "tools/verify_surface_lake_network.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/verify_surface_land_coverage.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R9"
+  },
+  "tools/verify_surface_multidomain_dynamic.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R9"
+  },
+  "tools/verify_surface_network_consumer.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R9"
+  },
+  "tools/verify_surface_network_prepare.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_surface_network_tiles.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R9"
+  },
+  "tools/verify_surface_review_browser.py": {
+    "stage": "X4"
+  },
+  "tools/verify_surface_variable_storage.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R9"
+  },
+  "tools/verify_td_accepted_water_morphology.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tools/verify_td_active_spatial.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_td_active_spatial_series.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_td_basin_breach.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S2/G2"
+  },
+  "tools/verify_td_basin_candidates.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G2"
+  },
+  "tools/verify_td_basin_escape_plan.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/verify_td_basin_source_hierarchy.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/verify_td_basin_spill_network.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/verify_td_catchment_dynamic_review.py": {
+    "stage": "X4"
+  },
+  "tools/verify_td_channel_distribution.py": {
+    "stage": "X4；S1/R6；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tools/verify_td_global_geometry_browser.py": {
+    "stage": "X4"
+  },
+  "tools/verify_td_hour_pages_acceptance_io.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tools/verify_td_hour_pages_review.py": {
+    "stage": "X4；S1/R9"
+  },
+  "tools/verify_td_material_field.py": {
+    "stage": "X4；S2/G2"
+  },
+  "tools/verify_td_material_scaling.py": {
+    "stage": "X4；S2/G2"
+  },
+  "tools/verify_td_morphology_extension.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_td_native_channel_geometry.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/verify_td_native_channel_surface.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/verify_td_native_channel_tiles.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/verify_td_native_channel_valley_paths.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/verify_td_native_domain_partition.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/verify_td_native_storm_forcing.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G3；S2/G4；S2/G5；S2/G14"
+  },
+  "tools/verify_td_native_water_surface.py": {
+    "stage": "X4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_td_natural_channel_port.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/verify_td_natural_lake_extension.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/verify_td_natural_river_baseline.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_td_partition_transport_saved_page.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "tools/verify_td_readonly_review.py": {
+    "stage": "X4"
+  },
+  "tools/verify_td_river_geometry.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/verify_td_river_lake_coupling.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_td_river_release_browser.py": {
+    "stage": "X4"
+  },
+  "tools/verify_td_river_results_browser.py": {
+    "stage": "X4"
+  },
+  "tools/verify_td_river_sediment.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_td_spatial_consistency.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_td_stable_overflow.py": {
+    "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/verify_td_stage4_falsification.py": {
+    "stage": "X4；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
+  },
+  "tools/verify_td_stage_review_browser.py": {
+    "stage": "X4"
+  },
+  "tools/verify_td_surface_reaches.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/verify_td_surface_river_edges.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9"
+  },
+  "tools/verify_td_tiled_valley_targeted.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/verify_td_valley_global_tiled.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/verify_td_valley_network_union.py": {
+    "stage": "X4；S1/R4；S1/R6；S1/R9"
+  },
+  "tools/verify_td_water_cycle.py": {
+    "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
+  },
+  "tools/verify_terrain_artifacts.py": {
+    "stage": "X4"
+  },
+  "tools/verify_underground_preview_frontend.py": {
+    "stage": "X4"
+  },
+  "tools/verify_valley_geometry.py": {
+    "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "tools/verify_world_presets.py": {
+    "stage": "X4"
+  },
+  "vdm_diffusion/__init__.py": {
+    "stage": "S3/V1；S3/V8"
+  },
+  "vdm_diffusion/__main__.py": {
+    "stage": "S3/V1；S3/V8"
+  },
+  "vdm_diffusion/checkpoint.py": {
+    "stage": "S3/V1；S3/V8"
+  },
+  "vdm_diffusion/conditions.py": {
+    "stage": "S3/V1；S3/V8"
+  },
+  "vdm_diffusion/config.py": {
+    "stage": "S3/V1；S3/V8"
+  },
+  "vdm_diffusion/data.py": {
+    "stage": "S3/V1；S3/V8"
+  },
+  "vdm_diffusion/export.py": {
+    "stage": "S3/V1；S3/V8"
+  },
+  "vdm_diffusion/landforms.py": {
+    "stage": "S3/V1；S3/V8"
+  },
+  "vdm_diffusion/network.py": {
+    "stage": "S3/V1；S3/V8"
+  },
+  "vdm_diffusion/postprocess.py": {
+    "stage": "S3/V1；S3/V8"
+  },
+  "vdm_diffusion/process.py": {
+    "stage": "S3/V1；S3/V8"
+  },
+  "vdm_diffusion/sample.py": {
+    "stage": "S3/V1；S3/V8"
+  },
+  "vdm_diffusion/train.py": {
+    "stage": "S3/V1；S3/V8"
+  },
+  "web-preview/app.js": {
+    "stage": "X3"
+  },
+  "web-preview/bridge.py": {
+    "stage": "X3；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R7；S1/R9；S2/G2；S3/V1；S3/V5；S3/V8"
+  },
+  "web-preview/build_data.py": {
+    "stage": "X3；S3/V1；S3/V8"
+  },
+  "web-preview/build_surface_review_data.py": {
+    "stage": "X3；S1/R1；S1/R2；S1/R3；S1/R4；S1/R9；S2/G1"
+  },
+  "web-preview/fault-surface.js": {
+    "stage": "X3"
+  },
+  "web-preview/fault_preview.py": {
+    "stage": "X3；S2/G2；S3/V1；S3/V5；S3/V8"
+  },
+  "web-preview/global_geometry.py": {
+    "stage": "X3"
+  },
+  "web-preview/index.html": {
+    "stage": "X3"
+  },
+  "web-preview/morphology_preview.py": {
+    "stage": "X3；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S2/G8；S2/G19"
+  },
+  "web-preview/pillars3d.js": {
+    "stage": "X3"
+  },
+  "web-preview/pillars3d.py": {
+    "stage": "X3"
+  },
+  "web-preview/renderer.js": {
+    "stage": "X3"
+  },
+  "web-preview/river-renderer.js": {
+    "stage": "X3"
+  },
+  "web-preview/river-results-3d.js": {
+    "stage": "X3"
+  },
+  "web-preview/river-results.js": {
+    "stage": "X3"
+  },
+  "web-preview/river_results.py": {
+    "stage": "X3；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9"
+  },
+  "web-preview/saved-surface.js": {
+    "stage": "X3"
+  },
+  "web-preview/saved_surface.py": {
+    "stage": "X3；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R7；S1/R8；S1/R9；S3/V1"
+  },
+  "web-preview/serve.py": {
+    "stage": "X3"
+  },
+  "web-preview/special-surface.js": {
+    "stage": "X3"
+  },
+  "web-preview/special_surface.py": {
+    "stage": "X3；S3/V1；S3/V2；S3/V3；S3/V5；S3/V6；S3/V7；S3/V8"
+  },
+  "web-preview/style.css": {
+    "stage": "X3"
+  },
+  "web-preview/underground-contract.js": {
+    "stage": "X3"
+  },
+  "web-preview/underground-surface.js": {
+    "stage": "X3"
+  },
+  "web-preview/underground_preview.py": {
+    "stage": "X3"
+  },
+  "tests/test_island_peak_height.py": {
+    "stage": "X4；S1/R1；S2/G1；S2/G8"
+  }
+}

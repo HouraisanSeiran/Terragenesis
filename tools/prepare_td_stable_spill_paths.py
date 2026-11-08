@@ -11,13 +11,16 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, load_bundle, publish_bytes, validate_source
-from terrain_pipeline.td_basin_breach import load_saddle_breach, save_saddle_breach
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_basin_overflow import load_overflow_topology
-from terrain_pipeline.td_basin_overflow_radau import load_radau_overflow
-from terrain_pipeline.td_material_field import make_material_field, save_material_field
-from terrain_pipeline.td_stable_spill_paths import CASE_NAMES, build_stable_spill_paths, generate_bounded_candidates
+from terrain_pipeline.common_infra import file_sha256, load_bundle, publish_bytes, validate_source
+from terrain_pipeline.basin_topology import load_saddle_breach as load_saddle_breach
+from terrain_pipeline.basin_topology import save_saddle_breach as save_saddle_breach
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_storage import load_overflow_topology as load_overflow_topology
+from terrain_pipeline.basin_storage import load_radau_overflow as load_radau_overflow
+from terrain_pipeline.geology import make_material_field, save_material_field
+from terrain_pipeline.basin_topology import CASE_NAMES as CASE_NAMES
+from terrain_pipeline.basin_topology import build_stable_spill_paths as build_stable_spill_paths
+from terrain_pipeline.basin_topology import generate_bounded_candidates as generate_bounded_candidates
 from tools.export_td_stable_basin_reception import load_export
 
 
@@ -167,7 +170,7 @@ def prepare(output=None, *, max_candidates=8, requests_only=False):
                "continuous_fine_corridor_ready": False,
                "material_semantics": "existing fixed-default synthetic material field; not measured geology; breach thresholds unchanged",
                "code_sha256": {name: file_sha256(ROOT / name) for name in (
-                   "terrain_pipeline/td_stable_spill_paths.py", "tools/prepare_td_stable_spill_paths.py")}}
+                   'terrain_pipeline/basin_topology.py', "tools/prepare_td_stable_spill_paths.py")}}
     if output is None:
         return summary
     payload = json.dumps(report, sort_keys=True, separators=(",", ":"), allow_nan=False).encode("utf-8")

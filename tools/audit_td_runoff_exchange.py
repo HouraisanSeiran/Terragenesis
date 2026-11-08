@@ -11,9 +11,9 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_overflow import load_overflow_topology
-from terrain_pipeline.td_basin_runoff_exchange import load_runoff_exchange
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_storage import load_overflow_topology as load_overflow_topology
+from terrain_pipeline.basin_storage import load_runoff_exchange as load_runoff_exchange
 
 CASES = {"normal-spatial-recession-24h": (30., 86400.), "strong-spatial-recession-6h": (120., 21600.)}
 
@@ -104,7 +104,7 @@ def audit(directory, expected_sha256, *, report_name="independent-audit-v2.json"
     factor = .7 + .6 * (levels - levels.min()) / max(float(np.ptp(levels)), 1.)
     factor /= float(np.average(factor, weights=topology["arrays"]["leaf_area_m2"]))
     cases = []
-    with patch("terrain_pipeline.td_basin_runoff_exchange.simulate_runoff_exchange", side_effect=AssertionError("cold audit forbids solving")), patch("terrain_pipeline.td_basin_runoff_exchange.Radau", side_effect=AssertionError("cold audit forbids Radau")):
+    with patch('terrain_pipeline.basin_storage.simulate_runoff_exchange', side_effect=AssertionError("cold audit forbids solving")), patch('scipy.integrate.Radau', side_effect=AssertionError("cold audit forbids Radau")):
         for case in index["cases"]:
             if [level["level"] for level in case["levels"]] != [0, 1]:
                 raise ValueError("cold audit requires exactly two actual refinement levels")

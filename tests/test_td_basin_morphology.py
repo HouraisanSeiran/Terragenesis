@@ -5,9 +5,9 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 from terrain_pipeline.td_basin_morphology import generate_morphology, load_morphology, save_morphology
-from terrain_pipeline.td_material_field import _bundle, _save_bundle, make_material_field
+from terrain_pipeline.geology import _material_bundle as _bundle, _save_bundle, make_material_field
 from tests.test_td_material_field import malicious_archive
 
 
@@ -110,7 +110,7 @@ class MorphologyTests(unittest.TestCase):
             path = Path(temporary) / "morphology.npz"
             save_morphology(result, path)
             digest = file_sha256(path)
-            with patch("terrain_pipeline.td_basin_morphology.generate_morphology", side_effect=AssertionError("advance forbidden")), patch("terrain_pipeline.td_material_field.make_material_field", side_effect=AssertionError("generation forbidden")):
+            with patch("terrain_pipeline.td_basin_morphology.generate_morphology", side_effect=AssertionError("advance forbidden")), patch('terrain_pipeline.geology.make_material_field', side_effect=AssertionError("generation forbidden")):
                 loaded = load_morphology(path, expected_sha256=digest, expected_identity=result["identity_sha256"])
                 self.assertEqual(result["identity_sha256"], loaded["identity_sha256"])
             with self.assertRaises(FileExistsError):

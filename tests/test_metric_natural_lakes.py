@@ -5,13 +5,16 @@ from pathlib import Path
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.surface_rivers.metric_contracts import TerrainGrid
-from terrain_pipeline.surface_rivers.metric_natural_lakes import (
-    NaturalLakeConfig, build_natural_lakes, load_natural_lakes,
-    save_natural_lakes, solve_natural_lakes, validate_natural_lakes,
-    lake_volume_at_stage, lake_stage_at_volume,
-)
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.common_infra import TerrainGrid
+from terrain_pipeline.lake import NaturalLakeConfig as NaturalLakeConfig
+from terrain_pipeline.lake import build_natural_lakes as build_natural_lakes
+from terrain_pipeline.lake import load_natural_lakes as load_natural_lakes
+from terrain_pipeline.lake import save_natural_lakes as save_natural_lakes
+from terrain_pipeline.lake import solve_natural_lakes as solve_natural_lakes
+from terrain_pipeline.lake import validate_natural_lakes as validate_natural_lakes
+from terrain_pipeline.lake import lake_volume_at_stage as lake_volume_at_stage
+from terrain_pipeline.lake import lake_stage_at_volume as lake_stage_at_volume
 
 
 def two_lakes(*, unknown=False, boundary_kind="closed"):
@@ -113,7 +116,7 @@ class NaturalLakeTests(unittest.TestCase):
 
     def test_wet_component_uses_each_face_cell_wetness(self):
         from scipy.ndimage import label
-        from terrain_pipeline.surface_rivers.metric_natural_lakes import _wet_state
+        from terrain_pipeline.lake import _wet_state as _wet_state
         domain = two_lakes()
         wet, labels = _wet_state(domain["arrays"], np.array([1.1, .1]))
         a = domain["arrays"]

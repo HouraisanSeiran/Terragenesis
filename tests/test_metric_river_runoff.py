@@ -3,9 +3,10 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.rainfall_runoff import RunoffParameters
-from terrain_pipeline.surface_rivers.metric_contracts import BoundaryGrid, RainfallForcing, TerrainGrid
-from terrain_pipeline.surface_rivers.metric_runoff import boundary_flux, runoff_from_forcing
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+from terrain_pipeline.common_infra import BoundaryGrid, RainfallForcing, TerrainGrid
+from terrain_pipeline.runoff import boundary_flux as boundary_flux
+from terrain_pipeline.runoff import runoff_from_forcing as runoff_from_forcing
 
 
 def terrain():
@@ -84,7 +85,7 @@ class MetricRunoffTests(unittest.TestCase):
                    "storage_change_m3", "balance_residual_m3")}
         native["rain_volume_m3"][0, :2] = 1e308
         native.update({key: np.zeros((3, 3)) for key in ("soil_mm", "fast_mm", "slow_mm")})
-        with patch("terrain_pipeline.surface_rivers.metric_runoff.simulate_rainfall_runoff",
+        with patch('terrain_pipeline.runoff.simulate_rainfall_runoff',
                    return_value=native), self.assertRaisesRegex(ValueError, "finite|overflow"):
             runoff_from_forcing(terrain(), forcing())
 

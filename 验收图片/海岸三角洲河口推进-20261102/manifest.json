@@ -1,0 +1,86 @@
+{
+  "edition": "工程初版",
+  "source_chain": [
+    "source-case300",
+    "base-product-v2",
+    "sediment-v3",
+    "delta-v7-moderate",
+    "growth"
+  ],
+  "source_identity": "a306c5127b7510e5f6b7e1359cfb36dfd342c3023cb7dc576a4f6cb97436c60c",
+  "world_seed": 20261020,
+  "origin_xz_m": [
+    -245760.0,
+    -122880.0
+  ],
+  "shape_zx": [
+    359,
+    564
+  ],
+  "spacing_m": 600.0,
+  "coordinates": "cell centres; x east, z south; array [z,x]; DEM image pixel edges and 0 m contours share absolute x/z coordinates; z increases downward",
+  "render": "tools.render_remote_sensing.surface_rgb; elevation colours and shaded relief, synthetic depth tint; no actual land cover",
+  "algorithm": "coast-following-v2 base; v7 formation; shoreline-triggered D4 single-cell finite-stock growth",
+  "formation_scenario": {
+    "inherited_years": 400,
+    "small_additional_years": 200,
+    "large_additional_years": 600,
+    "event_seconds": 90000,
+    "discharge_m3_s": 150,
+    "solid_rate_m3_s": 0.08,
+    "delivery_leak_multiplier": 0.25,
+    "growth_interval_years": 20,
+    "sea_level_m": 0,
+    "notes": "equivalent formation years are distinct from event seconds; forcing assumed, not measured; 600 m cells, channel widths subgrid; large uses saved v2 states and historical sidecar, not retroactively regenerated history"
+  },
+  "base_manifest_source_files_sha256": {
+    "bed_m": "efd166803fb98e0b606c0ac508663ec0bccd6c81f8efc1888e90c3a9b6ed4793",
+    "valid": "4af1727edae26da2d72a35677e67cbe2397d80c6d647f0b673ccd3d99741c890",
+    "ocean": "7868529b51d87e81f946865ea7e8b36e4daccb41c264b1a4259da59abc5f9b25",
+    "unknown_wet": "2b6cac4b2a2e47be7ea6029d42a4730ad67affbfc9e7bb89ae9ac68e046f87d0"
+  },
+  "sha256": {
+    ".scratch\\coast-marine-reorganization-20261102\\base-product-v2\\manifest.json": "1374fa6fef78bb01fbb88a1266f7f25672ccfd7b4ecb9bd7ef79f54748bf44bb",
+    ".scratch\\coast-marine-reorganization-20261102\\base-product-v2\\final_bed.npy": "9651c3b8812fac595d0be6b72be38baa041dbfd17d8a335786822631e6a7a8eb",
+    ".scratch\\coast-marine-reorganization-20261102\\sediment-v3-state.npz": "2707947997e28c601fff5f476235ff89af510866c662bb62e3a6b07e99e4d13c",
+    ".scratch\\coast-marine-reorganization-20261102\\delta-v7-moderate.npz": "e09574a680bc74b435ce33b1f93093b3da9cb37dadc1e79342b8195766da1dea",
+    ".scratch\\coast-marine-reorganization-20261102\\delta-v7-moderate.json": "bfd388ec25971cd47b8edc3223a6e954fd0d6b1f4f96ca8b6129592aa5188bcd",
+    ".scratch\\coast-marine-reorganization-20261102\\growth-v3-stage10.npz": "9e5821f596815ef75ceb1f1896fcb827c69c170aed39d7b48c3a3a40d70b21c1",
+    ".scratch\\coast-marine-reorganization-20261102\\growth-v3-stage10.json": "f2d7cc99e96565ceb2b5098c43b041adb358a7437c2cf22118a9c48c25a87006",
+    ".scratch\\coast-marine-reorganization-20261102\\growth-v3-event.npz": "b9faf9667eed8eb7fc7d546cdeac6f4c576bf0b1fd6dac84d6e874c3c66998cc",
+    ".scratch\\coast-marine-reorganization-20261102\\growth-v3-event.json": "eed640426711a2df2ef4cda8d2ec920c09cb0111e7830adcdc48fd6720a0eafc",
+    ".scratch\\coast-marine-reorganization-20261102\\growth-v2-large-20.npz": "49f648ae3b982ce8a901f9bb7463af57d84d89a881ea815f69c1b4c4e357441d",
+    ".scratch\\coast-marine-reorganization-20261102\\growth-v2-large-20.json": "09e4b7aa6fbccc9ebc2ba57c5fae0e808b366a2e934a943711ebb16faedeebbf",
+    ".scratch\\coast-marine-reorganization-20261102\\growth-v3-large-event.npz": "b7f7014d2d7f22202dedf1d99c90d9944d09fcd48c6657815832bfe5164acf1f",
+    ".scratch\\coast-marine-reorganization-20261102\\growth-v3-large-event.json": "396ae77ffe5a15adb9af7d1364fd2ddc6e79ce9fbdcf3c0f0b0ea428751dfc91",
+    "terrain_pipeline\\coastal_delta_growth.py": "dd46a75e427acb7382f5b1f32a80eab4990231d8ba673f9736ffeb2aa6a8f48e",
+    "terrain_pipeline\\coastal_delta_product.py": "366bbed962022a362228f4f5c0a978093b4336d8428617f13be9e62eda66c0f9",
+    "terrain_pipeline\\coastal_marine_sediment.py": "96c7e9f78e87673dd18846d7e516b9f596f7fbfe9ca063299c4a42508d1c30f1",
+    "tools\\render_remote_sensing.py": "6ef6844e175f1e3c18ab2b39f9d7c0486e203d134ccf00123139b3b8fd9c3377",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\growth-v3-publish.py": "e27bf4f1d7fd052a15365f9a9c2277058e08ef31fb75b4985ce1d0759927c12b",
+    ".scratch\\delta-scale-suite-20261102\\source-case300\\bed_m.npy": "efd166803fb98e0b606c0ac508663ec0bccd6c81f8efc1888e90c3a9b6ed4793",
+    ".scratch\\delta-scale-suite-20261102\\source-case300\\manifest.json": "b81acbf22a2a7b595022d37252bbef988f009ab243b0a4e863fd9f329806515f",
+    ".scratch\\delta-scale-suite-20261102\\source-case300\\ocean.npy": "7868529b51d87e81f946865ea7e8b36e4daccb41c264b1a4259da59abc5f9b25",
+    ".scratch\\delta-scale-suite-20261102\\source-case300\\unknown_wet.npy": "2b6cac4b2a2e47be7ea6029d42a4730ad67affbfc9e7bb89ae9ac68e046f87d0",
+    ".scratch\\delta-scale-suite-20261102\\source-case300\\valid.npy": "4af1727edae26da2d72a35677e67cbe2397d80c6d647f0b673ccd3d99741c890"
+  },
+  "images": {
+    "small-200y.png": "c476597e9f1ad28deacc54d9469f633adc3dd321cd77f5b1641948fd3973cfc7",
+    "large-600y.png": "45d0dde5dbf3c1aa69e0df7adf83b56e10d9c4d8358dbdd9fccb3e3d28bb6ca3"
+  },
+  "coverage_status": "partial",
+  "terrain_basis": "Saved plate-conditioned Terrain Diffusion; source-case300 -> base-product-v2 -> sediment-v3 -> delta-v7-moderate -> growth",
+  "algorithms": [
+    "coastal marine base",
+    "finite marine sediment transport",
+    "delta formation",
+    "shoreline-driven channel extension"
+  ],
+  "primary_review": "main-growth-v3-release-review.md",
+  "limitations": [
+    "600 m regional raster; not 30 m channel geometry",
+    "No demonstrated hundred-kilometre multi-lobe delta",
+    "Marine inlet is not proof of full upstream wet-bed connection",
+    "Large case uses saved v2 sidecar history; small v3 case stores ten stages in checkpoint"
+  ]
+}

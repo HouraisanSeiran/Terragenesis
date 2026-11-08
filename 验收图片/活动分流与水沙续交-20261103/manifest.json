@@ -1,0 +1,117 @@
+{
+  "world_seed": 20261020,
+  "terrain_basis": "saved plate-conditioned Terrain Diffusion",
+  "source_manifest": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-scale-suite-20261102\\source-case300\\manifest.json",
+  "source_manifest_sha256": "b81acbf22a2a7b595022d37252bbef988f009ab243b0a4e863fd9f329806515f",
+  "source_identity": "a306c5127b7510e5f6b7e1359cfb36dfd342c3023cb7dc576a4f6cb97436c60c",
+  "native_td_spacing_m": 30,
+  "calculation_spacing_m": 600,
+  "coordinates": "X east/Z south/down; arrays Z,X",
+  "coverage_status": "mechanism_only",
+  "algorithms": [
+    "shared bed",
+    "finite river transfer",
+    "marine tide/wave",
+    "active path redistribution",
+    "explicit pending input continuation"
+  ],
+  "event_duration_s": 90000,
+  "scenario": {
+    "Q_m3_s": 3000,
+    "solid_m3_s": 1.6,
+    "tide_amplitude_m": 1,
+    "wave_height_m": 1.5,
+    "event_channel_layer_m": 0.5,
+    "capacity_volume_fraction": 0.01,
+    "river_velocity_limit_m_s": 2
+  },
+  "cartography": "terrain colors LAND_COLORS 0..500m / ocean 0..35m depth; physical hillshade; no vertical exaggeration; visible route strokes not physical width",
+  "accepted_scope": "active route closure and topology-consistent allocation; conservative pending delivery; no claim of stable delta plain",
+  "files": [
+    {
+      "file": "01-活动河网与流量.png",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-active-routes.png",
+      "sha256": "cb1e46c1eb6fd4067072ae55e9dbe488812a82e23068884d17e6c521b6089a45"
+    },
+    {
+      "file": "验收报告.md",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-active-review.md",
+      "sha256": "01bd1297e9fd3a7fdd35459d7813e0bcecece7e2d8fab9fba64532ae64c8504e"
+    },
+    {
+      "file": "数据与实现/coastal_delta_branching.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_branching.py",
+      "sha256": "20627cba463ed89c38fa2aec06c8d641e9f51283a8bfb5058a22b9e7db474e8e"
+    },
+    {
+      "file": "数据与实现/test_coastal_delta_branching.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\tests\\test_coastal_delta_branching.py",
+      "sha256": "fb25b16630c4e4a834240ed7200cba54dfe4e072154effc96fb5935fbba719f0"
+    },
+    {
+      "file": "数据与实现/multi-branch-v3-repaired-long.npz",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\multi-branch-v3-repaired-long.npz",
+      "sha256": "d4fbd9ca9c19ee4f78c74d2ec247a8668aff9c347f088b949a0115f90378d037"
+    },
+    {
+      "file": "数据与实现/multi-branch-v3-repaired-long.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\multi-branch-v3-repaired-long.json",
+      "sha256": "e50fe69fb551af8e845bf99f2875504a7bc50a36c4ea273bc95eed539e9c1132"
+    },
+    {
+      "file": "数据与实现/active-routes-v1-event.npz",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\active-routes-v1-event.npz",
+      "sha256": "adfe2ae90fbefc933043bc8c2655169d27a36d6974a8c6a370d982e0fc882ab2"
+    },
+    {
+      "file": "数据与实现/active-routes-v1-event.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\active-routes-v1-event.json",
+      "sha256": "ef934f0dc605189ddfb4ff90f8b7bdeab6115f14e293aa1a76518b7fb941c0a6"
+    },
+    {
+      "file": "数据与实现/active-routes-v1-flush.npz",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\active-routes-v1-flush.npz",
+      "sha256": "2fb26abf78d2834cd9585497f1955c28afae36d8dfee5899a6d05b412f6f03ab"
+    },
+    {
+      "file": "数据与实现/active-routes-v1-flush.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\active-routes-v1-flush.json",
+      "sha256": "28606e805b4ebf32c56e0bafeb601f76b6b978cc9d28401d2ce2c57363d0251b"
+    },
+    {
+      "file": "数据与实现/active-routes-v1-run.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\active-routes-v1-run.py",
+      "sha256": "e84ed77db90ee6dc289d745557308613c712bce6169422a1a3eb12e772c554e7"
+    },
+    {
+      "file": "数据与实现/active-routes-v1-flush-run.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\active-routes-v1-flush-run.py",
+      "sha256": "07b629a032d56eaf72f578c9cfb8c3fbe3d9b9a1d18ec0330161f229062cb4b4"
+    },
+    {
+      "file": "数据与实现/active-routes-v1-stats.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\active-routes-v1-stats.json",
+      "sha256": "4756030f058607c3200742a3b8e0f73ff80033e608b800c1585625c68c7a7a3f"
+    },
+    {
+      "file": "数据与实现/active-routes-v1-flush-stats.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\active-routes-v1-flush-stats.json",
+      "sha256": "0aa785c70d94b0083e74a9e1e6b333e237946b4605e7315465b0adf26085c1c4"
+    },
+    {
+      "file": "数据与实现/main-active-accept.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-active-accept.py",
+      "sha256": "ee741dfa3ed76abe2c6c1fc3f47c5d51b6529965a78044d5194fa7bc43722be3"
+    },
+    {
+      "file": "数据与实现/main-active-accept.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-active-accept.json",
+      "sha256": "e97d950a9fdfca03160a8a482f37690dcb8ea3527fe22f95531504bf3c6a615d"
+    },
+    {
+      "file": "数据与实现/main-active-figures.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-active-figures.py",
+      "sha256": "526bf9af4c9f92538ec92a9ce41b4c500671233b55dc1317786cfb9b00c0ab38"
+    }
+  ]
+}

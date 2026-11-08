@@ -1,0 +1,61 @@
+{
+  "window_km": [
+    -6.2,
+    1.6,
+    5.0,
+    13.0
+  ],
+  "map_water_depth_range_m": [
+    0,
+    2
+  ],
+  "bed_difference_range_m": [
+    -0.3,
+    0.3
+  ],
+  "river_width": "actual saved wet sections, no minimum width",
+  "tide_diagnostics": [
+    {
+      "level_m": -0.3,
+      "route_q_m3_s": [
+        0.0,
+        7.258544862270355,
+        0.0
+      ],
+      "active": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "level_m": 0.0,
+      "route_q_m3_s": [
+        0.0,
+        7.214104094492933,
+        7.284704140437106
+      ],
+      "active": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "level_m": 0.3,
+      "route_q_m3_s": [
+        7.18204787060928,
+        7.135886416110181,
+        4.78671632992635
+      ],
+      "active": [
+        true,
+        true,
+        true
+      ]
+    }
+  ],
+  "native_td_m": 30,
+  "calculation_m": 200,
+  "world_seed": 20261020
+}

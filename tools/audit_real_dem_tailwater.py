@@ -15,9 +15,9 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline import dynamic_surface_hydraulics as hydro
-from terrain_pipeline.dem_domain import load_dem_candidate
-from terrain_pipeline.real_dem_surface_network import RealDemNetwork
+from terrain_pipeline import surface_hydraulics as hydro
+from terrain_pipeline.td_source import load_dem_candidate
+from terrain_pipeline.drainage import RealDemNetwork as RealDemNetwork
 from tools.verify_real_dem_outlet_classification import DEFAULT_CANDIDATE, canonical_bytes, check_unchanged, source_record
 
 

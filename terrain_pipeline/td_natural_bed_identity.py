@@ -3,7 +3,7 @@
 import numpy as np
 
 from terrain_pipeline.artifacts.contracts import array_hash, digest
-from terrain_pipeline.td_natural_channel_geometry import validate_natural_channel_geometry
+from terrain_pipeline.channel_geometry import validate_natural_channel_geometry
 from terrain_pipeline.td_natural_river_network import validate_natural_river_network
 
 

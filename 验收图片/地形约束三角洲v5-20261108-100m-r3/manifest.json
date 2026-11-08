@@ -1,0 +1,92 @@
+{
+ "algorithms": [
+  "source lowland reconstruction",
+  "finite accommodation geological fill",
+  "source-steered DAG",
+  "v4 channel cross-sections"
+ ],
+ "audit": {
+  "base": {
+   "construction_profiles": 12,
+   "source_hill_cells": 58003,
+   "source_hill_cells_changed": 0
+  },
+  "few_loops": {
+   "construction_profiles": 14,
+   "source_hill_cells": 58003,
+   "source_hill_cells_changed": 0
+  },
+  "many_loops": {
+   "construction_profiles": 14,
+   "source_hill_cells": 58003,
+   "source_hill_cells_changed": 0
+  }
+ },
+ "coverage_status": "complete_in_window",
+ "display_crop_local_km": {
+  "u": [
+   -8.0,
+   22.0
+  ],
+  "v": [
+   -16.0,
+   17.0
+  ]
+ },
+ "files": {
+  "base-dem.png": "e2a4c284efa30f64254296ff800fe7bcf7508a5b94a5a4b37d096ea6ad4a9c31",
+  "base-main.png": "c1289885d27d1393f61d1d99067a9c9a25ecf5fef5cc4e8710a60a07b73b1f6d",
+  "base-source-and-change.png": "c1def14ba11ce010c48016ac06e6878e07b16833e252b5058d70fcfa5b8166f2",
+  "few_loops-dem.png": "45eadfe7fc3d0ce46f815f112af1bcb615fb5f51285810cdbbbc4a49c079a747",
+  "few_loops-main.png": "0172fc97827f2923d46249dae1f2c457a64c31b5d20606d87050af0b321c01e4",
+  "few_loops-source-and-change.png": "1a0299ef9f28b38353b3911da3fecac0409607f4e0a792e52643588e479e088c",
+  "historical-v4-and-source-v5-different-sites.png": "07757cf03e8339d2ff67bada7c2fe2dbb557b1a0bffc131b39149406d5b897ee",
+  "many_loops-dem.png": "a263e0d00efaf5f9fc6ee92e279f27e6b96eedbb25844136e06c5ea84090e640",
+  "many_loops-main.png": "e0a4ff4d7106e97d7657f28cd034a78a522248f6a6b80b406a82f51853d14235",
+  "many_loops-source-and-change.png": "74ae115d936b84827944693d29c57217d6ee4ee97dd50209f62b4a424f64e217"
+ },
+ "historical_comparison": {
+  "file": "historical-v4-and-source-v5-different-sites.png",
+  "historical_site": {
+   "alpha_deg": 45.0,
+   "anchor_world_m": [
+    9283.050865276338,
+    -3004.9491347236617
+   ],
+   "nu": 1600,
+   "nv": 1600,
+   "shelf_d0_m": 0.4,
+   "shelf_max_depth_m": 80.0,
+   "shelf_slope": 0.001,
+   "spacing_m": 30.0,
+   "u0_m": -4000.0,
+   "v0_m": -24000.0
+  },
+  "semantics": "Different sites on identical immutable TD source; not a coordinate-matched algorithm comparison",
+  "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-network-v1-20261105\\skeleton-v4\\base"
+ },
+ "physical_elapsed_seconds": 0.0,
+ "rendering": "Read-only redraw of saved arrays: terrain colours and actual wet raster; original coast overlay; diagnostic white DAG",
+ "source_cases": [
+  "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-completion-20261107\\source-controlled-v5-100m-r3\\base",
+  "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-completion-20261107\\source-controlled-v5-100m-r3\\few_loops",
+  "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-completion-20261107\\source-controlled-v5-100m-r3\\many_loops"
+ ],
+ "source_world_seed": 20261020,
+ "spacing_m": 100.0,
+ "terrain_basis": {
+  "bed_m.npy": {
+   "bytes": 67108992,
+   "path": ".scratch/river-upgrade-20261101/terrain-v3/bed_m.npy",
+   "sha256": "eb37ec4d383137e61412d5d2411bf5370c3aa942de6e825df4dbebb48a3e8f45"
+  },
+  "ocean_mask.npy": {
+   "bytes": 16777344,
+   "path": ".scratch/river-upgrade-20261101/terrain-v3/ocean_mask.npy",
+   "sha256": "ee6fd7f367469feab8047564d13b4e8ecf3b2947b20098eb9d6cac97a0613a68"
+  },
+  "origin_center_m": -61440.0,
+  "spacing_m": 30.0
+ },
+ "world_seed": 20260903
+}

@@ -15,16 +15,20 @@ def main() -> None:
     out = ROOT / "verification" / "regions" / "classes"
     out.mkdir(parents=True, exist_ok=True)
     sources = sorted((ROOT / "src" / "main" / "java").rglob("*.java"))
-    sources.append(ROOT / "src" / "test" / "java" / "com" / "remotemountains" / "prepared" / "RegionVerification.java")
+    checks = ("RegionVerification", "RawRegionVerification", "DerivedRegionVerification", "DerivedConcurrencyVerification")
+    sources.extend(ROOT / "src" / "test" / "java" / "com" / "remotemountains" / "prepared" / (name + ".java") for name in checks)
     argfile = out.parent / "compile.args"
     arguments = ["-encoding", "UTF-8", "--release", "25", "-proc:none",
                  "-classpath", classpath(), "-d", str(out), *map(str, sources)]
     argfile.write_text("\n".join('"' + arg.replace('\\', '/') + '"' for arg in arguments), encoding="utf-8")
     subprocess.run([str(JAVA / "javac.exe"), "@" + str(argfile)], cwd=ROOT, check=True)
     if not args.compile_only:
-        subprocess.run([str(JAVA / "java.exe"), "-Xmx2G", "-Djava.awt.headless=true",
-                        "-cp", str(out) + ";" + classpath(),
-                        "com.remotemountains.prepared.RegionVerification"], cwd=ROOT, check=True)
+        (ROOT / "verification" / "governance").mkdir(parents=True, exist_ok=True)
+        for name in checks:
+            package = "prepared" if name == "RegionVerification" else "region"
+            subprocess.run([str(JAVA / "java.exe"), "-Xmx2G", "-Djava.awt.headless=true",
+                            "-cp", str(out) + ";" + classpath(),
+                            "com.remotemountains." + package + "." + name], cwd=ROOT, check=True)
 
 
 if __name__ == "__main__":

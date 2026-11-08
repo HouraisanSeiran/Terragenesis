@@ -1,0 +1,2803 @@
+{
+  "product_identity": "cc04a382d6636effd9ce8294a2a6f16f57ca4d0929d30c38c16a52be292f60f6",
+  "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+  "source_file_sha256": "9b57b9b578384558013d8e7e27a6f2b010f1a3fc412880d8d9b7cf79a3eb1241",
+  "run_manifest": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\ocean-islands-20261106\\run-metric-v3-2km\\delivery_manifest.json",
+  "images": {
+    "detail_arc_base16.png": "694f5dacdf3bdd78ef2d0ff443aeffbbfb7a787f863d4e99c2b3bd7908a07d5d",
+    "detail_arc_base_preview.png": "395d233902963e1e81e1b0bc13f03fa5c21e60ac0c2266cfdfc5493e1dc62a0a",
+    "detail_arc_comparison.png": "78716641867363b3d09a3e85e5b3d2df0b0b3366e9466cdf2720002d389789b6",
+    "detail_arc_elevation16.png": "ecfcd010fc51b5b5ca896b88a37086418754dc06550248f12d26122a1fa39086",
+    "detail_arc_elevation8.png": "5cabc924f6e03c1b69e7fabc84ba3025e08c529a249c117e155ee58e58bc3156",
+    "detail_arc_section.png": "021b64c55f171ec5b141f5f0a07c328463a0a9a62bac535e7d9035ada2765954",
+    "detail_arc_terrain_preview.png": "6f1a79bbbe01b6b84de379b1b6b39614f84d0be4b51dc3a1dd0ed7f301aee214",
+    "detail_atoll_base16.png": "2d1d65aa88cad818d4bab7f46cec41701a2a759cdd7da77d3896ef61432f292d",
+    "detail_atoll_base_preview.png": "de9205219dc904d587aab2c47bce49870f5ce18c5c058d6ac4438f3724d002b8",
+    "detail_atoll_comparison.png": "034d09f86e94cef7d1d0825abf3ef16a167cc9f31a4754e4106c3c5d7c5ee51c",
+    "detail_atoll_elevation16.png": "52e256386d7172f304dea3d0e0027b6386b8b0225433ad9ab7b5e0e945a52317",
+    "detail_atoll_elevation8.png": "4550b2b58c1bd48d7a65feaa00c94e71543eebf18d047abbf44d9c1227a8339d",
+    "detail_atoll_section.png": "1cd879b89e28fb0bc10fec9314e0306280b133a89141cf0999086ee2b59764a4",
+    "detail_atoll_terrain_preview.png": "43fa40e13f82e4506e8903608d6102d3b4a09ef4c1f60598cba58c72fe34c9ef",
+    "detail_hotspot_base16.png": "3ac82ed850d8b41b13e69448ab952436990af55aca18b0f634ded3b535be1d0b",
+    "detail_hotspot_base_preview.png": "f93354bd70f55f1cb8117800e979afcd44cb6828b33ac0204097bab7a20de15f",
+    "detail_hotspot_comparison.png": "9bde9a73a896db426e4abf0e574f7536129ecf52681329477286c12539f93af1",
+    "detail_hotspot_elevation16.png": "c3e9eb73f571d4b4b025bd85bfc8f0fda92032b4e0fc0573f1ece2216e657e9d",
+    "detail_hotspot_elevation8.png": "c335ea767f1c5913ac872cf18955f2612258fdadc0ec75044213cb4435712a36",
+    "detail_hotspot_section.png": "3e0c666738a74903e663bbacc843a66c26198c424dd58f8883656846ba1c8099",
+    "detail_hotspot_terrain_preview.png": "9583a267590c39aace9f13a6338e3a30f48619277f2a1bac5894186f0248d757",
+    "detail_ridge_base16.png": "549f13cf401bab7ecbe42b4123f9d08f4c8803bd03f0432a597093aaa9089ded",
+    "detail_ridge_base_preview.png": "7d0a6fac201601566c33fbc0870aa01243665162f47589705bf1b58304103de0",
+    "detail_ridge_comparison.png": "52c4599c9c59cd4f8b3f445534c0d2fcff3f85e3c2630d41d5b4571c0eba1700",
+    "detail_ridge_elevation16.png": "fd4d8bd9ee683b3a8178a914ef41e1868661cb41a72a0124d9d1c21b8d0bd764",
+    "detail_ridge_elevation8.png": "6bd88205c4f46bceda661a9389e9dfc90947d5e54e98f7c21b2be0d0091cce45",
+    "detail_ridge_section.png": "a304b909222660ce2be2e6abd78f1377a62bee7aba92407cd28a9492889c1884",
+    "detail_ridge_terrain_preview.png": "6854afbcc88192f04c9c2bf98049ee4444e53ef8401debc34b83e56edd97fe9c",
+    "detail_seamount_base16.png": "4a6ad652131d1ef8cd9ce0a38d5f2687a69cdfa207574b031c7d221223740a98",
+    "detail_seamount_base_preview.png": "772118b9e3f8fe9df98adea9fd4ed46ddcd2ed13376a88626aa6a207b3d223e7",
+    "detail_seamount_comparison.png": "4a6f5ed77a0b8097231d0393c2ef577db0c4ec7b3fe637135aae1a0c4204716e",
+    "detail_seamount_elevation16.png": "27156b1a3caf6f9b0ed04d2d119501c75795f0ab749fdcb30cf69b29a090007d",
+    "detail_seamount_elevation8.png": "84eefce5645ea51fb40bac8e824f44c9bc6894076a884ada2e1a8dc11ceb6c88",
+    "detail_seamount_section.png": "a16d879108ea2fc66044ad874298bb1fca3e438d74fd4530c1988e60ef186c2f",
+    "detail_seamount_terrain_preview.png": "ab0670fb7eaeaa4f3f5b6e55ac0d2d80b8fad6a19b5a95fde28a3f0f2c769ac4",
+    "representative_chain_base16.png": "27994c8bbed6c3ebbab0021235f76d1fed4ad60c250fe95bcda65bd669a828bc",
+    "representative_chain_base_preview.png": "612e005d80b8d8ba0a98a3f226625fb3a30e810b3aacca2e42188d612bfaabfc",
+    "representative_chain_comparison.png": "d3579b834501efc608a6dbfd3233e066cb7ca0d0f4f21378f0f2156b40dd341f",
+    "representative_chain_elevation16.png": "d19f2d3294e38943b11bbe13db3a9b3d08d46d9b5d33f42b286b790b845cc0e0",
+    "representative_chain_elevation8.png": "5a22a99026f9f3775c346627bc4c549f050bd5bd4cb80eb398fe0c9abeba72b0",
+    "representative_chain_section.png": "beef316a7082c02fc5d2e5837e8a0d3fbb1f12c9a7ed86b2fc17be28516589b8",
+    "representative_chain_terrain_preview.png": "208bfa6fbe297bf12e1c320805defaed0cfb62eb84fa36e8a81e91e095a07675",
+    "world_base16.png": "6b748c6759d92d48e540933b3177d4aea97ad8510dd8bae72648073bc02623b9",
+    "world_base_preview.png": "8145d00885f7843c4761484c63888459cd09df9dd9cc4fb516ab895bf85d8ff3",
+    "world_comparison.png": "d6afe543ea541d104febf0f7c6c1c302ef8b99caf0751b9923464e3ec77746c4",
+    "world_elevation16.png": "93cc65727aaaa1c9c27f19abadbc1f0139f3b3047fd3b34540bc5b733a016c6b",
+    "world_elevation8.png": "0aea4921a7606f26a018b4d04587468649493bebae88b0ca23bcb86c4bfcb0bb",
+    "world_terrain_preview.png": "5d2e5ecbfb18e3d056c3779b3c1147b55039f449ea56cf0a09eeaf64a8aa0d5c"
+  },
+  "mapping": {
+    "world": {
+      "product_identity": "cc04a382d6636effd9ce8294a2a6f16f57ca4d0929d30c38c16a52be292f60f6",
+      "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+      "source_world_seed": 20260903,
+      "coordinates": "X east, Z south; metres; cell centres",
+      "shape_zx": [
+        800,
+        800
+      ],
+      "bounds_m": [
+        -800000.0,
+        -800000.0,
+        800000.0,
+        800000.0
+      ],
+      "spacing_m": 2000.0,
+      "land_area_method": "2x2 regular samples; potential exposed inner supports refined 8x8; finite quadrature can miss narrower strips",
+      "refined_cells": 12234,
+      "refinement_query_points": 782976,
+      "area_refinement_requested": 8,
+      "area_refinement_used": 8,
+      "area_error": "No exact vector-area bound. Fractions are approximate; narrower than spacing/8 may remain unresolved. Never inflate a detected island to one full cell.",
+      "feature_support_cells": [
+        {
+          "feature_id": "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+          "kind": "arc",
+          "support_cells_zx": [
+            45,
+            643,
+            81,
+            679
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:-1:-3:stage:0",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            181,
+            351,
+            232,
+            402
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:-1:-3:stage:1",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            188,
+            361,
+            236,
+            409
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:-1:-3:stage:2",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            194,
+            368,
+            239,
+            413
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:-1:-3:stage:3",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            202,
+            378,
+            244,
+            420
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:-1:3:stage:0",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            669,
+            336,
+            729,
+            396
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:-1:3:stage:1",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            668,
+            327,
+            725,
+            384
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:-1:3:stage:2",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            668,
+            322,
+            722,
+            375
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:-3:-3:stage:0",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            197,
+            155,
+            250,
+            208
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:-3:-3:stage:1",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            191,
+            157,
+            241,
+            208
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:0:1:stage:0",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            472,
+            403,
+            524,
+            456
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:0:1:stage:1",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            469,
+            399,
+            518,
+            448
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:0:1:stage:2",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            465,
+            394,
+            512,
+            441
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:0:1:stage:3",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            463,
+            391,
+            506,
+            434
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:0:1:stage:4",
+          "kind": "atoll",
+          "support_cells_zx": [
+            461,
+            387,
+            501,
+            427
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:0:1:stage:5",
+          "kind": "atoll",
+          "support_cells_zx": [
+            457,
+            382,
+            495,
+            419
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:0:1:stage:6",
+          "kind": "seamount",
+          "support_cells_zx": [
+            455,
+            379,
+            489,
+            413
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:2:0:stage:0",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            402,
+            596,
+            451,
+            645
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:2:0:stage:1",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            399,
+            608,
+            445,
+            654
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:2:0:stage:2",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            396,
+            618,
+            440,
+            661
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:2:0:stage:3",
+          "kind": "atoll",
+          "support_cells_zx": [
+            393,
+            631,
+            433,
+            671
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:2:0:stage:4",
+          "kind": "seamount",
+          "support_cells_zx": [
+            391,
+            640,
+            428,
+            677
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:3:2:stage:0",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            589,
+            650,
+            648,
+            708
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:3:3:stage:0",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            660,
+            638,
+            706,
+            684
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:3:3:stage:1",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            665,
+            651,
+            708,
+            694
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:3:3:stage:2",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            669,
+            659,
+            710,
+            700
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:3:4:stage:0",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            759,
+            640,
+            800,
+            693
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:3:4:stage:1",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            764,
+            652,
+            800,
+            702
+          ]
+        },
+        {
+          "feature_id": "hotspot:20260903:4:2:stage:0",
+          "kind": "hotspot",
+          "support_cells_zx": [
+            595,
+            744,
+            643,
+            792
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:030d9e149ecef9bd96390013",
+          "kind": "ridge",
+          "support_cells_zx": [
+            772,
+            315,
+            800,
+            360
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:0644b9e1591dbbb5d7a44672",
+          "kind": "ridge",
+          "support_cells_zx": [
+            761,
+            354,
+            799,
+            391
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:1254f82ce64738b799e14083",
+          "kind": "ridge",
+          "support_cells_zx": [
+            651,
+            468,
+            694,
+            512
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:3c01e143317c5d98092bb07d",
+          "kind": "ridge",
+          "support_cells_zx": [
+            700,
+            432,
+            740,
+            473
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:4328170d46099bae06e679ff",
+          "kind": "ridge",
+          "support_cells_zx": [
+            527,
+            75,
+            563,
+            110
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:634fe3c0a2e6eb37930db90f",
+          "kind": "ridge",
+          "support_cells_zx": [
+            575,
+            612,
+            610,
+            648
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+          "kind": "ridge",
+          "support_cells_zx": [
+            151,
+            438,
+            189,
+            477
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:6f6d1afad0b0fd33355e1ff6",
+          "kind": "ridge",
+          "support_cells_zx": [
+            430,
+            573,
+            470,
+            612
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:7a3329de68367d0fbb9c4512",
+          "kind": "ridge",
+          "support_cells_zx": [
+            741,
+            428,
+            779,
+            467
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:7aaec1910637fdc905d4b3f5",
+          "kind": "ridge",
+          "support_cells_zx": [
+            0,
+            43,
+            30,
+            77
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:7eb1ec6ed847068f6a0a19eb",
+          "kind": "ridge",
+          "support_cells_zx": [
+            559,
+            761,
+            601,
+            800
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:be41c4dbc8d63dbcd8f46b31",
+          "kind": "ridge",
+          "support_cells_zx": [
+            606,
+            584,
+            644,
+            621
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:c77421b5327be411aa5016f8",
+          "kind": "ridge",
+          "support_cells_zx": [
+            609,
+            711,
+            651,
+            754
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:cc656372d4de1059b5e59b7b",
+          "kind": "ridge",
+          "support_cells_zx": [
+            684,
+            461,
+            726,
+            504
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:d7672a6f9023efcd7ea73c18",
+          "kind": "ridge",
+          "support_cells_zx": [
+            582,
+            600,
+            623,
+            640
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:e399bfa4c19940381db64935",
+          "kind": "ridge",
+          "support_cells_zx": [
+            384,
+            531,
+            426,
+            574
+          ]
+        },
+        {
+          "feature_id": "ridge:20260903:f66b8f43e29ec02c1c8fe269",
+          "kind": "ridge",
+          "support_cells_zx": [
+            0,
+            285,
+            22,
+            325
+          ]
+        }
+      ],
+      "feature_ids": [
+        "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+        "hotspot:20260903:-1:-3:stage:0",
+        "hotspot:20260903:-1:-3:stage:1",
+        "hotspot:20260903:-1:-3:stage:2",
+        "hotspot:20260903:-1:-3:stage:3",
+        "hotspot:20260903:-1:3:stage:0",
+        "hotspot:20260903:-1:3:stage:1",
+        "hotspot:20260903:-1:3:stage:2",
+        "hotspot:20260903:-3:-3:stage:0",
+        "hotspot:20260903:-3:-3:stage:1",
+        "hotspot:20260903:0:1:stage:0",
+        "hotspot:20260903:0:1:stage:1",
+        "hotspot:20260903:0:1:stage:2",
+        "hotspot:20260903:0:1:stage:3",
+        "hotspot:20260903:0:1:stage:4",
+        "hotspot:20260903:0:1:stage:5",
+        "hotspot:20260903:0:1:stage:6",
+        "hotspot:20260903:2:0:stage:0",
+        "hotspot:20260903:2:0:stage:1",
+        "hotspot:20260903:2:0:stage:2",
+        "hotspot:20260903:2:0:stage:3",
+        "hotspot:20260903:2:0:stage:4",
+        "hotspot:20260903:3:2:stage:0",
+        "hotspot:20260903:3:3:stage:0",
+        "hotspot:20260903:3:3:stage:1",
+        "hotspot:20260903:3:3:stage:2",
+        "hotspot:20260903:3:4:stage:0",
+        "hotspot:20260903:3:4:stage:1",
+        "hotspot:20260903:4:2:stage:0",
+        "ridge:20260903:030d9e149ecef9bd96390013",
+        "ridge:20260903:0644b9e1591dbbb5d7a44672",
+        "ridge:20260903:1254f82ce64738b799e14083",
+        "ridge:20260903:3c01e143317c5d98092bb07d",
+        "ridge:20260903:4328170d46099bae06e679ff",
+        "ridge:20260903:634fe3c0a2e6eb37930db90f",
+        "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+        "ridge:20260903:6f6d1afad0b0fd33355e1ff6",
+        "ridge:20260903:7a3329de68367d0fbb9c4512",
+        "ridge:20260903:7aaec1910637fdc905d4b3f5",
+        "ridge:20260903:7eb1ec6ed847068f6a0a19eb",
+        "ridge:20260903:be41c4dbc8d63dbcd8f46b31",
+        "ridge:20260903:c77421b5327be411aa5016f8",
+        "ridge:20260903:cc656372d4de1059b5e59b7b",
+        "ridge:20260903:d7672a6f9023efcd7ea73c18",
+        "ridge:20260903:e399bfa4c19940381db64935",
+        "ridge:20260903:f66b8f43e29ec02c1c8fe269"
+      ],
+      "feature_authority": "frozen vector inventory retained independently of raster",
+      "topology": "whole finite source; four-neighbour perimeter flood; lagoons excluded; no periodic seams",
+      "elevation_png_mapping": {
+        "zero_code_m": -8000,
+        "max_code_m": 8000,
+        "code_to_m": "-8000 + code * 16000 / 65535 (16-bit); 255 denominator for 8-bit",
+        "clipped_below_count": 0,
+        "clipped_above_count": 0,
+        "vertical_unit": "metres; sea level 0m; float NPY/NPZ remains authoritative"
+      },
+      "preview": "height colour + physical hillshade; no real vegetation/land cover, no water/river ecology"
+    },
+    "arc": {
+      "feature": {
+        "feature_id": "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+        "chain_id": "arc-boundary:3:6",
+        "kind": "arc",
+        "center_x_m": 521428.91315914725,
+        "center_z_m": -673581.5540569982,
+        "support_radius_m": 35202.04678236257,
+        "peak_elevation_m": 1039.6784651540293,
+        "base_elevation_m": -3585.0107397915467,
+        "stage": 0,
+        "age_steps": 0.0,
+        "plate_id": 3,
+        "boundary_id": "face:0a95e2ec253a6ce1f6d33de2",
+        "boundary_kind": "convergent",
+        "basis": "ocean-ocean convergence -334.783929 m/offline-step; upper plate=3; greater continental fraction then lower plate-ID polarity proxy; normal=(0.809531,0.587077); offset=45000m",
+        "subseed": 1452120290167418,
+        "orientation_rad": 2.198239164531478,
+        "axis_ratio": 0.7136927603823157,
+        "hotspot_x_m": 521428.91315914725,
+        "hotspot_z_m": -673581.5540569982,
+        "velocity_x_m_per_step": 0.0,
+        "velocity_z_m_per_step": 0.0,
+        "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+        "parameter_identity": "f8b24183d249ad7f1faba0dc295ee7025f653a2987cd81f04c4a9436bab7ec16",
+        "algorithm": "ocean-islands-metric-detail-smooth-seabed-v3",
+        "declared_generated": true,
+        "boundary_anchor_x_m": 485000.0,
+        "boundary_anchor_z_m": -700000.0,
+        "boundary_normal_x": 0.8095314035366058,
+        "boundary_normal_z": 0.587076576511151,
+        "boundary_tangent_x": -0.587076576511151,
+        "boundary_tangent_z": 0.8095314035366058,
+        "upper_plate_id": 3,
+        "boundary_relative_velocity_m_per_step": -334.78392851569436
+      },
+      "export": {
+        "product_identity": "cc04a382d6636effd9ce8294a2a6f16f57ca4d0929d30c38c16a52be292f60f6",
+        "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+        "source_world_seed": 20260903,
+        "coordinates": "X east, Z south; metres; cell centres",
+        "shape_zx": [
+          600,
+          600
+        ],
+        "bounds_m": [
+          475666.2523420759,
+          -719344.2148740696,
+          567191.5739762186,
+          -627818.8932399269
+        ],
+        "spacing_m": 152.5422027235711,
+        "land_area_method": "1x1 regular samples; potential exposed inner supports refined 2x2; finite quadrature can miss narrower strips",
+        "refined_cells": 53824,
+        "refinement_query_points": 215296,
+        "area_refinement_requested": 2,
+        "area_refinement_used": 2,
+        "area_error": "No exact vector-area bound. Fractions are approximate; narrower than spacing/2 may remain unresolved. Never inflate a detected island to one full cell.",
+        "feature_support_cells": [
+          {
+            "feature_id": "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+            "kind": "arc",
+            "support_cells_zx": [
+              69,
+              69,
+              531,
+              531
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:3",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-3:-3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-3:-3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:3",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:4",
+            "kind": "atoll",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:5",
+            "kind": "atoll",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:6",
+            "kind": "seamount",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:3",
+            "kind": "atoll",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:4",
+            "kind": "seamount",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:2:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:4:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:4:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:4:2:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:030d9e149ecef9bd96390013",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:0644b9e1591dbbb5d7a44672",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:1254f82ce64738b799e14083",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:3c01e143317c5d98092bb07d",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:4328170d46099bae06e679ff",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:634fe3c0a2e6eb37930db90f",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:6f6d1afad0b0fd33355e1ff6",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7a3329de68367d0fbb9c4512",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7aaec1910637fdc905d4b3f5",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7eb1ec6ed847068f6a0a19eb",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:be41c4dbc8d63dbcd8f46b31",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:c77421b5327be411aa5016f8",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:cc656372d4de1059b5e59b7b",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:d7672a6f9023efcd7ea73c18",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:e399bfa4c19940381db64935",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:f66b8f43e29ec02c1c8fe269",
+            "kind": "ridge",
+            "support_cells_zx": null
+          }
+        ],
+        "feature_ids": [
+          "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+          "hotspot:20260903:-1:-3:stage:0",
+          "hotspot:20260903:-1:-3:stage:1",
+          "hotspot:20260903:-1:-3:stage:2",
+          "hotspot:20260903:-1:-3:stage:3",
+          "hotspot:20260903:-1:3:stage:0",
+          "hotspot:20260903:-1:3:stage:1",
+          "hotspot:20260903:-1:3:stage:2",
+          "hotspot:20260903:-3:-3:stage:0",
+          "hotspot:20260903:-3:-3:stage:1",
+          "hotspot:20260903:0:1:stage:0",
+          "hotspot:20260903:0:1:stage:1",
+          "hotspot:20260903:0:1:stage:2",
+          "hotspot:20260903:0:1:stage:3",
+          "hotspot:20260903:0:1:stage:4",
+          "hotspot:20260903:0:1:stage:5",
+          "hotspot:20260903:0:1:stage:6",
+          "hotspot:20260903:2:0:stage:0",
+          "hotspot:20260903:2:0:stage:1",
+          "hotspot:20260903:2:0:stage:2",
+          "hotspot:20260903:2:0:stage:3",
+          "hotspot:20260903:2:0:stage:4",
+          "hotspot:20260903:3:2:stage:0",
+          "hotspot:20260903:3:3:stage:0",
+          "hotspot:20260903:3:3:stage:1",
+          "hotspot:20260903:3:3:stage:2",
+          "hotspot:20260903:3:4:stage:0",
+          "hotspot:20260903:3:4:stage:1",
+          "hotspot:20260903:4:2:stage:0",
+          "ridge:20260903:030d9e149ecef9bd96390013",
+          "ridge:20260903:0644b9e1591dbbb5d7a44672",
+          "ridge:20260903:1254f82ce64738b799e14083",
+          "ridge:20260903:3c01e143317c5d98092bb07d",
+          "ridge:20260903:4328170d46099bae06e679ff",
+          "ridge:20260903:634fe3c0a2e6eb37930db90f",
+          "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+          "ridge:20260903:6f6d1afad0b0fd33355e1ff6",
+          "ridge:20260903:7a3329de68367d0fbb9c4512",
+          "ridge:20260903:7aaec1910637fdc905d4b3f5",
+          "ridge:20260903:7eb1ec6ed847068f6a0a19eb",
+          "ridge:20260903:be41c4dbc8d63dbcd8f46b31",
+          "ridge:20260903:c77421b5327be411aa5016f8",
+          "ridge:20260903:cc656372d4de1059b5e59b7b",
+          "ridge:20260903:d7672a6f9023efcd7ea73c18",
+          "ridge:20260903:e399bfa4c19940381db64935",
+          "ridge:20260903:f66b8f43e29ec02c1c8fe269"
+        ],
+        "feature_authority": "frozen vector inventory retained independently of raster",
+        "topology": "window only; global ocean topology not computed",
+        "elevation_png_mapping": {
+          "zero_code_m": -8000,
+          "max_code_m": 8000,
+          "code_to_m": "-8000 + code * 16000 / 65535 (16-bit); 255 denominator for 8-bit",
+          "clipped_below_count": 0,
+          "clipped_above_count": 0,
+          "vertical_unit": "metres; sea level 0m; float NPY/NPZ remains authoritative"
+        },
+        "preview": "height colour + physical hillshade; no real vegetation/land cover, no water/river ecology"
+      }
+    },
+    "atoll": {
+      "feature": {
+        "feature_id": "hotspot:20260903:0:1:stage:4",
+        "chain_id": "hotspot:20260903:0:1",
+        "kind": "atoll",
+        "center_x_m": 14107.88870549795,
+        "center_z_m": 161579.4902281349,
+        "support_radius_m": 39425.019434282105,
+        "peak_elevation_m": 6.0281447858176875,
+        "base_elevation_m": -3757.404077056032,
+        "stage": 4,
+        "age_steps": 53.24777624588543,
+        "plate_id": 2,
+        "boundary_id": null,
+        "boundary_kind": null,
+        "basis": "absolute-cell fixed-slot hotspot; constant plate velocity; stop at first foreign plate; declared warm-water shallow-platform game scenario; old-stage platform reconstructed at -35m; not coral growth",
+        "subseed": 6785943842514057,
+        "orientation_rad": 0.8051810102825203,
+        "axis_ratio": 0.8112505383113947,
+        "hotspot_x_m": 59125.49413564953,
+        "hotspot_z_m": 195541.21109557556,
+        "velocity_x_m_per_step": -845.4363469052886,
+        "velocity_z_m_per_step": -637.8054307960879,
+        "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+        "parameter_identity": "f8b24183d249ad7f1faba0dc295ee7025f653a2987cd81f04c4a9436bab7ec16",
+        "algorithm": "ocean-islands-metric-detail-smooth-seabed-v3",
+        "declared_generated": true,
+        "boundary_anchor_x_m": null,
+        "boundary_anchor_z_m": null,
+        "boundary_normal_x": null,
+        "boundary_normal_z": null,
+        "boundary_tangent_x": null,
+        "boundary_tangent_z": null,
+        "upper_plate_id": null,
+        "boundary_relative_velocity_m_per_step": null
+      },
+      "export": {
+        "product_identity": "cc04a382d6636effd9ce8294a2a6f16f57ca4d0929d30c38c16a52be292f60f6",
+        "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+        "source_world_seed": 20260903,
+        "coordinates": "X east, Z south; metres; cell centres",
+        "shape_zx": [
+          600,
+          600
+        ],
+        "bounds_m": [
+          -37144.636559068786,
+          110326.96496356817,
+          65360.413970064685,
+          212832.01549270164
+        ],
+        "spacing_m": 170.8417508818891,
+        "land_area_method": "1x1 regular samples; potential exposed inner supports refined 2x2; finite quadrature can miss narrower strips",
+        "refined_cells": 159477,
+        "refinement_query_points": 637908,
+        "area_refinement_requested": 2,
+        "area_refinement_used": 2,
+        "area_error": "No exact vector-area bound. Fractions are approximate; narrower than spacing/2 may remain unresolved. Never inflate a detected island to one full cell.",
+        "feature_support_cells": [
+          {
+            "feature_id": "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+            "kind": "arc",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:3",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-3:-3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-3:-3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": [
+              197,
+              262,
+              600,
+              600
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": [
+              164,
+              212,
+              600,
+              600
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": [
+              125,
+              154,
+              600,
+              600
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:3",
+            "kind": "hotspot",
+            "support_cells_zx": [
+              97,
+              112,
+              595,
+              600
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:4",
+            "kind": "atoll",
+            "support_cells_zx": [
+              69,
+              69,
+              531,
+              531
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:5",
+            "kind": "atoll",
+            "support_cells_zx": [
+              29,
+              10,
+              456,
+              438
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:6",
+            "kind": "seamount",
+            "support_cells_zx": [
+              4,
+              0,
+              396,
+              364
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:3",
+            "kind": "atoll",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:4",
+            "kind": "seamount",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:2:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:4:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:4:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:4:2:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:030d9e149ecef9bd96390013",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:0644b9e1591dbbb5d7a44672",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:1254f82ce64738b799e14083",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:3c01e143317c5d98092bb07d",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:4328170d46099bae06e679ff",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:634fe3c0a2e6eb37930db90f",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:6f6d1afad0b0fd33355e1ff6",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7a3329de68367d0fbb9c4512",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7aaec1910637fdc905d4b3f5",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7eb1ec6ed847068f6a0a19eb",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:be41c4dbc8d63dbcd8f46b31",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:c77421b5327be411aa5016f8",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:cc656372d4de1059b5e59b7b",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:d7672a6f9023efcd7ea73c18",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:e399bfa4c19940381db64935",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:f66b8f43e29ec02c1c8fe269",
+            "kind": "ridge",
+            "support_cells_zx": null
+          }
+        ],
+        "feature_ids": [
+          "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+          "hotspot:20260903:-1:-3:stage:0",
+          "hotspot:20260903:-1:-3:stage:1",
+          "hotspot:20260903:-1:-3:stage:2",
+          "hotspot:20260903:-1:-3:stage:3",
+          "hotspot:20260903:-1:3:stage:0",
+          "hotspot:20260903:-1:3:stage:1",
+          "hotspot:20260903:-1:3:stage:2",
+          "hotspot:20260903:-3:-3:stage:0",
+          "hotspot:20260903:-3:-3:stage:1",
+          "hotspot:20260903:0:1:stage:0",
+          "hotspot:20260903:0:1:stage:1",
+          "hotspot:20260903:0:1:stage:2",
+          "hotspot:20260903:0:1:stage:3",
+          "hotspot:20260903:0:1:stage:4",
+          "hotspot:20260903:0:1:stage:5",
+          "hotspot:20260903:0:1:stage:6",
+          "hotspot:20260903:2:0:stage:0",
+          "hotspot:20260903:2:0:stage:1",
+          "hotspot:20260903:2:0:stage:2",
+          "hotspot:20260903:2:0:stage:3",
+          "hotspot:20260903:2:0:stage:4",
+          "hotspot:20260903:3:2:stage:0",
+          "hotspot:20260903:3:3:stage:0",
+          "hotspot:20260903:3:3:stage:1",
+          "hotspot:20260903:3:3:stage:2",
+          "hotspot:20260903:3:4:stage:0",
+          "hotspot:20260903:3:4:stage:1",
+          "hotspot:20260903:4:2:stage:0",
+          "ridge:20260903:030d9e149ecef9bd96390013",
+          "ridge:20260903:0644b9e1591dbbb5d7a44672",
+          "ridge:20260903:1254f82ce64738b799e14083",
+          "ridge:20260903:3c01e143317c5d98092bb07d",
+          "ridge:20260903:4328170d46099bae06e679ff",
+          "ridge:20260903:634fe3c0a2e6eb37930db90f",
+          "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+          "ridge:20260903:6f6d1afad0b0fd33355e1ff6",
+          "ridge:20260903:7a3329de68367d0fbb9c4512",
+          "ridge:20260903:7aaec1910637fdc905d4b3f5",
+          "ridge:20260903:7eb1ec6ed847068f6a0a19eb",
+          "ridge:20260903:be41c4dbc8d63dbcd8f46b31",
+          "ridge:20260903:c77421b5327be411aa5016f8",
+          "ridge:20260903:cc656372d4de1059b5e59b7b",
+          "ridge:20260903:d7672a6f9023efcd7ea73c18",
+          "ridge:20260903:e399bfa4c19940381db64935",
+          "ridge:20260903:f66b8f43e29ec02c1c8fe269"
+        ],
+        "feature_authority": "frozen vector inventory retained independently of raster",
+        "topology": "window only; global ocean topology not computed",
+        "elevation_png_mapping": {
+          "zero_code_m": -8000,
+          "max_code_m": 8000,
+          "code_to_m": "-8000 + code * 16000 / 65535 (16-bit); 255 denominator for 8-bit",
+          "clipped_below_count": 0,
+          "clipped_above_count": 0,
+          "vertical_unit": "metres; sea level 0m; float NPY/NPZ remains authoritative"
+        },
+        "preview": "height colour + physical hillshade; no real vegetation/land cover, no water/river ecology"
+      }
+    },
+    "hotspot": {
+      "feature": {
+        "feature_id": "hotspot:20260903:-1:-3:stage:0",
+        "chain_id": "hotspot:20260903:-1:-3",
+        "kind": "hotspot",
+        "center_x_m": -47762.449676417324,
+        "center_z_m": -387403.2163951492,
+        "support_radius_m": 49883.36184659915,
+        "peak_elevation_m": 1682.6743360470275,
+        "base_elevation_m": -3764.9183822713567,
+        "stage": 0,
+        "age_steps": 0.0,
+        "plate_id": 0,
+        "boundary_id": null,
+        "boundary_kind": null,
+        "basis": "absolute-cell fixed-slot hotspot; constant plate velocity; stop at first foreign plate",
+        "subseed": 5899536140836559,
+        "orientation_rad": 0.45580143909247406,
+        "axis_ratio": 0.8027350441629008,
+        "hotspot_x_m": -47762.449676417324,
+        "hotspot_z_m": -387403.2163951492,
+        "velocity_x_m_per_step": 1122.6329251972018,
+        "velocity_z_m_per_step": 803.8588358434505,
+        "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+        "parameter_identity": "f8b24183d249ad7f1faba0dc295ee7025f653a2987cd81f04c4a9436bab7ec16",
+        "algorithm": "ocean-islands-metric-detail-smooth-seabed-v3",
+        "declared_generated": true,
+        "boundary_anchor_x_m": null,
+        "boundary_anchor_z_m": null,
+        "boundary_normal_x": null,
+        "boundary_normal_z": null,
+        "boundary_tangent_x": null,
+        "boundary_tangent_z": null,
+        "upper_plate_id": null,
+        "boundary_relative_velocity_m_per_step": null
+      },
+      "export": {
+        "product_identity": "cc04a382d6636effd9ce8294a2a6f16f57ca4d0929d30c38c16a52be292f60f6",
+        "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+        "source_world_seed": 20260903,
+        "coordinates": "X east, Z south; metres; cell centres",
+        "shape_zx": [
+          600,
+          600
+        ],
+        "bounds_m": [
+          -112610.82007699623,
+          -452251.5867957281,
+          17085.92072416158,
+          -322554.8459945703
+        ],
+        "spacing_m": 216.16123466859634,
+        "land_area_method": "1x1 regular samples; potential exposed inner supports refined 2x2; finite quadrature can miss narrower strips",
+        "refined_cells": 109998,
+        "refinement_query_points": 439992,
+        "area_refinement_requested": 2,
+        "area_refinement_used": 2,
+        "area_error": "No exact vector-area bound. Fractions are approximate; narrower than spacing/2 may remain unresolved. Never inflate a detected island to one full cell.",
+        "feature_support_cells": [
+          {
+            "feature_id": "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+            "kind": "arc",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": [
+              69,
+              69,
+              531,
+              531
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": [
+              139,
+              161,
+              574,
+              597
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": [
+              192,
+              231,
+              600,
+              600
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:3",
+            "kind": "hotspot",
+            "support_cells_zx": [
+              262,
+              322,
+              600,
+              600
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-3:-3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-3:-3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:3",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:4",
+            "kind": "atoll",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:5",
+            "kind": "atoll",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:6",
+            "kind": "seamount",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:3",
+            "kind": "atoll",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:4",
+            "kind": "seamount",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:2:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:4:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:4:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:4:2:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:030d9e149ecef9bd96390013",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:0644b9e1591dbbb5d7a44672",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:1254f82ce64738b799e14083",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:3c01e143317c5d98092bb07d",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:4328170d46099bae06e679ff",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:634fe3c0a2e6eb37930db90f",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:6f6d1afad0b0fd33355e1ff6",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7a3329de68367d0fbb9c4512",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7aaec1910637fdc905d4b3f5",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7eb1ec6ed847068f6a0a19eb",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:be41c4dbc8d63dbcd8f46b31",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:c77421b5327be411aa5016f8",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:cc656372d4de1059b5e59b7b",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:d7672a6f9023efcd7ea73c18",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:e399bfa4c19940381db64935",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:f66b8f43e29ec02c1c8fe269",
+            "kind": "ridge",
+            "support_cells_zx": null
+          }
+        ],
+        "feature_ids": [
+          "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+          "hotspot:20260903:-1:-3:stage:0",
+          "hotspot:20260903:-1:-3:stage:1",
+          "hotspot:20260903:-1:-3:stage:2",
+          "hotspot:20260903:-1:-3:stage:3",
+          "hotspot:20260903:-1:3:stage:0",
+          "hotspot:20260903:-1:3:stage:1",
+          "hotspot:20260903:-1:3:stage:2",
+          "hotspot:20260903:-3:-3:stage:0",
+          "hotspot:20260903:-3:-3:stage:1",
+          "hotspot:20260903:0:1:stage:0",
+          "hotspot:20260903:0:1:stage:1",
+          "hotspot:20260903:0:1:stage:2",
+          "hotspot:20260903:0:1:stage:3",
+          "hotspot:20260903:0:1:stage:4",
+          "hotspot:20260903:0:1:stage:5",
+          "hotspot:20260903:0:1:stage:6",
+          "hotspot:20260903:2:0:stage:0",
+          "hotspot:20260903:2:0:stage:1",
+          "hotspot:20260903:2:0:stage:2",
+          "hotspot:20260903:2:0:stage:3",
+          "hotspot:20260903:2:0:stage:4",
+          "hotspot:20260903:3:2:stage:0",
+          "hotspot:20260903:3:3:stage:0",
+          "hotspot:20260903:3:3:stage:1",
+          "hotspot:20260903:3:3:stage:2",
+          "hotspot:20260903:3:4:stage:0",
+          "hotspot:20260903:3:4:stage:1",
+          "hotspot:20260903:4:2:stage:0",
+          "ridge:20260903:030d9e149ecef9bd96390013",
+          "ridge:20260903:0644b9e1591dbbb5d7a44672",
+          "ridge:20260903:1254f82ce64738b799e14083",
+          "ridge:20260903:3c01e143317c5d98092bb07d",
+          "ridge:20260903:4328170d46099bae06e679ff",
+          "ridge:20260903:634fe3c0a2e6eb37930db90f",
+          "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+          "ridge:20260903:6f6d1afad0b0fd33355e1ff6",
+          "ridge:20260903:7a3329de68367d0fbb9c4512",
+          "ridge:20260903:7aaec1910637fdc905d4b3f5",
+          "ridge:20260903:7eb1ec6ed847068f6a0a19eb",
+          "ridge:20260903:be41c4dbc8d63dbcd8f46b31",
+          "ridge:20260903:c77421b5327be411aa5016f8",
+          "ridge:20260903:cc656372d4de1059b5e59b7b",
+          "ridge:20260903:d7672a6f9023efcd7ea73c18",
+          "ridge:20260903:e399bfa4c19940381db64935",
+          "ridge:20260903:f66b8f43e29ec02c1c8fe269"
+        ],
+        "feature_authority": "frozen vector inventory retained independently of raster",
+        "topology": "window only; global ocean topology not computed",
+        "elevation_png_mapping": {
+          "zero_code_m": -8000,
+          "max_code_m": 8000,
+          "code_to_m": "-8000 + code * 16000 / 65535 (16-bit); 255 denominator for 8-bit",
+          "clipped_below_count": 0,
+          "clipped_above_count": 0,
+          "vertical_unit": "metres; sea level 0m; float NPY/NPZ remains authoritative"
+        },
+        "preview": "height colour + physical hillshade; no real vegetation/land cover, no water/river ecology"
+      }
+    },
+    "ridge": {
+      "feature": {
+        "feature_id": "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+        "chain_id": "ridge-boundary:0:5",
+        "kind": "ridge",
+        "center_x_m": 115000.0,
+        "center_z_m": -460000.0,
+        "support_radius_m": 37480.092600972406,
+        "peak_elevation_m": -832.6110878025023,
+        "base_elevation_m": -3613.45654296875,
+        "stage": 0,
+        "age_steps": 0.0,
+        "plate_id": 0,
+        "boundary_id": "face:6ca686a2eeb8a3f4725335a2",
+        "boundary_kind": "divergent",
+        "basis": "ocean-ocean divergence 930.244328 m/offline-step; isolated ridge platform; emergent probability=0.16",
+        "subseed": 5606221870419756,
+        "orientation_rad": -1.9800653577546043,
+        "axis_ratio": 0.9660004025809512,
+        "hotspot_x_m": 115000.0,
+        "hotspot_z_m": -460000.0,
+        "velocity_x_m_per_step": 0.0,
+        "velocity_z_m_per_step": 0.0,
+        "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+        "parameter_identity": "f8b24183d249ad7f1faba0dc295ee7025f653a2987cd81f04c4a9436bab7ec16",
+        "algorithm": "ocean-islands-metric-detail-smooth-seabed-v3",
+        "declared_generated": true,
+        "boundary_anchor_x_m": 115000.0,
+        "boundary_anchor_z_m": -460000.0,
+        "boundary_normal_x": -0.9174119488525524,
+        "boundary_normal_z": 0.39793883462482244,
+        "boundary_tangent_x": -0.39793883462482244,
+        "boundary_tangent_z": -0.9174119488525524,
+        "upper_plate_id": null,
+        "boundary_relative_velocity_m_per_step": 930.2443280314678
+      },
+      "export": {
+        "product_identity": "cc04a382d6636effd9ce8294a2a6f16f57ca4d0929d30c38c16a52be292f60f6",
+        "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+        "source_world_seed": 20260903,
+        "coordinates": "X east, Z south; metres; cell centres",
+        "shape_zx": [
+          600,
+          600
+        ],
+        "bounds_m": [
+          66275.87961873587,
+          -508724.12038126413,
+          163724.12038126413,
+          -411275.87961873587
+        ],
+        "spacing_m": 162.41373460421377,
+        "land_area_method": "1x1 regular samples; potential exposed inner supports refined 2x2; finite quadrature can miss narrower strips",
+        "refined_cells": 0,
+        "refinement_query_points": 0,
+        "area_refinement_requested": 2,
+        "area_refinement_used": 2,
+        "area_error": "No exact vector-area bound. Fractions are approximate; narrower than spacing/2 may remain unresolved. Never inflate a detected island to one full cell.",
+        "feature_support_cells": [
+          {
+            "feature_id": "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+            "kind": "arc",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:3",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-3:-3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-3:-3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:3",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:4",
+            "kind": "atoll",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:5",
+            "kind": "atoll",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:6",
+            "kind": "seamount",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:3",
+            "kind": "atoll",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:4",
+            "kind": "seamount",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:2:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:4:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:4:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:4:2:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:030d9e149ecef9bd96390013",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:0644b9e1591dbbb5d7a44672",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:1254f82ce64738b799e14083",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:3c01e143317c5d98092bb07d",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:4328170d46099bae06e679ff",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:634fe3c0a2e6eb37930db90f",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+            "kind": "ridge",
+            "support_cells_zx": [
+              69,
+              69,
+              531,
+              531
+            ]
+          },
+          {
+            "feature_id": "ridge:20260903:6f6d1afad0b0fd33355e1ff6",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7a3329de68367d0fbb9c4512",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7aaec1910637fdc905d4b3f5",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7eb1ec6ed847068f6a0a19eb",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:be41c4dbc8d63dbcd8f46b31",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:c77421b5327be411aa5016f8",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:cc656372d4de1059b5e59b7b",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:d7672a6f9023efcd7ea73c18",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:e399bfa4c19940381db64935",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:f66b8f43e29ec02c1c8fe269",
+            "kind": "ridge",
+            "support_cells_zx": null
+          }
+        ],
+        "feature_ids": [
+          "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+          "hotspot:20260903:-1:-3:stage:0",
+          "hotspot:20260903:-1:-3:stage:1",
+          "hotspot:20260903:-1:-3:stage:2",
+          "hotspot:20260903:-1:-3:stage:3",
+          "hotspot:20260903:-1:3:stage:0",
+          "hotspot:20260903:-1:3:stage:1",
+          "hotspot:20260903:-1:3:stage:2",
+          "hotspot:20260903:-3:-3:stage:0",
+          "hotspot:20260903:-3:-3:stage:1",
+          "hotspot:20260903:0:1:stage:0",
+          "hotspot:20260903:0:1:stage:1",
+          "hotspot:20260903:0:1:stage:2",
+          "hotspot:20260903:0:1:stage:3",
+          "hotspot:20260903:0:1:stage:4",
+          "hotspot:20260903:0:1:stage:5",
+          "hotspot:20260903:0:1:stage:6",
+          "hotspot:20260903:2:0:stage:0",
+          "hotspot:20260903:2:0:stage:1",
+          "hotspot:20260903:2:0:stage:2",
+          "hotspot:20260903:2:0:stage:3",
+          "hotspot:20260903:2:0:stage:4",
+          "hotspot:20260903:3:2:stage:0",
+          "hotspot:20260903:3:3:stage:0",
+          "hotspot:20260903:3:3:stage:1",
+          "hotspot:20260903:3:3:stage:2",
+          "hotspot:20260903:3:4:stage:0",
+          "hotspot:20260903:3:4:stage:1",
+          "hotspot:20260903:4:2:stage:0",
+          "ridge:20260903:030d9e149ecef9bd96390013",
+          "ridge:20260903:0644b9e1591dbbb5d7a44672",
+          "ridge:20260903:1254f82ce64738b799e14083",
+          "ridge:20260903:3c01e143317c5d98092bb07d",
+          "ridge:20260903:4328170d46099bae06e679ff",
+          "ridge:20260903:634fe3c0a2e6eb37930db90f",
+          "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+          "ridge:20260903:6f6d1afad0b0fd33355e1ff6",
+          "ridge:20260903:7a3329de68367d0fbb9c4512",
+          "ridge:20260903:7aaec1910637fdc905d4b3f5",
+          "ridge:20260903:7eb1ec6ed847068f6a0a19eb",
+          "ridge:20260903:be41c4dbc8d63dbcd8f46b31",
+          "ridge:20260903:c77421b5327be411aa5016f8",
+          "ridge:20260903:cc656372d4de1059b5e59b7b",
+          "ridge:20260903:d7672a6f9023efcd7ea73c18",
+          "ridge:20260903:e399bfa4c19940381db64935",
+          "ridge:20260903:f66b8f43e29ec02c1c8fe269"
+        ],
+        "feature_authority": "frozen vector inventory retained independently of raster",
+        "topology": "window only; global ocean topology not computed",
+        "elevation_png_mapping": {
+          "zero_code_m": -8000,
+          "max_code_m": 8000,
+          "code_to_m": "-8000 + code * 16000 / 65535 (16-bit); 255 denominator for 8-bit",
+          "clipped_below_count": 0,
+          "clipped_above_count": 0,
+          "vertical_unit": "metres; sea level 0m; float NPY/NPZ remains authoritative"
+        },
+        "preview": "height colour + physical hillshade; no real vegetation/land cover, no water/river ecology"
+      }
+    },
+    "seamount": {
+      "feature": {
+        "feature_id": "hotspot:20260903:0:1:stage:6",
+        "chain_id": "hotspot:20260903:0:1",
+        "kind": "seamount",
+        "center_x_m": -8509.413616773549,
+        "center_z_m": 144516.77663188853,
+        "support_radius_m": 33425.55995515222,
+        "peak_elevation_m": -1974.3388064398996,
+        "base_elevation_m": -3735.7189581713033,
+        "stage": 6,
+        "age_steps": 80.0,
+        "plate_id": 2,
+        "boundary_id": null,
+        "boundary_kind": null,
+        "basis": "absolute-cell fixed-slot hotspot; constant plate velocity; stop at first foreign plate",
+        "subseed": 1873588847783380,
+        "orientation_rad": 3.0933248418472505,
+        "axis_ratio": 0.7157496340996153,
+        "hotspot_x_m": 59125.49413564953,
+        "hotspot_z_m": 195541.21109557556,
+        "velocity_x_m_per_step": -845.4363469052886,
+        "velocity_z_m_per_step": -637.8054307960879,
+        "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+        "parameter_identity": "f8b24183d249ad7f1faba0dc295ee7025f653a2987cd81f04c4a9436bab7ec16",
+        "algorithm": "ocean-islands-metric-detail-smooth-seabed-v3",
+        "declared_generated": true,
+        "boundary_anchor_x_m": null,
+        "boundary_anchor_z_m": null,
+        "boundary_normal_x": null,
+        "boundary_normal_z": null,
+        "boundary_tangent_x": null,
+        "boundary_tangent_z": null,
+        "upper_plate_id": null,
+        "boundary_relative_velocity_m_per_step": null
+      },
+      "export": {
+        "product_identity": "cc04a382d6636effd9ce8294a2a6f16f57ca4d0929d30c38c16a52be292f60f6",
+        "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+        "source_world_seed": 20260903,
+        "coordinates": "X east, Z south; metres; cell centres",
+        "shape_zx": [
+          600,
+          600
+        ],
+        "bounds_m": [
+          -51962.641558471434,
+          101063.54869019064,
+          34943.81432492434,
+          187970.0045735864
+        ],
+        "spacing_m": 144.84409313899295,
+        "land_area_method": "1x1 regular samples; potential exposed inner supports refined 2x2; finite quadrature can miss narrower strips",
+        "refined_cells": 116227,
+        "refinement_query_points": 464908,
+        "area_refinement_requested": 2,
+        "area_refinement_used": 2,
+        "area_error": "No exact vector-area bound. Fractions are approximate; narrower than spacing/2 may remain unresolved. Never inflate a detected island to one full cell.",
+        "feature_support_cells": [
+          {
+            "feature_id": "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+            "kind": "arc",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:3",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-3:-3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-3:-3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": [
+              297,
+              411,
+              600,
+              600
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": [
+              257,
+              352,
+              600,
+              600
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": [
+              211,
+              284,
+              600,
+              600
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:3",
+            "kind": "hotspot",
+            "support_cells_zx": [
+              178,
+              234,
+              600,
+              600
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:4",
+            "kind": "atoll",
+            "support_cells_zx": [
+              145,
+              183,
+              600,
+              600
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:5",
+            "kind": "atoll",
+            "support_cells_zx": [
+              98,
+              114,
+              600,
+              600
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:6",
+            "kind": "seamount",
+            "support_cells_zx": [
+              69,
+              69,
+              531,
+              531
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:3",
+            "kind": "atoll",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:4",
+            "kind": "seamount",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:2:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:4:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:4:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:4:2:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:030d9e149ecef9bd96390013",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:0644b9e1591dbbb5d7a44672",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:1254f82ce64738b799e14083",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:3c01e143317c5d98092bb07d",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:4328170d46099bae06e679ff",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:634fe3c0a2e6eb37930db90f",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:6f6d1afad0b0fd33355e1ff6",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7a3329de68367d0fbb9c4512",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7aaec1910637fdc905d4b3f5",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7eb1ec6ed847068f6a0a19eb",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:be41c4dbc8d63dbcd8f46b31",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:c77421b5327be411aa5016f8",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:cc656372d4de1059b5e59b7b",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:d7672a6f9023efcd7ea73c18",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:e399bfa4c19940381db64935",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:f66b8f43e29ec02c1c8fe269",
+            "kind": "ridge",
+            "support_cells_zx": null
+          }
+        ],
+        "feature_ids": [
+          "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+          "hotspot:20260903:-1:-3:stage:0",
+          "hotspot:20260903:-1:-3:stage:1",
+          "hotspot:20260903:-1:-3:stage:2",
+          "hotspot:20260903:-1:-3:stage:3",
+          "hotspot:20260903:-1:3:stage:0",
+          "hotspot:20260903:-1:3:stage:1",
+          "hotspot:20260903:-1:3:stage:2",
+          "hotspot:20260903:-3:-3:stage:0",
+          "hotspot:20260903:-3:-3:stage:1",
+          "hotspot:20260903:0:1:stage:0",
+          "hotspot:20260903:0:1:stage:1",
+          "hotspot:20260903:0:1:stage:2",
+          "hotspot:20260903:0:1:stage:3",
+          "hotspot:20260903:0:1:stage:4",
+          "hotspot:20260903:0:1:stage:5",
+          "hotspot:20260903:0:1:stage:6",
+          "hotspot:20260903:2:0:stage:0",
+          "hotspot:20260903:2:0:stage:1",
+          "hotspot:20260903:2:0:stage:2",
+          "hotspot:20260903:2:0:stage:3",
+          "hotspot:20260903:2:0:stage:4",
+          "hotspot:20260903:3:2:stage:0",
+          "hotspot:20260903:3:3:stage:0",
+          "hotspot:20260903:3:3:stage:1",
+          "hotspot:20260903:3:3:stage:2",
+          "hotspot:20260903:3:4:stage:0",
+          "hotspot:20260903:3:4:stage:1",
+          "hotspot:20260903:4:2:stage:0",
+          "ridge:20260903:030d9e149ecef9bd96390013",
+          "ridge:20260903:0644b9e1591dbbb5d7a44672",
+          "ridge:20260903:1254f82ce64738b799e14083",
+          "ridge:20260903:3c01e143317c5d98092bb07d",
+          "ridge:20260903:4328170d46099bae06e679ff",
+          "ridge:20260903:634fe3c0a2e6eb37930db90f",
+          "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+          "ridge:20260903:6f6d1afad0b0fd33355e1ff6",
+          "ridge:20260903:7a3329de68367d0fbb9c4512",
+          "ridge:20260903:7aaec1910637fdc905d4b3f5",
+          "ridge:20260903:7eb1ec6ed847068f6a0a19eb",
+          "ridge:20260903:be41c4dbc8d63dbcd8f46b31",
+          "ridge:20260903:c77421b5327be411aa5016f8",
+          "ridge:20260903:cc656372d4de1059b5e59b7b",
+          "ridge:20260903:d7672a6f9023efcd7ea73c18",
+          "ridge:20260903:e399bfa4c19940381db64935",
+          "ridge:20260903:f66b8f43e29ec02c1c8fe269"
+        ],
+        "feature_authority": "frozen vector inventory retained independently of raster",
+        "topology": "window only; global ocean topology not computed",
+        "elevation_png_mapping": {
+          "zero_code_m": -8000,
+          "max_code_m": 8000,
+          "code_to_m": "-8000 + code * 16000 / 65535 (16-bit); 255 denominator for 8-bit",
+          "clipped_below_count": 0,
+          "clipped_above_count": 0,
+          "vertical_unit": "metres; sea level 0m; float NPY/NPZ remains authoritative"
+        },
+        "preview": "height colour + physical hillshade; no real vegetation/land cover, no water/river ecology"
+      }
+    },
+    "representative_chain": {
+      "chain_id": "hotspot:20260903:-1:-3",
+      "selection": "lexicographically first hotspot chain before visual inspection",
+      "feature_ids": [
+        "hotspot:20260903:-1:-3:stage:0",
+        "hotspot:20260903:-1:-3:stage:1",
+        "hotspot:20260903:-1:-3:stage:2",
+        "hotspot:20260903:-1:-3:stage:3"
+      ],
+      "export": {
+        "product_identity": "cc04a382d6636effd9ce8294a2a6f16f57ca4d0929d30c38c16a52be292f60f6",
+        "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+        "source_world_seed": 20260903,
+        "coordinates": "X east, Z south; metres; cell centres",
+        "shape_zx": [
+          249,
+          275
+        ],
+        "bounds_m": [
+          -97645.81152301648,
+          -437286.5782417483,
+          39474.44197865445,
+          -313251.7275349495
+        ],
+        "spacing_m": 500,
+        "land_area_method": "1x1 regular samples; potential exposed inner supports refined 2x2; finite quadrature can miss narrower strips",
+        "refined_cells": 21136,
+        "refinement_query_points": 84544,
+        "area_refinement_requested": 2,
+        "area_refinement_used": 2,
+        "area_error": "No exact vector-area bound. Fractions are approximate; narrower than spacing/2 may remain unresolved. Never inflate a detected island to one full cell.",
+        "feature_support_cells": [
+          {
+            "feature_id": "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+            "kind": "arc",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": [
+              0,
+              0,
+              200,
+              200
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": [
+              30,
+              40,
+              219,
+              228
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": [
+              53,
+              69,
+              230,
+              247
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:-3:stage:3",
+            "kind": "hotspot",
+            "support_cells_zx": [
+              83,
+              109,
+              249,
+              275
+            ]
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-1:3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-3:-3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:-3:-3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:3",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:4",
+            "kind": "atoll",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:5",
+            "kind": "atoll",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:0:1:stage:6",
+            "kind": "seamount",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:3",
+            "kind": "atoll",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:2:0:stage:4",
+            "kind": "seamount",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:2:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:3:stage:2",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:4:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:3:4:stage:1",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "hotspot:20260903:4:2:stage:0",
+            "kind": "hotspot",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:030d9e149ecef9bd96390013",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:0644b9e1591dbbb5d7a44672",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:1254f82ce64738b799e14083",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:3c01e143317c5d98092bb07d",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:4328170d46099bae06e679ff",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:634fe3c0a2e6eb37930db90f",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:6f6d1afad0b0fd33355e1ff6",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7a3329de68367d0fbb9c4512",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7aaec1910637fdc905d4b3f5",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:7eb1ec6ed847068f6a0a19eb",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:be41c4dbc8d63dbcd8f46b31",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:c77421b5327be411aa5016f8",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:cc656372d4de1059b5e59b7b",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:d7672a6f9023efcd7ea73c18",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:e399bfa4c19940381db64935",
+            "kind": "ridge",
+            "support_cells_zx": null
+          },
+          {
+            "feature_id": "ridge:20260903:f66b8f43e29ec02c1c8fe269",
+            "kind": "ridge",
+            "support_cells_zx": null
+          }
+        ],
+        "feature_ids": [
+          "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+          "hotspot:20260903:-1:-3:stage:0",
+          "hotspot:20260903:-1:-3:stage:1",
+          "hotspot:20260903:-1:-3:stage:2",
+          "hotspot:20260903:-1:-3:stage:3",
+          "hotspot:20260903:-1:3:stage:0",
+          "hotspot:20260903:-1:3:stage:1",
+          "hotspot:20260903:-1:3:stage:2",
+          "hotspot:20260903:-3:-3:stage:0",
+          "hotspot:20260903:-3:-3:stage:1",
+          "hotspot:20260903:0:1:stage:0",
+          "hotspot:20260903:0:1:stage:1",
+          "hotspot:20260903:0:1:stage:2",
+          "hotspot:20260903:0:1:stage:3",
+          "hotspot:20260903:0:1:stage:4",
+          "hotspot:20260903:0:1:stage:5",
+          "hotspot:20260903:0:1:stage:6",
+          "hotspot:20260903:2:0:stage:0",
+          "hotspot:20260903:2:0:stage:1",
+          "hotspot:20260903:2:0:stage:2",
+          "hotspot:20260903:2:0:stage:3",
+          "hotspot:20260903:2:0:stage:4",
+          "hotspot:20260903:3:2:stage:0",
+          "hotspot:20260903:3:3:stage:0",
+          "hotspot:20260903:3:3:stage:1",
+          "hotspot:20260903:3:3:stage:2",
+          "hotspot:20260903:3:4:stage:0",
+          "hotspot:20260903:3:4:stage:1",
+          "hotspot:20260903:4:2:stage:0",
+          "ridge:20260903:030d9e149ecef9bd96390013",
+          "ridge:20260903:0644b9e1591dbbb5d7a44672",
+          "ridge:20260903:1254f82ce64738b799e14083",
+          "ridge:20260903:3c01e143317c5d98092bb07d",
+          "ridge:20260903:4328170d46099bae06e679ff",
+          "ridge:20260903:634fe3c0a2e6eb37930db90f",
+          "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+          "ridge:20260903:6f6d1afad0b0fd33355e1ff6",
+          "ridge:20260903:7a3329de68367d0fbb9c4512",
+          "ridge:20260903:7aaec1910637fdc905d4b3f5",
+          "ridge:20260903:7eb1ec6ed847068f6a0a19eb",
+          "ridge:20260903:be41c4dbc8d63dbcd8f46b31",
+          "ridge:20260903:c77421b5327be411aa5016f8",
+          "ridge:20260903:cc656372d4de1059b5e59b7b",
+          "ridge:20260903:d7672a6f9023efcd7ea73c18",
+          "ridge:20260903:e399bfa4c19940381db64935",
+          "ridge:20260903:f66b8f43e29ec02c1c8fe269"
+        ],
+        "feature_authority": "frozen vector inventory retained independently of raster",
+        "topology": "window only; global ocean topology not computed",
+        "elevation_png_mapping": {
+          "zero_code_m": -8000,
+          "max_code_m": 8000,
+          "code_to_m": "-8000 + code * 16000 / 65535 (16-bit); 255 denominator for 8-bit",
+          "clipped_below_count": 0,
+          "clipped_above_count": 0,
+          "vertical_unit": "metres; sea level 0m; float NPY/NPZ remains authoritative"
+        },
+        "preview": "height colour + physical hillshade; no real vegetation/land cover, no water/river ecology"
+      }
+    }
+  },
+  "source_type": "dream-skeleton",
+  "td_generation": false
+}

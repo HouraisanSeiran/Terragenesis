@@ -7,7 +7,7 @@ from unittest.mock import patch
 import numpy as np
 
 from terrain_pipeline.artifacts import ArtifactIdentity, SurfaceWater, TerrainArtifact, load_artifact, save_artifact
-from terrain_pipeline.artifacts import storage
+from terrain_pipeline import common_infra as storage
 
 
 def base(**changes):

@@ -1,0 +1,44 @@
+{
+  "schema": "zero-reference-tool-archive-v1",
+  "created": "2026-10-23",
+  "scope": "Tools with zero references in active .py files AND zero references in frozen verification evidence.",
+  "manifest_sha256_note": "Per-file SHA256 below is the pinned trust anchor; verify before use.",
+  "files": [
+    {
+      "source_path": "tools/export_td_watershed_inspection_v2.py",
+      "archive_path": "tools/export_td_watershed_inspection_v2.py",
+      "bytes": 25870,
+      "sha256": "3d758302af049406f760a7cb19b9b5ac7df63f47785c200675526fa47fef1c9a",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0
+    },
+    {
+      "source_path": "tools/prepare_hybrid_river_faces_v2.py",
+      "archive_path": "tools/prepare_hybrid_river_faces_v2.py",
+      "bytes": 25805,
+      "sha256": "3a2db8e7b2afe66c1611f85b0aa1ac8f9daf3b0f6b9d6c572cadfc531c2c5298",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0
+    }
+  ],
+  "not_archived": {
+    "reason": "These tools are named by frozen verification records as auditor / executor / producer. Removing them would break the reproducibility of those records, which is evidence damage, not redundancy cleanup.",
+    "tools": {
+      "tools/verify_td_basin_storage_v4.py": {"frozen_evidence_references": 8, "role": "executor recorded in execution-code.json"},
+      "tools/verify_td_basin_storage_v5.py": {"frozen_evidence_references": 7, "role": "executor recorded in execution-code.json"},
+      "tools/verify_td_basin_storage_v6.py": {"frozen_evidence_references": 7, "role": "executor recorded in execution-code.json"},
+      "tools/audit_hybrid_cave_geometry.py": {"frozen_evidence_references": 2, "role": "audit chain in independent-audit-v2.json"},
+      "tools/audit_hybrid_cave_geometry_v2.py": {"frozen_evidence_references": 2, "role": "auditor in audit_code_sha256", "sha_matches_evidence": true},
+      "tools/audit_td_ported_network_composition.py": {"frozen_evidence_references": 2, "role": "audit chain in independent-audit-v3.json"},
+      "tools/export_hybrid_river_faces_review.py": {"frozen_evidence_references": 1, "role": "reviewer in code_sha256", "sha_matches_evidence": true},
+      "tools/benchmark_height_budget_v5.py": {"frozen_evidence_references": 1, "role": "producer in saving_code", "sha_matches_evidence": true},
+      "tools/benchmark_height_budget.py": {"frozen_evidence_references": 1, "role": "DIFFERENT JOB from v5 (182 vs 191 lines, disjoint function sets); not a version duplicate"}
+    }
+  },
+  "policy": {
+    "not_on_sys_path": true,
+    "no_transparent_shim": true,
+    "no_default_fallback": true,
+    "frozen_evidence_untouched": true
+  }
+}

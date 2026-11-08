@@ -1,0 +1,64 @@
+{
+  "schema": "saved-world-elevation-images-v1",
+  "world_identity": "db04586d4537824e06cd570e0a374e30460bc6e93b27eccc7063b99316c45200",
+  "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+  "island_identity": "cc04a382d6636effd9ce8294a2a6f16f57ca4d0929d30c38c16a52be292f60f6",
+  "world_seed": 20260903,
+  "spacing_m": 2000.0,
+  "world_bounds_m": [
+    -800000.0,
+    -800000.0,
+    800000.0,
+    800000.0
+  ],
+  "requested_local_bounds_m": [
+    -112610.82007699623,
+    -452251.5867957281,
+    17085.92072416158,
+    -322554.8459945703
+  ],
+  "actual_local_cell_bounds_m": [
+    -112000.0,
+    -452000.0,
+    18000.0,
+    -322000.0
+  ],
+  "local_shape_zx": [
+    65,
+    65
+  ],
+  "source_scope": "Two distinct saved final elevation fields; primary audited. No TD model inference.",
+  "colour": "Bed elevation only; fixed -4000..7000m, sea level 0; no vegetation claim",
+  "rendering": "Nearest existing samples; no filtering or generated geometry",
+  "gray16": {
+    "mapping_m": [
+      -8000.0,
+      8000.0
+    ],
+    "max_abs_error_m": 0.12207217517334357
+  },
+  "input_files": {
+    "D:\\codexwork\\织梦\\artifacts\\worlds\\world1600-archipelago-v4-islands-metric-v3-fast\\manifest.json": "f41667c42c66e71b9562356dbf8058a212d99494f321f7e107093af993ab7c29",
+    "D:\\codexwork\\织梦\\artifacts\\worlds\\world1600-archipelago-v4-islands-metric-v3-fast\\elevation_m.npy": "c84186b42c35a55ce2547ca5930e62f453de81383d0deb27cec498e7c011df69",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\ocean-islands-20261106\\run-metric-v3-2km\\world.npz": "29bbb0c9a03c15463ccdaf743a6401e01ed5d1bad7c306ed429b44f6e94111a8",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\ocean-islands-20261106\\run-metric-v3-2km\\delivery_manifest.json": "9dfc408a65fa480e94871ee1eef8f30b7226e36b73f27c0c377f8a7cd7611b55",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\ocean-islands-20261106\\run-metric-v3-2km\\islands.npz": "e1667a0d83fa8d570924642b6b86e6458c3e4e975e3309f8241aef1533abe6b1",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\ocean-islands-20261106\\dream-integration-v3-primary-audit.json": "52ce69b43701caba4405fa4ea02a64ca9048d928f05b36f27f8e0b2beb744e73",
+    "D:\\codexwork\\织梦\\artifacts\\worlds\\world1600-archipelago-v4\\skeleton.npz": "9b57b9b578384558013d8e7e27a6f2b010f1a3fc412880d8d9b7cf79a3eb1241"
+  },
+  "files": {
+    "hotspot_same_coordinates_saved_elevation.png": {
+      "sha256": "3ae6dbae126741efde0dade9b8f56411341b7053d0d8d1a5425617535485629c",
+      "bytes": 91050
+    },
+    "world_height16.png": {
+      "sha256": "3df49e30241ca194aef06a3b6d4aaf9ccdc61479a8db12dd3f2b258c865b3baa",
+      "bytes": 813123
+    },
+    "world_saved_elevation.png": {
+      "sha256": "2e15198c1a215a4c57415a529806cf83b6ceb7d53c34b8c7b01aa84e29bf0adb",
+      "bytes": 503004
+    }
+  },
+  "renderer_sha256": "27393256b1a0e866f557ae6a802e00dd67c9ae616d282b909e4c6b6251258256"
+}

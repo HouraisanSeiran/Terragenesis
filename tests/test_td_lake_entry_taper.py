@@ -3,7 +3,8 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.td_lake_entry_taper import build_lake_entry_tapers, sample_source
+from terrain_pipeline.lake import build_lake_entry_tapers as build_lake_entry_tapers
+from terrain_pipeline.lake import sample_source as sample_source
 
 
 def fixture():

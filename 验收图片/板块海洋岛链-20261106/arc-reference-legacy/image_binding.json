@@ -1,0 +1,19 @@
+{
+  "product_identity": "bc10e7746064f5a39871db84033a790c63f08fb34b1e1cb252e01847cad338c6",
+  "source_identity": "b4c8bbdba29111b8c3ba3270e2f0d3a4fed3544655249fa07c506654b8ae6af9",
+  "source_world_seed": 20261020,
+  "world_seed": 20260903,
+  "source_manifest": "D:\\codexwork\\\u5c71\u5ddd\u5f62\u610fTerragenesis\\.scratch\\ocean-islands-20261106\\arc-reference\\manifest.json",
+  "scope": "separate legacy source; not the new-seed main world",
+  "coverage_status": "complete_in_window",
+  "images": {
+    "arc_positions_diagnostic.png": "23000a03ca68fb8aede65ef67978e1ff2ec7f3a906a5f1191de0d091d8f2fe8e",
+    "arc_strait_sections.png": "7cd2cf8a5f1628bf36d904441b57bc4a76f8b2c8cc9fe564533d519a48a29946",
+    "arc_window_base16.png": "2b9e79ff57d4ca93b89d21a1a31f93efe9c938c31902d60a955907596c06adaf",
+    "arc_window_base_preview.png": "5c2fb9e4d46fdb0328635fa637b4bcef5fae92696c33603269adf0531631525a",
+    "arc_window_comparison.png": "1604e2059b2f0eabcbf9fd5747db755c729535b4f580de322e7b1fdd27e3f58a",
+    "arc_window_elevation16.png": "711b9974f374b7aa60b96766a7c97bd69a03b92c5978c04c4aad4e0e2255e235",
+    "arc_window_elevation8.png": "3e541fed6ed58f1415715eda4213177286a04ae3a1777b36ffc2bd4892b4953f",
+    "arc_window_terrain_preview.png": "9ae49089bee8fb60c4b9a765e6f661b39cf9c39f70880320581a0656ff010ae0"
+  }
+}

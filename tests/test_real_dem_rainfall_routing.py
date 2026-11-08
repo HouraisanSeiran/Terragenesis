@@ -5,9 +5,11 @@ from unittest.mock import patch
 import numpy as np
 
 from terrain_pipeline.artifacts.contracts import array_hash
-from terrain_pipeline.rainfall_runoff import RunoffParameters
-from terrain_pipeline.real_dem_flat_routing import resolve_dem_flats
-from terrain_pipeline.real_dem_rainfall_routing import simulate_dem_rainfall, validate_dem_rainfall
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+from terrain_pipeline.drainage import resolve_dem_flats as resolve_dem_flats
+from terrain_pipeline.drainage import candidate_mesh as candidate_mesh
+from terrain_pipeline.runoff import simulate_dem_rainfall as simulate_dem_rainfall
+from terrain_pipeline.runoff import validate_dem_rainfall as validate_dem_rainfall
 
 
 DRY = RunoffParameters(infiltration_capacity_mm_h=0., potential_et_mm_h=0.,
@@ -44,20 +46,31 @@ class RealDemRainfallRoutingTests(unittest.TestCase):
         rain[0, 0] = 40.
         result = self.simulate(candidate, flat, rain)
         local = result["local_volume"][0, 0]
-        fraction = -np.expm1(-1.)
+        mesh = candidate_mesh(candidate)
+        lengths = np.hypot(np.diff(mesh.node_x_m), np.diff(mesh.node_z_m))
+        fractions = -np.expm1(-90. / lengths)
         self.assertAlmostEqual(result["channel_storage"][1, 0], local)
         self.assertEqual(result["channel_storage"][1, 1], 0.)
         self.assertEqual(result["channel_storage"][2, 2], 0.)
-        self.assertAlmostEqual(result["channel_storage"][2, 1], local * fraction)
-        self.assertAlmostEqual(result["channel_storage"][3, 2], local * fraction ** 2)
+        self.assertAlmostEqual(result["channel_storage"][2, 1], local * fractions[0])
+        self.assertAlmostEqual(result["channel_storage"][3, 2], local * fractions[0] * fractions[1])
         self.assertTrue(np.all(result["ledger"]["engineering_discharge_m3"] == 0))
         self.assertTrue(validate_dem_rainfall(candidate, flat, result)["verified"])
 
     def test_diagonal_length_controls_release(self):
-        candidate, flat = fixture([[3, np.nan], [np.nan, 1]])
-        result = self.simulate(candidate, flat, [[40, 0], [0, 0]])
-        fraction = -np.expm1(-1 / np.sqrt(2))
-        self.assertAlmostEqual(result["channel_storage"][2, 1], result["local_volume"][0, 0] * fraction)
+        candidate, flat = fixture([[3, 4], [4, 1]])
+        receiver = flat["network"].receiver.ravel()
+        mesh = candidate_mesh(candidate)
+        donor = next(int(cell) for cell in np.flatnonzero(receiver >= 0)
+                     if cell // 2 != receiver[cell] // 2 and cell % 2 != receiver[cell] % 2)
+        target = int(receiver[donor])
+        rain = np.zeros((2, 4))
+        rain[0, donor] = 40.
+        result = self.simulate(candidate, flat, rain)
+        length = np.hypot(mesh.node_x_m[donor] - mesh.node_x_m[target],
+                          mesh.node_z_m[donor] - mesh.node_z_m[target])
+        fraction = -np.expm1(-90. / length)
+        self.assertAlmostEqual(result["channel_storage"][2, target], result["local_volume"][0, donor] * fraction)
 
     def test_batch_size_uniform_and_spatial_equivalence(self):
         candidate, flat = fixture([[4, 4, 3, 2], [4, 4, 3, 1]])
@@ -149,7 +162,7 @@ class RealDemRainfallRoutingTests(unittest.TestCase):
 
     def test_entry_and_retained_budget_rejected_before_solver_or_allocation(self):
         candidate = {"arrays": {"height_m": np.zeros((500, 1000)), "valid_mask": np.ones((500, 1000), bool)}}
-        with patch("terrain_pipeline.real_dem_rainfall_routing.validate_flat_routing", side_effect=AssertionError("budget first")):
+        with patch('terrain_pipeline.drainage.validate_flat_routing', side_effect=AssertionError("budget first")):
             with self.assertRaises(ValueError):
                 simulate_dem_rainfall(candidate, {}, np.zeros(49), dt_s=90.)
             rain = np.broadcast_to(np.zeros((48, 1)), (48, 500000))
@@ -161,7 +174,7 @@ class RealDemRainfallRoutingTests(unittest.TestCase):
         before = candidate["arrays"]["height_m"].copy()
         receiver = flat["network"].receiver.copy()
         result = self.simulate(candidate, flat, [10, 0, 0])
-        with patch("terrain_pipeline.real_dem_rainfall_routing.simulate_dem_rainfall", side_effect=AssertionError("no propagation replay")):
+        with patch('terrain_pipeline.runoff.simulate_dem_rainfall', side_effect=AssertionError("no propagation replay")):
             self.assertTrue(validate_dem_rainfall(candidate, flat, result)["verified"])
         np.testing.assert_array_equal(before, candidate["arrays"]["height_m"])
         np.testing.assert_array_equal(receiver, flat["network"].receiver)
@@ -175,7 +188,10 @@ class RealDemRainfallRoutingTests(unittest.TestCase):
         candidate["grid"] = {"spacing_x_m": 30., "spacing_z_m": 60., "crs": "EPSG:32651", "units": "metres"}
         result = self.simulate(candidate, flat, [[40, 0, 0], [0, 0, 0]])
         self.assertAlmostEqual(result["ledger"]["rain_volume_m3"][0], 1.8)
-        self.assertAlmostEqual(result["channel_storage"][2, 1], result["local_volume"][0, 0] * -np.expm1(-3.))
+        mesh = candidate_mesh(candidate)
+        length = np.hypot(mesh.node_x_m[0] - mesh.node_x_m[1], mesh.node_z_m[0] - mesh.node_z_m[1])
+        self.assertAlmostEqual(result["channel_storage"][2, 1],
+                               result["local_volume"][0, 0] * -np.expm1(-90. / length))
         self.assertTrue(validate_dem_rainfall(candidate, flat, result)["verified"])
         candidate["grid"]["units"] = "degrees"
         with self.assertRaises(ValueError):

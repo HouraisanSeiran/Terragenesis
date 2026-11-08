@@ -1,0 +1,41 @@
+{
+  "terrain_basis": "tectonic_macro_mechanism_only",
+  "td_binding": null,
+  "coverage_status": "mechanism_only",
+  "world_seed": 20261020,
+  "identity": "f17718232663ebe876b4a7bbedb77069bac83f4fda7f886e8f61842e71785ab3",
+  "product_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\world-generation-sequence-20261101\\macro-run-v2\\product.npz",
+  "product_sha256": "62960844e58a30d7d97ede4b3f6f262bf5243919e8ad606e41e070f0712ecadd",
+  "images": {
+    "elevation-comparison.png": {
+      "sha256": "b15f5366defa20ca1c854b44cc581cfee2a6b32ba8eeee4d3eaa1682cc58d85c",
+      "identity": "f17718232663ebe876b4a7bbedb77069bac83f4fda7f886e8f61842e71785ab3",
+      "td_binding": null,
+      "coverage_status": "mechanism_only"
+    },
+    "initial-macro.png": {
+      "sha256": "d2b27655ef29019cd952d68cc1e5f7ade9c523982aeabda7b54147d797462ffd",
+      "identity": "f17718232663ebe876b4a7bbedb77069bac83f4fda7f886e8f61842e71785ab3",
+      "td_binding": null,
+      "coverage_status": "mechanism_only"
+    },
+    "final-macro.png": {
+      "sha256": "5342019ddbefa0d8f1b884696b5147c51365bea726433ec67c12c6a621a7de51",
+      "identity": "f17718232663ebe876b4a7bbedb77069bac83f4fda7f886e8f61842e71785ab3",
+      "td_binding": null,
+      "coverage_status": "mechanism_only"
+    },
+    "process-budgets.png": {
+      "sha256": "0de6bab3d60f5f49ebca334216e17b9b3638e9b17042b8b8e817bbf5a8f51df8",
+      "identity": "f17718232663ebe876b4a7bbedb77069bac83f4fda7f886e8f61842e71785ab3",
+      "td_binding": null,
+      "coverage_status": "mechanism_only"
+    },
+    "diagnostics.json": {
+      "sha256": "48edf2ef8ca18054733268a10688975f2400de60cdfd64701a2dd894f0442d7b",
+      "identity": "f17718232663ebe876b4a7bbedb77069bac83f4fda7f886e8f61842e71785ab3",
+      "td_binding": null,
+      "coverage_status": "mechanism_only"
+    }
+  }
+}

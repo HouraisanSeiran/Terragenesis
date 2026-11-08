@@ -6,7 +6,7 @@ import java.nio.file.Path;
 public final class RegionExport {
     private RegionExport() {}
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws java.io.IOException {
         if (args.length != 7 && args.length != 8)
             throw new IllegalArgumentException("Usage: RegionExport <output-dir> <seed> <diffusion-identity-or-empty> <min-rx> <min-rz> <max-rx> <max-rz> [chunks]");
         Path directory = Path.of(args[0]).toAbsolutePath().normalize();
@@ -25,7 +25,9 @@ public final class RegionExport {
         RegionTerrainSource source = RegionRuntime.create(seed, identity, RegionTerrainSource.RECIPE,
             "relief_3x_sea62_1024_v1", config.chunks(), config.processing());
         for (int rz = minRz; rz <= maxRz; rz++) for (int rx = minRx; rx <= maxRx; rx++) {
-            RegionArtifact artifact = source.prepareRegion(rx, rz);
+            source.prepareRegion(rx, rz);
+            RegionArtifact artifact = RegionArtifact.read(source.directory(), seed, source.identity(),
+                    source.recipe(), config, rx, rz);
             System.out.println("Prepared region " + rx + "," + rz + " at " + RegionArtifact.path(source.directory(), rx, rz)
                 + " sha256=" + artifact.identity());
         }

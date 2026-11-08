@@ -1,0 +1,30 @@
+{
+  "input_id": "constructed-forks-event",
+  "water_m3": 13500000.0,
+  "solid_m3": 7200.0,
+  "delivered_water_m3": 8814178.077578545,
+  "delivered_solid_m3": 4700.894974708557,
+  "undelivered_water_m3": 4685821.922421455,
+  "undelivered_solid_m3": 2499.105025291443,
+  "internal_transfer_solid_m3": 2923608.039700355,
+  "entrained_solid_m3": 61814.362999286495,
+  "capacity_concentration": 0.01,
+  "active_layer_m": 0.5,
+  "max_velocity_m_s": 2.0,
+  "floodplain": {
+    "diverted_water_m3": 440708.90387892723,
+    "returned_water_m3": 440708.90387892723,
+    "deposited_solid_m3": 972.1062026979146,
+    "stranded_solid_m3": 3001.746421009676,
+    "rewetted_solid_m3": 47.68876552518175,
+    "new_solid_m3": 3973.8526237075907,
+    "wet_area_m2": 420306.0162525754,
+    "parameters": {
+      "exchange_fraction": 0.05,
+      "settling_velocity_m_s": 0.0001,
+      "residence_s": 3600.0,
+      "max_lateral_distance_m": 400.0,
+      "max_solid_fraction": 0.01
+    }
+  }
+}

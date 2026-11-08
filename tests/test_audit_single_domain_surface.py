@@ -3,8 +3,8 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity
-from terrain_pipeline.single_domain_surface_geometry import build_geometry, build_water_frame
+from terrain_pipeline.common_infra import identity
+from terrain_pipeline.fine_subgrid import build_geometry, build_water_frame
 from tests.test_single_domain_surface_geometry import static_page
 from tools.audit_single_domain_surface import check_frame, check_geometry
 

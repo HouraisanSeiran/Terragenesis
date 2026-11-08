@@ -1,0 +1,62 @@
+{
+ "files": [
+  {
+   "file": "100m-main.png",
+   "sha256": "d7d273fc4da0edb70d6cea50a8912ede41231b0bd020ecdd50c787ec2dd98463",
+   "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-naturalness-20261108\\phase1-r3\\100m\\main.png",
+   "source_figure_manifest": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-naturalness-20261108\\phase1-r3\\100m\\figures.json",
+   "source_sha256": "d7d273fc4da0edb70d6cea50a8912ede41231b0bd020ecdd50c787ec2dd98463"
+  },
+  {
+   "file": "100m-details.png",
+   "sha256": "29b305a4a35b0db0e15d30e44ca8e6bc02fc66c32781ed085c0601dee6106fac",
+   "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-naturalness-20261108\\phase1-r3\\100m\\details.png",
+   "source_figure_manifest": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-naturalness-20261108\\phase1-r3\\100m\\figures.json",
+   "source_sha256": "29b305a4a35b0db0e15d30e44ca8e6bc02fc66c32781ed085c0601dee6106fac"
+  },
+  {
+   "file": "100m-same-site-comparison.png",
+   "sha256": "64ac62cffb3fca23d9a0ce59487c536e503cbf3762280e848c6c9787feff9019",
+   "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-naturalness-20261108\\phase1-r3\\100m\\same-site-comparison.png",
+   "source_figure_manifest": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-naturalness-20261108\\phase1-r3\\100m\\figures.json",
+   "source_sha256": "64ac62cffb3fca23d9a0ce59487c536e503cbf3762280e848c6c9787feff9019"
+  },
+  {
+   "file": "30m-main.png",
+   "sha256": "fdd74ae42a9aa715937846580b3172ecf63b61054ca0c93fe41f845f3bf3b274",
+   "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-naturalness-20261108\\phase1-r3\\30m\\main.png",
+   "source_figure_manifest": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-naturalness-20261108\\phase1-r3\\30m\\figures.json",
+   "source_sha256": "fdd74ae42a9aa715937846580b3172ecf63b61054ca0c93fe41f845f3bf3b274"
+  },
+  {
+   "file": "30m-details.png",
+   "sha256": "a2135d3f86521ab3a827f5ec687d30e1b110a47898692f13edb80237f7193884",
+   "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-naturalness-20261108\\phase1-r3\\30m\\details.png",
+   "source_figure_manifest": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-naturalness-20261108\\phase1-r3\\30m\\figures.json",
+   "source_sha256": "a2135d3f86521ab3a827f5ec687d30e1b110a47898692f13edb80237f7193884"
+  }
+ ],
+ "physical_elapsed_seconds_in_morphology_figures": 0.0,
+ "physical_product": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-naturalness-20261108\\phase1-physical-r3",
+ "products": [
+  "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-naturalness-20261108\\phase1-r3\\100m",
+  "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-naturalness-20261108\\phase1-r3\\30m"
+ ],
+ "rendering": "Saved DEM and real wet raster; terrain colours, not inferred vegetation/material",
+ "source_world_seed": 20261020,
+ "td_source": {
+  "bed_m.npy": {
+   "bytes": 67108992,
+   "path": ".scratch/river-upgrade-20261101/terrain-v3/bed_m.npy",
+   "sha256": "eb37ec4d383137e61412d5d2411bf5370c3aa942de6e825df4dbebb48a3e8f45"
+  },
+  "ocean_mask.npy": {
+   "bytes": 16777344,
+   "path": ".scratch/river-upgrade-20261101/terrain-v3/ocean_mask.npy",
+   "sha256": "ee6fd7f367469feab8047564d13b4e8ecf3b2947b20098eb9d6cac97a0613a68"
+  },
+  "origin_center_m": -61440.0,
+  "spacing_m": 30.0
+ },
+ "world_seed": 20260903
+}

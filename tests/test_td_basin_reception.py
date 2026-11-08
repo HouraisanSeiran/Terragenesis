@@ -6,11 +6,14 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, publish_bytes
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy
-from terrain_pipeline.td_basin_overflow import OverflowParameters, _topology_identity, build_overflow_topology
-from terrain_pipeline.td_basin_reception import build_basin_reception, load_basin_reception
-from terrain_pipeline.td_basin_source import make_td_source
+from terrain_pipeline.common_infra import file_sha256, identity, publish_bytes
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_storage import OverflowParameters as OverflowParameters
+from terrain_pipeline.basin_storage import _topology_identity as _topology_identity
+from terrain_pipeline.basin_storage import build_overflow_topology as build_overflow_topology
+from terrain_pipeline.basin_topology import build_basin_reception as build_basin_reception
+from terrain_pipeline.basin_topology import load_basin_reception as load_basin_reception
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
 from tools.export_td_stable_basin_reception import run
 
 
@@ -140,7 +143,8 @@ class ReceptionTests(unittest.TestCase):
             self.assertFalse((directory / "new").exists())
 
     def test_cold_validator_rejects_rehashed_inventory_and_directional_totals(self):
-        from terrain_pipeline.td_basin_reception import _sha, validate_basin_reception
+        from terrain_pipeline.basin_topology import _sha as _sha
+        from terrain_pipeline.basin_topology import validate_basin_reception as validate_basin_reception
 
         event = self.event([1., 1.], [0., 0.])
         result = build_basin_reception(self.topology, event, event, self.hierarchy)

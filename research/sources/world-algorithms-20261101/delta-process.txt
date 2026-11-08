@@ -1,0 +1,1832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD Journal Publishing with OASIS Tables v3.0 20080202//EN" "journalpub-oasis3.dtd">
+<article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:oasis="http://docs.oasis-open.org/ns/oasis-exchange/table" dtd-version="3.0">
+  <front>
+    <journal-meta>
+<journal-id journal-id-type="publisher">ESURF</journal-id>
+<journal-title-group>
+<journal-title>Earth Surface Dynamics</journal-title>
+<abbrev-journal-title abbrev-type="publisher">ESURF</abbrev-journal-title>
+<abbrev-journal-title abbrev-type="nlm-ta">Earth Surf. Dynam.</abbrev-journal-title>
+</journal-title-group>
+<issn pub-type="epub">2196-632X</issn>
+<publisher><publisher-name>Copernicus GmbH</publisher-name>
+<publisher-loc>Göttingen, Germany</publisher-loc>
+</publisher>
+</journal-meta>
+
+    <article-meta>
+      <article-id pub-id-type="doi">10.5194/esurf-3-67-2015</article-id><title-group><article-title>A reduced-complexity model for river delta formation – Part 1: Modeling deltas with channel dynamics</article-title>
+      </title-group><?xmltex \runningtitle{A reduced-complexity model for river delta formation -- Part 1}?><?xmltex \runningauthor{M.~Liang et al.}?>
+      <contrib-group>
+        <contrib contrib-type="author" corresp="yes" rid="aff1 aff3">
+          <name><surname>Liang</surname><given-names>M.</given-names></name>
+          <email>manliang@utexas.edu</email>
+        </contrib>
+        <contrib contrib-type="author" corresp="no" rid="aff1">
+          <name><surname>Voller</surname><given-names>V. R.</given-names></name>
+          
+        <ext-link>https://orcid.org/0000-0001-8116-1567</ext-link></contrib>
+        <contrib contrib-type="author" corresp="no" rid="aff2">
+          <name><surname>Paola</surname><given-names>C.</given-names></name>
+          
+        </contrib>
+        <aff id="aff1"><label>1</label><institution>Department of Civil, Environmental, and Geo-Engineering, National Center for Earth Surface Dynamics, <?xmltex \hack{\newline}?> Saint Anthony Falls Laboratory, University of Minnesota, Twin Cities, Minneapolis, Minnesota, USA</institution>
+        </aff>
+        <aff id="aff2"><label>2</label><institution>Department of Geology and Geophysics, National Center for Earth Surface Dynamics, Saint Anthony Falls Laboratory, University of Minnesota, Twin Cities, Minneapolis, Minnesota, USA</institution>
+        </aff>
+        <aff id="aff3"><label>*</label><institution>now at: Department of Civil, Architectural and Environmental Engineering and Center for Research in Water Resources, The University of Texas at Austin, Austin, Texas, USA</institution>
+        </aff>
+      </contrib-group>
+      <author-notes><corresp id="corr1">M. Liang (manliang@utexas.edu)</corresp></author-notes><pub-date><day>28</day><month>January</month><year>2015</year></pub-date>
+      
+      <volume>3</volume>
+      <issue>1</issue>
+      <fpage>67</fpage><lpage>86</lpage>
+      <history>
+        <date date-type="received"><day>25</day><month>June</month><year>2014</year></date>
+           <date date-type="rev-request"><day>28</day><month>July</month><year>2014</year></date>
+           <date date-type="rev-recd"><day>31</day><month>December</month><year>2014</year></date>
+           <date date-type="accepted"><day>8</day><month>January</month><year>2015</year></date>
+           
+      </history>
+      <permissions>
+<license license-type="open-access">
+<license-p>This work is licensed under a Creative Commons Attribution 3.0 Unported License. To view a copy of this license, visit <ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/3.0/">http://creativecommons.org/licenses/by/3.0/</ext-link></license-p>
+</license>
+</permissions><self-uri xlink:href="https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015.html">This article is available from https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015.html</self-uri>
+<self-uri xlink:href="https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015.pdf">The full text article is available as a PDF file from https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015.pdf</self-uri>
+
+
+      <abstract>
+    <p>In this work we develop a reduced-complexity model (RCM) for river delta
+formation (referred to as DeltaRCM in the following). It is a rule-based
+cellular morphodynamic model, in contrast to reductionist models based on
+detailed computational fluid dynamics. The basic framework of this model
+(DeltaRCM) consists of stochastic parcel-based
+cellular routing schemes for water and sediment and a set of
+phenomenological rules for sediment deposition and erosion. The outputs of
+the model include a depth-averaged flow field, water surface elevation and
+bed topography that evolve in time. Results show that DeltaRCM is able
+(1) to resolve a wide range of channel dynamics – including elongation,
+bifurcation, avulsion and migration – and (2) to produce a variety of deltas such
+as alluvial fan deltas and deltas with multiple orders of bifurcations. We
+also demonstrate a simple stratigraphy recording component which tracks the
+distribution of coarse and fine materials and the age of the deposits.
+Essential processes that must be included in reduced-complexity delta models
+include a depth-averaged flow field that guides sediment transport  a
+nontrivial water surface profile that accounts for backwater effects at
+least in the main channels, both bedload and suspended sediment transport,
+and topographic steering of sediment transport.</p>
+  </abstract>
+    </article-meta>
+  </front>
+<body>
+      
+
+<sec id="Ch1.S1" sec-type="intro">
+  <title>Introduction</title>
+      <p>Home to hundreds of millions of people, major coastal cities and
+infrastructure, immensely productive wetlands, and some of the most
+compelling and diverse landscapes on Earth – yet low-lying and vulnerable
+to storms and rising sea levels – deltas are emerging as among the most
+critical environments in a changing world (Syvitski et al., 2009). They are
+also immensely complex. The science of deltas comprises, in roughly equal
+parts, geomorphology, ecology, hydrology, organic and microbial
+geochemistry, and human dynamics. The physical dynamics alone would present
+a formidable challenge, even if they were restricted to just turbulent flow
+interacting with sand; but most natural deltas involve major additional
+complications such as fine-grained cohesive sediment (mud) and strong,
+two-way interactions with biota.</p>
+      <p>A fundamental debate is developing across the sciences as to the best way to
+model and understand such complexity (e.g., Murray, 2003; Overeem et al.,
+2005; Paola and Leeder, 2011; Paola et al., 2011; Hajek and Wolinsky, 2012).
+Should we try to capture everything, creating models that simulate the
+processes in as much detail as current knowledge and computing power allow,
+or should we simplify, even at the risk of losing connections with reality?
+Modeling of deltas in recent years has produced excellent examples of both
+approaches, which we review below. Our aim here is to present a model that
+resides in the middle ground between detailed simulation and abstract
+simplification. We use a method based on weighted random walks, where the
+random walks are constrained by rules based on a hybrid of simplified
+governing equations for fluid motion and phenomenological representation of
+sediment transport processes. With suitable rules, DeltaRCM
+(reduced-complexity model for river delta formation) is able to
+produce delta morphologies that compare well with those produced by more
+complex models such as Delft3D and with the morphology of deltas in the
+field. We believe that the availability of abundant computing power
+strengthens rather than weakens the case for so-called reduced-complexity
+models such as the one we propose here. Understanding – as opposed to
+simulating – complex natural phenomena requires a spectrum of approaches
+and a clear understanding of the advantages and disadvantages of each.</p>
+      <p>The paper begins with a review (Sect. 2) of current approaches to modeling
+deltas, emphasizing previous reduced-complexity models. The detailed
+implementation of our model is presented in Sect.3, and results from it in
+Sects. 4 and 5. In Sect. 6 we discuss the meaning of the model results
+to date. Conclusions are provided in Sect. 7.</p>
+</sec>
+<sec id="Ch1.S2">
+  <title>Modeling river delta formation</title>
+      <p>As with any morphodynamic model, the most direct delta formation model would
+solve the governing equations for water flow and sediment particles based on
+first principles, i.e., the conservation of mass and momentum or energy, in
+detail, given all the necessary initial and boundary conditions. However,
+this is still not practical, not only because of limits of computational
+power, but also because of the potential error accumulation in such complex
+“full physics” models (Hajek and Wolinsky, 2012). Existing models for
+delta formation cover a wide range of scales and complexity (Fagherazzi and
+Overeem, 2007; Paola et al. 2011).</p>
+      <p>On the simple side, models based on spatially averaged delta surface
+topography can predict average delta dynamics, such as laterally averaged
+surface profile, position of the shoreline, and position of the
+alluvial–bedrock transition (Parker et al., 2008; Kim et al., 2009;
+Lorenzo-Trueba et al., 2013). These models do not attempt to provide
+detailed structure, such as topography and channel networks. On the more
+complex side, to date, the most inclusive physics-based delta formation model
+is Delft3D, which solves a depth-integrated version of the Reynolds-averaged
+Navier–Stokes equations (shallow water equations) with a turbulence closure
+term for horizontal Reynolds stresses, and coupled with empirical sediment
+transport formulas based on bed shear stress (Lesser et al., 2004; Edmonds
+and Slingerland, 2007). Delft3D can resolve deltaic processes from smaller,
+engineering scales such as river mouth-bar formation and bifurcation
+(Edmonds and Slingerland, 2007) to larger, geological scales such as the
+whole delta morphodynamics controlled by sediment cohesion (Edmonds and
+Slingerland, 2009), waves, tides and antecedent stratigraphy (Geleynse et al.,
+2010). Delft3D is widely considered the best high-resolution delta model
+available to the research community, and its utility is greatly enhanced by
+the release of an open-source version in 2012. In the middle ground of the
+model complexity spectrum are the so-called reduced-complexity models
+(RCMs). These models feature descriptive constructions and intuitive
+simplifications over the hierarchy of natural processes, in contrast to
+highly detailed but computationally complex models such as Delft3D, while
+still evolving the topography and channel network without simplifying to the
+degree of spatially averaged models. The most common form of models in this
+category is a rule-based cellular routing scheme, such as the braided river
+model by Murray and Paola (1994, 1997) and some of the early
+erosional-landscape models (e.g., Willgoose et al., 1991). In terms of
+channel-resolving delta formation models, an excellent example is found in Seybold et
+al. (2007, 2009, 2010). In their model, the water flux field is calculated
+on a lattice grid via a set of simplified hydrodynamic equations which are
+equivalent to a diffusive-wave form of the shallow water equations with
+constant diffusivity. A few other examples of delta-related
+channel-resolving RCMs include an avulsive delta building model by Sun et
+al. (2002) and a channel-floodplain co-evolution delta building model,
+AquaTellUS, by Overeem et al. (2005).</p>
+      <p>RCMs are less computationally intensive than CFD (computational fluid dynamics)-based high-fidelity models
+yet still produce morphodynamic features at system scales, such as stream
+braiding and floodplain aggradation. While computational efficiency is often
+considered the reason for developing RCMs, their most important advantage is
+the flexible rule-based framework which allows for direct translation of
+phenomenological observations into the model (as opposed to hoping that they
+will emerge given a sufficiently detailed description of the underlying
+mechanics). The challenges of building a RCM for delta formation are the
+following: (i) the low topographic slope of the majority of river deltas
+(10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">4</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>–10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">5</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>) does not provide a strong guide for
+topographic flow routing, which is a key component in many RCMs for
+geomorphodynamic systems; (ii) the low slope together with relatively deep,
+slow channel flow creates a low-Froude-number environment such that the flow
+senses downstream information over relatively long distances, making it
+difficult to design localized rules which are essential for RCMs; (iii) the
+self-organized distributary channel network includes loops that further
+complicate flow routing; and (iv) many river deltas have suspended load and
+wash load as a primary sediment input component, which make sediment routing
+more complex than in a bedload-only system. In addition, the
+low-Froude-number flow condition implies, as the Froude number tends to
+zero, a “rigid-lid” condition in which the shape of the free surface is
+nearly flat. This condition potentially offers computational advantages as
+the flow depth can be estimated from a fixed surface elevation (usually
+sea level or a simple function using backwater equations) and bed elevation,
+but is almost decoupled from the bed topography.</p>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F1" specific-use="star"><caption><p>Illustration of the basin, boundaries and inlet channel.</p></caption>
+        <?xmltex \igopts{width=341.433071pt}?><graphic xlink:href="https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015-f01.png"/>
+
+      </fig>
+
+      <p>In this work, we present a  RCM delta model using the “weighted random
+walk” method. The basic goal is to develop a model that includes just
+enough of the dynamics to tackle the main problems listed above. To be more
+specific, we seek complexity-reduction in the following aspects: (i) the
+solution of water surface elevation, (ii) the flow momentum balance, and
+(iii) the criteria for sediment deposition and erosion. A detailed model
+description is given in the next section, followed by results and
+comparisons with experimental and field deltas, along with the results of
+more detailed delta models, and then a discussion of the strengths and
+weaknesses of our model approach.</p>
+</sec>
+<sec id="Ch1.S3">
+  <title>Model construction</title>
+      <p>DeltaRCM has two components: a cellular flow routing scheme as the
+hydrodynamic component, and a set of sediment transport rules as the
+morphodynamic component. The model uses a lattice of square cells for its
+domain, where water and sediment flux are routed in a cell-by-cell fashion.
+The model evolves in time by updating the depth-averaged flow field, water
+surface elevation, sediment flux, and bed elevation at each time step.</p>
+<sec id="Ch1.S3.SS1">
+  <title>Model setup</title>
+      <p>The physical setting of our delta formation model is simplified to a
+rectangular basin of constant water depth (<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mtext>B</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>) with a short inlet
+channel on one side (Fig. 1). At the inlet we assume a constant water
+discharge <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>w0</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> (m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>) and sediment discharge <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>s0</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>
+(m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>). The boundary with the inlet channel is a wall boundary such
+that no water or sediment crosses. The other three boundaries are ocean
+boundaries with the boundary condition of a fixed sea level, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>H</mml:mi><mml:mtext>SL</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>.</p>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F2" specific-use="star"><caption><p>Diagram of the lattice grid and the primary values at each
+cell (water unit discharge, water surface elevation and bed elevation). Note
+that the total number of cells is reduced for the illustration.</p></caption>
+          <?xmltex \igopts{width=341.433071pt}?><graphic xlink:href="https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015-f02.png"/>
+
+        </fig>
+
+      <p>For water and sediment routing, we first define a set of global parameters
+that remain constant for each model run: (1) a reference water depth
+<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>, i.e., a representative flow depth for the system, and (2) a reference
+slope <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>, which is a representative overall water surface slope of the
+system. For example, for a lowland river delta, a typical value of <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>
+is from a few meters to tens of meters, with <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula> on the order of
+10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">4</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> to 10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">5</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>, while for an experimental fan delta, a typical value
+of <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula> is tens of millimeters and <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula> on the order of 10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">2</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>.
+The values are not precise but rather represent scale values, and may
+require trial and error to validate for each specific system. The depth of
+the inlet channel is set at <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula> and the inlet flow velocity is
+calculated as <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mfrac><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>w0</mml:mtext></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub><mml:mspace width="0.125em" linebreak="nobreak"/><mml:mi>W</mml:mi></mml:mrow></mml:mfrac></mml:math></inline-formula>, which will be referred to as
+a reference velocity of the system. <inline-formula><mml:math display="inline"><mml:mi>W</mml:mi></mml:math></inline-formula> is the inlet channel width, specified
+for each model run.</p>
+      <p>The domain is shown in Fig. 2, with cell size <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="italic">δ</mml:mi><mml:mtext>c</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>, a value that
+depends on the target scale of the model run; e.g., in the results section we
+use 50 m for a field-scale delta and 2 cm for a laboratory-scale fan delta.
+The total number of cells along the dip direction (from the inlet, into the
+basin) is <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>x</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula> and the number of cells along the strike direction
+(perpendicular to the inlet, across the basin) is <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>y</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>. Typically, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>x</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>
+and <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>y</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula> are both on the order of a hundred, with <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>y</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula> being roughly
+twice as large as <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>x</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula> to allow for a semicircular delta growth. The inlet
+has a width of <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula> cells. Typically, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula> is around 5. The primary
+quantities associated with each cell include  (i) water unit discharge
+vector <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">q</mml:mi><mml:mtext>w</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> (<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mi>x</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mi>y</mml:mi></mml:msub><mml:mo>)</mml:mo></mml:mrow></mml:math></inline-formula>, (ii) water surface elevation
+<inline-formula><mml:math display="inline"><mml:mi>H</mml:mi></mml:math></inline-formula>, and (iii) bed elevation <inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">η</mml:mi></mml:math></inline-formula>. These primary quantities are updated at
+each time step. Other useful quantities such as velocity vector
+<inline-formula><mml:math display="inline"><mml:mi mathvariant="bold-italic">u</mml:mi></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> (<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>x</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>y</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>) and water depth <inline-formula><mml:math display="inline"><mml:mi>h</mml:mi></mml:math></inline-formula> can be
+easily calculated from the primary quantities by  <inline-formula><mml:math display="inline"><mml:mi>h</mml:mi></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mi>H</mml:mi></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>-</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">η</mml:mi></mml:math></inline-formula> and
+<inline-formula><mml:math display="inline"><mml:mi mathvariant="bold-italic">u</mml:mi></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mfrac><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">q</mml:mi><mml:mtext>w</mml:mtext></mml:msub></mml:mrow><mml:mi>h</mml:mi></mml:mfrac></mml:math></inline-formula>.</p>
+      <p>Two types of parcels that carry a water or sediment attribute are routed
+through the domain. A time step is defined by the addition of <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>n</mml:mi><mml:mtext>w</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> water
+parcels and <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>n</mml:mi><mml:mtext>s</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> sediment parcels. This is done through a sequence of
+water parcels carrying an equal fraction of the total input water discharge
+during a time step followed by sediment parcels carrying an equal fraction
+of the total input sediment discharge during a time step.</p>
+      <p>Within each model run, the size of the time step <inline-formula><mml:math display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:mi>t</mml:mi></mml:mrow></mml:math></inline-formula> is constant. As
+is often the case in numerical modeling, the choice of <inline-formula><mml:math display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:mi>t</mml:mi></mml:mrow></mml:math></inline-formula> is a
+balance between computation efficiency and model stability. In each time
+step, the total amount of sediment added to the domain is measured by
+<inline-formula><mml:math display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mi>V</mml:mi><mml:mtext>s</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>s0</mml:mtext></mml:msub><mml:mspace linebreak="nobreak" width="0.125em"/><mml:mi mathvariant="normal">Δ</mml:mi><mml:mi>t</mml:mi></mml:mrow></mml:math></inline-formula>. A smaller <inline-formula><mml:math display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mi>V</mml:mi><mml:mtext>s</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> means less change
+to the topography  and allows the cellular routing scheme to perform better
+with a more consistent terrain  but, obviously it will take more steps to
+build the delta to a certain size. Here we introduce a reference volume,
+
+                <disp-formula id="Ch1.E1" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>h</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub><mml:msubsup><mml:mi mathvariant="italic">δ</mml:mi><mml:mtext>c</mml:mtext><mml:mn mathvariant="normal">2</mml:mn></mml:msubsup><mml:mo>,</mml:mo></mml:mrow></mml:math></disp-formula>
+
+          which is the volume of a channel inlet cell from the bed to water surface.
+If we assume that channels on the delta self-organize in scale with the
+reference depth <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>, this reference volume gives a good measurement of
+the characteristic topographic change on the growing delta. Currently we set
+the time step size so that the sediment volume added in each time step satisfies
+
+                <disp-formula id="Ch1.E2" content-type="numbered"><mml:math display="block"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mi>V</mml:mi><mml:mtext>s</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mn>0.1</mml:mn><mml:msubsup><mml:mi>N</mml:mi><mml:mn mathvariant="normal">0</mml:mn><mml:mn mathvariant="normal">2</mml:mn></mml:msubsup><mml:msub><mml:mi>V</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula>
+
+          Therefore, time step size is given by
+
+                <disp-formula id="Ch1.E3" content-type="numbered"><mml:math display="block"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:mi>t</mml:mi><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mn>0.1</mml:mn><mml:msubsup><mml:mi>N</mml:mi><mml:mn mathvariant="normal">0</mml:mn><mml:mn mathvariant="normal">2</mml:mn></mml:msubsup><mml:msub><mml:mi>V</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>s0</mml:mtext></mml:msub></mml:mrow></mml:mfrac><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula></p>
+</sec>
+<sec id="Ch1.S3.SS2">
+  <title>Model operation</title>
+      <p>The operations can best be understood by describing the processes in a
+single time step. There are four distinct phases: (1) the addition and
+routing of the water; (2) updating of the water surface elevation;
+(3) routing the sediment parcels and updating the bed elevation through
+deposition and erosion; and (4) updating of the routing direction, a vector
+field that determines the direction of flow through each cell in the domain.
+Each of these phases is described in turn.</p>
+      <p>To prepare, we divide the upstream water discharge (<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>w0</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>) and the total
+sediment input volume during a time step (<inline-formula><mml:math display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mi>V</mml:mi><mml:mtext>s</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>) into parcels.
+Typically, we use <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>n</mml:mi><mml:mtext>w</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> 2000 water parcels and each water parcel carries
+an equal amount of discharge:
+
+                <disp-formula id="Ch1.E4" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>p_water</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>w0</mml:mtext></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mi>n</mml:mi><mml:mtext>w</mml:mtext></mml:msub></mml:mrow></mml:mfrac><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula>
+
+          Likewise, we use <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>n</mml:mi><mml:mtext>s</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> 2000 sediment parcels and each sediment parcel
+carries an equal amount of sediment volume:
+
+                <disp-formula id="Ch1.E5" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_sed</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mi>V</mml:mi><mml:mtext>s</mml:mtext></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mi>n</mml:mi><mml:mtext>s</mml:mtext></mml:msub></mml:mrow></mml:mfrac><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula></p><?xmltex \hack{\newpage}?>
+<sec id="Ch1.S3.SS2.SSS1">
+  <title>Phase 1: water routing</title>
+      <p>At the start of a time step we assume that we have a delta with known shape
+and topography, i.e., at each cell we have a value of the water surface
+elevation <inline-formula><mml:math display="inline"><mml:mi>H</mml:mi></mml:math></inline-formula>, bed elevation <inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">η</mml:mi></mml:math></inline-formula>, and water depth (difference between
+the water surface elevation and the bed elevation) <inline-formula><mml:math display="inline"><mml:mi>h</mml:mi></mml:math></inline-formula>. We also have, at
+each cell, a unit vector <inline-formula><mml:math display="inline"><mml:mi mathvariant="bold-italic">F</mml:mi></mml:math></inline-formula>, referred to as the routing direction, which indicates the average
+downstream direction of flow through that cell. If the current time step is
+the first step in the model run, the routing directions are all in line with
+the inlet channel.</p>
+      <p>For the purpose of routing water, we define a binary cell state: 0 – dry,
+1 – wet. This is done by doing a sweep through the domain and marking cells
+with a water depth larger than a small threshold value <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mtext>dry</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> as wet
+cells. This threshold value is typically a fraction (10 %) of the
+characteristic depth scale of the environment of interest or 0.1 m,
+whichever is smaller. For example, for a natural delta, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mtext>dry</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> is
+typically 0.1 m, while for an experimental delta in laboratory,
+<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mtext>dry</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> is typically a few millimeters which is 10 % of the characteristic
+flow depth.</p>
+      <p>The process in the first part of the time step requires us to route, in
+turn, each of the water parcels through the domain. When the parcel is at a
+given cell, a decision is needed indicating to which of the eight neighbor cells
+it will move to. We achieve this by using a so-called  weighted random
+walk where the movement is dictated by a predefined probability
+distribution between the eight neighbor cells. The specification of the
+probability distribution is as follows.</p>
+      <p>At a given cell, first we calculate the routing weights for the eight neighbor
+cells. With the local routing direction
+<inline-formula><mml:math display="inline"><mml:mi mathvariant="bold-italic">F</mml:mi></mml:math></inline-formula> specified, the routing weights are determined by two factors: (i) the
+angle between the relative direction of the neighbor cell <inline-formula><mml:math display="inline"><mml:mi>i</mml:mi></mml:math></inline-formula> and the routing
+direction, which we will estimate using a dot product method that we
+describe below; and (ii) the resistance to the flow from each neighbor cell <inline-formula><mml:math display="inline"><mml:mi>i</mml:mi></mml:math></inline-formula>.
+In this model we calculate the routing weight for neighbor cell <inline-formula><mml:math display="inline"><mml:mi>i</mml:mi></mml:math></inline-formula> as
+
+                  <disp-formula id="Ch1.E6" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mfrac><mml:mn mathvariant="normal">1</mml:mn><mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mtext>i</mml:mtext></mml:msub></mml:mrow></mml:mfrac><mml:mtext>max</mml:mtext><mml:mfenced open="(" close=")"><mml:mn mathvariant="normal">0</mml:mn><mml:mo>,</mml:mo><mml:mi mathvariant="bold-italic">F</mml:mi><mml:mo>⋅</mml:mo><mml:msub><mml:mi mathvariant="bold-italic">d</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mfenced></mml:mrow><mml:mrow><mml:msub><mml:mi mathvariant="normal">Δ</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mfrac><mml:mo>,</mml:mo></mml:mrow></mml:math></disp-formula>
+
+            where resistance <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mtext>i</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> is estimated as an inverse function of local water
+depth <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>,
+
+                  <disp-formula id="Ch1.E7" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mtext>i</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mn mathvariant="normal">1</mml:mn><mml:mrow><mml:msubsup><mml:mi>h</mml:mi><mml:mi>i</mml:mi><mml:mi mathvariant="italic">θ</mml:mi></mml:msubsup></mml:mrow></mml:mfrac><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula>
+
+            For the current version of flow routing, the exponent <inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">θ</mml:mi></mml:math></inline-formula> is set to 1,
+hence, leading to the following relationship of the routing weight:
+
+                  <disp-formula id="Ch1.E8" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mtext>max</mml:mtext><mml:mfenced open="(" close=")"><mml:mn mathvariant="normal">0</mml:mn><mml:mo>,</mml:mo><mml:mi mathvariant="bold-italic">F</mml:mi><mml:mo>⋅</mml:mo><mml:msub><mml:mi mathvariant="bold-italic">d</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mfenced></mml:mrow><mml:mrow><mml:msub><mml:mi mathvariant="normal">Δ</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mfrac><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula>
+
+            The cellular direction vector, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">d</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>, is a unit vector pointing to neighbor <inline-formula><mml:math display="inline"><mml:mi>i</mml:mi></mml:math></inline-formula> from the given cell.
+Finally, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="normal">Δ</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula> is the cellular distance: 1 for cells in main
+compass directions and <inline-formula><mml:math display="inline"><mml:msqrt><mml:mn mathvariant="normal">2</mml:mn></mml:msqrt></mml:math></inline-formula> for corner cells (Fig. 3).</p>
+      <p>The weights above are calculated only for the wet neighbor cells of the given
+channel cell. All dry neighbor cells take a weight value of 0. At each
+channel cell we can then calculate routing probabilities <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>:
+
+                  <disp-formula id="Ch1.E9" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mrow><mml:munderover><mml:mo movablelimits="false">∑</mml:mo><mml:mrow><mml:mtext>nb</mml:mtext><mml:mo>=</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow><mml:mn mathvariant="normal">8</mml:mn></mml:munderover><mml:msub><mml:mi>w</mml:mi><mml:mtext>nb</mml:mtext></mml:msub></mml:mrow></mml:mfrac><mml:mo>,</mml:mo><mml:mspace linebreak="nobreak" width="0.25em"/><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn mathvariant="normal">1</mml:mn><mml:mo>,</mml:mo><mml:mn mathvariant="normal">2</mml:mn><mml:mo>,</mml:mo><mml:mi mathvariant="normal">…</mml:mi><mml:mo>,</mml:mo><mml:mn>8.</mml:mn></mml:mrow></mml:math></disp-formula>
+
+            To obtain a discharge vector at each cell based on the motion of visiting
+water parcels, our starting point is to construct, for each visiting parcel,
+an average vector of the input and output vectors (Fig. 4). So the result
+is, for each channel cell, a set (size <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mtext>visit</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>) of vectors, each
+expressing the average path of a visiting parcel through that cell. A
+summation of this set of vectors provides, after appropriate normalization,
+a representative direction for water parcels through the cell. In this way,
+a vector with this direction and a magnitude of <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mtext>visit</mml:mtext></mml:msub><mml:mspace width="0.125em" linebreak="nobreak"/><mml:msub><mml:mi>Q</mml:mi><mml:mtext>p_water</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>
+can be regarded as a discharge vector for the cell, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">Q</mml:mi><mml:mtext>cell</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>.</p>
+      <p>Then, for the purpose of later sediment transport, we need to estimate the local
+flow unit discharge and velocity. To do this we take the cell discharge
+vector (m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>) and divide it by the cell size <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="italic">δ</mml:mi><mml:mtext>c</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> to obtain a
+unit water discharge vector (m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">2</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>):
+
+                  <disp-formula id="Ch1.E10" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">q</mml:mi><mml:mtext>w</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">Q</mml:mi><mml:mtext>cell</mml:mtext></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mi mathvariant="italic">δ</mml:mi><mml:mtext>c</mml:mtext></mml:msub></mml:mrow></mml:mfrac><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula></p>
+</sec>
+<sec id="Ch1.S3.SS2.SSS2">
+  <title>Phase 2: water surface calculation</title>
+      <p>Water surface elevation is essential in this model not only because it
+participates in the calculation of flow depth but, even more importantly, because the
+gradient of water surface plays a major role in determining the routing
+probabilities, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula> (Eq. 8), of water parcels.</p>
+      <p>In this reduced-complexity model, our goal is to obtain a sufficiently
+accurate surface profile without solving the full 2-D hydrodynamic
+equations. We propose a method that uses a finite-difference scheme along
+the movement path of individual water parcels, analogous to the simplified
+surface solver developed by Rinaldo et al. (1999).</p>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F3"><caption><p>Definition of cellular direction
+<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">d</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula> and cellular distance <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="normal">Δ</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>. For example,
+<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">d</mml:mi><mml:mn mathvariant="normal">1</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> (1, 0),
+<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">d</mml:mi><mml:mn mathvariant="normal">6</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> (<inline-formula><mml:math display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mfrac><mml:mn mathvariant="normal">1</mml:mn><mml:msqrt><mml:mn mathvariant="normal">2</mml:mn></mml:msqrt></mml:mfrac></mml:mrow></mml:math></inline-formula>, <inline-formula><mml:math display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mfrac><mml:mn mathvariant="normal">1</mml:mn><mml:msqrt><mml:mn mathvariant="normal">2</mml:mn></mml:msqrt></mml:mfrac></mml:mrow></mml:math></inline-formula>),
+<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="normal">Δ</mml:mi><mml:mn mathvariant="normal">1</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> 1, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="normal">Δ</mml:mi><mml:mn mathvariant="normal">6</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:msqrt><mml:mn mathvariant="normal">2</mml:mn></mml:msqrt></mml:math></inline-formula>.</p></caption>
+            <?xmltex \igopts{width=236.157874pt}?><graphic xlink:href="https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015-f03.png"/>
+
+          </fig>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F4" specific-use="star"><caption><p>Calculation of the direction of the cell-representative discharge
+vector. The representative discharge vector takes the direction of the
+summation vector of all contributions from each visiting water parcel, and
+for <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mtext>visit</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>-visiting parcels its magnitude is
+<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mtext>visit</mml:mtext></mml:msub><mml:mspace linebreak="nobreak" width="0.125em"/><mml:msub><mml:mi>Q</mml:mi><mml:mtext>p_water</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>.</p></caption>
+            <?xmltex \igopts{width=398.338583pt}?><graphic xlink:href="https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015-f04.png"/>
+
+          </fig>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F5"><caption><p>A diagram showing the path of one individual water parcel compared
+to smooth flow streamlines.</p></caption>
+            <?xmltex \igopts{width=236.157874pt}?><graphic xlink:href="https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015-f05.png"/>
+
+          </fig>
+
+      <p>To start with the simplest formulation, we assume that water surface slope
+along a channel streamline can be approximated by the reference slope <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>,
+and in the ocean the water surface slope is always zero. With the
+downstream water surface boundary condition <inline-formula><mml:math display="inline"><mml:mi>H</mml:mi></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>H</mml:mi><mml:mtext>SL</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>, ideally along any
+given streamline, we can reconstruct the surface profile with a simple
+finite-difference calculation. In the model, however, instead of tracing a flow
+streamline, we take advantage of the walking path of water parcels, which
+can be considered as an approximation to the flow streamlines. The
+difference between the water-parcel paths (the “zigzag” version of
+streamlines) and the real flow streamlines is illustrated in Fig. 5. In the
+following we explain how to construct a water surface profile along a water-parcel path with a given reference slope <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>.</p>
+      <p>First, we need to locate the part of the path that is on the delta surface,
+as the part in ocean is considered flat. In general, a water-parcel path
+starts at one of the inlet cells, moves from one cell to an adjacent cell,
+and ends at one of the downstream ocean boundary cells. We distinguish the
+cells along the path on the delta surface and the cells in the open ocean by
+checking two values at each cell such that either a cell is on the delta, or
+a cell is in the ocean if both of the following criteria are met:</p>
+      <p><list list-type="order">
+              <list-item>
+
+      <p>local bed elevation <inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">η</mml:mi></mml:math></inline-formula> is lower than a threshold value <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="italic">η</mml:mi><mml:mtext>shore</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> (set to
+<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="italic">η</mml:mi><mml:mtext>shore</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>H</mml:mi><mml:mtext>SL</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>-</mml:mo></mml:math></inline-formula> 0.9 <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mtext>ref</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>);</p>
+              </list-item>
+              <list-item>
+
+      <p>local flow speed <inline-formula><mml:math display="inline"><mml:mrow><mml:mo>|</mml:mo><mml:mi mathvariant="bold-italic">u</mml:mi><mml:mo>|</mml:mo></mml:mrow></mml:math></inline-formula>
+is smaller than a threshold value <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>shore</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> (set to
+<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>shore</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> 0.5 <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>ref</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>).</p>
+              </list-item>
+            </list></p>
+      <p>With a given water-parcel path, the calculation starts from the end of the
+path and goes backward towards the inlet. For the <inline-formula><mml:math display="inline"><mml:mi>k</mml:mi></mml:math></inline-formula>th cell in the direction
+of calculation,
+<list list-type="bullet"><list-item>
+      <p>if cell <inline-formula><mml:math display="inline"><mml:mi>k</mml:mi></mml:math></inline-formula> is in the ocean, <inline-formula><mml:math display="inline"><mml:mrow><mml:mi>H</mml:mi><mml:msub><mml:mo>|</mml:mo><mml:mi>k</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>H</mml:mi><mml:mtext>SL</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>;</p></list-item><list-item>
+      <p>if cell <inline-formula><mml:math display="inline"><mml:mi>k</mml:mi></mml:math></inline-formula> is on the delta, <inline-formula><mml:math display="inline"><mml:mrow><mml:mi>H</mml:mi><mml:msub><mml:mo>|</mml:mo><mml:mi>k</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mrow><mml:mi>H</mml:mi><mml:msub><mml:mo>|</mml:mo><mml:mrow><mml:mi>k</mml:mi><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>-</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mi mathvariant="italic">δ</mml:mi><mml:mtext>c</mml:mtext></mml:msub><mml:mo>(</mml:mo><mml:msub><mml:mi mathvariant="bold-italic">q</mml:mi><mml:mtext>w</mml:mtext></mml:msub><mml:mo>|</mml:mo><mml:msub><mml:mi mathvariant="bold-italic">q</mml:mi><mml:mtext>w</mml:mtext></mml:msub><mml:mo>|</mml:mo><mml:mspace width="0.125em" linebreak="nobreak"/><mml:mo>⋅</mml:mo><mml:mspace linebreak="nobreak" width="0.125em"/><mml:mi mathvariant="bold-italic">d</mml:mi><mml:msub><mml:mo>|</mml:mo><mml:mi>k</mml:mi></mml:msub><mml:mo>)</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>,
+where <inline-formula><mml:math display="inline"><mml:mi mathvariant="normal">Δ</mml:mi></mml:math></inline-formula> is the cellular distance between the <inline-formula><mml:math display="inline"><mml:mi>k</mml:mi></mml:math></inline-formula>th and (<inline-formula><mml:math display="inline"><mml:mi>k</mml:mi></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>-</mml:mo></mml:math></inline-formula> 1)th cell, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="italic">δ</mml:mi><mml:mtext>c</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>
+is cell size, and <inline-formula><mml:math display="inline"><mml:mrow><mml:mi mathvariant="bold-italic">d</mml:mi><mml:msub><mml:mo>|</mml:mo><mml:mi>k</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula> is the parcel step vector from cell <inline-formula><mml:math display="inline"><mml:mi>k</mml:mi></mml:math></inline-formula> to cell <inline-formula><mml:math display="inline"><mml:mi>k</mml:mi></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>-</mml:mo></mml:math></inline-formula> 1.</p></list-item></list>
+The purpose of the term (<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">q</mml:mi><mml:mtext>w</mml:mtext></mml:msub><mml:mo>|</mml:mo><mml:msub><mml:mi mathvariant="bold-italic">q</mml:mi><mml:mtext>w</mml:mtext></mml:msub><mml:mo>|</mml:mo></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>⋅</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mrow><mml:mi mathvariant="bold-italic">d</mml:mi><mml:msub><mml:mo>|</mml:mo><mml:mi>k</mml:mi></mml:msub><mml:mo>)</mml:mo></mml:mrow></mml:math></inline-formula>
+is to take into account the angle between the parcel path and the streamline.</p>
+      <p>This calculation gives the surface profile along the path of an individual
+water parcel and is repeated for all water-parcel paths. There are two
+additional situations to be taken care of.
+<list list-type="order"><list-item>
+      <p>If a cell is visited by multiple water parcels, all the values from each
+visiting path are recorded and an average value is taken from these stored
+values in the end to obtain a single value for water surface elevation at each
+cell.</p></list-item><list-item>
+      <p>If a cell is not visited by any water parcels, its water surface elevation
+retains the old value (from the previous time step).</p></list-item></list>
+This newly calculated surface profile is recorded as <inline-formula><mml:math display="inline"><mml:mrow><mml:msup><mml:mi>H</mml:mi><mml:mtext>temp</mml:mtext></mml:msup></mml:mrow></mml:math></inline-formula>. We then
+apply a diffuser to smooth the calculated surface profile, which is
+typically spiky due to the 1-D stepwise method of calculation. The diffusion
+is applied as
+
+                  <disp-formula id="Ch1.E11" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msup><mml:mi>H</mml:mi><mml:mtext>smooth</mml:mtext></mml:msup><mml:mo>=</mml:mo><mml:mo>(</mml:mo><mml:mn mathvariant="normal">1</mml:mn><mml:mo>-</mml:mo><mml:mi mathvariant="italic">ε</mml:mi><mml:mo>)</mml:mo><mml:msup><mml:mi>H</mml:mi><mml:mtext>temp</mml:mtext></mml:msup><mml:mo>+</mml:mo><mml:mn>0.125</mml:mn><mml:mi mathvariant="italic">ε</mml:mi><mml:munderover><mml:mo movablelimits="false">∑</mml:mo><mml:mrow><mml:mtext>nb</mml:mtext><mml:mo>=</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow><mml:mn mathvariant="normal">8</mml:mn></mml:munderover><mml:msub><mml:mi>H</mml:mi><mml:mtext>nb</mml:mtext></mml:msub><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula>
+
+            We have used a diffusivity  of <inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">ε</mml:mi></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> 0.1 and   applied the smoothing
+calculation in Eq. (11)   10 times in each time step. This number is
+selected by checking samples of the resulting surface profile until no
+obvious spikes appear. We will discuss more in detail how sensitive the
+results are along with other features in calculating the free surface.</p>
+      <p>In the end, the water surface elevation is updated with an underrelaxation
+scheme for numerical stability:
+
+                  <disp-formula id="Ch1.E12" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msup><mml:mi>H</mml:mi><mml:mtext>new</mml:mtext></mml:msup><mml:mo>=</mml:mo><mml:mo>(</mml:mo><mml:mn mathvariant="normal">1</mml:mn><mml:mo>-</mml:mo><mml:mi mathvariant="italic">ϖ</mml:mi><mml:mo>)</mml:mo><mml:msup><mml:mi>H</mml:mi><mml:mtext>old</mml:mtext></mml:msup><mml:mo>+</mml:mo><mml:mi mathvariant="italic">ϖ</mml:mi><mml:msup><mml:mi>H</mml:mi><mml:mtext>smooth</mml:mtext></mml:msup><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula>
+
+            The underrelaxation coefficient <inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">ϖ</mml:mi></mml:math></inline-formula> is set to 0.1, which allows the
+surface profile to transit slowly and smoothly from one time step to
+another, avoiding numerical instability.</p>
+      <p>To ensure conservation of water mass, the unit discharge field remains the
+same within one time step. Therefore, as the water surface elevation is
+updated, only water flow depth and velocity are adjusted accordingly.</p>
+</sec>
+<sec id="Ch1.S3.SS2.SSS3">
+  <title>Phase 3: sediment transport and bed topography update</title>
+      <p>Now, both the flow field, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">q</mml:mi><mml:mtext>w</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>, and water surface elevation, <inline-formula><mml:math display="inline"><mml:mi>H</mml:mi></mml:math></inline-formula>, are updated. These two
+variables will remain constant until the next time step. To calculate the
+changes to the topography in a time step, we propose two sets of rules for
+the transport, deposition and erosion of sediment. The first set describes
+the routing of the sediment parcels, and the second set describes the rate
+of deposition and erosion as the exchange of sediment volume between
+sediment parcels and the bed. The rules are phenomenological and the goal is
+to build them via our understanding of macroscopic behavior rather than via
+fine-scale physical interactions between the fluid, sediment and  bed. To this
+end, we distinguish two types of sediment that have different behaviors in
+the model:
+<list list-type="bullet"><list-item>
+      <p>coarse sediment, referred to as “sand”, is noncohesive, and transported as bedload;</p></list-item><list-item>
+      <p>fine sediment, referred to as “mud”, is cohesive, and transported as suspended load.</p></list-item></list>
+A sediment parcel is either a “sand” parcel or a “mud” parcel. At the
+beginning of each run, an input parameter <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>f</mml:mi><mml:mtext>sand</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> gives the portion of
+sand in the total upstream sediment input. Therefore, a total number of
+<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>f</mml:mi><mml:mtext>sand</mml:mtext></mml:msub><mml:mspace linebreak="nobreak" width="0.125em"/><mml:msub><mml:mi>n</mml:mi><mml:mtext>s</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> parcels are designated as sand parcels and a total
+number of (1 <inline-formula><mml:math display="inline"><mml:mo>-</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>f</mml:mi><mml:mtext>sand</mml:mtext></mml:msub><mml:mo>)</mml:mo><mml:mspace width="0.125em" linebreak="nobreak"/><mml:msub><mml:mi>n</mml:mi><mml:mtext>s</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> parcels are designated as
+sand parcels for each time step.</p>
+</sec>
+<sec id="Ch1.S3.SS2.SSS4">
+  <title>Routing of the sediment parcels</title>
+      <p>For routing sediment parcels we use the same weighted random walk method as
+for the routing of water parcels (Eq. 6) with two modifications:
+<list list-type="order"><list-item>
+      <p>The routing direction <inline-formula><mml:math display="inline"><mml:mi mathvariant="bold-italic">F</mml:mi></mml:math></inline-formula>
+in Eq. (6) is replaced with the newly calculated water discharge vector <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">q</mml:mi><mml:mtext>w</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>
+at the given cell (from Phase 1 above), assuming that sediment parcels move with the water flow.</p></list-item><list-item>
+      <p>Transport resistance for sediment maintains the inverse function of flow
+depth but has different exponents. The idea is that sediment flux tends to
+concentrate in the lower portion of the water column and therefore it is more
+likely to follow topographically low areas. For now we use an exponent <inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">θ</mml:mi></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> 2
+for sand parcels (bedload) which is twice the value for water, and <inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">θ</mml:mi></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> 1
+for mud parcels (suspended load) which is equal to the value for water. The
+physical reason for the values chosen is that the distribution of the concentration
+of coarse material is skewed towards the lower portion of the water column and
+the distribution of fine material is more evenly distributed throughout the water column.</p></list-item></list>
+Thus, the routing weights for sediment parcels are
+
+                  <disp-formula specific-use="align" content-type="numbered"><mml:math display="block"><mml:mtable displaystyle="true"><mml:mlabeledtr id="Ch1.E13"><mml:mtd/><mml:mtd/><mml:mtd><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msubsup><mml:mi>h</mml:mi><mml:mi>i</mml:mi><mml:mn mathvariant="normal">2</mml:mn></mml:msubsup><mml:mtext>max</mml:mtext><mml:mfenced close=")" open="("><mml:mn mathvariant="normal">0</mml:mn><mml:mo>,</mml:mo><mml:msub><mml:mi mathvariant="bold-italic">q</mml:mi><mml:mtext>w</mml:mtext></mml:msub><mml:mo>⋅</mml:mo><mml:msub><mml:mi mathvariant="bold-italic">d</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mfenced></mml:mrow><mml:mrow><mml:msub><mml:mi mathvariant="normal">Δ</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mfrac><mml:mspace width="0.25em" linebreak="nobreak"/><mml:mtext>for sand parcels, and</mml:mtext></mml:mrow></mml:mtd></mml:mlabeledtr><mml:mlabeledtr id="Ch1.E14"><mml:mtd/><mml:mtd/><mml:mtd><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mtext>max</mml:mtext><mml:mfenced close=")" open="("><mml:mn mathvariant="normal">0</mml:mn><mml:mo>,</mml:mo><mml:msub><mml:mi mathvariant="bold-italic">q</mml:mi><mml:mtext>w</mml:mtext></mml:msub><mml:mo>⋅</mml:mo><mml:msub><mml:mi mathvariant="bold-italic">d</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mfenced></mml:mrow><mml:mrow><mml:msub><mml:mi mathvariant="normal">Δ</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mfrac><mml:mspace linebreak="nobreak" width="0.25em"/><mml:mtext>for mud parcels</mml:mtext><mml:mo>.</mml:mo></mml:mrow></mml:mtd></mml:mlabeledtr></mml:mtable></mml:math></disp-formula>
+
+              And routing probabilities are calculated as
+
+                  <disp-formula id="Ch1.E15" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mrow><mml:munderover><mml:mo movablelimits="false">∑</mml:mo><mml:mrow><mml:mtext>nb</mml:mtext><mml:mo>=</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow><mml:mn mathvariant="normal">8</mml:mn></mml:munderover><mml:msub><mml:mi>w</mml:mi><mml:mtext>nb</mml:mtext></mml:msub></mml:mrow></mml:mfrac><mml:mo>,</mml:mo><mml:mspace linebreak="nobreak" width="0.25em"/><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn mathvariant="normal">1</mml:mn><mml:mo>,</mml:mo><mml:mn mathvariant="normal">2</mml:mn><mml:mo>,</mml:mo><mml:mi mathvariant="normal">…</mml:mi><mml:mo>,</mml:mo><mml:mn>8.</mml:mn></mml:mrow></mml:math></disp-formula></p>
+</sec>
+<sec id="Ch1.S3.SS2.SSS5">
+  <title>The rate of deposition and erosion</title>
+      <p>Sediment parcels are routed sequentially in a weighted random walk fashion
+according to the probabilities calculated with Eqs. (13), (14) and (15). The
+change to the bed topography is obtained by the exchange of sediment volume
+between the moving parcel and the local bed at each cell along the path – during
+deposition a sediment parcel loses part of its volume and this volume
+is added to the bed, and vice versa for erosion. We use simple
+phenomenological rules to decide (i) where deposition or erosion happens and
+(ii) how much volume should be exchanged between the sediment parcel and the
+bed. The rules for sand and mud parcels are different.</p>
+      <p>For convenience of description, we refer to the initial volume of each
+sediment parcel <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_sed</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> as the “reference sediment
+parcel volume”, and the remaining volume during the walking process of a
+sediment parcel as the “residual sediment parcel volume”,
+<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_res</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>. The amount of deposition at each cell by an
+individual parcel is referred to as <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_dep</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>. The amount
+of erosion at each cell by an individual parcel is referred to as
+<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_ero</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>. The detailed rules are as follows.</p>
+      <p>For the deposition from a sand parcel we do the following:
+<list list-type="bullet"><list-item>
+      <p>At each cell in the domain, we calculate a “transport capacity” for
+sand flux, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mtext>s_cap</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>, as the maximum flux per unit width,
+which is a nonlinear function of local flow velocity <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>loc</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>. The scaling
+between sediment flux and flow velocity takes the form of the Meyer-Peter and
+Müller (1948) formula,<disp-formula id="Ch1.E16" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mtext>s_cap</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mtext>s0</mml:mtext></mml:msub><mml:mfrac><mml:mrow><mml:msubsup><mml:mi>U</mml:mi><mml:mtext>loc</mml:mtext><mml:mn mathvariant="normal">3</mml:mn></mml:msubsup></mml:mrow><mml:mrow><mml:msubsup><mml:mi>U</mml:mi><mml:mn mathvariant="normal">0</mml:mn><mml:mn mathvariant="normal">3</mml:mn></mml:msubsup></mml:mrow></mml:mfrac><mml:mo>,</mml:mo></mml:mrow></mml:math></disp-formula>where <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mtext>s0</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> is calculated by dividing the upstream sand flux input by
+the inlet channel width:<disp-formula id="Ch1.E17" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mtext>s0</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>f</mml:mi><mml:mtext>sand</mml:mtext></mml:msub><mml:msub><mml:mi>Q</mml:mi><mml:mtext>s0</mml:mtext></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub><mml:msub><mml:mi mathvariant="italic">δ</mml:mi><mml:mtext>c</mml:mtext></mml:msub></mml:mrow></mml:mfrac><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula></p></list-item><list-item>
+      <p>Similar to the calculation of water discharge, as the sand parcels are
+routed sequentially, we track the accumulated total sand flux, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mtext>s_loc</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>,
+which increases with each visiting bedload parcel:<disp-formula id="Ch1.E18" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msubsup><mml:mi>q</mml:mi><mml:mtext>s_loc</mml:mtext><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mtext>s_loc</mml:mtext></mml:msub><mml:mo>+</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_res</mml:mtext></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mi mathvariant="italic">δ</mml:mi><mml:mtext>c</mml:mtext></mml:msub><mml:mi mathvariant="normal">Δ</mml:mi><mml:mi>t</mml:mi></mml:mrow></mml:mfrac><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula></p></list-item><list-item>
+      <p>Deposition occurs if a sand parcel visits a cell that has an accumulated
+local sand flux exceeding the transport capacity:<disp-formula id="Ch1.E19" specific-use="align" content-type="subnumberedsingle"><mml:math display="block"><mml:mtable displaystyle="true"><mml:mlabeledtr id="Ch1.E19.1"><mml:mtd/><mml:mtd/><mml:mtd><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_dep</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_res</mml:mtext></mml:msub><mml:mspace width="0.25em" linebreak="nobreak"/><mml:mtext>if</mml:mtext><mml:mspace width="0.25em" linebreak="nobreak"/><mml:msub><mml:mi>q</mml:mi><mml:mtext>s_loc</mml:mtext></mml:msub><mml:mo>&gt;</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mtext>s_cap</mml:mtext></mml:msub><mml:mo>,</mml:mo></mml:mrow></mml:mtd></mml:mlabeledtr><mml:mlabeledtr id="Ch1.E19.2"><mml:mtd/><mml:mtd/><mml:mtd><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_dep</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mn mathvariant="normal">0</mml:mn><mml:mspace width="0.25em" linebreak="nobreak"/><mml:mtext>if</mml:mtext><mml:mspace width="0.25em" linebreak="nobreak"/><mml:msub><mml:mi>q</mml:mi><mml:mtext>s_loc</mml:mtext></mml:msub><mml:mo>≤</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mtext>s_cap</mml:mtext></mml:msub><mml:mo>.</mml:mo></mml:mrow></mml:mtd></mml:mlabeledtr></mml:mtable></mml:math></disp-formula></p></list-item></list></p>
+      <p>For deposition from a mud parcel we do the following:
+<list list-type="bullet"><list-item>
+      <p>Deposition occurs if a mud parcel visits a cell that has a local flow
+velocity <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>loc</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> smaller than a threshold velocity, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>dep</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>. The amount
+of deposition is proportional to the residual sediment volume of the mud parcel
+as well as the relative difference between the squares of <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>loc</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> and <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>dep</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>,
+a simplified representation of standard empirical laws for fine-sediment
+deposition (van Rijn, 1984):<disp-formula id="Ch1.E20" specific-use="align" content-type="subnumberedsingle"><mml:math display="block"><mml:mtable displaystyle="true"><mml:mlabeledtr id="Ch1.E20.1"><mml:mtd/><mml:mtd/><mml:mtd><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_dep</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_res</mml:mtext></mml:msub><mml:mfrac><mml:mrow><mml:msubsup><mml:mi>U</mml:mi><mml:mtext>dep</mml:mtext><mml:mn mathvariant="normal">3</mml:mn></mml:msubsup><mml:mo>-</mml:mo><mml:msubsup><mml:mi>U</mml:mi><mml:mtext>loc</mml:mtext><mml:mn mathvariant="normal">3</mml:mn></mml:msubsup></mml:mrow><mml:mrow><mml:msubsup><mml:mi>U</mml:mi><mml:mtext>dep</mml:mtext><mml:mn mathvariant="normal">3</mml:mn></mml:msubsup></mml:mrow></mml:mfrac><mml:mspace linebreak="nobreak" width="0.25em"/><mml:mtext>if</mml:mtext><mml:mspace linebreak="nobreak" width="0.25em"/><mml:msub><mml:mi>U</mml:mi><mml:mtext>loc</mml:mtext></mml:msub><mml:mo>&lt;</mml:mo><mml:msub><mml:mi>U</mml:mi><mml:mtext>dep</mml:mtext></mml:msub><mml:mo>,</mml:mo></mml:mrow></mml:mtd></mml:mlabeledtr><mml:mlabeledtr id="Ch1.E20.2"><mml:mtd/><mml:mtd/><mml:mtd><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_dep</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mn mathvariant="normal">0</mml:mn><mml:mspace width="0.25em" linebreak="nobreak"/><mml:mtext>if</mml:mtext><mml:mspace linebreak="nobreak" width="0.25em"/><mml:msub><mml:mi>U</mml:mi><mml:mtext>loc</mml:mtext></mml:msub><mml:mo>≥</mml:mo><mml:msub><mml:mi>U</mml:mi><mml:mtext>dep</mml:mtext></mml:msub><mml:mo>.</mml:mo></mml:mrow></mml:mtd></mml:mlabeledtr></mml:mtable></mml:math></disp-formula></p></list-item><list-item>
+      <p><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>dep</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> is set to <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>dep</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> 0.3 <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>ref</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>. The idea is that the finer
+the grain size, the slower the flow it requires to settle.</p></list-item></list>
+For the erosion by both types of sediment parcels, we do the following:
+<list list-type="bullet"><list-item>
+      <p>Erosion occurs if local flow velocity magnitude is larger than a threshold
+value, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>ero</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>, that differs for sand and mud parcels (García and Parker, 1991):<disp-formula id="Ch1.E21" specific-use="align" content-type="subnumberedsingle"><mml:math display="block"><mml:mtable displaystyle="true"><mml:mlabeledtr id="Ch1.E21.1"><mml:mtd/><mml:mtd/><mml:mtd><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_ero</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_sed</mml:mtext></mml:msub><mml:mfrac><mml:mrow><mml:msubsup><mml:mi>U</mml:mi><mml:mtext>loc</mml:mtext><mml:mn mathvariant="normal">3</mml:mn></mml:msubsup><mml:mo>-</mml:mo><mml:msubsup><mml:mi>U</mml:mi><mml:mtext>ero</mml:mtext><mml:mn mathvariant="normal">3</mml:mn></mml:msubsup></mml:mrow><mml:mrow><mml:msubsup><mml:mi>U</mml:mi><mml:mtext>ero</mml:mtext><mml:mn mathvariant="normal">3</mml:mn></mml:msubsup></mml:mrow></mml:mfrac><mml:mspace linebreak="nobreak" width="0.25em"/><mml:mtext>if</mml:mtext><mml:mspace width="0.25em" linebreak="nobreak"/><mml:msub><mml:mi>U</mml:mi><mml:mtext>loc</mml:mtext></mml:msub><mml:mo>&gt;</mml:mo><mml:msub><mml:mi>U</mml:mi><mml:mtext>ero</mml:mtext></mml:msub><mml:mo>,</mml:mo></mml:mrow></mml:mtd></mml:mlabeledtr><mml:mlabeledtr id="Ch1.E21.2"><mml:mtd/><mml:mtd/><mml:mtd><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_ero</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mn mathvariant="normal">0</mml:mn><mml:mspace linebreak="nobreak" width="0.25em"/><mml:mtext>if</mml:mtext><mml:mspace linebreak="nobreak" width="0.25em"/><mml:msub><mml:mi>U</mml:mi><mml:mtext>loc</mml:mtext></mml:msub><mml:mo>≤</mml:mo><mml:msub><mml:mi>U</mml:mi><mml:mtext>ero</mml:mtext></mml:msub><mml:mo>.</mml:mo></mml:mrow></mml:mtd></mml:mlabeledtr></mml:mtable></mml:math></disp-formula></p></list-item><list-item>
+      <p>For a sand parcel, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>ero</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> 1.05 <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>ref</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>.</p></list-item><list-item>
+      <p>For a mud parcel, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>ero</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> 1.5 <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>ref</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>.</p></list-item></list>
+For volume exchange between sediment parcel and the bed:
+<list list-type="bullet"><list-item>
+      <p>At each step, the volume of the sediment parcel is updated as<disp-formula id="Ch1.E22" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msubsup><mml:mi>V</mml:mi><mml:mtext>p_res</mml:mtext><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_res</mml:mtext></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_dep</mml:mtext></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_ero</mml:mtext></mml:msub><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula></p></list-item><list-item>
+      <p>The elevation of the local bed is updated as:<disp-formula id="Ch1.E23" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msup><mml:mi mathvariant="italic">η</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mo>=</mml:mo><mml:mi mathvariant="italic">η</mml:mi><mml:mo>+</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_dep</mml:mtext></mml:msub></mml:mrow><mml:mrow><mml:msubsup><mml:mi mathvariant="italic">δ</mml:mi><mml:mtext>c</mml:mtext><mml:mn mathvariant="normal">2</mml:mn></mml:msubsup></mml:mrow></mml:mfrac><mml:mo>-</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_ero</mml:mtext></mml:msub></mml:mrow><mml:mrow><mml:msubsup><mml:mi mathvariant="italic">δ</mml:mi><mml:mtext>c</mml:mtext><mml:mn mathvariant="normal">2</mml:mn></mml:msubsup></mml:mrow></mml:mfrac><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula></p></list-item><list-item>
+      <p>The local flow velocity and flow depth are updated in accordance with
+each event of deposition or erosion: <inline-formula><mml:math display="inline"><mml:mrow><mml:msup><mml:mi>h</mml:mi><mml:mo>′</mml:mo></mml:msup></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mi>H</mml:mi></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>-</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mrow><mml:msup><mml:mi mathvariant="italic">η</mml:mi><mml:mo>′</mml:mo></mml:msup></mml:mrow></mml:math></inline-formula> and
+<inline-formula><mml:math display="inline"><mml:mrow><mml:msup><mml:mi mathvariant="bold-italic">u</mml:mi><mml:mo>′</mml:mo></mml:msup></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mfrac><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">q</mml:mi><mml:mtext>w</mml:mtext></mml:msub></mml:mrow><mml:mi>h</mml:mi></mml:mfrac></mml:math></inline-formula>.</p></list-item></list>
+Note that in this setup a parcel can only take sediment of its own category
+(e.g., sand or mud), and the volume is equal to the total volume entrained.
+Therefore, in the erosion process, only the total sediment mass is preserved
+rather than the individual category of sand or mud. Given that deltas are
+predominantly depositional environments this method provides a reasonable
+conservation of sediment. We note, however, that if our approach is to be
+extended to model environments that involve strong erosion over mixed
+sand/mud beds our treatment will need modification to allow each parcel to
+carry multiple sediment categories.</p>
+      <p>The reason for updating local flow depth and velocity immediately after each
+event of deposition and erosion is to avoid excess change to the bed.
+Similarly, we add an extra control on the rate of change to the bed by
+limiting the amount of deposition and erosion by a sediment parcel so that
+the change to local depth is less than 25 %, so that the change to local
+flow velocity is less than 33 %. For example, if local flow depth is 4 m,
+then the maximum deposition or erosion by a single sediment parcel is
+limited to 1 m change to the bed.</p>
+      <p>After all sediment parcels finish their random walk, to take into account
+the influence of topographical slope on sediment flux in an approximation of
+the Bagnold–Ikeda expressions (García, 2008), we apply a topographic
+diffuser that assumes the diffusive flux is proportional to local sand
+(bedload) flux and topographical slope:
+
+                  <disp-formula id="Ch1.E24" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mtext>s_diff</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mi mathvariant="italic">α</mml:mi><mml:mo>|</mml:mo><mml:mi mathvariant="normal">∇</mml:mi><mml:mi mathvariant="italic">η</mml:mi><mml:mo>|</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mtext>s_loc</mml:mtext></mml:msub><mml:mo>,</mml:mo></mml:mrow></mml:math></disp-formula>
+
+            where <inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">α</mml:mi></mml:math></inline-formula> is a scaling coefficient, by default set to 0.1, and <inline-formula><mml:math display="inline"><mml:mrow><mml:mo>|</mml:mo><mml:mi mathvariant="normal">∇</mml:mi><mml:mspace width="0.125em" linebreak="nobreak"/><mml:mi mathvariant="italic">η</mml:mi><mml:mo>|</mml:mo></mml:mrow></mml:math></inline-formula>
+is bed slope. The total change to the bed elevation
+by the topographic diffuser is obtained by summing up the inbound and
+outbound diffusive fluxes at each cell over the time period <inline-formula><mml:math display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:mi>t</mml:mi></mml:mrow></mml:math></inline-formula>. This
+topographic diffusion also introduces lateral erosion by allowing sediment
+on the bank to be removed and added to the channels. This lateral erosion
+gives channels the mobility to migrate or even to meander. Examples are
+shown in the results section.</p>
+</sec>
+<sec id="Ch1.S3.SS2.SSS6">
+  <title>Phase 4: update routing direction</title>
+      <p>Before moving to the next time step, we need to update the routing
+direction: a unit vector at each cell indicating the downstream direction
+for routing water parcels. In this last phase of the time step, at each cell
+we calculate the updated value of the unit water discharge vector
+<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">q</mml:mi><mml:mtext>w</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>, water surface elevation <inline-formula><mml:math display="inline"><mml:mi>H</mml:mi></mml:math></inline-formula>, bed elevation <inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">η</mml:mi></mml:math></inline-formula>,
+water depth <inline-formula><mml:math display="inline"><mml:mi>h</mml:mi></mml:math></inline-formula>, etc.</p>
+      <p>To achieve this, we combine two physical processes dictating the flow
+direction: (i) at an instant in time flow has a tendency to continue in the
+same direction as the direction at the previous instant due to inertia, and
+(ii) in the absence of any other drivers the flow goes downslope which in
+our case is indicated by the water-surface slope rather than bed slope.</p>
+
+<?xmltex \floatpos{t}?><table-wrap id="Ch1.T1" specific-use="star"><caption><p>List of model constants and parameters.</p></caption><oasis:table frame="topbot"><oasis:tgroup cols="2">
+     <oasis:colspec colnum="1" colname="col1" align="left"/>
+     <oasis:colspec colnum="2" colname="col2" align="left"/>
+     <oasis:thead>
+       <oasis:row rowsep="1">  
+         <oasis:entry colname="col1">Parameter</oasis:entry>  
+         <oasis:entry colname="col2">Values and rationale</oasis:entry>
+       </oasis:row>
+     </oasis:thead>
+     <oasis:tbody>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">α</mml:mi></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Coefficient of topographic diffusion, set to 0.1. This parameter controls</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">the cross-slope sediment flux as well as bank erosion. The magnitude of</oasis:entry>
+       </oasis:row>
+       <oasis:row rowsep="1">  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> comes from the portion of bedload that is steered by bed slope.</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">γ</mml:mi></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Partitioning coefficient between routing direction by inertia and routing</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">direction by water surface gradient. This parameter essentially controls</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">how much water spread laterally (caused by cross-channel component of</oasis:entry>
+       </oasis:row>
+       <oasis:row rowsep="1">  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">water surface gradient) and is usually a small value (on the order of 10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">2</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>).</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">ε</mml:mi></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Coefficient for water surface diffusion, set to a small value of 0.1 to</oasis:entry>
+       </oasis:row>
+       <oasis:row rowsep="1">  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">ensure stability.</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">θ</mml:mi></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Depth dependence in routing water and sediment parcels. The value is set</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">to 1 for water parcels and mud parcels, and 2 for sand parcels. The higher this</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">value is the more skewed in the routing probabilities towards cells with</oasis:entry>
+       </oasis:row>
+       <oasis:row rowsep="1">  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">larger depth value.</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>dep</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Threshold velocity for sediment deposition. Currently, it only applies to mud</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">parcels and is set to 30 % of the reference velocity <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>. The smaller this value</oasis:entry>
+       </oasis:row>
+       <oasis:row rowsep="1">  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">is the longer a mud parcel can travel before losing all its mud volume.</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>ero</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Threshold velocity for sediment erosion. The value is set to 1.05 <inline-formula><mml:math display="inline"><mml:mo>⋅</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula> for</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">sand parcels and 1.5 <inline-formula><mml:math display="inline"><mml:mo>⋅</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula> for mud parcels. The higher this value is the</oasis:entry>
+       </oasis:row>
+       <oasis:row rowsep="1">  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">more difficult to erode the bed.</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mtext>dry</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Threshold depth for a cell to be considered “dry” and turned off from flow</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">routing. The value is user defined and should be estimated depending on the</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">physical environment. We suggest 1–10 % of the characteristic flow depth.</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">In the model runs  presented in this paper a value of 0.1 m is used for</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">field scale, which comes from the observation in Wax Lake Delta, LA;</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">and 0.002 m for experimental scale, which comes from the observation of</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">delta basin experiments in the lab.</oasis:entry>
+       </oasis:row>
+     </oasis:tbody>
+   </oasis:tgroup></oasis:table></table-wrap>
+
+      <p>First, we calculate a unit vector from the downstream direction based on the
+previous time step:
+
+                  <disp-formula id="Ch1.E25" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">F</mml:mi><mml:mtext>int</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">q</mml:mi><mml:mtext>w,old</mml:mtext></mml:msub></mml:mrow><mml:mrow><mml:mo>|</mml:mo><mml:msub><mml:mi mathvariant="bold-italic">q</mml:mi><mml:mtext>w,old</mml:mtext></mml:msub><mml:mo>|</mml:mo></mml:mrow></mml:mfrac><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula>
+
+            Then, we calculate a unit vector from the water surface gradient (from the
+previous time step):
+
+                  <disp-formula id="Ch1.E26" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">F</mml:mi><mml:mtext>sfc</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mi mathvariant="normal">∇</mml:mi><mml:msub><mml:mi>H</mml:mi><mml:mtext>old</mml:mtext></mml:msub></mml:mrow><mml:mrow><mml:mo>|</mml:mo><mml:mi mathvariant="normal">∇</mml:mi><mml:msub><mml:mi>H</mml:mi><mml:mtext>old</mml:mtext></mml:msub><mml:mo>|</mml:mo></mml:mrow></mml:mfrac><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula>
+
+            Then, a linear combination of the two vectors is taken with a partitioning
+coefficient <inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">γ</mml:mi></mml:math></inline-formula>:
+
+                  <disp-formula id="Ch1.E27" content-type="numbered"><mml:math display="block"><mml:mrow><mml:msup><mml:mi mathvariant="bold-italic">F</mml:mi><mml:mo>*</mml:mo></mml:msup><mml:mo>=</mml:mo><mml:mi mathvariant="italic">γ</mml:mi><mml:msub><mml:mi mathvariant="bold-italic">F</mml:mi><mml:mtext>sfc</mml:mtext></mml:msub><mml:mo>+</mml:mo><mml:mo>(</mml:mo><mml:mn mathvariant="normal">1</mml:mn><mml:mo>-</mml:mo><mml:mi mathvariant="italic">γ</mml:mi><mml:mo>)</mml:mo><mml:msub><mml:mi mathvariant="bold-italic">F</mml:mi><mml:mtext>int</mml:mtext></mml:msub><mml:mspace linebreak="nobreak" width="0.25em"/><mml:mtext>and</mml:mtext><mml:mspace linebreak="nobreak" width="0.25em"/><mml:mi mathvariant="bold-italic">F</mml:mi><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msup><mml:mi mathvariant="bold-italic">F</mml:mi><mml:mo>*</mml:mo></mml:msup></mml:mrow><mml:mrow><mml:mo>|</mml:mo><mml:msup><mml:mi mathvariant="bold-italic">F</mml:mi><mml:mo>*</mml:mo></mml:msup><mml:mo>|</mml:mo></mml:mrow></mml:mfrac><mml:mo>.</mml:mo></mml:mrow></mml:math></disp-formula>
+
+            The value of <inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">γ</mml:mi></mml:math></inline-formula> is set to a small number, typically 0.05 in the runs
+reported here.</p>
+      <p>By implementing the method described in this section, we have achieved our
+goal of complexity reduction: (i) the construction of the water surface via
+1-D profiles  captures the overall trend of water surface gradients without
+solving the full hydrodynamic equations; (ii) the flow momentum balance is
+relaxed, e.g., the effect of flow inertia is considered only in the form of
+direction rather than magnitude; and (iii) the criteria for sediment
+deposition and erosion are in the very basic form of a nonlinear relation
+between sediment carrying capacity and flow velocity. Key constants and parameters
+that do not vary in our tests are listed in Table 1. In the next section,
+we will show that when implemented in our DeltaRCM model these reduced-complexity constructions predict delta growth characteristics and channel
+dynamics that are comparable to those of high-fidelity modeling and field observations.</p>
+</sec>
+</sec>
+</sec>
+<sec id="Ch1.S4">
+  <title>Model results</title>
+      <p>In this section we present various morphological features produced by
+DeltaRCM with different domain setup and input parameters. All simulations
+assume no effects from wave or tidal energy, i.e., the delta is a classic
+river-dominated delta (Galloway, 1975). We investigate  (1) the effects of
+input sediment composition and (2) the model's ability to simulate deltas at
+field and laboratory scales. The former has been studied via field
+observation (Orton and Reading, 1993) and numerical simulation (Edmonds and
+Slingerland, 2009). The latter is based on the availability of data from
+experimental deltas; also, we believe that if a model can handle both field
+and experimental scales, it could potentially inform the interpretations and
+connections of both. Furthermore, we demonstrate  DeltaRCM as a tool
+for hypothesis testing  through study of the effects of  the receiving basin depth.</p>
+      <p>As discussed above, two types of sediment are routed through the system:
+coarse (sand) and fine (mud). The ratio of the numbers of these two types of
+parcels at the inlet gives the ratio of sand and mud coming into the system.
+To set the physical scale of the simulation, domain and grid size are
+adjusted by changing cell size and physical input parameters, such as total
+input water and sediment discharge, and also global parameters such as the
+reference energy slope.</p>
+      <p>The input parameters (Table 2) include
+<list list-type="order"><list-item>
+      <p>the portion of sand in the upstream sediment input, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>f</mml:mi><mml:mtext>sand</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>;</p></list-item><list-item>
+      <p>global parameters; i.e., the reference flow depth <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>,   basin depth <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mtext>B</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>,
+and the reference slope, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>;</p></list-item><list-item>
+      <p>total discharge <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>w0</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> and <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>s0</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>.</p></list-item></list>
+Strictly speaking, the choice of the reference slope <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula> is dependent
+on the sand : mud ratio as well as the scale of the physical setting. In our
+model runs for field scale we use 3 <inline-formula><mml:math display="inline"><mml:mo>×</mml:mo></mml:math></inline-formula> 10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">4</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> for purely sandy
+deltas, 1 <inline-formula><mml:math display="inline"><mml:mo>×</mml:mo></mml:math></inline-formula> 10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">4</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> on purely muddy deltas and a linear
+combination of the two for mixed deltas; for laboratory scale, we use values
+on the order of 10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">2</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> for <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>. The magnitude of the reference slope
+is scaled with the ratio of bedload and water fluxes that come from the
+inlet channel, such that <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>∼</mml:mo></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>s0_bed</mml:mtext></mml:msub><mml:mo>/</mml:mo><mml:msub><mml:mi>Q</mml:mi><mml:mtext>w0</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>.</p>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F6" specific-use="star"><caption><p>Time series of delta formation with different ratios of sand and
+mud flux (runs 1, 2 and 3). The time interval between rows is
+roughly 200 days of delta building time with continuous bank-full discharge.</p></caption>
+        <?xmltex \igopts{width=398.338583pt}?><graphic xlink:href="https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015-f06.png"/>
+
+      </fig>
+
+<sec id="Ch1.S4.SS1">
+  <title>Effects of input coarse/fine sediment ratio</title>
+      <p>In this group, the domain is a lattice grid of 120 by 60 square cells. Cell
+size is taken to be 50 m. The channel inlet is five-cells wide (250 m), with a
+reference flow depth of <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> 5 m. The total water discharge is
+1250 m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>. The total sediment discharge is 0.1 % by volume, which is
+1.25 m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>. We use a time step calculated from Eq. (3) of 25 000 s
+(<inline-formula><mml:math display="inline"><mml:mo>∼</mml:mo></mml:math></inline-formula> 7 h). Both water and sediment discharge stay constant
+and we assume they represent channel-forming conditions.</p>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F7"><caption><p>Comparing shoreline roughness between simulated deltas with input
+sand fractions of 25, 50, and 75 %. Shoreline roughness here is
+measured by the ratio between (i) the number of cells in the domain that
+contain  a piece of shoreline of the simulated delta, and (ii) the average
+radius of the delta toposet in number of cells.</p></caption>
+          <?xmltex \igopts{width=199.169291pt}?><graphic xlink:href="https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015-f07.png"/>
+
+        </fig>
+
+<table-wrap id="Ch1.T2"><caption><p>List of delta model runs and parameter values.</p></caption><oasis:table frame="topbot"><oasis:tgroup cols="6">
+     <oasis:colspec colnum="1" colname="col1" align="left"/>
+     <oasis:colspec colnum="2" colname="col2" align="left"/>
+     <oasis:colspec colnum="3" colname="col3" align="center"/>
+     <oasis:colspec colnum="4" colname="col4" align="left"/>
+     <oasis:colspec colnum="5" colname="col5" align="left"/>
+     <oasis:colspec colnum="6" colname="col6" align="left"/>
+     <oasis:thead>
+       <oasis:row>  
+         <oasis:entry colname="col1">Run</oasis:entry>  
+         <oasis:entry colname="col2"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>f</mml:mi><mml:mtext>sand</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mrow><mml:mtext>w</mml:mtext><mml:mn mathvariant="normal">0</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col5"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col6"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mtext>B</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>
+       </oasis:row>
+       <oasis:row rowsep="1">  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2"/>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">(m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>)</oasis:entry>  
+         <oasis:entry colname="col5">(m)</oasis:entry>  
+         <oasis:entry colname="col6">(m)</oasis:entry>
+       </oasis:row>
+     </oasis:thead>
+     <oasis:tbody>
+       <oasis:row>  
+         <oasis:entry colname="col1">1</oasis:entry>  
+         <oasis:entry colname="col2">0.9</oasis:entry>  
+         <oasis:entry colname="col3">2.8 <inline-formula><mml:math display="inline"><mml:mo>×</mml:mo></mml:math></inline-formula> 10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">4</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">1250</oasis:entry>  
+         <oasis:entry colname="col5">5</oasis:entry>  
+         <oasis:entry colname="col6">5</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1">2</oasis:entry>  
+         <oasis:entry colname="col2">0.5</oasis:entry>  
+         <oasis:entry colname="col3">2.0 <inline-formula><mml:math display="inline"><mml:mo>×</mml:mo></mml:math></inline-formula> 10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">4</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">1250</oasis:entry>  
+         <oasis:entry colname="col5">5</oasis:entry>  
+         <oasis:entry colname="col6">5</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1">3</oasis:entry>  
+         <oasis:entry colname="col2">0.1</oasis:entry>  
+         <oasis:entry colname="col3">1.2 <inline-formula><mml:math display="inline"><mml:mo>×</mml:mo></mml:math></inline-formula> 10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">4</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">1250</oasis:entry>  
+         <oasis:entry colname="col5">5</oasis:entry>  
+         <oasis:entry colname="col6">5</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1">4</oasis:entry>  
+         <oasis:entry colname="col2">0.3</oasis:entry>  
+         <oasis:entry colname="col3">1.6 <inline-formula><mml:math display="inline"><mml:mo>×</mml:mo></mml:math></inline-formula> 10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">4</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">1250</oasis:entry>  
+         <oasis:entry colname="col5">5</oasis:entry>  
+         <oasis:entry colname="col6">5</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1">5</oasis:entry>  
+         <oasis:entry colname="col2">1.0</oasis:entry>  
+         <oasis:entry colname="col3">1.0 <inline-formula><mml:math display="inline"><mml:mo>×</mml:mo></mml:math></inline-formula> 10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">2</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">0.0006</oasis:entry>  
+         <oasis:entry colname="col5">0.02</oasis:entry>  
+         <oasis:entry colname="col6">0.02</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1">6</oasis:entry>  
+         <oasis:entry colname="col2">0.3</oasis:entry>  
+         <oasis:entry colname="col3">1.6 <inline-formula><mml:math display="inline"><mml:mo>×</mml:mo></mml:math></inline-formula> 10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">4</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">1250</oasis:entry>  
+         <oasis:entry colname="col5">5</oasis:entry>  
+         <oasis:entry colname="col6">2.5</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1">7</oasis:entry>  
+         <oasis:entry colname="col2">0.3</oasis:entry>  
+         <oasis:entry colname="col3">1.6 <inline-formula><mml:math display="inline"><mml:mo>×</mml:mo></mml:math></inline-formula> 10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">4</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">1250</oasis:entry>  
+         <oasis:entry colname="col5">5</oasis:entry>  
+         <oasis:entry colname="col6">10</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1">8</oasis:entry>  
+         <oasis:entry colname="col2">1.0</oasis:entry>  
+         <oasis:entry colname="col3">2.0 <inline-formula><mml:math display="inline"><mml:mo>×</mml:mo></mml:math></inline-formula> 10<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">2</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">0.0006</oasis:entry>  
+         <oasis:entry colname="col5">0.02</oasis:entry>  
+         <oasis:entry colname="col6">0.02</oasis:entry>
+       </oasis:row>
+     </oasis:tbody>
+   </oasis:tgroup></oasis:table></table-wrap>
+
+      <p>We show three model runs in Fig. 6 with the portion of sand in the upstream
+sediment discharge set to 25, 50, and 75 %. The resultant deltas
+differ systematically based on the input mud fraction in the following
+characteristics, which are consistent with those found in the investigation
+on the effects of sediment cohesion by Edmonds and Slingerland (2009).
+<list list-type="bullet"><list-item>
+      <p>On a sandy delta the channels are relatively shallow and mobile, without
+well-defined levees. Flow is less confined. There are large areas of sheet flow.
+The shoreline is smooth and the delta grows roughly in a semicircular shape.</p></list-item><list-item>
+      <p>On a muddy delta, channels are deeper and stable, with well-defined levees.
+Channels tend to elongate. The shoreline is rugose, and deltas build in different
+directions by switching lobes.</p></list-item><list-item>
+      <p>The contrast in the model-predicted roughness between a sandy and muddy
+delta is illustrated in Fig. 7, where plots of the time variation of the ratio
+of number of cells on the shoreline to average delta radius (measured in number
+of cells) is presented. In these calculations, the shoreline is defined using
+the opening-angle method (OAM) developed by Shaw et al. (2008), employing an
+elevation threshold of <inline-formula><mml:math display="inline"><mml:mo>-</mml:mo></mml:math></inline-formula>1 m and an opening-angle threshold of 30<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mo>∘</mml:mo></mml:msup></mml:math></inline-formula>.
+Also note that the calculation of the roughness ratio in Fig. 7 is made across
+the range of time intervals where the predicted delta consists of several lobes
+but has not yet filled the calculation domain.</p></list-item></list></p>
+</sec>
+<sec id="Ch1.S4.SS2">
+  <title>Experimental fan deltas</title>
+      <p>Laboratory experiments, numerical modeling and field observation are three
+important approaches of understanding the formation of deltas. Because we would like
+to test our model across as wide a scale range as possible, we include
+experimental deltas at laboratory scales. To do this, we change the domain
+to a lattice grid of 90 by 180 cells with a cell size of 0.02 m. The inlet
+channel is still five-cells wide but has a flow depth of 0.02 m and a water
+discharge of 0.6 L s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>. Basin water depth is 0.02 m. The reference slope is set
+at 0.02. The time step is estimated at 1.67 s. Sediment input is
+considered to be coarse-grained only. These conditions are representative of
+laboratory experiments such as those reported by Reitz and Jerolmack (2012).</p>
+      <p>In Fig. 8a–f we show a time series of the resultant deltas during one
+avulsion cycle. These plots reveal the key characteristics of an alluvial
+fan delta, in which a few active channels quickly switch (avulse) to build a
+semicircular shape with a relatively smooth shoreline (Reitz and Jerolmack,
+2012). To evaluate the details of this channel-switching process, we
+calculate the wet fraction of delta surface that is covered by active
+channels (defined by cells that have a flow velocity greater than 50 % of
+the characteristic flow velocity) and plot it against time (Fig. 8g). Each
+avulsion event can be identified by a sudden drop of the wet fraction
+followed by a relatively slow rise caused by backfilling and flooding. An
+avulsion timescale estimated from this plot is in the range of 5–10 min, a
+value that is of the same order as the laboratory observations made by Reitz
+and Jerolmack (2012).</p>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F8"><caption><p>The series of images matches the avulsion cycles observed in
+physical experiments (Reitz and Jerolmack, 2012): <bold>(a)</bold> channelizes,
+<bold>(b)</bold> pushes out the shoreline (only deposits at the channel mouth), <bold>(c)</bold> flares
+out locally to establish a semicircular lobe (deposits minilobes around
+original channel mouth by local avulsions and sheet flow), <bold>(d)</bold> backfills
+(channel widens), <bold>(e)</bold> floods, and <bold>(f)</bold> channelizes again. Note that the time
+interval between <bold>(d)</bold> and <bold>(e)</bold> is about 4 times longer than any other pair of
+consecutive frames.</p></caption>
+          <?xmltex \igopts{width=236.157874pt}?><graphic xlink:href="https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015-f08.png"/>
+
+        </fig>
+
+<?xmltex \hack{\newpage}?>
+</sec>
+<sec id="Ch1.S4.SS3">
+  <title>Effects of basin depth</title>
+      <p>It has been suggested that the accommodation – the space that a delta can
+grow into – plays an important role in the architecture and behavior of a
+growing delta (e.g., Paola, 2000; Heller et al., 2001). However, for
+the case of river deltas with very low-Froude-number flow, it is still
+unclear how the depth of the basin affects the overall morphology of the
+delta. Storms et al. (2007) use  Delft3D to model initial delta formation
+from a river effluent discharging constant flow and sediment loads into
+shallow and deep receiving basins under homopycnal conditions; they  show
+that the shallow basin delta is dominated by mouth-bar bifurcations and a
+shoaling channel network, and exhibits significant stratigraphic complexity
+and subaerial development, while the deep basin delta is dominated by
+unstable bifurcations, levee breaches and avulsions (Storms et al., 2007).
+The authors suggest that the shallow basin case resembles the Wax Lake Delta. In
+our model runs 6 and 7, we test scenarios with the same inlet channel
+conditions and discharge, but different basin depths. In run 6, the
+receiving basin depth is half of the reference depth (defined by the inlet
+channel which is supposed to be at equilibrium state in terms of sediment
+transport), while in run 7, the receiving basin depth is double the
+reference depth. In Fig. 9 we show that our results  yield similar behaviors
+to the ones modeled by Storms et al. (2007) using Delft3D. For the shallow
+basin the morphological development is very close to the description of
+Storms et al., while the deep basin delta has similar outcomes but the
+middle ground bar and avulsion over the levee are not as clear in the RCM results.</p>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F9"><caption><p>Two model runs (runs 6 and 7) with different basin depths
+and everything else the same. The shallow basin delta is dominated by more
+frequent bifurcations while the deep basin delta is dominated by few channels
+with more avulsions.</p></caption>
+          <?xmltex \igopts{width=236.157874pt}?><graphic xlink:href="https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015-f09.png"/>
+
+        </fig>
+
+      <p>The differences between a shallow and deep receiving basin, according to our
+model results, are the following:
+<list list-type="bullet"><list-item>
+      <p>Channels will still try to maintain the same unit power of transporting
+sediment by maintaining a certain cross-sectional geometry with levees on the
+side and erosion or deposition on the bottom.</p></list-item><list-item>
+      <p>In general, a distributary channel network shoals up and channels are stable
+at shallower depths going seaward. With a shallow basin the amount of work is
+reduced. Also, the narrow space promotes the splitting of flow which enhances the growth of a distributary network.</p></list-item><list-item>
+      <p>A deep basin increases the timescale of establishing a stable channel and,
+therefore, introduces stronger competition among channels by allowing larger differences to develop.</p></list-item><list-item>
+      <p>The total number of active channels is higher in the shallow basin case,
+with about 5–6 channels, as compared to 1–3 channels in the deep-basin case.</p></list-item></list>
+Finally, we note two interesting emergent features from our model that have
+also been observed in the field at Wax Lake Delta by Shaw (2013) and Shaw et
+al. (2013) (Fig. 10). First, the channels in the shallow basin delta are
+initially erosional, and carve into the basin bottom. This is consistent
+with the observations at the Wax Lake Delta (Shaw et al., 2013). Second, the
+channel network on this delta develops “tributary” subnetworks on islands
+(highlighted in Fig. 10), which collect flow both from tie channels directly
+connected to the main channel network and from sheet flow topping the levees
+into the islands. As to whether this subnetwork is erosional or depositional,
+Shaw (2013) points out that at least the channels comprising it are likely
+not favorable for deposition. In our model results, we notice the following
+process that might explain the situation.
+<list list-type="order"><list-item>
+      <p>The subnetwork mainly collects fine sediment from the main channel
+network, which requires a much slower flow to settle.</p></list-item><list-item>
+      <p>As the tributary subnetwork joins into bigger trunk channels, the ability
+of the flow to carry sediment increases.</p></list-item><list-item>
+      <p>Finally, at the downstream end of the network, where the trunk channel collecting
+water coming out of the island meets the open water, the sorting of the sediment
+deposited is very similar to a normal channel that has a coarser bar-like
+structure at the mouth.</p></list-item></list></p>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F10"><caption><p>Flow features on the island of a delta formed in a shallow basin.
+<bold>(a)</bold> Model result from run 6, where basin depth (2.5 m) is only half
+of the inlet channel depth (5 m); <bold>(b)</bold> Wax Lake Delta, where basin depth
+(<inline-formula><mml:math display="inline"><mml:mo>&lt;</mml:mo></mml:math></inline-formula> 5 m) is much lower than the inlet channel depth (<inline-formula><mml:math display="inline"><mml:mo>&gt;</mml:mo></mml:math></inline-formula> 20 m);
+<bold>(c)</bold> schematic drawing showing the “tributary” flow feature on
+the island (Shaw et al., 2013) observed both in the field (Shaw, 2013) and
+in our numerical model results.</p></caption>
+          <?xmltex \igopts{width=236.157874pt}?><graphic xlink:href="https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015-f10.png"/>
+
+        </fig>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F11" specific-use="star"><caption><p>Stratigraphy slice in the dip direction of run 4 (30 % sand
+input). Note the layering of coarse and fine grains over time. Yellow arrow
+points to the bottom layer that accumulates fine grains at the bottom set of
+the delta; orange arrow points to the coarse grain layer deposited by
+channels that used to be active at that location; the two together show  the
+classic “coarsening-up” pattern in stratigraphy. The red arrow points to
+the fine grains deposited after the channels are abandoned.</p></caption>
+          <?xmltex \igopts{width=341.433071pt}?><graphic xlink:href="https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015-f11.png"/>
+
+        </fig>
+
+</sec>
+</sec>
+<sec id="Ch1.S5">
+  <title>Recording of stratigraphy</title>
+      <p>A delta writes (and rewrites) its own autobiography by building a sedimentary
+record from deposition and erosion. These sedimentary records allow us
+understand the past and to use delta deposits to reconstruct their range of
+natural behavior. Therefore, the ability to record stratigraphy in a delta
+formation model enables us to directly investigate the connection between
+surface and subsurface processes. In this model, we have two methods that
+track the stratigraphy of model-produced deltas: the first method tracks the
+distribution of coarse and fine sediment by recording the percentage of sand
+in each deposition event; and the second method tracks the age of the deposit by
+labeling each deposition event with the time that its sediment enters the
+domain from the inlet channel.</p>
+      <p>To track stratigraphy each cell in the domain is viewed as a storage column
+(shown in Fig. 2), and the volume below the bed surface is further divided
+into thin layers of an equal thickness (these layers are visible especially
+in Figs. 11 and 12). The thickness is chosen to be about a thousandth of
+the reference depth, although it can be set to different values to allow for
+different vertical resolutions. Each layer is recorded with a value
+associated with it – at present it is either the percentage of sand (a value
+between 0 and 1) or the age of the deposit (represented by the number of
+time step). For example, if a cell has net deposition, the volume it
+received from passing parcels will fill up as many layers as needed above
+the previous bed surface, and all values associated with these layers are
+set to the ratio between the volume of sand deposited and the total volume
+of sediment deposited during this time step. If a cell has net erosion, the
+bed surface will be lowered and all values associated with the layers above
+the new bed surface will be erased (by resetting these values to <inline-formula><mml:math display="inline"><mml:mo>-</mml:mo></mml:math></inline-formula>1 in the code).</p>
+      <p>Here we present two examples. (1) We take a sample run of a field-scale
+delta and 30 % sediment input (run 4). In Fig. 11, we show a stratigraphic
+slice in the dip direction along the center line of the inlet channel. In
+Fig. 12, we show the time series of the stratigraphic slice in the strike
+direction about 20 cells (1 km in this case) away from the inlet channel. In
+both figures white represents pure sand and dark blue represents pure mud, with
+mixed deposits represented by linear combinations of the two endmembers.
+Generally speaking, coarse sediment (sand) can be found in channel belts and
+mouth bars, while fine sediment (mud) can be found in distal regions such as
+the bottom set of the delta,   on the floodplain or in abandoned channels.
+(2) In Fig. 13 we show a sample model run for laboratory conditions (run 8).
+Note the evolution of the area pointed to by the yellow arrow. The series of
+images shows the deposition sequence from an individual avulsion event.</p>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F12" specific-use="star"><caption><p>Time series of the stratigraphic slice in the strike direction
+about 20 cells (1 km) away from the inlet channel. Note that between <bold>(b)</bold>, <bold>(c)</bold>
+and <bold>(d)</bold>, in the yellow box, the abandoned channel belts are covered by muddy
+floodplain deposits. Also note that between <bold>(e)</bold> and <bold>(f)</bold>, in the light gray box, a
+mouth bar quickly deposits a significant amount of sand.</p></caption>
+        <?xmltex \igopts{width=341.433071pt}?><graphic xlink:href="https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015-f12.png"/>
+
+      </fig>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F13" specific-use="star"><caption><p>Time series of a delta produced by DeltaRCM with laboratory
+settings, and stratigraphy slices in the strike direction about 20 cells
+(0.4 m) away from channel inlet. Note the evolution of the area pointed to by
+the yellow arrow. <bold>(a)</bold> A concave shoreline – empty space in stratigraphy;
+<bold>(b)</bold> channel begins to receive water and sediment – deposition begins;
+<bold>(c)</bold> more water and sediment switch to the channel – space is filled-up quickly;
+<bold>(d)</bold> full avulsion completed – a channel is established by water eroding
+existing deposits; <bold>(e)</bold> backfilling causes flooding and the channel loses its
+advantage – the channel is refilled  and there is a discontinuity in
+deposition age (yellowish green in the upper portion and bluish green in the lower portion).</p></caption>
+        <?xmltex \igopts{width=341.433071pt}?><graphic xlink:href="https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015-f13.png"/>
+
+        <?xmltex \hack{\vspace*{15mm}}?>
+      </fig>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F14" specific-use="star"><caption><p>Effects of model parameters. <bold>(a)</bold> An elongated channel is formed
+with 50 % sand input by switching off the influence of water surface in
+routing water flow (i.e., setting parameter <inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">γ</mml:mi></mml:math></inline-formula> to zero). <bold>(b)</bold> Multiple
+elongated channels are formed with 0 % sand (100 % mud) input without
+modifying any parameter values. <bold>(c)</bold> A fan delta is formed with 100 % sand
+input which shows that a stable channel network with levees cannot be
+achieved with only bedload.</p></caption>
+        <?xmltex \igopts{width=341.433071pt}?><graphic xlink:href="https://www.earth-surf-dynam.net/3/67/2015/esurf-3-67-2015-f14.png"/>
+
+      </fig>
+
+</sec>
+<sec id="Ch1.S6">
+  <title>Discussion</title>
+      <p>One of the themes running through this paper is that even in the framework
+of a reduced-complexity delta model there are a number of important details
+that must be modeled fairly accurately to achieve even qualitatively correct
+model results. These include a reasonably accurate representation of the
+water surface and the inclusion of suspended sediment deposition and
+entrainment. To demonstrate the importance of the   water surface we switch
+off this component in routing water parcels, i.e., we set the partitioning
+coefficient (<inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">γ</mml:mi></mml:math></inline-formula>) to zero. In this case, the delta is completely
+dominated by inertia and as a result a single elongated channel extends
+without avulsion or bifurcation (Fig. 14a). (Note that this is not the same
+behavior as setting the input sediment to contain 0 % sand which exhibits
+multiple elongated channels – see Fig. 14b.) By contrast, the effect of
+deposition and entrainment of fine-grained sediment in DeltaRCM is
+illustrated by removing the suspended sediment load from the calculation. In
+such a case, the predicted channels are highly mobile and levees separating
+channels and floodplains are absent; i.e., we arrive at a delta formation
+with no stable channel networks, the characteristics of an alluvial fan (Fig. 14c).
+The importance of the water surface and suspended sediment is also
+well illustrated in the previous RCM delta model developed by Seybold et al. (2007, 2009),
+where a reduced-complexity water surface and depth
+calculation, along with a treatment of cohesive and noncohesive sediment
+behaviors through a flow strength and flow velocity terms, respectively, was
+able to build both elongated bird-foot and multichannel fan deltas. Part 2
+of this work further explores the hydrodynamic
+mechanism of the water surface and investigates the feedback between the
+flow solver and the sediment transport processes in determining channel bifurcations.</p>
+      <p>The need for accurate representation of some of the physical details in
+DeltaRCM is quite striking compared to the success of even fairly radical
+reduced-complexity approaches in modeling other morphodynamic environments
+such as erosional landscapes (e.g., Willgoose et al., 1991), braided rivers (e.g.,
+Murray and Paola, 1994) and eolian bedforms (e.g., Werner, 1995). So why is
+it that deltas seem to require more attention to detail? Can we learn
+anything from this experience that might help us better understand what
+systems are most and least amenable to reduced-complexity approaches?</p>
+      <p>Since deltas and drainage basins share dendritic channel patterns – one is
+a distributary network while the other is a tributary network – we first
+look at the differences between these two systems. In modeling the evolution
+of drainage tributary networks, even highly simplified relations for water
+flux and sediment transport yield quite reasonable drainage networks and
+elevation changes in the long-term evolution of catchments (e.g., Willgoose et
+al., 1991). The equation describing the evolution of land elevation in
+Willgoose et al. (1991) includes two transport processes: fluvial transport
+and diffusive transport. The former is dependent on the discharge and the
+slope in the steepest downhill direction, and the latter is dependent on
+slope and diffusivity. Relations of similar simplicity cannot be easily
+applied to modeling deltas because deltas are low-gradient environments
+where the transport direction and capacity are to some extent decoupled from
+bed elevation and slope. To be more specific, (1) bed slope in low-gradient
+environments is often uncorrelated with flow direction and strength; for
+example, bed slope points opposite to the direction of flow where channels
+shoal up towards the shoreline; (2) the water surface, which dominates local
+flow routing, is largely independent of bed topography; (3) the typical low-Froude-number flow in low-gradient deltaic environments creates strong
+backwater effects that imply strong nonlocality in flow and sediment flux
+control (Lamb et al., 2012; Nittrouer et al., 2011) – meaning that
+downstream conditions control upstream flow dynamics (Hoyal and Sheets,
+2009); and (4) river mouth and shore processes such as waves and tides also
+control the overall morphology of deltas, providing additional process complexity.</p>
+      <p>According to Werner (1995), for a nonlinear and dissipative system,
+considerable simplification can be applied if the system exhibits the
+following two properties: (1) it has a finite number of steady states as
+“attractors”, and (2) it has macroscopic emergent behaviors that are
+self-organized and consistent with, but decoupled, from microscopic physics.
+If we compare drainage networks with deltas, the former exhibits a strong
+generic pattern and scale-invariant properties expressed in generalizations
+such as Horton's laws (Horton, 1945). In contrast, the networks on deltas
+have many varieties, responding to a wide range of processes; no universal
+geometry applies to them all. Regarding model complexity, the lack of
+universality in the system pattern indicates the requirement for a more
+detailed, system-specific approach in modeling them.</p>
+      <p>So, is the low gradient the main cause of the modeling difficulty, making
+deltas more “unforgiving” than erosional landscapes in terms of the
+accuracy of hydrodynamic calculation? For cellular models that use explicit
+flow routing schemes, the complexity level rises as factors other than
+topographic slope alone determine water and sediment routing. It also
+increases with nonlocality in the broad sense of the sensitivity of
+dynamics at one point to conditions far away in the system. Other
+contributing factors such as water surface gradient and flow inertia weigh
+in as the overall topographic gradient decreases. For example, dune fields
+may have very low to zero average topographic slope, but they have locally
+high steepness meaning that, as in erosional landscapes, the sediment
+dynamics are dominated by bed topography. In deltas, however, the
+controlling factor is the relatively subtle water surface topography,
+therefore simple descriptions relating sediment deposition and erosion to
+e.g., local elevation and slope give realistic dune field dynamics but do not
+work in deltas.</p>
+      <p>Can we be more systematic about evaluating the amount of detail needed to
+model a geomorphodynamic system? This is an important fundamental question
+in morphodynamic modeling, and we do not pretend to resolve it here. But our
+experience with DeltaRCM suggests the following guidelines as a starting
+point.
+<list list-type="bullet"><list-item>
+      <p>For gravity-driven systems, the overall gradient of the landform is one
+important index  in the sense that in high-gradient systems the gradient alone
+is enough to route the flow.</p></list-item><list-item>
+      <p>A closely related indicator is the wetted area fraction  in the sense
+that a combination of low wetted fraction and high topographic gradient is the
+limit in which steepest-path methods (Passalacqua et al., 2010) are sufficient
+to determine the flow path, without the need for simulation of the flow details.</p></list-item><list-item>
+      <p>Froude number (<italic>Fr</italic>): as <italic>Fr</italic> tends to unity, the backwater length tends to
+zero (Cui and Parker, 1997), so the simplification of a local normal-flow assumption
+provides a satisfactory means of accounting for momentum balance in the flow.</p></list-item><list-item>
+      <p>For systematic behaviors on scales greater than the backwater length scale,
+in-channel-scale hydrodynamic details can be resolved at much lower complexity;
+this applies for example to avulsion models that use single-cell-wide threads to
+represent channel belts (Jerolmack and Paola, 2007).</p></list-item><list-item>
+      <p>Whether the system to be modeled exhibits a strong generic pattern or
+scale-invariant (e.g., fractal) properties, the lack of universal patterns in a
+dynamic system is an indicator of sensitivity to local detail.</p></list-item></list>
+We see the potential of this type of modeling as analogous to that of
+laboratory experiments, which can also provide useful insight despite not
+capturing all the details of complex natural systems (Paola et al., 2009).
+The strength of RCMs is to serve as (1) exploratory models that allow for
+direct representation of phenomenological observation; (2) a tool to
+identify those aspects of large-scale system behavior that are not sensitive
+to the details of smaller-scale processes; and (3) a framework for hybrid
+modeling in which higher-resolution model results can be integrated where
+precise description of smaller-scale processes is needed even for larger-scale dynamics.</p>
+</sec>
+<sec id="Ch1.S7" sec-type="conclusions">
+  <title>Conclusions</title>
+      <p>In this paper we have introduced a new reduced-complexity model (RCM) for
+river delta formation. Key techniques include that (1) water and sediment
+fluxes are represented as parcels and routed through the domain in a Lagrangian
+point of view; (2) the movements of parcels are based on a probability field
+calculated from rules abstracting the governing physics; (3) deposition and
+erosion are achieved by exchanging the volume of passing sediment parcels
+and bed sediment columns, and the condition for this exchange depends on a
+set of rules that distinguish bedload and suspended load; (4) bed sediment
+columns record the composition of coarse and fine material in layers; (5) a
+topographic diffusion process takes into account cross-slope sediment
+transport and bank erosion. By varying input conditions such as the ratio of
+coarse and fine sediment, reference slope, and dimensions of the domain, the
+simulated deltas yield a range of different behaviors that compare well to
+higher-fidelity model results and observations of field and experiment deltas.</p>
+      <p>We find that the relatively simple cellular representation of water and
+sediment transport is able to replicate delta morphology at the scale of
+channel dynamics, including the emergent channel network with channel
+extension, bifurcation and avulsion. Here, we summarize the basic components
+needed for a RCM to produce major static and dynamic features of river deltas:
+<?xmltex \hack{\newpage}?>
+<list list-type="bullet"><list-item>
+      <p>a depth-averaged flow field that guides sediment transport</p></list-item><list-item>
+      <p>a nontrivial water surface profile that accounts for backwater effects
+at least in the main channels</p></list-item><list-item>
+      <p>representation of both bedload and suspended load</p></list-item><list-item>
+      <p>topographic steering of sediment transport.</p></list-item></list>
+Even at the RCM level of modeling, the following items still require a
+physically consistent treatment:
+<list list-type="bullet"><list-item>
+      <p>the instability at channel mouths that creates bars and subsequent bifurcation</p></list-item><list-item>
+      <p>the variation in water surface profile associated with lobe extension that causes channel avulsion</p></list-item><list-item>
+      <p>water surface slope along channel sides which creates flooding onto the floodplain.</p></list-item></list></p><?xmltex \hack{\clearpage}?>
+</sec>
+
+      
+      </body>
+    <back><app-group><app id="App1.Ch1.S1">
+  <title/>
+
+<?xmltex \floatpos{h!}?><table-wrap id="App1.Ch1.T1" position="anchor"><?xmltex \hack{\hsize\textwidth}?><caption><p>List of notations.</p></caption><oasis:table frame="topbot"><oasis:tgroup cols="4">
+     <oasis:colspec colnum="1" colname="col1" align="left"/>
+     <oasis:colspec colnum="2" colname="col2" align="left"/>
+     <oasis:colspec colnum="3" colname="col3" align="left"/>
+     <oasis:colspec colnum="4" colname="col4" align="left"/>
+     <oasis:thead>
+       <oasis:row rowsep="1">  
+         <oasis:entry colname="col1">Symbol</oasis:entry>  
+         <oasis:entry colname="col2">Definition and unit</oasis:entry>  
+         <oasis:entry colname="col3">Symbol</oasis:entry>  
+         <oasis:entry colname="col4">Definition and unit</oasis:entry>
+       </oasis:row>
+     </oasis:thead>
+     <oasis:tbody>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">α</mml:mi></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Topographic diffusion</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>n</mml:mi><mml:mtext>s</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Number of sediment parcels</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">coefficient (m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">2</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>)</oasis:entry>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">(–)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">γ</mml:mi></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Partitioning parameter for</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Routing probability (–)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">routing by inertia and by free</oasis:entry>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4"/>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">surface (–)</oasis:entry>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4"/>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="normal">Δ</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Cellular distance (–)</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">Q</mml:mi><mml:mtext>cell</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Total discharge at a cell (m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="italic">δ</mml:mi><mml:mtext>c</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Grid size (m)</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mrow><mml:mtext>w</mml:mtext><mml:mn mathvariant="normal">0</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Total water discharge from</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2"/>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">inlet channel (m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">ε</mml:mi></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Diffusion coefficient for water</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>s0</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Total sediment discharge</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">surface smoothing (–)</oasis:entry>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">from inlet channel (m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">η</mml:mi></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Bed/land elevation (m)</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>p_water</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Discharge represented by a</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2"/>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">water parcel (m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="italic">η</mml:mi><mml:mtext>shore</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Threshold bed elevation for</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mtext>s_cap</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Sediment flux capacity at a</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">marking shoreline (m)</oasis:entry>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">cell (m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">2</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">θ</mml:mi></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Exponent of depth dependence</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mtext>s_diff</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Diffusive sediment flux at a</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">(–)</oasis:entry>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">cell (m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">2</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mi mathvariant="italic">ϖ</mml:mi></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Underrelaxation coefficient for</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mtext>s_loc</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Local coarse sediment flux at</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">water surface (–)</oasis:entry>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">a cell (m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">2</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">d</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Cellular unit direction (–)</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mtext>w</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> (<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mi>x</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mi>y</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>)</oasis:entry>  
+         <oasis:entry colname="col4">Water unit discharge vector</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2"/>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">(m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">2</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mi mathvariant="bold-italic">F</mml:mi></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Routing direction (–)</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mtext>i</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Flow resistance (–)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">F</mml:mi><mml:mtext>int</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Routing direction by inertia (–)</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Reference slope (–)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">F</mml:mi><mml:mtext>sfc</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Routing direction by water</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:mi>t</mml:mi></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Time step (s)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">surface (–)</oasis:entry>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4"/>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>f</mml:mi><mml:mtext>sand</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Fraction of sand (–)</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Reference velocity (m s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mi>H</mml:mi></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Water surface elevation (m)</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>dep</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>ero</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Threshold velocity for</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2"/>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">deposition and erosion (m s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>H</mml:mi><mml:mtext>SL</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Sea level (m)</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>loc</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Local velocity at a cell (m s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msup><mml:mi>H</mml:mi><mml:mtext>smooth</mml:mtext></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Smoothed water surface</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>U</mml:mi><mml:mtext>shore</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Threshold velocity for marking</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">elevation (m)</oasis:entry>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">shoreline (m s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msup><mml:mi>H</mml:mi><mml:mtext>temp</mml:mtext></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Temporary water surface</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mi mathvariant="bold-italic">u</mml:mi></mml:math></inline-formula> <inline-formula><mml:math display="inline"><mml:mo>=</mml:mo></mml:math></inline-formula> (<inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>x</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>y</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>)</oasis:entry>  
+         <oasis:entry colname="col4">Flow velocity vector (m s<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">solution (m)</oasis:entry>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4"/>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mi>h</mml:mi></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Water depth (m)</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_sed</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Initial volume of a sediment</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2"/>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">parcel (m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Reference water depth (m)</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_dep</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Volume removed from a</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2"/>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">sediment parcel by deposition</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2"/>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">(m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mtext>B</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Basin water depth (m)</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_ero</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Volume added to a sediment</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2"/>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">parcel by erosion (m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mtext>dry</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Threshold water depth for dry</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mtext>p_res</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Remaining volume of a</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">land (m)</oasis:entry>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">sediment parcel (m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mtext>visit</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Number of water-parcel visits at</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>V</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Reference volume (m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">a cell (–)</oasis:entry>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4"/>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>x</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>, <inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>y</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Number of cells in the <inline-formula><mml:math display="inline"><mml:mi>x</mml:mi></mml:math></inline-formula> and</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mi>V</mml:mi><mml:mtext>s</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Total volume of sediment</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2"><inline-formula><mml:math display="inline"><mml:mi>y</mml:mi></mml:math></inline-formula> directions of the</oasis:entry>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4">input at each time step (m<inline-formula><mml:math display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula>)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">computational domain (–)</oasis:entry>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4"/>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mn mathvariant="normal">0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Number of cells across inlet</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mi>W</mml:mi></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Width of inlet channel (m)</oasis:entry>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"/>  
+         <oasis:entry colname="col2">channel (–)</oasis:entry>  
+         <oasis:entry colname="col3"/>  
+         <oasis:entry colname="col4"/>
+       </oasis:row>
+       <oasis:row>  
+         <oasis:entry colname="col1"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>n</mml:mi><mml:mtext>w</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col2">Number of water parcels (–)</oasis:entry>  
+         <oasis:entry colname="col3"><inline-formula><mml:math display="inline"><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula></oasis:entry>  
+         <oasis:entry colname="col4">Routing weights (–)</oasis:entry>
+       </oasis:row>
+     </oasis:tbody>
+   </oasis:tgroup></oasis:table></table-wrap>
+
+<?xmltex \hack{\clearpage}?><supplementary-material position="anchor"><p><bold>The Supplement related to this article is available online at <inline-supplementary-material xlink:href="http://dx.doi.org/10.5194/-15-67-2015-supplement" xlink:title="pdf">doi:10.5194/-15-67-2015-supplement</inline-supplementary-material>.</bold><?xmltex \hack{\vspace*{-6mm}}?></p></supplementary-material>
+</app>
+  </app-group><ack><title>Acknowledgements</title><p>This work was supported by the National Science Foundation via the National
+Center for Earth-surface Dynamics (NCED) under agreement EAR-0120914 and EAR-1246761. This
+work also received support from the National Science Foundation via grant FESD/EAR-1135427
+and from ExxonMobil Upstream Research Company. The authors
+thank P. Passalacqua, D. A. Edmonds, N. Geleynse, and J. Martin for
+discussions and comments. The authors also thank S. Castelltort, R. Slingerland
+and A. Ashton for their insightful comments and reviews. <?xmltex \hack{\newline}?><?xmltex \hack{\newline}?>
+Edited by: S. Castelltort</p></ack><ref-list>
+    <title>References</title>
+
+      <ref id="bib1.bib1"><label>1</label><mixed-citation>
+Cui, Y. and Parker, G.: A quasi-normal simulation of aggradation and
+downstream fining with shock fitting, Int. J. Sediment Res., 12, 68–82, 1997.</mixed-citation></ref>
+      <ref id="bib1.bib2"><label>2</label><mixed-citation>Edmonds, D. A. and Slingerland, R. L.: Mechanics of river mouth bar
+formation: implications for the morphodynamics of delta distributary
+networks, J. Geophys. Res., 112, F02034, <ext-link xlink:href="http://dx.doi.org/10.1029/2006JF000574" ext-link-type="DOI">10.1029/2006JF000574</ext-link>, 2007.</mixed-citation></ref>
+      <ref id="bib1.bib3"><label>3</label><mixed-citation>
+Edmonds, D. A. and Slingerland, R. L.: Significant effect of sediment
+cohesion on delta morphology, Nat. Geosci., 3, 105–109, 2009.</mixed-citation></ref>
+      <ref id="bib1.bib4"><label>4</label><mixed-citation>
+Fagherazzi, S. and Overeem, I.: Models of deltaic and inner continental
+shelf landform evolution, Annu. Rev. Earth Pl. Sc., 35, 685–715, 2007.</mixed-citation></ref>
+      <ref id="bib1.bib5"><label>5</label><mixed-citation>
+García, M. and Parker, G.: Entrainment of bed sediment into suspension,
+J. Hydraul. Eng., 117, 414–435, 1991.</mixed-citation></ref>
+      <ref id="bib1.bib6"><label>6</label><mixed-citation>
+García, M. H.: Sedimentation Engineering: Processes, Measurements,
+Modeling, and Practice, American Society of Civil Engineers, Reston, VA, 1132 pp., 2008.</mixed-citation></ref>
+      <ref id="bib1.bib7"><label>7</label><mixed-citation>
+Galloway, W. E.: Process framework for describing the morphologic and
+stratigraphic evolution of deltaic depositional systems, in: Deltas, Models
+for Exploration, Houston Geological Society, Houston, TX, 87–98, 1975.</mixed-citation></ref>
+      <ref id="bib1.bib8"><label>8</label><mixed-citation>Geleynse, N., Storms, J. E. A., Stive, M. J. F., Jagers, H. R. A., and
+Walstra, D. J. R.: Modeling of a mixed-load fluvio-deltaic system, Geophys.
+Res. Lett., 37, L05402, <ext-link xlink:href="http://dx.doi.org/10.1029/2009GL042000" ext-link-type="DOI">10.1029/2009GL042000</ext-link>, 2010.</mixed-citation></ref>
+      <ref id="bib1.bib9"><label>9</label><mixed-citation>
+Hajek, E. A. and Wolinsky, M. A.: Simplified process modeling of river
+avulsion and alluvial architecture: connecting models and field data,
+Sediment. Geol., 257–260, 1–30, 2012.</mixed-citation></ref>
+      <ref id="bib1.bib10"><label>10</label><mixed-citation>
+Heller, P. L., Paola, C., Hwang, I.-G., John, B., and Steel, R.:
+Geomorphology and sequence stratigraphy due to slow and rapid base-level
+changes in an experimental subsiding basin (xes 96-1), AAPG Bull., 85, 817–838, 2001.</mixed-citation></ref>
+      <ref id="bib1.bib11"><label>11</label><mixed-citation>
+Horton, R. E.: Erosional development of streams and their drainage basins,
+Geol. Soc. Am. Bull., 56, 275–370, 1945.</mixed-citation></ref>
+      <ref id="bib1.bib12"><label>12</label><mixed-citation>Hoyal, D. C. and Sheets, B. A.: Morphodynamic evolution of experimental
+cohesive deltas, J. Geophys. Res., 110, F02009, <ext-link xlink:href="http://dx.doi.org/10.1029/2007JF000882" ext-link-type="DOI">10.1029/2007JF000882</ext-link>, 2009.</mixed-citation></ref>
+      <ref id="bib1.bib13"><label>13</label><mixed-citation>
+Jerolmack, D. J. and Paola, C.: Complexity in a cellular model of river
+avulsion, Geomorphology, 91, 259–270, 2007.</mixed-citation></ref>
+      <ref id="bib1.bib14"><label>14</label><mixed-citation>
+Kim, W., Mohrig, D., Twilley, R., Paola, C., and Parker, G.: Is it feasible
+to build new land in the Mississippi River Delta?, EOS Trans. Am. Geophys.
+Un., 90, 373–374, 2009.</mixed-citation></ref>
+      <ref id="bib1.bib15"><label>15</label><mixed-citation>Lamb, M. P., Nittrouer, J. A., Mohrig, D., and Shaw, J.: Backwater and
+river-plume controls on scour upstream of river mouths: implications for
+fluvio-deltaic morphodynamics, J. Geophys. Res., 117, F01002, <ext-link xlink:href="http://dx.doi.org/10.1029/2011JF002079" ext-link-type="DOI">10.1029/2011JF002079</ext-link>, 2012.</mixed-citation></ref>
+      <ref id="bib1.bib16"><label>16</label><mixed-citation>
+Lesser, G. R., Roelvink, J. A., van Kester, J. A. T. M., and Stelling, G.
+S.: Development and validation of a three-dimensional morphological model,
+Coast. Eng., 51, 883–915, 2004.</mixed-citation></ref>
+      <ref id="bib1.bib17"><label>17</label><mixed-citation>
+Lorenzo-Trueba, J., Voller, V. R., and Paola, C.: A geometric model for the
+dynamics of a fluvially dominated deltaic system under base-level change,
+Comput. Geosci., 53, 39–47, 2013.</mixed-citation></ref>
+      <ref id="bib1.bib18"><label>18</label><mixed-citation>
+Meyer-Peter, E. and Müller, R.: Formulas for bed-load transport, in:
+Proceedings of the 2nd Meeting of IAHSR, Stockholm, Sweden, 39–64, 1948.</mixed-citation></ref>
+      <ref id="bib1.bib19"><label>19</label><mixed-citation>
+Murray, A. B.: Contrasting the goals, strategies, and predictions associated
+with simplified numerical models and detailed simulations, Geophys. Monogr.
+Ser., 135, 151–165, 2003.</mixed-citation></ref>
+      <ref id="bib1.bib20"><label>20</label><mixed-citation>
+Murray, A. B. and Paola, C.: A cellular model of braided rivers, Nature,
+371, 54–57, 1994.</mixed-citation></ref>
+      <ref id="bib1.bib21"><label>21</label><mixed-citation>
+Murray, A. B. and Paola, C.: Properties of a cellular braided-stream model,
+Earth Surf. Proc. Land., 22, 1001–1025, 1997.</mixed-citation></ref>
+      <ref id="bib1.bib22"><label>22</label><mixed-citation>
+Nittrouer, J. A., Mohrig, D., Allison, M. A., and Peyret, A. P. B.: The
+lowermost Mississippi River: a mixed bedrock-alluvial channel,
+Sedimentology, 58, 1914–1934, 2011.</mixed-citation></ref>
+      <ref id="bib1.bib23"><label>23</label><mixed-citation>
+Orton, G. J. and Reading, H. G.: Variability of deltaic processes in terms
+of sediment supply, with particular emphasis on grain size, Sedimentology,
+40, 75–512, 1993.</mixed-citation></ref>
+      <ref id="bib1.bib24"><label>24</label><mixed-citation>
+Overeem, I., Syvitski, J. P. M., and Hutton, E. W. H.: Three-dimensional
+numerical modeling of deltas, in: River Deltas: Concepts, Models and
+Examples, edited by: Bhattacharya, J. P. and Giosan, L., SEPM Spec. Publ. 83,
+SEPM, Tulsa, OK, 13–30, 2005.</mixed-citation></ref>
+      <ref id="bib1.bib25"><label>25</label><mixed-citation>
+Paola, C.: Quantitative models of sedimentary basin filling, Sedimentology,
+47, 121–178, 2000.</mixed-citation></ref>
+      <ref id="bib1.bib26"><label>26</label><mixed-citation>
+Paola, C. and Leeder, M.: Environmental dynamics: simplicity versus
+complexity, Nature, 469, 38–39, 2011.</mixed-citation></ref>
+      <ref id="bib1.bib27"><label>27</label><mixed-citation>
+Paola, C., Straub, K., Mohrig, D., and Reinhardt, L.: The “unreasonable
+effectiveness” of stratigraphic and geomorphic experiments, Earth-Sci.
+Rev., 97, 1–43, 2009.</mixed-citation></ref>
+      <ref id="bib1.bib28"><label>28</label><mixed-citation>
+Paola, C., Twilley, R. R., Edmonds, D. A., Kim, W., Mohrig, D., Parker, G.,
+Viparelli, E., and Voller, V. R.: Natural processes in delta restoration:
+application to the Mississippi Delta, Annu. Rev. Mar. Sci., 3, 67–91, 2011.</mixed-citation></ref>
+      <ref id="bib1.bib29"><label>29</label><mixed-citation>
+Parker, G., Muto, T., Akamatsu, Y., Dietrich, W. E., and Lauer, J.:
+Unravelling the conundrum of river response to rising sea-level from
+laboratory to field, Part I: Laboratory experiments, Sedimentology, 55, 1643–1655, 2008.</mixed-citation></ref>
+      <ref id="bib1.bib30"><label>30</label><mixed-citation>Passalacqua, P., Do Trung, T., Foufoula-Georgiou, E., Sapiro, G., and
+Dietrich, W. E.: A geometric framework for channel network extraction from
+lidar: Nonlinear diffusion and geodesic paths, J. Geophys. Res., 115,
+F01002, <ext-link xlink:href="http://dx.doi.org/10.1029/2009JF001254" ext-link-type="DOI">10.1029/2009JF001254</ext-link>, 2010.</mixed-citation></ref>
+      <ref id="bib1.bib31"><label>31</label><mixed-citation>Reitz, M. D. and Jerolmack, D. J.: Experimental alluvial fan evolution:
+Channel dynamics, slope controls, and shoreline growth, J. Geophys. Res.,
+117, F02021, <ext-link xlink:href="http://dx.doi.org/10.1029/2011JF002261" ext-link-type="DOI">10.1029/2011JF002261</ext-link>, 2012.</mixed-citation></ref>
+      <ref id="bib1.bib32"><label>32</label><mixed-citation>
+Rinaldo, A., Fagherazzi, S., Lanzoni, S., Marani, M., and Dietrich, W. E.:
+Tidal networks: Landscape-forming discharges and studies in empirical
+geomorphic relationships, Water Resour. Res., 35, 3919–3929, 1999.</mixed-citation></ref>
+      <ref id="bib1.bib33"><label>33</label><mixed-citation>
+Seybold, H., Andrade Jr., J. S., and Herrmann, H. J.: Modeling river delta
+formation, P. Natl. Acad. Sci. USA, 104, 16804–16809, 2007.</mixed-citation></ref>
+      <ref id="bib1.bib34"><label>34</label><mixed-citation>Seybold, H. J., Molnar, P., Singer, H. M., Andrade, J. S., Herrmann, H. J.,
+and Kinzelbach, W.: Simulation of birdfoot delta formation with application
+to the Mississippi Delta, J. Geophys. Res., 114, F03012, <ext-link xlink:href="http://dx.doi.org/10.1029/2009JF001248" ext-link-type="DOI">10.1029/2009JF001248</ext-link>, 2009.</mixed-citation></ref>
+      <ref id="bib1.bib35"><label>35</label><mixed-citation>Seybold, H. J., Molnar, P., Akca, D., Doumi, M., Cavalcanti Tavares, M.,
+Shinbrot, T., Andrade, J. S., Kinzelbach, W., and Herrmann, H. J.:
+Topography of inland deltas: observations, modeling, and experiments,
+Geophys. Res. Lett., 37, L08402, <ext-link xlink:href="http://dx.doi.org/10.1029/2009GL041605" ext-link-type="DOI">10.1029/2009GL041605</ext-link>, 2010.</mixed-citation></ref>
+      <ref id="bib1.bib36"><label>36</label><mixed-citation>
+Shaw, J. B.: The kinematics of distributary channels on the Wax Lake Delta,
+coastal Louisiana, USA, PhD dissertation, University of Texas at Austin,
+Austin, TX, 2013.</mixed-citation></ref>
+      <ref id="bib1.bib37"><label>37</label><mixed-citation>Shaw, J. B., Wolinsky, M. A., Paola, C., and Voller, V. R.: An image-based
+method for shoreline mapping on complex coasts, Geophys. Res. Lett., 35,
+L12405, <ext-link xlink:href="http://dx.doi.org/10.1029/2008GL033963" ext-link-type="DOI">10.1029/2008GL033963</ext-link>, 2008.</mixed-citation></ref>
+      <ref id="bib1.bib38"><label>38</label><mixed-citation>Shaw, J. B., Mohrig, D., and Whitman, S. K.: The morphology and evolution of
+channels on the Wax Lake Delta, Louisiana, USA, J. Geophys. Res.-Earth, 118, 1–23, 2013.
+ </mixed-citation></ref><?xmltex \hack{\newpage}?>
+      <ref id="bib1.bib39"><label>39</label><mixed-citation>
+Storms, J. E. A., Stive, M. J. F., Roelvink, D. (J.) A., and Walstra, D. J.:
+Initial Morphologic and Stratigraphic Delta Evolution Related to Buoyant
+River Plumes, Coastal Sediment'07, American Society of Civil Engineers, New
+Orleans, Louisiana, 736–748, 2007.</mixed-citation></ref>
+      <ref id="bib1.bib40"><label>40</label><mixed-citation>
+Sun, T., Paola, C., Parker, G., and Meakin, P.: Fluvial fan deltas: linking
+channel processes with large-scale morphodynamics, Water Resour. Res., 38, 26-1–26-10, 2002.</mixed-citation></ref>
+      <ref id="bib1.bib41"><label>41</label><mixed-citation>
+Syvitski, J. P. M., Kettner, A. J., Overeem, I., Hutton, E. W. H., Hannon, M.
+T., Brakenridge, G. R., Day, J., Vörösmarty, C., Saito, Y., Giosan,
+L., and Nicholls, R. J.: Sinking deltas due to human activities, Nat.
+Geosci., 2, 681–686, 2009.</mixed-citation></ref>
+      <ref id="bib1.bib42"><label>42</label><mixed-citation>
+Van Rijn, L. C.: Sediment transport II: Suspended load transport, J.
+Hydraul. Eng., 110, 1431–1456, 1984.</mixed-citation></ref>
+      <ref id="bib1.bib43"><label>43</label><mixed-citation>
+Werner, B. T.: Eolian dunes: computer simulations and attractor
+interpretation, Geology, 23, 1107–1110, 1995.</mixed-citation></ref>
+      <ref id="bib1.bib44"><label>44</label><mixed-citation>
+Willgoose, G., Bras, R. L., and Rodriguez-Iturbe, I.: A coupled channel
+network growth and hillslope evolution model: 1. Theory, Water Resour. Res.,
+27, 1671–1684, 1991.</mixed-citation></ref>
+
+  </ref-list><app-group content-type="float"><app><title/>
+
+    </app></app-group></back>
+    </article>

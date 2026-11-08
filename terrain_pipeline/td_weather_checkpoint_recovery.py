@@ -7,10 +7,12 @@ from pathlib import Path
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.rainfall_runoff import RunoffParameters
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_basin_source import PRIMARY_PATH, PRIMARY_SHA256, load_td_source_bundle
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_storage import PRIMARY_PATH as PRIMARY_PATH
+from terrain_pipeline.basin_storage import PRIMARY_SHA256 as PRIMARY_SHA256
+from terrain_pipeline.basin_storage import load_td_source_bundle as load_td_source_bundle
 from terrain_pipeline.td_native_weather_storage_inputs import load_weather_inputs
 from terrain_pipeline.td_native_weather_storage_v10_io import PHYSICS, load_native_weather_v10_hour
 

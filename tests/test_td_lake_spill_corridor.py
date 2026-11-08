@@ -4,8 +4,8 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from terrain_pipeline.td_lake_spill_corridor import (
-    build_lake_spill_corridors, validate_lake_spill_corridors)
+from terrain_pipeline.basin_topology import build_lake_spill_corridors as build_lake_spill_corridors
+from terrain_pipeline.basin_topology import validate_lake_spill_corridors as validate_lake_spill_corridors
 from tools.prepare_td_lake_spill_corridors import file_hash, record_hash
 from tools.audit_td_lake_spill_corridors import audit
 
@@ -68,7 +68,7 @@ class LakeSpillCorridorTests(unittest.TestCase):
             self.assertEqual(audit(target, expected_sha256=file_hash(target))['status'], 'passed')
             changed = copy.deepcopy(result)
             changed['corridors'][0]['source_geometry']['source_lake_approach']['all_samples_stage_covered'] = False
-            from terrain_pipeline.td_lake_spill_corridor import _digest
+            from terrain_pipeline.basin_topology import corridor_digest as _digest
             changed['identity_sha256'] = _digest({key: value for key, value in changed.items() if key != 'identity_sha256'})
             target = write('changed.json', changed)
             self.assertEqual(audit(target, expected_sha256=file_hash(target))['status'], 'failed')

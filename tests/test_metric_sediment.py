@@ -6,7 +6,7 @@ from pathlib import Path
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity
+from terrain_pipeline.common_infra import identity
 from terrain_pipeline.surface_rivers.metric_bed_update import bed_from_inventory
 from terrain_pipeline.surface_rivers.metric_sediment import (
     MaterialParameters, SedimentConfig, SedimentDomain, SedimentForcing,

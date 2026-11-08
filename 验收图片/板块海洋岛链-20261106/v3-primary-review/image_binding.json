@@ -1,0 +1,82 @@
+{
+  "product_identity": "cc04a382d6636effd9ce8294a2a6f16f57ca4d0929d30c38c16a52be292f60f6",
+  "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+  "world_seed": 20260903,
+  "algorithm": "ocean-islands-metric-detail-smooth-seabed-v3",
+  "all_rasters": {
+    "detail_arc.npz": {
+      "cells": 360000,
+      "all_query_fields_equal": true,
+      "gray16_error_m": 0.12207202074478118
+    },
+    "detail_atoll.npz": {
+      "cells": 360000,
+      "all_query_fields_equal": true,
+      "gray16_error_m": 0.1220719624625417
+    },
+    "detail_hotspot.npz": {
+      "cells": 360000,
+      "all_query_fields_equal": true,
+      "gray16_error_m": 0.12207177004074765
+    },
+    "detail_ridge.npz": {
+      "cells": 360000,
+      "all_query_fields_equal": true,
+      "gray16_error_m": 0.12207179571123561
+    },
+    "detail_seamount.npz": {
+      "cells": 360000,
+      "all_query_fields_equal": true,
+      "gray16_error_m": 0.12207213481133294
+    },
+    "representative_chain.npz": {
+      "cells": 68475,
+      "all_query_fields_equal": true,
+      "gray16_error_m": 0.1220714807072909
+    },
+    "world.npz": {
+      "cells": 640000,
+      "all_query_fields_equal": true,
+      "gray16_error_m": 0.12207190229199227
+    }
+  },
+  "seam_slope_jumps_at_1m": {
+    "join_off": 0.4811835543100642,
+    "v3": 0.00037336296463763574
+  },
+  "window_join_max_raise_m": 79.92181428784988,
+  "join_new_land_pixels": 0,
+  "source_products": {
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\ocean-islands-20261106\\run-metric-v3-2km\\islands.npz": "e1667a0d83fa8d570924642b6b86e6458c3e4e975e3309f8241aef1533abe6b1",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\ocean-islands-20261106\\run-curved-v2-2km\\islands.npz": "7f50d0d3fa8fcc0b45b11a6c3b0970b985d1811167bf3a1c23bf74032a7b94fd"
+  },
+  "core_sha256": "1c683938cf9d280b662c5cc1a29aa46f200dcfb3c03e5d09761df375e4a1d8ca",
+  "script_sha256": "61a08386edf95b13567a7e030219ed7d0081d398d31285b47541492baecdaed5",
+  "files": {
+    "islands_noise_and_joins.png": {
+      "sha256": "e698ba4ad14bf89e60fc1b6fe3cfbc6ac680d738d1dd6d6dd2737852026677b4",
+      "bytes": 246040
+    },
+    "surface_detail_10m.png": {
+      "sha256": "ef3f154344169076210ea620fc9bc8398f8f0cec51eeee9b042acea12250138c",
+      "bytes": 214202
+    },
+    "v2_height16.png": {
+      "sha256": "62475a41775e7c6294d929ad02faa20ae1f238938ce0de306f98de30ddf93d40",
+      "bytes": 176875
+    },
+    "v3_height16.png": {
+      "sha256": "04e9439bef839970da411ec255487e5ef3a89520a88e02ffb0e21b294c67f975",
+      "bytes": 186682
+    },
+    "v3_join_off_height16.png": {
+      "sha256": "ab47545c1fae2ea73b40f1347e35416032793c5c67cbac7513f8ecc7684b0595",
+      "bytes": 185660
+    }
+  },
+  "mapping": "PNG16: elevation_m = code*16000/65535-8000; NPZ floating height authoritative",
+  "limitations": [
+    "Finite real source, no TD model generation; one fixed seam is not global C1 proof",
+    "Detail ablation image reuses source-bound saved control; full v3 independently cold-queried"
+  ]
+}

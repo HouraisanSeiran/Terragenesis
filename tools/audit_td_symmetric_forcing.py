@@ -12,20 +12,20 @@ from scipy.linalg import expm
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.rainfall_runoff import RunoffParameters
-from terrain_pipeline.td_basin_source import make_td_source
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
 from tools.audit_td_basin_generation import audit_storage
 
 
 def audit(version):
     if version == "v5":
-        from terrain_pipeline.td_basin_storage_v5 import simulate_basin_storage
+        from terrain_pipeline.basin_storage import storagev5_simulate as simulate_basin_storage
     elif version == "v6":
-        from terrain_pipeline.td_basin_storage_v6 import simulate_basin_storage
+        from terrain_pipeline.basin_storage import storagev6_simulate as simulate_basin_storage
     elif version == "v7":
-        from terrain_pipeline.td_basin_storage_v7 import simulate_basin_storage
+        from terrain_pipeline.basin_storage import storagev7_simulate as simulate_basin_storage
     else:
         raise ValueError("known solver version required")
     random = np.random.default_rng(20261002)
@@ -76,9 +76,9 @@ def audit(version):
                       "engineered_open_cells": int(opened.sum()), "timestep_errors_m": errors,
                       "refinement_error_ratios": ratio, "max_global_balance_residual_m3": max(ledgers), "passed": passed})
     code_names = [f"terrain_pipeline/td_basin_storage_{version}.py", f"terrain_pipeline/td_basin_storage_{version}_io.py",
-                  "terrain_pipeline/td_basin_storage_v4.py" if version == "v5" else "terrain_pipeline/td_basin_transport_v6.py"]
+                  'terrain_pipeline/basin_storage.py' if version == "v5" else 'terrain_pipeline/basin_storage.py']
     if version == "v7":
-        code_names.append("terrain_pipeline/td_basin_forcing_compensated.py")
+        code_names.append('terrain_pipeline/basin_storage.py')
     return {"schema": "td-independent-manufactured-forcing-v1", "version": version, "utc": datetime.now(timezone.utc).isoformat(),
             "seed": 20261002, "cases": cases, "all_passed": all(case["passed"] for case in cases),
             "reference": "matrix exponential of wet equal-bed graph diffusion, constant surface rainfall and optional engineered boundary loss",

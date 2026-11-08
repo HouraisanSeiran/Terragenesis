@@ -13,8 +13,8 @@ import math
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity, readonly, save_bundle, load_bundle, MAX_METADATA
-from terrain_pipeline.td_basin_hierarchy import validate_basin_hierarchy
+from terrain_pipeline.common_infra import identity, readonly, save_bundle, load_bundle, MAX_METADATA
+from terrain_pipeline.basin_topology import validate_basin_hierarchy as validate_basin_hierarchy
 
 
 SCHEMA = "td-natural-river-network-v2"

@@ -12,13 +12,14 @@ import numpy as np
 from scipy.integrate import solve_ivp
 from scipy.ndimage import label
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.surface_rivers.metric_natural_lakes import (
-    NaturalLakeConfig, build_natural_lakes, load_natural_lakes, save_natural_lakes,
-    solve_natural_lakes,
-)
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.lake import NaturalLakeConfig as NaturalLakeConfig
+from terrain_pipeline.lake import build_natural_lakes as build_natural_lakes
+from terrain_pipeline.lake import load_natural_lakes as load_natural_lakes
+from terrain_pipeline.lake import save_natural_lakes as save_natural_lakes
+from terrain_pipeline.lake import solve_natural_lakes as solve_natural_lakes
 from terrain_pipeline.surface_rivers.metric_product import load_diagnostic_product
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
 from tools.verify_td_river_geometry import terrain_from_product
 
 
@@ -145,7 +146,7 @@ def verify(output):
         path = output / (name + ".npz")
         save_natural_lakes(path, result)
         pin = dict(path=path.name, sha256=file_sha256(path), identity_sha256=result["identity_sha256"])
-        with patch("terrain_pipeline.surface_rivers.metric_natural_lakes.solve_natural_lakes", side_effect=AssertionError("cold solve")):
+        with patch('terrain_pipeline.lake.solve_natural_lakes', side_effect=AssertionError("cold solve")):
             cold = load_natural_lakes(path, expected_sha256=pin["sha256"], expected_identity=pin["identity_sha256"])
             cases[name] = cold_evidence(domain, cold)
         ref = reference(domain, times, local, initial, tailwater, cases[name]["last_time_seconds"])

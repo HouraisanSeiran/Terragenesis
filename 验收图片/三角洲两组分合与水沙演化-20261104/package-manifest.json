@@ -1,0 +1,95 @@
+{
+  "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+  "coverage_status": "partial",
+  "files": [
+    {
+      "input_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\render-v6\\v7-tide-c\\main.png",
+      "package_path": "images/main.png",
+      "sha256": "bab2b3e3b1526e17193b13ce472121ebdcc01d40fb7e53a2f58dfd55944db30b",
+      "bytes": 167075
+    },
+    {
+      "input_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\render-v6\\v7-tide-c\\detail.png",
+      "package_path": "images/detail.png",
+      "sha256": "2d7818da0aa8752960926c9643134c2a83fca41b2818eac6da0e06c35b7e079c",
+      "bytes": 55202
+    },
+    {
+      "input_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\render-v6\\v7-tide-c\\bed-change.png",
+      "package_path": "images/bed-change.png",
+      "sha256": "8f9a967e687245bb64f7a1e858c82de196f34c54bb9c613a1421994456ad4722",
+      "bytes": 48222
+    },
+    {
+      "input_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\render-v6\\v7-tide-c\\tides.png",
+      "package_path": "images/tides.png",
+      "sha256": "684e5dcc3cc34d34a5edc7971f79766c21317c25464f05985c96452110f58c84",
+      "bytes": 151983
+    },
+    {
+      "input_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\render-v6\\v7-tide-c\\manifest.json",
+      "package_path": "images/manifest.json",
+      "sha256": "0c32b0bfe9f9b9690d1f21b1585410fcc09b7aab11660e5b16eae54d9da14788",
+      "bytes": 114584
+    },
+    {
+      "input_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\prepared-c\\source-window.npz",
+      "package_path": "source/source-window.npz",
+      "sha256": "6e1dbeb5227888fb87035a63b65e5c61c69e9dd37a3ed1b5eeb96f54f9e6135b",
+      "bytes": 124867
+    },
+    {
+      "input_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\prepared-c\\manifest.json",
+      "package_path": "source/manifest.json",
+      "sha256": "d25e32ab5426f727f4d805885d94e3117d37f7f5f82f36f357e5d0226e81419e",
+      "bytes": 102740
+    },
+    {
+      "input_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\tide-25h-c\\final.json",
+      "package_path": "checkpoint/final.json",
+      "sha256": "2b2b0e978748327d391e7c1cc9b24623717443eebd6d3af1a4613c2247f2adfe",
+      "bytes": 582209
+    },
+    {
+      "input_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\tide-25h-c\\final.npz",
+      "package_path": "checkpoint/final.npz",
+      "sha256": "70c65d696cc2be2c25a699600a70e0bed5f99861eefb5ac3eb234f72aa69ed41",
+      "bytes": 459193
+    },
+    {
+      "input_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\event-10s-c\\manifest.json",
+      "package_path": "evolution/01-event-10s-c.json",
+      "sha256": "f82e38f6a48bb9448f9aa6b0338f27d015b8243cff9e7b799c0087250a0e76db",
+      "bytes": 19922
+    },
+    {
+      "input_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\year-half-c\\manifest.json",
+      "package_path": "evolution/02-year-half-c.json",
+      "sha256": "f934086ca6d0a446549574663c6145d341d978ff1b89d56419e822fac3cad1b1",
+      "bytes": 44103
+    },
+    {
+      "input_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\tide-25h-c\\manifest.json",
+      "package_path": "evolution/03-tide-25h-c.json",
+      "sha256": "d63164c83e650b1e5c0511f6c03abb46cbda28baaeddf7f6236333893e572055",
+      "bytes": 104585
+    }
+  ],
+  "inputs": {
+    "render_dir": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\render-v6\\v7-tide-c",
+    "prepared_dir": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\prepared-c",
+    "evolution_dirs": [
+      "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\event-10s-c",
+      "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\year-half-c",
+      "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\tide-25h-c"
+    ]
+  },
+  "package_script": {
+    "path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\package.py",
+    "sha256": "2028e3e391709d84d0e4263caa13dae2bd4b5c353fe50a623e5812146997855e"
+  },
+  "generated_files_sha256": {
+    "README.md": "4eb6fd3eacc46b19f14ea9b407372bbd9774339002125c5d2c0809784877a7b7",
+    "summary.json": "3ac3dde64634c8204abe5dd70f69c4b430b0a1d536f3c5b260ed7aa4136643a2"
+  }
+}

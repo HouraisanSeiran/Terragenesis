@@ -5,8 +5,8 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity
-from terrain_pipeline.mountain_storm_forcing import StormParameters, interval_mean_mm_h
+from terrain_pipeline.common_infra import identity
+from terrain_pipeline.climate_forcing import StormParameters, interval_mean_mm_h
 from tools.audit_td_native_storm import adaptive_mean, audit_fields, independent_mean, numerical_identity
 
 
@@ -37,7 +37,7 @@ class IndependentNativeStormTests(unittest.TestCase):
 
     def test_full_grid_absolute_window_mask_and_adaptive_reference(self):
         values = self.fixture()
-        with patch("terrain_pipeline.mountain_storm_forcing.interval_mean_mm_h", side_effect=AssertionError("production formula")):
+        with patch('terrain_pipeline.climate_forcing.interval_mean_mm_h', side_effect=AssertionError("production formula")):
             report = audit_fields(*values)
         self.assertTrue(report["full_grid_time_quadrature_passed"])
         self.assertGreater(report["adaptive_samples"], 70)

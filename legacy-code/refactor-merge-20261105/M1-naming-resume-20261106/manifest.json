@@ -1,0 +1,338 @@
+[
+  {
+    "source_path": "tests/test_advanced_terrain_filter.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_advanced_terrain_filter.py",
+    "sha256": "0c546c089633df6e02d1a143338c7f5aafde967829fe735b6bf579703285fbef",
+    "bytes": 5928,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_coastal_archipelago.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_coastal_archipelago.py",
+    "sha256": "2314e1d1e4e217a2393448feb678ff1e296987c5e2ee3c742076f22ac933c924",
+    "bytes": 4905,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_coastal_detail_product.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_coastal_detail_product.py",
+    "sha256": "4ddd75ab812af184fd800e14fb8523f560994d44baaf73d0425608f21a6c521f",
+    "bytes": 6862,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_coastal_detail_refinement.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_coastal_detail_refinement.py",
+    "sha256": "56370e17c1d6ff3ea6e64de9c7e43e13b2a843e12625c5f75d251c9971f0daeb",
+    "bytes": 4202,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_dem_domain.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_dem_domain.py",
+    "sha256": "9076ef0b4fb57f7ddd9145450295f8ee8d5a40b1dd8843aa84874807b2aebf97",
+    "bytes": 23974,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_geography_preparation_inventory.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_geography_preparation_inventory.py",
+    "sha256": "92b1d7d42846a104b15330b3a5cdd5871e30971990292790722e9e881f8e9e9e",
+    "bytes": 10290,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_local_volume_mountains.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_local_volume_mountains.py",
+    "sha256": "14fee860d6510ca5e7ea5ef134f192ea5b1316c799f97c78c64ee3f19662308a",
+    "bytes": 3158,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_metric_fine_terrain.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_metric_fine_terrain.py",
+    "sha256": "8d9b01e202fdcbeb1ea1d63a0f9a0a43d76bcc43b86e75df3c67e6730de1e37d",
+    "bytes": 22701,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_new_world_source_mosaic.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_new_world_source_mosaic.py",
+    "sha256": "f062b2d60f1077b93bfc990a1609cb0d0aeb05a9ae9121c63b02f7bde45502e6",
+    "bytes": 5681,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_new_world_terrain.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_new_world_terrain.py",
+    "sha256": "afe225569510ab3ff0753f6a0d43799bad1ba7a86ca13b01a55a41f77d2a5e29",
+    "bytes": 5160,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_plate_td_product_fixture.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_plate_td_product_fixture.py",
+    "sha256": "3ac28b5b17fd0d06a0e7f41e5f0bf9c0a81e06743f2fc71a7c9c20b67c6dec19",
+    "bytes": 11898,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_plate_td_source.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_plate_td_source.py",
+    "sha256": "d42db8822a178401529f5cfeb2a34474b530dea09fc78141424a89c4f3b3f9fc",
+    "bytes": 3924,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_prepare_local_volume_mountains.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_prepare_local_volume_mountains.py",
+    "sha256": "ea01a9910300778366b1f345cb709e7770da507a604f56d3fef4833ed2521744",
+    "bytes": 1864,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_prepare_procedural_mountains.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_prepare_procedural_mountains.py",
+    "sha256": "edd14d9d62b864fcfaca93f7a9635c52cbc35973d5e775d24f62b850eb34f346",
+    "bytes": 1713,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_prepare_product_mountains.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_prepare_product_mountains.py",
+    "sha256": "c4576f06d7d3a0bb12551bfd291330df186f7af4744c322f3f19e0b9a91f0c5f",
+    "bytes": 2257,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_prepare_ridge_breakup.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_prepare_ridge_breakup.py",
+    "sha256": "34329e72cd0ab756fa79489b5e81be28fe7f2d4ecbda8f0bdba7835358300685",
+    "bytes": 871,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_prepare_skeleton_mountains.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_prepare_skeleton_mountains.py",
+    "sha256": "e75a76a9f20966341ade507bee65aa50d41e4ee0d80724859d145c3e55a746e3",
+    "bytes": 2168,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_prepare_voronoi_mountains.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_prepare_voronoi_mountains.py",
+    "sha256": "8f9723897059a1f38ba5ce8dabd18fc9ec78437496b0560196f692f291d294d4",
+    "bytes": 1103,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_prepare_world_mountain_belts.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_prepare_world_mountain_belts.py",
+    "sha256": "ebb8ccc2cc4da65795acc34ec6b6ed6f47bfd4a4ba2fd86152e098325f50d9d8",
+    "bytes": 4386,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_procedural_mountain_erosion.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_procedural_mountain_erosion.py",
+    "sha256": "84ab6aa5ddcf1e96ea884b6412b6ab2cdc75231740e3ee717f935d42f2d6c05f",
+    "bytes": 3526,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_procedural_mountain_processes.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_procedural_mountain_processes.py",
+    "sha256": "37182a0a69950dd3253ce848bc7ad73a43192c13be83d2da6539f7829faf7f91",
+    "bytes": 1222,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_procedural_mountains.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_procedural_mountains.py",
+    "sha256": "0e8038b193a57fe2e5fc4490d9616f7c64638f443f59b41bba71b3d0a788b66c",
+    "bytes": 4812,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_product_mountains.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_product_mountains.py",
+    "sha256": "fbee776aa560e8d5234ead8817c4a42fce60d42693a67ef4cc9bf638416f365a",
+    "bytes": 8031,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_ridge_breakup.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_ridge_breakup.py",
+    "sha256": "dda95b0ce70ab194f9d0d35e094b81263156fa0d3e46e885a06e3d70bc74f6ef",
+    "bytes": 5643,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_tectonic_evolution.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_tectonic_evolution.py",
+    "sha256": "cff0a7f8449ca9320950f68d4b5f0fd35df4f44639bd328d4caa27dee38746db",
+    "bytes": 15940,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_tectonic_formation.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_tectonic_formation.py",
+    "sha256": "3a5d1fcbbbd5a71115042843af594e99ca36bc9336799c64b6a10dda98ad5dbf",
+    "bytes": 9921,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_tectonic_product.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_tectonic_product.py",
+    "sha256": "8c7687411de723f5d17267a07cfc8f82e78d80adcacec5ad8f6916b97bb87186",
+    "bytes": 9081,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_tectonic_shapes.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_tectonic_shapes.py",
+    "sha256": "92fc6f3d3d6d2eb2e01bd995260238b54b9da630d8b4848112beb76d90730b9d",
+    "bytes": 4005,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_voronoi_mountains.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_voronoi_mountains.py",
+    "sha256": "2fbb3a8eb0d0e08c6fed17978914d9858746e1ff9c0fcbf41f8afe98cde3a468",
+    "bytes": 5919,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_world_acceptance_terrain.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_world_acceptance_terrain.py",
+    "sha256": "471c1838069319da8c8f67dee22c0c53f054d8c6e940a9c5d4aca5bb41b3f322",
+    "bytes": 8141,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_world_mountain_belts.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_world_mountain_belts.py",
+    "sha256": "17cb52c6ba7ba34202d1051ed443357105202a5e4a367200fbd28b9ccfa15dd5",
+    "bytes": 15667,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_world_terrain_composition.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_world_terrain_composition.py",
+    "sha256": "c46dc84ef35e010e4a6b532adcf0fb05625b6d49384e346351ea860e8b1a2eef",
+    "bytes": 5712,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_world_terrain_disk_store.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_world_terrain_disk_store.py",
+    "sha256": "96e984cccd128bc31c49ca148de0ef642c1cb89757233dfac9d872192cbcc541",
+    "bytes": 5069,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_world_terrain_mosaic.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_world_terrain_mosaic.py",
+    "sha256": "96fd9651c6fc3ce844fafe188f2b94f1a4db445beb5d3a3a192be8405c31d4e2",
+    "bytes": 5471,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tests/test_world_terrain_store.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tests/test_world_terrain_store.py",
+    "sha256": "9dce783378c452cdce0b5f2f73889152c788f0d5535a0a5aa709590d6ae0b9eb",
+    "bytes": 7600,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tools/prepare_local_volume_mountains.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tools/prepare_local_volume_mountains.py",
+    "sha256": "ef498b3ec576f429647d947ee5be5f2f5b59b01d7df3d2d574f83068faea811c",
+    "bytes": 14211,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tools/prepare_new_world_source_mosaic.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tools/prepare_new_world_source_mosaic.py",
+    "sha256": "b14830480ad31ae260f137fca4410c6052b024729412a72a7e549998e84ad46b",
+    "bytes": 5393,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tools/prepare_new_world_terrain.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tools/prepare_new_world_terrain.py",
+    "sha256": "69221c5b28ec55eec09ef93679c6d3a2fbea1c82a9e763bb2fc32769986e76f0",
+    "bytes": 633,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tools/prepare_plate_td_source.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tools/prepare_plate_td_source.py",
+    "sha256": "23baaf4122584bd352089bf439abbf312537d91a7a0508ac10bb11d6bd0d347e",
+    "bytes": 4767,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tools/prepare_procedural_mountains.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tools/prepare_procedural_mountains.py",
+    "sha256": "8ed3fb9e1a62544feb15aa2684652c9930dd401e2e87ae573410dd0c613dd3a0",
+    "bytes": 20377,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tools/prepare_product_mountains.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tools/prepare_product_mountains.py",
+    "sha256": "3136b8a726ffb317ad91544a98635f011b1c2882fd21550997eafab14ba097be",
+    "bytes": 11606,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tools/prepare_skeleton_mountains.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tools/prepare_skeleton_mountains.py",
+    "sha256": "3450b9516a330e21c6b05f1be9b67954c771dc23a9084b5b33ac1141bc71baf0",
+    "bytes": 16691,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tools/prepare_tectonic_world.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tools/prepare_tectonic_world.py",
+    "sha256": "f3a19c4a753a19adca309cdeea3d598b14de414b47cd5a667a526247e4e71c97",
+    "bytes": 12421,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tools/prepare_voronoi_mountains.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tools/prepare_voronoi_mountains.py",
+    "sha256": "8d14f2ccf720a91a4d110790b7c64650e2d456cff1c2f7fb289bec31f5ce39eb",
+    "bytes": 15863,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tools/prepare_world_acceptance_terrain.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tools/prepare_world_acceptance_terrain.py",
+    "sha256": "f6f6de3059f68157cf63ac159f52a8aeb47021de9ea27c99786fb603672b7466",
+    "bytes": 891,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tools/prepare_world_mountain_belts.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tools/prepare_world_mountain_belts.py",
+    "sha256": "6df6e33274a1c8a7f69febec25ee9240b65e751cbefce796a8bde9a79dd417ab",
+    "bytes": 26313,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tools/render_new_world_river_acceptance.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tools/render_new_world_river_acceptance.py",
+    "sha256": "b985ad016026d021d55d77a157eb9ff5a9e9a0b6cac3d0154171d1f35a4f7430",
+    "bytes": 8498,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  },
+  {
+    "source_path": "tools/verify_geography_preparation_inventory.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M1-naming-resume-20261106/tools/verify_geography_preparation_inventory.py",
+    "sha256": "2e7cf1bba12d3ccb2401fb3205901d3262adc714683dfb1cb5e6146e840b67d1",
+    "bytes": 2997,
+    "reason": "tool or test consolidated or renamed; behavior retained"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "scope": "macro plate formation diagnostics; not TD acceptance",
+  "pass": true,
+  "images": [
+    {
+      "path": "ownership-comparison.png",
+      "sha256": "af9e0ce214be6811000e7ec57340ff6497109a9a9964b4a379eeef7aa5f83dd6",
+      "source_binding": "ownership-comparison.source.json",
+      "coverage_status": "mechanism_only",
+      "terrain_basis": "saved tectonic material and plate fields",
+      "td_binding": null,
+      "algorithms": [
+        "kinematic-crust-3",
+        "kinematic-crust-4",
+        "periodic-voronoi-shaped-core-growth-1"
+      ]
+    },
+    {
+      "path": "final-elevation-comparison.png",
+      "sha256": "9de96e887d9744716d92168cfda972152c65f6769d459e4c04203e846408f69a",
+      "source_binding": "final-elevation-comparison.source.json",
+      "coverage_status": "mechanism_only",
+      "terrain_basis": "saved tectonic material and plate fields",
+      "td_binding": null,
+      "algorithms": [
+        "kinematic-crust-3",
+        "kinematic-crust-4",
+        "periodic-voronoi-shaped-core-growth-1"
+      ]
+    }
+  ]
+}

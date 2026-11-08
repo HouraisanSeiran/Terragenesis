@@ -6,16 +6,17 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.td_basin_breach import saddle_path_face_identity
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy
-from terrain_pipeline.td_basin_overflow import _face_id
-from terrain_pipeline.td_basin_source import make_td_source
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.basin_topology import saddle_path_face_identity as saddle_path_face_identity
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_storage import _face_id as _face_id
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
 from terrain_pipeline.td_bounded_conditioning import (
     build_conditioning_candidates, load_conditioning, save_conditioning, validate_conditioning,
 )
-from terrain_pipeline.td_material_field import make_material_field
-from terrain_pipeline.td_stable_spill_paths import SCHEMA, _digest
+from terrain_pipeline.geology import make_material_field
+from terrain_pipeline.basin_topology import STABLE_SPILL_SCHEMA as SCHEMA
+from terrain_pipeline.basin_topology import _digest as _digest
 
 
 def fixture(*, height=None, protected=None, opened=None, thickness=4.0, paths=None):

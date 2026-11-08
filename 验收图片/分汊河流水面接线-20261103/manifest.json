@@ -1,0 +1,151 @@
+{
+  "world_seed": 20261020,
+  "terrain_basis": "saved plate-conditioned Terrain Diffusion",
+  "source_manifest": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-scale-suite-20261102\\source-case300\\manifest.json",
+  "source_manifest_sha256": "b81acbf22a2a7b595022d37252bbef988f009ab243b0a4e863fd9f329806515f",
+  "source_identity": "a306c5127b7510e5f6b7e1359cfb36dfd342c3023cb7dc576a4f6cb97436c60c",
+  "coverage_status": "mechanism_only",
+  "native_td_spacing_m": 30,
+  "calculation_spacing_m": 600,
+  "coordinates": "X east, Z south; arrays Z/X",
+  "physical_event_duration_s": 90000,
+  "equivalent_years": 10,
+  "initial_map_source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\multi-branch-v3-repaired-event.npz",
+  "initial_map_source_sha256": "8f5c06f70ac54fa50099d82bfe0f238d749697bed8304dcfd8eef6e874202e6a",
+  "algorithms": [
+    "shared bed",
+    "statistical tidal deposition inherited from previous formation",
+    "quasi-steady rectangular Manning river stages",
+    "shared-prefix distributary allocation",
+    "finite river sediment transfer",
+    "marine tide and wave",
+    "explicit upstream pending stocks"
+  ],
+  "scenario": {
+    "inlet_q_m3_s": 3000,
+    "inlet_solid_m3_s": 1.6,
+    "upstream_stage_limit_m": 3,
+    "upstream_head_source": "explicit hypothetical scenario; not measured or world-derived",
+    "roughness": 0.035,
+    "tide_amplitude_m": 1,
+    "wave_height_m": 1.5,
+    "step_s": 1800,
+    "marine_active_layer_m": 0.1,
+    "river_event_active_layer_m": 0.5
+  },
+  "cartography": "01 uses saved terrain colors/hillshade, mean-sea coastal classification and route lines; lines are not physical river widths; 02 is a supplementary numeric profile",
+  "accepted_scope": "bounded river stages, local branch isolation, conservative accepted/pending input and restart",
+  "remaining": "actual upstream sections and head; finite floodplain deposition; stable delta plain; 100 km deferred",
+  "files": [
+    {
+      "file": "01-同源河网与潮滩.png",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\river-stage-v1-main-map.png",
+      "sha256": "c1bea54e4b5ff719ab8cd4bae3fdcc6e62488165c703ee1647afd79c18e4a66e"
+    },
+    {
+      "file": "02-河床与水面剖面.png",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\river-stage-v1-event.png",
+      "sha256": "ac89e9aefdfa0f24611f601c76e2ca7d070519f9200c514729e3049fa7d5f5a8"
+    },
+    {
+      "file": "03-事件床面变化.png",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\river-stage-v1-event-change.png",
+      "sha256": "4801a050bd1c5d7d2fc09fc523499297c4dc8aa98312bc7ef2b2ce854a494671"
+    },
+    {
+      "file": "数据与实现/tidal-plain-v1-year10.npz",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\tidal-plain-v1-year10.npz",
+      "sha256": "87609b0fd1c8e258780f9e810d3874179d437d86f5fdb83d8c44e267104745ef"
+    },
+    {
+      "file": "数据与实现/tidal-plain-v1-year10.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\tidal-plain-v1-year10.json",
+      "sha256": "52cd37f8e429e6dcd805a8aa9ae1aacd13814ec92270ccbfe292aa1468c6fe15"
+    },
+    {
+      "file": "数据与实现/river-stage-v1-event.npz",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\river-stage-v1-event.npz",
+      "sha256": "eac53a3a8cfcddf5876c01b4bf5896cefd479a98cd9d96175032aa1b23bebecb"
+    },
+    {
+      "file": "数据与实现/river-stage-v1-event.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\river-stage-v1-event.json",
+      "sha256": "c2aa885c0c2165e1372aba85228ff06ce1ab9b783f86232377cb5d25df07c64b"
+    },
+    {
+      "file": "数据与实现/river-stage-v1-run.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\river-stage-v1-run.py",
+      "sha256": "ee4ad058cf2970dd6ac0c786f1c3bd5408e5d7941c26bb61613cdf16ff487eca"
+    },
+    {
+      "file": "数据与实现/river-stage-v1-visual.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\river-stage-v1-visual.py",
+      "sha256": "d1ba038aa62aae87faf8bbe4a08028bff58b3c6656bfc61b5340edbc8c3ce2cb"
+    },
+    {
+      "file": "数据与实现/river-stage-v1-event-report.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\river-stage-v1-event-report.json",
+      "sha256": "d8aac7301837679202fddf71d0af32bc991b43dbc2400383381bf777ca8f4a78"
+    },
+    {
+      "file": "数据与实现/river-stage-v1-stats.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\river-stage-v1-stats.json",
+      "sha256": "46fa805a7d3189a55d95ebf7493e0b03a042eefad938224421d8f3fea14c44fa"
+    },
+    {
+      "file": "数据与实现/river-stage-v1-report.md",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\river-stage-v1-report.md",
+      "sha256": "c919f9938613a15abdd51759b5237a9b4f39dc97c176ede907f94e1bb7e26922"
+    },
+    {
+      "file": "数据与实现/main-stage-accept.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-stage-accept.py",
+      "sha256": "a4ea412201849d3665990ae4468e1ed3605006a4154b6851b6ea5407838eee49"
+    },
+    {
+      "file": "数据与实现/main-stage-accept.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-stage-accept.json",
+      "sha256": "cd4b2ccb8e8b6eb2588fea78bb5a9e273d94bf2a6a6be261cb3e149cce38d87a"
+    },
+    {
+      "file": "数据与实现/main-stage-nested-probe.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-stage-nested-probe.json",
+      "sha256": "68bbd3bc4a757819034daf11a16eb6e3ca9176ff6714217c90bdecd3025c3c86"
+    },
+    {
+      "file": "数据与实现/main-stage-probes.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-stage-probes.py",
+      "sha256": "e1d611ec2abec7b8d63c070b4fe88985ec797f28cf43252cfd4a5066addf8ba3"
+    },
+    {
+      "file": "数据与实现/main-multi-figures.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-multi-figures.py",
+      "sha256": "dea430de4619d86cffe302654285f521e2420298eee442b8d3200a6cb5ff1601"
+    },
+    {
+      "file": "数据与实现/main-river-stage-review.md",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-river-stage-review.md",
+      "sha256": "4aa804b005cbb1055b20fd768725b5a37be008556e38009132617d8738507d93"
+    },
+    {
+      "file": "数据与实现/coastal_delta_hydraulics.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_hydraulics.py",
+      "sha256": "ce2b74f20dcd2752f7707d6c9fff3c0dfa056b1e551104bf18bb77edb083ca05"
+    },
+    {
+      "file": "数据与实现/coastal_delta_branching.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_branching.py",
+      "sha256": "c164d24953309bdff0cab47391f1faf1f6b411c33402a1caf53714f54f9eb5e0"
+    },
+    {
+      "file": "数据与实现/test_coastal_delta_hydraulics.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\tests\\test_coastal_delta_hydraulics.py",
+      "sha256": "74e8c1a8191d381170ed4d5ec5dc9f94d64e8a94bba55aebaa6e8f7c419ae38d"
+    },
+    {
+      "file": "数据与实现/test_coastal_delta_branching.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\tests\\test_coastal_delta_branching.py",
+      "sha256": "fb25b16630c4e4a834240ed7200cba54dfe4e072154effc96fb5935fbba719f0"
+    }
+  ]
+}

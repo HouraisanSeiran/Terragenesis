@@ -10,9 +10,9 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.surface_rivers.metric_channel_geometry import load_channel_geometry
-from terrain_pipeline.surface_rivers.metric_channel_state import ChannelConfig, ChannelForcing, ChannelNetwork
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.channel_geometry import load_channel_geometry
+from terrain_pipeline.channel_geometry import ChannelConfig, ChannelForcing, ChannelNetwork
 from terrain_pipeline.surface_rivers.metric_morphology_coupling import (
     MorphologyConfig, _basis, _unpack, couple_morphology,
     load_morphology_coupling, save_morphology_coupling,
@@ -127,7 +127,9 @@ def verify(output):
         if j<0: slope[i]=slope[np.flatnonzero(a["receiver"]==i)[0]]
     network=ChannelNetwork(a["receiver"].copy(),lengths,a["width_m"].copy(),bed,slope,
         np.full(n,.035),np.full(n,2.),np.where(a["receiver"]>=0,"interior","open_outflow"),
-        geometry["identity_sha256"],"canonical TD fine bed; disjoint half incident lengths","explicit n=.035")
+        geometry["identity_sha256"],"canonical TD fine bed; disjoint half incident lengths","explicit n=.035",
+        receiver_distance_m=np.where(a["receiver"] >= 0,
+            np.linalg.norm(a["node_xz_m"] - a["node_xz_m"][np.maximum(a["receiver"], 0)], axis=1), 0.))
     _,material_area,_=_basis(geometry)
     material=MaterialParameters(sediment_erodibility_m_s_pa=1e-8,rock_erodibility_m_s_pa=1e-10,
         transport_coefficient=1e-6,settling_velocity_m_s=.0001,
@@ -182,7 +184,18 @@ def verify(output):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument("--output",type=Path,required=True)
-    args=parser.parse_args();result=verify(args.output)
+    args = parser.parse_args()
+    output_existed = args.output.exists()
+    try:
+        result = verify(args.output)
+    except Exception as error:
+        if not output_existed and args.output.is_dir():
+            publish_bytes(args.output / "rejection.json", json.dumps({
+                "status": "rejected", "error_type": type(error).__name__,
+                "reason": str(error), "hydraulic_ready": False,
+                "natural_outlet_verified": False, "publishable": False,
+            }, indent=2, allow_nan=False).encode())
+        raise
     print(json.dumps({key:result[key] for key in ("status","bed_macro_refinement_m","solid_export_macro_refinement_relative")}))
 
 

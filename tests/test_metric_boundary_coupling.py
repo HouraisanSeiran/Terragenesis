@@ -3,8 +3,9 @@ import unittest
 import numpy as np
 from scipy.integrate import solve_ivp
 
-from terrain_pipeline.surface_rivers.metric_channel_state import ChannelConfig, ChannelNetwork
-from terrain_pipeline.surface_rivers.metric_lake_storage import LakeOutlet, LakeStorage
+from terrain_pipeline.channel_geometry import ChannelConfig, ChannelNetwork
+from terrain_pipeline.lake import LakeOutlet as LakeOutlet
+from terrain_pipeline.lake import LakeStorage as LakeStorage
 from terrain_pipeline.surface_rivers.metric_boundary_coupling import (
     BoundarySeries, CoupledForcing, solve_coupled,
 )
@@ -99,7 +100,7 @@ class CouplingTests(unittest.TestCase):
 
     def test_boundary_only_targets_terminal_and_overflow_returns_prefix(self):
         internal = ChannelNetwork(np.array([1, -1], np.int64), np.array([10., 10.]),
-                                  np.array([2., 2.]), np.array([0., 0.]),
+                                  np.array([2., 2.]), np.array([.1, 0.]),
                                   np.array([.01, 0.]), np.array([.05, .05]),
                                   np.array([10., 10.]), np.array(["interior", "closed_wall"]),
                                   "a" * 64, "rectangular-test", "manning-test")

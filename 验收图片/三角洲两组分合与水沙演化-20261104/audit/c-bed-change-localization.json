@@ -1,0 +1,1989 @@
+{
+  "comparison": "prepared-c initial to saved 0.2 equivalent year",
+  "symptom_max_rise_m": 14.99862708201681,
+  "symptom_reproduced": true,
+  "cells_rise_over_1m": 87,
+  "cells_rise_over_10m": 31,
+  "top_cells": [
+    {
+      "zx": [
+        139,
+        7
+      ],
+      "source_zx": [
+        309,
+        197
+      ],
+      "xz_m": [
+        -250.0,
+        10950.0
+      ],
+      "source_derived_bed_m": -14.99862708201681,
+      "source_ocean": true,
+      "source_original_bed_m": -123.98765563964844,
+      "initial_bed_m": -14.99862708201681,
+      "rise_at_0_2year_m": 14.99862708201681,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -14.99862708201681,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -11.30433131826794,
+          "bed_stock_m3": 82165.77458249322,
+          "mobile_m3": 285.8863101349857,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 149991.76249210085,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 149991.76249210085,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 149991.76249210085,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 149991.76249210085,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        139,
+        6
+      ],
+      "source_zx": [
+        309,
+        196
+      ],
+      "xz_m": [
+        -350.0,
+        10950.0
+      ],
+      "source_derived_bed_m": -14.33524468598965,
+      "source_ocean": true,
+      "source_original_bed_m": -119.21928405761719,
+      "initial_bed_m": -14.33524468598965,
+      "rise_at_0_2year_m": 14.33524468598965,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -14.33524468598965,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -8.75886318261484,
+          "bed_stock_m3": 93458.28902024886,
+          "mobile_m3": 379.0178554052858,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 146011.4681159379,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 146011.4681159379,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 146011.4681159379,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 146011.4681159379,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        139,
+        5
+      ],
+      "source_zx": [
+        309,
+        195
+      ],
+      "xz_m": [
+        -450.0,
+        10950.0
+      ],
+      "source_derived_bed_m": -13.998852859852391,
+      "source_ocean": true,
+      "source_original_bed_m": -115.54783630371094,
+      "initial_bed_m": -13.998852859852391,
+      "rise_at_0_2year_m": 13.998852859852395,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -13.998852859852391,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -5.055242808350531,
+          "bed_stock_m3": 113661.66030901116,
+          "mobile_m3": 500.8204388833406,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 143993.11715911436,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 143993.11715911436,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 143993.11715911436,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 143993.11715911436,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        138,
+        6
+      ],
+      "source_zx": [
+        308,
+        196
+      ],
+      "xz_m": [
+        -350.0,
+        10850.0
+      ],
+      "source_derived_bed_m": -13.988949663367265,
+      "source_ocean": true,
+      "source_original_bed_m": -115.75389862060547,
+      "initial_bed_m": -13.988949663367265,
+      "rise_at_0_2year_m": 13.988949663367269,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -13.988949663367265,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -10.942460831579009,
+          "bed_stock_m3": 78278.93299072953,
+          "mobile_m3": 224.89790182521116,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 143933.6979802036,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 143933.6979802036,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 143933.6979802036,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 143933.6979802036,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        138,
+        5
+      ],
+      "source_zx": [
+        308,
+        195
+      ],
+      "xz_m": [
+        -450.0,
+        10850.0
+      ],
+      "source_derived_bed_m": -13.728659038934822,
+      "source_ocean": true,
+      "source_original_bed_m": -112.37244415283203,
+      "initial_bed_m": -13.728659038934822,
+      "rise_at_0_2year_m": 13.728659038934822,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -13.728659038934822,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -9.453499637250259,
+          "bed_stock_m3": 85650.95641010738,
+          "mobile_m3": 296.4837618259236,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 142371.95423360894,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 142371.95423360894,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 142371.95423360894,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 142371.95423360894,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        139,
+        4
+      ],
+      "source_zx": [
+        309,
+        194
+      ],
+      "xz_m": [
+        -550.0,
+        10950.0
+      ],
+      "source_derived_bed_m": -13.57977892931666,
+      "source_ocean": true,
+      "source_original_bed_m": -111.64009094238281,
+      "initial_bed_m": -13.57977892931666,
+      "rise_at_0_2year_m": 13.57977892931666,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -13.57977892931666,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": 0.0,
+          "bed_stock_m3": 141478.67357589997,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 141478.67357589997,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 141478.67357589997,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 141478.67357589997,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 141478.67357589997,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        138,
+        4
+      ],
+      "source_zx": [
+        308,
+        194
+      ],
+      "xz_m": [
+        -550.0,
+        10850.0
+      ],
+      "source_derived_bed_m": -13.343579041344597,
+      "source_ocean": true,
+      "source_original_bed_m": -108.63372802734375,
+      "initial_bed_m": -13.343579041344597,
+      "rise_at_0_2year_m": 13.343579041344597,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -13.343579041344597,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -6.870411100651172,
+          "bed_stock_m3": 98839.00764416056,
+          "mobile_m3": 403.6336472757515,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 140061.4742480676,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 140061.4742480676,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 140061.4742480676,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 140061.4742480676,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        137,
+        5
+      ],
+      "source_zx": [
+        307,
+        195
+      ],
+      "xz_m": [
+        -450.0,
+        10750.0
+      ],
+      "source_derived_bed_m": -13.00275819945459,
+      "source_ocean": true,
+      "source_original_bed_m": -107.8753890991211,
+      "initial_bed_m": -13.00275819945459,
+      "rise_at_0_2year_m": 13.00275819945459,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -13.00275819945459,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -10.64358555539745,
+          "bed_stock_m3": 74155.03586434283,
+          "mobile_m3": 168.84377930970828,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 138016.54919672754,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 138016.54919672754,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 138016.54919672754,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 138016.54919672754,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        139,
+        3
+      ],
+      "source_zx": [
+        309,
+        193
+      ],
+      "xz_m": [
+        -650.0,
+        10950.0
+      ],
+      "source_derived_bed_m": -12.890937376702354,
+      "source_ocean": true,
+      "source_original_bed_m": -106.94465637207031,
+      "initial_bed_m": -12.890937376702354,
+      "rise_at_0_2year_m": 12.890937376702354,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -12.890937376702354,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": 0.0,
+          "bed_stock_m3": 137345.62426021413,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 137345.62426021413,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 137345.62426021413,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 137345.62426021413,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 137345.62426021413,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        139,
+        2
+      ],
+      "source_zx": [
+        309,
+        192
+      ],
+      "xz_m": [
+        -750.0,
+        10950.0
+      ],
+      "source_derived_bed_m": -12.67548992094433,
+      "source_ocean": true,
+      "source_original_bed_m": -103.6272964477539,
+      "initial_bed_m": -12.67548992094433,
+      "rise_at_0_2year_m": 12.67548992094433,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -12.67548992094433,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": 0.0,
+          "bed_stock_m3": 136052.93952566598,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 136052.93952566598,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 136052.93952566598,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 136052.93952566598,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 136052.93952566598,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        137,
+        4
+      ],
+      "source_zx": [
+        307,
+        194
+      ],
+      "xz_m": [
+        -550.0,
+        10750.0
+      ],
+      "source_derived_bed_m": -12.673694303809498,
+      "source_ocean": true,
+      "source_original_bed_m": -104.3964614868164,
+      "initial_bed_m": -12.673694303809498,
+      "rise_at_0_2year_m": 12.673694303809501,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -12.673694303809498,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -9.367188975352526,
+          "bed_stock_m3": 79839.03197074182,
+          "mobile_m3": 226.995628787958,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 136042.165822857,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 136042.165822857,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 136042.165822857,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 136042.165822857,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        138,
+        3
+      ],
+      "source_zx": [
+        308,
+        193
+      ],
+      "xz_m": [
+        -650.0,
+        10850.0
+      ],
+      "source_derived_bed_m": -12.603823192701697,
+      "source_ocean": true,
+      "source_original_bed_m": -103.89059448242188,
+      "initial_bed_m": -12.603823192701697,
+      "rise_at_0_2year_m": 12.6038231927017,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -12.603823192701697,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 135622.9391562102,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 135622.9391562102,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 135622.9391562102,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 135622.9391562102,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 3.552713678800501e-15,
+          "bed_stock_m3": 135622.9391562102,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        139,
+        1
+      ],
+      "source_zx": [
+        309,
+        191
+      ],
+      "xz_m": [
+        -850.0,
+        10950.0
+      ],
+      "source_derived_bed_m": -12.428408884984151,
+      "source_ocean": true,
+      "source_original_bed_m": -100.17971801757812,
+      "initial_bed_m": -12.428408884984151,
+      "rise_at_0_2year_m": 12.428408884984151,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -12.428408884984151,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": 0.0,
+          "bed_stock_m3": 134570.4533099049,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 134570.4533099049,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 134570.4533099049,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 134570.4533099049,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 134570.4533099049,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        138,
+        2
+      ],
+      "source_zx": [
+        308,
+        192
+      ],
+      "xz_m": [
+        -750.0,
+        10850.0
+      ],
+      "source_derived_bed_m": -12.396169469519023,
+      "source_ocean": true,
+      "source_original_bed_m": -100.65672302246094,
+      "initial_bed_m": -12.396169469519023,
+      "rise_at_0_2year_m": 12.396169469519023,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -12.396169469519023,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": 0.0,
+          "bed_stock_m3": 134377.01681711414,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 134377.01681711414,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 134377.01681711414,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 134377.01681711414,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 134377.01681711414,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        138,
+        1
+      ],
+      "source_zx": [
+        308,
+        191
+      ],
+      "xz_m": [
+        -850.0,
+        10850.0
+      ],
+      "source_derived_bed_m": -12.169178677206233,
+      "source_ocean": true,
+      "source_original_bed_m": -97.32819366455078,
+      "initial_bed_m": -12.169178677206233,
+      "rise_at_0_2year_m": 12.169178677206233,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -12.169178677206233,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": 0.0,
+          "bed_stock_m3": 133015.0720632374,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 133015.0720632374,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 133015.0720632374,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 133015.0720632374,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 133015.0720632374,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        137,
+        3
+      ],
+      "source_zx": [
+        307,
+        193
+      ],
+      "xz_m": [
+        -650.0,
+        10750.0
+      ],
+      "source_derived_bed_m": -12.036218034777775,
+      "source_ocean": true,
+      "source_original_bed_m": -100.00957489013672,
+      "initial_bed_m": -12.036218034777775,
+      "rise_at_0_2year_m": 12.036218034777775,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -12.036218034777775,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -6.954269621918547,
+          "bed_stock_m3": 90491.69047715537,
+          "mobile_m3": 313.2092883081805,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 132217.30820866665,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 132217.30820866665,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 132217.30820866665,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 132217.30820866665,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        137,
+        2
+      ],
+      "source_zx": [
+        307,
+        192
+      ],
+      "xz_m": [
+        -750.0,
+        10750.0
+      ],
+      "source_derived_bed_m": -11.778539516090518,
+      "source_ocean": true,
+      "source_original_bed_m": -96.7389907836914,
+      "initial_bed_m": -11.778539516090518,
+      "rise_at_0_2year_m": 11.778539516090518,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -11.778539516090518,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -3.2667726467330915,
+          "bed_stock_m3": 111070.60121614457,
+          "mobile_m3": 425.71520867425176,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 130671.2370965431,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 130671.2370965431,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 130671.2370965431,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 130671.2370965431,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        136,
+        3
+      ],
+      "source_zx": [
+        306,
+        193
+      ],
+      "xz_m": [
+        -650.0,
+        10650.0
+      ],
+      "source_derived_bed_m": -11.757529965546922,
+      "source_ocean": true,
+      "source_original_bed_m": -96.9818344116211,
+      "initial_bed_m": -11.757529965546922,
+      "rise_at_0_2year_m": 11.757529965546922,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -11.757529965546922,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -9.256871719786465,
+          "bed_stock_m3": 75003.94947456275,
+          "mobile_m3": 167.64342562833477,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 130545.17979328154,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 130545.17979328154,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 130545.17979328154,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 130545.17979328154,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        139,
+        0
+      ],
+      "source_zx": [
+        309,
+        190
+      ],
+      "xz_m": [
+        -950.0,
+        10950.0
+      ],
+      "source_derived_bed_m": -11.730945935938422,
+      "source_ocean": true,
+      "source_original_bed_m": -95.49592590332031,
+      "initial_bed_m": -11.730945935938422,
+      "rise_at_0_2year_m": 11.730945935938422,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -11.730945935938422,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": 0.0,
+          "bed_stock_m3": 130385.67561563053,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 130385.67561563053,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 130385.67561563053,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 130385.67561563053,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 130385.67561563053,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        137,
+        1
+      ],
+      "source_zx": [
+        307,
+        191
+      ],
+      "xz_m": [
+        -850.0,
+        10750.0
+      ],
+      "source_derived_bed_m": -11.52782116792251,
+      "source_ocean": true,
+      "source_original_bed_m": -93.45992279052734,
+      "initial_bed_m": -11.52782116792251,
+      "rise_at_0_2year_m": 11.52782116792251,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -11.52782116792251,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": 0.0,
+          "bed_stock_m3": 129166.92700753507,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 129166.92700753507,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 129166.92700753507,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 129166.92700753507,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 129166.92700753507,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        136,
+        2
+      ],
+      "source_zx": [
+        306,
+        192
+      ],
+      "xz_m": [
+        -750.0,
+        10650.0
+      ],
+      "source_derived_bed_m": -11.519286751867867,
+      "source_ocean": true,
+      "source_original_bed_m": -93.83119201660156,
+      "initial_bed_m": -11.519286751867867,
+      "rise_at_0_2year_m": 11.519286751867867,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -11.519286751867867,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -7.9023183495752125,
+          "bed_stock_m3": 81701.81041375593,
+          "mobile_m3": 227.83761880547559,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 129115.7205112072,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 129115.7205112072,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 129115.7205112072,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 129115.7205112072,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        138,
+        0
+      ],
+      "source_zx": [
+        308,
+        190
+      ],
+      "xz_m": [
+        -950.0,
+        10850.0
+      ],
+      "source_derived_bed_m": -11.485716660282975,
+      "source_ocean": true,
+      "source_original_bed_m": -92.77861785888672,
+      "initial_bed_m": -11.485716660282975,
+      "rise_at_0_2year_m": 11.485716660282975,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -11.485716660282975,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": 0.0,
+          "bed_stock_m3": 128914.29996169785,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 128914.29996169785,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 128914.29996169785,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 128914.29996169785,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 128914.29996169785,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        135,
+        2
+      ],
+      "source_zx": [
+        305,
+        192
+      ],
+      "xz_m": [
+        -750.0,
+        10550.0
+      ],
+      "source_derived_bed_m": -11.251667169462564,
+      "source_ocean": true,
+      "source_original_bed_m": -90.88812255859375,
+      "initial_bed_m": -11.251667169462564,
+      "rise_at_0_2year_m": 11.251667169462564,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -11.251667169462564,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -9.414468857550293,
+          "bed_stock_m3": 71023.18987147363,
+          "mobile_m3": 120.62035273186936,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 127510.00301677539,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 127510.00301677539,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 127510.00301677539,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 127510.00301677539,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        136,
+        1
+      ],
+      "source_zx": [
+        306,
+        191
+      ],
+      "xz_m": [
+        -850.0,
+        10650.0
+      ],
+      "source_derived_bed_m": -11.225374478057034,
+      "source_ocean": true,
+      "source_original_bed_m": -90.5022964477539,
+      "initial_bed_m": -11.225374478057034,
+      "rise_at_0_2year_m": 11.225374478057034,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -11.225374478057034,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -5.66456486545677,
+          "bed_stock_m3": 93364.85767560158,
+          "mobile_m3": 308.62739034391865,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 127352.2468683422,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 127352.2468683422,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 127352.2468683422,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 127352.2468683422,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        135,
+        1
+      ],
+      "source_zx": [
+        305,
+        191
+      ],
+      "xz_m": [
+        -850.0,
+        10550.0
+      ],
+      "source_derived_bed_m": -11.01304755280637,
+      "source_ocean": true,
+      "source_original_bed_m": -87.77462768554688,
+      "initial_bed_m": -11.01304755280637,
+      "rise_at_0_2year_m": 11.01304755280637,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -11.01304755280637,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -8.373186184060966,
+          "bed_stock_m3": 75839.16821247242,
+          "mobile_m3": 163.62411615632314,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 126078.28531683821,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 126078.28531683821,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 126078.28531683821,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 126078.28531683821,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        137,
+        0
+      ],
+      "source_zx": [
+        307,
+        190
+      ],
+      "xz_m": [
+        -950.0,
+        10750.0
+      ],
+      "source_derived_bed_m": -10.869969160937643,
+      "source_ocean": true,
+      "source_original_bed_m": -89.04153442382812,
+      "initial_bed_m": -10.869969160937643,
+      "rise_at_0_2year_m": 10.869969160937643,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -10.869969160937643,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": 0.0,
+          "bed_stock_m3": 125219.81496562586,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 125219.81496562586,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 125219.81496562586,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 125219.81496562586,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 125219.81496562586,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        136,
+        4
+      ],
+      "source_zx": [
+        306,
+        194
+      ],
+      "xz_m": [
+        -550.0,
+        10650.0
+      ],
+      "source_derived_bed_m": -12.318227408442255,
+      "source_ocean": true,
+      "source_original_bed_m": -101.05514526367188,
+      "initial_bed_m": -12.318227408442255,
+      "rise_at_0_2year_m": 10.850581744573422,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -12.318227408442255,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -10.579678068001906,
+          "bed_stock_m3": 70431.29604264209,
+          "mobile_m3": 123.5960046679669,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": -1.4676456638688329,
+          "bed_stock_m3": 125103.49046744053,
+          "mobile_m3": 595.4704048524542,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 133909.36445065352,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 133909.36445065352,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 133909.36445065352,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        136,
+        0
+      ],
+      "source_zx": [
+        306,
+        190
+      ],
+      "xz_m": [
+        -950.0,
+        10650.0
+      ],
+      "source_derived_bed_m": -10.603374594750747,
+      "source_ocean": true,
+      "source_original_bed_m": -86.27647399902344,
+      "initial_bed_m": -10.603374594750747,
+      "rise_at_0_2year_m": 10.603374594750747,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -10.603374594750747,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": 0.0,
+          "bed_stock_m3": 123620.24756850449,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 123620.24756850449,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 123620.24756850449,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 123620.24756850449,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 123620.24756850449,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        135,
+        0
+      ],
+      "source_zx": [
+        305,
+        190
+      ],
+      "xz_m": [
+        -950.0,
+        10550.0
+      ],
+      "source_derived_bed_m": -10.411503456609822,
+      "source_ocean": true,
+      "source_original_bed_m": -83.7043228149414,
+      "initial_bed_m": -10.411503456609822,
+      "rise_at_0_2year_m": 10.411503456609822,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -10.411503456609822,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -6.318187744945682,
+          "bed_stock_m3": 84559.89426998484,
+          "mobile_m3": 217.88701126027706,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 122469.02073965894,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 122469.02073965894,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 122469.02073965894,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 122469.02073965894,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    },
+    {
+      "zx": [
+        134,
+        1
+      ],
+      "source_zx": [
+        304,
+        191
+      ],
+      "xz_m": [
+        -850.0,
+        10450.0
+      ],
+      "source_derived_bed_m": -10.387946191687107,
+      "source_ocean": true,
+      "source_original_bed_m": -83.95658874511719,
+      "initial_bed_m": -10.387946191687107,
+      "rise_at_0_2year_m": 10.387946191687107,
+      "owners": [],
+      "stages": [
+        {
+          "stage": "event-10s-c/final",
+          "bed_m": -10.387946191687107,
+          "bed_stock_m3": 60000.0,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-001",
+          "bed_m": -8.949655287390193,
+          "bed_stock_m3": 68629.74542578148,
+          "mobile_m3": 86.69284227863828,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-002",
+          "bed_m": 0.0,
+          "bed_stock_m3": 122327.67715012263,
+          "mobile_m3": 446.7302451051478,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-003",
+          "bed_m": 0.0,
+          "bed_stock_m3": 122327.67715012263,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-004",
+          "bed_m": 0.0,
+          "bed_stock_m3": 122327.67715012263,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        },
+        {
+          "stage": "year-half-c/year-step-005",
+          "bed_m": 0.0,
+          "bed_stock_m3": 122327.67715012263,
+          "mobile_m3": 0.0,
+          "stranded_m3": 0.0
+        }
+      ]
+    }
+  ],
+  "rise_over_1m_summary": {
+    "local_zx_min": [
+      131,
+      0
+    ],
+    "local_zx_max": [
+      139,
+      15
+    ],
+    "source_bed_min_max_m": [
+      -18.609361982338868,
+      -8.756370804159836
+    ],
+    "original_source_bed_min_max_m": [
+      -156.27586364746094,
+      -71.3437271118164
+    ],
+    "distance_to_channel_centres_min_max_m": [
+      3635.9317925395685,
+      4382.921400162226
+    ],
+    "source_ocean_count": 87,
+    "owner_cell_count": 0,
+    "bed_stock_gain_m3": 3279974.1904254784,
+    "final_at_sea_datum_count": 30
+  },
+  "rise_over_10m_summary": {
+    "local_zx_min": [
+      134,
+      0
+    ],
+    "local_zx_max": [
+      139,
+      8
+    ],
+    "source_bed_min_max_m": [
+      -15.44522718848225,
+      -10.387946191687107
+    ],
+    "original_source_bed_min_max_m": [
+      -128.1128387451172,
+      -83.7043228149414
+    ],
+    "distance_to_channel_centres_min_max_m": [
+      3894.8684188300895,
+      4382.921400162226
+    ],
+    "source_ocean_count": 31,
+    "owner_cell_count": 0,
+    "bed_stock_gain_m3": 2265094.930234158,
+    "final_at_sea_datum_count": 29
+  },
+  "first_two_annual_material_totals": {
+    "external_supply_solid_m3": 18934560.0,
+    "initial_mobile_solid_m3": 184640.625,
+    "river_eroded_solid_m3": 28751.524437565153,
+    "mouth_gross_handoff_m3": 19156593.61237835,
+    "marine_deposited_solid_m3": 6595852.876483491,
+    "floodplain_deposited_solid_m3": 0.8015762889127017
+  }
+}

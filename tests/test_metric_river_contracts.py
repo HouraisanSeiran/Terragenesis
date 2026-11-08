@@ -2,7 +2,7 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.surface_rivers.metric_contracts import BoundaryGrid, RainfallForcing, RoutingGraph, TerrainGrid
+from terrain_pipeline.common_infra import BoundaryGrid, RainfallForcing, RoutingGraph, TerrainGrid
 
 
 def terrain(height, **kwargs):
@@ -22,8 +22,10 @@ class TerrainContractTests(unittest.TestCase):
         forcing = RainfallForcing(np.array([0., 300., 600., 900.]), np.zeros((3,) + shape),
                                   source_id="large", source_sha256="c" * 64)
         self.assertEqual(forcing.rain_mm_h.shape, (3, 1024, 1024))
+        larger_static_grid = terrain(np.zeros((1025, 1024)))
+        self.assertEqual(larger_static_grid.elevation_m.shape, (1025, 1024))
         with self.assertRaises(ValueError):
-            terrain(np.zeros((1025, 1024)))
+            terrain(np.zeros((1281, 1280)))
         with self.assertRaises(ValueError):
             RainfallForcing(np.arange(5, dtype=np.float64), np.zeros((4,) + shape),
                             source_id="over-budget", source_sha256="c" * 64)
@@ -75,9 +77,11 @@ class TerrainContractTests(unittest.TestCase):
         self.assertEqual(graph.donors, ((), (0, 2), ()))
         with self.assertRaises(ValueError):
             RoutingGraph(**dict(arguments, receiver=np.array([1, 0, -1], np.int64)))
-        with self.assertRaisesRegex(ValueError, "adjacent"):
-            RoutingGraph(**dict(arguments, receiver=np.array([2, -1, 1], np.int64),
-                                order_downstream_first=np.array([1, 2, 0], np.int64)))
+        long_edge = RoutingGraph(**dict(arguments, receiver=np.array([2, -1, 1], np.int64),
+                                       order_downstream_first=np.array([1, 2, 0], np.int64)))
+        self.assertEqual(long_edge.receiver[0], 2)
+        with self.assertRaisesRegex(ValueError, "self"):
+            RoutingGraph(**dict(arguments, receiver=np.array([0, -1, 1], np.int64)))
 
     def test_public_graph_rejects_diagonal_crossing_unknown_corners(self):
         with self.assertRaisesRegex(ValueError, "unknown corner"):

@@ -54,7 +54,7 @@ def build(records_path, geography_manifest=None, *, expected_sha256=None,
         path = Path(baseline_inputs).resolve(strict=True)
         if _sha(path) != expected_baseline_sha256:
             raise ValueError("baseline inputs external hash mismatch")
-        from terrain_pipeline.td_basin_review import load_candidate_comparison
+        from terrain_pipeline.basin_storage import load_candidate_comparison as load_candidate_comparison
         baseline = json.loads(path.read_text(encoding="utf-8"))["inputs"]
         verified = load_candidate_comparison(records_path, expected_sha256=expected_sha256,
                                              baseline_records=baseline)

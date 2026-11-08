@@ -1,0 +1,572 @@
+{
+  "algorithm_id": "skeleton-mountains-v2-ribbons-on-relief",
+  "world_seed": 20260903,
+  "source_sha256": {
+    "terrain_pipeline/skeleton_mountains.py": "b647631e93a6c10b627c5f9beb33c46daac19f76611bc5894a442d7111efc636",
+    "terrain_pipeline/local_volume_mountains.py": "859498402f24002aa10787c1a57862af1ce01f595c15fc18a9025c95de3fd024",
+    "terrain_pipeline/product_mountains.py": "c7f04e7d0d0bd3b739c541ba99dd8a70da75afaec37a773e62ad026927db7381",
+    "terrain_pipeline/advanced_terrain_filter.py": "e0dc26f2e5405f28cec05465b44a0d76bcf278d1d2bb8a732ab446f92ef3b4f3",
+    "terrain_pipeline/world_seed.py": "ff3c7ae6e1480222a18e564d880fbb1fe857dc4410d2fae6fe401e839d749fa4",
+    "diffusion/geographic_noise.py": "7b0667dc26dcfc153267c9affb9f30831711d417a8c22232fd36ae8af37a50e1",
+    "terrain_pipeline/terrain_map_style.py": "5ba2a8256fcf4f7d66f38cddadd7c7d33aeea9978053af96f41e2b52b9550ff6",
+    "tools/prepare_skeleton_mountains.py": "5f9dce46f8b44f763abc33cd8af595c517713d7c53b471fd211730f222ed0300",
+    "tools/prepare_local_volume_mountains.py": "ce853b577c69cbee8c15f55dd95077ee9290dd4fcceb2469f2c0f364368c89dc",
+    "tools/prepare_procedural_mountains.py": "606f2bc48b9574f92c7907936c92b1965c4eaa7008cf09124bb1915971e18dcc"
+  },
+  "subseed_derivation": "terrain_pipeline.world_seed.derive_subseed",
+  "subseeds": {
+    "skeleton-sites": 14254875626442343793,
+    "skeleton-curves": 18369446308959807358,
+    "skeleton-profiles": 14687310579717143503,
+    "skeleton-detail": 3006128547761262269,
+    "product-ridge": 1511883604618675461,
+    "product-warp": 6063670488463537375,
+    "product-voronoi-sites": 8428408912037286829,
+    "local-volume-sites": 12182482476770616183,
+    "local-volume-selection": 17323341780523637846
+  },
+  "advanced_filter": {
+    "algorithm_id": "advanced-terrain-filter-v2-stable-hash",
+    "stable_seed": 10860721302913963045,
+    "config": {
+      "amplitude_m": 150.0,
+      "wavelength_m": 1800.0,
+      "octaves": 3,
+      "gain": 0.5,
+      "lacunarity": 2.0,
+      "gully_weight": 0.5,
+      "detail": 1.5,
+      "rounding": [
+        0.1,
+        0.0,
+        0.1,
+        2.0
+      ],
+      "onset": [
+        1.25,
+        1.25,
+        2.8,
+        1.5
+      ],
+      "assumed_slope": [
+        0.7,
+        1.0
+      ],
+      "cell_scale": 0.7,
+      "normalization": 0.5,
+      "hash_mode": "stable"
+    }
+  },
+  "mapping": {
+    "minimum_m": -500.0,
+    "maximum_m": 6000.0,
+    "encoding": "round(clip((h+500)/6500,0,1)*65535)"
+  },
+  "coordinate_convention": "row Z south, column X east; origin + index * spacing; metres",
+  "dependencies": {
+    "macro_neighbor_cells": "3x3",
+    "source_support_cells": 0.66,
+    "hierarchy_levels": 2,
+    "curves_per_source": 6,
+    "curve_distance": "analytic nominal-frame lateral offset; not exact Euclidean distance",
+    "sample_halo_m": 600.0,
+    "cache_capacity_descriptors": 128,
+    "cache_scope": "per invocation, discarded"
+  },
+  "plot_geometry": {
+    "stride": 3,
+    "vertical_exaggeration": 1.0
+  },
+  "stages": {
+    "base_height_m": "product v2 macro, base=200 m / amplitude=600 m / alpha=.65; bare case uses flat 200 m",
+    "skeleton_height_m": "base plus source/curve contraharmonic soft union; no detail or Advanced",
+    "macro_height_m": "skeleton plus 45 m amplitude noise scaled by skeleton uplift/4700",
+    "final_delta_m": "slope fade(.02,.08) * skeleton uplift fade(0,1000 m) * negative-only gain2.4",
+    "skeleton_bare": "mixed geometry; base relief, detail and Advanced all off; not the previous baseline"
+  },
+  "environment": {
+    "python": "3.11.11 | packaged by Anaconda, Inc. | (main, Dec 11 2024, 16:34:19) [MSC v.1929 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD"
+  },
+  "cases": [
+    {
+      "name": "main_previous",
+      "algorithm_id": "local-volume-mountains-v1",
+      "config": {
+        "world_seed": 20260903,
+        "k": 0.35,
+        "depth_gain": 2.4,
+        "cell_size_m": 6000.0,
+        "selection_scale_m": 24000.0,
+        "cell_threshold_low": 0.8,
+        "cell_threshold_high": 0.95,
+        "selection_threshold_low": 0.7,
+        "selection_threshold_high": 0.85,
+        "slope_fade_low": 0.02,
+        "slope_fade_high": 0.08,
+        "advanced_enabled": true,
+        "batch_size": 4096
+      },
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "origin_xz_m": [
+        0.0,
+        0.0
+      ],
+      "npz": "main_previous.npz",
+      "npz_sha256": "4df51c193d7ef7e086fb584d8a42da66817dabc00c8106a383f463ee34e347e5",
+      "height_images": {
+        "macro_height_m": {
+          "file": "main_previous_macro_height_m.png",
+          "sha256": "d2cd537b1a1fc31b4d16d57775af7303a2f9210a99b6b28469bd3640f92e6402",
+          "preview_sha256": "ea623da2dc2d16049bdcc7ca2f188fa40ed0d4daaccd2dfce505316d421baa4b",
+          "min_m": 653.9414833663311,
+          "max_m": 4250.824276960071,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.049591820474688575
+        },
+        "height_m": {
+          "file": "main_previous_height_m.png",
+          "sha256": "cd1dc3c478faf742ab3f626ac8376ee1882eeab625ee2bec4e179add8939893e",
+          "preview_sha256": "eb6bf8c0a5c5f38508c91394de2cf7a0f3e981153951a6f975d18c142a5686d3",
+          "min_m": 371.74513894559976,
+          "max_m": 4364.634196363651,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.049591340970891906
+        }
+      },
+      "max_abs_detail_m": 0.0,
+      "final_delta_range_m": [
+        -314.99760646601374,
+        131.24997278061613
+      ]
+    },
+    {
+      "name": "main_skeleton_bare",
+      "algorithm_id": "skeleton-mountains-v2-ribbons-on-relief",
+      "config": {
+        "world_seed": 20260903,
+        "profile": "mixed",
+        "cell_size_m": 24000.0,
+        "base_m": 200.0,
+        "base_relief_m": 0,
+        "detail_amplitude_m": 0,
+        "depth_gain": 2.4,
+        "advanced_enabled": false,
+        "batch_size": 4096
+      },
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "origin_xz_m": [
+        0.0,
+        0.0
+      ],
+      "npz": "main_skeleton_bare.npz",
+      "npz_sha256": "8a381c263fa8d8e4c29d8492795af67155e9d4320c66680d76401b67ae2183c9",
+      "height_images": {
+        "macro_height_m": {
+          "file": "main_skeleton_bare_macro_height_m.png",
+          "sha256": "97f589e52e98cace8f08f8f6a1c99993209f95c826e7870493e09ad0cbe856c5",
+          "preview_sha256": "65fdc745b83a57316a49415e3203fb59db669027b9781a0a021c91379f4e7394",
+          "min_m": 200.0,
+          "max_m": 3860.4949318503536,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.04959168017273896
+        },
+        "height_m": {
+          "file": "main_skeleton_bare_height_m.png",
+          "sha256": "97f589e52e98cace8f08f8f6a1c99993209f95c826e7870493e09ad0cbe856c5",
+          "preview_sha256": "65fdc745b83a57316a49415e3203fb59db669027b9781a0a021c91379f4e7394",
+          "min_m": 200.0,
+          "max_m": 3860.4949318503536,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.04959168017273896
+        }
+      },
+      "max_abs_detail_m": 0.0,
+      "final_delta_range_m": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "main_granite",
+      "algorithm_id": "skeleton-mountains-v2-ribbons-on-relief",
+      "config": {
+        "world_seed": 20260903,
+        "profile": "granite",
+        "cell_size_m": 24000.0,
+        "base_m": 200.0,
+        "base_relief_m": 600.0,
+        "detail_amplitude_m": 45.0,
+        "depth_gain": 2.4,
+        "advanced_enabled": true,
+        "batch_size": 4096
+      },
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "origin_xz_m": [
+        0.0,
+        0.0
+      ],
+      "npz": "main_granite.npz",
+      "npz_sha256": "a71d419c96659658169cbeb2c0a43a619b2dbb0c1e7fba3815842f96daecaca5",
+      "height_images": {
+        "macro_height_m": {
+          "file": "main_granite_macro_height_m.png",
+          "sha256": "22306abf2e5afa82dc736a2e59abd6fa2795a431f4bbf778b3eda9966df2e992",
+          "preview_sha256": "97c18e30bbbd681f74e979260a49cc1fe085e603105d4a6ed7ef155e96f5edaf",
+          "min_m": 263.0474282453238,
+          "max_m": 4241.261427333742,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.0495915920104153
+        },
+        "height_m": {
+          "file": "main_granite_height_m.png",
+          "sha256": "86e14f50e4005c740937dc4e36a19a4737cfbe8fdbe1858b8209e0bf104932cc",
+          "preview_sha256": "e145aedfddee26869937a57e2febd25cf5ea5fc75d99323e1878d90762da5a6c",
+          "min_m": 263.0474282453238,
+          "max_m": 4349.684375830276,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.04959113856784825
+        }
+      },
+      "max_abs_detail_m": 25.57434040455547,
+      "final_delta_range_m": [
+        -314.6810124375855,
+        131.24981997772667
+      ]
+    },
+    {
+      "name": "main_alpine",
+      "algorithm_id": "skeleton-mountains-v2-ribbons-on-relief",
+      "config": {
+        "world_seed": 20260903,
+        "profile": "alpine",
+        "cell_size_m": 24000.0,
+        "base_m": 200.0,
+        "base_relief_m": 600.0,
+        "detail_amplitude_m": 45.0,
+        "depth_gain": 2.4,
+        "advanced_enabled": true,
+        "batch_size": 4096
+      },
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "origin_xz_m": [
+        0.0,
+        0.0
+      ],
+      "npz": "main_alpine.npz",
+      "npz_sha256": "d5d5d76b240fba5f1bd2ef085c80c37439fc21acb1d579d4d175a5fbe6fa0ee5",
+      "height_images": {
+        "macro_height_m": {
+          "file": "main_alpine_macro_height_m.png",
+          "sha256": "8c5dc3e7ae2731f65dbf569ff9358040354bb05b6421f2b2e13af57a03ad05a6",
+          "preview_sha256": "013e808d56f5ce1c236689c2040c0812f675b564353bb94dc62d322feb8feb60",
+          "min_m": 263.0474282453238,
+          "max_m": 4231.664459422686,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.0495915920104153
+        },
+        "height_m": {
+          "file": "main_alpine_height_m.png",
+          "sha256": "af234d345bd8521d8a689f35105b56f4adcec247509a437bd0172d69cc27dd8a",
+          "preview_sha256": "f8540065708ba8c236e30f6d00292f218f8b05811d38d8020d5dab04349e5456",
+          "min_m": 263.0474282453238,
+          "max_m": 4234.362656803068,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.04959113856784825
+        }
+      },
+      "max_abs_detail_m": 17.770071960540353,
+      "final_delta_range_m": [
+        -314.4002087128169,
+        131.2454529229266
+      ]
+    },
+    {
+      "name": "main_asymmetric",
+      "algorithm_id": "skeleton-mountains-v2-ribbons-on-relief",
+      "config": {
+        "world_seed": 20260903,
+        "profile": "asymmetric",
+        "cell_size_m": 24000.0,
+        "base_m": 200.0,
+        "base_relief_m": 600.0,
+        "detail_amplitude_m": 45.0,
+        "depth_gain": 2.4,
+        "advanced_enabled": true,
+        "batch_size": 4096
+      },
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "origin_xz_m": [
+        0.0,
+        0.0
+      ],
+      "npz": "main_asymmetric.npz",
+      "npz_sha256": "f2b976b42a1d3f93edc7e59183757bbfe5c9d1d615a814370b85c054e0d0dcf9",
+      "height_images": {
+        "macro_height_m": {
+          "file": "main_asymmetric_macro_height_m.png",
+          "sha256": "6c5f1d749ad4fb1c467a8b6ad91ede87dfe9c5eaea3b5af0d8205e989d194145",
+          "preview_sha256": "16ce83c0bd3249ae98971043a30070ef29ded4d4aa11888d370b67166646a8ae",
+          "min_m": 263.0474282453238,
+          "max_m": 4240.201625875209,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.0495915920104153
+        },
+        "height_m": {
+          "file": "main_asymmetric_height_m.png",
+          "sha256": "5d0232b8fb5d0ccb0e25bcfd2ab6b0f88ffd10075f09c70ebd15ececf29e2ac6",
+          "preview_sha256": "a1db828532f9f193eadbee2d65971c7f543a8a737508a16d84d655ef18600426",
+          "min_m": 263.0474282453238,
+          "max_m": 4257.098750867391,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.04959113856784825
+        }
+      },
+      "max_abs_detail_m": 22.910686110316618,
+      "final_delta_range_m": [
+        -314.54403765675346,
+        131.24999485561813
+      ]
+    },
+    {
+      "name": "main_mixed",
+      "algorithm_id": "skeleton-mountains-v2-ribbons-on-relief",
+      "config": {
+        "world_seed": 20260903,
+        "profile": "mixed",
+        "cell_size_m": 24000.0,
+        "base_m": 200.0,
+        "base_relief_m": 600.0,
+        "detail_amplitude_m": 45.0,
+        "depth_gain": 2.4,
+        "advanced_enabled": true,
+        "batch_size": 4096
+      },
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "origin_xz_m": [
+        0.0,
+        0.0
+      ],
+      "npz": "main_mixed.npz",
+      "npz_sha256": "a71d419c96659658169cbeb2c0a43a619b2dbb0c1e7fba3815842f96daecaca5",
+      "height_images": {
+        "macro_height_m": {
+          "file": "main_mixed_macro_height_m.png",
+          "sha256": "22306abf2e5afa82dc736a2e59abd6fa2795a431f4bbf778b3eda9966df2e992",
+          "preview_sha256": "97c18e30bbbd681f74e979260a49cc1fe085e603105d4a6ed7ef155e96f5edaf",
+          "min_m": 263.0474282453238,
+          "max_m": 4241.261427333742,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.0495915920104153
+        },
+        "height_m": {
+          "file": "main_mixed_height_m.png",
+          "sha256": "86e14f50e4005c740937dc4e36a19a4737cfbe8fdbe1858b8209e0bf104932cc",
+          "preview_sha256": "e145aedfddee26869937a57e2febd25cf5ea5fc75d99323e1878d90762da5a6c",
+          "min_m": 263.0474282453238,
+          "max_m": 4349.684375830276,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.04959113856784825
+        }
+      },
+      "max_abs_detail_m": 25.57434040455547,
+      "final_delta_range_m": [
+        -314.6810124375855,
+        131.24981997772667
+      ]
+    },
+    {
+      "name": "negative_mixed",
+      "algorithm_id": "skeleton-mountains-v2-ribbons-on-relief",
+      "config": {
+        "world_seed": 20260903,
+        "profile": "mixed",
+        "cell_size_m": 24000.0,
+        "base_m": 200.0,
+        "base_relief_m": 600.0,
+        "detail_amplitude_m": 45.0,
+        "depth_gain": 2.4,
+        "advanced_enabled": true,
+        "batch_size": 4096
+      },
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "origin_xz_m": [
+        -24000.0,
+        -24000.0
+      ],
+      "npz": "negative_mixed.npz",
+      "npz_sha256": "f8ecfccaa1c01b8e59b92a9b80241ed1761fefab377114dd133be7c94cd6b702",
+      "height_images": {
+        "macro_height_m": {
+          "file": "negative_mixed_macro_height_m.png",
+          "sha256": "502d8d5fb669e9192392f60bff2a25cac7d4b16f6ed226e542a7a6a29e6f488f",
+          "preview_sha256": "d28ce4e3fea2332530974a6679b6175818da9eefae5d786c0fbed8dbe8f15908",
+          "min_m": 264.8473131118559,
+          "max_m": 4415.153214739025,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.04959057690643931
+        },
+        "height_m": {
+          "file": "negative_mixed_height_m.png",
+          "sha256": "42ffcb412f18eedb4558bf8458c5aff52fa2be90ce068456fc4406adbba5c09e",
+          "preview_sha256": "eeb0635809058ebe0b9e10dd051b1e109bed1d171fb5d6e35e02e74c8578067e",
+          "min_m": 264.8473131118559,
+          "max_m": 4505.405628735595,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.049590960833029385
+        }
+      },
+      "max_abs_detail_m": 27.466747759028532,
+      "final_delta_range_m": [
+        -314.9751210835559,
+        131.2499970204564
+      ]
+    }
+  ],
+  "benchmark": [
+    {
+      "location": "near",
+      "origin_xz_m": [
+        0.0,
+        0.0
+      ],
+      "shape_zx": [
+        512,
+        512
+      ],
+      "spacing_m": 60.0,
+      "seconds": 10.662114099999599,
+      "tracemalloc_peak_bytes": 34855226,
+      "sampled_process_rss_peak_bytes": 191541248
+    },
+    {
+      "location": "far",
+      "origin_xz_m": [
+        500000000.0,
+        -500000000.0
+      ],
+      "shape_zx": [
+        512,
+        512
+      ],
+      "spacing_m": 60.0,
+      "seconds": 9.892413699999452,
+      "tracemalloc_peak_bytes": 35335565,
+      "sampled_process_rss_peak_bytes": 216285184
+    }
+  ],
+  "timings_seconds": {
+    "generation": 30.654762500000288,
+    "save": 4.6782338000029995,
+    "plot": 10.961026599999968
+  },
+  "benchmark_scope": "wall time with tracemalloc; sampled whole-process RSS every 10ms can miss peaks; includes process baseline, excludes interpreter startup",
+  "files_sha256": {
+    "main_alpine.npz": "d5d5d76b240fba5f1bd2ef085c80c37439fc21acb1d579d4d175a5fbe6fa0ee5",
+    "main_alpine_height_m.png": "af234d345bd8521d8a689f35105b56f4adcec247509a437bd0172d69cc27dd8a",
+    "main_alpine_height_m_preview.png": "f8540065708ba8c236e30f6d00292f218f8b05811d38d8020d5dab04349e5456",
+    "main_alpine_macro_height_m.png": "8c5dc3e7ae2731f65dbf569ff9358040354bb05b6421f2b2e13af57a03ad05a6",
+    "main_alpine_macro_height_m_preview.png": "013e808d56f5ce1c236689c2040c0812f675b564353bb94dc62d322feb8feb60",
+    "main_asymmetric.npz": "f2b976b42a1d3f93edc7e59183757bbfe5c9d1d615a814370b85c054e0d0dcf9",
+    "main_asymmetric_height_m.png": "5d0232b8fb5d0ccb0e25bcfd2ab6b0f88ffd10075f09c70ebd15ececf29e2ac6",
+    "main_asymmetric_height_m_preview.png": "a1db828532f9f193eadbee2d65971c7f543a8a737508a16d84d655ef18600426",
+    "main_asymmetric_macro_height_m.png": "6c5f1d749ad4fb1c467a8b6ad91ede87dfe9c5eaea3b5af0d8205e989d194145",
+    "main_asymmetric_macro_height_m_preview.png": "16ce83c0bd3249ae98971043a30070ef29ded4d4aa11888d370b67166646a8ae",
+    "main_bare_views.png": "cfff179e9db07852434c821ae1f7dc7687c4a8eb06f12335e5b1916594656db5",
+    "main_granite.npz": "a71d419c96659658169cbeb2c0a43a619b2dbb0c1e7fba3815842f96daecaca5",
+    "main_granite_height_m.png": "86e14f50e4005c740937dc4e36a19a4737cfbe8fdbe1858b8209e0bf104932cc",
+    "main_granite_height_m_preview.png": "e145aedfddee26869937a57e2febd25cf5ea5fc75d99323e1878d90762da5a6c",
+    "main_granite_macro_height_m.png": "22306abf2e5afa82dc736a2e59abd6fa2795a431f4bbf778b3eda9966df2e992",
+    "main_granite_macro_height_m_preview.png": "97c18e30bbbd681f74e979260a49cc1fe085e603105d4a6ed7ef155e96f5edaf",
+    "main_gray_comparison.png": "0037d4c55f4d314ca6adf6fff9ea3399e4a97da0641afc43acd8d4b54e1cacec",
+    "main_hillshade_comparison.png": "2905e9d9d51f3e3e07ca994a0b357404f9e7be38e144ecb83d3ed651cb8fe513",
+    "main_mixed.npz": "a71d419c96659658169cbeb2c0a43a619b2dbb0c1e7fba3815842f96daecaca5",
+    "main_mixed_height_m.png": "86e14f50e4005c740937dc4e36a19a4737cfbe8fdbe1858b8209e0bf104932cc",
+    "main_mixed_height_m_preview.png": "e145aedfddee26869937a57e2febd25cf5ea5fc75d99323e1878d90762da5a6c",
+    "main_mixed_macro_height_m.png": "22306abf2e5afa82dc736a2e59abd6fa2795a431f4bbf778b3eda9966df2e992",
+    "main_mixed_macro_height_m_preview.png": "97c18e30bbbd681f74e979260a49cc1fe085e603105d4a6ed7ef155e96f5edaf",
+    "main_peak_macro_views.png": "fceb9e8fab1529c78adf3849b28ae9e0cd8ab1233a7e6ec81bad659b9c3c9298",
+    "main_peak_sections.png": "12457ab19f188f5297fb1d9c5d6ae32387c3e7c89636c0d8516c2e279ae013e9",
+    "main_previous.npz": "4df51c193d7ef7e086fb584d8a42da66817dabc00c8106a383f463ee34e347e5",
+    "main_previous_height_m.png": "cd1dc3c478faf742ab3f626ac8376ee1882eeab625ee2bec4e179add8939893e",
+    "main_previous_height_m_preview.png": "eb6bf8c0a5c5f38508c91394de2cf7a0f3e981153951a6f975d18c142a5686d3",
+    "main_previous_macro_height_m.png": "d2cd537b1a1fc31b4d16d57775af7303a2f9210a99b6b28469bd3640f92e6402",
+    "main_previous_macro_height_m_preview.png": "ea623da2dc2d16049bdcc7ca2f188fa40ed0d4daaccd2dfce505316d421baa4b",
+    "main_skeleton.json": "9de6d9cafd6e8d6663425e42c696dafc726aea948333b76a9f1398b0c942840f",
+    "main_skeleton_bare.npz": "8a381c263fa8d8e4c29d8492795af67155e9d4320c66680d76401b67ae2183c9",
+    "main_skeleton_bare_height_m.png": "97f589e52e98cace8f08f8f6a1c99993209f95c826e7870493e09ad0cbe856c5",
+    "main_skeleton_bare_height_m_preview.png": "65fdc745b83a57316a49415e3203fb59db669027b9781a0a021c91379f4e7394",
+    "main_skeleton_bare_macro_height_m.png": "97f589e52e98cace8f08f8f6a1c99993209f95c826e7870493e09ad0cbe856c5",
+    "main_skeleton_bare_macro_height_m_preview.png": "65fdc745b83a57316a49415e3203fb59db669027b9781a0a021c91379f4e7394",
+    "main_skeleton_overlay.png": "5f0b3cee21b1150464ba313e8c63bdb07cad9ae650123dac4f1b3421ed73e74d",
+    "negative_bare_views.png": "bf2486fe49dc3af28f76124c131af47cfcb6985e040dd36acc9e7e265a7f2b71",
+    "negative_gray_comparison.png": "629960fb391172633bcf29455e5136576735dbfcb142663f0066cce6fa8fde67",
+    "negative_hillshade_comparison.png": "9a83344816c848b942d0740e332fea2b17121d4c8999db7132ea525041861999",
+    "negative_mixed.npz": "f8ecfccaa1c01b8e59b92a9b80241ed1761fefab377114dd133be7c94cd6b702",
+    "negative_mixed_height_m.png": "42ffcb412f18eedb4558bf8458c5aff52fa2be90ce068456fc4406adbba5c09e",
+    "negative_mixed_height_m_preview.png": "eeb0635809058ebe0b9e10dd051b1e109bed1d171fb5d6e35e02e74c8578067e",
+    "negative_mixed_macro_height_m.png": "502d8d5fb669e9192392f60bff2a25cac7d4b16f6ed226e542a7a6a29e6f488f",
+    "negative_mixed_macro_height_m_preview.png": "d28ce4e3fea2332530974a6679b6175818da9eefae5d786c0fbed8dbe8f15908",
+    "negative_skeleton.json": "e47bae1f47f6f348d96653bea871a403c10de9b6a4c9727aa1efad3022a55570",
+    "negative_skeleton_overlay.png": "9f41db0872af0de13337c1fcf59977f7137940d130f43a7e2fff3af5d25104c1",
+    "sections.npz": "971a69b685adad71d2eaff0e39727fdbf272b6dde4846df9479d6dcf576fbc87"
+  }
+}

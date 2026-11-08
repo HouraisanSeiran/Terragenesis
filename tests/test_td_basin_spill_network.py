@@ -6,13 +6,14 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.td_basin_storage import simulate_basin_storage
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.basin_storage import simulate_threshold_storage as simulate_basin_storage
 from terrain_pipeline.td_surface_reaches import _plain, _hash
-from terrain_pipeline.td_basin_spill_network import (
-    make_basin_spill_network, save_basin_spill_network, load_basin_spill_network,
-    save_basin_spill_bundle, load_basin_spill_bundle,
-)
+from terrain_pipeline.basin_topology import make_basin_spill_network as make_basin_spill_network
+from terrain_pipeline.basin_topology import save_basin_spill_network as save_basin_spill_network
+from terrain_pipeline.basin_topology import load_basin_spill_network as load_basin_spill_network
+from terrain_pipeline.basin_topology import save_basin_spill_bundle as save_basin_spill_bundle
+from terrain_pipeline.basin_topology import load_basin_spill_bundle as load_basin_spill_bundle
 from tests.test_td_surface_reaches import fixture, build
 
 
@@ -93,7 +94,7 @@ class BasinSpillTests(unittest.TestCase):
     def test_v2_cold_read_no_generation_external_pins_and_readonly(self):
         with tempfile.TemporaryDirectory() as directory:
             path, kwargs = self.sharded_fixture(directory)
-            with patch("terrain_pipeline.td_basin_spill_network.save_basin_spill_bundle", side_effect=AssertionError("save")), patch("terrain_pipeline.td_basin_hierarchy.build_basin_hierarchy", side_effect=AssertionError("generate")), patch("terrain_pipeline.td_basin_storage.simulate_basin_storage", side_effect=AssertionError("solve")):
+            with patch('terrain_pipeline.basin_topology.save_basin_spill_bundle', side_effect=AssertionError("save")), patch('terrain_pipeline.basin_topology.build_basin_hierarchy', side_effect=AssertionError("generate")), patch('terrain_pipeline.basin_storage.simulate_threshold_storage', side_effect=AssertionError("solve")):
                 loaded = load_basin_spill_bundle(path, **kwargs)
             with self.assertRaises(TypeError):
                 loaded["contribution_leaf_graph"]["pairs"][0]["gross_m3"] = 1
@@ -161,7 +162,7 @@ class BasinSpillTests(unittest.TestCase):
             hierarchy = kwargs["hierarchy"]
             metadata = dict(hierarchy["metadata"], max_curve_entries=hierarchy["metadata"]["max_curve_entries"] + 1)
             changed = {"arrays": hierarchy["arrays"], "metadata": metadata, "identity_sha256": identity(hierarchy["arrays"], metadata)}
-            from terrain_pipeline.td_basin_spill_network import _leaf_graph
+            from terrain_pipeline.basin_topology import _leaf_graph as _leaf_graph
             self.assertEqual(pair["pair_id"], _leaf_graph(changed, None)["pairs"][0]["pair_id"])
 
     def test_v2_duplicate_json_and_nonfinite_rejected(self):
@@ -262,7 +263,7 @@ class BasinSpillTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "spill.json"
             save_basin_spill_network(result, path)
-            with patch("terrain_pipeline.td_basin_spill_network.make_basin_spill_network", side_effect=AssertionError("generation")), patch("terrain_pipeline.td_basin_storage.simulate_basin_storage", side_effect=AssertionError("solve")):
+            with patch('terrain_pipeline.basin_topology.make_basin_spill_network', side_effect=AssertionError("generation")), patch('terrain_pipeline.basin_storage.simulate_threshold_storage', side_effect=AssertionError("solve")):
                 loaded = load_basin_spill_network(path, expected_sha256=file_sha256(path), expected_identity=result["identity_sha256"], hierarchy=hierarchy, reach_networks=[network])
             self.assertEqual(_plain(loaded), _plain(result))
             with self.assertRaises(TypeError):

@@ -11,20 +11,21 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, load_bundle, publish_bytes
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy, basin_volume_at_level
+from terrain_pipeline.common_infra import file_sha256, identity, load_bundle, publish_bytes
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_topology import basin_volume_at_level as basin_volume_at_level
 from terrain_pipeline.surface_rivers.metric_product import load_diagnostic_product
 from terrain_pipeline.surface_rivers.metric_coupled_product import load_coupled_product, sample_coupled_output, decode_coupled_product
 from tools.verify_td_river_lake_coupling import connected_wet
 
 
 DISABLED = ("terrain_pipeline.surface_rivers.metric_boundary_coupling.solve_coupled",
-            "terrain_pipeline.surface_rivers.metric_channel_solver.solve_channel",
-            "terrain_pipeline.td_basin_hierarchy.build_basin_hierarchy",
-            "terrain_pipeline.surface_rivers.metric_drainage.route_diagnostic",
+            'terrain_pipeline.surface_hydraulics.solve_channel',
+            'terrain_pipeline.basin_topology.build_basin_hierarchy',
+            'terrain_pipeline.drainage.route_diagnostic',
             "terrain_pipeline.surface_rivers.metric_product.build_diagnostic_product",
-            "terrain_pipeline.surface_rivers.metric_runoff.runoff_from_forcing",
-            "terrain_pipeline.surface_rivers.metric_large_runoff.runoff_from_forcing_large")
+            'terrain_pipeline.runoff.runoff_from_forcing',
+            'terrain_pipeline.runoff.runoff_from_forcing_large')
 
 
 def audit(directory, output):
@@ -181,7 +182,7 @@ def audit(directory, output):
               "above_first_saddle_is_engineering_fixed_support": True,
               "spill_events": spill_events,
               "code_sha256": {str(path.relative_to(ROOT)): file_sha256(path) for path in (
-                  ROOT / "terrain_pipeline/surface_rivers/metric_lake_storage.py",
+                  ROOT / 'terrain_pipeline/lake.py',
                   ROOT / "terrain_pipeline/surface_rivers/metric_boundary_coupling.py",
                   ROOT / "terrain_pipeline/surface_rivers/metric_coupled_product.py",
                   Path(__file__).resolve())}}

@@ -15,7 +15,7 @@ from scipy.ndimage import label
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import checked_archive, publish_bytes
+from terrain_pipeline.common_infra import checked_archive, publish_bytes
 
 
 def file_record(path):

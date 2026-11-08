@@ -11,15 +11,19 @@ import zipfile
 import numpy as np
 
 from tests.test_surface_lake_network import joint_case
-from terrain_pipeline.metric_channel_plan import ChannelRecipe, plan_channel
-from terrain_pipeline.surface_lake_network import (
-    LakeRiverSeam, evaluate_surface_lake_network, surface_lake_network_hash,
-)
-from terrain_pipeline.lake_river_connector import (
-    ConnectorCorridor, ConnectorRecipe, evaluate_lake_river_connector,
-    lake_river_connector_hash, load_lake_river_connector, query_lake_river_connector,
-    save_lake_river_connector, validate_lake_river_connector, replay_lake_river_connector,
-)
+from terrain_pipeline.channel_geometry import ChannelRecipe, plan_channel
+from terrain_pipeline.lake import LakeRiverSeam as LakeRiverSeam
+from terrain_pipeline.lake import evaluate_surface_lake_network as evaluate_surface_lake_network
+from terrain_pipeline.lake import surface_lake_network_hash as surface_lake_network_hash
+from terrain_pipeline.lake import ConnectorCorridor as ConnectorCorridor
+from terrain_pipeline.lake import ConnectorRecipe as ConnectorRecipe
+from terrain_pipeline.lake import evaluate_lake_river_connector as evaluate_lake_river_connector
+from terrain_pipeline.lake import lake_river_connector_hash as lake_river_connector_hash
+from terrain_pipeline.lake import load_lake_river_connector as load_lake_river_connector
+from terrain_pipeline.lake import query_lake_river_connector as query_lake_river_connector
+from terrain_pipeline.lake import save_lake_river_connector as save_lake_river_connector
+from terrain_pipeline.lake import validate_lake_river_connector as validate_lake_river_connector
+from terrain_pipeline.lake import replay_lake_river_connector as replay_lake_river_connector
 
 
 def common_source_case(inflows=(2., 2.), width=.04, initial_stage=10., original_local=.01):
@@ -116,8 +120,8 @@ class LakeRiverConnectorTests(unittest.TestCase):
             result["steps"][0]["geometry"]["bed_vertices_m"].flags.writeable = True
         with self.assertRaises(ValueError):
             result["source_joint"]["inputs"]["lake_inputs"]["height_m"].flags.writeable = True
-        with patch("terrain_pipeline.lake_river_connector.evaluate_lake_river_connector", side_effect=AssertionError), patch(
-                "terrain_pipeline.lake_river_connector.validate_surface_lake_network", side_effect=AssertionError):
+        with patch('terrain_pipeline.lake.evaluate_lake_river_connector', side_effect=AssertionError), patch(
+                'terrain_pipeline.lake.validate_surface_lake_network', side_effect=AssertionError):
             self.assertIs(query_lake_river_connector(result, 0), result["steps"][0])
 
     def test_masks_and_unknown_cover_off_center_triangles(self):
@@ -216,12 +220,12 @@ class LakeRiverConnectorTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             destination = Path(directory) / "connector.npz"
             save_lake_river_connector(self.result, destination)
-            with patch("terrain_pipeline.lake_river_connector._geometry", side_effect=AssertionError), patch(
-                    "terrain_pipeline.lake_river_connector.evaluate_lake_river_connector", side_effect=AssertionError), patch(
-                    "terrain_pipeline.lake_river_connector.validate_surface_lake_network", side_effect=AssertionError), patch(
-                    "terrain_pipeline.surface_lake_network.evaluate_surface_lake_network", side_effect=AssertionError), patch(
-                    "terrain_pipeline.surface_lake_network.recover_surface_network", side_effect=AssertionError), patch(
-                    "terrain_pipeline.surface_network_recovery.recover_surface_network", side_effect=AssertionError):
+            with patch('terrain_pipeline.lake.connector_geometry', side_effect=AssertionError), patch(
+                    'terrain_pipeline.lake.evaluate_lake_river_connector', side_effect=AssertionError), patch(
+                    'terrain_pipeline.lake.validate_surface_lake_network', side_effect=AssertionError), patch(
+                    'terrain_pipeline.lake.evaluate_surface_lake_network', side_effect=AssertionError), patch(
+                    'terrain_pipeline.surface_domain.recover_surface_network', side_effect=AssertionError), patch(
+                    'terrain_pipeline.surface_domain.recover_surface_network', side_effect=AssertionError):
                 loaded = load_lake_river_connector(destination)
                 self.assertEqual(query_lake_river_connector(loaded, 1)["status"], "connected")
 
@@ -291,14 +295,14 @@ class LakeRiverConnectorTests(unittest.TestCase):
             validate_lake_river_connector(altered)
 
     def test_exact_positive_cut_polygon_integration(self):
-        from terrain_pipeline.lake_river_connector import _integral
+        from terrain_pipeline.lake import _integral as _integral
         triangle = np.array([[0., 0.], [1., 0.], [0., 1.]])
         volume, area = _integral(triangle, triangle, np.array([-1., 1., 1.]))
         self.assertAlmostEqual(area, .375)
         self.assertAlmostEqual(volume, 5. / 24.)
 
     def test_input_bytes_rejected_before_source_replay(self):
-        with patch("terrain_pipeline.lake_river_connector.validate_surface_lake_network", side_effect=AssertionError):
+        with patch('terrain_pipeline.lake.validate_surface_lake_network', side_effect=AssertionError):
             with self.assertRaises(ValueError):
                 evaluate_lake_river_connector(self.joint, self.corridor, replace(self.recipe, max_retained_bytes=1024))
 

@@ -1,0 +1,11 @@
+{
+  "bad_manifest_source_hashes": [],
+  "bad_image_hashes": [],
+  "same_final_bed_as_accepted_v2": true,
+  "history_count": 10,
+  "event_history_count": 10,
+  "event_record_unique_and_matches": true,
+  "event_metadata_loads": true,
+  "large_event_metadata_loads": true,
+  "inherited_source_identity": "a306c5127b7510e5f6b7e1359cfb36dfd342c3023cb7dc576a4f6cb97436c60c"
+}

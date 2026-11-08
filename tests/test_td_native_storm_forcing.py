@@ -11,12 +11,10 @@ import zipfile
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.td_basin_source import make_td_source, save_td_source
-from terrain_pipeline.td_native_storm_forcing import (
-    StormParameters, fixed_storm, generate_native_storm, load_native_storm,
-    preflight, save_native_storm, validate_native_storm,
-)
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_storage import save_td_source as save_td_source
+from terrain_pipeline.climate_forcing import StormParameters, fixed_storm, generate_native_storm, load_native_storm, native_storm_preflight as preflight, save_native_storm, validate_native_storm
 
 
 class NativeStormTests(unittest.TestCase):
@@ -74,7 +72,7 @@ class NativeStormTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 preflight(shape, steps, samples)
         for options in (dict(dt_s=float("nan")), dict(window=[0, 9, 0, 8]), dict(spatial_subsamples=3)):
-            with patch("terrain_pipeline.td_native_storm_forcing._source", return_value=self.source), patch("terrain_pipeline.td_native_storm_forcing.np.zeros", side_effect=AssertionError("allocated")):
+            with patch('terrain_pipeline.climate_forcing._source', return_value=self.source), patch('numpy.zeros', side_effect=AssertionError("allocated")):
                 with self.assertRaises(ValueError):
                     self.make(**options)
         with self.assertRaises(ValueError):
@@ -119,7 +117,7 @@ class NativeStormTests(unittest.TestCase):
                 load_native_storm(path, expected_sha256=file_sha256(path), expected_identity="0" * 64,
                                   source_record=self.record, expected_plan=plan)
 
-    def test_cold_fresh_process_no_generation_no_numba(self):
+    def test_cold_fresh_process_guards_production_execution(self):
         result = self.make()
         path = self.root / "rain.npz"
         save_native_storm(path, result)
@@ -127,20 +125,23 @@ class NativeStormTests(unittest.TestCase):
                        source_record=self.record, expected_plan=result["metadata"]["plan"])
         payload = self.root / "options.json"
         payload.write_text(json.dumps(dict(path=str(path), options=options)), encoding="utf-8")
-        script = """import json,sys,importlib.abc
-class Block(importlib.abc.MetaPathFinder):
-    def find_spec(self,fullname,path=None,target=None):
-        if fullname.startswith('numba') or 'td_basin_storage' in fullname:
-            raise AssertionError(fullname)
-sys.meta_path.insert(0,Block())
-import terrain_pipeline.td_native_storm_forcing as module
-def reject(*args,**kwargs):
-    raise AssertionError('generation forbidden')
-module.generate_native_storm=reject
-module.interval_mean_mm_h=reject
+        script = """import json,sys
+from contextlib import ExitStack
+from unittest.mock import patch
+import terrain_pipeline.climate_forcing as module
+import terrain_pipeline.basin_storage
 record=json.load(open(sys.argv[1],encoding='utf-8'))
-module.load_native_storm(record['path'],**record['options'])
-assert not any(name.startswith('numba') for name in sys.modules)
+entries=(
+    'terrain_pipeline.climate_forcing.generate_native_storm',
+    'terrain_pipeline.climate_forcing.interval_mean_mm_h',
+    'terrain_pipeline.basin_storage.simulate_hour',
+    'terrain_pipeline.basin_storage.advance_hour_permeable',
+)
+with ExitStack() as stack:
+    guards=[stack.enter_context(patch(name,side_effect=AssertionError('cold read executed: '+name))) for name in entries]
+    module.load_native_storm(record['path'],**record['options'])
+    for guard in guards:
+        guard.assert_not_called()
 """
         subprocess.run([sys.executable, "-c", script, str(payload)], check=True, capture_output=True)
 

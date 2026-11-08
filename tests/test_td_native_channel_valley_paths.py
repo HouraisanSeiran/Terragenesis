@@ -6,8 +6,8 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
 from terrain_pipeline.td_native_channel_geometry import build_channel_geometry, load_channel_geometry
 from terrain_pipeline.td_native_channel_valley_paths import (
     _candidate, _continuous_checks, _distance_to_path, _sample_native, _within_corridor, ValleyPathRecipe,

@@ -13,21 +13,25 @@ sys.path.insert(0, str(ROOT))
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import (
-    file_sha256, load_legacy_source, load_physical_source, load_source_bundle,
-    publish_bytes, save_source,
+from terrain_pipeline.common_infra import (
+    file_sha256,
+    load_legacy_source,
+    load_physical_source,
+    load_source_bundle,
+    publish_bytes,
+    save_source,
 )
 
 
 FROZEN_FILES = (
-    "terrain_pipeline/rainfall_runoff.py", "terrain_pipeline/mountain_runoff_routing.py",
+    'terrain_pipeline/runoff.py', 'terrain_pipeline/runoff.py',
     "tools/verify_mountain_rainfall.py", "tools/verify_mountain_runoff_routing.py",
-    "tests/test_rainfall_runoff.py", "tests/test_mountain_rainfall.py", "tests/test_mountain_runoff_routing.py",
+    'tests/test_runoff.py', "tests/test_mountain_rainfall.py", "tests/test_mountain_runoff_routing.py",
     "diffusion/physical_config.py", "diffusion/geography_physical.py", "diffusion/physical_backend.py",
     "tools/verify_physical_generation.py", "tests/test_physical_generation.py",
     "terrain_pipeline/minecraft_preset.py", "tests/test_minecraft_preset.py",
-    "diffusion/geographic_noise.py", "terrain_pipeline/lake_routing.py",
-    "terrain_pipeline/surface_variable_storage.py",
+    "diffusion/geographic_noise.py", 'terrain_pipeline/lake.py',
+    'terrain_pipeline/surface_domain.py',
 )
 
 

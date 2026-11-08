@@ -5,9 +5,10 @@ import math
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import readonly
-from .metric_channel_state import ChannelConfig, ChannelNetwork
-from .metric_lake_storage import LakeOutlet, LakeStorage
+from terrain_pipeline.common_infra import readonly
+from terrain_pipeline.channel_geometry import ChannelConfig, ChannelNetwork
+from terrain_pipeline.lake import LakeOutlet as LakeOutlet
+from terrain_pipeline.lake import LakeStorage as LakeStorage
 
 
 ALGORITHM = "manning-lake-boundary-explicit-v1"

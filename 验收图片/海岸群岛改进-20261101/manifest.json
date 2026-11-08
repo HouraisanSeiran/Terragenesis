@@ -1,0 +1,567 @@
+{
+  "pass": true,
+  "product_path": "D:\\codexwork\\\u5c71\u5ddd\u5f62\u610fTerragenesis\\.scratch\\coastal-archipelago-20261101\\warped-100",
+  "product_identity": "3caaa72a6181929f366476f35337925114499018db3f83ab9062b93fe10cd9f5",
+  "world_seed": 20261020,
+  "images": {
+    "comparison-64km.png": {
+      "sha256": "d5070c51e4639230c009f7f8ccd60ad86246ebc9a62ffd842e1437b28e73465d",
+      "terrain_basis": "saved TD derivative with explicitly engineered coastal relief",
+      "raw_file_sha256": "1dfa01dbb798fa698a7a68a1fc820e33e90606a67c79c2a6498967440ea35aaa",
+      "terrain_identity": "b11092789e5077fbe7c61926b2b1c0788ef22065edf2597035a13abe506ee607",
+      "baseline_product_identity": "42a50c3b13f8f4169002438e879d54e53fb094cff9bde9dd7659bfebe4336c60",
+      "product_identity": "3caaa72a6181929f366476f35337925114499018db3f83ab9062b93fe10cd9f5",
+      "algorithms": [
+        "coastal-bed-v1",
+        "regional-relief-v3",
+        "regional-connected-ocean"
+      ],
+      "coverage_status": "complete_in_window",
+      "bounds_xmin_xmax_zmax_zmin_km": [
+        125.985,
+        190.065,
+        32.025,
+        -32.055
+      ],
+      "physical_spacing_m": 30,
+      "display_sampling_m": 60,
+      "time": "static initial bed",
+      "rendering": "continuous LAND_COLORS elevation 0..3000m; ocean 0..100m depth; shared physical NW hillshade, vertical exaggeration1; no vegetation/material classification; gray unknown, purple enclosed below datum"
+    },
+    "coast-detail-central.png": {
+      "sha256": "1d6dbaabacf7ec68c96d446052fa4358410db9820924491ef9cab589a3887af6",
+      "terrain_basis": "saved TD derivative with explicitly engineered coastal relief",
+      "raw_file_sha256": "1dfa01dbb798fa698a7a68a1fc820e33e90606a67c79c2a6498967440ea35aaa",
+      "terrain_identity": "b11092789e5077fbe7c61926b2b1c0788ef22065edf2597035a13abe506ee607",
+      "baseline_product_identity": "42a50c3b13f8f4169002438e879d54e53fb094cff9bde9dd7659bfebe4336c60",
+      "product_identity": "3caaa72a6181929f366476f35337925114499018db3f83ab9062b93fe10cd9f5",
+      "algorithms": [
+        "coastal-bed-v1",
+        "regional-relief-v3",
+        "regional-connected-ocean"
+      ],
+      "coverage_status": "complete_in_window",
+      "bounds_xmin_xmax_zmax_zmin_km": [
+        155.985,
+        176.985,
+        6.945,
+        -14.055
+      ],
+      "physical_spacing_m": 30,
+      "display_sampling_m": 30,
+      "time": "static initial bed",
+      "rendering": "continuous LAND_COLORS elevation 0..3000m; ocean 0..100m depth; shared physical NW hillshade, vertical exaggeration1; no vegetation/material classification; gray unknown, purple enclosed below datum"
+    },
+    "coast-detail-north.png": {
+      "sha256": "3bd32a5c8e8981304ab00272f5145b7cf91f85107971b47be4479650816669c6",
+      "terrain_basis": "saved TD derivative with explicitly engineered coastal relief",
+      "raw_file_sha256": "1dfa01dbb798fa698a7a68a1fc820e33e90606a67c79c2a6498967440ea35aaa",
+      "terrain_identity": "b11092789e5077fbe7c61926b2b1c0788ef22065edf2597035a13abe506ee607",
+      "baseline_product_identity": "42a50c3b13f8f4169002438e879d54e53fb094cff9bde9dd7659bfebe4336c60",
+      "product_identity": "3caaa72a6181929f366476f35337925114499018db3f83ab9062b93fe10cd9f5",
+      "algorithms": [
+        "coastal-bed-v1",
+        "regional-relief-v3",
+        "regional-connected-ocean"
+      ],
+      "coverage_status": "complete_in_window",
+      "bounds_xmin_xmax_zmax_zmin_km": [
+        151.485,
+        176.985,
+        -6.555,
+        -32.055
+      ],
+      "physical_spacing_m": 30,
+      "display_sampling_m": 30,
+      "time": "static initial bed",
+      "rendering": "continuous LAND_COLORS elevation 0..3000m; ocean 0..100m depth; shared physical NW hillshade, vertical exaggeration1; no vegetation/material classification; gray unknown, purple enclosed below datum"
+    },
+    "new-overview.png": {
+      "sha256": "e14a24639b8738324a756bb4eb2530271074acafe8e083f2ca317aa061222ce5",
+      "terrain_basis": "saved TD derivative with explicitly engineered coastal relief",
+      "raw_file_sha256": "1dfa01dbb798fa698a7a68a1fc820e33e90606a67c79c2a6498967440ea35aaa",
+      "terrain_identity": "b11092789e5077fbe7c61926b2b1c0788ef22065edf2597035a13abe506ee607",
+      "baseline_product_identity": "42a50c3b13f8f4169002438e879d54e53fb094cff9bde9dd7659bfebe4336c60",
+      "product_identity": "3caaa72a6181929f366476f35337925114499018db3f83ab9062b93fe10cd9f5",
+      "algorithms": [
+        "coastal-bed-v1",
+        "regional-relief-v3",
+        "regional-connected-ocean"
+      ],
+      "coverage_status": "complete_in_window",
+      "bounds_xmin_xmax_zmax_zmin_km": [
+        125.985,
+        190.065,
+        32.025,
+        -32.055
+      ],
+      "physical_spacing_m": 30,
+      "display_sampling_m": 60,
+      "time": "static initial bed",
+      "rendering": "continuous LAND_COLORS elevation 0..3000m; ocean 0..100m depth; shared physical NW hillshade, vertical exaggeration1; no vegetation/material classification; gray unknown, purple enclosed below datum"
+    },
+    "bed-change.png": {
+      "sha256": "850cd9a0e4af4b1a3e1f724ce4278e64077475de8b4f3a4128d368f7fee6db1e",
+      "terrain_basis": "saved TD derivative with explicitly engineered coastal relief",
+      "raw_file_sha256": "1dfa01dbb798fa698a7a68a1fc820e33e90606a67c79c2a6498967440ea35aaa",
+      "terrain_identity": "b11092789e5077fbe7c61926b2b1c0788ef22065edf2597035a13abe506ee607",
+      "baseline_product_identity": "42a50c3b13f8f4169002438e879d54e53fb094cff9bde9dd7659bfebe4336c60",
+      "product_identity": "3caaa72a6181929f366476f35337925114499018db3f83ab9062b93fe10cd9f5",
+      "algorithms": [
+        "coastal-bed-v1",
+        "regional-relief-v3",
+        "regional-connected-ocean"
+      ],
+      "coverage_status": "complete_in_window",
+      "bounds_xmin_xmax_zmax_zmin_km": [
+        125.985,
+        190.065,
+        32.025,
+        -32.055
+      ],
+      "physical_spacing_m": 30,
+      "display_sampling_m": 60,
+      "time": "static initial bed",
+      "rendering": "signed saved-bed difference, symmetric -350..350m scale; no hillshade"
+    }
+  },
+  "metrics": {
+    "v1": {
+      "count": 6,
+      "total_area_km2": 1.4706,
+      "largest_area_km2": 1.3131,
+      "islands": [
+        {
+          "area_km2": 0.0117,
+          "max_inner_cell_distance_m": 60.0,
+          "x_m": 158423.07692307694,
+          "z_m": -21606.923076923078,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            158355.0,
+            -21675.0,
+            158475.0,
+            -21555.0
+          ],
+          "local_gap_m": 93.69316876852982
+        },
+        {
+          "area_km2": 0.0684,
+          "max_inner_cell_distance_m": 108.16653826391968,
+          "x_m": 158730.7894736842,
+          "z_m": -21337.105263157893,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            158595.0,
+            -21555.0,
+            158925.0,
+            -21165.0
+          ],
+          "local_gap_m": 93.69316876852982
+        },
+        {
+          "area_km2": 0.0252,
+          "max_inner_cell_distance_m": 60.0,
+          "x_m": 158753.57142857142,
+          "z_m": -18161.785714285714,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            158595.0,
+            -18225.0,
+            158955.0,
+            -18105.0
+          ],
+          "local_gap_m": 90.0
+        },
+        {
+          "area_km2": 1.3131,
+          "max_inner_cell_distance_m": 276.5863337187866,
+          "x_m": 161503.18026045238,
+          "z_m": -14251.644962302948,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            160425.0,
+            -15465.0,
+            162975.0,
+            -13035.0
+          ],
+          "local_gap_m": 618.9992295835182
+        },
+        {
+          "area_km2": 0.0396,
+          "max_inner_cell_distance_m": 60.0,
+          "x_m": 163300.22727272726,
+          "z_m": -12816.136363636364,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            163095.0,
+            -12945.0,
+            163515.0,
+            -12675.0
+          ],
+          "local_gap_m": null
+        },
+        {
+          "area_km2": 0.0126,
+          "max_inner_cell_distance_m": 60.0,
+          "x_m": 170425.7142857143,
+          "z_m": 1902.8571428571377,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            170355.0,
+            1845.0,
+            170505.0,
+            1965.0
+          ],
+          "local_gap_m": 90.0
+        }
+      ],
+      "excluded_components": {
+        "unknown_or_nonmarine": 6,
+        "outside_view": 0,
+        "small_or_narrow": 29,
+        "narrow_gap": 6
+      },
+      "definition": "8-connected land, 4-neighbour exterior entirely anchored ocean, complete within review window; area>=0.01km2, max EDT inner cell distance>=60m, other-land cell-centre separation minus30m>=90m within4-cell halo. Distances are raster proxies, not surveyed shore widths."
+    },
+    "new": {
+      "count": 25,
+      "total_area_km2": 2.344500000000001,
+      "largest_area_km2": 0.6732,
+      "islands": [
+        {
+          "area_km2": 0.0261,
+          "max_inner_cell_distance_m": 84.8528137423857,
+          "x_m": 158556.2068965517,
+          "z_m": -23640.0,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            158445.0,
+            -23745.0,
+            158655.0,
+            -23565.0
+          ],
+          "local_gap_m": 104.1640786499874
+        },
+        {
+          "area_km2": 0.0315,
+          "max_inner_cell_distance_m": 84.8528137423857,
+          "x_m": 158607.42857142858,
+          "z_m": -22510.285714285714,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            158505.0,
+            -22605.0,
+            158715.0,
+            -22425.0
+          ],
+          "local_gap_m": 93.69316876852982
+        },
+        {
+          "area_km2": 0.0171,
+          "max_inner_cell_distance_m": 60.0,
+          "x_m": 159642.63157894736,
+          "z_m": -20559.473684210527,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            159585.0,
+            -20655.0,
+            159705.0,
+            -20445.0
+          ],
+          "local_gap_m": null
+        },
+        {
+          "area_km2": 0.045,
+          "max_inner_cell_distance_m": 90.0,
+          "x_m": 162514.8,
+          "z_m": -13352.400000000001,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            162375.0,
+            -13545.0,
+            162645.0,
+            -13215.0
+          ],
+          "local_gap_m": 90.0
+        },
+        {
+          "area_km2": 0.0315,
+          "max_inner_cell_distance_m": 60.0,
+          "x_m": 159846.0,
+          "z_m": -12984.0,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            159735.0,
+            -13125.0,
+            159975.0,
+            -12855.0
+          ],
+          "local_gap_m": 90.0
+        },
+        {
+          "area_km2": 0.0135,
+          "max_inner_cell_distance_m": 60.0,
+          "x_m": 160706.0,
+          "z_m": -13004.0,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            160635.0,
+            -13065.0,
+            160785.0,
+            -12945.0
+          ],
+          "local_gap_m": null
+        },
+        {
+          "area_km2": 0.0252,
+          "max_inner_cell_distance_m": 84.8528137423857,
+          "x_m": 160443.2142857143,
+          "z_m": -12589.285714285714,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            160335.0,
+            -12675.0,
+            160545.0,
+            -12525.0
+          ],
+          "local_gap_m": 90.0
+        },
+        {
+          "area_km2": 0.0153,
+          "max_inner_cell_distance_m": 60.0,
+          "x_m": 160457.64705882352,
+          "z_m": -12363.529411764706,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            160395.0,
+            -12435.0,
+            160515.0,
+            -12285.0
+          ],
+          "local_gap_m": 90.0
+        },
+        {
+          "area_km2": 0.027,
+          "max_inner_cell_distance_m": 67.0820393249937,
+          "x_m": 165427.0,
+          "z_m": -11441.0,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            165315.0,
+            -11535.0,
+            165555.0,
+            -11355.0
+          ],
+          "local_gap_m": null
+        },
+        {
+          "area_km2": 0.0288,
+          "max_inner_cell_distance_m": 90.0,
+          "x_m": 163281.5625,
+          "z_m": -11172.1875,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            163185.0,
+            -11295.0,
+            163365.0,
+            -11085.0
+          ],
+          "local_gap_m": 97.27922061357854
+        },
+        {
+          "area_km2": 0.0171,
+          "max_inner_cell_distance_m": 60.0,
+          "x_m": 166141.57894736843,
+          "z_m": -10899.473684210527,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            166095.0,
+            -10995.0,
+            166185.0,
+            -10785.0
+          ],
+          "local_gap_m": null
+        },
+        {
+          "area_km2": 0.5733,
+          "max_inner_cell_distance_m": 240.0,
+          "x_m": 168912.05651491365,
+          "z_m": -4224.866562009418,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            168375.0,
+            -4815.0,
+            169395.0,
+            -3525.0
+          ],
+          "local_gap_m": null
+        },
+        {
+          "area_km2": 0.0342,
+          "max_inner_cell_distance_m": 84.8528137423857,
+          "x_m": 166665.0,
+          "z_m": -4668.157894736843,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            166545.0,
+            -4755.0,
+            166815.0,
+            -4575.0
+          ],
+          "local_gap_m": null
+        },
+        {
+          "area_km2": 0.0549,
+          "max_inner_cell_distance_m": 108.16653826391968,
+          "x_m": 169756.7213114754,
+          "z_m": -3376.2295081967204,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            169635.0,
+            -3525.0,
+            169905.0,
+            -3165.0
+          ],
+          "local_gap_m": 93.69316876852982
+        },
+        {
+          "area_km2": 0.6732,
+          "max_inner_cell_distance_m": 247.38633753705963,
+          "x_m": 169501.40374331552,
+          "z_m": -2645.0534759358343,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            168915.0,
+            -3315.0,
+            170235.0,
+            -1935.0
+          ],
+          "local_gap_m": 93.69316876852982
+        },
+        {
+          "area_km2": 0.0153,
+          "max_inner_cell_distance_m": 60.0,
+          "x_m": 167726.4705882353,
+          "z_m": -257.6470588235243,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            167655.0,
+            -315.0,
+            167805.0,
+            -195.0
+          ],
+          "local_gap_m": 97.27922061357854
+        },
+        {
+          "area_km2": 0.342,
+          "max_inner_cell_distance_m": 234.30749027719963,
+          "x_m": 172427.76315789475,
+          "z_m": 2391.8684210526335,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            172005.0,
+            2025.0,
+            172815.0,
+            2745.0
+          ],
+          "local_gap_m": null
+        },
+        {
+          "area_km2": 0.1062,
+          "max_inner_cell_distance_m": 174.92855684535903,
+          "x_m": 172913.64406779662,
+          "z_m": 3661.271186440681,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            172725.0,
+            3495.0,
+            173115.0,
+            3825.0
+          ],
+          "local_gap_m": null
+        },
+        {
+          "area_km2": 0.0144,
+          "max_inner_cell_distance_m": 60.0,
+          "x_m": 172156.875,
+          "z_m": 6016.875,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            172095.0,
+            5925.0,
+            172215.0,
+            6105.0
+          ],
+          "local_gap_m": 186.33307652783935
+        },
+        {
+          "area_km2": 0.0441,
+          "max_inner_cell_distance_m": 67.0820393249937,
+          "x_m": 175668.3673469388,
+          "z_m": 7082.448979591834,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            175455.0,
+            6975.0,
+            175845.0,
+            7215.0
+          ],
+          "local_gap_m": 104.1640786499874
+        },
+        {
+          "area_km2": 0.0243,
+          "max_inner_cell_distance_m": 67.0820393249937,
+          "x_m": 174213.33333333334,
+          "z_m": 7086.666666666664,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            174105.0,
+            7005.0,
+            174315.0,
+            7155.0
+          ],
+          "local_gap_m": 97.27922061357854
+        },
+        {
+          "area_km2": 0.0207,
+          "max_inner_cell_distance_m": 84.8528137423857,
+          "x_m": 179401.30434782608,
+          "z_m": 23966.086956521736,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            179325.0,
+            23895.0,
+            179505.0,
+            24045.0
+          ],
+          "local_gap_m": 97.27922061357854
+        },
+        {
+          "area_km2": 0.0135,
+          "max_inner_cell_distance_m": 60.0,
+          "x_m": 182544.0,
+          "z_m": 30065.999999999993,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            182505.0,
+            29955.0,
+            182595.0,
+            30165.0
+          ],
+          "local_gap_m": null
+        },
+        {
+          "area_km2": 0.1269,
+          "max_inner_cell_distance_m": 123.69316876852982,
+          "x_m": 179824.89361702127,
+          "z_m": 31012.765957446798,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            179535.0,
+            30795.0,
+            180075.0,
+            31245.0
+          ],
+          "local_gap_m": 319.85711369071805
+        },
+        {
+          "area_km2": 0.0234,
+          "max_inner_cell_distance_m": 84.8528137423857,
+          "x_m": 182524.61538461538,
+          "z_m": 31465.38461538461,
+          "bounds_xmin_zmin_xmax_zmax_m": [
+            182445.0,
+            31365.0,
+            182625.0,
+            31545.0
+          ],
+          "local_gap_m": null
+        }
+      ],
+      "excluded_components": {
+        "unknown_or_nonmarine": 5,
+        "outside_view": 2,
+        "small_or_narrow": 38,
+        "narrow_gap": 15
+      },
+      "definition": "8-connected land, 4-neighbour exterior entirely anchored ocean, complete within review window; area>=0.01km2, max EDT inner cell distance>=60m, other-land cell-centre separation minus30m>=90m within4-cell halo. Distances are raster proxies, not surveyed shore widths."
+    },
+    "difference": {
+      "min_m": -256.9566955566406,
+      "max_m": 208.70791625976562,
+      "land_gain_km2": 25.3557,
+      "land_loss_km2": 34.992
+    }
+  }
+}

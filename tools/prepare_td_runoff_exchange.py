@@ -13,14 +13,16 @@ import psutil
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_overflow import load_overflow_topology
-from terrain_pipeline.td_basin_runoff_exchange import RunoffExchangeParameters, simulate_runoff_exchange, save_runoff_exchange
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_storage import load_overflow_topology as load_overflow_topology
+from terrain_pipeline.basin_storage import RunoffExchangeParameters as RunoffExchangeParameters
+from terrain_pipeline.basin_storage import simulate_runoff_exchange as simulate_runoff_exchange
+from terrain_pipeline.basin_storage import save_runoff_exchange as save_runoff_exchange
 
 PARENT = ROOT / "verification/natural-river-network/radau-overflow-20261005-03/index.json"
 PARENT_SHA = "2bdf20aaee1d3f22d4e22ed94f26c66c761896a613afa1abb6338a658ad36618"
-CODE = ("terrain_pipeline/td_basin_runoff_exchange.py", "terrain_pipeline/rainfall_runoff.py",
-        "terrain_pipeline/td_basin_overflow_radau.py", "tools/prepare_td_runoff_exchange.py")
+CODE = ('terrain_pipeline/basin_storage.py', 'terrain_pipeline/runoff.py',
+        'terrain_pipeline/basin_storage.py', "tools/prepare_td_runoff_exchange.py")
 
 
 def publish(path, value):

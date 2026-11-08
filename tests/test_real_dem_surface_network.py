@@ -2,7 +2,8 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.real_dem_surface_network import build_real_dem_network, validate_real_dem_network
+from terrain_pipeline.drainage import build_real_dem_network as build_real_dem_network
+from terrain_pipeline.drainage import validate_real_dem_network as validate_real_dem_network
 
 
 class RealDemSurfaceNetworkTests(unittest.TestCase):

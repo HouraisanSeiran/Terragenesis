@@ -11,7 +11,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import publish_bytes
+from terrain_pipeline.common_infra import publish_bytes
 
 
 PDF_SHA256 = "48ba1a0678dacf2de6a18961fb4c6a30de40e25cc9a6d1f89eb7fd92e9733057"

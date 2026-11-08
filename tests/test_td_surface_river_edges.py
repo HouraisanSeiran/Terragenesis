@@ -6,11 +6,11 @@ from unittest.mock import patch
 import numpy as np
 
 from terrain_pipeline.td_surface_river_edges import build_td_surface_river_edges, write_report
-from terrain_pipeline.td_basin_source import make_td_source
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_basin_storage import simulate_basin_storage
-from terrain_pipeline.mountain_source_adapter import identity
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_storage import simulate_threshold_storage as simulate_basin_storage
+from terrain_pipeline.common_infra import identity
 
 
 def hierarchy_fixture():
@@ -84,8 +84,8 @@ class SurfaceRiverEdgesTests(unittest.TestCase):
 
     def test_frozen_real_hierarchy_cold_read_no_build_or_solver(self):
         root = Path(__file__).resolve().parents[1]
-        with patch("terrain_pipeline.td_basin_hierarchy.build_basin_hierarchy", side_effect=AssertionError("no build")), patch(
-                "terrain_pipeline.td_basin_storage.simulate_basin_storage", side_effect=AssertionError("no solve")):
+        with patch('terrain_pipeline.basin_topology.build_basin_hierarchy', side_effect=AssertionError("no build")), patch(
+                'terrain_pipeline.basin_storage.simulate_threshold_storage', side_effect=AssertionError("no solve")):
             hierarchy = load_basin_hierarchy(root / "verification/td-basin-generation/A-20261001T184113155960Z/hierarchy.npz",
                 expected_sha256="36a50a14560d3f6bc178350786bcac5bbf53acf97d2754af0e81fef5c79df422",
                 expected_identity="cdb39ff2866281e23ca0cd4f5388ddfa0a158b621fb1fe8dd9d635e887b73998")

@@ -1,0 +1,60 @@
+{
+  "coverage_status": "partial",
+  "comparison_image_sha256": "e975f0eb2a13997d1cb4f680014d90ca9d276b7a804e93b89a4998a7e808cfcb",
+  "cases": [
+    {
+      "label_km": "45",
+      "product": ".scratch\\delta-scale-suite-20261102\\suite-40-basin-v7",
+      "product_manifest_sha256": "d74f7960601bc09438f4b19a469222624ebb2a02e493cddf7875b9d4ee0fbd1e",
+      "product_sha256": "9d066bffc935ec76832447a1f952669178b124866747c06282b77d8c13e564a9",
+      "terrain_image": "45km-地形图.png",
+      "image_sha256": "34a4661b6f0fe0dc25c461ed7c0054cafa93c926426ffb6970c2ea7b6bb0eba8",
+      "render_manifest_sha256": "b5f52c14aa4bd2acd3df0c82a6e853ec9db7a99c84209d38fd07c7de3d84349f",
+      "source_identity": "c751a09a6f02e8c336b6b9b8fb4b11b5dc67386e9a8470b0b1d90858bf1ffb72",
+      "world_seed": 20261020,
+      "span_zx_km": "39.60 × 44.52",
+      "landform_area_km2": 541.32,
+      "spacing_m": 120,
+      "discharge_m3_s": 600,
+      "outlet_count": 5
+    },
+    {
+      "label_km": "114",
+      "product": ".scratch\\delta-scale-suite-20261102\\suite-120-v1",
+      "product_manifest_sha256": "cdf7910680a717ca7ce4d05ce7a190aa2ad7431fd42178ff55d0ebc268cbf184",
+      "product_sha256": "a8011f3c45d3ba0b468dfa428c78b294ab880b5753799a90c49d1b0321d1a398",
+      "terrain_image": "114km-地形图.png",
+      "image_sha256": "96acab53133cdb1a1a28f72e042b39344174051c8948b2dd0a0d5a8c5d3a4565",
+      "render_manifest_sha256": "3657d5b4e0c35b346859dc95fcbf2d3fcce0718dce86c3f776afdfc04f6228f9",
+      "source_identity": "e86b76b114fd7d3092349c0e481c90821bd5ab4ccfdd216225f23861da1c093c",
+      "world_seed": 20261020,
+      "span_zx_km": "47.4 × 114.0",
+      "landform_area_km2": 1231.92,
+      "spacing_m": 600,
+      "discharge_m3_s": 4000,
+      "outlet_count": 7
+    },
+    {
+      "label_km": "255",
+      "product": ".scratch\\delta-scale-suite-20261102\\suite-300-v1",
+      "product_manifest_sha256": "f496d857b0b2520484c9ce73895afb8b829d3e34d1e4a39e1bb108e2466f8403",
+      "product_sha256": "79c685098d917e2cb85cbbe2e4304a2ebf933ad95c304c12b358293f3ef75dab",
+      "terrain_image": "255km-地形图.png",
+      "image_sha256": "3d154905c471b40cc08614f9af725878cb32d3f1c751d83233e124106a7c107b",
+      "render_manifest_sha256": "7b01fd60ebed6767483b3a301c97ab6cac9df92fc7635a9fd02d7beb8d892202",
+      "source_identity": "4fc3ec6ac77d2ea49dafa2242b5012871ee8c61b8d5b23f155d48ca3acff1a01",
+      "world_seed": 20261020,
+      "span_zx_km": "111.6 × 255.0",
+      "landform_area_km2": 3762.72,
+      "spacing_m": 600,
+      "discharge_m3_s": 18000,
+      "outlet_count": 12
+    }
+  ],
+  "note": "Saved TD-derived terrain and initialized network; no geographic event shown. Different scales; schematic line widths.",
+  "main_acceptance": {
+    "geometry": "accepted_game_scenario_initialization",
+    "regional_dynamics": "partial_not_accepted_for_flood_prediction",
+    "review": ".scratch\\delta-scale-suite-20261102\\main-review.md"
+  }
+}

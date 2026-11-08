@@ -1,0 +1,78 @@
+{
+  "control": {
+    "fine_section_index": 589,
+    "world_xz_m": [
+      -5680.340097423301,
+      5400.0
+    ],
+    "distance_upstream_of_port_m": 570.0457249080719,
+    "old_scenario_stage_m": 7.09237940247727,
+    "fine_bed_m": 4.405410289764404,
+    "note": "old imposed scenario stage, not observation; downstream backwater must be recomputed"
+  },
+  "port_world_xz_m": [
+    -5160.0,
+    5520.0
+  ],
+  "port_cell_zx": [
+    255,
+    148
+  ],
+  "sea_cell_zx": [
+    280,
+    152
+  ],
+  "fine_port_bed_m": -0.9980016350746155,
+  "coarse_port_bed_m": -0.4498710632324219,
+  "port_fine_owner_area_fraction": 0.3075,
+  "sea_world_xz_m": [
+    -4750.0,
+    8050.0
+  ],
+  "sea_level_m": 0.0,
+  "q_m3_s": 150.0,
+  "solid_rate_m3_s": 0.08,
+  "width_m": 80.25657447569039,
+  "roughness": 0.035,
+  "main_length_m": 3300.0,
+  "candidate_count": 2,
+  "extension_port_stage_m": 2.3208558783971873,
+  "control_stage_m": 7.09237940247727,
+  "head_feasible": true,
+  "recomputed_control_stage_m": 6.3777360280713875,
+  "recomputed_control_world_xz_m": [
+    -5680.340097423301,
+    5400.0
+  ],
+  "minimum_capacity_m3_s": 150.0,
+  "q150_all_sections_feasible": true,
+  "requested_q_m3_s": 150.0,
+  "accepted_q_m3_s": 150.0,
+  "pending_q_m3_s": 0.0,
+  "requested_control_stage_m": 6.3777360280713875,
+  "mouth_capacity_m3_s": 150.0,
+  "exchange_face_stage_m": 0.0,
+  "exchange_face_distance_m": 50.0,
+  "mouth_capacity_note": "Manning capacity uses actual mouth-centre minus external face stage over half cell; critical depth is a lower bound",
+  "excavation": {
+    "new_bulk_m3": 0.0,
+    "new_solid_m3": 0.0,
+    "new_rock_m3": 0.0,
+    "destination": "none; no new excavation",
+    "historical_fine_bulk_m3": 1707695.294387951,
+    "historical_fine_destination": "unknown; not new supply",
+    "historical_cut_inside_window_bulk_m3": 1669559.904706609,
+    "historical_cut_outside_window_bulk_m3": 38135.395600274205
+  },
+  "section_note": "extension is effective rectangular subgrid prism from coarse cell-centre beds; no measured 100m cross sections, no coarse solid modification; floodplain capacity not resolved",
+  "fine_section_note": "saved 15m fine bed sections are historical geometry, not excavated again; old stage is not a new backwater solution",
+  "fine_geometry_arrays_sha256": "3f7938c0551f80037df303a5bf93f323f486221e360a9242dc7efa899294a01e",
+  "owner_geometry_difference_bulk_m3": -1818612.0184747996,
+  "owner_geometry_difference_abs_bulk_m3": 1950882.905170184,
+  "inventory_mapping_note": "Cut-footprint area uniquely owns its fraction of each existing coarse stock; outer owner retains the remainder. Fine-owner bed is the area-weighted saved fine geometry; outer bed is unchanged coarse bed. The geometric datum difference is explicitly recorded, with unknown historical material and destination; it is not new supply or erosion.",
+  "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+  "source_sha256": "c95f3bc2fda697ad05fdf0e827b20edb2c778e13517b95a6a5ecba49a11b3240",
+  "state_sha256": "8e6aa151d5ec9a9a52be881cb8ad5536b1f3d317968cd287c396a1bcd83df3b7",
+  "fine_sha256": "8a119292fba078b9d70eaa4cac2ed11ab976ea61402a21dc453650ec9ff5194a",
+  "data_sha256": "f5336e0bc580ffcc945a15469aba05efe17060ee9ab0205460a4cd48b7d9868d"
+}

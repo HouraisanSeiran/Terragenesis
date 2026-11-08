@@ -9,7 +9,7 @@ from pathlib import Path
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import publish_bytes
+from terrain_pipeline.common_infra import publish_bytes
 from terrain_pipeline.td_fine_bed_raster import (
     LEDGER_KEYS, MAX_BYTES, MAX_CELLS, _center_bounds, _context, _digest,
     _encoded, _sample, _weights)

@@ -7,12 +7,17 @@ from pathlib import Path
 import numpy as np
 import psutil
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.rainfall_runoff import RunoffParameters
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_basin_source import load_td_source_bundle
-from terrain_pipeline.td_basin_storage_v10_io import PROFILE, STATES, ERRORS, FLUX, load_storage, load_checkpoint
-from terrain_pipeline.td_native_storm_forcing import load_native_storm
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_storage import load_td_source_bundle as load_td_source_bundle
+from terrain_pipeline.basin_storage import STORAGEV10_PROFILE as PROFILE
+from terrain_pipeline.basin_storage import STATES as STATES
+from terrain_pipeline.basin_storage import ERRORS as ERRORS
+from terrain_pipeline.basin_storage import FLUX as FLUX
+from terrain_pipeline.basin_storage import storagev10_load_storage as load_storage
+from terrain_pipeline.basin_storage import storagev10_load_checkpoint as load_checkpoint
+from terrain_pipeline.climate_forcing import load_native_storm
 from terrain_pipeline.td_native_weather_storage_io import _json, _layout
 from terrain_pipeline.td_native_weather_storage_v10_io import PHYSICS, PHYSICS_SEMANTICS, validate_native_v10_accounts
 
@@ -224,7 +229,7 @@ def audit_single_domain_chain(context):
 
 def load_single_domain_index(path, *, expected_sha256):
     """Bind the complete two-direction review to externally accepted native pages."""
-    from terrain_pipeline.single_domain_surface_geometry import load_geometry
+    from terrain_pipeline.fine_subgrid import load_geometry
 
     index_record = dict(path=str(path), expected_sha256=expected_sha256)
     index = _json(index_record)
@@ -323,7 +328,7 @@ def _derived_record(record, root):
 
 def iter_single_domain_frames(context, direction="eastward"):
     """Yield exact saved geometry/frame/page bindings after hourly account checks."""
-    from terrain_pipeline.single_domain_surface_geometry import load_water_frame
+    from terrain_pipeline.fine_subgrid import load_water_frame
 
     if direction not in context["chains"]:
         raise ValueError("unknown surface direction")

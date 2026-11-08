@@ -9,8 +9,9 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_source import PRIMARY_PATH, PRIMARY_SHA256
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_storage import PRIMARY_PATH as PRIMARY_PATH
+from terrain_pipeline.basin_storage import PRIMARY_SHA256 as PRIMARY_SHA256
 from terrain_pipeline.td_hour_pages_acceptance_io import load_hour_pages_index
 from terrain_pipeline.td_surface_reaches import _plain
 from tools.audit_td_storage_continuation import audit_scenario

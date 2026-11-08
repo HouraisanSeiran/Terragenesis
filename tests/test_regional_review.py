@@ -7,7 +7,7 @@ from unittest.mock import patch
 
 from terrain_pipeline.regional_surface_review import CAMERA_PAGE, export_review, validate_snapshot_index, validate_saved_mesh, read_bounded_json, adapt_B_index
 from terrain_pipeline.regional_surface_source import load_source
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 
 
 class RegionalReviewTests(unittest.TestCase):
@@ -73,9 +73,9 @@ class RegionalReviewTests(unittest.TestCase):
             expected_sha256='ac91c12b1f07b91872d9eed91982ad678a9eb72aaaf3fe0a41947cd4918563da')
         metadata = json.loads((root / 'verification/regional-hydraulics/full-20261001T101153406000Z/dry/states.json').read_text())['metadata']
         original = root / 'verification/regional-hydraulics/mesh-dry-20261001T101953058448Z/saved-mesh-index.json'
-        with patch('terrain_pipeline.regional_surface_hydraulics.advance_inertial_surface', side_effect=AssertionError('advance')), \
-                patch('terrain_pipeline.regional_surface_hydraulics.prepare_surface_geometry', side_effect=AssertionError('prepare')), \
-                patch('terrain_pipeline.regional_surface_forcing.generate_forcing', side_effect=AssertionError('forcing')):
+        with patch('terrain_pipeline.surface_hydraulics.advance_inertial_surface', side_effect=AssertionError('advance')), \
+                patch('terrain_pipeline.surface_hydraulics.prepare_surface_geometry', side_effect=AssertionError('prepare')), \
+                patch('terrain_pipeline.climate_forcing.regional_generate_forcing', side_effect=AssertionError('forcing')):
             adapted = adapt_B_index(original,
                 expected_sha256='38753aad771d3f16197f7fb9f69c7b981dbbb8fa70f90295931d728d38436ba8',
                 source_identity=source['identity_sha256'], case_metadata=metadata, case_id='dry',

@@ -1,0 +1,97 @@
+{
+  "images": [
+    {
+      "file": "world_surface_64km.png",
+      "size": [
+        3600,
+        3600
+      ],
+      "sha256_matches": true,
+      "coverage_status": "partial"
+    },
+    {
+      "file": "delta_bed_change.png",
+      "size": [
+        3600,
+        3600
+      ],
+      "sha256_matches": true,
+      "coverage_status": "mechanism_only"
+    },
+    {
+      "file": "annual_precipitation_mm.png",
+      "size": [
+        3600,
+        3600
+      ],
+      "sha256_matches": true,
+      "coverage_status": "complete_in_window"
+    },
+    {
+      "file": "annual_temperature_c.png",
+      "size": [
+        3600,
+        3600
+      ],
+      "sha256_matches": true,
+      "coverage_status": "complete_in_window"
+    },
+    {
+      "file": "elevation_m.png",
+      "size": [
+        3600,
+        3600
+      ],
+      "sha256_matches": true,
+      "coverage_status": "complete_in_window"
+    },
+    {
+      "file": "soil_depth_m.png",
+      "size": [
+        3600,
+        3600
+      ],
+      "sha256_matches": true,
+      "coverage_status": "complete_in_window"
+    },
+    {
+      "file": "seasonal_snow_january_july.png",
+      "size": [
+        3600,
+        2100
+      ],
+      "sha256_matches": true,
+      "coverage_status": "complete_in_window"
+    },
+    {
+      "file": "hydrology_boundary_verification.png",
+      "size": [
+        3600,
+        3600
+      ],
+      "sha256_matches": true,
+      "coverage_status": "partial"
+    },
+    {
+      "file": "continent_planning_context.png",
+      "size": [
+        3600,
+        3600
+      ],
+      "sha256_matches": true,
+      "coverage_status": "mechanism_only"
+    },
+    {
+      "file": "same_world_delta_30m.png",
+      "size": [
+        3600,
+        3600
+      ],
+      "sha256_matches": true,
+      "coverage_status": "mechanism_only"
+    }
+  ],
+  "all_image_hashes_match": true,
+  "count": 10,
+  "numeric_acceptance": "See linked acceptance.md; one historical unreproduced soil error remains open"
+}

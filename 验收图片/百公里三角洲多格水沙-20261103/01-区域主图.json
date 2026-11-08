@@ -1,0 +1,127 @@
+{
+  "source_product": ".scratch\\delta-hundred-km-20261103\\wide-shelf\\product",
+  "source_product_manifest_sha256": "f4be6ae82f771577f65fc680d3665466d612265d952aa1a6148765204ff10b2f",
+  "source_identity": "d041c7d0a73888ac4a53653f02098659cd7ce8a0c5c4c2209f3064265dacfd77",
+  "raw_td_source_identity": "4fc3ec6ac77d2ea49dafa2242b5012871ee8c61b8d5b23f155d48ca3acff1a01",
+  "raw_td_manifest_sha256": "b81acbf22a2a7b595022d37252bbef988f009ab243b0a4e863fd9f329806515f",
+  "raw_td_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-scale-suite-20261102\\source-case300",
+  "source_td_pages_manifest": ".scratch/delta-scale-suite-20261102/source-case300/manifest.json",
+  "source_files_sha256": {
+    "bed_m": "efd166803fb98e0b606c0ac508663ec0bccd6c81f8efc1888e90c3a9b6ed4793",
+    "valid": "4af1727edae26da2d72a35677e67cbe2397d80c6d647f0b673ccd3d99741c890",
+    "ocean": "7868529b51d87e81f946865ea7e8b36e4daccb41c264b1a4259da59abc5f9b25",
+    "unknown_wet": "2b6cac4b2a2e47be7ea6029d42a4730ad67affbfc9e7bb89ae9ac68e046f87d0"
+  },
+  "plate_identity": "b4c8bbdba29111b8c3ba3270e2f0d3a4fed3544655249fa07c506654b8ae6af9",
+  "plate_sha256": "7f1fa9e6aa5fe327000f1e850ad24ddddf20ffb3bf20d996259ba183af2c3ed3",
+  "coastal_algorithm": "coast-following-v2",
+  "coastal_parameters": {
+    "min_width_m": 80000,
+    "max_width_m": 150000,
+    "break_depth_m": 100,
+    "relief_limit_m": 25,
+    "context_scale_m": 12000,
+    "edge_fade_m": 12000
+  },
+  "world_seed": 20261020,
+  "source_spacing_m": 600.0,
+  "td_native_spacing_m": 30,
+  "origin_xz_m": [
+    -245760.0,
+    -122880.0
+  ],
+  "initial": {
+    "prefix": ".scratch\\delta-hundred-km-20261103\\network-v3-mouth-extension-v3-prepared",
+    "sha256": {
+      ".json": "2d65583c14d51ac3803a7e60c590d823db3f6ae6943da94a79e17544a2842abf",
+      ".npz": "c20402602d9ebd2f63440394137e68c9dcfb370657b83dfc59573bca015309aa"
+    }
+  },
+  "final": {
+    "prefix": ".scratch\\delta-hundred-km-20261103\\network-v3-mouth-extension-v3-final",
+    "sha256": {
+      ".json": "658c502f27d8a9e4936d6cec40b1edc710f3f56c5b74786195e1c16b0c31d30c",
+      ".npz": "e27c08001f3e28c84cc52ab1cb55acea02479e56a4790a4d38f769c06c9b321c"
+    }
+  },
+  "physical_time_s": {
+    "initial": 180000.0,
+    "final": 270000.0,
+    "elapsed": 90000.0
+  },
+  "geological_equivalent_years": 1125.0,
+  "geological_time_source": "sum unique geological_formative_input records",
+  "body_bbox_km": [
+    -173.76,
+    -75.96,
+    -28.68,
+    30.72
+  ],
+  "body_definition": "largest connected source-ocean sediment body >1m above derived shelf; includes incised channels and submerged lobes; emerged fragments are separate",
+  "window_km": [
+    -190.0,
+    -60.0,
+    -40.0,
+    40.0
+  ],
+  "detail_window_km": [
+    -98.04962633326042,
+    -72.02620382592869,
+    5.2953568226188,
+    20.14135022613201
+  ],
+  "hydraulic_config": {
+    "upstream_stage_limit_m": 15.0,
+    "roughness": 0.035,
+    "gravity_m_s2": 9.81
+  },
+  "coverage_status": "600 m actual saved grid; original unknown preserved; body not the plotted frame; geology years are equivalent, no naturalness or prediction claim",
+  "algorithms": [
+    "saved actual bed and sediment",
+    "coastal_marine_product verified source",
+    "classify_ocean",
+    "physical_hillshade",
+    "saved irregular route geometry",
+    "solve_sections"
+  ],
+  "river_display": "fixed 1.9 pt blue with 3.4 pt white outline, display enhanced; segment requires route Q>0 and both nodes Q>0 and depth>0",
+  "no_advance": true,
+  "tide_level_m": 0.0,
+  "mouths": [
+    {
+      "mouth": 1,
+      "q_m3_s": 6786.708915108248,
+      "position_km": [
+        -117.3688584535666,
+        25.328588048996036
+      ]
+    },
+    {
+      "mouth": 2,
+      "q_m3_s": 2760.9206977485715,
+      "position_km": [
+        -76.02620382592869,
+        16.14135022613201
+      ]
+    },
+    {
+      "mouth": 3,
+      "q_m3_s": 2812.542023040065,
+      "position_km": [
+        -77.30898281989117,
+        10.493387040504631
+      ]
+    },
+    {
+      "mouth": 4,
+      "q_m3_s": 2639.8283641031157,
+      "position_km": [
+        -171.84537204786645,
+        -13.064313531180899
+      ]
+    }
+  ],
+  "wet_segments": 272,
+  "image": "01-区域主图.png",
+  "image_sha256": "c6916b7c6a0c8b6f17b542bbce7ff5d7b3a26c7d42c2de1ea8f15eef42adf3cd"
+}

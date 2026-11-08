@@ -12,8 +12,9 @@ from scipy.integrate import solve_ivp
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_storage_v4 import exchange, parameters
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_storage import exchange_threshold_pair as exchange
+from terrain_pipeline.basin_storage import parameters_threshold_pair as parameters
 from tools.audit_td_candidate_coupling import read_record
 
 
@@ -91,7 +92,7 @@ def audit(input_path, input_sha256, rain_mm_h=0.0):
             "closed_probe_boundary": True, "forcing_disabled": rain_mm_h == 0, "direct_source_mm_h": rain_mm_h,
             "continuous_reference": "DOP853 threshold multi-face ODE plus constant direct surface source",
             "hydraulic_ready": False, "full_domain_certification": False,
-            "solver_sha256": file_sha256(ROOT / "terrain_pipeline/td_basin_storage_v4.py"), "auditor_sha256": file_sha256(__file__),
+            "solver_sha256": file_sha256(ROOT / 'terrain_pipeline/basin_storage.py'), "auditor_sha256": file_sha256(__file__),
             "limitations": "Actual terrain/initial water; artificial closed 5x5 boundary. Optional constant direct surface source excludes soil/runoff/ET. Controlled forcing split probe; not a full-domain replay or proof of the original failure cause."}
 
 

@@ -6,9 +6,8 @@ import zipfile
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.regional_surface_hydraulics import (
-    SurfaceBudget, validate_budget, validate_surface_geometry, limited_inertial_fluxes, _net_flux)
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.surface_hydraulics import SurfaceBudget, validate_budget, validate_surface_geometry, limited_inertial_fluxes, _net_flux
 
 
 GEOMETRY = {"H0_m": ((256, 256), "float64"), "H2_m": ((256, 256), "float64"),

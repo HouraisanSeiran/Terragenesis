@@ -12,9 +12,12 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.td_basin_breach import generate_saddle_breach, load_saddle_breach, saddle_path_face_identity, save_saddle_breach
-from terrain_pipeline.td_material_field import make_material_field
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.basin_topology import generate_saddle_breach as generate_saddle_breach
+from terrain_pipeline.basin_topology import load_saddle_breach as load_saddle_breach
+from terrain_pipeline.basin_topology import saddle_path_face_identity as saddle_path_face_identity
+from terrain_pipeline.basin_topology import save_saddle_breach as save_saddle_breach
+from terrain_pipeline.geology import make_material_field
 from tools.verify_td_material_field import hostile_checks
 
 
@@ -91,7 +94,7 @@ def verify(output):
         path = output / (name + ".npz")
         save_saddle_breach(bundle, path)
         digest = file_sha256(path)
-        with patch("terrain_pipeline.td_basin_breach.generate_saddle_breach", side_effect=AssertionError("cold generation forbidden")), patch("terrain_pipeline.td_material_field.make_material_field", side_effect=AssertionError("cold material generation forbidden")):
+        with patch('terrain_pipeline.basin_topology.generate_saddle_breach', side_effect=AssertionError("cold generation forbidden")), patch('terrain_pipeline.geology.make_material_field', side_effect=AssertionError("cold material generation forbidden")):
             loaded = load_saddle_breach(path, expected_sha256=digest, expected_identity=bundle["identity_sha256"])
         reports[name] = {"archive": str(path.resolve()), "expected_sha256": digest,
                          "expected_identity": bundle["identity_sha256"], "rejection_reasons": loaded["metadata"]["rejection_reasons"],
@@ -113,7 +116,7 @@ def verify(output):
     report = {"verified_analytic_stage": True, "actual_td_applied": False, "issue_54_resolved": False,
               "external_hydro_and_anchor_evidence_verified": False, "cases": reports, "checks": checks,
               "code_sha256": {name: file_sha256(ROOT / name) for name in (
-                  "terrain_pipeline/td_basin_breach.py", "tests/test_td_basin_breach.py", "tools/verify_td_basin_breach.py")},
+                  'terrain_pipeline/basin_topology.py', "tests/test_td_basin_breach.py", "tools/verify_td_basin_breach.py")},
               "limitations": "Synthetic face evidence only; caller must verify actual 53 archive/face, receiver tail and <=8 real basin candidates before actual TD application. Target-slope heuristic; all cut solids in endpoint independent inventory; no bed fill or export."}
     (output / "report.json").write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
     return report

@@ -11,10 +11,11 @@ import copy
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, save_bundle
-from terrain_pipeline.rainfall_runoff import RunoffParameters
-from terrain_pipeline.td_basin_source import make_td_source
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy, save_basin_hierarchy
+from terrain_pipeline.common_infra import file_sha256, identity, save_bundle
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_topology import save_basin_hierarchy as save_basin_hierarchy
 from terrain_pipeline.td_hour_pages_acceptance_io import load_hour_pages_index, PROFILE, TIME_SEMANTICS, STATES, FLUXES
 
 
@@ -112,7 +113,7 @@ class HourPagesAcceptanceTests(unittest.TestCase):
         self.arguments["execution_resource_record"] = write_json(self.root / "resource.json", value)
 
     def mutate_bundle(self, role, mutate, hour=0, step="2.5", scenario="ordinary"):
-        from terrain_pipeline.mountain_source_adapter import load_bundle
+        from terrain_pipeline.common_infra import load_bundle
         page = self.index["scenarios"][scenario]["pages"][step][hour]
         result = load_bundle(page[role]["path"], expected_sha256=page[role]["expected_sha256"], validator=lambda value: None)
         original = {"arrays": {name: values.copy() for name, values in result["arrays"].items()}, "metadata": copy.deepcopy(dict(result["metadata"]))}

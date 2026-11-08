@@ -8,9 +8,9 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_lake_entry_taper import build_lake_entry_tapers
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.lake import build_lake_entry_tapers as build_lake_entry_tapers
 
 
 def main():
@@ -52,7 +52,7 @@ def main():
                 "inputs": parents, "entries": {"path": "entries.json", "sha256": file_sha256(output / "entries.json"),
                                                "identity_sha256": result["identity_sha256"]},
                 "code_sha256": {name: file_sha256(ROOT / name) for name in
-                                ("terrain_pipeline/td_lake_entry_taper.py", "tools/prepare_td_lake_entry_tapers.py")},
+                                ('terrain_pipeline/lake.py', "tools/prepare_td_lake_entry_tapers.py")},
                 "summary": result["summary"], "solver_advanced": False, "publishable": False}
     publish_bytes(output / "index.json", json.dumps(manifest, allow_nan=False, separators=(",", ":")).encode("utf-8"))
     print(json.dumps(manifest, ensure_ascii=False))

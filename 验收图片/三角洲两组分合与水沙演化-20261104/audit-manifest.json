@@ -1,0 +1,32 @@
+[
+  {
+    "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\main-c-review.md",
+    "file": "主端验收.md",
+    "sha256": "f470b7794ddb9910f789d62a7763a165de9e55f38e1d6d4a72e741db1d8de83b"
+  },
+  {
+    "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\independent-audit\\c-chain-report.md",
+    "file": "audit\\c-chain-report.md",
+    "sha256": "2c6248d349c6e3a92fc829cf0ca46aff6b2f0d2445bf84c3294b37cbf4b65791"
+  },
+  {
+    "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\independent-audit\\c-chain-audit.json",
+    "file": "audit\\c-chain-audit.json",
+    "sha256": "e7bcb8dc3920116ae6a4ff1c2c730b5fe783ea65567409bf338de0a433c3390d"
+  },
+  {
+    "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\independent-audit\\c-publication-summary.json",
+    "file": "audit\\c-publication-summary.json",
+    "sha256": "f43040171a8b36e3c316d506a64f407d57740e076e0fd5edf7bd4daf89d76cf9"
+  },
+  {
+    "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\independent-audit\\c-bed-change-report.md",
+    "file": "audit\\c-bed-change-report.md",
+    "sha256": "0af05dcccc92f113ade4d2fc4455c17897ea733eac2910ca85b0921c50b21e88"
+  },
+  {
+    "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\independent-audit\\c-bed-change-localization.json",
+    "file": "audit\\c-bed-change-localization.json",
+    "sha256": "121c0832bdc5a6466dab11a31be2d9f40b81513941002aaa24081588ffb07673"
+  }
+]

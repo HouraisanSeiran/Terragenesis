@@ -1,0 +1,45 @@
+{
+ "acceptance_status": "diagnostic; not frozen for physical coupling",
+ "algorithms": [
+  "source-controlled finite-stock plain",
+  "source-steered v3 DAG",
+  "v4 channel cross-section stamp"
+ ],
+ "coverage_status": "mechanism_only",
+ "display_crop_local_km": {
+  "u": [
+   -8.0,
+   22.0
+  ],
+  "v": [
+   -16.0,
+   17.0
+  ]
+ },
+ "files": {
+  "base-dem.png": "5758aa844c37eda814169534189ffed0fa52b38e1060b374bb6db233e3603e47",
+  "base-main.png": "366bbb8d807fe7168a37139d07a62e4e7bc44ce164c262f895a61c224bdb1f35",
+  "base-source-and-change.png": "2992ee9e471fb28a41a5f6d63277098f00a3dd6834d906553e229c1d1d8adda9"
+ },
+ "known_failure": "78 original source hill bank cells altered and84 channel-edge cells exceed12m; centreline graph geometry audit passes",
+ "physical_elapsed_seconds": 0.0,
+ "rendering": "Saved bed hillshade and terrain colours; actual wet masks; no inferred vegetation; original coast overlay",
+ "source_cases": [
+  "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-completion-20261107\\source-controlled-v5-30m\\base"
+ ],
+ "spacing_m": 30.0,
+ "terrain_basis": {
+  "bed_m.npy": {
+   "bytes": 67108992,
+   "path": ".scratch/river-upgrade-20261101/terrain-v3/bed_m.npy",
+   "sha256": "eb37ec4d383137e61412d5d2411bf5370c3aa942de6e825df4dbebb48a3e8f45"
+  },
+  "ocean_mask.npy": {
+   "bytes": 16777344,
+   "path": ".scratch/river-upgrade-20261101/terrain-v3/ocean_mask.npy",
+   "sha256": "ee6fd7f367469feab8047564d13b4e8ecf3b2947b20098eb9d6cac97a0613a68"
+  },
+  "origin_center_m": -61440.0,
+  "spacing_m": 30.0
+ }
+}

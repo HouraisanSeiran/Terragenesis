@@ -1,0 +1,14 @@
+# 大类 D 地理环境 模块表 1
+
+职责原文不代表认证；静态调用者只含Python AST本地导入。完整符号/依赖/hash见 catalog.json。
+
+| 模块 | 类别／阶段 | 职责说明 | 说明依据 | 顶层符号／静态导入者数 |
+| --- | --- | --- | --- | --- |
+| [terrain_pipeline/climate_forcing.py](../../../terrain_pipeline/climate_forcing.py) | climate / S2/G3；S2/G4；S2/G5；S2/G14 | v2合成气候修正层：风、地形抬升/雨影及温雨诊断；接口验收不等于生产季节水文默认接线。 | manual-reviewed | NoiseStormParameters, _storm_random, _triangle_integral, interval_seasonal_storm_rain_mm, NoiseClimateParameters / 51 |
+| [terrain_pipeline/environment_contract.py](../../../terrain_pipeline/environment_contract.py) | algorithm-or-io / X1；S1/R9；S2/G2；S2/G3；S2/G4；S2/G5；S2/G6；S2/G7；S2/G9 | Consolidated environment_contract implementations; numeric expressions preserved. | source-docstring | field, prepare_mesh, array, context_arrays, frame / 7 |
+| [terrain_pipeline/environment_processes.py](../../../terrain_pipeline/environment_processes.py) | algorithm-or-io / S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20 | Consolidated environment_processes implementations; numeric expressions preserved. | source-docstring | _unit, State, Ledger, _classify, _entry / 22 |
+| [terrain_pipeline/environment_product.py](../../../terrain_pipeline/environment_product.py) | algorithm-or-io / X2；S1/R5；S1/R7；S1/R8；S1/R9；S2/G2；S2/G3；S2/G4；S2/G5；S2/G6；S2/G7；S2/G8；S2/G9；S2/G10；S2/G11；S2/G12；S2/G13；S2/G14；S2/G15；S2/G16；S2/G17；S2/G18；S2/G19；S2/G20 | Consolidated environment_product implementations; numeric expressions preserved. | source-docstring | _pack, _validate_bundle, _unpack, save_product, product_identity / 23 |
+| [terrain_pipeline/environment_query.py](../../../terrain_pipeline/environment_query.py) | same-coordinate-environment-query / X2；S1/R9；S2/G2；S2/G3；S2/G4；S2/G5；S2/G6 | 绝对30m坐标批量组合现气候/材料/岩性/土壤代理/群系，绑定输入和依赖源码身份；实测DEM雨影缺覆盖时明确pending/背景估计，精确请求内缓存；不推进动态ET、植被或默认世界。 | manual-reviewed | _code_identities, _validate_seed, _broadcast_points, _require_grid_aligned, _resolve_soil_parameters / 1 |
+| [terrain_pipeline/environment_regional_hydraulics.py](../../../terrain_pipeline/environment_regional_hydraulics.py) | algorithm-or-io / S1/R7；S1/R8；S1/R9；S2/G5；S2/G6 | Consolidated environment_regional_hydraulics implementations; numeric expressions preserved. | source-docstring | _digest, _seal, validate_region, validate_packet, select_pair / 14 |
+| [terrain_pipeline/geology.py](../../../terrain_pipeline/geology.py) | algorithm-or-io / S2/G2 | Consolidated geology implementations; numeric expressions preserved. | source-docstring | derive_resistance_fields, _rock_record, derive_subseed, lithology_subseeds, _lattice_unit / 37 |
+| [terrain_pipeline/soil_water.py](../../../terrain_pipeline/soil_water.py) | soil-proxy / S2/G5；S1/R5；S2/G6；S2/G7；S2/G9 | 材料厚度、坡度与年降雨输入的土壤合成条件代理；available_water不等同动态ET闭合含水量。 | manual-reviewed | PetEtParameters, parameters_from_seasonal_config, _canonical, _digest, _array_digest / 16 |

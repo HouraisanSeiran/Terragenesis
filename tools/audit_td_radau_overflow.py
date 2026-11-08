@@ -11,10 +11,11 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_basin_overflow import OverflowParameters, load_overflow_topology
-from terrain_pipeline.td_basin_overflow_radau import load_radau_overflow
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_storage import OverflowParameters as OverflowParameters
+from terrain_pipeline.basin_storage import load_overflow_topology as load_overflow_topology
+from terrain_pipeline.basin_storage import load_radau_overflow as load_radau_overflow
 from tools.audit_td_original_bed_overflow import audit_saved_arrays
 
 
@@ -146,8 +147,8 @@ def audit(directory, expected_index_sha256):
              and topology["metadata"]["source_identity_sha256"] == hierarchy["metadata"]["source_identity_sha256"],
              "topology/hierarchy/source provenance mismatch")
     _require(set(index["code_sha256"]) == {
-        "terrain_pipeline/td_basin_overflow_radau.py", "terrain_pipeline/td_basin_overflow_implicit.py",
-        "terrain_pipeline/td_basin_overflow.py", "terrain_pipeline/mountain_source_adapter.py",
+        'terrain_pipeline/basin_storage.py', 'terrain_pipeline/basin_storage.py',
+        'terrain_pipeline/basin_storage.py', "terrain_pipeline/mountain_source_adapter.py",
         "tools/audit_td_original_bed_overflow.py", "tools/verify_td_stable_overflow.py",
         "tools/prepare_td_radau_overflow.py"}, "runner code pin set mismatch")
     for name, digest in index["code_sha256"].items():

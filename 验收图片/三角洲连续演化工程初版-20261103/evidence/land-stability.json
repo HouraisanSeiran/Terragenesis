@@ -1,0 +1,45 @@
+{
+  "definition": "new land relative to frozen initial state; no simulation",
+  "stages": [
+    {
+      "name": "initial",
+      "new_above_zero_on_initial_connected_ocean_km2": 0.0,
+      "initial_subsea_now_above_level_km2": {
+        "0.0": 0.0,
+        "0.3": 0.0,
+        "-0.3": 20.78
+      },
+      "routes": 1
+    },
+    {
+      "name": "formed",
+      "new_above_zero_on_initial_connected_ocean_km2": 10.25,
+      "initial_subsea_now_above_level_km2": {
+        "0.0": 14.94,
+        "0.3": 2.04,
+        "-0.3": 31.63
+      },
+      "routes": 2
+    },
+    {
+      "name": "event1",
+      "new_above_zero_on_initial_connected_ocean_km2": 10.25,
+      "initial_subsea_now_above_level_km2": {
+        "0.0": 15.120000000000001,
+        "0.3": 2.04,
+        "-0.3": 31.73
+      },
+      "routes": 2
+    },
+    {
+      "name": "event2",
+      "new_above_zero_on_initial_connected_ocean_km2": 10.23,
+      "initial_subsea_now_above_level_km2": {
+        "0.0": 15.27,
+        "0.3": 3.4,
+        "-0.3": 31.93
+      },
+      "routes": 2
+    }
+  ]
+}

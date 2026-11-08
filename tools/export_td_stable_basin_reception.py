@@ -8,11 +8,12 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_basin_overflow import load_overflow_topology
-from terrain_pipeline.td_basin_overflow_radau import load_radau_overflow
-from terrain_pipeline.td_basin_reception import build_basin_reception, validate_basin_reception
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_storage import load_overflow_topology as load_overflow_topology
+from terrain_pipeline.basin_storage import load_radau_overflow as load_radau_overflow
+from terrain_pipeline.basin_topology import build_basin_reception as build_basin_reception
+from terrain_pipeline.basin_topology import validate_basin_reception as validate_basin_reception
 
 
 MAX_OUTPUT_BYTES = 128 * 1024**2

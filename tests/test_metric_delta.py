@@ -2,7 +2,7 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.surface_rivers.metric_contracts import TerrainGrid
+from terrain_pipeline.common_infra import TerrainGrid
 from terrain_pipeline.surface_rivers.metric_delta import DeltaConfig, build_delta_candidate
 
 

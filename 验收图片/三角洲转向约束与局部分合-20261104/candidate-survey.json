@@ -1,0 +1,290 @@
+{
+  "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+  "mode": "read-only candidate survey; no construction or evolution",
+  "baseline": "network-initial-b/initial; geological body from geology-probe-a",
+  "candidate_ranges": [
+    {
+      "route": 0,
+      "fork_index": 25,
+      "rejoin_index": 37,
+      "fork_zx": [
+        179,
+        138
+      ],
+      "rejoin_zx": [
+        191,
+        143
+      ],
+      "endpoint_distance_m": 1286.3087957341381,
+      "fork_xz_m": [
+        -6163.135574223169,
+        10967.785258936276
+      ],
+      "rejoin_xz_m": [
+        -5620.099536161451,
+        12133.847941363443
+      ],
+      "side_survey": [
+        {
+          "cross_sign": -1,
+          "available_plain_km2": 0.28,
+          "bed_range_m": [
+            1.8803205380007384,
+            1.9080293143555584,
+            1.9434727111223236
+          ],
+          "original_seabed_range_m": [
+            -3.0364608006220486,
+            -2.3491798630160545,
+            -1.4180541129120723
+          ]
+        },
+        {
+          "cross_sign": 1,
+          "available_plain_km2": 0.64,
+          "bed_range_m": [
+            1.879546510637443,
+            1.9107572301243518,
+            1.9425450481563296
+          ],
+          "original_seabed_range_m": [
+            -2.936476230621338,
+            -2.3326563937166807,
+            -1.6911819927787857
+          ]
+        }
+      ],
+      "scope": "straight endpoint coordinate window for survey only; no path prescribed"
+    },
+    {
+      "route": 1,
+      "fork_index": 35,
+      "rejoin_index": 50,
+      "fork_zx": [
+        181,
+        149
+      ],
+      "rejoin_zx": [
+        184,
+        163
+      ],
+      "endpoint_distance_m": 1375.1489647025958,
+      "fork_xz_m": [
+        -5027.802420107293,
+        11136.273012110296
+      ],
+      "rejoin_xz_m": [
+        -3681.728978240546,
+        11417.557501948662
+      ],
+      "side_survey": [
+        {
+          "cross_sign": -1,
+          "available_plain_km2": 0.69,
+          "bed_range_m": [
+            1.841176307115223,
+            1.8768253272957143,
+            1.912086165642032
+          ],
+          "original_seabed_range_m": [
+            -4.108166797113153,
+            -2.911938534313684,
+            -1.8022948144080893
+          ]
+        },
+        {
+          "cross_sign": 1,
+          "available_plain_km2": 0.51,
+          "bed_range_m": [
+            1.8302032330612228,
+            1.8538375089179446,
+            1.8921607044281075
+          ],
+          "original_seabed_range_m": [
+            -5.414153621627612,
+            -4.025557238086641,
+            -2.8863645034678242
+          ]
+        }
+      ],
+      "scope": "straight endpoint coordinate window for survey only; no path prescribed"
+    },
+    {
+      "route": 2,
+      "fork_index": 36,
+      "rejoin_index": 50,
+      "fork_zx": [
+        184,
+        148
+      ],
+      "rejoin_zx": [
+        195,
+        158
+      ],
+      "endpoint_distance_m": 1451.8965817541136,
+      "fork_xz_m": [
+        -5154.515273440525,
+        11475.54732430042
+      ],
+      "rejoin_xz_m": [
+        -4183.5492961035425,
+        12555.00494503563
+      ],
+      "side_survey": [
+        {
+          "cross_sign": -1,
+          "available_plain_km2": 0.59,
+          "bed_range_m": [
+            1.8197386564944154,
+            1.8517028167330665,
+            1.8934465237433464
+          ],
+          "original_seabed_range_m": [
+            -5.5785354379305545,
+            -4.106902624304059,
+            -2.6021559773897014
+          ]
+        },
+        {
+          "cross_sign": 1,
+          "available_plain_km2": 0.65,
+          "bed_range_m": [
+            1.8187019929796264,
+            1.8570930573696902,
+            1.8956700815616667
+          ],
+          "original_seabed_range_m": [
+            -5.2624933850719025,
+            -3.777984399731441,
+            -2.6848018698658347
+          ]
+        }
+      ],
+      "scope": "straight endpoint coordinate window for survey only; no path prescribed"
+    },
+    {
+      "route": 3,
+      "fork_index": 42,
+      "rejoin_index": 53,
+      "fork_zx": [
+        195,
+        143
+      ],
+      "rejoin_zx": [
+        205,
+        142
+      ],
+      "endpoint_distance_m": 1057.2137046877704,
+      "fork_xz_m": [
+        -5616.777810902208,
+        12523.492685923191
+      ],
+      "rejoin_xz_m": [
+        -5781.252164990366,
+        13567.83410721554
+      ],
+      "side_survey": [
+        {
+          "cross_sign": -1,
+          "available_plain_km2": 0.23,
+          "bed_range_m": [
+            1.8101908626020276,
+            1.8298056661621267,
+            1.8469650842052587
+          ],
+          "original_seabed_range_m": [
+            -5.166243826601388,
+            -4.528089647847853,
+            -4.0331934344734215
+          ]
+        },
+        {
+          "cross_sign": 1,
+          "available_plain_km2": 0.53,
+          "bed_range_m": [
+            1.8199927747044136,
+            1.8456687847852198,
+            1.8751847341620564
+          ],
+          "original_seabed_range_m": [
+            -4.2024131769652335,
+            -3.6033662602673537,
+            -2.911918992048749
+          ]
+        }
+      ],
+      "scope": "straight endpoint coordinate window for survey only; no path prescribed"
+    },
+    {
+      "route": 0,
+      "fork_index": 17,
+      "rejoin_index": 23,
+      "fork_zx": [
+        172,
+        136
+      ],
+      "rejoin_zx": [
+        177,
+        138
+      ],
+      "endpoint_distance_m": 550.8110709141645,
+      "fork_xz_m": [
+        -6360.04552446165,
+        10248.298050127958
+      ],
+      "rejoin_xz_m": [
+        -6183.48481389645,
+        10770.044301984472
+      ],
+      "side_survey": [
+        {
+          "cross_sign": -1,
+          "available_plain_km2": 0.27,
+          "bed_range_m": [
+            1.9476022905651842,
+            1.962497029671324,
+            1.976285389742742
+          ],
+          "original_seabed_range_m": [
+            -1.7606515884399414,
+            -1.0959599018096924,
+            -0.3322712233932916
+          ]
+        },
+        {
+          "cross_sign": 1,
+          "available_plain_km2": 0.28,
+          "bed_range_m": [
+            1.9461007813299709,
+            1.96250296292338,
+            1.9827529538573394
+          ],
+          "original_seabed_range_m": [
+            -1.4117021560668945,
+            -0.20190598374398305,
+            -0.0079398289322853
+          ]
+        }
+      ],
+      "scope": "straight endpoint coordinate window for survey only; no path prescribed"
+    }
+  ],
+  "hashes": {
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-morphology-acceptance-20261104\\network-initial-b\\initial.json": "66f630241088a82c9bf52497592e94fb6e39391f86144c677f345f5669920b8f",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-morphology-acceptance-20261104\\network-initial-b\\initial.npz": "16f5577377b1b871b9c43c9aed7b7ae2765b7c7dcab5bfed335ae7cd3cef6127",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-morphology-acceptance-20261104\\source-survey-a\\source-window.npz": "13c362836d4a6bf071f66d9d27a93c1ed48db8c3e1c4dfbad27e88251bdc23d3",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-morphology-acceptance-20261104\\geology-probe-a\\shape-preview.npz": "687b1e49630206b0d038e18aba74fb3c92f7a726a249db044d4a4f2720bd1e4d",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\survey_candidates.py": "4107435690df5e6ecc58b715a2bb27bfc147d534688f3b4d4dd39d778ab6f905",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_geological.py": "7e2ec94d4560dda5be3bb941d280ab3cdc95e4e91a09a7265b1c9a87d231a69d",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_marine_sediment.py": "0721b9ea30f61354b2d823d6067c4e8c1eeac5557b2eb8864090cda15af2848a",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_network_plan.py": "40e78fab12e72a1e272ae1122b4d88534074e86c62dd813ce191b36463aa9a10",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-morphology-acceptance-20261104\\prepare_delta.py": "0600a49f6078f196531f17614f0be9b4581b678e1f0cf982cc071a036611b1bb"
+  },
+  "fan_isolation_mask_check": {
+    "stored_geological_ocean_mask_sha256": "854c0a2df6c7b59f0c867597513bcedefc7c76e7765a8283782905e68390e52e",
+    "full_known_source_ocean_sha256": "854c0a2df6c7b59f0c867597513bcedefc7c76e7765a8283782905e68390e52e",
+    "equal": true,
+    "known_ocean_cells": 50743
+  },
+  "review_sha256": "99945df60f1933494e6463c65457b40328d4014475893c93bb9b0794aa108a37"
+}

@@ -8,9 +8,9 @@ from pathlib import Path
 
 import numpy as np
 
-from terrain_pipeline.td_basin_hierarchy import validate_basin_hierarchy
-from terrain_pipeline.td_basin_storage_dispatch_io import validate_saved_storage as validate_basin_storage
-from terrain_pipeline.mountain_source_adapter import publish_bytes
+from terrain_pipeline.basin_topology import validate_basin_hierarchy as validate_basin_hierarchy
+from terrain_pipeline.basin_storage import dispatch_validate_saved_storage as validate_basin_storage
+from terrain_pipeline.common_infra import publish_bytes
 
 SCHEMA = "td-surface-river-edges-v1"
 

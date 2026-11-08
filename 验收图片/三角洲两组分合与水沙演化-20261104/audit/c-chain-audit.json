@@ -1,0 +1,811 @@
+{
+  "scope": "100m / 14km frozen-source local explicit experiment; constructed initial then evolution; not default world",
+  "raw_source": {
+    "path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\window100-v2\\source.npz",
+    "expected_sha256": "c95f3bc2fda697ad05fdf0e827b20edb2c778e13517b95a6a5ecba49a11b3240",
+    "actual_sha256": "c95f3bc2fda697ad05fdf0e827b20edb2c778e13517b95a6a5ecba49a11b3240",
+    "identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+    "source_sampling": "Frozen window copied byte-for-byte; historic nearest native 30 m node at 100 m grid centres, fixed owner; no resampling performed here.",
+    "derived_seaward_coast_window_exact": true,
+    "source_valid_window_exact": true,
+    "source_ocean_window_exact": true,
+    "window_origin_exact": true,
+    "unknown_excluded_from_simulation": true,
+    "derived_crop_seed_rule_exact": true
+  },
+  "checkpoints": [
+    {
+      "prefix": ".scratch\\delta-reference-shapes-20261104\\reference-case-v7\\prepared-c\\initial",
+      "checks": {
+        "immutable_base_valid_seed_porosity": true,
+        "source_coordinate_identity": true,
+        "unique_geometry_node_rows": true,
+        "unique_section_rows": true,
+        "unique_footprint_owners": true,
+        "geometry_covers_topology": true,
+        "unique_physical_edge_rows": true,
+        "unique_mouth_rows": true,
+        "fractional_area_at_most_one": true,
+        "fine_within_grid_stock": true,
+        "finite_nonnegative_stock": true,
+        "section_bed_matches_fine_stock": true,
+        "effective_width_matches_area_and_control": true,
+        "node_q_conservation": true,
+        "mouth_total_q_conservation": true,
+        "positive_flow_down_head": true,
+        "packet_water_matches_physical_input": true,
+        "checkpoint_manifest_hashes": true,
+        "fresh_solve_matches_saved": true,
+        "input_files_stable_during_probe": true,
+        "solid_inventory_pending_external_closure": true
+      },
+      "checkpoint_sha256": {
+        "npz": "72d3655521160cd6970234c009ab46df0e2ba985b743ac278633e5b4e53be21e",
+        "json": "cf73933cef44b0a287b33ffee780468f04bf692aa9411b298b474039d9511dc8"
+      },
+      "checkpoint_manifest_status": "verified",
+      "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+      "origin_xz_m": [
+        -950.0,
+        -2950.0
+      ],
+      "spacing_m": 100.0,
+      "physical_seconds": 0.0,
+      "equivalent_years": 0.0,
+      "unique_nodes": 101,
+      "unique_edges": 102,
+      "route_covers": 3,
+      "mouths": 1,
+      "split_nodes": [
+        [
+          81,
+          16
+        ],
+        [
+          66,
+          13
+        ]
+      ],
+      "rejoin_nodes": [
+        [
+          78,
+          15
+        ],
+        [
+          93,
+          19
+        ]
+      ],
+      "fraction_max": 1.0,
+      "footprint_area_m2": 2490312.5,
+      "effective_width_min_max_m": [
+        24.294761015486998,
+        270.703125
+      ],
+      "max_section_bed_error_m": 8.881784197001252e-16,
+      "max_width_error_m": 0.0,
+      "max_node_q_residual_m3_s": 2.1856294551980682e-11,
+      "max_downstream_head_rise_m": -0.0003643127140122715,
+      "accepted_q_m3_s": 1500.0,
+      "route_q_is_not_path_flux": [
+        1500.0000000009052,
+        0.0,
+        0.0
+      ],
+      "routes": [
+        {
+          "min_edge_q_m3_s": 1340.4097016098438,
+          "max_edge_q_m3_s": 1500.000000000909,
+          "minimum_depth_m": 1.162736124644082,
+          "wet_positive_path": true
+        },
+        {
+          "min_edge_q_m3_s": 93.94019605658913,
+          "max_edge_q_m3_s": 1500.000000000909,
+          "minimum_depth_m": 1.162736124644082,
+          "wet_positive_path": true
+        },
+        {
+          "min_edge_q_m3_s": 159.59029839094333,
+          "max_edge_q_m3_s": 1500.000000000909,
+          "minimum_depth_m": 1.162736124644082,
+          "wet_positive_path": true
+        }
+      ],
+      "solid_total_including_export_unresolved_m3": 1175760000.0,
+      "pending_solid_m3": 0.0,
+      "external_packet_solid_m3": 0.0,
+      "delivered_packet_solid_m3": 0.0,
+      "actual_water_input_m3": 0.0,
+      "solid_components_m3": {
+        "bed_solid_m3": 1170096496.3315668,
+        "mobile_solid_m3": 184640.625,
+        "stranded_solid_m3": 0.0,
+        "exported": 0.0,
+        "construction_unresolved": 5478863.043433154
+      },
+      "source_land_cells": 4990,
+      "newly_exposed_mean_datum_cells": 0,
+      "original_source_land_cells": 4990,
+      "newly_exposed_source_ocean_cells": 0,
+      "fresh_solve": {
+        "status": "passed",
+        "max_absolute_differences": {
+          "nodes": 0.0,
+          "edge_q_m3_s": 0.0,
+          "mouth_q_m3_s": 0.0
+        }
+      },
+      "fork_rejoin_interior": [
+        {
+          "fork": [
+            66,
+            13
+          ],
+          "rejoin": [
+            78,
+            15
+          ],
+          "nonchannel_interior_cells": 17,
+          "first_arm_edge_q_min_max_m3_s": [
+            93.94019605658913,
+            93.94019605693966
+          ],
+          "second_arm_edge_q_min_max_m3_s": [
+            1406.0598039437307,
+            1406.0598039438214
+          ],
+          "interior_ground_bed_min_max_m": [
+            0.10254315286874771,
+            1.1722321510314941
+          ],
+          "interior_exposed_mean_datum_cells": 17,
+          "interior_source_land_cells": 17,
+          "interior_original_source_land_cells": 17,
+          "interior_derived_source_land_cells": 17,
+          "interior_constructed_initial_land_cells": 17,
+          "interior_evolved_land_cells": 17,
+          "interior_newly_exposed_cells": 0
+        },
+        {
+          "fork": [
+            81,
+            16
+          ],
+          "rejoin": [
+            93,
+            19
+          ],
+          "nonchannel_interior_cells": 15,
+          "first_arm_edge_q_min_max_m3_s": [
+            159.59029839094333,
+            159.59029839100947
+          ],
+          "second_arm_edge_q_min_max_m3_s": [
+            1340.4097016098438,
+            1340.4097016098883
+          ],
+          "interior_ground_bed_min_max_m": [
+            -1.0895061492919922,
+            -0.12848932296037674
+          ],
+          "interior_exposed_mean_datum_cells": 0,
+          "interior_source_land_cells": 0,
+          "interior_original_source_land_cells": 0,
+          "interior_derived_source_land_cells": 0,
+          "interior_constructed_initial_land_cells": 0,
+          "interior_evolved_land_cells": 0,
+          "interior_newly_exposed_cells": 0
+        }
+      ],
+      "external_solid_closure_residual_m3": 0.0
+    },
+    {
+      "prefix": ".scratch\\delta-reference-shapes-20261104\\reference-case-v7\\event-10s-c\\final",
+      "checks": {
+        "immutable_base_valid_seed_porosity": true,
+        "source_coordinate_identity": true,
+        "unique_geometry_node_rows": true,
+        "unique_section_rows": true,
+        "unique_footprint_owners": true,
+        "geometry_covers_topology": true,
+        "unique_physical_edge_rows": true,
+        "unique_mouth_rows": true,
+        "fractional_area_at_most_one": true,
+        "fine_within_grid_stock": true,
+        "finite_nonnegative_stock": true,
+        "section_bed_matches_fine_stock": true,
+        "effective_width_matches_area_and_control": true,
+        "node_q_conservation": true,
+        "mouth_total_q_conservation": true,
+        "positive_flow_down_head": true,
+        "packet_water_matches_physical_input": true,
+        "checkpoint_manifest_hashes": true,
+        "fresh_solve_matches_saved": true,
+        "input_files_stable_during_probe": true,
+        "solid_inventory_pending_external_closure": true
+      },
+      "checkpoint_sha256": {
+        "npz": "c72164379df126ab42ea0499480dd9754d53f9f64a67291f635c476925d1d61d",
+        "json": "2f8cd1ce8a7f862318c675a2b34b7d53b3c0e523edada1abdc168e64df861c4d"
+      },
+      "checkpoint_manifest_status": "verified",
+      "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+      "origin_xz_m": [
+        -950.0,
+        -2950.0
+      ],
+      "spacing_m": 100.0,
+      "physical_seconds": 10.0,
+      "equivalent_years": 0.0,
+      "unique_nodes": 101,
+      "unique_edges": 102,
+      "route_covers": 3,
+      "mouths": 1,
+      "split_nodes": [
+        [
+          81,
+          16
+        ],
+        [
+          66,
+          13
+        ]
+      ],
+      "rejoin_nodes": [
+        [
+          78,
+          15
+        ],
+        [
+          93,
+          19
+        ]
+      ],
+      "fraction_max": 1.0,
+      "footprint_area_m2": 2490312.5,
+      "effective_width_min_max_m": [
+        24.294761015486998,
+        305.7283906747563
+      ],
+      "max_section_bed_error_m": 1.3322676295501878e-15,
+      "max_width_error_m": 0.0,
+      "max_node_q_residual_m3_s": 1.0061285138363019e-10,
+      "max_downstream_head_rise_m": -0.00016704646481469076,
+      "accepted_q_m3_s": 1500.0,
+      "route_q_is_not_path_flux": [
+        1500.0000000049943,
+        0.0,
+        0.0
+      ],
+      "routes": [
+        {
+          "min_edge_q_m3_s": 1381.899106761047,
+          "max_edge_q_m3_s": 1500.0000000049936,
+          "minimum_depth_m": 1.163440886738417,
+          "wet_positive_path": true
+        },
+        {
+          "min_edge_q_m3_s": 64.22005070075872,
+          "max_edge_q_m3_s": 1500.0000000049936,
+          "minimum_depth_m": 1.163440886738417,
+          "wet_positive_path": true
+        },
+        {
+          "min_edge_q_m3_s": 118.10089324324876,
+          "max_edge_q_m3_s": 1500.0000000049936,
+          "minimum_depth_m": 1.163440886738417,
+          "wet_positive_path": true
+        }
+      ],
+      "solid_total_including_export_unresolved_m3": 1175760030.0,
+      "pending_solid_m3": 0.0,
+      "external_packet_solid_m3": 30.0,
+      "delivered_packet_solid_m3": 30.0,
+      "actual_water_input_m3": 15000.0,
+      "solid_components_m3": {
+        "bed_solid_m3": 1170087748.698771,
+        "mobile_solid_m3": 193411.92649600952,
+        "stranded_solid_m3": 6.331299781875244,
+        "exported": 0.0,
+        "construction_unresolved": 5478863.043433154
+      },
+      "source_land_cells": 4990,
+      "newly_exposed_mean_datum_cells": 0,
+      "original_source_land_cells": 4990,
+      "newly_exposed_source_ocean_cells": 0,
+      "fresh_solve": {
+        "status": "passed",
+        "max_absolute_differences": {
+          "nodes": 0.0,
+          "edge_q_m3_s": 0.0,
+          "mouth_q_m3_s": 0.0
+        }
+      },
+      "fork_rejoin_interior": [
+        {
+          "fork": [
+            66,
+            13
+          ],
+          "rejoin": [
+            78,
+            15
+          ],
+          "nonchannel_interior_cells": 17,
+          "first_arm_edge_q_min_max_m3_s": [
+            64.22005070075872,
+            64.22005070238072
+          ],
+          "second_arm_edge_q_min_max_m3_s": [
+            1435.7799493012485,
+            1435.7799493017656
+          ],
+          "interior_ground_bed_min_max_m": [
+            0.10254315286874771,
+            1.1722321510314941
+          ],
+          "interior_exposed_mean_datum_cells": 17,
+          "interior_source_land_cells": 17,
+          "interior_original_source_land_cells": 17,
+          "interior_derived_source_land_cells": 17,
+          "interior_constructed_initial_land_cells": 17,
+          "interior_evolved_land_cells": 17,
+          "interior_newly_exposed_cells": 0
+        },
+        {
+          "fork": [
+            81,
+            16
+          ],
+          "rejoin": [
+            93,
+            19
+          ],
+          "nonchannel_interior_cells": 15,
+          "first_arm_edge_q_min_max_m3_s": [
+            118.10089324324876,
+            118.10089324364337
+          ],
+          "second_arm_edge_q_min_max_m3_s": [
+            1381.899106761047,
+            1381.8991067613003
+          ],
+          "interior_ground_bed_min_max_m": [
+            -1.0895061492919922,
+            -0.12848932296037674
+          ],
+          "interior_exposed_mean_datum_cells": 0,
+          "interior_source_land_cells": 0,
+          "interior_original_source_land_cells": 0,
+          "interior_derived_source_land_cells": 0,
+          "interior_constructed_initial_land_cells": 0,
+          "interior_evolved_land_cells": 0,
+          "interior_newly_exposed_cells": 0
+        }
+      ],
+      "external_solid_closure_residual_m3": 0.0
+    },
+    {
+      "prefix": ".scratch\\delta-reference-shapes-20261104\\reference-case-v7\\year-half-c\\final",
+      "checks": {
+        "immutable_base_valid_seed_porosity": true,
+        "source_coordinate_identity": true,
+        "unique_geometry_node_rows": true,
+        "unique_section_rows": true,
+        "unique_footprint_owners": true,
+        "geometry_covers_topology": true,
+        "unique_physical_edge_rows": true,
+        "unique_mouth_rows": true,
+        "fractional_area_at_most_one": true,
+        "fine_within_grid_stock": true,
+        "finite_nonnegative_stock": true,
+        "section_bed_matches_fine_stock": true,
+        "effective_width_matches_area_and_control": true,
+        "node_q_conservation": true,
+        "mouth_total_q_conservation": true,
+        "positive_flow_down_head": true,
+        "packet_water_matches_physical_input": true,
+        "checkpoint_manifest_hashes": true,
+        "fresh_solve_matches_saved": true,
+        "input_files_stable_during_probe": true,
+        "solid_inventory_pending_external_closure": true
+      },
+      "checkpoint_sha256": {
+        "npz": "94bb2a4d36e7906da4fe95883caa4f913af66fbda78a427502cec80aa1d57118",
+        "json": "18a71116716f063cfc81b69a7bd726edc3c4e86c1ef83c897aa1d5bd720d86ef"
+      },
+      "checkpoint_manifest_status": "verified",
+      "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+      "origin_xz_m": [
+        -950.0,
+        -2950.0
+      ],
+      "spacing_m": 100.0,
+      "physical_seconds": 10.0,
+      "equivalent_years": 0.5,
+      "unique_nodes": 101,
+      "unique_edges": 102,
+      "route_covers": 3,
+      "mouths": 1,
+      "split_nodes": [
+        [
+          81,
+          16
+        ],
+        [
+          66,
+          13
+        ]
+      ],
+      "rejoin_nodes": [
+        [
+          78,
+          15
+        ],
+        [
+          93,
+          19
+        ]
+      ],
+      "fraction_max": 1.0,
+      "footprint_area_m2": 2490312.5,
+      "effective_width_min_max_m": [
+        24.294761015486998,
+        270.7036216853598
+      ],
+      "max_section_bed_error_m": 1.3322676295501878e-15,
+      "max_width_error_m": 0.0,
+      "max_node_q_residual_m3_s": 6.109246442065341e-11,
+      "max_downstream_head_rise_m": -0.000170312061945177,
+      "accepted_q_m3_s": 1500.0,
+      "route_q_is_not_path_flux": [
+        1500.000000003238,
+        0.0,
+        0.0
+      ],
+      "routes": [
+        {
+          "min_edge_q_m3_s": 1380.2754524134739,
+          "max_edge_q_m3_s": 1500.0000000032378,
+          "minimum_depth_m": 1.163035447312931,
+          "wet_positive_path": true
+        },
+        {
+          "min_edge_q_m3_s": 65.95621575147234,
+          "max_edge_q_m3_s": 1500.0000000032378,
+          "minimum_depth_m": 1.163035447312931,
+          "wet_positive_path": true
+        },
+        {
+          "min_edge_q_m3_s": 119.72454758929626,
+          "max_edge_q_m3_s": 1500.0000000032378,
+          "minimum_depth_m": 1.163035447312931,
+          "wet_positive_path": true
+        }
+      ],
+      "solid_total_including_export_unresolved_m3": 1223096429.9999988,
+      "pending_solid_m3": 0.0,
+      "external_packet_solid_m3": 47336430.0,
+      "delivered_packet_solid_m3": 47336430.0,
+      "actual_water_input_m3": 15000.0,
+      "solid_components_m3": {
+        "bed_solid_m3": 1191792333.5127437,
+        "mobile_solid_m3": 918646.9402093742,
+        "stranded_solid_m3": 5.718155776682664e-21,
+        "exported": 24906586.50361251,
+        "construction_unresolved": 5478863.043433154
+      },
+      "source_land_cells": 4990,
+      "newly_exposed_mean_datum_cells": 269,
+      "original_source_land_cells": 4990,
+      "newly_exposed_source_ocean_cells": 266,
+      "fresh_solve": {
+        "status": "passed",
+        "max_absolute_differences": {
+          "nodes": 0.0,
+          "edge_q_m3_s": 0.0,
+          "mouth_q_m3_s": 0.0
+        }
+      },
+      "fork_rejoin_interior": [
+        {
+          "fork": [
+            66,
+            13
+          ],
+          "rejoin": [
+            78,
+            15
+          ],
+          "nonchannel_interior_cells": 17,
+          "first_arm_edge_q_min_max_m3_s": [
+            65.95621575147234,
+            65.95621575248092
+          ],
+          "second_arm_edge_q_min_max_m3_s": [
+            1434.0437842498518,
+            1434.0437842501908
+          ],
+          "interior_ground_bed_min_max_m": [
+            0.10254315286874771,
+            1.1722321510314941
+          ],
+          "interior_exposed_mean_datum_cells": 17,
+          "interior_source_land_cells": 17,
+          "interior_original_source_land_cells": 17,
+          "interior_derived_source_land_cells": 17,
+          "interior_constructed_initial_land_cells": 17,
+          "interior_evolved_land_cells": 17,
+          "interior_newly_exposed_cells": 0
+        },
+        {
+          "fork": [
+            81,
+            16
+          ],
+          "rejoin": [
+            93,
+            19
+          ],
+          "nonchannel_interior_cells": 15,
+          "first_arm_edge_q_min_max_m3_s": [
+            119.72454758929626,
+            119.72454758956009
+          ],
+          "second_arm_edge_q_min_max_m3_s": [
+            1380.2754524134739,
+            1380.2754524136406
+          ],
+          "interior_ground_bed_min_max_m": [
+            -1.0170056287333988,
+            -0.06771356889035651
+          ],
+          "interior_exposed_mean_datum_cells": 0,
+          "interior_source_land_cells": 0,
+          "interior_original_source_land_cells": 0,
+          "interior_derived_source_land_cells": 0,
+          "interior_constructed_initial_land_cells": 0,
+          "interior_evolved_land_cells": 0,
+          "interior_newly_exposed_cells": 0
+        }
+      ],
+      "external_solid_closure_residual_m3": -1.1920928955078125e-06
+    },
+    {
+      "prefix": ".scratch\\delta-reference-shapes-20261104\\reference-case-v7\\tide-25h-c\\final",
+      "checks": {
+        "immutable_base_valid_seed_porosity": true,
+        "source_coordinate_identity": true,
+        "unique_geometry_node_rows": true,
+        "unique_section_rows": true,
+        "unique_footprint_owners": true,
+        "geometry_covers_topology": true,
+        "unique_physical_edge_rows": true,
+        "unique_mouth_rows": true,
+        "fractional_area_at_most_one": true,
+        "fine_within_grid_stock": true,
+        "finite_nonnegative_stock": true,
+        "section_bed_matches_fine_stock": true,
+        "effective_width_matches_area_and_control": true,
+        "node_q_conservation": true,
+        "mouth_total_q_conservation": true,
+        "positive_flow_down_head": true,
+        "packet_water_matches_physical_input": true,
+        "checkpoint_manifest_hashes": true,
+        "fresh_solve_matches_saved": true,
+        "input_files_stable_during_probe": true,
+        "solid_inventory_pending_external_closure": true
+      },
+      "checkpoint_sha256": {
+        "npz": "70c65d696cc2be2c25a699600a70e0bed5f99861eefb5ac3eb234f72aa69ed41",
+        "json": "2b2b0e978748327d391e7c1cc9b24623717443eebd6d3af1a4613c2247f2adfe"
+      },
+      "checkpoint_manifest_status": "verified",
+      "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+      "origin_xz_m": [
+        -950.0,
+        -2950.0
+      ],
+      "spacing_m": 100.0,
+      "physical_seconds": 90010.0,
+      "equivalent_years": 0.5,
+      "unique_nodes": 101,
+      "unique_edges": 102,
+      "route_covers": 3,
+      "mouths": 1,
+      "split_nodes": [
+        [
+          81,
+          16
+        ],
+        [
+          66,
+          13
+        ]
+      ],
+      "rejoin_nodes": [
+        [
+          78,
+          15
+        ],
+        [
+          93,
+          19
+        ]
+      ],
+      "fraction_max": 1.0,
+      "footprint_area_m2": 2490312.5,
+      "effective_width_min_max_m": [
+        24.294761015486998,
+        271.35621757932347
+      ],
+      "max_section_bed_error_m": 1.3322676295501878e-15,
+      "max_width_error_m": 0.0,
+      "max_node_q_residual_m3_s": 2.3635848833691853e-09,
+      "max_downstream_head_rise_m": -9.265506346078922e-05,
+      "accepted_q_m3_s": 1500.0,
+      "route_q_is_not_path_flux": [
+        1500.0000000975765,
+        0.0,
+        0.0
+      ],
+      "routes": [
+        {
+          "min_edge_q_m3_s": 1371.092223599012,
+          "max_edge_q_m3_s": 1500.000000097561,
+          "minimum_depth_m": 1.125062715483756,
+          "wet_positive_path": true
+        },
+        {
+          "min_edge_q_m3_s": 51.26408779918609,
+          "max_edge_q_m3_s": 1500.000000097561,
+          "minimum_depth_m": 1.1092728128809393,
+          "wet_positive_path": true
+        },
+        {
+          "min_edge_q_m3_s": 128.9077764850643,
+          "max_edge_q_m3_s": 1500.000000097561,
+          "minimum_depth_m": 1.125062715483756,
+          "wet_positive_path": true
+        }
+      ],
+      "solid_total_including_export_unresolved_m3": 1223366429.9999988,
+      "pending_solid_m3": 0.0,
+      "external_packet_solid_m3": 47606430.0,
+      "delivered_packet_solid_m3": 47606430.0,
+      "actual_water_input_m3": 135015000.0,
+      "solid_components_m3": {
+        "bed_solid_m3": 1191186201.4196448,
+        "mobile_solid_m3": 1793621.295219667,
+        "stranded_solid_m3": 1157.7380885385019,
+        "exported": 24906586.50361251,
+        "construction_unresolved": 5478863.043433154
+      },
+      "source_land_cells": 4990,
+      "newly_exposed_mean_datum_cells": 264,
+      "original_source_land_cells": 4990,
+      "newly_exposed_source_ocean_cells": 264,
+      "fresh_solve": {
+        "status": "passed",
+        "max_absolute_differences": {
+          "nodes": 0.0,
+          "edge_q_m3_s": 0.0,
+          "mouth_q_m3_s": 0.0
+        }
+      },
+      "fork_rejoin_interior": [
+        {
+          "fork": [
+            66,
+            13
+          ],
+          "rejoin": [
+            78,
+            15
+          ],
+          "nonchannel_interior_cells": 17,
+          "first_arm_edge_q_min_max_m3_s": [
+            51.26408779918609,
+            51.26408783441767
+          ],
+          "second_arm_edge_q_min_max_m3_s": [
+            1448.7359122368948,
+            1448.73591224678
+          ],
+          "interior_ground_bed_min_max_m": [
+            0.10254315286874771,
+            1.1722438097595447
+          ],
+          "interior_exposed_mean_datum_cells": 17,
+          "interior_source_land_cells": 17,
+          "interior_original_source_land_cells": 17,
+          "interior_derived_source_land_cells": 17,
+          "interior_constructed_initial_land_cells": 17,
+          "interior_evolved_land_cells": 17,
+          "interior_newly_exposed_cells": 0
+        },
+        {
+          "fork": [
+            81,
+            16
+          ],
+          "rejoin": [
+            93,
+            19
+          ],
+          "nonchannel_interior_cells": 15,
+          "first_arm_edge_q_min_max_m3_s": [
+            128.9077764850643,
+            128.90777649272837
+          ],
+          "second_arm_edge_q_min_max_m3_s": [
+            1371.092223599012,
+            1371.0922236038734
+          ],
+          "interior_ground_bed_min_max_m": [
+            -1.016982919673925,
+            -0.06769213952482644
+          ],
+          "interior_exposed_mean_datum_cells": 0,
+          "interior_source_land_cells": 0,
+          "interior_original_source_land_cells": 0,
+          "interior_derived_source_land_cells": 0,
+          "interior_constructed_initial_land_cells": 0,
+          "interior_evolved_land_cells": 0,
+          "interior_newly_exposed_cells": 0
+        }
+      ],
+      "external_solid_closure_residual_m3": -1.1920928955078125e-06
+    }
+  ],
+  "saved_continuation_chain": [
+    {
+      "output": ".scratch\\delta-reference-shapes-20261104\\reference-case-v7\\event-10s-c",
+      "saved_input": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\prepared-c\\initial",
+      "input_matches_previous": true,
+      "input_hashes_match": true
+    },
+    {
+      "output": ".scratch\\delta-reference-shapes-20261104\\reference-case-v7\\year-half-c",
+      "saved_input": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\event-10s-c\\final",
+      "input_matches_previous": true,
+      "input_hashes_match": true
+    },
+    {
+      "output": ".scratch\\delta-reference-shapes-20261104\\reference-case-v7\\tide-25h-c",
+      "saved_input": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\year-half-c\\final",
+      "input_matches_previous": true,
+      "input_hashes_match": true
+    }
+  ],
+  "fresh_solve_production_hashes": {
+    "terrain_pipeline\\coastal_delta_avulsion.py": "bc9b24b9a294550ed76c781112b97e5fa29f148150fdf2fff9e60b2e5fae562f",
+    "terrain_pipeline\\coastal_delta_bank_formation.py": "980a86c35afdf9edad70b876a746e871c99bddf0a38afbf43023c48d67423fa6",
+    "terrain_pipeline\\coastal_delta_branch_attachment.py": "8d9b79ac53a989f6fe3d484c7583dc15b295e1b7cfd7c0147dbdeafa2b9545b5",
+    "terrain_pipeline\\coastal_delta_branching.py": "94ae3aaa142c6aeb72a338babbb485a2bffd99dc04febe748832c1730788f36f",
+    "terrain_pipeline\\coastal_delta_deposition_scaling.py": "5d6e3673db0c0ee3fb7d5e81d259a180933c4845b6f33ec851b071550a58d940",
+    "terrain_pipeline\\coastal_delta_evolution.py": "11725eba7ebf3d5244b5acf330a165168a0c811939875e692688becb7c7c935c",
+    "terrain_pipeline\\coastal_delta_formation.py": "558e5d5640d269de445b45600866303639874ad3bdae15017c99ee4b61f4eced",
+    "terrain_pipeline\\coastal_delta_geological.py": "7e2ec94d4560dda5be3bb941d280ab3cdc95e4e91a09a7265b1c9a87d231a69d",
+    "terrain_pipeline\\coastal_delta_geological_network.py": "4c81260e76e542127b3bf71954bdea4f43b5540791294b31386d7d7643e86ea6",
+    "terrain_pipeline\\coastal_delta_graph_hydraulics.py": "5a56c36834a7d75883356c5457cce6a55268055770cec104ee77c36bc1053ad8",
+    "terrain_pipeline\\coastal_delta_growth.py": "dd46a75e427acb7382f5b1f32a80eab4990231d8ba673f9736ffeb2aa6a8f48e",
+    "terrain_pipeline\\coastal_delta_hydraulics.py": "1c61a29eebea1726be267cf5990efed448eacb7378d15e993e362f01f712f91c",
+    "terrain_pipeline\\coastal_delta_lobes.py": "6b50d284963099e85bd4b3204fe114739059ae437f3c4a96ec7e127f183fd0f9",
+    "terrain_pipeline\\coastal_delta_morphology.py": "c9243c7431c35f786aa163c09fbdb6deb062f82c4e7ebc735b758ea678e7e7c9",
+    "terrain_pipeline\\coastal_delta_mouth_extension.py": "28a23cc4d82e481f15d01feed7a656eb0602b8da444a1da1b3aa00e5c19ff10c",
+    "terrain_pipeline\\coastal_delta_multicell.py": "1227942950548bd16b685066c88f5e075b2c85a02d588fbafb6f21c5dcd99e9d",
+    "terrain_pipeline\\coastal_delta_multicell_avulsion.py": "1158cdaed1b7f11508f04c25326bf2a1cd9c055923e9c82ae42acac6c42408ba",
+    "terrain_pipeline\\coastal_delta_network_plan.py": "935ebc0205d4e6cb286e2ddc9fd9b7ed360e59a3a843e6db122df6113352f8a1",
+    "terrain_pipeline\\coastal_delta_node_inventory.py": "fe70fb3e98625185cd2a9cb598b14c1683d6ff95308ea896574f21a9ba59bea9",
+    "terrain_pipeline\\coastal_delta_pipeline.py": "f313f6d49fe265a83699c6bc87fc2920f5cbe521aa5ba8a8752cd70c15195a72",
+    "terrain_pipeline\\coastal_delta_plain.py": "96ef0963f3e1f8cda9cd7f3a24e3e22dbe1f67baba85b3c5cd9fb2c2626dd022",
+    "terrain_pipeline\\coastal_delta_product.py": "f63c117ba0bf848b7cb5450036019927566f86893f0c36ebd1955257745026a9",
+    "terrain_pipeline\\coastal_delta_regional.py": "78f10665f8bbafb6b8da25fe829e57da99defd3411d1e3aaa4d5bd32c6faa9d4",
+    "terrain_pipeline\\coastal_delta_routes.py": "851523783be5957bdbe0feb686226cf8abf625ac6074c19f2ff1e1b4d6147628",
+    "terrain_pipeline\\coastal_delta_window.py": "d05f26b1daab2ac574a19526a44bd165b8fd9d87debd7dd246c1b5fe3ca0dd55"
+  },
+  "production_unchanged_during_probe": true,
+  "passed": true
+}

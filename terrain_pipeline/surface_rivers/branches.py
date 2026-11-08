@@ -3,6 +3,9 @@ from dataclasses import dataclass
 import heapq
 import numpy as np
 from .hydraulics import BranchHydraulics
+from terrain_pipeline.drainage import grid_mesh as grid_mesh
+from terrain_pipeline.drainage import masked_mesh as masked_mesh
+from terrain_pipeline.drainage import segments_clear as segments_clear
 
 
 @dataclass(frozen=True)
@@ -26,7 +29,8 @@ class BranchResult:
 def build_branches(height: np.ndarray, main_path: list[tuple[int, int]],
                    corridor_mask: np.ndarray, discharge: float,
                    max_branches: int = 1,
-                   hydraulics: BranchHydraulics | None = None) -> BranchResult:
+                   hydraulics: BranchHydraulics | None = None, *,
+                   origin_native_xz=(0, 0), spacing_m=1., world_seed=20261020) -> BranchResult:
     """Return a main channel and at most one downstream side channel.
 
     Grid points use (row=z, column=x). The side path starts and rejoins the
@@ -47,9 +51,12 @@ def build_branches(height: np.ndarray, main_path: list[tuple[int, int]],
     for z, x in path:
         if not (0 <= z < terrain.shape[0] and 0 <= x < terrain.shape[1]) or not corridor[z, x]:
             raise ValueError("Main path leaves corridor")
+    ids = np.asarray([z * terrain.shape[1] + x for z, x in path], np.int64)
+    if not segments_clear(ids[:-1], ids[1:], corridor).all():
+        raise ValueError("Main path segments must remain inside the corridor")
     for a, b in zip(path, path[1:]):
-        if max(abs(a[0] - b[0]), abs(a[1] - b[1])) > 1 or terrain[b] > terrain[a] + 1e-9:
-            raise ValueError("Main path must be adjacent and non-rising")
+        if terrain[b] > terrain[a] + 1e-9:
+            raise ValueError("Main path must be non-rising")
     single = BranchResult((path,), (1.0,), (float(discharge),), reason="No valid split")
     if max_branches == 0 or discharge == 0:
         return single
@@ -67,10 +74,12 @@ def build_branches(height: np.ndarray, main_path: list[tuple[int, int]],
     # Search local split/rejoin windows. A side channel must bypass at least
     # one main-path cell and contain at least two unique interior cells.
     main_cells = set(path)
+    mesh = masked_mesh(grid_mesh(terrain.shape, x0_m=origin_native_xz[0]*spacing_m,
+        z0_m=origin_native_xz[1]*spacing_m, dx_m=spacing_m, world_seed=world_seed), corridor)
     for start_index in range(0, len(path) - 3):
         for end_index in range(start_index + 3, min(len(path), start_index + 14)):
             start, end = path[start_index], path[end_index]
-            candidate = _side_path(terrain, corridor, start, end, main_cells)
+            candidate = _side_path(terrain, corridor, start, end, main_cells, mesh)
             if candidate is None:
                 continue
             side = tuple(path[:start_index] + candidate + path[end_index + 1:])
@@ -83,7 +92,7 @@ def build_branches(height: np.ndarray, main_path: list[tuple[int, int]],
 
 
 def _side_path(height: np.ndarray, corridor: np.ndarray, start: tuple[int, int],
-               end: tuple[int, int], main_cells: set[tuple[int, int]]):
+               end: tuple[int, int], main_cells: set[tuple[int, int]], mesh):
     queue = [(0.0, start)]
     distance = {start: 0.0}
     previous = {}
@@ -97,17 +106,14 @@ def _side_path(height: np.ndarray, corridor: np.ndarray, start: tuple[int, int],
                 cells.append(previous[cells[-1]])
             cells.reverse()
             return tuple(cells) if len(cells) >= 4 else None
-        z, x = current
-        for dz, dx in ((-1, 0), (1, 0), (0, -1), (0, 1), (-1, -1), (-1, 1), (1, -1), (1, 1)):
-            neighbor = (z + dz, x + dx)
-            nz, nx = neighbor
-            if not (0 <= nz < height.shape[0] and 0 <= nx < height.shape[1]):
-                continue
+        node = current[0] * height.shape[1] + current[1]
+        for edge in range(mesh.indptr[node], mesh.indptr[node + 1]):
+            neighbor = tuple(divmod(int(mesh.indices[edge]), height.shape[1]))
             if not corridor[neighbor] or (neighbor in main_cells and neighbor != end):
                 continue
             if height[neighbor] > height[current] + 1e-9:
                 continue
-            new_cost = cost + float(np.hypot(dz, dx)) + .02 * abs(height[current] - height[neighbor])
+            new_cost = cost + mesh.edge_length_m[edge] + .02 * abs(height[current] - height[neighbor])
             if new_cost < distance.get(neighbor, float("inf")):
                 distance[neighbor] = new_cost
                 previous[neighbor] = current

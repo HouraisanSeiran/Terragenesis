@@ -1,0 +1,300 @@
+{
+  "folder": ".scratch\\delta-material-lobes-20261103\\case",
+  "checks": {
+    "sources_and_inventory": true,
+    "actual_irregular_geometry": true,
+    "actual_wet_routes": true,
+    "along_line_clearance": true,
+    "shared_discharge": true,
+    "single_sediment_ledger": true,
+    "physical_water_ledger": true,
+    "active_sea_outlets": true
+  },
+  "pass": true,
+  "stages": [
+    {
+      "name": "init",
+      "years": 5.299999999999989,
+      "time_s": 190800.0,
+      "source_identity": "454292b47a107628748a3ba7d76093cbd2d7df4785884490f55418f9ebe368ce",
+      "source_unchanged": true,
+      "nonnegative_inventory": true,
+      "unique_geometry_nodes": true,
+      "segments_valid": true,
+      "max_along_line_barrier_m": 0.0,
+      "metric_lengths": {
+        "min_m": 99.31962720006385,
+        "max_m": 362.2325606690841,
+        "std_m": 63.3834635041107
+      },
+      "node_q_error_m3_s": 0.0,
+      "route_q_error_m3_s": 0.0,
+      "input_solid_m3": 0.0,
+      "pending_solid_m3": 0.0,
+      "solid_balance_residual_m3": 0.0,
+      "water_balance_residual_m3": 0,
+      "stored_water_input_error_m3": 0.0,
+      "routes": [
+        {
+          "q_m3_s": 8.463136226041717,
+          "length_m": 4706.167914937728,
+          "nodes": 22,
+          "no_cycle": true,
+          "minimum_depth_m": 0.17514083292110416,
+          "wet_when_active": true,
+          "exterior_faces": [
+            [
+              240,
+              190
+            ]
+          ]
+        },
+        {
+          "q_m3_s": 7.9224165174740975,
+          "length_m": 5572.430600722532,
+          "nodes": 26,
+          "no_cycle": true,
+          "minimum_depth_m": 0.22019090476831116,
+          "wet_when_active": true,
+          "exterior_faces": [
+            [
+              242,
+              191
+            ]
+          ]
+        },
+        {
+          "q_m3_s": 5.7251679803516,
+          "length_m": 5508.357989280305,
+          "nodes": 28,
+          "no_cycle": true,
+          "minimum_depth_m": 0.17722047810183816,
+          "wet_when_active": true,
+          "exterior_faces": [
+            [
+              253,
+              180
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "stage1",
+      "years": 6.300000000000003,
+      "time_s": 190800.0,
+      "source_identity": "454292b47a107628748a3ba7d76093cbd2d7df4785884490f55418f9ebe368ce",
+      "source_unchanged": true,
+      "nonnegative_inventory": true,
+      "unique_geometry_nodes": true,
+      "segments_valid": true,
+      "max_along_line_barrier_m": 0.0,
+      "metric_lengths": {
+        "min_m": 99.31962720006385,
+        "max_m": 362.2325606690841,
+        "std_m": 62.353266917728725
+      },
+      "node_q_error_m3_s": 0.0,
+      "route_q_error_m3_s": 0.0,
+      "input_solid_m3": 2524607.99999997,
+      "pending_solid_m3": 2168058.926502729,
+      "solid_balance_residual_m3": -6.612390279769897e-07,
+      "water_balance_residual_m3": 0,
+      "stored_water_input_error_m3": 0.0,
+      "routes": [
+        {
+          "q_m3_s": 7.622242825369589,
+          "length_m": 5120.795663582122,
+          "nodes": 24,
+          "no_cycle": true,
+          "minimum_depth_m": 0.16363341026510825,
+          "wet_when_active": true,
+          "exterior_faces": [
+            [
+              240,
+              192
+            ]
+          ]
+        },
+        {
+          "q_m3_s": 7.4182035830448,
+          "length_m": 5750.622275195743,
+          "nodes": 27,
+          "no_cycle": true,
+          "minimum_depth_m": 0.2686805397340394,
+          "wet_when_active": true,
+          "exterior_faces": [
+            [
+              243,
+              191
+            ]
+          ]
+        },
+        {
+          "q_m3_s": 5.2551832419399975,
+          "length_m": 5508.357989280305,
+          "nodes": 28,
+          "no_cycle": true,
+          "minimum_depth_m": 0.1683452260737034,
+          "wet_when_active": true,
+          "exterior_faces": [
+            [
+              253,
+              180
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "stage2",
+      "years": 7.300000000000018,
+      "time_s": 190800.0,
+      "source_identity": "454292b47a107628748a3ba7d76093cbd2d7df4785884490f55418f9ebe368ce",
+      "source_unchanged": true,
+      "nonnegative_inventory": true,
+      "unique_geometry_nodes": true,
+      "segments_valid": true,
+      "max_along_line_barrier_m": 0.0,
+      "metric_lengths": {
+        "min_m": 99.31962720006385,
+        "max_m": 362.2325606690841,
+        "std_m": 61.98065999014863
+      },
+      "node_q_error_m3_s": 0.0,
+      "route_q_error_m3_s": -3.552713678800501e-15,
+      "input_solid_m3": 5049215.99999994,
+      "pending_solid_m3": 4366067.8625574615,
+      "solid_balance_residual_m3": -1.082196831703186e-06,
+      "water_balance_residual_m3": 0,
+      "stored_water_input_error_m3": 0.0,
+      "routes": [
+        {
+          "q_m3_s": 6.99822211950386,
+          "length_m": 5471.27104767592,
+          "nodes": 26,
+          "no_cycle": true,
+          "minimum_depth_m": 0.1547618285661958,
+          "wet_when_active": true,
+          "exterior_faces": [
+            [
+              241,
+              193
+            ]
+          ]
+        },
+        {
+          "q_m3_s": 6.953242175375939,
+          "length_m": 5970.842567974987,
+          "nodes": 28,
+          "no_cycle": true,
+          "minimum_depth_m": 0.2728433540729833,
+          "wet_when_active": true,
+          "exterior_faces": [
+            [
+              243,
+              192
+            ]
+          ]
+        },
+        {
+          "q_m3_s": 4.664199501783483,
+          "length_m": 5928.202164626881,
+          "nodes": 30,
+          "no_cycle": true,
+          "minimum_depth_m": 0.2153035826905072,
+          "wet_when_active": true,
+          "exterior_faces": [
+            [
+              254,
+              181
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "event",
+      "years": 7.300000000000018,
+      "time_s": 280800.0,
+      "source_identity": "454292b47a107628748a3ba7d76093cbd2d7df4785884490f55418f9ebe368ce",
+      "source_unchanged": true,
+      "nonnegative_inventory": true,
+      "unique_geometry_nodes": true,
+      "segments_valid": true,
+      "max_along_line_barrier_m": 0.0,
+      "metric_lengths": {
+        "min_m": 99.31962720006385,
+        "max_m": 362.2325606690841,
+        "std_m": 61.98065999014863
+      },
+      "node_q_error_m3_s": 0.0,
+      "route_q_error_m3_s": 0.0,
+      "input_solid_m3": 5056415.99999994,
+      "pending_solid_m3": 4372516.865997007,
+      "solid_balance_residual_m3": -1.2014061212539673e-06,
+      "water_balance_residual_m3": 0.0,
+      "stored_water_input_error_m3": 0.0,
+      "routes": [
+        {
+          "q_m3_s": 7.182069717715263,
+          "length_m": 5471.27104767592,
+          "nodes": 26,
+          "no_cycle": true,
+          "minimum_depth_m": 0.1573311875921899,
+          "wet_when_active": true,
+          "exterior_faces": [
+            [
+              241,
+              193
+            ],
+            [
+              239,
+              193
+            ]
+          ]
+        },
+        {
+          "q_m3_s": 7.135908122797413,
+          "length_m": 5970.842567974987,
+          "nodes": 28,
+          "no_cycle": true,
+          "minimum_depth_m": 0.29375221741417956,
+          "wet_when_active": true,
+          "exterior_faces": [
+            [
+              243,
+              192
+            ],
+            [
+              242,
+              191
+            ]
+          ]
+        },
+        {
+          "q_m3_s": 4.786730890661792,
+          "length_m": 5928.202164626881,
+          "nodes": 30,
+          "no_cycle": true,
+          "minimum_depth_m": 0.22702910866957793,
+          "wet_when_active": true,
+          "exterior_faces": [
+            [
+              253,
+              182
+            ],
+            [
+              254,
+              181
+            ],
+            [
+              253,
+              180
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

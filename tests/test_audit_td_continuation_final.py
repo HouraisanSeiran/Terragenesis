@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 from tests.test_td_hour_pages_acceptance_io import fixture, write_json
 from tools import audit_td_continuation_final as auditor
 

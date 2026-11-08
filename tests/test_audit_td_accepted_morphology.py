@@ -4,7 +4,7 @@ import numpy as np
 
 from tests.test_td_basin_morphology import fixture
 from tools.audit_td_accepted_morphology import audit_fields
-from terrain_pipeline.td_material_field import make_material_field
+from terrain_pipeline.geology import make_material_field
 
 
 class IndependentAcceptedMorphologyTests(unittest.TestCase):

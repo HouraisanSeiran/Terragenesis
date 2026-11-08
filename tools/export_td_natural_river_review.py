@@ -10,8 +10,8 @@ sys.path.insert(0, str(ROOT))
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.rainfall_runoff import _strict_json
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.runoff import _strict_json as _strict_json
 from terrain_pipeline.td_natural_river_network import load_natural_river_network
 
 
@@ -19,7 +19,7 @@ MAX_REVIEW_BYTES = 32 * 1024 * 1024
 
 
 def export_review(output, *, network_record, geometry_record, max_bytes=MAX_REVIEW_BYTES):
-    from terrain_pipeline.td_natural_channel_geometry import load_natural_channel_geometry
+    from terrain_pipeline.channel_geometry import load_natural_channel_geometry
 
     if type(max_bytes) is not int or not 0 < max_bytes <= MAX_REVIEW_BYTES:
         raise ValueError("bounded review byte budget required")

@@ -6,12 +6,14 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.td_basin_source import make_td_source
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy
-from terrain_pipeline.td_basin_spill_network import _leaf_graph
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_topology import _leaf_graph as _leaf_graph
 from terrain_pipeline.td_surface_reaches import _plain, _hash
-from terrain_pipeline.td_basin_escape_plan import make_basin_escape_plan, save_basin_escape_plan, load_basin_escape_plan
+from terrain_pipeline.basin_topology import make_basin_escape_plan as make_basin_escape_plan
+from terrain_pipeline.basin_topology import save_basin_escape_plan as save_basin_escape_plan
+from terrain_pipeline.basin_topology import load_basin_escape_plan as load_basin_escape_plan
 
 
 def fixture(height, boundary_cells, protected=None):
@@ -91,7 +93,7 @@ class BasinEscapePlanTests(unittest.TestCase):
     def test_tied_faces_use_stable_physical_id(self):
         hierarchy, graph, seeds = fixture([[0, 2, 0], [0, 2, 0]], [0])
         result = plan(hierarchy, graph, seeds)
-        from terrain_pipeline.td_basin_escape_plan import _face_id
+        from terrain_pipeline.basin_topology import escape_plan_face_id as _face_id
         pair = graph["pairs"][0]
         expected = min(pair["minimum_face_indices"], key=lambda face: _face_id(hierarchy, face))
         chosen = next(record["minimum_face"]["face_index"] for record in result["leaves"] if record["parent_leaf_id"] is not None)
@@ -113,7 +115,7 @@ class BasinEscapePlanTests(unittest.TestCase):
             path = Path(directory) / "plan.json"
             save_basin_escape_plan(result, path)
             kwargs = dict(expected_sha256=file_sha256(path), expected_identity=result["identity_sha256"], hierarchy=hierarchy, contribution_leaf_graph=graph)
-            with patch("terrain_pipeline.td_basin_escape_plan.make_basin_escape_plan", side_effect=AssertionError("make")), patch("terrain_pipeline.td_basin_storage.simulate_basin_storage", side_effect=AssertionError("solve")):
+            with patch('terrain_pipeline.basin_topology.make_basin_escape_plan', side_effect=AssertionError("make")), patch('terrain_pipeline.basin_storage.simulate_threshold_storage', side_effect=AssertionError("solve")):
                 loaded = load_basin_escape_plan(path, **kwargs)
             self.assertEqual(_plain(loaded), _plain(result))
             with self.assertRaises(TypeError):

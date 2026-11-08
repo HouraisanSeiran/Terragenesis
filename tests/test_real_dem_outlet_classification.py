@@ -11,11 +11,11 @@ from rasterio.transform import from_origin
 from rasterio.warp import transform
 
 from terrain_pipeline.artifacts.contracts import digest
-from terrain_pipeline.dem_domain import _seal, prepare_dem_candidate
+from terrain_pipeline.td_source import _seal, prepare_dem_candidate
 from terrain_pipeline.real_dem_outlet_classification import (
     _validate_crs, build_outlet_classification, classification_geojson, validate_outlet_classification,
 )
-from terrain_pipeline.real_dem_surface_network import build_real_dem_network
+from terrain_pipeline.drainage import build_real_dem_network as build_real_dem_network
 from tools.audit_hydrovector_evidence import topology_diagnostics
 
 
@@ -49,7 +49,9 @@ class OutletClassificationTests(unittest.TestCase):
         grid = self.candidate["manifest"]["identity"]["grid"]
         row, col = np.asarray(self.candidate["arrays"]["height_m"].shape) // 2
         self.center_cell = int(row * self.candidate["arrays"]["height_m"].shape[1] + col)
-        self.center = np.array([grid["origin_x_m"] + col * 90, -(grid["origin_z_m"] + row * 90)])
+        from terrain_pipeline.drainage import candidate_mesh as candidate_mesh
+        mesh = candidate_mesh(self.candidate)
+        self.center = np.array([mesh.node_x_m[self.center_cell], -mesh.node_z_m[self.center_cell]])
         self.set_projected_parts([np.array([self.center + [-700, 45], self.center + [700, 45]])])
 
     def refresh_audit(self):

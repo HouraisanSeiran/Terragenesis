@@ -8,9 +8,9 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline import mountain_depression_geometry as geometry
-from terrain_pipeline import mountain_fine_geometry as fine
-from terrain_pipeline import mountain_fine_storage as storage
+import terrain_pipeline.lake as geometry
+from terrain_pipeline import channel_geometry as fine
+from terrain_pipeline import channel_geometry as storage
 from tools.verify_mountain_rainfall import load_source
 
 
@@ -135,8 +135,8 @@ class MountainFineStorageTests(unittest.TestCase):
             import json
             manifest = json.loads(payload["manifest"].tobytes().decode("ascii"))
             payload["state__ledger_m3"][0, 1] += 1.
-            manifest["hashes"]["state__ledger_m3"] = storage._hash(payload["state__ledger_m3"])
-            payload["manifest"] = np.frombuffer(storage._json(manifest).encode("ascii"), dtype=np.uint8)
+            manifest["hashes"]["state__ledger_m3"] = storage._i7__hash(payload["state__ledger_m3"])
+            payload["manifest"] = np.frombuffer(storage._i7__json(manifest).encode("ascii"), dtype=np.uint8)
             forged = Path(directory) / "resigned.npz"
             np.savez_compressed(forged, **payload)
             with self.assertRaises(ValueError):

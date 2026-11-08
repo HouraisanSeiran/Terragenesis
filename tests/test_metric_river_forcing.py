@@ -4,13 +4,9 @@ from copy import deepcopy
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.surface_rivers.metric_contracts import TerrainGrid
-from terrain_pipeline.surface_rivers.metric_forcing import (
-    SpatialRainRecipe, build_spatial_forcing, load_spatial_forcing_package,
-    save_spatial_forcing_package,
-    validate_spatial_forcing_package,
-)
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.common_infra import TerrainGrid
+from terrain_pipeline.climate_forcing import SpatialRainRecipe, build_spatial_forcing, load_spatial_forcing_package, save_spatial_forcing_package, validate_spatial_forcing_package
 
 
 def grid(x0=0., columns=4):

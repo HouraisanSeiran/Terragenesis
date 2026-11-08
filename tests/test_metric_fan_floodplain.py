@@ -2,10 +2,8 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.surface_rivers.metric_contracts import TerrainGrid
-from terrain_pipeline.surface_rivers.metric_fan_floodplain import (
-    FanFloodplainConfig, build_alluvial_fan_candidate, build_floodplain_candidate,
-)
+from terrain_pipeline.common_infra import TerrainGrid
+from terrain_pipeline.channel_geometry import FanFloodplainConfig, build_alluvial_fan_candidate, build_floodplain_candidate
 
 
 class FanFloodplainTests(unittest.TestCase):

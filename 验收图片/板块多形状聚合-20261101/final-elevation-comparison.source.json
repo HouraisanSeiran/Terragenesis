@@ -1,0 +1,106 @@
+{
+  "scope": "macro mechanism diagnostics; not TD acceptance",
+  "td_binding": null,
+  "world_seed": 20261020,
+  "sources_sha256": {
+    "terrain_pipeline/tectonic_formation.py": "baa5d1928aa5dbfb3af891f6c793e989e2824597a68640a89270046fdee499c0",
+    "terrain_pipeline/tectonic_shapes.py": "4941bf19b7167e9b9c28ec03f6a566bf65b69330093bb10655df341b19b07ac8",
+    "terrain_pipeline/tectonic_evolution.py": "efb3eaa4159fa1c4cc67f91afa273881a31e8ace46246837525fd6bb1a281503",
+    "terrain_pipeline/tectonic_product.py": "a25453c23c2c29c53ce48e1e41d067c94d4a2d8ef19d1e444601865e9fac6236",
+    "tools/prepare_tectonic_world.py": "dddaee1f1a3f369f050c6c9ec586d51425376e1cc81dd52eaee2f6cb77d5a82d",
+    "tests/test_tectonic_shapes.py": "fa7db7853d9fbcd96fe31abb18697f1e22d0af175bf3adb639c6617bf2ef836a",
+    "tests/test_tectonic_formation.py": "bad65e71bea6e3f49188398fada148cb74bf876a02f5839fecdd014b6c105b59",
+    ".scratch\\plate-formation-coast-20261101\\shaped-compare.py": "fc34163fa8059435949bd217c6970af8f3db88763c41f0c37102b9cff733d1ad"
+  },
+  "products": {
+    "v3 compact": {
+      "path": ".scratch\\plate-formation-coast-20261101\\compact-run-v3-final\\product.npz",
+      "sha256": "547a5cf60ea567d2b76c149a1b127f7bafb90e724768f8097ab5649d8b5bdf6a",
+      "identity": "97a7fc402e7d5d4ee4a0800f8a3b19430d634bb3c3a434c104ca2c7ce7bcf7c6",
+      "algorithm": "kinematic-crust-3",
+      "schema": "tectonic-frozen-product-v2"
+    },
+    "v4 mixed shapes": {
+      "path": ".scratch\\plate-formation-coast-20261101\\shaped-run-v4\\product.npz",
+      "sha256": "7f1fa9e6aa5fe327000f1e850ad24ddddf20ffb3bf20d996259ba183af2c3ed3",
+      "identity": "b4c8bbdba29111b8c3ba3270e2f0d3a4fed3544655249fa07c506654b8ae6af9",
+      "algorithm": "kinematic-crust-4",
+      "schema": "tectonic-frozen-product-v2"
+    }
+  },
+  "config": {
+    "cell_size_m": 10000.0,
+    "continental_thickness_m": 35000.0,
+    "max_speed_m_per_step": 2000.0,
+    "microcells_per_plate": 64,
+    "min_plate_cells": 4,
+    "oceanic_thickness_m": 7000.0,
+    "origin_x_m": -800000.0,
+    "origin_z_m": -640000.0,
+    "plate_count": 8,
+    "rift_fraction": 1.0,
+    "shape": [
+      128,
+      160
+    ],
+    "steps": 40,
+    "subduction_fraction": 1.0,
+    "time_step": 1.0,
+    "world_seed": 20261020
+  },
+  "growth_shapes": [
+    {
+      "angle_rad": 2.381714805594031,
+      "aspect_ratio": 1.4421794881159342,
+      "family": "triangle",
+      "scale_cells": 1.0
+    },
+    {
+      "angle_rad": 0.1733378812215247,
+      "aspect_ratio": 5.46207930711847,
+      "family": "ellipse",
+      "scale_cells": 1.0
+    },
+    {
+      "angle_rad": 2.0285374488527244,
+      "aspect_ratio": 1.0,
+      "family": "circle",
+      "scale_cells": 1.0
+    },
+    {
+      "angle_rad": 2.27337160995288,
+      "aspect_ratio": 4.109469143323444,
+      "family": "ellipse",
+      "scale_cells": 1.0
+    },
+    {
+      "angle_rad": 1.1979544328529106,
+      "aspect_ratio": 1.0,
+      "family": "circle",
+      "scale_cells": 1.0
+    },
+    {
+      "angle_rad": 0.5439344023851674,
+      "aspect_ratio": 4.259057293291111,
+      "family": "ellipse",
+      "scale_cells": 1.0
+    },
+    {
+      "angle_rad": 2.7176995084395603,
+      "aspect_ratio": 1.0,
+      "family": "circle",
+      "scale_cells": 1.0
+    },
+    {
+      "angle_rad": 4.165581436935815,
+      "aspect_ratio": 1.251521946347462,
+      "family": "triangle",
+      "scale_cells": 1.0
+    }
+  ],
+  "shape_purpose_seed": 15003642411224944148,
+  "shape_seed_derivation": "SHA256(f'{world_seed}:tectonic:formation-shapes'), first 8 bytes little-endian",
+  "same_seed_full_regeneration_identity": "b4c8bbdba29111b8c3ba3270e2f0d3a4fed3544655249fa07c506654b8ae6af9",
+  "invariants": "identical sites, cores, embryos, initial elevation and velocities; old product bytes unchanged",
+  "image_sha256": "9de96e887d9744716d92168cfda972152c65f6769d459e4c04203e846408f69a"
+}

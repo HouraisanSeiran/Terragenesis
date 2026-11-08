@@ -5,8 +5,9 @@ from tempfile import TemporaryDirectory
 import numpy as np
 
 from terrain_pipeline.surface_rivers import GridInput, route
-from terrain_pipeline.surface_rivers.channel import carve_channels
-from terrain_pipeline.surface_rivers.pipeline import process, save
+from terrain_pipeline.channel_geometry import carve_channels
+from terrain_pipeline.surface_rivers.bridge import bridge_diagonals
+from terrain_pipeline.surface_rivers.pipeline import RECIPE, process, save
 from tools.preview_surface_rivers import y_confluence
 
 
@@ -15,15 +16,16 @@ class SurfaceRiverAcceptanceTests(unittest.TestCase):
     def setUpClass(cls):
         cls.grid = y_confluence()
         cls.product = process(cls.grid, 2.0)
-        cls.routing = route(cls.grid.height, cls.grid.outlet_mask, cls.grid.spacing_blocks)
+        cls.routing = route(cls.grid.height, cls.grid.outlet_mask, cls.grid.spacing_blocks,
+                            origin_world_xz=cls.grid.origin, world_seed=cls.grid.world_seed)
 
     def test_two_branches_merge_with_shared_discharge(self):
         q = self.product.discharge
         receiver = self.routing.receiver
-        junction = 24 * q.shape[1] + 24
+        active_donor_count = np.bincount(receiver[(receiver >= 0) & self.product.flowline_mask.ravel()], minlength=q.size)
+        junction = int(np.argmax(active_donor_count))
         donors = np.flatnonzero(receiver == junction)
-        self.assertGreaterEqual(len(donors), 2)
-        self.assertEqual(sum(self.product.flowline_mask.flat[i] for i in donors), 2)
+        self.assertGreaterEqual(active_donor_count[junction], 2)
         self.assertAlmostEqual(q.flat[junction],
             sum(q.flat[i] for i in donors) + self.grid.runoff.flat[junction] * self.grid.spacing_blocks ** 2,
             places=4)
@@ -34,6 +36,10 @@ class SurfaceRiverAcceptanceTests(unittest.TestCase):
         for row in (24, 25, 30, 40, 48):
             self.assertGreaterEqual(np.count_nonzero(wet[row]), 5)
         self.assertGreaterEqual(np.count_nonzero(wet[30]), np.count_nonzero(wet[24]))
+        width = self.product.width_blocks
+        for cell, target in enumerate(self.routing.receiver):
+            if target >= 0 and self.product.flowline_mask.flat[cell]:
+                self.assertGreaterEqual(width.flat[target], width.flat[cell])
         self.assertGreater(self.product.width_blocks[30].max(), self.product.width_blocks[15].max())
 
     def test_water_stays_within_carved_corridor_and_stage_descends(self):
@@ -65,7 +71,47 @@ class SurfaceRiverAcceptanceTests(unittest.TestCase):
                 nz, nx = z + dz, x + dx
                 if 0 <= nz < wet.shape[0] and 0 <= nx < wet.shape[1]:
                     stack.append((nz, nx))
+        disconnected = self.product.flowline_mask & ~reached
+        self.assertFalse(disconnected.any())
         self.assertTrue(np.all(reached[self.product.flowline_mask]))
+        self.assertTrue(np.all(self.product.unresolved_mask[disconnected]))
+        self.assertTrue(np.all(~wet[self.product.unresolved_mask]))
+        self.assertEqual(self.product.metadata["complete_water_surface"], not self.product.unresolved_mask.any())
+
+    def test_nonlocal_graph_edge_gets_four_connected_raster_support(self):
+        source = np.full((7, 9), 10.)
+        bed, water = source.copy(), np.full(source.shape, np.nan)
+        corridor = np.zeros(source.shape, bool)
+        receiver = np.full(source.size, -1, np.int64)
+        start, end = 2 * 9 + 1, 3 * 9 + 6
+        receiver[start] = end
+        for cell in (start, end):
+            bed.flat[cell], water.flat[cell], corridor.flat[cell] = 8., 8.5, True
+        result_bed, result_water, result_corridor, bad = bridge_diagonals(
+            source, bed, water, corridor, corridor, receiver, 4.)
+        self.assertEqual(bad, [])
+        reached, stack = set(), [start]
+        while stack:
+            cell = stack.pop()
+            if cell in reached or not np.isfinite(result_water.flat[cell]):
+                continue
+            reached.add(cell)
+            row, col = divmod(cell, source.shape[1])
+            for dr, dc in ((0, 1), (0, -1), (1, 0), (-1, 0)):
+                nr, nc = row + dr, col + dc
+                if 0 <= nr < source.shape[0] and 0 <= nc < source.shape[1]:
+                    stack.append(nr * source.shape[1] + nc)
+        self.assertIn(end, reached)
+        self.assertGreater(len(reached), 2)
+        self.assertTrue(np.all(result_corridor[np.isfinite(result_water)]))
+        self.assertLessEqual(float((source - result_bed).max()), 4.)
+        # A ridge above the edit cap leaves the entire edge uncommitted.
+        source[:, 4] = 100.
+        failed_bed, failed_water, _, bad = bridge_diagonals(
+            source, bed, water, corridor, corridor, receiver, 4.)
+        self.assertEqual(bad, [(start, end)])
+        np.testing.assert_array_equal(failed_bed, bed)
+        np.testing.assert_array_equal(failed_water, water)
 
     def test_deep_pit_with_small_incision_cap_is_marked_unresolved(self):
         height = np.array([[15., 15., 15.], [15., 0., 15.], [15., 15., 14.]])
@@ -103,7 +149,7 @@ class SurfaceRiverAcceptanceTests(unittest.TestCase):
                                       ("unresolved_mask", self.product.unresolved_mask),
                                       ("outlet_mask", self.product.outlet_mask)):
                     np.testing.assert_array_equal(loaded[key], expected)
-                self.assertIn("surface-routing-width-channel-v4", str(loaded["metadata"]))
+                self.assertIn(RECIPE, str(loaded["metadata"]))
         np.testing.assert_array_equal(self.grid.height, before)
 
 

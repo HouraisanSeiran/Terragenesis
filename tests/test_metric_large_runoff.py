@@ -3,12 +3,12 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.rainfall_runoff import ARRAY_KEYS, RunoffParameters
-from terrain_pipeline.surface_rivers.metric_contracts import RainfallForcing, TerrainGrid
-from terrain_pipeline.surface_rivers.metric_large_runoff import (
-    runoff_from_forcing_large, validate_large_rainfall_runoff_result,
-)
-from terrain_pipeline.surface_rivers.metric_runoff import runoff_from_forcing
+from terrain_pipeline.runoff import RUNOFF_ARRAY_KEYS as ARRAY_KEYS
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+from terrain_pipeline.common_infra import RainfallForcing, TerrainGrid
+from terrain_pipeline.runoff import runoff_from_forcing_large as runoff_from_forcing_large
+from terrain_pipeline.runoff import validate_large_rainfall_runoff_result as validate_large_rainfall_runoff_result
+from terrain_pipeline.runoff import runoff_from_forcing as runoff_from_forcing
 
 
 def terrain():
@@ -56,7 +56,7 @@ class LargeRunoffTests(unittest.TestCase):
         np.testing.assert_array_equal(chunked["native_result"]["area_m2"], np.full(5, 12.))
 
     def test_unknown_rain_nonuniform_dt_and_budget_fail_before_solver(self):
-        with patch("terrain_pipeline.surface_rivers.metric_large_runoff.simulate_rainfall_runoff",
+        with patch('terrain_pipeline.runoff.simulate_rainfall_runoff',
                    side_effect=AssertionError("solver called")):
             with self.assertRaisesRegex(ValueError, "invalid terrain"):
                 runoff_from_forcing_large(terrain(), forcing(1.), chunk_size=2)
@@ -64,7 +64,7 @@ class LargeRunoffTests(unittest.TestCase):
                                          source_id="bad-dt", source_sha256="b" * 64)
             with self.assertRaisesRegex(ValueError, "uniform"):
                 runoff_from_forcing_large(terrain(), nonuniform, chunk_size=2)
-            with patch("terrain_pipeline.surface_rivers.metric_large_runoff.MAX_LARGE_CELLS", 4):
+            with patch('terrain_pipeline.runoff.MAX_LARGE_CELLS', 4):
                 with self.assertRaisesRegex(ValueError, "budget"):
                     runoff_from_forcing_large(terrain(), forcing(), chunk_size=2)
             with self.assertRaises(ValueError):

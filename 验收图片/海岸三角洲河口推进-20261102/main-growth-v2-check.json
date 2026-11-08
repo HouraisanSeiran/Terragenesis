@@ -1,0 +1,72 @@
+{
+  "final": {
+    "attached_km2": 43.56,
+    "largest_deposit_component_km2": 95.4,
+    "largest_deposit_component_span_km": 20.30270917882636,
+    "largest_component_touches_attached": true,
+    "threshold_net_rise_m": 0.1,
+    "includes_submerged": true,
+    "paths_wet": [
+      true,
+      true,
+      true
+    ],
+    "mouths_zx": [
+      [
+        [
+          224,
+          414
+        ]
+      ],
+      [
+        [
+          198,
+          431
+        ]
+      ],
+      []
+    ],
+    "base_unchanged": true,
+    "valid_unchanged": true,
+    "original_land_max_change_m": 0.0,
+    "minimum_solid_m3": 0.0
+  },
+  "event": {
+    "attached_km2": 43.56,
+    "largest_deposit_component_km2": 93.6,
+    "largest_deposit_component_span_km": 20.30270917882636,
+    "largest_component_touches_attached": true,
+    "threshold_net_rise_m": 0.1,
+    "includes_submerged": true,
+    "paths_wet": [
+      true,
+      true,
+      true
+    ],
+    "mouths_zx": [
+      [
+        [
+          224,
+          414
+        ]
+      ],
+      [
+        [
+          198,
+          431
+        ]
+      ],
+      []
+    ],
+    "base_unchanged": true,
+    "valid_unchanged": true,
+    "original_land_max_change_m": 1.0826173393346794e-05,
+    "minimum_solid_m3": 0.0
+  },
+  "formation_residual_m3": -4.76837158203125e-07,
+  "event_residual_m3": 2.384185791015625e-07,
+  "event_min_change_m": -0.004445505535833227,
+  "event_max_change_m": 0.0007229766852603348,
+  "source_identity": "a306c5127b7510e5f6b7e1359cfb36dfd342c3023cb7dc576a4f6cb97436c60c",
+  "spacing_m": 600.0
+}

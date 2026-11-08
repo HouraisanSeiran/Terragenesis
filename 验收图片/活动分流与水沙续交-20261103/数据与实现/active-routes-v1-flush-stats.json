@@ -1,0 +1,23 @@
+{
+  "input_id": "active-routes-v1-inlet",
+  "water_m3": 0.0,
+  "solid_m3": 51840.0,
+  "undelivered_water_m3": 0.0,
+  "undelivered_solid_m3": 0.0,
+  "inlet_mobile_delta_m3": 51840.0,
+  "water_delta_m3": 0.0,
+  "delivered_solid_m3": 144000.0,
+  "delivered_water_m3": 270000000.0,
+  "record_count": 1,
+  "active": [
+    true,
+    true,
+    false,
+    true,
+    true
+  ],
+  "no_duplicate_flush": true,
+  "no_replay": true,
+  "reload_matches": true,
+  "formation_consistent": true
+}

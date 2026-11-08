@@ -1,0 +1,72 @@
+{
+    "schema":  "metric-vdm-fault-before-snapshot-v1",
+    "purpose":  "Explicit historical v1 generation and cold replay; latest live implementation is v2",
+    "files":  [
+                  {
+                      "original_path":  "terrain_pipeline/metric_vdm_fault.py",
+                      "archive_path":  "terrain_pipeline/metric_vdm_fault.py",
+                      "sha256":  "bb367e16885450f4278f10f120a1d3d0bb41d1229e6a759cf82e779cc3f2f78a",
+                      "bytes":  14600
+                  },
+                  {
+                      "original_path":  "terrain_pipeline/metric_vdm_fault_v2.py",
+                      "archive_path":  "terrain_pipeline/metric_vdm_fault_v2.py",
+                      "sha256":  "b5cf7598a7368812b46ca3da82d6f63264779f30c8296312d981035919ef3082",
+                      "bytes":  13774
+                  },
+                  {
+                      "original_path":  "tools/prepare_metric_vdm_fault.py",
+                      "archive_path":  "tools/prepare_metric_vdm_fault.py",
+                      "sha256":  "c71d82c754882345ff627f478818c6ce4f4d22862229adb11e343ce6d99f894c",
+                      "bytes":  6671
+                  },
+                  {
+                      "original_path":  "tools/prepare_metric_vdm_fault_v2.py",
+                      "archive_path":  "tools/prepare_metric_vdm_fault_v2.py",
+                      "sha256":  "05903c9b07dafdc972b3fb27f1121a6f2c4c4046cd014a56dfffac7512e39444",
+                      "bytes":  4938
+                  },
+                  {
+                      "original_path":  "tools/audit_metric_vdm_fault.py",
+                      "archive_path":  "tools/audit_metric_vdm_fault.py",
+                      "sha256":  "2946b41bcfc50b4c15a8b2208aeaad2ac8a79bea6925fb6591b5602154d7e119",
+                      "bytes":  5222
+                  },
+                  {
+                      "original_path":  "tests/test_metric_vdm_fault.py",
+                      "archive_path":  "tests/test_metric_vdm_fault.py",
+                      "sha256":  "40cd5dee3f84ea7c56280a8b13624be07451b9fb9a1d2ca8c7c55fbd438a303a",
+                      "bytes":  7618
+                  },
+                  {
+                      "original_path":  "tests/test_metric_vdm_fault_v2.py",
+                      "archive_path":  "tests/test_metric_vdm_fault_v2.py",
+                      "sha256":  "09dc8663028b5fa8b2715370f9c507e37d4fddc997f8203e3ad64a7c9633b648",
+                      "bytes":  3509
+                  },
+                  {
+                      "original_path":  "terrain_pipeline/metric_vdm.py",
+                      "archive_path":  "terrain_pipeline/metric_vdm.py",
+                      "sha256":  "e536f4e869840be2fc9ac0acd5a091656fdca7e3d94b8c5db590ebe4f10e928f",
+                      "bytes":  11313
+                  },
+                  {
+                      "original_path":  "terrain_pipeline/metric_vdm_forms.py",
+                      "archive_path":  "terrain_pipeline/metric_vdm_forms.py",
+                      "sha256":  "8f60c3f700749cfd1a9bc4749c15fb8c1497d68642641a7559d63f2ff9da1f6a",
+                      "bytes":  12979
+                  },
+                  {
+                      "original_path":  "terrain_pipeline/mountain_source_adapter.py",
+                      "archive_path":  "terrain_pipeline/mountain_source_adapter.py",
+                      "sha256":  "796e763097d4b49ca74dcffc052afdd5f1fc5ad03cbdeb26f4cadc57b5cc3c85",
+                      "bytes":  18440
+                  },
+                  {
+                      "original_path":  "terrain_pipeline/rainfall_runoff.py",
+                      "archive_path":  "terrain_pipeline/rainfall_runoff.py",
+                      "sha256":  "d10b6e965b6483e0d5e6bf71c5115f196752c8780749ddb2fe0b8788daebfee8",
+                      "bytes":  17770
+                  }
+              ]
+}

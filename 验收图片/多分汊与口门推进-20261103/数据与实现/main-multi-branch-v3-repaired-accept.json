@@ -1,0 +1,157 @@
+{
+  "source_identity": "a306c5127b7510e5f6b7e1359cfb36dfd342c3023cb7dc576a4f6cb97436c60c",
+  "cases": {
+    "multi-branch-v3-repaired-stage": {
+      "unique_outlets": 5,
+      "routes_simple": true,
+      "acyclic": true,
+      "paths_ocean_connected_at_mean_sea": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "mouth_has_independent_external_ocean_face": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "path_max_bed_m": [
+        -0.34999999999999787,
+        -0.34999999999999964,
+        -0.34999999999999964,
+        -0.34999999999999964,
+        -0.34999999999999964
+      ],
+      "inlet_Q_m3_s": 3000.0,
+      "outlet_Q_m3_s": 3000.0000000000005,
+      "internal_Q_residual_m3_s": 1.1368683772161603e-13,
+      "shares_sum": 1.0,
+      "outlet_span_zx_km": [
+        16.2,
+        16.8
+      ],
+      "attached_new_land_km2": 2.52,
+      "unattached_new_land_km2": 0.36,
+      "new_land_connected_to_mainland_anchor_km2": 0.72,
+      "new_land_other_than_mainland_anchor_km2": 2.16,
+      "solid_residual_m3": 2.384185791015625e-07,
+      "minimum_stock_m3": 0.0,
+      "finite": true,
+      "base_exact": true,
+      "valid_exact": true,
+      "original_land_max_change_m": 0.0,
+      "old_records_unchanged": true,
+      "formation_record_count": 1,
+      "physical_elapsed_s": 0.0,
+      "physical_water_added_m3": 0.0,
+      "equivalent_years": 1.0,
+      "event_records": [],
+      "new_forks": [
+        [
+          204,
+          428
+        ],
+        [
+          221,
+          409
+        ]
+      ],
+      "finite_cut_solid_m3": [
+        383155.9376094579,
+        573902.0083490203
+      ],
+      "npz_sha256": "0e4fe1bcdbc464e11356a67d80ffea46d0d2abe83fe7101018f96fdbcee92c58"
+    },
+    "multi-branch-v3-repaired-event": {
+      "unique_outlets": 5,
+      "routes_simple": true,
+      "acyclic": true,
+      "paths_ocean_connected_at_mean_sea": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "mouth_has_independent_external_ocean_face": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "path_max_bed_m": [
+        -0.391671775382715,
+        -0.42102438579092083,
+        -0.0627861923082742,
+        -0.4482807057231746,
+        -0.014442655197059118
+      ],
+      "inlet_Q_m3_s": 3000.0,
+      "outlet_Q_m3_s": 3000.0000000000005,
+      "internal_Q_residual_m3_s": 1.1368683772161603e-13,
+      "shares_sum": 1.0,
+      "outlet_span_zx_km": [
+        16.2,
+        16.8
+      ],
+      "attached_new_land_km2": 1.08,
+      "unattached_new_land_km2": 0.0,
+      "new_land_connected_to_mainland_anchor_km2": 0.36,
+      "new_land_other_than_mainland_anchor_km2": 0.72,
+      "solid_residual_m3": 2.384185791015625e-07,
+      "minimum_stock_m3": 0.0,
+      "finite": true,
+      "base_exact": true,
+      "valid_exact": true,
+      "original_land_max_change_m": 0.001958437594819118,
+      "old_records_unchanged": true,
+      "formation_record_count": 1,
+      "physical_elapsed_s": 90000.0,
+      "physical_water_added_m3": 270000000.0,
+      "equivalent_years": 1.0,
+      "event_records": [
+        {
+          "input_id": "multi-branch-v3-event-inlet",
+          "source_id": "branch-event-inlet",
+          "start_s": 100800.0,
+          "end_s": 190800.0,
+          "row": 214,
+          "col": 401,
+          "water_m3": 270000000.0,
+          "solid_m3": 144000.0,
+          "known": true,
+          "direction_xz": [
+            0,
+            1
+          ],
+          "width_m": 301.34174100140757,
+          "depth_m": 0.9927790182910581,
+          "pending_solid_m3": 0.0,
+          "delivered_water_m3": 270000000.0,
+          "delivered_solid_m3": 144000.0
+        }
+      ],
+      "new_forks": [
+        [
+          204,
+          428
+        ],
+        [
+          221,
+          409
+        ]
+      ],
+      "finite_cut_solid_m3": [
+        383155.9376094579,
+        573902.0083490203
+      ],
+      "npz_sha256": "8f5c06f70ac54fa50099d82bfe0f238d749697bed8304dcfd8eef6e874202e6a"
+    }
+  },
+  "pass": true
+}

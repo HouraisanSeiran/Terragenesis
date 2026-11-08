@@ -7,7 +7,7 @@ import random
 
 import numpy as np
 
-from .metric_contracts import TerrainGrid
+from terrain_pipeline.common_infra import RoutingGraph, TerrainGrid
 from .metric_morphology_events import MorphologyEvent
 
 
@@ -156,10 +156,118 @@ def _allocate_weighted_capacity(weights, capacity, total):
     return allocation
 
 
+def geometry_graph_identity(geometry):
+    from terrain_pipeline.common_infra import identity
+    arrays = geometry["arrays"]
+    return identity({"receiver": arrays["receiver"], "source_node_cell_ids": arrays["source_node_cell_ids"]},
+                    {"terrain_identity_sha256": geometry["metadata"]["source_identity_sha256"],
+                     "semantics": "canonical_geometry_receiver_graph_not_natural_outlet_certification"})
+
+
+def _segment_classification_cells(first, second, terrain, known):
+    """Visit positive-length control-cell intervals along the actual source edge."""
+    start = (np.asarray(first) - [terrain.x0_m, terrain.z0_m]) / [terrain.dx_m, terrain.dz_m]
+    end = (np.asarray(second) - [terrain.x0_m, terrain.z0_m]) / [terrain.dx_m, terrain.dz_m]
+    times = {0., 1.}
+    for axis in (0, 1):
+        delta = end[axis] - start[axis]
+        if delta == 0.:
+            continue
+        low, high = sorted((start[axis], end[axis]))
+        for index in range(math.ceil(low - .5), math.floor(high - .5) + 1):
+            time = (index + .5 - start[axis]) / delta
+            if 0. < time < 1.:
+                times.add(float(time))
+    times = sorted(times)
+    # Include boundary/corner touches in the unknown-terrain barrier, while
+    # shoreline order uses positive-length intervals rather than point contacts.
+    samples = times + [(left + right) / 2. for left, right in zip(times, times[1:])]
+    for time in samples:
+        point = start + (end - start) * time
+        axes = []
+        for coordinate in point:
+            cell_index = math.floor(coordinate + .5)
+            indices = [cell_index]
+            if math.isclose(coordinate + .5, cell_index, rel_tol=0., abs_tol=1e-10):
+                indices.append(cell_index - 1)
+            axes.append(indices)
+        for column in axes[0]:
+            for row in axes[1]:
+                if not 0 <= row < known.shape[0] or not 0 <= column < known.shape[1] or not known[row, column]:
+                    raise ValueError("main_path crosses unknown terrain or classification")
+    cells = []
+    for left, right in zip(times, times[1:]):
+        column, row = np.floor(start + (end - start) * ((left + right) / 2.) + .5).astype(int)
+        cell = (int(row), int(column))
+        if not cells or cell != cells[-1]:
+            cells.append(cell)
+    return cells
+
+
+def _source_mouth(terrain, land, water, path, graph_identity, geometry_identity,
+                  source_graph, source_geometry):
+    if source_graph is not None and source_geometry is not None:
+        raise ValueError("select one upstream source graph or geometry")
+    cells = np.asarray([row * land.shape[1] + column for row, column in path], np.int64)
+    if source_graph is not None:
+        from terrain_pipeline.drainage import receiver_edges_valid as receiver_edges_valid
+        from terrain_pipeline.drainage import diagnostic_mesh as diagnostic_mesh
+        if (not isinstance(source_graph, RoutingGraph)
+                or source_graph.terrain_identity_sha256 != terrain.identity_sha256
+                or source_graph.identity_sha256 != graph_identity
+                or not np.array_equal(source_graph.valid_mask, terrain.valid_mask)):
+            raise ValueError("delta source graph terrain or parent identity mismatch")
+        mesh = diagnostic_mesh(terrain)
+        if not receiver_edges_valid(source_graph.receiver, mesh):
+            raise ValueError("delta source graph edge absent from terrain mesh")
+        if np.any(source_graph.receiver[cells[:-1]] != cells[1:]):
+            raise ValueError("main_path is not a directed source graph path")
+        points = np.column_stack((mesh.node_x_m[cells], mesh.node_z_m[cells]))
+    else:
+        from terrain_pipeline.channel_geometry import validate_channel_geometry
+        validate_channel_geometry(source_geometry)
+        arrays, metadata = source_geometry["arrays"], source_geometry["metadata"]
+        if (metadata["source_identity_sha256"] != terrain.identity_sha256
+                or source_geometry["identity_sha256"] != geometry_identity
+                or geometry_graph_identity(source_geometry) != graph_identity):
+            raise ValueError("delta source geometry terrain or parent identity mismatch")
+        indices = {int(cell): index for index, cell in enumerate(arrays["source_node_cell_ids"])}
+        if any(int(cell) not in indices for cell in cells):
+            raise ValueError("main_path cell absent from source geometry")
+        nodes = np.asarray([indices[int(cell)] for cell in cells], np.int64)
+        if np.any(arrays["receiver"][nodes[:-1]] != nodes[1:]):
+            raise ValueError("main_path is not a directed source geometry path")
+        points = arrays["node_xz_m"][nodes]
+    from terrain_pipeline.drainage import segments_clear as segments_clear
+    known = terrain.valid_mask & (land | water)
+    if not segments_clear(cells[:-1], cells[1:], known).all():
+        raise ValueError("main_path crosses unknown terrain or classification")
+    mouth = None
+    direction = None
+    for first, second in zip(points, points[1:]):
+        for cell in _segment_classification_cells(first, second, terrain, known):
+            if (not 0 <= cell[0] < land.shape[0] or not 0 <= cell[1] < land.shape[1]
+                    or not terrain.valid_mask[cell] or not (land[cell] or water[cell])):
+                raise ValueError("main_path crosses unknown terrain or classification")
+            if water[cell]:
+                if mouth is None:
+                    mouth = cell
+                    direction = ((second[1] - first[1]) / terrain.dz_m,
+                                 (second[0] - first[0]) / terrain.dx_m)
+            elif mouth is not None:
+                raise ValueError("main_path crosses land after first water entry")
+    if not land[path[0]] or mouth is None:
+        raise ValueError("main_path requires a land-to-water mouth")
+    norm = math.hypot(*direction)
+    return mouth, (direction[0] / norm, direction[1] / norm)
+
+
 def build_delta_candidate(terrain: TerrainGrid, land_mask: np.ndarray, water_mask: np.ndarray,
                           main_path: tuple[tuple[int, int], ...], sediment_solid_m3: float,
                           parent_graph_identity_sha256: str, parent_geometry_identity_sha256: str,
-                          config: DeltaConfig = DeltaConfig()):
+                          config: DeltaConfig = DeltaConfig(), *,
+                          source_graph: RoutingGraph | None = None, source_geometry=None):
+    """Build from a witnessed source path, or replay the legacy pixel-path contract."""
     if not isinstance(terrain, TerrainGrid) or not isinstance(config, DeltaConfig):
         raise ValueError("TerrainGrid and DeltaConfig required")
     shape = terrain.elevation_m.shape
@@ -174,21 +282,27 @@ def build_delta_candidate(terrain: TerrainGrid, land_mask: np.ndarray, water_mas
     path = tuple(_cell(cell, shape, "main_path cell") for cell in main_path)
     if any(not terrain.valid_mask[cell] for cell in path):
         raise ValueError("main_path crosses unknown terrain")
-    for first, second in zip(path, path[1:]):
-        if max(abs(first[0] - second[0]), abs(first[1] - second[1])) != 1:
-            raise ValueError("main_path must use 8-neighbor steps")
+    if source_graph is None and source_geometry is None:
+        for first, second in zip(path, path[1:]):
+            if max(abs(first[0] - second[0]), abs(first[1] - second[1])) != 1:
+                raise ValueError("legacy main_path must use 8-neighbor steps")
     if (isinstance(sediment_solid_m3, bool) or not isinstance(sediment_solid_m3, (int, float)) or
             not math.isfinite(sediment_solid_m3) or sediment_solid_m3 < 0.):
         raise ValueError("sediment_solid_m3 must be finite and nonnegative")
     _validate_sha(parent_graph_identity_sha256, "parent graph identity")
     _validate_sha(parent_geometry_identity_sha256, "parent geometry identity")
-    transitions = [(first, second) for first, second in zip(path, path[1:])
-                   if land_mask[first] and water_mask[second]]
-    if not transitions:
-        raise ValueError("main_path requires a land-to-water mouth")
-    mouth = transitions[-1][1]
+    if source_graph is not None or source_geometry is not None:
+        mouth, direction = _source_mouth(terrain, land_mask, water_mask, path,
+                                        parent_graph_identity_sha256, parent_geometry_identity_sha256,
+                                        source_graph, source_geometry)
+    else:
+        transitions = [(first, second) for first, second in zip(path, path[1:])
+                       if land_mask[first] and water_mask[second]]
+        if not transitions:
+            raise ValueError("main_path requires a land-to-water mouth")
+        mouth = transitions[-1][1]
+        direction = (mouth[0] - transitions[-1][0][0], mouth[1] - transitions[-1][0][1])
     component_mask, component = _water_component(water_mask, mouth)
-    direction = (mouth[0] - transitions[-1][0][0], mouth[1] - transitions[-1][0][1])
     candidates = _candidate_paths(mouth, direction, component, config, shape)
     weights = {}
     for row, column in component:

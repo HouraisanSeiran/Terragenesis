@@ -11,8 +11,8 @@ sys.path.insert(0, str(ROOT))
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import checked_archive, file_sha256, publish_bytes
-from terrain_pipeline.mountain_storm_forcing import load_forcing
+from terrain_pipeline.common_infra import checked_archive, file_sha256, publish_bytes
+from terrain_pipeline.climate_forcing import storm_load_forcing as load_forcing
 from tools.verify_mountain_source_adapter import write_json
 
 
@@ -38,7 +38,7 @@ def export_review(destination):
         arrays = checked_archive(SOURCE / f"pressure_mountain-{name}-coupling.npz",
                                  expected_sha256=digest, max_bytes=768*1024*1024)
         manifest = json.loads(arrays.pop("manifest").tobytes().decode("utf-8"))
-        from terrain_pipeline.mountain_lake_coupling import validate_coupling
+        from terrain_pipeline.lake import validate_coupling as validate_coupling
 
         validate_coupling(dict(manifest, arrays=arrays))
         if geometry is None:

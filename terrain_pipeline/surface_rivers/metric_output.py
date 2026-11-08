@@ -2,7 +2,7 @@
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity, load_bundle, readonly, save_bundle
+from terrain_pipeline.common_infra import identity, load_bundle, readonly, save_bundle
 from .metric_product import SCHEMA as PRODUCT_SCHEMA, TERMINAL_TOTALS
 
 

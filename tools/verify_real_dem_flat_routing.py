@@ -22,7 +22,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.real_dem_surface_network import RealDemNetwork
+from terrain_pipeline.drainage import RealDemNetwork as RealDemNetwork
 from tools import verify_real_dem_tiled_network as stage_b
 from tools.verify_real_dem_outlet_classification import (
     DEFAULT_AUDIT, DEFAULT_CANDIDATE, DEFAULT_VECTORS, canonical_bytes,
@@ -94,7 +94,7 @@ def terminal_risks(candidate, result):
 
 
 def compute(candidate):
-    module = importlib.import_module("terrain_pipeline.real_dem_flat_routing")
+    module = importlib.import_module('terrain_pipeline.drainage')
     before = stage_b.array_records(candidate["arrays"])
     comparisons = []
     stored = None
@@ -137,7 +137,7 @@ def compute(candidate):
     algorithm = {"version": ALGORITHM, "export_code_sha256": file_sha256(__file__),
                  "flat_algorithm": module.ALGORITHM, "flat_code_sha256": file_sha256(module.__file__),
                  "stage_b_export_code_sha256": file_sha256(stage_b.__file__),
-                 "tiled_code_sha256": file_sha256(importlib.import_module("terrain_pipeline.real_dem_tiled_network").__file__)}
+                 "tiled_code_sha256": file_sha256(importlib.import_module('terrain_pipeline.drainage').__file__)}
     return report, arrays, algorithm
 
 
@@ -214,7 +214,7 @@ def export_package(*, stage_b_path=DEFAULT_STAGE_B, candidate_path=DEFAULT_CANDI
         (staging / "report.json").write_bytes(payload)
         np.savez_compressed(staging / "network.npz", **arrays)
         result = read_result(staging / "network.npz", arrays, report)
-        importlib.import_module("terrain_pipeline.real_dem_flat_routing").validate_flat_routing(candidate, result)
+        importlib.import_module('terrain_pipeline.drainage').validate_flat_routing(candidate, result)
         manifest = make_manifest(staging, report, arrays, algorithm, inputs, sources)
         (staging / "manifest.json").write_bytes(canonical_bytes(manifest))
         check_unchanged(list(inputs.values()) + sources)
@@ -242,7 +242,7 @@ def verify_package(directory, *, stage_b_path=DEFAULT_STAGE_B, candidate_path=DE
         candidate_path, stage_a_path, stage_b_path, vectors_path, audit_path)
     rebuilt_report, expected_arrays, algorithm = compute(candidate)
     result = read_result(directory / "network.npz", expected_arrays, report)
-    importlib.import_module("terrain_pipeline.real_dem_flat_routing").validate_flat_routing(candidate, result)
+    importlib.import_module('terrain_pipeline.drainage').validate_flat_routing(candidate, result)
     for name, actual in result_arrays(result).items():
         if not np.array_equal(actual, expected_arrays[name]):
             raise ValueError(f"flat array deterministic replay mismatch: {name}")

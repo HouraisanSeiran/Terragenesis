@@ -5,11 +5,11 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.dem_domain import load_dem_candidate
-from terrain_pipeline.real_dem_surface_network import build_real_dem_network
-from terrain_pipeline.real_dem_tiled_network import (
-    CandidateTileReader, build_tiled_network, validate_tiled_network,
-)
+from terrain_pipeline.td_source import load_dem_candidate
+from terrain_pipeline.drainage import build_real_dem_network as build_real_dem_network
+from terrain_pipeline.drainage import CandidateTileReader as CandidateTileReader
+from terrain_pipeline.drainage import build_tiled_network as build_tiled_network
+from terrain_pipeline.drainage import validate_tiled_network as validate_tiled_network
 
 
 def fixture(height):
@@ -42,9 +42,13 @@ class RealDemTiledNetworkTests(unittest.TestCase):
     def test_direction_ties_strict_flat_and_unknown_barriers(self):
         height = np.array([[1, 1, 1], [1, 9, 1], [1, 1, 1]], float)
         actual = build_tiled_network(fixture(height), tile_size=1)
-        self.assertEqual(actual.receiver[1, 1], 0)
+        mesh = actual.mesh
+        adjacent = mesh.indices[mesh.indptr[4]:mesh.indptr[5]]
+        lengths = mesh.edge_length_m[mesh.indptr[4]:mesh.indptr[5]]
+        expected = int(adjacent[np.argmax((9. - height.ravel()[adjacent]) / lengths)])
+        self.assertEqual(actual.receiver[1, 1], expected)
         self.assertEqual(actual.order.tolist(), [4, 0, 1, 2, 3, 5, 6, 7, 8])
-        self.assertEqual(actual.accumulation_cells[0, 0], 2.)
+        self.assertEqual(actual.accumulation_cells.ravel()[expected], 2.)
         height[0, 0] = np.nan
         actual = build_tiled_network(fixture(height), tile_size=2)
         self.assertEqual(actual.receiver[1, 1], 1)
@@ -123,10 +127,12 @@ class RealDemTiledNetworkTests(unittest.TestCase):
     def test_validation_is_independent_and_rejects_tampered_fields(self):
         candidate = fixture([[1., 1., 1.], [1., 9., 1.], [1., 1., np.nan]])
         original = build_tiled_network(candidate, tile_size=2)
-        with patch("terrain_pipeline.real_dem_tiled_network.build_tiled_network", side_effect=AssertionError("no replay")):
+        with patch('terrain_pipeline.drainage.build_tiled_network', side_effect=AssertionError("no replay")):
             self.assertTrue(validate_tiled_network(candidate, original)["verified"])
         changes = []
         for target in (1, 4, 8, 99, -2):
+            if target == original.receiver[1, 1]:
+                continue
             receiver = original.receiver.copy()
             receiver[1, 1] = target
             changes.append(replace(original, receiver=receiver))

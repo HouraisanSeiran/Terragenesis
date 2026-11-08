@@ -4,10 +4,13 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy
-from terrain_pipeline.td_basin_overflow import _boundary_faces, _face_id, _physical_faces
-from terrain_pipeline.td_basin_source import make_td_source
-from terrain_pipeline.td_lake_spill_geometry import trace_engineering_outlet, trace_spill_connection
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_storage import _boundary_faces as _boundary_faces
+from terrain_pipeline.basin_storage import _face_id as _face_id
+from terrain_pipeline.basin_storage import _physical_faces as _physical_faces
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_topology import trace_engineering_outlet as trace_engineering_outlet
+from terrain_pipeline.basin_topology import trace_spill_connection as trace_spill_connection
 
 
 def fixture():

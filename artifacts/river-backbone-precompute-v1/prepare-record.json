@@ -1,0 +1,47 @@
+{
+  "audit": {
+    "clock": "time.monotonic",
+    "command": [
+      "-B",
+      "D:\\codexwork\\山川形意Terragenesis\\tools\\audit_river_backbone.py",
+      "--product",
+      "D:\\codexwork\\山川形意Terragenesis\\.scratch\\river-precompute-finalization\\s1\\staging\\.p2-event-refined-v4.partial-dl48bis6\\product",
+      "--parent-reference",
+      "D:\\codexwork\\山川形意Terragenesis\\.scratch\\river-precompute-finalization\\s1\\staging\\.p2-event-refined-v4.partial-dl48bis6\\parent-reference.json",
+      "--report",
+      "D:\\codexwork\\山川形意Terragenesis\\.scratch\\river-precompute-finalization\\s1\\staging\\.p2-event-refined-v4.partial-dl48bis6\\audit.json"
+    ],
+    "elapsed_s": 5.813,
+    "hard_stop_s": 60.0,
+    "returncode": 0,
+    "rss_sample": {
+      "is_limit": false,
+      "note": "a sampled observation of the child's process tree, not a resource limit; None means psutil was unavailable, not zero",
+      "observed_peak_at_s": 5.547,
+      "observed_peak_bytes": 190697472,
+      "sampled_every_s": 0.25
+    },
+    "stderr_tail": "",
+    "stdout_tail": "{\"status\": \"PASS\", \"reasons\": [], \"checks\": [\"area\", \"quantities\", \"side_inputs\", \"terminals\", \"walk\"]}\n",
+    "timed_out": false
+  },
+  "declared_gates": {
+    "a_min_cells": 48,
+    "q_min_m3_s": 0.001
+  },
+  "event_receiver": true,
+  "max_branches": 1024,
+  "memory_budget_bytes": 536870912,
+  "memory_budget_status": "sampled_observation_only",
+  "payload_bytes": 50894429,
+  "quantities": [
+    "source_model_scenario"
+  ],
+  "schema": "river-backbone-prepare-v1",
+  "side_input_branches": {
+    "source_model_scenario": 292
+  },
+  "side_mode": "refined",
+  "stage_wall_s": 8.969,
+  "support_name": "p2"
+}

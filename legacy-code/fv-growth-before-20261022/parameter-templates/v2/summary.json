@@ -1,0 +1,994 @@
+{
+  "schema": "finite-FV-suspended-growth-v2",
+  "status": "completed",
+  "checkpoint": "verification\\fluvial-delta\\natural-fv-growth-v2-1320s-20261019-01\\checkpoint-0002176.npz",
+  "checkpoint_sha256": "4f5132ec95de3f4a689f02efd2372161aa48b5f0f3c2ed7ab035f7bb50267ff4",
+  "start": {
+    "schema": "finite-FV-growth-checkpoint-v2",
+    "source_cursor_s": 18908.0,
+    "physical_time_s": 1388.0,
+    "cumulative_injected_solid_m3": 5874.035824511071,
+    "cumulative_exported_solid_m3": 0.7368147195783218,
+    "source_identities": [
+      "4a00f0f179c6358e2c77e23de5260563586af72cc11587510ca6a328b5fe3230"
+    ],
+    "source_total_solid_m3": 29572.345291084413,
+    "already_consumed_native_solid_m3": 1529.6405532928538,
+    "already_consumed_native_packets": 8,
+    "parent_result": "verification\\fluvial-delta\\natural-wide-independent-short-20261019-02\\result.npz",
+    "parent_sha256": "1cedbf3bf272b99ae2561c3012fcc7240e1d9b4f37666b2bab4ba0464a1dfe55",
+    "water_result": "verification\\fluvial-delta\\natural-wide-fv-water-20261019-01\\result.npz",
+    "water_sha256": "713382bd26aed374a6ca41b5a1911662a75f121f13d9fe8f697dab556cdc33a2",
+    "scope": "independent wide river chain; never inherits sediment consumption from unrelated old TD02 continuation scenarios",
+    "implementation_hashes": {
+      "tools/run_natural_fv_growth.py": "0d3028c16af2c5b1b20236cd8d8c4bef23acc90dedab5154499e7378b4d66db4",
+      "terrain_pipeline/surface_rivers/metric_fv_growth_coupling.py": "3a439557e983f26e215748fb6b0aba0606ac3bac1eb3bd163cfa29d9d04859e2",
+      "terrain_pipeline/surface_rivers/metric_fv_suspended_supply.py": "619c1ced4356f51ec8d988e10446159ff5e95834d770f47b4b82e04df185857f",
+      "terrain_pipeline/surface_rivers/metric_fv_coastal_sediment.py": "47bd10ac502a845a8ce399304f9ba5b4ca6f3e86c1499bd7dd334091504c14ca",
+      "terrain_pipeline/surface_rivers/metric_natural_delta.py": "c19b6ccef7438b731ebd3e19a8e8a659d7f906deff058ad8fba087892855b027",
+      "tools/run_natural_delta_fv_water.py": "60c71cdb50dbce1978e5bcf01a2fe8ce77360ce54e8e873464c779c0344dda4f",
+      "terrain_pipeline/single_domain_shallow_water_accelerated_v7.py": "09792c557aed7527515369dec0101dba22c8e87414c2a9b4555f247a44e1197e",
+      "terrain_pipeline/single_domain_shallow_water_execution_v7.py": "818b0076e8e596edcd7898bb8bab8d1854e09455eac5db266fc1e7092d54b6e3",
+      "terrain_pipeline/single_domain_shallow_water_support_v7.py": "0b5a8476d34364db1261a9409172e1a293aef2145fc166cfb02005d6ccd4c04c",
+      "terrain_pipeline/regional_surface_hydraulics.py": "e8a75f8ddeff4705127e61d30411282bec37e635babd739583beef66918b44da",
+      "tools/run_natural_fv_growth_v2.py": "3f02a0723a7051e7807dfe43ded124303aac28b97ee3bbe3fc8ed219d8cf1699"
+    },
+    "resumed_checkpoint": "verification\\fluvial-delta\\natural-fv-growth-v2-retry-20261019-02\\checkpoint-0000064.npz",
+    "resumed_checkpoint_sha256": "8a31ec5c2b5c7a903439c48811a470f356fe8717972ad1f800c8f4784d03dea6",
+    "checkpoint_migration": {
+      "from_schema": "finite-FV-growth-checkpoint-v2",
+      "source": "verification\\fluvial-delta\\natural-fv-growth-v2-retry-20261019-02\\checkpoint-0000064.npz",
+      "source_sha256": "8a31ec5c2b5c7a903439c48811a470f356fe8717972ad1f800c8f4784d03dea6",
+      "from_runner_sha256": "a2e55de4108cf903da1ca2f1efd1b39e3dcf0947e5f7ad00bbe15801082a05cf",
+      "to_runner_sha256": "3f02a0723a7051e7807dfe43ded124303aac28b97ee3bbe3fc8ed219d8cf1699",
+      "policy": "exact frozen dependency signatures; v2 scheduling runner added; all state arrays and quota unchanged"
+    }
+  },
+  "end": {
+    "schema": "finite-FV-growth-checkpoint-v2",
+    "source_cursor_s": 58508.0,
+    "physical_time_s": 2708.0,
+    "cumulative_injected_solid_m3": 18104.06987735951,
+    "cumulative_exported_solid_m3": 1.1158288431879024,
+    "source_identities": [
+      "4a00f0f179c6358e2c77e23de5260563586af72cc11587510ca6a328b5fe3230"
+    ],
+    "source_total_solid_m3": 29572.345291084413,
+    "already_consumed_native_solid_m3": 1529.6405532928538,
+    "already_consumed_native_packets": 8,
+    "parent_result": "verification\\fluvial-delta\\natural-wide-independent-short-20261019-02\\result.npz",
+    "parent_sha256": "1cedbf3bf272b99ae2561c3012fcc7240e1d9b4f37666b2bab4ba0464a1dfe55",
+    "water_result": "verification\\fluvial-delta\\natural-wide-fv-water-20261019-01\\result.npz",
+    "water_sha256": "713382bd26aed374a6ca41b5a1911662a75f121f13d9fe8f697dab556cdc33a2",
+    "scope": "independent wide river chain; never inherits sediment consumption from unrelated old TD02 continuation scenarios",
+    "implementation_hashes": {
+      "tools/run_natural_fv_growth.py": "0d3028c16af2c5b1b20236cd8d8c4bef23acc90dedab5154499e7378b4d66db4",
+      "terrain_pipeline/surface_rivers/metric_fv_growth_coupling.py": "3a439557e983f26e215748fb6b0aba0606ac3bac1eb3bd163cfa29d9d04859e2",
+      "terrain_pipeline/surface_rivers/metric_fv_suspended_supply.py": "619c1ced4356f51ec8d988e10446159ff5e95834d770f47b4b82e04df185857f",
+      "terrain_pipeline/surface_rivers/metric_fv_coastal_sediment.py": "47bd10ac502a845a8ce399304f9ba5b4ca6f3e86c1499bd7dd334091504c14ca",
+      "terrain_pipeline/surface_rivers/metric_natural_delta.py": "c19b6ccef7438b731ebd3e19a8e8a659d7f906deff058ad8fba087892855b027",
+      "tools/run_natural_delta_fv_water.py": "60c71cdb50dbce1978e5bcf01a2fe8ce77360ce54e8e873464c779c0344dda4f",
+      "terrain_pipeline/single_domain_shallow_water_accelerated_v7.py": "09792c557aed7527515369dec0101dba22c8e87414c2a9b4555f247a44e1197e",
+      "terrain_pipeline/single_domain_shallow_water_execution_v7.py": "818b0076e8e596edcd7898bb8bab8d1854e09455eac5db266fc1e7092d54b6e3",
+      "terrain_pipeline/single_domain_shallow_water_support_v7.py": "0b5a8476d34364db1261a9409172e1a293aef2145fc166cfb02005d6ccd4c04c",
+      "terrain_pipeline/regional_surface_hydraulics.py": "e8a75f8ddeff4705127e61d30411282bec37e635babd739583beef66918b44da",
+      "tools/run_natural_fv_growth_v2.py": "3f02a0723a7051e7807dfe43ded124303aac28b97ee3bbe3fc8ed219d8cf1699"
+    },
+    "resumed_checkpoint": "verification\\fluvial-delta\\natural-fv-growth-v2-retry-20261019-02\\checkpoint-0000064.npz",
+    "resumed_checkpoint_sha256": "8a31ec5c2b5c7a903439c48811a470f356fe8717972ad1f800c8f4784d03dea6",
+    "checkpoint_migration": {
+      "from_schema": "finite-FV-growth-checkpoint-v2",
+      "source": "verification\\fluvial-delta\\natural-fv-growth-v2-retry-20261019-02\\checkpoint-0000064.npz",
+      "source_sha256": "8a31ec5c2b5c7a903439c48811a470f356fe8717972ad1f800c8f4784d03dea6",
+      "from_runner_sha256": "a2e55de4108cf903da1ca2f1efd1b39e3dcf0947e5f7ad00bbe15801082a05cf",
+      "to_runner_sha256": "3f02a0723a7051e7807dfe43ded124303aac28b97ee3bbe3fc8ed219d8cf1699",
+      "policy": "exact frozen dependency signatures; v2 scheduling runner added; all state arrays and quota unchanged"
+    }
+  },
+  "parameters": {
+    "parent": null,
+    "water_run": null,
+    "resume": "verification\\fluvial-delta\\natural-fv-growth-v2-retry-20261019-02\\checkpoint-0000064.npz",
+    "append_source": null,
+    "output": "verification\\fluvial-delta\\natural-fv-growth-v2-1320s-20261019-01",
+    "intervals": 2176,
+    "chunk_intervals": 16,
+    "interval_s": 2.0,
+    "source_time_scale": 30.0,
+    "max_input_concentration": 0.02,
+    "supply_off": false,
+    "river_q": null,
+    "sea_mean": 0.0,
+    "tide_amplitude": 0.0,
+    "tide_period": 44714.0,
+    "tide_phase": 0.0,
+    "wave_height": 0.0,
+    "wave_period": 5.0,
+    "settling_velocity": 0.005,
+    "max_bed_change": 0.01,
+    "packet_stride": 64,
+    "max_wall_s": 7200.0,
+    "max_bytes_mib": 768,
+    "duration_s": 1320.0,
+    "chunk_duration_s": 16.0,
+    "min_interval_s": 0.0625,
+    "recover_completed_prefix": null,
+    "adaptive_intervals": true
+  },
+  "planned_duration_s": 1320.0,
+  "actual_duration_s": 1320.0,
+  "initial_bed_plus_suspended_solid_m3": 260337.4316392965,
+  "final_bed_plus_suspended_solid_m3": 272567.08667801897,
+  "injected_solid_m3": 12230.03405284844,
+  "exported_solid_m3": 0.37901412360958064,
+  "combined_residual_solid_m3": -2.330125425942242e-09,
+  "maximum_phase_residual_solid_m3": 1.8075052565791339e-10,
+  "remaining_finite_source_solid_m3": 11468.275413724903,
+  "water_supplied_imported_exported_m3": [
+    627181.2334794066,
+    0.0,
+    638492.0638380847
+  ],
+  "water_volume_residual_m3": -9.313225746154785e-10,
+  "implementation_hashes": {
+    "tools/run_natural_fv_growth.py": "0d3028c16af2c5b1b20236cd8d8c4bef23acc90dedab5154499e7378b4d66db4",
+    "terrain_pipeline/surface_rivers/metric_fv_growth_coupling.py": "3a439557e983f26e215748fb6b0aba0606ac3bac1eb3bd163cfa29d9d04859e2",
+    "terrain_pipeline/surface_rivers/metric_fv_suspended_supply.py": "619c1ced4356f51ec8d988e10446159ff5e95834d770f47b4b82e04df185857f",
+    "terrain_pipeline/surface_rivers/metric_fv_coastal_sediment.py": "47bd10ac502a845a8ce399304f9ba5b4ca6f3e86c1499bd7dd334091504c14ca",
+    "terrain_pipeline/surface_rivers/metric_natural_delta.py": "c19b6ccef7438b731ebd3e19a8e8a659d7f906deff058ad8fba087892855b027",
+    "tools/run_natural_delta_fv_water.py": "60c71cdb50dbce1978e5bcf01a2fe8ce77360ce54e8e873464c779c0344dda4f",
+    "terrain_pipeline/single_domain_shallow_water_accelerated_v7.py": "09792c557aed7527515369dec0101dba22c8e87414c2a9b4555f247a44e1197e",
+    "terrain_pipeline/single_domain_shallow_water_execution_v7.py": "818b0076e8e596edcd7898bb8bab8d1854e09455eac5db266fc1e7092d54b6e3",
+    "terrain_pipeline/single_domain_shallow_water_support_v7.py": "0b5a8476d34364db1261a9409172e1a293aef2145fc166cfb02005d6ccd4c04c",
+    "terrain_pipeline/regional_surface_hydraulics.py": "e8a75f8ddeff4705127e61d30411282bec37e635babd739583beef66918b44da",
+    "tools/run_natural_fv_growth_v2.py": "3f02a0723a7051e7807dfe43ded124303aac28b97ee3bbe3fc8ed219d8cf1699"
+  },
+  "runtime_s": 1505.0780000000013,
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "committed",
+      "interval_s": 2.0,
+      "interval_count": 8,
+      "end_time_s": 1404.0,
+      "peak_bed_change_m": 0.009470079983047996
+    },
+    {
+      "attempt": 2,
+      "status": "committed",
+      "interval_s": 2.0,
+      "interval_count": 8,
+      "end_time_s": 1420.0,
+      "peak_bed_change_m": 0.007563599895528905
+    },
+    {
+      "attempt": 3,
+      "status": "rejected",
+      "time_s": 1420.0,
+      "interval_s": 2.0,
+      "interval_count": 8,
+      "error": "full physical interval 2s gives bed change 0.0182708m > 0.01m; retry complete water/bed run with interval <= 0.875712s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 19868.0
+    },
+    {
+      "attempt": 4,
+      "status": "rejected",
+      "time_s": 1420.0,
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "error": "full physical interval 1s gives bed change 0.0298375m > 0.01m; retry complete water/bed run with interval <= 0.268119s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 19868.0
+    },
+    {
+      "attempt": 5,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 1436.0,
+      "peak_bed_change_m": 0.006288742931731539
+    },
+    {
+      "attempt": 6,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 1452.0,
+      "peak_bed_change_m": 0.0019809994921757834
+    },
+    {
+      "attempt": 7,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1468.0,
+      "peak_bed_change_m": 0.004468822120306193
+    },
+    {
+      "attempt": 8,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1484.0,
+      "peak_bed_change_m": 0.004301021109087144
+    },
+    {
+      "attempt": 9,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1500.0,
+      "peak_bed_change_m": 0.008725591068191374
+    },
+    {
+      "attempt": 10,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1516.0,
+      "peak_bed_change_m": 0.009431230784307854
+    },
+    {
+      "attempt": 11,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1532.0,
+      "peak_bed_change_m": 0.003969784556711375
+    },
+    {
+      "attempt": 12,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1548.0,
+      "peak_bed_change_m": 0.0037865154767443565
+    },
+    {
+      "attempt": 13,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1564.0,
+      "peak_bed_change_m": 0.0037165467563506915
+    },
+    {
+      "attempt": 14,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1580.0,
+      "peak_bed_change_m": 0.0036298277421916714
+    },
+    {
+      "attempt": 15,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1596.0,
+      "peak_bed_change_m": 0.0035338672437876806
+    },
+    {
+      "attempt": 16,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1612.0,
+      "peak_bed_change_m": 0.003460335277982729
+    },
+    {
+      "attempt": 17,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1628.0,
+      "peak_bed_change_m": 0.0034392736926147083
+    },
+    {
+      "attempt": 18,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1644.0,
+      "peak_bed_change_m": 0.0031843452967199593
+    },
+    {
+      "attempt": 19,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1660.0,
+      "peak_bed_change_m": 0.003140537701651236
+    },
+    {
+      "attempt": 20,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1676.0,
+      "peak_bed_change_m": 0.00308870438270914
+    },
+    {
+      "attempt": 21,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1692.0,
+      "peak_bed_change_m": 0.003036807599798741
+    },
+    {
+      "attempt": 22,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1708.0,
+      "peak_bed_change_m": 0.0031492498200956787
+    },
+    {
+      "attempt": 23,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1724.0,
+      "peak_bed_change_m": 0.0031479103991876034
+    },
+    {
+      "attempt": 24,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1740.0,
+      "peak_bed_change_m": 0.0031188419109532406
+    },
+    {
+      "attempt": 25,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1756.0,
+      "peak_bed_change_m": 0.0030701774207086974
+    },
+    {
+      "attempt": 26,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1772.0,
+      "peak_bed_change_m": 0.0029948025444752613
+    },
+    {
+      "attempt": 27,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1788.0,
+      "peak_bed_change_m": 0.002929072664455301
+    },
+    {
+      "attempt": 28,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1804.0,
+      "peak_bed_change_m": 0.0029949858713800293
+    },
+    {
+      "attempt": 29,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1820.0,
+      "peak_bed_change_m": 0.0029949168968746998
+    },
+    {
+      "attempt": 30,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1836.0,
+      "peak_bed_change_m": 0.00297095283523674
+    },
+    {
+      "attempt": 31,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1852.0,
+      "peak_bed_change_m": 0.002929714048668819
+    },
+    {
+      "attempt": 32,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1868.0,
+      "peak_bed_change_m": 0.0031303753211724406
+    },
+    {
+      "attempt": 33,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1884.0,
+      "peak_bed_change_m": 0.0028263983991848596
+    },
+    {
+      "attempt": 34,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1900.0,
+      "peak_bed_change_m": 0.00278017860595825
+    },
+    {
+      "attempt": 35,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1916.0,
+      "peak_bed_change_m": 0.004501024469499626
+    },
+    {
+      "attempt": 36,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1932.0,
+      "peak_bed_change_m": 0.002934182862095791
+    },
+    {
+      "attempt": 37,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1948.0,
+      "peak_bed_change_m": 0.002907134403389633
+    },
+    {
+      "attempt": 38,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1964.0,
+      "peak_bed_change_m": 0.002857196306790599
+    },
+    {
+      "attempt": 39,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1980.0,
+      "peak_bed_change_m": 0.00301095372311444
+    },
+    {
+      "attempt": 40,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 1996.0,
+      "peak_bed_change_m": 0.0027272899604732226
+    },
+    {
+      "attempt": 41,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 2012.0,
+      "peak_bed_change_m": 0.002890951645299178
+    },
+    {
+      "attempt": 42,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 2028.0,
+      "peak_bed_change_m": 0.005482776920467725
+    },
+    {
+      "attempt": 43,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 2044.0,
+      "peak_bed_change_m": 0.0027993870377949204
+    },
+    {
+      "attempt": 44,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 2060.0,
+      "peak_bed_change_m": 0.0027429208858429366
+    },
+    {
+      "attempt": 45,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 2076.0,
+      "peak_bed_change_m": 0.002670848615786592
+    },
+    {
+      "attempt": 46,
+      "status": "rejected",
+      "time_s": 2076.0,
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "error": "full physical interval 1s gives bed change 0.0173776m > 0.01m; retry complete water/bed run with interval <= 0.460363s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 39548.0
+    },
+    {
+      "attempt": 47,
+      "status": "rejected",
+      "time_s": 2076.0,
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "error": "full physical interval 0.5s gives bed change 0.0105816m > 0.01m; retry complete water/bed run with interval <= 0.378014s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 39548.0
+    },
+    {
+      "attempt": 48,
+      "status": "committed",
+      "interval_s": 0.25,
+      "interval_count": 64,
+      "end_time_s": 2092.0,
+      "peak_bed_change_m": 0.000640159211192648
+    },
+    {
+      "attempt": 49,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2108.0,
+      "peak_bed_change_m": 0.009504605900286567
+    },
+    {
+      "attempt": 50,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2124.0,
+      "peak_bed_change_m": 0.004961902713582322
+    },
+    {
+      "attempt": 51,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2140.0,
+      "peak_bed_change_m": 0.0013430919520506235
+    },
+    {
+      "attempt": 52,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 2156.0,
+      "peak_bed_change_m": 0.004049698562189508
+    },
+    {
+      "attempt": 53,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 2172.0,
+      "peak_bed_change_m": 0.0025411764147279525
+    },
+    {
+      "attempt": 54,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 2188.0,
+      "peak_bed_change_m": 0.0031312621397390217
+    },
+    {
+      "attempt": 55,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 2204.0,
+      "peak_bed_change_m": 0.005192993694913994
+    },
+    {
+      "attempt": 56,
+      "status": "rejected",
+      "time_s": 2204.0,
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "error": "full physical interval 1s gives bed change 0.0136456m > 0.01m; retry complete water/bed run with interval <= 0.586268s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 43388.0
+    },
+    {
+      "attempt": 57,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2220.0,
+      "peak_bed_change_m": 0.0012810743066593577
+    },
+    {
+      "attempt": 58,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 2236.0,
+      "peak_bed_change_m": 0.00412073267069335
+    },
+    {
+      "attempt": 59,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 2252.0,
+      "peak_bed_change_m": 0.0026832352518018077
+    },
+    {
+      "attempt": 60,
+      "status": "rejected",
+      "time_s": 2252.0,
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "error": "full physical interval 1s gives bed change 0.0133523m > 0.01m; retry complete water/bed run with interval <= 0.599147s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 44828.0
+    },
+    {
+      "attempt": 61,
+      "status": "rejected",
+      "time_s": 2252.0,
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "error": "full physical interval 0.5s gives bed change 0.0105553m > 0.01m; retry complete water/bed run with interval <= 0.378957s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 44828.0
+    },
+    {
+      "attempt": 62,
+      "status": "committed",
+      "interval_s": 0.25,
+      "interval_count": 64,
+      "end_time_s": 2268.0,
+      "peak_bed_change_m": 0.0013870699442990464
+    },
+    {
+      "attempt": 63,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2284.0,
+      "peak_bed_change_m": 0.001887765428465707
+    },
+    {
+      "attempt": 64,
+      "status": "rejected",
+      "time_s": 2284.0,
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "error": "full physical interval 1s gives bed change 0.0116041m > 0.01m; retry complete water/bed run with interval <= 0.689412s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 45788.0
+    },
+    {
+      "attempt": 65,
+      "status": "rejected",
+      "time_s": 2284.0,
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "error": "full physical interval 0.5s gives bed change 0.0140879m > 0.01m; retry complete water/bed run with interval <= 0.283932s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 45788.0
+    },
+    {
+      "attempt": 66,
+      "status": "committed",
+      "interval_s": 0.25,
+      "interval_count": 64,
+      "end_time_s": 2300.0,
+      "peak_bed_change_m": 0.004473358797123073
+    },
+    {
+      "attempt": 67,
+      "status": "committed",
+      "interval_s": 0.25,
+      "interval_count": 64,
+      "end_time_s": 2316.0,
+      "peak_bed_change_m": 0.0005830537907167699
+    },
+    {
+      "attempt": 68,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2332.0,
+      "peak_bed_change_m": 0.0030628561640542173
+    },
+    {
+      "attempt": 69,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2348.0,
+      "peak_bed_change_m": 0.0027976526446016337
+    },
+    {
+      "attempt": 70,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2364.0,
+      "peak_bed_change_m": 0.0024533491892020365
+    },
+    {
+      "attempt": 71,
+      "status": "rejected",
+      "time_s": 2364.0,
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "error": "full physical interval 0.5s gives bed change 0.0144094m > 0.01m; retry complete water/bed run with interval <= 0.277597s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 48188.0
+    },
+    {
+      "attempt": 72,
+      "status": "committed",
+      "interval_s": 0.25,
+      "interval_count": 64,
+      "end_time_s": 2380.0,
+      "peak_bed_change_m": 0.0007864771887233779
+    },
+    {
+      "attempt": 73,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2396.0,
+      "peak_bed_change_m": 0.0019078944878092585
+    },
+    {
+      "attempt": 74,
+      "status": "rejected",
+      "time_s": 2396.0,
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "error": "full physical interval 1s gives bed change 0.0259272m > 0.01m; retry complete water/bed run with interval <= 0.308556s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 49148.0
+    },
+    {
+      "attempt": 75,
+      "status": "rejected",
+      "time_s": 2396.0,
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "error": "full physical interval 0.5s gives bed change 0.0148452m > 0.01m; retry complete water/bed run with interval <= 0.269447s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 49148.0
+    },
+    {
+      "attempt": 76,
+      "status": "committed",
+      "interval_s": 0.25,
+      "interval_count": 64,
+      "end_time_s": 2412.0,
+      "peak_bed_change_m": 0.008995322720183552
+    },
+    {
+      "attempt": 77,
+      "status": "committed",
+      "interval_s": 0.25,
+      "interval_count": 64,
+      "end_time_s": 2428.0,
+      "peak_bed_change_m": 0.0007253979983810055
+    },
+    {
+      "attempt": 78,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2444.0,
+      "peak_bed_change_m": 0.004153563346404265
+    },
+    {
+      "attempt": 79,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2460.0,
+      "peak_bed_change_m": 0.0010991555593926616
+    },
+    {
+      "attempt": 80,
+      "status": "rejected",
+      "time_s": 2460.0,
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "error": "full physical interval 1s gives bed change 0.0132445m > 0.01m; retry complete water/bed run with interval <= 0.604025s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 51068.0
+    },
+    {
+      "attempt": 81,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2476.0,
+      "peak_bed_change_m": 0.002195930299436988
+    },
+    {
+      "attempt": 82,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2492.0,
+      "peak_bed_change_m": 0.0013668340724763972
+    },
+    {
+      "attempt": 83,
+      "status": "rejected",
+      "time_s": 2492.0,
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "error": "full physical interval 1s gives bed change 0.0130276m > 0.01m; retry complete water/bed run with interval <= 0.61408s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 52028.0
+    },
+    {
+      "attempt": 84,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2508.0,
+      "peak_bed_change_m": 0.006820479526826073
+    },
+    {
+      "attempt": 85,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2524.0,
+      "peak_bed_change_m": 0.004961959863797771
+    },
+    {
+      "attempt": 86,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2540.0,
+      "peak_bed_change_m": 0.0014785804941745972
+    },
+    {
+      "attempt": 87,
+      "status": "rejected",
+      "time_s": 2540.0,
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "error": "full physical interval 1s gives bed change 0.0104136m > 0.01m; retry complete water/bed run with interval <= 0.768223s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 53468.0
+    },
+    {
+      "attempt": 88,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2556.0,
+      "peak_bed_change_m": 0.0012133163836025584
+    },
+    {
+      "attempt": 89,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 2572.0,
+      "peak_bed_change_m": 0.009319247748347692
+    },
+    {
+      "attempt": 90,
+      "status": "rejected",
+      "time_s": 2572.0,
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "error": "full physical interval 1s gives bed change 0.0126654m > 0.01m; retry complete water/bed run with interval <= 0.631643s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 54428.0
+    },
+    {
+      "attempt": 91,
+      "status": "rejected",
+      "time_s": 2572.0,
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "error": "full physical interval 0.5s gives bed change 0.0173689m > 0.01m; retry complete water/bed run with interval <= 0.230297s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 54428.0
+    },
+    {
+      "attempt": 92,
+      "status": "committed",
+      "interval_s": 0.25,
+      "interval_count": 64,
+      "end_time_s": 2588.0,
+      "peak_bed_change_m": 0.008891548211233058
+    },
+    {
+      "attempt": 93,
+      "status": "committed",
+      "interval_s": 0.25,
+      "interval_count": 64,
+      "end_time_s": 2604.0,
+      "peak_bed_change_m": 0.0006033406588932255
+    },
+    {
+      "attempt": 94,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2620.0,
+      "peak_bed_change_m": 0.0018025030388899022
+    },
+    {
+      "attempt": 95,
+      "status": "rejected",
+      "time_s": 2620.0,
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "error": "full physical interval 1s gives bed change 0.0109671m > 0.01m; retry complete water/bed run with interval <= 0.729454s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 55868.0
+    },
+    {
+      "attempt": 96,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2636.0,
+      "peak_bed_change_m": 0.003440408943187645
+    },
+    {
+      "attempt": 97,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2652.0,
+      "peak_bed_change_m": 0.004517782941702464
+    },
+    {
+      "attempt": 98,
+      "status": "committed",
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "end_time_s": 2668.0,
+      "peak_bed_change_m": 0.0011565210405271031
+    },
+    {
+      "attempt": 99,
+      "status": "committed",
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "end_time_s": 2684.0,
+      "peak_bed_change_m": 0.006167805114532854
+    },
+    {
+      "attempt": 100,
+      "status": "rejected",
+      "time_s": 2684.0,
+      "interval_s": 1.0,
+      "interval_count": 16,
+      "error": "full physical interval 1s gives bed change 0.0123948m > 0.01m; retry complete water/bed run with interval <= 0.645432s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 57788.0
+    },
+    {
+      "attempt": 101,
+      "status": "rejected",
+      "time_s": 2684.0,
+      "interval_s": 0.5,
+      "interval_count": 32,
+      "error": "full physical interval 0.5s gives bed change 0.018769m > 0.01m; retry complete water/bed run with interval <= 0.213118s; no transport-rate scaling applied",
+      "source_cursor_unchanged_s": 57788.0
+    },
+    {
+      "attempt": 102,
+      "status": "committed",
+      "interval_s": 0.25,
+      "interval_count": 64,
+      "end_time_s": 2700.0,
+      "peak_bed_change_m": 0.004624177711620048
+    },
+    {
+      "attempt": 103,
+      "status": "committed",
+      "interval_s": 0.25,
+      "interval_count": 32,
+      "end_time_s": 2708.0,
+      "peak_bed_change_m": 0.00114782070520425
+    }
+  ],
+  "limitations": "same frozen FV/MPM/suspended kernels as v1; scheduling only. Rejected full chunks issue no committed quota or state. No suspended re-entrainment; interval-net advection; not calibrated annual chronology."
+}

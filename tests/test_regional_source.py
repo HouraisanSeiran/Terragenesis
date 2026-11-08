@@ -2,7 +2,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 from terrain_pipeline.regional_surface_source import headers, load_source, validate_source
-from terrain_pipeline.mountain_source_adapter import identity
+from terrain_pipeline.common_infra import identity
 import numpy as np
 
 class RegionalSourceTests(unittest.TestCase):

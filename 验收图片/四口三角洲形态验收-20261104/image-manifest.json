@@ -1,0 +1,149 @@
+{
+  "label": "四口三角洲：低平洲体与分级水系",
+  "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+  "statistics": {
+    "new_land_km2": 26.37,
+    "largest_new_land_km2": 12.23,
+    "actual_accepted_q_m3_s": 1500.0,
+    "route_q_m3_s": [
+      390.46827843804937,
+      385.8490185075369,
+      392.8473686307449,
+      330.8353344244078
+    ],
+    "distinct_mouths_zx": [
+      [
+        184,
+        172
+      ],
+      [
+        198,
+        163
+      ],
+      [
+        207,
+        149
+      ],
+      [
+        210,
+        141
+      ]
+    ],
+    "wet_display_area_km2": 2.4140625,
+    "formation_totals": {
+      "years": 5.0,
+      "supply_solid_m3": 3155760000.0,
+      "numerical_sweeps": 700
+    },
+    "physical_seconds": 600.0,
+    "sea_level_m": 0.0,
+    "new_land_bed_quantiles_m": [
+      0.00036804107718602097,
+      1.7850091495466227,
+      1.841176307115223,
+      1.9249058357414999,
+      1.9859498773306097
+    ]
+  },
+  "geological_boundary": {
+    "inlet_zx": [
+      170,
+      135
+    ],
+    "water_stage_m": 4.0,
+    "deposit_ceiling_m": 2.0,
+    "settling_fraction": 0.03,
+    "mobility_fraction": 0.8,
+    "solid_rate_m3_s": 20.0,
+    "water_rate_m3_s": 15000.0,
+    "ceiling_slope_m_per_m": 5e-05,
+    "minimum_ceiling_m": 0.2
+  },
+  "operating_boundary": {
+    "requested_water_rate_m3_s": 1500.0,
+    "accepted_water_rate_m3_s": 1500.0,
+    "solid_rate_m3_s": 3.0
+  },
+  "terrain_basis": "existing TD source plus explicitly derived shallow marine bed and saved geological/channel construction",
+  "coverage_status": "partial",
+  "rendering": {
+    "land_palette": "terrain_map_style.LAND_COLORS",
+    "land_elevation_limits_m": [
+      0,
+      300
+    ],
+    "ocean_depth_limits_m": [
+      0,
+      35
+    ],
+    "shade": "physical_hillshade, no vertical exaggeration",
+    "wet_display_subdivision": 8,
+    "river_width": "saved section and fractional owned footprint, no thickening"
+  },
+  "inputs_sha256": {
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-morphology-acceptance-20261104\\event-600s-b\\final.json": "c6b746a8637ab073f00a9230fdc4ee7d057dbdd1a0b0c8d522fe386237d313b9",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-morphology-acceptance-20261104\\event-600s-b\\final.npz": "de521e73fd6f206ba7ad96f3431f5aec4c6f4f8831f56fb438a9c341f077598b",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-morphology-acceptance-20261104\\source-survey-a\\source-window.npz": "13c362836d4a6bf071f66d9d27a93c1ed48db8c3e1c4dfbad27e88251bdc23d3",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-morphology-acceptance-20261104\\source-survey-a\\manifest.json": "e4d17bc8cea6e0e26090b826c12ccd5ef8441fec793663d24aa5b22ce99ff117",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-morphology-acceptance-20261104\\render_delta.py": "dec8a14d893e8725035e38ea4e67eefa6def8bba40b516309bfb43cb496825ac",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\render-v6\\render_reference.py": "893c3421405abcc1c818009a83c4dda83f48e30e4c9786a9d825c7cf8ad36ea1",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_avulsion.py": "bc9b24b9a294550ed76c781112b97e5fa29f148150fdf2fff9e60b2e5fae562f",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_bank_formation.py": "980a86c35afdf9edad70b876a746e871c99bddf0a38afbf43023c48d67423fa6",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_branch_attachment.py": "f1c3af32ef25dc6c38fe8153cd24a554d1c63141da9b6abf4c300ae7eec9ef7b",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_branching.py": "94ae3aaa142c6aeb72a338babbb485a2bffd99dc04febe748832c1730788f36f",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_deposition_scaling.py": "5d6e3673db0c0ee3fb7d5e81d259a180933c4845b6f33ec851b071550a58d940",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_evolution.py": "705682ad25bcb44b6de0e399c9f7d7dfacc32dc626a84c3fb9cd089a54e33a27",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_formation.py": "558e5d5640d269de445b45600866303639874ad3bdae15017c99ee4b61f4eced",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_geological.py": "7e2ec94d4560dda5be3bb941d280ab3cdc95e4e91a09a7265b1c9a87d231a69d",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_geological_network.py": "4c81260e76e542127b3bf71954bdea4f43b5540791294b31386d7d7643e86ea6",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_graph_hydraulics.py": "5a56c36834a7d75883356c5457cce6a55268055770cec104ee77c36bc1053ad8",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_growth.py": "dd46a75e427acb7382f5b1f32a80eab4990231d8ba673f9736ffeb2aa6a8f48e",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_hydraulics.py": "1c61a29eebea1726be267cf5990efed448eacb7378d15e993e362f01f712f91c",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_lobes.py": "6b50d284963099e85bd4b3204fe114739059ae437f3c4a96ec7e127f183fd0f9",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_morphology.py": "c9243c7431c35f786aa163c09fbdb6deb062f82c4e7ebc735b758ea678e7e7c9",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_mouth_extension.py": "28a23cc4d82e481f15d01feed7a656eb0602b8da444a1da1b3aa00e5c19ff10c",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_multicell.py": "c4f7d354e1ddfb264a9f285addf2f3168dbee1b44273119f05f5657b3cd08753",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_multicell_avulsion.py": "36c9f52103c58775df77f6130df4d8d75243ae9951caa7ba82f4276b0f0ed4fb",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_network_plan.py": "40e78fab12e72a1e272ae1122b4d88534074e86c62dd813ce191b36463aa9a10",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_node_inventory.py": "fe70fb3e98625185cd2a9cb598b14c1683d6ff95308ea896574f21a9ba59bea9",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_pipeline.py": "f313f6d49fe265a83699c6bc87fc2920f5cbe521aa5ba8a8752cd70c15195a72",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_plain.py": "96ef0963f3e1f8cda9cd7f3a24e3e22dbe1f67baba85b3c5cd9fb2c2626dd022",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_product.py": "b5738feceef50e0dd9fa587bea9bae3b7dbe4c4a2c5e5c29d816e741563d93b6",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_regional.py": "78f10665f8bbafb6b8da25fe829e57da99defd3411d1e3aaa4d5bd32c6faa9d4",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_routes.py": "851523783be5957bdbe0feb686226cf8abf625ac6074c19f2ff1e1b4d6147628",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_window.py": "d05f26b1daab2ac574a19526a44bd165b8fd9d87debd7dd246c1b5fe3ca0dd55",
+    "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_marine_sediment.py": "0721b9ea30f61354b2d823d6067c4e8c1eeac5557b2eb8864090cda15af2848a",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-morphology-acceptance-20261104\\network-initial-b\\manifest.json": "63679479da8f7bab589813ea297ab978f4211fcc7d611c036b9ee1f493660da4"
+  },
+  "view_limits_km": [
+    -11.3,
+    -0.3,
+    15.7,
+    4.8
+  ],
+  "extent_km": [
+    -20.0,
+    12.0,
+    25.0,
+    -7.0
+  ],
+  "cell_center_origin_xz_m": [
+    -19950.0,
+    -6950.0
+  ],
+  "notes": [
+    "constructive geological initial state and physical event evolution must be reported separately",
+    "new_land compares saved bed to derived source on original known ocean only",
+    "wet depth display uses nearest saved solved node within actual fractional wet footprint"
+  ],
+  "images": {
+    "bed-and-depth.png": "4e543cd96710d3cb2709a527530047337df74f53cd3e95f66291213fcbaaf166",
+    "delta-detail.png": "78dd130f0f0c92e0f8498cf29f6419e2b820febc07b9a41858de6532f445373e",
+    "main.png": "bd6b27c61a6bf6826a69f999be13c6254665154d018ea48222c010d5c6ac614b",
+    "source-comparison.png": "cfe5fdd05814ed0f035ecef7c39b5b9ee0857b8ebb2900f504d2e86c127bbc8c"
+  },
+  "documentation_sha256": {
+    "README.md": "565d6682f5187a9586b5e03440803e814ff808c1f04d34edf8ccb1bf576d8791"
+  },
+  "clock_interpretation": "5 equivalent geological years / 700 numerical sweeps constructed the initial body; 600 physical seconds evolved the saved state; the short event is not mature delta formation"
+}

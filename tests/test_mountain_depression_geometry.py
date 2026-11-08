@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline import mountain_depression_geometry as geometry
+import terrain_pipeline.lake as geometry
 
 
 def bowl():
@@ -40,9 +40,9 @@ class MountainDepressionGeometryTests(unittest.TestCase):
         np.testing.assert_array_equal(arrays["H0_m"], height)
         np.testing.assert_array_equal(arrays["H2_m"][arrays["lake_mask"]], height[arrays["lake_mask"]])
         self.assertFalse((arrays["lake_mask"] & arrays["dry_channel_mask"]).any())
-        self.assertEqual(geometry.lake_volume_at_stage(result, 1, 2.), 900.)
+        self.assertEqual(geometry.depression_lake_volume_at_stage(result, 1, 2.), 900.)
         with self.assertRaises(ValueError):
-            geometry.lake_volume_at_stage(result, 1, 5.)
+            geometry.depression_lake_volume_at_stage(result, 1, 5.)
 
     def test_every_cell_belongs_to_one_explicit_truncated_outlet(self):
         result = prepare(bowl())
@@ -86,11 +86,11 @@ class MountainDepressionGeometryTests(unittest.TestCase):
         result = prepare(height)
         with tempfile.TemporaryDirectory() as directory:
             target = Path(directory) / "race.npz"
-            original_link = geometry.os.link
+            original_link = geometry._m4_mountain_depression_geometry_os.link
             def racing_link(temporary, destination):
                 Path(destination).write_bytes(b"other writer")
                 return original_link(temporary, destination)
-            with patch.object(geometry.os, "link", side_effect=racing_link):
+            with patch.object(geometry._m4_mountain_depression_geometry_os, "link", side_effect=racing_link):
                 with self.assertRaises(FileExistsError):
                     geometry.save_mountain_geometry(target, result, trusted_height=height, source_binding={"test": "bowl"})
             self.assertEqual(target.read_bytes(), b"other writer")
@@ -132,7 +132,7 @@ class MountainDepressionGeometryTests(unittest.TestCase):
                     mutate(forged)
                     manifest = {"metadata": forged["metadata"], "hashes": {key: geometry._hash(value) for key, value in forged["arrays"].items()}}
                     path = Path(directory) / f"forged-{index}.npz"
-                    np.savez_compressed(path, manifest=np.frombuffer(geometry._json(manifest).encode("ascii"), dtype=np.uint8), **forged["arrays"])
+                    np.savez_compressed(path, manifest=np.frombuffer(geometry.depression_json(manifest).encode("ascii"), dtype=np.uint8), **forged["arrays"])
                     with self.assertRaises(ValueError):
                         geometry.load_mountain_geometry(path, trusted_height=height, source_binding={"test": "bowl"})
 
@@ -175,7 +175,7 @@ class MountainDepressionGeometryTests(unittest.TestCase):
             forged = deepcopy(result["arrays"])
             forged["extra"] = np.ones(1)
             manifest = {"metadata": result["metadata"], "hashes": {key: geometry._hash(value) for key, value in forged.items()}}
-            np.savez_compressed(path, manifest=np.frombuffer(geometry._json(manifest).encode("ascii"), dtype=np.uint8), **forged)
+            np.savez_compressed(path, manifest=np.frombuffer(geometry.depression_json(manifest).encode("ascii"), dtype=np.uint8), **forged)
             with self.assertRaises(ValueError):
                 geometry.load_mountain_geometry(path, trusted_height=bowl(), source_binding={"test": "bowl"})
 

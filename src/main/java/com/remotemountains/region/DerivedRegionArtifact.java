@@ -37,6 +37,9 @@ final class DerivedRegionArtifact {
         int originZ = Math.subtractExact(Math.multiplyExact(rz, width), 2 * halo);
         float[] input = new float[inputSide * inputSide];
         float[] mask = new float[input.length];
+        source.prepareBounds(originX, originZ,
+                Math.addExact(originX, Math.multiplyExact(inputSide - 1, 2)),
+                Math.addExact(originZ, Math.multiplyExact(inputSide - 1, 2)));
         Terrain.Column[] sampled = source.sampleGrid(originX, originZ, inputSide, 2);
         for (int z = 0; z < inputSide; z++) for (int x = 0; x < inputSide; x++) {
             int i = z * inputSide + x;

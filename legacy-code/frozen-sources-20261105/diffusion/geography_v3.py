@@ -1,0 +1,83 @@
+﻿"""Versioned low-relief geographic conditioning for the metre-scale consumer."""
+from __future__ import annotations
+
+import numpy as np
+
+from .geographic_noise import field
+from .geography_v2 import (CONTINENT_SCALES, MOUNTAIN_SCALES, DETAIL_SCALES,
+                           RIDGE_SCALES, GAP_SCALES)
+
+
+GEOGRAPHY_VERSION = "geographic_v3"
+POSITIVE_ELEVATION_FACTOR = 0.18
+
+
+def _geography(x, z, seed):
+    continent = field(x, z, seed, 101, CONTINENT_SCALES)
+    mountain = field(x, z, seed, 211, MOUNTAIN_SCALES)
+    detail = field(x, z, seed, 307, DETAIL_SCALES)
+    ridge = field(x, z, seed, 709, RIDGE_SCALES)
+    interruption = field(x, z, seed, 811, GAP_SCALES)
+    land = continent + .10 * mountain + .02 * detail
+    shore = land + .025
+    ridge_envelope = np.maximum(0, ridge - .04) ** 2
+    gaps = np.clip((interruption + .12) * 2.2, 0, 1)
+    relief = np.minimum(1, np.maximum(0, shore) * 5) * (
+        ridge_envelope * gaps * 2400
+        + np.maximum(0, mountain - .08) ** 2 * 1050 + detail * 90)
+    elevation = np.maximum(0, shore) * 3600 + np.minimum(0, shore) * 2200 + relief
+    elevation = np.where(elevation > 0, elevation * POSITIVE_ELEVATION_FACTOR, elevation)
+    elevation = np.maximum(elevation, -1100)
+
+    latitude = 22 * np.sin(z / 96)
+    maritime = np.exp(-np.abs(land + .025) * 7)
+    temperature = (20 - latitude + field(x, z, seed, 401, ((30, 1), (9, .25))) * 8
+                   - .0065 * np.maximum(elevation, 0) + maritime * 1.5)
+    temperature = np.clip(temperature, -35, 38)
+    temperature_std = np.clip(7 + 7 * (1 - maritime) + 6 * np.abs(np.sin(z / 96)), 4, 25) * 100
+    moisture = field(x, z, seed, 503, ((42, 1), (12, .35)))
+    west = field(x - 3, z, seed, 211, MOUNTAIN_SCALES)
+    east = field(x + 3, z, seed, 211, MOUNTAIN_SCALES)
+    windward = np.clip((mountain - west) * 800, 0, 350)
+    lee = np.clip((west - mountain) * 450 + (mountain - east) * 120, 0, 270)
+    precipitation = np.clip(1050 + moisture * 900 + maritime * 500 + windward - lee
+                            - np.maximum(elevation - 1800, 0) * .08, 100, 3200)
+    precipitation_cv = np.clip(.28 + .26 * (1 - maritime)
+                               + field(x, z, seed, 607, ((24, 1), (5, .25))) * .12,
+                               .15, .85) * 100
+    return np.stack((elevation, temperature, temperature_std,
+                     precipitation, precipitation_cv), axis=0).astype(np.float32)
+
+
+def make_geographic_map_factory(frequency_mult=None, seed=None, drop_water_pct=0.0):
+    if seed is None:
+        raise ValueError("Geographic conditioning requires an explicit seed")
+    if frequency_mult is not None and list(frequency_mult) not in ([1.0] * 5, [1.5, 3, 3, 3, 3]):
+        raise ValueError("geographic_v3 uses fixed spatial scales")
+    if drop_water_pct not in (0.0, 0.5):
+        raise ValueError("geographic_v3 derives sea area from the seed")
+    seed = int(seed) & 0xFFFFFFFFFFFFFFFF
+
+    def sample_raw(i1, j1, i2, j2):
+        if i2 < i1 or j2 < j1:
+            raise ValueError("Invalid geographic window")
+        x = np.arange(i1, i2, dtype=np.float64)[None, :]
+        z = np.arange(j1, j2, dtype=np.float64)[:, None]
+        xx, zz = np.broadcast_arrays(x, z)
+        return _geography(xx, zz, seed)
+
+    def finalize(raw):
+        raw = np.asarray(raw, dtype=np.float32)
+        if raw.ndim != 3 or raw.shape[0] != 5 or not np.isfinite(raw).all():
+            raise ValueError("Expected finite geographic conditioning [5,H,W]")
+        return raw.copy()
+
+    def sample_full(i1, j1, i2, j2):
+        import torch
+        result = finalize(sample_raw(i1, j1, i2, j2))
+        result[0] = np.sign(result[0]) * np.sqrt(np.abs(result[0]))
+        return torch.from_numpy(result)
+
+    sample_full.sample_raw = sample_raw
+    sample_full.finalize = finalize
+    return sample_full

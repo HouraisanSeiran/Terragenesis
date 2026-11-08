@@ -11,9 +11,9 @@ from types import MappingProxyType
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_hierarchy import validate_basin_hierarchy
-from terrain_pipeline.td_basin_storage_dispatch_io import validate_saved_storage as validate_basin_storage
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_topology import validate_basin_hierarchy as validate_basin_hierarchy
+from terrain_pipeline.basin_storage import dispatch_validate_saved_storage as validate_basin_storage
 
 
 SCHEMA = "td-surface-reaches-v1"

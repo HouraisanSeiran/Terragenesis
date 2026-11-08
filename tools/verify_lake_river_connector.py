@@ -18,11 +18,14 @@ sys.path.insert(0, str(ROOT))
 
 from tests.test_lake_river_connector import common_source_case, expanded_corridor, mutable
 from tests.test_surface_lake_network import high_tailwater_case
-from terrain_pipeline.surface_lake_network import evaluate_surface_lake_network, surface_lake_network_hash
-from terrain_pipeline.lake_river_connector import (
-    evaluate_lake_river_connector, lake_river_connector_hash, load_lake_river_connector,
-    query_lake_river_connector, save_lake_river_connector, validate_lake_river_connector,
-)
+from terrain_pipeline.lake import evaluate_surface_lake_network as evaluate_surface_lake_network
+from terrain_pipeline.lake import surface_lake_network_hash as surface_lake_network_hash
+from terrain_pipeline.lake import evaluate_lake_river_connector as evaluate_lake_river_connector
+from terrain_pipeline.lake import lake_river_connector_hash as lake_river_connector_hash
+from terrain_pipeline.lake import load_lake_river_connector as load_lake_river_connector
+from terrain_pipeline.lake import query_lake_river_connector as query_lake_river_connector
+from terrain_pipeline.lake import save_lake_river_connector as save_lake_river_connector
+from terrain_pipeline.lake import validate_lake_river_connector as validate_lake_river_connector
 
 
 def independent_mesh_checks(result):
@@ -79,10 +82,10 @@ def main():
         assert result["geometry_feasible"] is expected, (name, result["diagnostic"])
         destination = directory / (name + ".npz")
         save_lake_river_connector(result, destination)
-        with patch("terrain_pipeline.lake_river_connector._geometry", side_effect=AssertionError), patch(
-                "terrain_pipeline.lake_river_connector.evaluate_lake_river_connector", side_effect=AssertionError), patch(
-                "terrain_pipeline.surface_lake_network.evaluate_surface_lake_network", side_effect=AssertionError), patch(
-                "terrain_pipeline.surface_network_recovery.recover_surface_network", side_effect=AssertionError):
+        with patch('terrain_pipeline.lake.connector_geometry', side_effect=AssertionError), patch(
+                'terrain_pipeline.lake.evaluate_lake_river_connector', side_effect=AssertionError), patch(
+                'terrain_pipeline.lake.evaluate_surface_lake_network', side_effect=AssertionError), patch(
+                'terrain_pipeline.surface_domain.recover_surface_network', side_effect=AssertionError):
             loaded = load_lake_river_connector(destination)
             query_lake_river_connector(loaded, 0)
         assert loaded["identity_sha256"] == result["identity_sha256"]
@@ -158,7 +161,7 @@ def main():
         diagnostic_bundles=sum(not record["geometry_feasible"] for record in records),
         rehashed_and_input_rejections=rejections, cases=records,
         files_sha256={str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest() for path in (
-            ROOT / "terrain_pipeline/lake_river_connector.py", ROOT / "tests/test_lake_river_connector.py",
+            ROOT / 'terrain_pipeline/lake.py', ROOT / "tests/test_lake_river_connector.py",
             ROOT / "tools/verify_lake_river_connector.py", ROOT / "docs/lake-river-connector-v1.md")},
         limitations=["Engineering synthetic common-source sample, not natural-domain certification",
             "No free-fall/drop solver or dynamic/backwater validation", "Source joint remains diagnostic_not_publishable",

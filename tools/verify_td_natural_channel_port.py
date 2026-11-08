@@ -9,15 +9,19 @@ import numpy as np
 from scipy.integrate import solve_ivp
 from scipy.ndimage import label
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.surface_rivers.metric_channel_geometry import GeometryConfig, build_channel_geometry, save_channel_geometry
-from terrain_pipeline.surface_rivers.metric_channel_state import ChannelNetwork
-from terrain_pipeline.surface_rivers.metric_contracts import TerrainGrid
-from terrain_pipeline.surface_rivers.metric_lake_channel_coupling import (
-    LakeChannelConfig, LakeChannelForcing, LakeChannelPort,
-    load_lake_channel, save_lake_channel, solve_lake_channel,
-)
-from terrain_pipeline.surface_rivers.metric_natural_lakes import build_natural_lakes, load_natural_lakes, save_natural_lakes
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.channel_geometry import GeometryConfig, build_channel_geometry, save_channel_geometry
+from terrain_pipeline.channel_geometry import ChannelNetwork
+from terrain_pipeline.common_infra import TerrainGrid
+from terrain_pipeline.lake import LakeChannelConfig as LakeChannelConfig
+from terrain_pipeline.lake import LakeChannelForcing as LakeChannelForcing
+from terrain_pipeline.lake import LakeChannelPort as LakeChannelPort
+from terrain_pipeline.lake import load_lake_channel as load_lake_channel
+from terrain_pipeline.lake import save_lake_channel as save_lake_channel
+from terrain_pipeline.lake import solve_lake_channel as solve_lake_channel
+from terrain_pipeline.lake import build_natural_lakes as build_natural_lakes
+from terrain_pipeline.lake import load_natural_lakes as load_natural_lakes
+from terrain_pipeline.lake import save_natural_lakes as save_natural_lakes
 from terrain_pipeline.surface_rivers.metric_product import load_diagnostic_product
 from tools.verify_td_natural_lake_extension import TD_PATH, TD_SHA, TD_ID
 from tools.verify_td_river_geometry import mesh_evidence
@@ -160,7 +164,8 @@ def verify(output):
     lengths=np.full(2,15.)
     network=ChannelNetwork(rec,lengths,np.full(2,6.),bed,np.full(2,(bed[0]-bed[1])/30.),
         np.full(2,.035),np.full(2,2.),np.array(["interior","open_outflow"]),
-        geometry["identity_sha256"],"M5 PL bed; disjoint half incident controls","explicit uncalibrated n=.035")
+        geometry["identity_sha256"],"M5 PL bed; disjoint half incident controls","explicit uncalibrated n=.035",
+        receiver_distance_m=np.array([30., 0.]))
     port=LakeChannelPort(len(faces)-1,1,10.,"explicit uncalibrated finite conductance on native D4 crest")
     source=load_diagnostic_product(TD_PATH,expected_sha256=TD_SHA,expected_identity=TD_ID)
     sa=source["arrays"]
@@ -179,8 +184,8 @@ def verify(output):
         path=output/(name+".npz")
         save_lake_channel(path,result)
         artifacts[name]=dict(path=path.name,sha256=file_sha256(path),identity_sha256=result["identity_sha256"])
-        with patch("terrain_pipeline.surface_rivers.metric_lake_channel_coupling.solve_lake_channel",side_effect=AssertionError("cold solve")), \
-             patch("terrain_pipeline.surface_rivers.metric_natural_lakes.solve_natural_lakes",side_effect=AssertionError("cold lake")):
+        with patch('terrain_pipeline.lake.solve_lake_channel',side_effect=AssertionError("cold solve")), \
+             patch('terrain_pipeline.lake.solve_natural_lakes',side_effect=AssertionError("cold lake")):
             cold=load_lake_channel(path,expected_sha256=artifacts[name]["sha256"])
             cases[name]=cold_evidence(domain,network,port,drive,cold)
         if result["metadata"]["status"]!="complete": raise AssertionError(result["metadata"]["failure_reason"])

@@ -6,15 +6,22 @@ import math
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import (
-    MAX_CELLS, MAX_METADATA, identity, load_bundle, readonly, save_bundle,
+from terrain_pipeline.common_infra import (
+    SOURCE_MAX_CELLS,
+    GRID_MAX_CELLS as MAX_CELLS,
+    MAX_METADATA,
+    identity,
+    load_bundle,
+    readonly,
+    save_bundle,
 )
-from terrain_pipeline.td_basin_breach import saddle_path_face_identity
-from terrain_pipeline.td_basin_hierarchy import validate_basin_hierarchy
-from terrain_pipeline.td_basin_overflow import _face_id
-from terrain_pipeline.td_basin_source import validate_td_source
-from terrain_pipeline.td_material_field import _validate_cold_material
-from terrain_pipeline.td_stable_spill_paths import SCHEMA as SPILL_SCHEMA, _digest
+from terrain_pipeline.basin_topology import saddle_path_face_identity as saddle_path_face_identity
+from terrain_pipeline.basin_topology import validate_basin_hierarchy as validate_basin_hierarchy
+from terrain_pipeline.basin_storage import _face_id as _face_id
+from terrain_pipeline.basin_storage import validate_td_source as validate_td_source
+from terrain_pipeline.geology import _validate_cold_material
+from terrain_pipeline.basin_topology import STABLE_SPILL_SCHEMA as SPILL_SCHEMA
+from terrain_pipeline.basin_topology import _digest as _digest
 
 
 SCHEMA = "td-bounded-conditioning-v1"

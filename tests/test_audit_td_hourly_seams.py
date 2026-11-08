@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 from tests.test_td_hour_pages_acceptance_io import write_bundle, write_json
 from tools.audit_td_hourly_seams import audit, cut_ledger
 

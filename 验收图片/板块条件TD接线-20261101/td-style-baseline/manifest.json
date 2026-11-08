@@ -1,0 +1,44 @@
+{
+  "product_path": "D:\\codexwork\\\u5c71\u5ddd\u5f62\u610fTerragenesis\\.scratch\\plate-td-source-20261101\\review913-td-only",
+  "product_identity": "7d32a0250537c9593d738fe5a4a486509775d4c318d7f52f731a2a77bd02b796",
+  "world_seed": 20261020,
+  "status": "style baseline for review, not accepted island morphology",
+  "images": {
+    "raw-vs-continuous.png": {
+      "sha256": "0b50253d1ca15fa5ba70c40e752a9e6e341c71d27be5079c95093a6892d7b069",
+      "terrain_basis": "actual frozen-plate-conditioned TD",
+      "raw_td_sha256": "a0db2265dec974d62f86684b2b90171497ca4bef110fbb6772d3c8c5c428c551",
+      "plate_identity": "b4c8bbdba29111b8c3ba3270e2f0d3a4fed3544655249fa07c506654b8ae6af9",
+      "algorithms": [
+        "plate-conditioned TD",
+        "continuous composition, relief strength0"
+      ],
+      "coverage_status": "complete_in_window",
+      "physical_spacing_m": 30,
+      "display_sampling_m": 30,
+      "bounds_xmin_zmin_xmax_zmax_m": [
+        -8865,
+        -2685,
+        6525,
+        12705
+      ],
+      "time": "static initial bed",
+      "rendering": "shared elevation0..3000m/sea-depth0..100m tint; NW physical hillshade, vertical exaggeration1; no vegetation or materials"
+    }
+  },
+  "metrics": {
+    "zero_independent_relief": true,
+    "raw_climate_macro_same_as_failed_candidate": true,
+    "raw_to_composed_delta_min_max_m": [
+      -142.73031616210938,
+      144.80886840820312
+    ],
+    "raw_to_composed_delta_abs_quantiles_m": [
+      57.52135467529297,
+      108.98485260009765,
+      133.04411376953126
+    ],
+    "source_identity": "7d32a0250537c9593d738fe5a4a486509775d4c318d7f52f731a2a77bd02b796",
+    "unknown_cells_in_zero_relief": 0
+  }
+}

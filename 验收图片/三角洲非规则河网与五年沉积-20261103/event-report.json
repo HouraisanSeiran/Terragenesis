@@ -1,0 +1,65 @@
+{
+  "input_id": "five-year-event-25h",
+  "water_m3": 13500000.0,
+  "solid_m3": 7200.0,
+  "delivered_water_m3": 1408346.0122346878,
+  "delivered_solid_m3": 751.1178731918335,
+  "undelivered_water_m3": 12091653.987765312,
+  "undelivered_solid_m3": 6448.8821268081665,
+  "internal_transfer_solid_m3": 354380.00367549877,
+  "entrained_solid_m3": 46949.14561072273,
+  "outlet_delivery": [
+    {
+      "mouth_zx": [
+        240,
+        189
+      ],
+      "exterior_face_zx": [
+        240,
+        190
+      ],
+      "gross_solid_m3": 5075.682801948452
+    },
+    {
+      "mouth_zx": [
+        242,
+        190
+      ],
+      "exterior_face_zx": [
+        242,
+        191
+      ],
+      "gross_solid_m3": 4751.39146926186
+    },
+    {
+      "mouth_zx": [
+        252,
+        180
+      ],
+      "exterior_face_zx": [
+        253,
+        180
+      ],
+      "gross_solid_m3": 4256.385851136573
+    }
+  ],
+  "capacity_concentration": 0.01,
+  "active_layer_m": 0.5,
+  "max_velocity_m_s": 2.0,
+  "floodplain": {
+    "diverted_water_m3": 70417.3006117344,
+    "returned_water_m3": 70417.3006117344,
+    "deposited_solid_m3": 325.76527614736773,
+    "stranded_solid_m3": 377.8030566711178,
+    "rewetted_solid_m3": 0.6046732988578918,
+    "new_solid_m3": 703.5683328184865,
+    "wet_area_m2": 298129.0892673937,
+    "parameters": {
+      "exchange_fraction": 0.05,
+      "settling_velocity_m_s": 0.0001,
+      "residence_s": 3600.0,
+      "max_lateral_distance_m": 400.0,
+      "max_solid_fraction": 0.01
+    }
+  }
+}

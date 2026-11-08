@@ -4,11 +4,14 @@ from pathlib import Path
 
 import numpy as np
 
-from terrain_pipeline.td_basin_source import make_td_source
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy
-from terrain_pipeline.td_basin_storage_implicit import simulate_basin_storage
-from terrain_pipeline.td_material_field import make_material_field
-from terrain_pipeline.td_basin_candidates import generate_candidate_geometries, run_candidate_coupling, select_candidate, validate_candidate_inputs
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_storage import storageimplicit_simulate as simulate_basin_storage
+from terrain_pipeline.geology import make_material_field
+from terrain_pipeline.basin_topology import generate_candidate_geometries as generate_candidate_geometries
+from terrain_pipeline.basin_topology import run_candidate_coupling as run_candidate_coupling
+from terrain_pipeline.basin_topology import select_candidate as select_candidate
+from terrain_pipeline.basin_topology import validate_candidate_inputs as validate_candidate_inputs
 
 
 class CandidateTests(unittest.TestCase):

@@ -1,0 +1,56 @@
+{
+  "kind": "frozen read-only image delivery",
+  "coverage_status": "partial",
+  "title": "四口三角洲：分级水系与三组局部分合",
+  "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+  "terrain_basis": "existing TD source plus explicitly derived shallow marine bed and saved geological/channel construction",
+  "final_checkpoint": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-600s\\final",
+  "physical_seconds": 600.0,
+  "geological_years": 5.0,
+  "geological_numerical_sweeps": 700,
+  "algorithms": [
+    "existing TD sampled source",
+    "explicit finite-stock geological deposition",
+    "irregular river graph",
+    "explicit split/rejoin attachment",
+    "graph hydraulics",
+    "600-second physical event"
+  ],
+  "independent_checks_passed": true,
+  "independent_check_count": 19,
+  "source_files": {
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-600s\\preview-final-v2\\main.png": "5e3173124593a64ac8229c98766eaa5c0e197f23291e491c462567418925dcd0",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-600s\\preview-final-v2\\source-comparison.png": "7fce05f98ee733ab0c06ca818dd252180c069b7e90c9c2286face002302d5300",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-600s\\preview-final-v2\\delta-detail.png": "db4dbc40f781a3bcea7dc6b0883509ca40f00abd3c4936deaf07b6b7900caf0c",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-600s\\preview-final-v2\\actual-flow.png": "200914aa3541f1be933d110ab73923db55efd1b2600bc15ade8d7bc40f5d0128",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-600s\\preview-final-v2\\bed-and-depth.png": "b19b7b691e33df06b50e3dc5948086fbde52c2167c88b122160dadbe7dcbf7cb",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-600s\\preview-final-v2\\manifest.json": "6cefc014229ab668c8e8272a272bf8fabb2d564e6d62aa664a17a7c4ec205840",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\independent-acceptance.json": "b8d343d9feb0703f752707ab454ba4418b64942fd71c0e4977b5b598fa64a6e7",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\initial-fixed\\manifest.json": "5aa178a3b579d9ccadea4c677f257e062c670301d7e1aba90124d2cb36e37ea2",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\candidate-and-fan-review.md": "99945df60f1933494e6463c65457b40328d4014475893c93bb9b0794aa108a37",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\candidate-survey.json": "14efe1216e96942429083db2154238b1547b24c6152c4a0abd39b6e7561d691d"
+  },
+  "final_checkpoint_sha256": {
+    ".json": "6276e78b824a1c46c395e8b113e54b7a03ce99de9069ee7283027073b204e35e",
+    ".npz": "649b932b11db27726d5a7b9de5c741b2ec1b6b8c76e24f09762457e5f1f71f12"
+  },
+  "files": {
+    "actual-flow.png": "200914aa3541f1be933d110ab73923db55efd1b2600bc15ade8d7bc40f5d0128",
+    "bed-and-depth.png": "b19b7b691e33df06b50e3dc5948086fbde52c2167c88b122160dadbe7dcbf7cb",
+    "candidate-and-fan-review.md": "99945df60f1933494e6463c65457b40328d4014475893c93bb9b0794aa108a37",
+    "candidate-survey.json": "14efe1216e96942429083db2154238b1547b24c6152c4a0abd39b6e7561d691d",
+    "construction-manifest.json": "5aa178a3b579d9ccadea4c677f257e062c670301d7e1aba90124d2cb36e37ea2",
+    "delta-detail.png": "db4dbc40f781a3bcea7dc6b0883509ca40f00abd3c4936deaf07b6b7900caf0c",
+    "independent-acceptance.json": "b8d343d9feb0703f752707ab454ba4418b64942fd71c0e4977b5b598fa64a6e7",
+    "main.png": "5e3173124593a64ac8229c98766eaa5c0e197f23291e491c462567418925dcd0",
+    "README.md": "d43c5b2a01a6b5c0667c1b9dba09fd55161ec4ab380d07e6a6ef36fb94996435",
+    "render-manifest.json": "6cefc014229ab668c8e8272a272bf8fabb2d564e6d62aa664a17a7c4ec205840",
+    "source-comparison.png": "7fce05f98ee733ab0c06ca818dd252180c069b7e90c9c2286face002302d5300"
+  },
+  "notes": [
+    "actual wet footprint widths preserved; no river thickening",
+    "three constructed local split/rejoin groups enclose inherited plain; no dynamic island claim",
+    "routing fan does not limit deposition domain",
+    "older image deliveries untouched"
+  ]
+}

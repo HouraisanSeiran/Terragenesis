@@ -10,12 +10,12 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
 from terrain_pipeline.td_ported_junction import build_ported_junction, save_ported_junction
 from terrain_pipeline.td_ported_network_composition import (
     MAX_BYTES, MAX_HUBS, MAX_RSS, POLICY_IDENTITY_SHA256, NetworkComposer, census_hubs, check_memory)
-from terrain_pipeline import td_source_conforming_banks as geometry
+from terrain_pipeline import channel_geometry as geometry
 from tools.prepare_td_ported_junction import INPUTS, FROZEN_HELPERS, VERIFICATION, _read
 
 SCHEMA = "td-ported-network-composition-preparation-v1"

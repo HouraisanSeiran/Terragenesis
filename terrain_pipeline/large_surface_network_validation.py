@@ -13,9 +13,11 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
+from terrain_pipeline.drainage import grid_mesh as grid_mesh
+from terrain_pipeline.drainage import strict_receivers as strict_receivers
 
 
-VERSION = "large-surface-network-validation-v1"
+VERSION = "large-surface-network-validation-irregular-v2"
 NATURAL_OUTLET = 1
 ENGINEERING_OUTLET = 2
 INTERNAL_TERMINAL = 3
@@ -40,7 +42,9 @@ def preflight_large_network(size: int, tile_cells: int = DEFAULT_TILE_CELLS) -> 
     if tile_cells > size:
         raise ValueError("tile_cells exceeds grid")
     cells = size * size
-    estimated = cells * (8 + 4 + 1 + 8 + 8 + 1)
+    # Include native arrays, node positions, CSR metric edges and triangulation
+    # workspace. The mesh is resident even when source tiles are visited in order.
+    estimated = cells * 384
     if estimated > MAX_ESTIMATED_BYTES:
         raise ValueError("estimated memory budget exceeded")
     tile_count = math.ceil(size / tile_cells) ** 2
@@ -87,27 +91,12 @@ def _tile_bounds(size: int, tile_cells: int) -> list[tuple[int, int, int, int]]:
     return bounds
 
 
-def _receiver_from_height(height: np.ndarray) -> np.ndarray:
-    size = height.shape[0]
-    receiver = np.full((size, size), -1, dtype=np.int64)
-    for row in range(1, size - 1):
-        for column in range(1, size - 1):
-            best_height = height[row, column]
-            best_id = -1
-            for row_delta in (-1, 0, 1):
-                for column_delta in (-1, 0, 1):
-                    if row_delta == 0 and column_delta == 0:
-                        continue
-                    candidate_row = row + row_delta
-                    candidate_column = column + column_delta
-                    candidate_height = height[candidate_row, candidate_column]
-                    candidate_id = candidate_row * size + candidate_column
-                    if (candidate_height < best_height or
-                            (candidate_height == best_height and candidate_id < best_id)):
-                        best_height = candidate_height
-                        best_id = candidate_id
-            receiver[row, column] = best_id
-    return receiver
+def _receiver_from_height(height: np.ndarray, seed=20261020) -> np.ndarray:
+    boundary = np.zeros(height.shape, bool)
+    boundary[[0, -1], :] = True
+    boundary[:, [0, -1]] = True
+    receiver, _, _ = strict_receivers(height, grid_mesh(height.shape, world_seed=seed), outlet_mask=boundary)
+    return receiver.reshape(height.shape)
 
 
 def _outlet_kind(size: int, receiver: np.ndarray) -> np.ndarray:
@@ -154,7 +143,7 @@ def _tile_records(height: np.ndarray, receiver: np.ndarray, outlet_kind: np.ndar
     return records
 
 
-def build_large_surface_network(size: int = 1024, seed: int = 20261001,
+def build_large_surface_network(size: int = 1024, seed: int = 20261020,
                                 tile_cells: int = DEFAULT_TILE_CELLS,
                                 channel_area_threshold: float = 1583.0) -> dict[str, Any]:
     """Build a static synthetic network and retain arrays for independent checks."""
@@ -164,7 +153,7 @@ def build_large_surface_network(size: int = 1024, seed: int = 20261001,
     if channel_area_threshold <= 0:
         raise ValueError("invalid channel threshold")
     height = synthetic_height(size, seed)
-    receiver = _receiver_from_height(height)
+    receiver = _receiver_from_height(height, seed)
     outlet_kind = _outlet_kind(size, receiver)
     area, order = _contributing_area(receiver, height)
     channel = area >= channel_area_threshold
@@ -200,7 +189,7 @@ def build_large_surface_network(size: int = 1024, seed: int = 20261001,
         "source": {"mode": "deterministic_synthetic", "seed": seed,
                    "terrain_definition": "global_sinusoidal_downhill_v1"},
         "grid": {"shape": [size, size], "spacing_m": 30.0, "origin_m": [0.0, 0.0]},
-        "receiver": {"connectivity": 8, "tie_break": "lowest_global_cell_id",
+        "receiver": {"topology": "irregular_Delaunay", "tie_break": "lowest_global_cell_id",
                      "boundary_policy": "south_natural_other_edges_engineering"},
         "channel": {"area_threshold_cells": float(channel_area_threshold)},
         "resource": preflight,

@@ -6,12 +6,15 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, save_bundle
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy, save_basin_hierarchy
-from terrain_pipeline.td_basin_source import make_td_source, save_td_source
-from terrain_pipeline.td_native_storm_forcing import fixed_storm, generate_native_storm, save_native_storm
-from terrain_pipeline.td_basin_storage_compiled_driver import simulate_basin_storage
-from terrain_pipeline.td_basin_storage_compiled_io import save_storage, save_checkpoint
+from terrain_pipeline.common_infra import file_sha256, identity, save_bundle
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_topology import save_basin_hierarchy as save_basin_hierarchy
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_storage import save_td_source as save_td_source
+from terrain_pipeline.climate_forcing import fixed_storm, generate_native_storm, save_native_storm
+from terrain_pipeline.basin_storage import compileddriver_simulate as simulate_basin_storage
+from terrain_pipeline.basin_storage import compiled_save_storage as save_storage
+from terrain_pipeline.basin_storage import compiledio_save_checkpoint as save_checkpoint
 from tools.audit_td_native_weather_storage import audit_scenario
 
 

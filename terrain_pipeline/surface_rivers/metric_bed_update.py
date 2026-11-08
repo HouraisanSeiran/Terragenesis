@@ -22,6 +22,6 @@ def bed_rejection(initial_bed_m, next_bed_m, rock_floor_m, receiver,
     if np.any(wet & (next_bed_m - initial_bed_m >= water_depth_m)):
         return "deposition invalidates frozen water depth"
     edges = receiver >= 0
-    if np.any(next_bed_m[edges] <= next_bed_m[receiver[edges]]):
+    if np.any(next_bed_m[..., edges] <= next_bed_m[..., receiver[edges]]):
         return "receiver bed slope reversed or flattened"
     return None

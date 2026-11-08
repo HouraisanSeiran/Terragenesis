@@ -12,7 +12,7 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
 from tools.audit_natural_mouth_evidence import PDF_SHA256
 
 

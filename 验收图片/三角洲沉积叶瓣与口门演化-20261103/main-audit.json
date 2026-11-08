@@ -1,0 +1,967 @@
+{
+  "switch_preserves_arrays_clock_supply_and_ids": true,
+  "source_identity": "454292b47a107628748a3ba7d76093cbd2d7df4785884490f55418f9ebe368ce",
+  "source_geometry_algorithm": "frozen-irregular-valley-v1",
+  "lobes": [
+    {
+      "area_over_1mm_km2": 3.88,
+      "area_over_1cm_km2": 1.64,
+      "peak_rise_m": 0.5440396789104831,
+      "peak_zx": [
+        243,
+        192
+      ],
+      "extent_xz_m": [
+        2400.0,
+        2200.0
+      ],
+      "net_solid_change_m3": 112515.26782691733,
+      "event_net_solid_change_m3": 8428.6908416863
+    },
+    {
+      "area_over_1mm_km2": 1.72,
+      "area_over_1cm_km2": 0.88,
+      "peak_rise_m": 0.20787078758751587,
+      "peak_zx": [
+        253,
+        180
+      ],
+      "extent_xz_m": [
+        1800.0,
+        1800.0
+      ],
+      "net_solid_change_m3": 33805.249438102255,
+      "event_net_solid_change_m3": 4518.5322725183505
+    },
+    {
+      "area_over_1mm_km2": 0.04,
+      "area_over_1cm_km2": 0.04,
+      "peak_rise_m": 0.1955636680061259,
+      "peak_zx": [
+        239,
+        192
+      ],
+      "extent_xz_m": [
+        200.0,
+        200.0
+      ],
+      "net_solid_change_m3": 4693.52803214702,
+      "event_net_solid_change_m3": 5.120728772373695
+    }
+  ],
+  "migration": [
+    {
+      "from": [
+        240,
+        189
+      ],
+      "to": [
+        240,
+        193
+      ],
+      "distance_m": 703.3558229049864
+    },
+    {
+      "from": [
+        242,
+        190
+      ],
+      "to": [
+        243,
+        191
+      ],
+      "distance_m": 307.8028544586682
+    },
+    {
+      "from": [
+        252,
+        180
+      ],
+      "to": [
+        253,
+        181
+      ],
+      "distance_m": 376.1351646270334
+    }
+  ],
+  "annual_input_count": 80,
+  "unique_annual_ids": true,
+  "annual_gross_handoff_m3": 188078.62529828362,
+  "mouth_extension_history": [
+    {
+      "event": "mouth_extension",
+      "extended": true,
+      "trigger": "extended",
+      "extensions": [
+        {
+          "route_index": 0,
+          "old_mouth": [
+            240,
+            189
+          ],
+          "new_mouth": [
+            240,
+            190
+          ],
+          "path": [
+            [
+              240,
+              189
+            ],
+            [
+              240,
+              190
+            ]
+          ],
+          "solid_cut_m3": 0.0,
+          "excavation": [],
+          "actual_Q_m3_s": 8.109032535922037
+        }
+      ],
+      "solid_cut_m3": 0.0,
+      "geometry_updates": [
+        [
+          240,
+          190,
+          0.0,
+          80.09685989961937,
+          0.5833867646689019
+        ]
+      ]
+    },
+    {
+      "event": "mouth_extension",
+      "extended": true,
+      "trigger": "extended",
+      "extensions": [
+        {
+          "route_index": 1,
+          "old_mouth": [
+            242,
+            190
+          ],
+          "new_mouth": [
+            243,
+            190
+          ],
+          "path": [
+            [
+              242,
+              190
+            ],
+            [
+              243,
+              190
+            ]
+          ],
+          "solid_cut_m3": 0.0,
+          "excavation": [],
+          "actual_Q_m3_s": 7.685943424277452
+        }
+      ],
+      "solid_cut_m3": 0.0,
+      "geometry_updates": [
+        [
+          243,
+          190,
+          0.06522494986420257,
+          40.04842994980969,
+          0.759852006678531
+        ]
+      ]
+    },
+    {
+      "event": "mouth_extension",
+      "extended": true,
+      "trigger": "extended",
+      "extensions": [
+        {
+          "route_index": 0,
+          "old_mouth": [
+            240,
+            190
+          ],
+          "new_mouth": [
+            240,
+            191
+          ],
+          "path": [
+            [
+              240,
+              190
+            ],
+            [
+              240,
+              191
+            ]
+          ],
+          "solid_cut_m3": 0.0,
+          "excavation": [],
+          "actual_Q_m3_s": 7.798807235724716
+        }
+      ],
+      "solid_cut_m3": 0.0,
+      "geometry_updates": [
+        [
+          240,
+          191,
+          4.440892098500626e-16,
+          80.09685989961937,
+          0.008006544290951378
+        ]
+      ]
+    },
+    {
+      "event": "mouth_extension",
+      "extended": true,
+      "trigger": "extended",
+      "extensions": [
+        {
+          "route_index": 0,
+          "old_mouth": [
+            240,
+            191
+          ],
+          "new_mouth": [
+            240,
+            192
+          ],
+          "path": [
+            [
+              240,
+              191
+            ],
+            [
+              240,
+              192
+            ]
+          ],
+          "solid_cut_m3": 0.0,
+          "excavation": [],
+          "actual_Q_m3_s": 7.376798165761558
+        }
+      ],
+      "solid_cut_m3": 0.0,
+      "geometry_updates": [
+        [
+          240,
+          192,
+          0.0,
+          80.09685989961937,
+          0.007440646538560802
+        ]
+      ]
+    },
+    {
+      "event": "mouth_extension",
+      "extended": true,
+      "trigger": "extended",
+      "extensions": [
+        {
+          "route_index": 1,
+          "old_mouth": [
+            243,
+            190
+          ],
+          "new_mouth": [
+            243,
+            191
+          ],
+          "path": [
+            [
+              243,
+              190
+            ],
+            [
+              243,
+              191
+            ]
+          ],
+          "solid_cut_m3": 0.0,
+          "excavation": [],
+          "actual_Q_m3_s": 7.333692790609075
+        },
+        {
+          "route_index": 2,
+          "old_mouth": [
+            252,
+            180
+          ],
+          "new_mouth": [
+            252,
+            181
+          ],
+          "path": [
+            [
+              252,
+              180
+            ],
+            [
+              252,
+              181
+            ]
+          ],
+          "solid_cut_m3": 0.0,
+          "excavation": [],
+          "actual_Q_m3_s": 5.107933898296498
+        }
+      ],
+      "solid_cut_m3": 0.0,
+      "geometry_updates": [
+        [
+          243,
+          191,
+          0.0012090804656881282,
+          40.04842994980969,
+          0.6282110187973409
+        ],
+        [
+          252,
+          181,
+          0.7954543253099553,
+          40.04842994980969,
+          1.0999152672098553
+        ]
+      ]
+    },
+    {
+      "event": "mouth_extension",
+      "extended": true,
+      "trigger": "extended",
+      "extensions": [
+        {
+          "route_index": 0,
+          "old_mouth": [
+            240,
+            192
+          ],
+          "new_mouth": [
+            240,
+            193
+          ],
+          "path": [
+            [
+              240,
+              192
+            ],
+            [
+              240,
+              193
+            ]
+          ],
+          "solid_cut_m3": 0.0,
+          "excavation": [],
+          "actual_Q_m3_s": 7.2639710643513435
+        }
+      ],
+      "solid_cut_m3": 0.0,
+      "geometry_updates": [
+        [
+          240,
+          193,
+          0.007292239374410592,
+          80.09685989961937,
+          0.27859425795907855
+        ]
+      ]
+    },
+    {
+      "event": "mouth_extension",
+      "extended": true,
+      "trigger": "extended",
+      "extensions": [
+        {
+          "route_index": 2,
+          "old_mouth": [
+            252,
+            181
+          ],
+          "new_mouth": [
+            253,
+            181
+          ],
+          "path": [
+            [
+              252,
+              181
+            ],
+            [
+              253,
+              181
+            ]
+          ],
+          "solid_cut_m3": 0.0,
+          "excavation": [],
+          "actual_Q_m3_s": 4.771684050668271
+        }
+      ],
+      "solid_cut_m3": 0.0,
+      "geometry_updates": [
+        [
+          253,
+          181,
+          0.0002935148502571927,
+          40.04842994980969,
+          0.7988849699502598
+        ]
+      ]
+    }
+  ],
+  "original_dynamic_branch_history": [
+    {
+      "event": "candidate_avulsion",
+      "activated": true,
+      "trigger": "activated",
+      "candidate_index": 0,
+      "parent": 0,
+      "fork_index": 6,
+      "fork": [
+        233,
+        177
+      ],
+      "rise_m": 0.1186780584439845,
+      "fork_stage_m": 2.238264420095809,
+      "actual_Q_m3_s": 11.527907402667747,
+      "solid_cut_m3": 0.0,
+      "candidate_solid_cut_m3": 0.0,
+      "mouth_solid_cut_m3": 0.0,
+      "parent_mouth_extension": {
+        "extended": false,
+        "trigger": "already_open",
+        "geometry_updates": [],
+        "solid_cut_m3": 0.0,
+        "extensions": []
+      },
+      "mouth_extension": {
+        "extended": true,
+        "trigger": "extended",
+        "extensions": [
+          {
+            "route_index": 1,
+            "old_mouth": [
+              238,
+              177
+            ],
+            "new_mouth": [
+              242,
+              190
+            ],
+            "path": [
+              [
+                238,
+                177
+              ],
+              [
+                239,
+                178
+              ],
+              [
+                240,
+                179
+              ],
+              [
+                240,
+                180
+              ],
+              [
+                241,
+                181
+              ],
+              [
+                241,
+                182
+              ],
+              [
+                241,
+                183
+              ],
+              [
+                241,
+                184
+              ],
+              [
+                242,
+                185
+              ],
+              [
+                242,
+                186
+              ],
+              [
+                242,
+                187
+              ],
+              [
+                242,
+                188
+              ],
+              [
+                242,
+                189
+              ],
+              [
+                242,
+                190
+              ]
+            ],
+            "solid_cut_m3": 0.0,
+            "excavation": [],
+            "actual_Q_m3_s": 11.527907402667747
+          }
+        ],
+        "solid_cut_m3": 0.0,
+        "geometry_updates": [
+          [
+            239,
+            178,
+            0.0,
+            40.04842994980969,
+            0.060662020065918365
+          ],
+          [
+            240,
+            179,
+            0.0,
+            40.04842994980969,
+            1.2468216022256775
+          ],
+          [
+            240,
+            180,
+            -0.05763956015062455,
+            40.04842994980969,
+            1.1175099586848183
+          ],
+          [
+            241,
+            181,
+            1.2419356758027358,
+            40.04842994980969,
+            1.4740377505111852
+          ],
+          [
+            241,
+            182,
+            1.4740377505111852,
+            40.04842994980969,
+            1.4740377505111852
+          ],
+          [
+            241,
+            183,
+            1.2077929814148107,
+            40.04842994980969,
+            1.4740377505111852
+          ],
+          [
+            241,
+            184,
+            1.3431804131868401,
+            40.04842994980969,
+            1.4839914850927745
+          ],
+          [
+            242,
+            185,
+            1.5315759213475557,
+            40.04842994980969,
+            1.5315759213475557
+          ],
+          [
+            242,
+            186,
+            1.2055633099583956,
+            40.04842994980969,
+            1.5315759213475557
+          ],
+          [
+            242,
+            187,
+            1.2382286093782393,
+            40.04842994980969,
+            1.3954413727257107
+          ],
+          [
+            242,
+            188,
+            1.3954413727257107,
+            40.04842994980969,
+            1.4289163152146656
+          ],
+          [
+            242,
+            189,
+            1.0200618104502093,
+            40.04842994980969,
+            1.3954413727257107
+          ],
+          [
+            242,
+            190,
+            0.43383033625834866,
+            40.04842994980969,
+            1.0200618104502093
+          ]
+        ]
+      },
+      "excavation": []
+    },
+    {
+      "event": "candidate_avulsion",
+      "activated": true,
+      "trigger": "activated",
+      "candidate_index": 0,
+      "parent": 0,
+      "fork_index": 4,
+      "fork": [
+        231,
+        175
+      ],
+      "rise_m": 0.13206113533822342,
+      "fork_stage_m": 2.2636917488546437,
+      "actual_Q_m3_s": 8.373403595502769,
+      "solid_cut_m3": 0.0,
+      "candidate_solid_cut_m3": 0.0,
+      "mouth_solid_cut_m3": 0.0,
+      "parent_mouth_extension": {
+        "extended": false,
+        "trigger": "already_open",
+        "geometry_updates": [],
+        "solid_cut_m3": 0.0,
+        "extensions": []
+      },
+      "mouth_extension": {
+        "extended": true,
+        "trigger": "extended",
+        "extensions": [
+          {
+            "route_index": 2,
+            "old_mouth": [
+              240,
+              175
+            ],
+            "new_mouth": [
+              252,
+              180
+            ],
+            "path": [
+              [
+                240,
+                175
+              ],
+              [
+                241,
+                176
+              ],
+              [
+                242,
+                177
+              ],
+              [
+                243,
+                177
+              ],
+              [
+                243,
+                178
+              ],
+              [
+                244,
+                178
+              ],
+              [
+                245,
+                178
+              ],
+              [
+                246,
+                178
+              ],
+              [
+                247,
+                178
+              ],
+              [
+                248,
+                178
+              ],
+              [
+                249,
+                179
+              ],
+              [
+                250,
+                179
+              ],
+              [
+                250,
+                180
+              ],
+              [
+                251,
+                180
+              ],
+              [
+                252,
+                180
+              ]
+            ],
+            "solid_cut_m3": 0.0,
+            "excavation": [],
+            "actual_Q_m3_s": 8.373403595502769
+          }
+        ],
+        "solid_cut_m3": 0.0,
+        "geometry_updates": [
+          [
+            241,
+            176,
+            0.8033601174614722,
+            40.04842994980969,
+            1.028054881522158
+          ],
+          [
+            242,
+            177,
+            1.057794142195681,
+            40.04842994980969,
+            1.2020922784299644
+          ],
+          [
+            243,
+            177,
+            1.2020922784299644,
+            40.04842994980969,
+            1.2984147850961478
+          ],
+          [
+            243,
+            178,
+            1.2253999255900534,
+            40.04842994980969,
+            1.2702578935927447
+          ],
+          [
+            244,
+            178,
+            1.2702578935927447,
+            40.04842994980969,
+            1.5696481517014593
+          ],
+          [
+            245,
+            178,
+            1.1360894363926297,
+            40.04842994980969,
+            1.4277102038217113
+          ],
+          [
+            246,
+            178,
+            1.157702438216055,
+            40.04842994980969,
+            1.514072088892512
+          ],
+          [
+            247,
+            178,
+            1.1942157348630746,
+            40.04842994980969,
+            1.5184999033761546
+          ],
+          [
+            248,
+            178,
+            1.1425616308999587,
+            40.04842994980969,
+            1.478445915873103
+          ],
+          [
+            249,
+            179,
+            1.3398694083047435,
+            40.04842994980969,
+            1.478445915873103
+          ],
+          [
+            250,
+            179,
+            1.4368444243231906,
+            40.04842994980969,
+            1.4368444243231906
+          ],
+          [
+            250,
+            180,
+            1.0142474593682422,
+            40.04842994980969,
+            1.4368444243231906
+          ],
+          [
+            251,
+            180,
+            1.019570551691816,
+            40.04842994980969,
+            1.3673583253233041
+          ],
+          [
+            252,
+            180,
+            0.5803519026658734,
+            40.04842994980969,
+            1.019570551691816
+          ]
+        ]
+      },
+      "excavation": []
+    }
+  ],
+  "same_final_bed_tide_solutions": [
+    {
+      "level_m": -0.3,
+      "q_m3_s": [
+        0.0,
+        7.258544862270355,
+        0.0
+      ],
+      "active": [
+        false,
+        true,
+        false
+      ],
+      "exterior_faces": [
+        [],
+        [
+          [
+            243,
+            192
+          ]
+        ],
+        []
+      ]
+    },
+    {
+      "level_m": 0.0,
+      "q_m3_s": [
+        0.0,
+        7.214104094492933,
+        7.284704140437106
+      ],
+      "active": [
+        false,
+        true,
+        true
+      ],
+      "exterior_faces": [
+        [],
+        [
+          [
+            243,
+            192
+          ]
+        ],
+        [
+          [
+            254,
+            181
+          ]
+        ]
+      ]
+    },
+    {
+      "level_m": 0.3,
+      "q_m3_s": [
+        7.18204787060928,
+        7.135886416110181,
+        4.78671632992635
+      ],
+      "active": [
+        true,
+        true,
+        true
+      ],
+      "exterior_faces": [
+        [
+          [
+            240,
+            194
+          ],
+          [
+            241,
+            193
+          ],
+          [
+            239,
+            193
+          ]
+        ],
+        [
+          [
+            243,
+            192
+          ],
+          [
+            242,
+            191
+          ]
+        ],
+        [
+          [
+            253,
+            182
+          ],
+          [
+            254,
+            181
+          ],
+          [
+            253,
+            180
+          ]
+        ]
+      ]
+    }
+  ],
+  "annual_q_m3_s": [
+    6.99822211950386,
+    6.953242175375939,
+    4.664199501783483
+  ],
+  "event_q_m3_s": [
+    7.182069717715263,
+    7.135908122797413,
+    4.786730890661792
+  ],
+  "event_physical_config": {
+    "event": "physical_forcing",
+    "input_id": "material-lobes-event-25h",
+    "marine": {
+      "sea_level_m": 0.0,
+      "tide_amplitude_m": 0.3,
+      "tide_period_s": 44712.0,
+      "wave_height_m": 0.5,
+      "wave_direction_xz": [
+        1.0,
+        0.0
+      ],
+      "transport_rate_s": 1e-06,
+      "entrainment_rate_s": 1e-07,
+      "settling_rate_s": 0.0,
+      "export_rate_s": 0.0,
+      "step_s": 300.0,
+      "transverse_diffusivity_m2_s": 10.0,
+      "active_sediment_layer_m": 0.1,
+      "same_cell_wet_dry": false,
+      "settling_velocity_m_s": 0.001,
+      "minimum_depth_m": 1.0,
+      "material_source": "engineering homogeneous default MaterialParameters; not measured"
+    },
+    "hydraulic": {
+      "upstream_stage_limit_m": 2.2655969241354335,
+      "roughness": 0.035,
+      "gravity_m_s2": 9.81
+    },
+    "solid_rate_m3_s": 0.08
+  },
+  "notes": "Lobe components use uncut connected marine domain with initial/final river cells excluded; includes inherited-stock redistribution. Low/mean/high levels are frozen-bed hydraulic diagnostics, not extra time evolution."
+}

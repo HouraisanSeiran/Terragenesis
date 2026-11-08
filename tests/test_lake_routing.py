@@ -12,10 +12,11 @@ import zipfile
 
 import numpy as np
 
-from terrain_pipeline.lake_routing import (
-    LakeRoutingRecipe, evaluate_lake_routing, lake_routing_hash,
-    load_lake_routing, save_lake_routing,
-)
+from terrain_pipeline.lake import LakeRoutingRecipe as LakeRoutingRecipe
+from terrain_pipeline.lake import evaluate_lake_routing as evaluate_lake_routing
+from terrain_pipeline.lake import lake_routing_hash as lake_routing_hash
+from terrain_pipeline.lake import load_lake_routing as load_lake_routing
+from terrain_pipeline.lake import save_lake_routing as save_lake_routing
 
 
 def lake_fixture():
@@ -298,7 +299,7 @@ class LakeRoutingTests(unittest.TestCase):
     def test_interrupted_save_leaves_no_partial_destination(self):
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "interrupted.npz"
-            with patch("terrain_pipeline.lake_routing.np.savez_compressed", side_effect=OSError("injected")):
+            with patch('terrain_pipeline.lake._m4_lake_routing_np.savez_compressed', side_effect=OSError("injected")):
                 with self.assertRaises(OSError):
                     save_lake_routing(self.run_lake(), path)
             self.assertEqual(list(Path(temporary).iterdir()), [])
@@ -341,7 +342,7 @@ class LakeRoutingTests(unittest.TestCase):
                         {"rating_stage_m": (0.,) * 4097}):
             with self.subTest(changes=list(changes)), self.assertRaises(ValueError):
                 routing_recipe(**changes)
-        with patch("terrain_pipeline.lake_routing.np.array", side_effect=AssertionError("copy happened")):
+        with patch('terrain_pipeline.lake._m4_lake_routing_np.array', side_effect=AssertionError("copy happened")):
             with self.assertRaises(ValueError):
                 self.run_lake(routing_recipe(max_grid_cells=48))
             with self.assertRaises(ValueError):
@@ -360,7 +361,7 @@ class LakeRoutingTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "existing.npz"
             path.write_bytes(b"preserve")
-            with patch("terrain_pipeline.lake_routing._replay", side_effect=AssertionError("replayed")):
+            with patch('terrain_pipeline.lake._replay', side_effect=AssertionError("replayed")):
                 with self.assertRaises(FileExistsError):
                     save_lake_routing({}, path)
             self.assertEqual(path.read_bytes(), b"preserve")
@@ -371,8 +372,8 @@ class LakeRoutingTests(unittest.TestCase):
             path = Path(temporary) / "bounded.npz"
             save_lake_routing(result, path)
             for name, limit in (("MAX_ARCHIVE_BYTES", 100), ("MAX_METADATA_BYTES", 100)):
-                with patch(f"terrain_pipeline.lake_routing.{name}", limit):
-                    with patch("terrain_pipeline.lake_routing.np.load", side_effect=AssertionError("decompressed")):
+                with patch(f'terrain_pipeline.lake.{name}', limit):
+                    with patch('terrain_pipeline.lake._m4_lake_routing_np.load', side_effect=AssertionError("decompressed")):
                         with self.assertRaises(ValueError):
                             load_lake_routing(path)
             with zipfile.ZipFile(path) as archive:
@@ -382,7 +383,7 @@ class LakeRoutingTests(unittest.TestCase):
                 with zipfile.ZipFile(path, "w") as archive:
                     for name, data in wrong_set.items():
                         archive.writestr(name, data)
-                with patch("terrain_pipeline.lake_routing.np.load", side_effect=AssertionError("decompressed")):
+                with patch('terrain_pipeline.lake._m4_lake_routing_np.load', side_effect=AssertionError("decompressed")):
                     with self.assertRaises(ValueError):
                         load_lake_routing(path)
 
@@ -399,7 +400,7 @@ class LakeRoutingTests(unittest.TestCase):
             with zipfile.ZipFile(path, "w") as archive:
                 for name, data in members.items():
                     archive.writestr(name, data)
-            with patch("terrain_pipeline.lake_routing.np.load", side_effect=AssertionError("allocated")):
+            with patch('terrain_pipeline.lake._m4_lake_routing_np.load', side_effect=AssertionError("allocated")):
                 with self.assertRaises(ValueError):
                     load_lake_routing(path)
 
@@ -417,7 +418,7 @@ class LakeRoutingTests(unittest.TestCase):
     def test_save_rejects_unloadable_metadata_without_partial_files(self):
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "oversized.npz"
-            with patch("terrain_pipeline.lake_routing.MAX_METADATA_BYTES", 100):
+            with patch('terrain_pipeline.lake.MAX_METADATA_BYTES', 100):
                 with self.assertRaises(ValueError):
                     save_lake_routing(self.run_lake(), path)
             self.assertEqual(list(Path(temporary).iterdir()), [])

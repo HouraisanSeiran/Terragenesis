@@ -1,0 +1,133 @@
+{
+  "world_seed": 20261020,
+  "terrain_basis": "plate-conditioned saved Terrain Diffusion",
+  "source_manifest": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-scale-suite-20261102\\source-case300\\manifest.json",
+  "source_manifest_sha256": "b81acbf22a2a7b595022d37252bbef988f009ab243b0a4e863fd9f329806515f",
+  "base_identity": "a306c5127b7510e5f6b7e1359cfb36dfd342c3023cb7dc576a4f6cb97436c60c",
+  "cases": {
+    "river": {
+      "native_td_spacing_m": 30,
+      "projected_river_grid_m": 15,
+      "coastal_grid_m": 600,
+      "coordinates": "X east, Z south and down on map",
+      "duration_s": 180000,
+      "q_m3_s": 150,
+      "solid_rate_m3_s": 0.08,
+      "sea_boundary": "fixed 0 m; no periodic tide in this connector case",
+      "scenario": true
+    },
+    "single_branch": {
+      "grid_m": 600,
+      "duration_equivalent_years": 1.1,
+      "event_s": 90000,
+      "q_m3_s": 3000,
+      "solid_rate_m3_s": 1.6,
+      "coordinates": "array Z,X; diagnostic image uses grid indexes, Z points upward; 600 m per cell",
+      "scenario": true,
+      "coverage": "one explicit finite split after deposition, three original plus one new outlet"
+    }
+  },
+  "files": [
+    {
+      "file": "01-上游河道接至河口.png",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\river-connection-v4-map.png",
+      "sha256": "1cae6ce67bcb47cc9150ba5067a76fbd8815dd633ad12524310fbb674cd3a8d4"
+    },
+    {
+      "file": "02-河床水面纵剖面.png",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\river-connection-v4-profile.png",
+      "sha256": "c05c8c178ad9fc2a9207cdbc5266f7b54c90c83328dbb5545709c3dacb9e2e1d"
+    },
+    {
+      "file": "03-新增分汊局部床面.png",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\branch-feedback-v3-detail.png",
+      "sha256": "cc556e048c357a23b19a1f3fd164855cca75c94a1366b06575d9c6019a3c5b8f"
+    },
+    {
+      "file": "河道接线验收.md",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-connector-review.md",
+      "sha256": "a6e64585c715548d3ddc3631a9ad7b1113873ec687b03c03ac030405a9e4feaa"
+    },
+    {
+      "file": "新增分汊验收.md",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-single-branch-review.md",
+      "sha256": "c8d29e622822f1c4af662c8fda145a0ff97e617b12f9ebb0002fca4fbaf0c1b8"
+    },
+    {
+      "file": "数据与实现/coastal_river_connector.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_river_connector.py",
+      "sha256": "8a5cffb587fb456dee1c04cf0accdda75fdbcd9e0cf8753252413cce1e8be66b"
+    },
+    {
+      "file": "数据与实现/coastal_delta_branching.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\terrain_pipeline\\coastal_delta_branching.py",
+      "sha256": "4b9f3ff37cae42f91d12c5b95dfe3b9498cfda897659e539ad290f7875459cc5"
+    },
+    {
+      "file": "数据与实现/river-connection-v4-data.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\river-connection-v4-data.json",
+      "sha256": "9cf3b34f8c173cbec9503cd0104d782cf5db9c2bb11889bfa2e7df225746b59a"
+    },
+    {
+      "file": "数据与实现/river-connection-v4-data.npz",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\river-connection-v4-data.npz",
+      "sha256": "8a119292fba078b9d70eaa4cac2ed11ab976ea61402a21dc453650ec9ff5194a"
+    },
+    {
+      "file": "数据与实现/river-connection-v4-first-marine.npz",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\river-connection-v4-first-marine.npz",
+      "sha256": "afb778bd7ee2e8ae62c894a0ac4deeab121dadc2206869b3176f818cb5f71c3a"
+    },
+    {
+      "file": "数据与实现/river-connection-v4-marine.npz",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\river-connection-v4-marine.npz",
+      "sha256": "7b045d8ed4e726a2fcb1096e71bce7b517ec2313d84bfea023c90c4c71c9334d"
+    },
+    {
+      "file": "数据与实现/main-connector-accept.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-connector-accept.json",
+      "sha256": "d7f2d314b6aea465a53a30234570191163177a6719cff3a20a87363120fac37d"
+    },
+    {
+      "file": "数据与实现/main-branch-accept.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-branch-accept.json",
+      "sha256": "3c53ca888792249a2ab727b6f4871f0853603527d1709d5de9b4af74fa610a51"
+    },
+    {
+      "file": "数据与实现/branch-feedback-v3-stats.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\branch-feedback-v3-stats.json",
+      "sha256": "a9140b6c6aaaddaa699c64b70a5418b9b189b3e1de8495938f982427433447ab"
+    },
+    {
+      "file": "数据与实现/branch-feedback-v3-split.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\branch-feedback-v3-split.json",
+      "sha256": "2eafca63b4d80c5ffdd66e437bfd65e0d2b39b00bf6c8562c18f8fe7ff216d3e"
+    },
+    {
+      "file": "数据与实现/branch-feedback-v3-split.npz",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\branch-feedback-v3-split.npz",
+      "sha256": "a571d492cd7b3a3a718777f760fb45afb0878922b5b95a109e17e080c6502071"
+    },
+    {
+      "file": "数据与实现/branch-feedback-v3-stage.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\branch-feedback-v3-stage.json",
+      "sha256": "4fc7dc7d44bcc87cf957bb16fb4ca8eb2ab33cce235100866d2a7adc031851c7"
+    },
+    {
+      "file": "数据与实现/branch-feedback-v3-stage.npz",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\branch-feedback-v3-stage.npz",
+      "sha256": "53d544b8cb4200649631be859ef5bfcff849223f903be5cdd83110d72e401e30"
+    },
+    {
+      "file": "数据与实现/branch-feedback-v3-event.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\branch-feedback-v3-event.json",
+      "sha256": "03073e86c1eb77fc4ae37bde9d492066f50f9bac9d16ad608d01302938224a18"
+    },
+    {
+      "file": "数据与实现/branch-feedback-v3-event.npz",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\branch-feedback-v3-event.npz",
+      "sha256": "6a1d46be4cb68b870b64ad5c2994478d08ab9f09df809537c171e74e9962e21a"
+    }
+  ],
+  "accepted_scope": "connector and one new distributary; separate cases on a common source, no claim of synchronized joint evolution"
+}

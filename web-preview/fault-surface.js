@@ -9,12 +9,8 @@ canvas.setAttribute('aria-label','断层局部真实三角网格');wrap.prepend(
 const labels=document.createElement('div');labels.className='fault-labels hidden';
 for(const text of ['平移前 · 已施加 VDM','平移后']){const label=document.createElement('span');label.textContent=text;labels.append(label)}
 wrap.append(labels);
-const scene=new THREE.Scene();scene.background=new THREE.Color('#101c1d');
-scene.add(new THREE.HemisphereLight(0xe3edf3,0x55503e,2.2));
-const light=new THREE.DirectionalLight(0xffffff,2);light.position.set(80,180,-80);scene.add(light);
-const camera=new THREE.PerspectiveCamera(45,1,.01,100000);
-const mapCamera=new THREE.OrthographicCamera(-1,1,1,-1,.01,100000);
-mapCamera.up.set(0,0,-1);
+const scene=TerraView.createScene(THREE);
+const {camera,mapCamera}=TerraView.createCameras(THREE);
 const before=new THREE.Group(),after=new THREE.Group();scene.add(before,after);
 const layers={faultSeam:false,faultMoving:false,faultProtected:false};
 let active=false,pending=false,payload=null,recipe=null,selected=null,origin=[0,0,0];
@@ -36,15 +32,10 @@ function clear(){
 }
 function ensureRenderer(){
     if(renderer)return;
-    renderer=new THREE.WebGLRenderer({canvas,antialias:true,preserveDrawingBuffer:true});
-    renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+    renderer=TerraView.createRenderer(THREE,canvas);
     controls=new OrbitControls(camera,canvas);mapControls=new OrbitControls(mapCamera,canvas);
-    for(const orbit of [controls,mapControls]){
-        orbit.rotateSpeed=-1;orbit.minPolarAngle=.01;orbit.maxPolarAngle=Math.PI-.01;
-        orbit.mouseButtons={LEFT:THREE.MOUSE.ROTATE,MIDDLE:THREE.MOUSE.DOLLY,RIGHT:THREE.MOUSE.PAN};
-        orbit.addEventListener('change',render);
-    }
-    mapControls.enableRotate=false;mapControls.mouseButtons.LEFT=THREE.MOUSE.PAN;
+    TerraView.configureControls(THREE,controls);TerraView.configureControls(THREE,mapControls,{map:true});
+    for(const orbit of [controls,mapControls])orbit.addEventListener('change',render);
     mapControls.enabled=false;
 }
 function validate(next){
@@ -73,7 +64,7 @@ function build(group,points){
     surface.name='surface';group.add(surface);
     const seamGeometry=new THREE.BufferGeometry();
     seamGeometry.setAttribute('position',new THREE.BufferAttribute(positions(mesh.seamEdges.flatMap(edge=>edge.map(index=>points[index]))),3));
-    const seam=new THREE.LineSegments(seamGeometry,new THREE.LineBasicMaterial({color:0xe8b75c,depthTest:false}));
+    const seam=new THREE.LineSegments(seamGeometry,new THREE.LineBasicMaterial({color:TerraView.material.edge,depthTest:false}));
     seam.name='faultSeam';seam.renderOrder=2;group.add(seam);
 }
 function updateColors(){
@@ -83,8 +74,8 @@ function updateColors(){
         const colors=new Float32Array(mesh.vertices.length*3);
         for(let index=0;index<mesh.vertices.length;index++){
             const moving=recipe.moving_side==='positive'?mesh.vertexSide[index]>0:mesh.vertexSide[index]<0;
-            const color=new THREE.Color(layers.faultProtected&&mesh.protected[index]?0xe8b75c:layers.faultMoving&&moving?0x72b6c9:0x9eac8b);
-            color.toArray(colors,index*3);
+            const rgb=layers.faultProtected&&mesh.protected[index]?[227,166,60]:layers.faultMoving&&moving?[88,180,168]:[169,163,124];
+            colors.set(TerraView.linearColor(rgb),index*3);
         }
         group.children[0].geometry.setAttribute('color',new THREE.BufferAttribute(colors,3));
     }
@@ -106,18 +97,10 @@ function localBox(){
 function aspect(){return Math.max(1,wrap.clientWidth)/(Math.max(1,wrap.clientHeight)*(mode()==='compare'?2:1))}
 function resetCamera(){
     if(!payload||!renderer)return;
-    const box=localBox(),center=box.getCenter(new THREE.Vector3()),size=box.getSize(new THREE.Vector3());
-    const extent=Math.max(size.x,size.y,size.z,1),ratio=aspect();
-    camera.aspect=ratio;
-    const angle=Math.min(camera.fov*Math.PI/360,Math.atan(Math.tan(camera.fov*Math.PI/360)*ratio));
-    const distance=box.getBoundingSphere(new THREE.Sphere()).radius/Math.sin(angle)*1.12;
-    controls.target.copy(center);camera.near=Math.max(.01,extent/10000);camera.far=Math.max(extent*20,distance*4);
-    camera.position.copy(center).add(new THREE.Vector3(.85,.9,.85).normalize().multiplyScalar(distance));camera.updateProjectionMatrix();
-    const halfHeight=Math.max(size.z/2,size.x/(2*ratio),1)*1.12;
-    mapCamera.left=-halfHeight*ratio;mapCamera.right=halfHeight*ratio;mapCamera.top=halfHeight;mapCamera.bottom=-halfHeight;
-    mapCamera.near=.01;mapCamera.far=extent*20;mapCamera.zoom=1;
-    mapControls.target.copy(center);mapCamera.position.copy(center).add(new THREE.Vector3(0,extent*4,0));mapCamera.updateProjectionMatrix();
-    controls.update();mapControls.update();lastAspect=ratio;render();
+    const box=localBox(),ratio=aspect();
+    const {center,extent}=TerraView.frame(THREE,{box,camera,controls,aspect:ratio});
+    TerraView.frameMap(THREE,{box,mapCamera,mapControls,aspect:ratio});
+    lastAspect=ratio;render();
 }
 function render(){
     if(!active)return;
@@ -142,6 +125,7 @@ function render(){
         renderer.setViewport(left,0,paneWidth,height);renderer.setScissor(left,0,paneWidth,height);renderer.render(scene,currentCamera());
     });
     renderer.setScissorTest(false);
+    TerraView.hud.show(compare?'断层 · 前后对照':mode()==='before'?'断层 · 平移前':'断层 · 平移后',three());
 }
 function load(next,appliedRecipe){
     validate(next);clear();ensureRenderer();payload=next;recipe=structuredClone(appliedRecipe);
@@ -190,7 +174,7 @@ function reviewRecord(){
     if(!payload||pending)return null;
     return {schema:'fault-surface-review-v1',category:'vdm',workspace:'fault',caseId:'strike-slip-fault',identity:payload.identity,source:payload.source,metadata:payload.metadata,geometry:payload.geometry,report:payload.report,recipe:structuredClone(recipe),mesh:{vertices:payload.mesh.vertices.length,triangles:payload.mesh.triangles.length,seamEdges:payload.mesh.seamEdges.length},mesh_counts:{vertices:payload.mesh.vertices.length,triangles:payload.mesh.triangles.length,seamEdges:payload.mesh.seamEdges.length},payloadSchema:payload.schema,geometry_generated:true,status:payload.schema==='fault-case-v1'?'diagnostic_saved_geometry':'diagnostic_geometry_preview',hydraulic_ready:false,natural_outlet_verified:false,publishable:false,self_intersections_verified:false,view:window.surfaceRenderer.state.view,mode:mode(),camera:{position:currentCamera().position.toArray(),target:currentControls().target.toArray(),relative_origin_xyz_m:[...origin],vertical:after.scale.y,zoom:currentCamera().zoom},layers:{...layers},selection:selected};
 }
-window.faultSurface={load,clear,render,resetCamera,reviewRecord,isLoading:()=>pending,isActive:()=>active,
+window.faultSurface=TerraView.register('faultSurface',{load,clear,render,resetCamera,reviewRecord,isLoading:()=>pending,isActive:()=>active,
     begin(){active=true;pending=true;ensureRenderer();clear();render()},finish(){pending=false},
-    close(){active=false;pending=false;clear();canvas.classList.add('hidden');labels.classList.add('hidden');element('surface').classList.remove('hidden');if(controls)controls.enabled=false;if(mapControls)mapControls.enabled=false}
-};
+    close(){active=false;pending=false;clear();TerraView.hud.hide();canvas.classList.add('hidden');labels.classList.add('hidden');element('surface').classList.remove('hidden');if(controls)controls.enabled=false;if(mapControls)mapControls.enabled=false}
+});

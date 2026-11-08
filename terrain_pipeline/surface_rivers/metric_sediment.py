@@ -5,13 +5,18 @@ import math
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity, load_bundle, readonly, save_bundle
+from terrain_pipeline.common_infra import MAX_METADATA, identity, load_bundle, readonly, save_bundle
 from terrain_pipeline.surface_rivers.metric_bed_update import bed_from_inventory, bed_rejection
+from terrain_pipeline.channel_geometry import validate_receiver_acyclic
 
 
 SCHEMA = "terragenesis-sediment-replay-v1"
-ALGORITHM = "bounded-frozen-water-exner-v1"
+LEGACY_ALGORITHM = "bounded-frozen-water-exner-v1"
+ALGORITHM = "bounded-frozen-water-exner-v2"
 MAX_BYTES = 128 * 1024 * 1024
+MAX_SEDIMENT_NODES = 2048
+MAX_ARCHIVE_MEMBERS = 128
+MAX_NPY_HEADER_BYTES = 4096
 RHO_WATER_KG_M3 = 1000.
 GRAVITY_M_S2 = 9.81
 
@@ -93,7 +98,7 @@ class SedimentDomain:
 
     def __post_init__(self):
         receiver = self.receiver
-        if not isinstance(receiver, np.ndarray) or receiver.dtype != np.int64 or receiver.ndim != 1 or not 1 <= receiver.size <= 256:
+        if not isinstance(receiver, np.ndarray) or receiver.dtype != np.int64 or receiver.ndim != 1 or not 1 <= receiver.size <= MAX_SEDIMENT_NODES:
             raise ValueError("bounded int64 receiver required")
         n = receiver.size
         if np.any((receiver < -1) | (receiver >= n) | (receiver == np.arange(n))):
@@ -112,14 +117,7 @@ class SedimentDomain:
         edges = receiver >= 0
         if np.any(self.bed_elevation_m[edges] <= self.bed_elevation_m[receiver[edges]]):
             raise ValueError("receiver requires positive initial bed slope")
-        for start in range(n):
-            seen = set()
-            node = start
-            while node >= 0:
-                if node in seen:
-                    raise ValueError("receiver cycle")
-                seen.add(node)
-                node = int(receiver[node])
+        validate_receiver_acyclic(receiver)
         if not _sha(self.geometry_identity_sha256) or not isinstance(self.provenance, str) or not self.provenance.strip():
             raise ValueError("geometry identity and provenance required")
         object.__setattr__(self, "receiver", readonly(receiver))
@@ -149,7 +147,7 @@ class SedimentForcing:
         for name in ("water_volume_m3", "water_depth_m", "water_outflow_m3_s", "friction_slope", "external_solid_m3_s"):
             value = getattr(self, name)
             if shape is None:
-                if not isinstance(value, np.ndarray) or value.dtype != np.float64 or value.ndim != 2 or value.shape[0] != time.size - 1 or not 1 <= value.shape[1] <= 256:
+                if not isinstance(value, np.ndarray) or value.dtype != np.float64 or value.ndim != 2 or value.shape[0] != time.size - 1 or not 1 <= value.shape[1] <= MAX_SEDIMENT_NODES:
                     raise ValueError("bounded interval-node forcing required")
                 shape = value.shape
             object.__setattr__(self, name, _array(value, shape, name, nonnegative=True))
@@ -198,8 +196,10 @@ def _rates(domain, forcing, material, interval, mobile, loose, rock_removed):
     return tau, capacity, outgoing, deposit, loose_rate, rock_rate
 
 
-def _candidate(domain, forcing, material, config, interval, dt, mobile, loose, rock_removed):
-    tau, capacity, out_rate, deposit_rate, loose_rate, rock_rate = _rates(domain, forcing, material, interval, mobile, loose, rock_removed)
+def _candidate(domain, forcing, material, config, interval, dt, mobile, loose, rock_removed, rates=None):
+    if rates is None:
+        rates = _rates(domain, forcing, material, interval, mobile, loose, rock_removed)
+    tau, capacity, out_rate, deposit_rate, loose_rate, rock_rate = rates
     outgoing = dt * out_rate
     deposited = dt * deposit_rate
     eroded_loose = np.minimum(dt * loose_rate, loose)
@@ -209,7 +209,10 @@ def _candidate(domain, forcing, material, config, interval, dt, mobile, loose, r
     external = dt * forcing.external_solid_m3_s[interval]
     incoming = np.zeros_like(mobile)
     edges = domain.receiver >= 0
-    np.add.at(incoming, domain.receiver[edges], outgoing[edges])
+    if incoming.ndim == 1:
+        np.add.at(incoming, domain.receiver[edges], outgoing[edges])
+    else:
+        np.add.at(incoming.T, domain.receiver[edges], outgoing[:, edges].T)
     exported = np.where(domain.open_boundary, outgoing, 0.)
     next_mobile = mobile + incoming + external + eroded_loose + eroded_rock - outgoing - deposited
     next_loose = loose - eroded_loose + deposited
@@ -254,7 +257,15 @@ def _paired(domain, forcing):
         raise ValueError("lake cannot be undeclared sediment exporter")
 
 
-def _next_step(domain, forcing, material, config, time, mobile, loose, rock, step_count, trace_limit):
+def _bounded_next_time(time, dt, segment_end, *, legacy=False):
+    next_time = np.minimum(time + dt, segment_end)
+    if not legacy:
+        # Absolute-time rounding must not increase the physical donor bound.
+        next_time = np.where(next_time - time > dt, np.nextafter(next_time, time), next_time)
+    return next_time
+
+
+def _next_step(domain, forcing, material, config, time, mobile, loose, rock, step_count, trace_limit, *, legacy=False):
     if step_count >= config.max_steps:
         return None, None, "maximum step count exceeded"
     if step_count >= trace_limit:
@@ -271,8 +282,10 @@ def _next_step(domain, forcing, material, config, time, mobile, loose, rock, ste
         dt = min(dt, float(np.min(config.cfl * mobile[draining] / (out_rate[draining] + deposit_rate[draining] + 1e-300))))
     if not math.isfinite(dt) or dt <= 0. or (dt < config.min_dt_seconds and segment_end - time > config.min_dt_seconds) or time + dt == time:
         return None, None, "minimum internal step or time resolution exhausted"
-    next_time = segment_end if time + dt >= segment_end else time + dt
-    candidate, reason = _candidate(domain, forcing, material, config, interval, next_time - time, mobile, loose, rock)
+    next_time = float(_bounded_next_time(time, dt, segment_end, legacy=legacy))
+    if next_time <= time:
+        return None, None, "minimum internal step or time resolution exhausted"
+    candidate, reason = _candidate(domain, forcing, material, config, interval, next_time - time, mobile, loose, rock, rates=rates)
     if reason:
         return None, None, reason
     if np.any(candidate["stability_number"] > config.cfl * (1. + 1e-12)):
@@ -351,7 +364,7 @@ def validate_sediment(bundle):
     if not isinstance(bundle, dict) or set(bundle) != {"arrays", "metadata", "identity_sha256"}:
         raise ValueError("invalid sediment bundle")
     a, m = bundle["arrays"], bundle["metadata"]
-    if m.get("schema") != SCHEMA or m.get("algorithm") != ALGORITHM or identity(a, m) != bundle["identity_sha256"]:
+    if m.get("schema") != SCHEMA or m.get("algorithm") not in (ALGORITHM, LEGACY_ALGORITHM) or identity(a, m) != bundle["identity_sha256"]:
         raise ValueError("sediment schema or identity mismatch")
     if set(a) != ({"trace_time_seconds", "initial_mobile_solid_m3", "step_dt_seconds",
                    "cumulative_exported_solid_m3"} | {"domain_" + k for k in DOMAIN_FIELDS} |
@@ -397,27 +410,39 @@ def validate_sediment(bundle):
                             ("bed_elevation_m", domain.bed_elevation_m)):
         if not np.allclose(a["trace_" + name][0], reference, rtol=0, atol=1e-12):
             raise ValueError("initial sediment geometry mismatch")
-    for i in range(k):
-        interval = min(int(np.searchsorted(forcing.time_seconds, time[i], side="right") - 1), forcing.time_seconds.size - 2)
-        if time[i + 1] > forcing.time_seconds[interval + 1] + 1e-12:
+    # A fixed block bounds temporary memory while eliminating Python work per step.
+    for start in range(0, k, 64):
+        stop = min(start + 64, k)
+        current_time = time[start:stop]
+        following_time = time[start + 1:stop + 1]
+        interval = np.minimum(np.searchsorted(forcing.time_seconds, current_time, side="right") - 1, forcing.time_seconds.size - 2)
+        segment_end = forcing.time_seconds[interval + 1]
+        if np.any(following_time > segment_end + 1e-12):
             raise ValueError("step crosses forcing boundary")
-        if a["step_dt_seconds"][i] > config.max_dt_seconds * (1. + 1e-12):
+        actual_dt = a["step_dt_seconds"][start:stop]
+        if np.any(actual_dt > config.max_dt_seconds * (1. + 1e-12)):
             raise ValueError("sediment maximum time step exceeded")
-        expected_time, _, expected_failure = _next_step(domain, forcing, material, config, time[i],
-            a["trace_mobile_solid_m3"][i], a["trace_bed_alluvium_solid_m3"][i],
-            a["trace_rock_removed_m3"][i], i, trace_limit)
-        if expected_failure or expected_time != time[i + 1]:
+        mobile = a["trace_mobile_solid_m3"][start:stop]
+        loose = a["trace_bed_alluvium_solid_m3"][start:stop]
+        rock = a["trace_rock_removed_m3"][start:stop]
+        rates = _rates(domain, forcing, material, interval, mobile, loose, rock)
+        if not all(np.isfinite(rate).all() for rate in rates):
+            raise ValueError("nonfinite committed sediment rates")
+        donor_dt = np.where(mobile > 0., config.cfl * mobile / (rates[2] + rates[3] + 1e-300), np.inf)
+        dt = np.minimum(np.minimum(config.max_dt_seconds, segment_end - current_time), np.min(donor_dt, axis=1))
+        expected_time = _bounded_next_time(current_time, dt, segment_end, legacy=m["algorithm"] == LEGACY_ALGORITHM)
+        if (not np.isfinite(dt).all() or np.any(dt <= 0.)
+                or np.any((dt < config.min_dt_seconds) & (segment_end - current_time > config.min_dt_seconds))
+                or np.any(current_time + dt == current_time) or not np.array_equal(expected_time, following_time)):
             raise ValueError("committed sediment time step does not match declared controls")
-        candidate, reason = _candidate(domain, forcing, material, config, interval, a["step_dt_seconds"][i],
-                                        a["trace_mobile_solid_m3"][i], a["trace_bed_alluvium_solid_m3"][i],
-                                        a["trace_rock_removed_m3"][i])
+        candidate, reason = _candidate(domain, forcing, material, config, interval, actual_dt[:,None], mobile, loose, rock, rates=rates)
         if reason:
             raise ValueError("committed invalid sediment step: " + reason)
         for name in STATE_FIELDS:
-            if not np.allclose(candidate[name], a["trace_" + name][i + 1], rtol=0, atol=1e-8 if name == "bed_elevation_m" else 1e-10):
+            if not np.allclose(candidate[name], a["trace_" + name][start + 1:stop + 1], rtol=0, atol=1e-8 if name == "bed_elevation_m" else 1e-10):
                 raise ValueError("sediment state ledger mismatch: " + name)
         for name in STEP_FIELDS:
-            if not np.allclose(candidate[name], a["step_" + name][i], rtol=1e-10, atol=1e-10):
+            if not np.allclose(candidate[name], a["step_" + name][start:stop], rtol=1e-10, atol=1e-10):
                 raise ValueError("sediment step ledger mismatch: " + name)
         if np.any(candidate["stability_number"] > config.cfl * (1. + 1e-12)):
             raise ValueError("sediment stability violation")
@@ -445,7 +470,7 @@ def validate_sediment(bundle):
             raise ValueError("failed trace unfinished range mismatch")
         _, _, witnessed_reason = _next_step(domain, forcing, material, config, time[-1],
             a["trace_mobile_solid_m3"][-1], a["trace_bed_alluvium_solid_m3"][-1],
-            a["trace_rock_removed_m3"][-1], k, trace_limit)
+            a["trace_rock_removed_m3"][-1], k, trace_limit, legacy=m["algorithm"] == LEGACY_ALGORITHM)
         if witnessed_reason != m["failure_reason"]:
             raise ValueError("unverified sediment failure reason")
     else:
@@ -464,4 +489,7 @@ def save_sediment(path, bundle):
 
 
 def load_sediment(path, *, expected_sha256):
-    return load_bundle(path, expected_sha256=expected_sha256, validator=validate_sediment, max_bytes=MAX_BYTES)
+    # MAX_BYTES bounds array payloads in the solver/validator. Archive members
+    # also include up to 128 bounded NPY headers and the bounded JSON manifest.
+    archive_bytes = MAX_BYTES + MAX_ARCHIVE_MEMBERS * MAX_NPY_HEADER_BYTES + MAX_METADATA
+    return load_bundle(path, expected_sha256=expected_sha256, validator=validate_sediment, max_bytes=archive_bytes)

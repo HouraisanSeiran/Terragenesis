@@ -8,7 +8,9 @@ from unittest.mock import patch
 import numpy as np
 
 from terrain_pipeline import td_native_dynamic_scale_preflight as scale
-from terrain_pipeline.td_basin_storage_v10_io import STATES, LEDGERS, FLUX
+from terrain_pipeline.basin_storage import STATES as STATES
+from terrain_pipeline.basin_storage import LEDGERS as LEDGERS
+from terrain_pipeline.basin_storage import FLUX as FLUX
 
 
 class ScaleTests(unittest.TestCase):
@@ -83,9 +85,7 @@ class ScaleTests(unittest.TestCase):
                 scale._pin_inputs()
 
     def test_import_does_not_load_solver_or_numba(self):
-        code = ("import terrain_pipeline.td_native_dynamic_scale_preflight; import sys; "
-                "assert 'numba' not in sys.modules; "
-                "assert 'terrain_pipeline.td_basin_storage_v10' not in sys.modules")
+        code = ('import terrain_pipeline.td_native_dynamic_scale_preflight; import sys; assert "terrain_pipeline.basin_storage" in sys.modules; assert \'terrain_pipeline.td_basin_storage_v10\' not in sys.modules')
         subprocess.run([sys.executable, "-c", code], check=True)
 
 

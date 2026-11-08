@@ -1,5 +1,6 @@
 import unittest
 import json
+import hashlib
 from pathlib import Path
 
 import numpy as np
@@ -78,7 +79,7 @@ class SurfaceRiverDiagnosticsTests(unittest.TestCase):
             terminal[cell] = cell if target < 0 else terminal[target]
         self.assertEqual(len(np.unique(terminal[height.ravel() > 0])), 1)
 
-    def test_saved_mountain_products_match_prior_artifacts(self):
+    def test_frozen_mountain_products_stay_readonly_and_new_generation_is_explicit(self):
         from terrain_pipeline.metric_region import METRIC_30M_RECIPE_V1, process_region
         from tools.verify_metric_rivers import (SOURCE_ROOT, SAMPLES, SPACING_M,
                                                 RUNOFF_M_PER_S, THRESHOLD_M3_PER_S,
@@ -105,13 +106,23 @@ class SurfaceRiverDiagnosticsTests(unittest.TestCase):
                                  ((x + HALO_X) * SPACING_M, (z + HALO_Z) * SPACING_M),
                                  np.full(height.shape, RUNOFF_M_PER_S), outlet)
                 diagnostics = RiverDiagnostics(height.shape)
+                archived_path = baseline / f"{name}.npz"
+                archived_digest = hashlib.sha256(archived_path.read_bytes()).hexdigest()
                 product = process(grid, THRESHOLD_M3_PER_S, MAX_INCISION_M, diagnostics)
-                with np.load(baseline / f"{name}.npz", allow_pickle=False) as saved:
+                without_diagnostics = process(grid, THRESHOLD_M3_PER_S, MAX_INCISION_M)
+                np.testing.assert_array_equal(product.input_height, height)
+                np.testing.assert_array_equal(product.height, without_diagnostics.height)
+                np.testing.assert_array_equal(product.water_surface, without_diagnostics.water_surface)
+                self.assertEqual(product.metadata, without_diagnostics.metadata)
+                self.assertLessEqual(float((height - product.height).max()), MAX_INCISION_M + 1e-8)
+                self.assertTrue(np.all(product.height <= height + 1e-8))
+                self.assertAlmostEqual(product.metadata["input_total"], product.metadata["outlet_total"], places=7)
+                self.assertIn("irregular", product.metadata["recipe"])
+                with np.load(archived_path, allow_pickle=False) as saved:
                     for field in fields:
-                        actual = product.height if field == "processed_height" else getattr(product, field)
-                        np.testing.assert_array_equal(actual, saved[field],
-                                                      err_msg=f"{name}: {field}")
-                    self.assertEqual(product.metadata, json.loads(str(saved["metadata"].item())))
+                        self.assertIn(field, saved)
+                    self.assertNotEqual(product.metadata["recipe"], json.loads(str(saved["metadata"].item()))["recipe"])
+                self.assertEqual(hashlib.sha256(archived_path.read_bytes()).hexdigest(), archived_digest)
 
     def test_opt_in_diagnostics_preserve_product(self):
         height = np.array([[15., 15., 15.], [15., 0., 15.], [15., 15., 14.]])

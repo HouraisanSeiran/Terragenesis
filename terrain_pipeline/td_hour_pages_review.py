@@ -9,11 +9,11 @@ import hashlib
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
 from terrain_pipeline.td_hour_pages_acceptance_io import load_hour_pages_index, _load, _json, _memory, STATES
 from terrain_pipeline.td_surface_reaches import _hash, _plain, _freeze
-from terrain_pipeline.td_basin_spill_network import _read_json
+from terrain_pipeline.basin_topology import _read_json as _read_json
 
 SCHEMA = "td-hour-pages-native-review-v2"
 MAX_BYTES = 8 * 1024 * 1024

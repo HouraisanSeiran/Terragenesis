@@ -1,0 +1,115 @@
+{
+  "scope": "partial publication; two constructed split/rejoin groups; remote deep-ocean deposition excluded from mouth-bar achievement",
+  "source_checks": {
+    "path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\window100-v2\\source.npz",
+    "expected_sha256": "c95f3bc2fda697ad05fdf0e827b20edb2c778e13517b95a6a5ecba49a11b3240",
+    "actual_sha256": "c95f3bc2fda697ad05fdf0e827b20edb2c778e13517b95a6a5ecba49a11b3240",
+    "identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+    "source_sampling": "Frozen window copied byte-for-byte; historic nearest native 30 m node at 100 m grid centres, fixed owner; no resampling performed here.",
+    "derived_seaward_coast_window_exact": true,
+    "source_valid_window_exact": true,
+    "source_ocean_window_exact": true,
+    "window_origin_exact": true,
+    "unknown_excluded_from_simulation": true,
+    "derived_crop_seed_rule_exact": true
+  },
+  "passed": true,
+  "final_q_m3_s": {
+    "shared_trunk_and_mouth": 1500.0,
+    "group1_main": 1448.7359122368948,
+    "group1_side": 51.26408779918609,
+    "group2_main": 1371.092223599012,
+    "group2_side": 128.9077764850643
+  },
+  "solid_budget_residual_m3": -1.1920928955078125e-06,
+  "pending_solid_m3": 0.0,
+  "max_node_q_residual_m3_s": 2.3635848833691853e-09,
+  "ring_interiors": [
+    {
+      "fork": [
+        66,
+        13
+      ],
+      "rejoin": [
+        78,
+        15
+      ],
+      "nonchannel_interior_cells": 17,
+      "first_arm_edge_q_min_max_m3_s": [
+        51.26408779918609,
+        51.26408783441767
+      ],
+      "second_arm_edge_q_min_max_m3_s": [
+        1448.7359122368948,
+        1448.73591224678
+      ],
+      "interior_ground_bed_min_max_m": [
+        0.10254315286874771,
+        1.1722438097595447
+      ],
+      "interior_exposed_mean_datum_cells": 17,
+      "interior_source_land_cells": 17,
+      "interior_original_source_land_cells": 17,
+      "interior_derived_source_land_cells": 17,
+      "interior_constructed_initial_land_cells": 17,
+      "interior_evolved_land_cells": 17,
+      "interior_newly_exposed_cells": 0
+    },
+    {
+      "fork": [
+        81,
+        16
+      ],
+      "rejoin": [
+        93,
+        19
+      ],
+      "nonchannel_interior_cells": 15,
+      "first_arm_edge_q_min_max_m3_s": [
+        128.9077764850643,
+        128.90777649272837
+      ],
+      "second_arm_edge_q_min_max_m3_s": [
+        1371.092223599012,
+        1371.0922236038734
+      ],
+      "interior_ground_bed_min_max_m": [
+        -1.016982919673925,
+        -0.06769213952482644
+      ],
+      "interior_exposed_mean_datum_cells": 0,
+      "interior_source_land_cells": 0,
+      "interior_original_source_land_cells": 0,
+      "interior_derived_source_land_cells": 0,
+      "interior_constructed_initial_land_cells": 0,
+      "interior_evolved_land_cells": 0,
+      "interior_newly_exposed_cells": 0
+    }
+  ],
+  "area_semantics": "100m nonchannel whole-cell-centre representative area; not exact fractional shoreline",
+  "fresh_solve": {
+    "status": "passed",
+    "max_absolute_differences": {
+      "nodes": 0.0,
+      "edge_q_m3_s": 0.0,
+      "mouth_q_m3_s": 0.0
+    }
+  },
+  "render_json_npz_hash_checks": {
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\prepared-c\\initial.json": true,
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\prepared-c\\initial.npz": true,
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\year-half-c\\final.json": true,
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\year-half-c\\final.npz": true,
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\tide-25h-c\\final.json": true,
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\tide-25h-c\\final.npz": true,
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\prepared-c\\source-window.npz": true,
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\prepared-c\\manifest.json": true
+  },
+  "render_image_sha256": {
+    "main.png": "bab2b3e3b1526e17193b13ce472121ebdcc01d40fb7e53a2f58dfd55944db30b",
+    "detail.png": "2d7818da0aa8752960926c9643134c2a83fca41b2818eac6da0e06c35b7e079c",
+    "bed-change.png": "8f9a967e687245bb64f7a1e858c82de196f34c54bb9c613a1421994456ad4722",
+    "tides.png": "684e5dcc3cc34d34a5edc7971f79766c21317c25464f05985c96452110f58c84"
+  },
+  "visual_review": "detail.png reviewed; first ring source land, second submerged; shallow-water colour not exposed bar"
+}

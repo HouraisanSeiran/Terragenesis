@@ -15,8 +15,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.metric_vdm_fault_v2 import FaultRecipe, apply_fault, load_fault
-from terrain_pipeline.metric_vdm_forms import load_formed_vdm
+from terrain_pipeline.vdm_cuts import FaultRecipe, apply_fault, load_fault
+from terrain_pipeline.vdm_cuts import load_formed_vdm
 
 INDEX = ROOT / "verification/metric-vdm-fault/run-v2-20261005-02/index.json"
 INDEX_SHA256 = "c4d076e959a6067c6f97af263c041c15a0a4aa4f7bec422665c5f6aac54064da"

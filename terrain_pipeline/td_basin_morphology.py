@@ -5,10 +5,7 @@ import math
 
 import numpy as np
 
-from terrain_pipeline.td_material_field import (
-    MAX_CELLS, _bundle, _check_identity, _load_bundle, _mask, _parameters, _positive,
-    _save_bundle, _shape, _validate_cold_material,
-)
+from terrain_pipeline.geology import LITHOLOGY_MAX_CELLS as MAX_CELLS, _material_bundle as _bundle, _material_check_identity as _check_identity, _load_bundle, _mask, _parameters, _material_positive as _positive, _save_bundle, _material_shape as _shape, _validate_cold_material
 
 
 ALGORITHM = "td-d4-single-round-water-material-sediment-v1"

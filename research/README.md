@@ -9,4 +9,4 @@
 
 `sources.json` 保存来源、获取时间、状态和哈希；`sources/` 保存资料副本。论文全文、项目文档、源码和题录的证据强度不同，正文已区分。
 
-当前 Java 原型没有扩散推理，不能当作最终实现。见工作区根目录的 `IMPLEMENTATION_STATUS.md`。
+当前 Java 原型没有扩散推理，不能当作最终实现。旧模组实现状态见 [docs/archive/historical-reports/IMPLEMENTATION_STATUS.md](../docs/archive/historical-reports/IMPLEMENTATION_STATUS.md)；现行文档入口见 [docs/README.md](../docs/README.md)。

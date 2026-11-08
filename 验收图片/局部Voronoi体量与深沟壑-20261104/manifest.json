@@ -1,0 +1,433 @@
+{
+  "algorithm_id": "local-volume-mountains-v1",
+  "original_algorithm_id": "product-mountains-v2-smooth-mass",
+  "world_seed": 20260903,
+  "source_sha256": {
+    "terrain_pipeline/local_volume_mountains.py": "859498402f24002aa10787c1a57862af1ce01f595c15fc18a9025c95de3fd024",
+    "terrain_pipeline/product_mountains.py": "c7f04e7d0d0bd3b739c541ba99dd8a70da75afaec37a773e62ad026927db7381",
+    "terrain_pipeline/advanced_terrain_filter.py": "e0dc26f2e5405f28cec05465b44a0d76bcf278d1d2bb8a732ab446f92ef3b4f3",
+    "terrain_pipeline/world_seed.py": "ff3c7ae6e1480222a18e564d880fbb1fe857dc4410d2fae6fe401e839d749fa4",
+    "diffusion/geographic_noise.py": "7b0667dc26dcfc153267c9affb9f30831711d417a8c22232fd36ae8af37a50e1",
+    "terrain_pipeline/terrain_map_style.py": "5ba2a8256fcf4f7d66f38cddadd7c7d33aeea9978053af96f41e2b52b9550ff6",
+    "tools/prepare_local_volume_mountains.py": "ce853b577c69cbee8c15f55dd95077ee9290dd4fcceb2469f2c0f364368c89dc"
+  },
+  "subseed_derivation": "terrain_pipeline.world_seed.derive_subseed",
+  "subseeds": {
+    "product-ridge": 1511883604618675461,
+    "product-warp": 6063670488463537375,
+    "product-voronoi-sites": 8428408912037286829,
+    "local-volume-sites": 12182482476770616183,
+    "local-volume-selection": 17323341780523637846
+  },
+  "advanced_filter": {
+    "algorithm_id": "advanced-terrain-filter-v2-stable-hash",
+    "config": {
+      "amplitude_m": 150.0,
+      "wavelength_m": 1800.0,
+      "octaves": 3,
+      "gain": 0.5,
+      "lacunarity": 2.0,
+      "gully_weight": 0.5,
+      "detail": 1.5,
+      "rounding": [
+        0.1,
+        0.0,
+        0.1,
+        2.0
+      ],
+      "onset": [
+        1.25,
+        1.25,
+        2.8,
+        1.5
+      ],
+      "assumed_slope": [
+        0.7,
+        1.0
+      ],
+      "cell_scale": 0.7,
+      "normalization": 0.5,
+      "hash_mode": "stable"
+    },
+    "stable_seed": 10860721302913963045
+  },
+  "coordinate_convention": "row Z south, column X east; origin + index * spacing, metres",
+  "mapping": {
+    "minimum_m": -500.0,
+    "maximum_m": 6000.0,
+    "encoding": "round(clip((height+500)/6500,0,1)*65535)",
+    "legacy_mapping": "previous product images use -500 to 4500 m"
+  },
+  "formulas": {
+    "original_macro": "product-mountains-v2-smooth-mass, default alpha=0.65, Advanced disabled",
+    "local_macro": "H0 + k * P * max(H0 - 200 m, 0)",
+    "fade": "smoothstep(0.02, 0.08, hypot(slope_x, slope_z))",
+    "actual_advanced_delta": "fade * (raw_delta * depth_gain if raw_delta < 0 else raw_delta)",
+    "control": "k=0, gain=1, with slope fade; not the old un-faded product baseline",
+    "boundary": "P=0 guarantees macro equality only; Advanced neighborhood up to 600 m can change final heights near patch edges"
+  },
+  "plot_geometry": {
+    "surface_stride": 5,
+    "surface_rcount_ccount": "actual strided array dimensions",
+    "vertical_exaggeration": 1.2923076923076924
+  },
+  "cases": [
+    {
+      "name": "main_control",
+      "origin_xz_m": [
+        0.0,
+        0.0
+      ],
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "config": {
+        "world_seed": 20260903,
+        "k": 0.0,
+        "depth_gain": 1.0,
+        "cell_size_m": 6000.0,
+        "selection_scale_m": 24000.0,
+        "cell_threshold_low": 0.8,
+        "cell_threshold_high": 0.95,
+        "selection_threshold_low": 0.7,
+        "selection_threshold_high": 0.85,
+        "slope_fade_low": 0.02,
+        "slope_fade_high": 0.08,
+        "advanced_enabled": true,
+        "batch_size": 4096
+      },
+      "npz": "main_control.npz",
+      "npz_sha256": "5b1d1e8ed037fa3c91d47dba4eec3cf92e6094c0a46509dcbf14822cd6c9ad6e",
+      "selection_support_fraction": 0.5948905790386876,
+      "p_support_fraction": 0.42346751574928015,
+      "outside_selection_macro_max_abs_error_m": 0.0,
+      "outside_patch_macro_max_abs_error_m": 0.0,
+      "max_volume_lift_m": 0.0,
+      "raw_delta_min_m": -131.2499073769435,
+      "raw_delta_max_m": 220.92381954641826,
+      "final_delta_min_m": -131.2499073769435,
+      "final_delta_max_m": 131.249998276349,
+      "height_images": {
+        "macro_height_m": {
+          "file": "main_control_macro_height_m.png",
+          "sha256": "3ed20a630e60f3531c431d962b4b879edea0fb957cdcb4c6affcf53737dea786",
+          "preview_sha256": "5837e3f4971e6fb55636edd36b4a0906ce29395d00b9f967ea1126ccf65acc6d",
+          "min_m": 536.2529506417268,
+          "max_m": 3336.029149500918,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.049591820474688575
+        },
+        "height_m": {
+          "file": "main_control_height_m.png",
+          "sha256": "adb28dc123901928eedc8f20cd383c302ba5d5593f299837141b3cb8b759309d",
+          "preview_sha256": "90c27367f7cdb6a18a423d121f1c9fdae8ac77b7e76c3a9c2027f69c184f3011",
+          "min_m": 433.7719810246544,
+          "max_m": 3444.06826231655,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.04959176202464732
+        }
+      }
+    },
+    {
+      "name": "main_deep_only",
+      "origin_xz_m": [
+        0.0,
+        0.0
+      ],
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "config": {
+        "world_seed": 20260903,
+        "k": 0.0,
+        "depth_gain": 2.4,
+        "cell_size_m": 6000.0,
+        "selection_scale_m": 24000.0,
+        "cell_threshold_low": 0.8,
+        "cell_threshold_high": 0.95,
+        "selection_threshold_low": 0.7,
+        "selection_threshold_high": 0.85,
+        "slope_fade_low": 0.02,
+        "slope_fade_high": 0.08,
+        "advanced_enabled": true,
+        "batch_size": 4096
+      },
+      "npz": "main_deep_only.npz",
+      "npz_sha256": "d0d81732c5f8f185e10c835eaf11ee832b3b35d98f2c9ed49ece089866aae9ca",
+      "selection_support_fraction": 0.5948905790386876,
+      "p_support_fraction": 0.42346751574928015,
+      "outside_selection_macro_max_abs_error_m": 0.0,
+      "outside_patch_macro_max_abs_error_m": 0.0,
+      "max_volume_lift_m": 0.0,
+      "raw_delta_min_m": -131.2499073769435,
+      "raw_delta_max_m": 220.92381954641826,
+      "final_delta_min_m": -314.9997777046644,
+      "final_delta_max_m": 131.249998276349,
+      "height_images": {
+        "macro_height_m": {
+          "file": "main_deep_only_macro_height_m.png",
+          "sha256": "3ed20a630e60f3531c431d962b4b879edea0fb957cdcb4c6affcf53737dea786",
+          "preview_sha256": "5837e3f4971e6fb55636edd36b4a0906ce29395d00b9f967ea1126ccf65acc6d",
+          "min_m": 536.2529506417268,
+          "max_m": 3336.029149500918,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.049591820474688575
+        },
+        "height_m": {
+          "file": "main_deep_only_height_m.png",
+          "sha256": "a9dccbef4ace26d3d67d10a1b22e75b4c409e9b3dd7ed5188baa29fddb507cda",
+          "preview_sha256": "c5a322fa2710f038241417c7ae25406e204b42c98288e8a0f0439ae5ba3198aa",
+          "min_m": 252.4552220140954,
+          "max_m": 3444.06826231655,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.04959176202464732
+        }
+      }
+    },
+    {
+      "name": "main_local_only",
+      "origin_xz_m": [
+        0.0,
+        0.0
+      ],
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "config": {
+        "world_seed": 20260903,
+        "k": 0.35,
+        "depth_gain": 1.0,
+        "cell_size_m": 6000.0,
+        "selection_scale_m": 24000.0,
+        "cell_threshold_low": 0.8,
+        "cell_threshold_high": 0.95,
+        "selection_threshold_low": 0.7,
+        "selection_threshold_high": 0.85,
+        "slope_fade_low": 0.02,
+        "slope_fade_high": 0.08,
+        "advanced_enabled": true,
+        "batch_size": 4096
+      },
+      "npz": "main_local_only.npz",
+      "npz_sha256": "27c4e64754996c085819bb93065dcc12ecea5e9e5361764d5e3d21e658b2bc84",
+      "selection_support_fraction": 0.5948905790386876,
+      "p_support_fraction": 0.42346751574928015,
+      "outside_selection_macro_max_abs_error_m": 0.0,
+      "outside_patch_macro_max_abs_error_m": 0.0,
+      "max_volume_lift_m": 1005.5043429807059,
+      "raw_delta_min_m": -142.77605884348995,
+      "raw_delta_max_m": 220.92381954641826,
+      "final_delta_min_m": -131.2490026941724,
+      "final_delta_max_m": 131.24997278061613,
+      "height_images": {
+        "macro_height_m": {
+          "file": "main_local_only_macro_height_m.png",
+          "sha256": "d2cd537b1a1fc31b4d16d57775af7303a2f9210a99b6b28469bd3640f92e6402",
+          "preview_sha256": "ea623da2dc2d16049bdcc7ca2f188fa40ed0d4daaccd2dfce505316d421baa4b",
+          "min_m": 653.9414833663311,
+          "max_m": 4250.824276960071,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.049591820474688575
+        },
+        "height_m": {
+          "file": "main_local_only_height_m.png",
+          "sha256": "58c9ebfec943633248af854ea84b9c6995aa2a0469835c3749a6b57423d70004",
+          "preview_sha256": "1150c7b23086764e4060c35e3892d2349894f1f00703d7343e3d9d7399d1152c",
+          "min_m": 548.928577120023,
+          "max_m": 4364.634196363651,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.049591332056934334
+        }
+      }
+    },
+    {
+      "name": "main_combined",
+      "origin_xz_m": [
+        0.0,
+        0.0
+      ],
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "config": {
+        "world_seed": 20260903,
+        "k": 0.35,
+        "depth_gain": 2.4,
+        "cell_size_m": 6000.0,
+        "selection_scale_m": 24000.0,
+        "cell_threshold_low": 0.8,
+        "cell_threshold_high": 0.95,
+        "selection_threshold_low": 0.7,
+        "selection_threshold_high": 0.85,
+        "slope_fade_low": 0.02,
+        "slope_fade_high": 0.08,
+        "advanced_enabled": true,
+        "batch_size": 4096
+      },
+      "npz": "main_combined.npz",
+      "npz_sha256": "4df51c193d7ef7e086fb584d8a42da66817dabc00c8106a383f463ee34e347e5",
+      "selection_support_fraction": 0.5948905790386876,
+      "p_support_fraction": 0.42346751574928015,
+      "outside_selection_macro_max_abs_error_m": 0.0,
+      "outside_patch_macro_max_abs_error_m": 0.0,
+      "max_volume_lift_m": 1005.5043429807059,
+      "raw_delta_min_m": -142.77605884348995,
+      "raw_delta_max_m": 220.92381954641826,
+      "final_delta_min_m": -314.99760646601374,
+      "final_delta_max_m": 131.24997278061613,
+      "height_images": {
+        "macro_height_m": {
+          "file": "main_combined_macro_height_m.png",
+          "sha256": "d2cd537b1a1fc31b4d16d57775af7303a2f9210a99b6b28469bd3640f92e6402",
+          "preview_sha256": "ea623da2dc2d16049bdcc7ca2f188fa40ed0d4daaccd2dfce505316d421baa4b",
+          "min_m": 653.9414833663311,
+          "max_m": 4250.824276960071,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.049591820474688575
+        },
+        "height_m": {
+          "file": "main_combined_height_m.png",
+          "sha256": "cd1dc3c478faf742ab3f626ac8376ee1882eeab625ee2bec4e179add8939893e",
+          "preview_sha256": "eb6bf8c0a5c5f38508c91394de2cf7a0f3e981153951a6f975d18c142a5686d3",
+          "min_m": 371.74513894559976,
+          "max_m": 4364.634196363651,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.049591340970891906
+        }
+      }
+    },
+    {
+      "name": "negative_combined",
+      "origin_xz_m": [
+        -24000.0,
+        -24000.0
+      ],
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "config": {
+        "world_seed": 20260903,
+        "k": 0.35,
+        "depth_gain": 2.4,
+        "cell_size_m": 6000.0,
+        "selection_scale_m": 24000.0,
+        "cell_threshold_low": 0.8,
+        "cell_threshold_high": 0.95,
+        "selection_threshold_low": 0.7,
+        "selection_threshold_high": 0.85,
+        "slope_fade_low": 0.02,
+        "slope_fade_high": 0.08,
+        "advanced_enabled": true,
+        "batch_size": 4096
+      },
+      "npz": "negative_combined.npz",
+      "npz_sha256": "eeb74a748e0b286b534a460c29a8ddd527178d8a7cee01dfce6cbfdd76da9a08",
+      "selection_support_fraction": 0.21417777252629025,
+      "p_support_fraction": 0.10095086473342828,
+      "outside_selection_macro_max_abs_error_m": 0.0,
+      "outside_patch_macro_max_abs_error_m": 0.0,
+      "max_volume_lift_m": 969.0872969126929,
+      "raw_delta_min_m": -131.24376251900398,
+      "raw_delta_max_m": 248.4557038308178,
+      "final_delta_min_m": -314.98503004560956,
+      "final_delta_max_m": 131.2499972597028,
+      "height_images": {
+        "macro_height_m": {
+          "file": "negative_combined_macro_height_m.png",
+          "sha256": "7c4feeb685f29151f26e1cf5a1f533c668cd0234d7c2ff8adbf1d3552cc390bc",
+          "preview_sha256": "88afd994ddf8fd6a6bab6db6382b344b5a7729b11cb977df90a9a0cb00d1f029",
+          "min_m": 545.8523365965649,
+          "max_m": 4055.298958105958,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.04959162928207661
+        },
+        "height_m": {
+          "file": "negative_combined_height_m.png",
+          "sha256": "512a48e9bb81438a30fc8721b9fe3f6f8bd8daa7cfab0e468ee892e6a4d8feca",
+          "preview_sha256": "9ff82e7f739d53869d441e288b077e5651f896ca9a234af0684ce8c258ce78fa",
+          "min_m": 258.392957649275,
+          "max_m": 4162.621246279112,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "png_matches_encoded": true,
+          "max_abs_decode_error_m": 0.04959169779840522
+        }
+      }
+    }
+  ],
+  "images": {
+    "main_comparison.png": "b5a3bc5c648827d32f1e7580f1eecdcac3c2a768d7b52254929a204aa90a4970",
+    "main_comparison_depth_profile.png": "7a7ad0bb2675329da1148065c652ee7188208f498f0aea1e63409e1acee8b589",
+    "main_comparison_differences.png": "d00f9b8c474a4ecd5122a1051d15f16a55f4f27bea3c67a5bfe92c9ac2b50d6a",
+    "main_comparison_local_profiles.png": "963cc2188f707ed724095f51b572ad675fbb26c3b33aa5c207c88e7219be5c9c",
+    "main_comparison_terrain.png": "90a2123312072aa296686f7be5292fa14f9e3891268a317a97fe4dab26a4c9e8",
+    "negative_comparison.png": "a42454f7db4140da801c95e1f4ecc17ebe4fc7ff8290844c8b583c65405e1669",
+    "negative_comparison_terrain.png": "8e888ae94a2773fd3bb55a406aa0f32d7d9798966b89bf4802aca6ede440f21a"
+  },
+  "benchmark": [
+    {
+      "location": "near",
+      "origin_xz_m": [
+        0.0,
+        0.0
+      ],
+      "shape_zx": [
+        512,
+        512
+      ],
+      "spacing_m": 60,
+      "seconds": 11.462883500000316,
+      "tracemalloc_peak_bytes": 29224313,
+      "sampled_process_rss_peak_bytes": 144572416
+    },
+    {
+      "location": "far",
+      "origin_xz_m": [
+        500000000.0,
+        -500000000.0
+      ],
+      "shape_zx": [
+        512,
+        512
+      ],
+      "spacing_m": 60,
+      "seconds": 11.688989399999627,
+      "tracemalloc_peak_bytes": 29216685,
+      "sampled_process_rss_peak_bytes": 170737664
+    }
+  ],
+  "timings_seconds": {
+    "generation": 15.242446400001427,
+    "save": 3.4213061000009475,
+    "plot": 11.546904000000723
+  },
+  "benchmark_scope": "measured: wall time, tracemalloc and sampled whole-process RSS; peaks may be missed"
+}

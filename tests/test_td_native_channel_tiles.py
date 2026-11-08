@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
+from terrain_pipeline.common_infra import file_sha256, identity
 from terrain_pipeline.td_native_channel_geometry import GeometryRecipe, build_channel_geometry
 from terrain_pipeline.td_native_channel_tiles import (
     TileRecipe, audit_tile_geometry, build_channel_tile, load_channel_tile, save_channel_tile,

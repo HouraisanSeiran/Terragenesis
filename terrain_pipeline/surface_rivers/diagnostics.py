@@ -49,7 +49,7 @@ def route_cut_lower_bound(height, receiver, order, max_incision, drop_m=0.01):
         raise ValueError("height must be a nonempty finite 2D grid")
     if not np.isfinite(drop_m) or drop_m <= 0 or not np.isfinite(max_incision) or max_incision < 0:
         raise ValueError("drop_m must be positive and max_incision nonnegative; both must be finite")
-    from .channel import _validated_route
+    from terrain_pipeline.channel_geometry import _validated_route
     downstream, ordered = _validated_route(receiver, order, raw.shape)
     source = raw.reshape(-1)
     needed = source.copy()

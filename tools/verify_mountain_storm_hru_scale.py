@@ -12,10 +12,8 @@ sys.path.insert(0, str(ROOT))
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import checked_archive, file_sha256
-from terrain_pipeline.mountain_storm_forcing import (
-    StormParameters, generate_forcing, interval_mean_mm_h, load_forcing, save_forcing,
-)
+from terrain_pipeline.common_infra import checked_archive, file_sha256
+from terrain_pipeline.climate_forcing import StormParameters, storm_generate_forcing as generate_forcing, interval_mean_mm_h, storm_load_forcing as load_forcing, save_forcing
 from tools.verify_mountain_source_adapter import snapshot, assert_unchanged, write_json
 
 SOURCE = ROOT / "verification/mountain-storm-forcing/run-20261001T071520828638Z"

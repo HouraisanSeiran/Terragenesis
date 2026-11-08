@@ -3,13 +3,17 @@ import json
 
 import numpy as np
 
-from terrain_pipeline.td_basin_source import make_td_source
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy
-from terrain_pipeline.td_basin_overflow import (
-    OverflowParameters, add_saved_overflow_accounting, build_overflow_topology, load_overflow_event, save_overflow_event,
-    save_overflow_topology, simulate_overflow, validate_overflow_event,
-)
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_storage import OverflowParameters as OverflowParameters
+from terrain_pipeline.basin_storage import add_saved_overflow_accounting as add_saved_overflow_accounting
+from terrain_pipeline.basin_storage import build_overflow_topology as build_overflow_topology
+from terrain_pipeline.basin_storage import load_overflow_event as load_overflow_event
+from terrain_pipeline.basin_storage import save_overflow_event as save_overflow_event
+from terrain_pipeline.basin_storage import save_overflow_topology as save_overflow_topology
+from terrain_pipeline.basin_storage import simulate_overflow as simulate_overflow
+from terrain_pipeline.basin_storage import validate_overflow_event as validate_overflow_event
+from terrain_pipeline.common_infra import file_sha256, identity
 from tools.audit_td_original_bed_overflow import audit_saved_arrays
 from tools.export_td_overflow_accounting import export
 from pathlib import Path
@@ -87,7 +91,7 @@ class BasinOverflowTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "legacy.json"
             save_overflow_event(legacy, path)
-            with patch("terrain_pipeline.td_basin_overflow.simulate_overflow", side_effect=AssertionError("solver forbidden")):
+            with patch('terrain_pipeline.basin_storage.simulate_overflow', side_effect=AssertionError("solver forbidden")):
                 loaded = load_overflow_event(path, expected_sha256=file_sha256(path), expected_identity=legacy["identity_sha256"], topology=topology)
                 upgraded = add_saved_overflow_accounting(loaded, topology)
             for name, values in legacy["arrays"].items():
@@ -127,7 +131,7 @@ class BasinOverflowTests(unittest.TestCase):
                 "cases": [{"name": "fixture", "event": {"path": str(event_path), "sha256": file_sha256(event_path)},
                            "event_identity_sha256": event["identity_sha256"]}]}), encoding="utf-8")
             output = directory / "exported"
-            with patch("terrain_pipeline.td_basin_overflow.simulate_overflow", side_effect=AssertionError("solver forbidden")):
+            with patch('terrain_pipeline.basin_storage.simulate_overflow', side_effect=AssertionError("solver forbidden")):
                 result = export(index_path, expected_index_sha256=file_sha256(index_path), output=output)
             self.assertFalse(result["event_model_advanced"])
             self.assertEqual(result["cases"][0]["event_identity_sha256"], event["identity_sha256"])

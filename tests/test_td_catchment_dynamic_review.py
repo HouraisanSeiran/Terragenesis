@@ -8,12 +8,12 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.td_basin_hierarchy import save_basin_hierarchy
-from terrain_pipeline.td_basin_storage_dispatch_io import save_storage
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.basin_topology import save_basin_hierarchy as save_basin_hierarchy
+from terrain_pipeline.basin_storage import dispatch_save_storage as save_storage
 from terrain_pipeline.td_catchment_dynamic_review import export_catchment_dynamic_review, load_catchment_dynamic_review
 from terrain_pipeline.td_surface_reaches import _plain, _hash, make_surface_reaches
-from tests.test_td_basin_storage_dispatch_io import fixture
+from tests.test_basin_storage_io import basin_storage_dispatch_io_fixture as fixture
 
 
 def inputs(directory, wet=False):
@@ -135,14 +135,7 @@ class DynamicCatchmentTests(unittest.TestCase):
             with patch("terrain_pipeline.td_catchment_dynamic_review.export_catchment_dynamic_review", side_effect=AssertionError("export")):
                 loaded = load_catchment_dynamic_review(path, expected_sha256=file_sha256(path), expected_identity=result["identity_sha256"], records=records)
             self.assertEqual(_plain(loaded), _plain(result))
-            code = '''import sys,json,importlib.abc
-class Block(importlib.abc.MetaPathFinder):
- def find_spec(self,fullname,path=None,target=None):
-  if fullname.startswith('numba') or fullname in {'terrain_pipeline.td_basin_storage','terrain_pipeline.td_basin_storage_v6','terrain_pipeline.td_basin_transport_v6'}: raise AssertionError(fullname)
-sys.meta_path.insert(0,Block())
-from terrain_pipeline.td_catchment_dynamic_review import load_catchment_dynamic_review
-load_catchment_dynamic_review(sys.argv[1],expected_sha256=sys.argv[2],expected_identity=sys.argv[3],records=json.loads(sys.argv[4]))
-'''
+            code = "import sys,json,importlib.abc\nclass Block(importlib.abc.MetaPathFinder):\n def find_spec(self,fullname,path=None,target=None):\n  if fullname in {'terrain_pipeline.td_basin_storage','terrain_pipeline.td_basin_storage_v6','terrain_pipeline.td_basin_transport_v6'}: raise AssertionError(fullname)\nsys.meta_path.insert(0,Block())\nfrom terrain_pipeline.td_catchment_dynamic_review import load_catchment_dynamic_review\nload_catchment_dynamic_review(sys.argv[1],expected_sha256=sys.argv[2],expected_identity=sys.argv[3],records=json.loads(sys.argv[4]))\n"
             completed = subprocess.run([sys.executable, "-c", code, str(path), file_sha256(path), result["identity_sha256"], json.dumps(records)], capture_output=True, text=True)
             self.assertEqual(completed.returncode, 0, completed.stderr)
 

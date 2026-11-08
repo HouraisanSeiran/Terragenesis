@@ -2,7 +2,7 @@
 
 import numpy as np
 
-from terrain_pipeline.td_basin_storage_compiled import advance_hour
+from terrain_pipeline.basin_storage import advance_hour_compensated as advance_hour
 
 
 def forcing_only(initial_depth, step_s, rain_mm_h=2.288880014936935):

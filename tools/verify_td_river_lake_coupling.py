@@ -12,11 +12,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.integrate import solve_ivp
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy, basin_volume_at_level
-from terrain_pipeline.surface_rivers.metric_channel_state import ChannelConfig, ChannelForcing, ChannelNetwork
-from terrain_pipeline.surface_rivers.metric_channel_solver import solve_channel
-from terrain_pipeline.surface_rivers.metric_lake_storage import LakeStorage, LakeOutlet
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_topology import basin_volume_at_level as basin_volume_at_level
+from terrain_pipeline.channel_geometry import ChannelConfig, ChannelForcing, ChannelNetwork
+from terrain_pipeline.surface_hydraulics import solve_channel
+from terrain_pipeline.lake import LakeStorage as LakeStorage
+from terrain_pipeline.lake import LakeOutlet as LakeOutlet
 from terrain_pipeline.surface_rivers.metric_boundary_coupling import BoundarySeries, CoupledForcing, solve_coupled
 from terrain_pipeline.surface_rivers.metric_coupled_product import make_coupled_product, save_coupled_product, sample_coupled_output
 from terrain_pipeline.surface_rivers.metric_product import load_diagnostic_product
@@ -33,8 +35,15 @@ THRESHOLDS = {"ODE_relative_volume_error": .005, "depth_refinement_m": .001,
 def channel(receiver=(-1,), kind=None, lengths=20., widths=2., bed=None, slopes=.005, source="a" * 64):
     receiver = np.asarray(receiver, np.int64)
     n = len(receiver)
+    if bed is None:
+        bed = np.zeros(n)
+        drop = np.broadcast_to(lengths, (n,)) * np.broadcast_to(slopes, (n,))
+        for _ in range(n):
+            for node, target in enumerate(receiver):
+                if target >= 0:
+                    bed[node] = bed[target] + drop[node]
     return ChannelNetwork(receiver, np.broadcast_to(lengths, (n,)).astype(np.float64).copy(),
-        np.broadcast_to(widths, (n,)).astype(np.float64).copy(), np.zeros(n) if bed is None else np.asarray(bed, np.float64),
+        np.broadcast_to(widths, (n,)).astype(np.float64).copy(), np.asarray(bed, np.float64),
         np.broadcast_to(slopes, (n,)).astype(np.float64).copy(), np.full(n, .035), np.full(n, 5.),
         np.where(receiver < 0, "open_outflow", "interior") if kind is None else np.asarray(kind),
         source, "explicit_uncalibrated_rectangular_scenario", "explicit_uncalibrated_n_0.035")
@@ -341,7 +350,7 @@ def prepare(output):
                        "wet_mask": wet, "depth_m": depth, "channel_source_cell_ids": path,
                        "contribution_mask": sa["graph_lake_id"] == seed}
     # Evidence only; geometry follows saved finite source support, not whole contribution area.
-    from terrain_pipeline.mountain_source_adapter import identity, save_bundle
+    from terrain_pipeline.common_infra import identity, save_bundle
     geometry_meta = {"schema": "td-m4-wet-footprint-v1", "final_stage_m": final_stage, "d4_leaf_node": node,
                      "d8_terminal_cell": seed, "first_saddle_m": crest, "footprint_policy": lake.footprint_policy,
                      "source_product_identity_sha256": source["identity_sha256"], "hierarchy_identity_sha256": HIERARCHY_ID,

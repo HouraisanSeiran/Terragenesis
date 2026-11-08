@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from terrain_pipeline.artifacts.contracts import array_hash
-from terrain_pipeline.dem_domain import load_dem_candidate
+from terrain_pipeline.td_source import load_dem_candidate
 from tools.verify_real_dem_outlet_classification import DEFAULT_CANDIDATE, canonical_bytes, source_record
 
 
@@ -24,27 +24,19 @@ def independent_graph(candidate, arrays):
     valid_grid = candidate["arrays"]["valid_mask"]
     rows, cols = height_grid.shape
     height, valid = height_grid.ravel(), valid_grid.ravel()
-    ids_grid = np.arange(height.size).reshape(height_grid.shape)
-    source_parts, target_parts = [], []
-    raw = np.full(height.size, -1, np.int64)
-    best = height.copy()
-    unknown = np.zeros(height.size, bool)
-    for delta_row, delta_col in ((-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1),
-                                 (1, -1), (1, 0), (1, 1)):
-        source_rows = slice(max(0, -delta_row), min(rows, rows - delta_row))
-        source_cols = slice(max(0, -delta_col), min(cols, cols - delta_col))
-        target_rows = slice(max(0, delta_row), min(rows, rows + delta_row))
-        target_cols = slice(max(0, delta_col), min(cols, cols + delta_col))
-        source = ids_grid[source_rows, source_cols].ravel()
-        target = ids_grid[target_rows, target_cols].ravel()
-        unknown[source] |= valid[source] & ~valid[target]
-        lower = valid[source] & valid[target] & (height[target] < best[source])
-        raw[source[lower]] = target[lower]
-        best[source[lower]] = height[target[lower]]
-        equal = valid[source] & valid[target] & (height[source] == height[target])
-        source_parts.append(source[equal])
-        target_parts.append(target[equal])
-    equal_source, equal_target = np.concatenate(source_parts), np.concatenate(target_parts)
+    from terrain_pipeline.drainage import candidate_mesh as candidate_mesh
+    from terrain_pipeline.drainage import masked_mesh as masked_mesh
+    from terrain_pipeline.drainage import strict_receivers as strict_receivers
+    mesh = candidate_mesh(candidate)
+    allowed = masked_mesh(mesh, valid_grid)
+    raw = strict_receivers(height_grid, allowed, valid_mask=valid_grid)[0]
+    sources = np.repeat(np.arange(height.size), np.diff(mesh.indptr))
+    unknown = np.bincount(sources[valid[sources] & ~valid[mesh.indices]],
+                         minlength=height.size) > 0
+    equal_source = np.repeat(np.arange(height.size), np.diff(allowed.indptr))
+    equal_target = allowed.indices
+    equal = valid[equal_source] & valid[equal_target] & (height[equal_source] == height[equal_target])
+    equal_source, equal_target = equal_source[equal], equal_target[equal]
     graph = coo_matrix((np.ones(equal_source.size, np.int8), (equal_source, equal_target)),
                        shape=(height.size, height.size)).tocsr()
     count, labels = connected_components(graph, directed=False)
@@ -94,7 +86,7 @@ def independent_graph(candidate, arrays):
     contributions = {name: int(accumulation[terminals[categories == name]].sum()) for name in risk_counts}
     root_only_unknown = unknown[terminals]
     root_only_boundary = boundary.ravel()[terminals]
-    return {"independent_method": "scipy_sparse_equal_D8_components_and_global_multisource_BFS",
+    return {"independent_method": "shared_metric_graph_scipy_sparse_equal_components_and_independent_multisource_BFS",
             "valid_cells": int(valid.sum()), "unknown_cells": int((~valid).sum()),
             "equal_components": int(np.count_nonzero(minimum < height.size)),
             "raw_terminals": int(np.count_nonzero(valid & (raw == -1))),
@@ -120,7 +112,7 @@ def plot(candidate, raw, resolved, output):
     figure, axes = plt.subplots(1, 2, figsize=(14, 8), constrained_layout=True)
     background = plt.get_cmap("gray").copy()
     background.set_bad("#343840")
-    for axis, arrays, title in zip(axes, (raw, resolved), ("Raw strict D8", "Equal-height connectivity; no terrain edits")):
+    for axis, arrays, title in zip(axes, (raw, resolved), ("Frozen raw reference", "Equal-height graph connectivity; no terrain edits")):
         axis.imshow(np.ma.array(height, mask=~valid), extent=extent, origin="upper", cmap=background, alpha=.7)
         accumulation = arrays["accumulation_cells"]
         rivers = np.ma.array(np.log10(np.maximum(accumulation, 1)), mask=~valid | (accumulation < 100))

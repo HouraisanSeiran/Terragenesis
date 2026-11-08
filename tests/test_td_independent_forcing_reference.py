@@ -2,7 +2,8 @@ import unittest
 
 import numpy as np
 
-from tools.audit_td_forcing_v10_reference import assert_accounts, reservoir_after
+from tools.audit_basin_forcing import forcing_profile_10_reference_assert_accounts as assert_accounts
+from tools.audit_basin_forcing import forcing_profile_10_reference_reservoir_after as reservoir_after
 from tools.audit_td_weather_causality import reduce_case
 
 

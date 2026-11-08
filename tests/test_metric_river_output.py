@@ -4,9 +4,9 @@ from copy import deepcopy
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.rainfall_runoff import RunoffParameters
-from terrain_pipeline.surface_rivers.metric_contracts import BoundaryGrid, RainfallForcing
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+from terrain_pipeline.common_infra import BoundaryGrid, RainfallForcing
 from terrain_pipeline.surface_rivers.metric_product import build_diagnostic_product
 from terrain_pipeline.surface_rivers.metric_output import (
     load_diagnostic_output, sample_diagnostic_output, save_diagnostic_output,

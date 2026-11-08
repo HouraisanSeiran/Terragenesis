@@ -19,8 +19,8 @@ import matplotlib.pyplot as plt
 from matplotlib.collections import LineCollection
 import numpy as np
 
-from terrain_pipeline import mountain_runoff_routing as routing
-from terrain_pipeline.rainfall_runoff import load_rainfall_runoff_npz
+import terrain_pipeline.runoff as routing
+from terrain_pipeline.runoff import load_rainfall_runoff_npz as load_rainfall_runoff_npz
 from tools.verify_mountain_rainfall import load_source, response_units
 
 
@@ -62,8 +62,8 @@ def accepted_case(name, scenario, report, review):
             raise ValueError("accepted scenario artifact changed")
     with np.load(SOURCE / case["npz"], allow_pickle=False) as archive:
         saved = {key: archive[key].copy() for key in archive.files}
-    with patch("terrain_pipeline.rainfall_runoff.simulate_rainfall_runoff", side_effect=AssertionError("no runoff")), \
-         patch("terrain_pipeline.rainfall_runoff._release", side_effect=AssertionError("no advancement")):
+    with patch('terrain_pipeline.runoff.simulate_rainfall_runoff', side_effect=AssertionError("no runoff")), \
+         patch('terrain_pipeline.runoff._release', side_effect=AssertionError("no advancement")):
         native = load_rainfall_runoff_npz(SOURCE / case["native_runoff_npz"])
     source = load_source(name)
     owner, area, mean, lower, upper = response_units(source["height_m"], source["spacing_m"])
@@ -361,9 +361,9 @@ def main():
             routing.save_routing_npz(artifact, result)
             with patch.object(routing, "build_reaches", side_effect=AssertionError("no assembly on load")), \
                  patch.object(routing, "route_local_discharge", side_effect=AssertionError("no routing on load")), \
-                 patch("terrain_pipeline.rainfall_runoff.simulate_rainfall_runoff", side_effect=AssertionError("no runoff on load")):
+                 patch('terrain_pipeline.runoff.simulate_rainfall_runoff', side_effect=AssertionError("no runoff on load")):
                 loaded = routing.load_routing_npz(artifact, trusted_inputs=inputs, source_binding=binding)
-            for key in routing.ARRAY_KEYS:
+            for key in routing.MOUNTAIN_ROUTING_ARRAY_KEYS:
                 np.testing.assert_array_equal(result[key], loaded[key])
             fine_inputs = dict(inputs, local_q_m3_s=np.repeat(inputs["local_q_m3_s"], 2, axis=0))
             fine_binding = dict(binding, interval_split="same constant local inputs; 900s -> 2 x 450s")
@@ -400,7 +400,7 @@ def main():
         panels[name] = (terrain_panel(wet, source), hydro_panel(cases))
         slider[name] = slider_data(wet)
     report["implementation_sha256"] = {path: sha256(ROOT / path) for path in (
-        "terrain_pipeline/mountain_runoff_routing.py", "tests/test_mountain_runoff_routing.py",
+        'terrain_pipeline/runoff.py', "tests/test_mountain_runoff_routing.py",
         "tools/verify_mountain_runoff_routing.py", "docs/mountain-runoff-routing-v1.md")}
     write_new(output / "report.json", json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False))
     independent_report = {"status": "accepted_experimental_conservative_reach_propagation_not_physical_bed",

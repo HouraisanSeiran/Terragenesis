@@ -5,10 +5,10 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.td_basin_source import make_td_source
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy
-from terrain_pipeline.td_basin_storage import simulate_basin_storage
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_storage import simulate_threshold_storage as simulate_basin_storage
 from terrain_pipeline.td_surface_reaches import make_surface_reaches, save_surface_reaches, load_surface_reaches, _plain, _hash
 
 
@@ -26,7 +26,7 @@ def build(hierarchy, threshold=1, storage=None):
 
 class SurfaceReachTests(unittest.TestCase):
     def test_rehashed_storage_coordinate_and_boundary_mismatch(self):
-        from terrain_pipeline.mountain_source_adapter import identity
+        from terrain_pipeline.common_infra import identity
         hierarchy = fixture([[3, 2, 1]])
         storage = simulate_basin_storage(hierarchy, np.zeros(1), dt_s=1)
         for name, value in (("origin_m_xz", [9., 9.]), ("spacing_m", 2.)):
@@ -115,7 +115,7 @@ class SurfaceReachTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "reaches.json"
             save_surface_reaches(result, path)
-            with patch("terrain_pipeline.td_surface_reaches.make_surface_reaches", side_effect=AssertionError("build")), patch("terrain_pipeline.td_basin_hierarchy.build_basin_hierarchy", side_effect=AssertionError("routing")), patch("terrain_pipeline.td_basin_storage.simulate_basin_storage", side_effect=AssertionError("solve")):
+            with patch("terrain_pipeline.td_surface_reaches.make_surface_reaches", side_effect=AssertionError("build")), patch('terrain_pipeline.basin_topology.build_basin_hierarchy', side_effect=AssertionError("routing")), patch('terrain_pipeline.basin_storage.simulate_threshold_storage', side_effect=AssertionError("solve")):
                 loaded = load_surface_reaches(path, expected_sha256=file_sha256(path), expected_identity=result["identity_sha256"], hierarchy=hierarchy, storage=storage)
             self.assertEqual(loaded, result)
             with self.assertRaises(TypeError):
@@ -142,7 +142,7 @@ class SurfaceReachTests(unittest.TestCase):
         self.assertEqual(result["summary"]["reach_count"], 0)
 
     def test_rehashed_cycle_and_uphill_receiver_rejected(self):
-        from terrain_pipeline.mountain_source_adapter import identity
+        from terrain_pipeline.common_infra import identity
         hierarchy = fixture([[3, 2, 1]])
         for receiver in (np.array([1, 0, -1], np.int64), np.array([-1, 0, 1], np.int64)):
             changed = {"metadata": hierarchy["metadata"], "arrays": dict(hierarchy["arrays"])}

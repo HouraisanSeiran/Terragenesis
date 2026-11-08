@@ -8,11 +8,10 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.surface_rivers.metric_contracts import BoundaryGrid, TerrainGrid
-from terrain_pipeline.surface_rivers.metric_routing_comparison import (
-    compare_routing_policies, save_routing_comparison,
-)
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.common_infra import BoundaryGrid, TerrainGrid
+from terrain_pipeline.drainage import compare_routing_policies as compare_routing_policies
+from terrain_pipeline.drainage import save_routing_comparison as save_routing_comparison
 from tools.prepare_td_reference_routing import prepare
 
 

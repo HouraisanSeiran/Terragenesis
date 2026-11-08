@@ -21,8 +21,8 @@ FIXED = (
     "verification/surface-engineering-prepare/run-20260930T193214454541Z",
     "verification/surface-land-coverage/run-20260930T200657434780Z",
 )
-EXTRA = ("tests.test_surface_variable_storage", "tests.test_surface_engineering_prepare",
-         "tests.test_surface_land_coverage", "tests.test_surface_review_export")
+EXTRA = ("tests.test_surface_domain.SurfaceVariableStorageTests", "tests.test_surface_domain.SurfaceEngineeringTests",
+         "tests.test_surface_domain.SurfaceLandCoverageTests", "tests.test_surface_review_export")
 OLD_REPORTS = (
     "verification/surface-domain-prepare/run-20260930T103111870204Z/report.json",
     "verification/surface-domain-mosaic/run-20260930T170535.835312Z/report.json",
@@ -430,7 +430,37 @@ def execute_acceptance(arguments, directory, report, tracked):
     old_modules = re.findall(r"\btests\.[A-Za-z_][A-Za-z_0-9]*", baseline["command"])
     if len(old_modules) != 27 or len(set(old_modules)) != 27:
         raise ValueError("historical 27-module allowlist mismatch")
-    modules = list(dict.fromkeys(old_modules + list(EXTRA)))
+    current_baseline_selectors = (
+        'tests.test_surface_domain.SurfaceNetworkConsumerTests',
+        'tests.test_surface_lake_network',
+        'tests.test_surface_domain.SurfaceNetworkRecoveryTests',
+        'tests.test_surface_hydraulics.ChannelRerouteTests',
+        'tests.test_channel_geometry.NetworkValleyTests',
+        'tests.test_channel_geometry.ValleyGeometryTests',
+        'tests.test_surface_domain.SurfaceNetworkPrepareTests',
+        'tests.test_lake_balance',
+        'tests.test_lake_routing',
+        'tests.test_surface_hydraulics.StageInundationTests',
+        'tests.test_channel_geometry.ChannelCenterlineTests',
+        'tests.test_channel_geometry.LocalChannelSectionsTests',
+        'tests.test_channel_geometry.MetricChannelPlanTests',
+        'tests.test_terrain_artifacts',
+        'tests.test_surface_domain.SurfaceCenterlinePrepareTests',
+        'tests.test_surface_domain.SurfaceNetworkTilesTests',
+        'tests.test_surface_domain.SurfaceNetworkTilesLockTests',
+        'tests.test_surface_domain.SurfaceDomainPrepareTests',
+        'tests.test_lake_river_connector',
+        'tests.test_surface_hydraulics.DynamicSurfaceHydraulicsTests',
+        'tests.test_surface_domain.SurfaceFineMosaicTests',
+        'tests.test_surface_domain.SurfaceCoastDropTests',
+        'tests.test_surface_domain.SurfaceDynamicPrepareTests',
+        'tests.test_td_source_dem.DemDomainTests',
+        'tests.test_td_source_inventory.GeographyInventoryTests',
+        'tests.test_surface_domain.ReadinessTests',
+        'tests.test_surface_domain.SurfaceDomainMosaicTests',
+        'tests.test_surface_domain.SurfaceMultidomainDynamicTests',
+    )
+    modules = list(dict.fromkeys(list(current_baseline_selectors) + list(EXTRA)))
     report["historical_baseline_reference"] = {"path": str(BASELINE), "sha256": tracked[str(BASELINE)],
         "modules": old_modules, "not_added_to_current_counts": True}
     old_checks = {}

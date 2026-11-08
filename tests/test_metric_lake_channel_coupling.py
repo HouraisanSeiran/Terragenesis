@@ -7,16 +7,20 @@ from unittest.mock import patch
 import numpy as np
 from scipy.integrate import solve_ivp
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.surface_rivers.metric_channel_geometry import GeometryConfig, build_channel_geometry
-from terrain_pipeline.surface_rivers.metric_channel_state import ChannelNetwork
-from terrain_pipeline.surface_rivers.metric_contracts import TerrainGrid
-from terrain_pipeline.surface_rivers.metric_lake_channel_coupling import (
-    LakeChannelConfig, LakeChannelForcing, LakeChannelPort, load_lake_channel,
-    save_lake_channel, solve_lake_channel, validate_lake_channel, _mesh_sample,
-)
-from terrain_pipeline.surface_rivers.metric_natural_lakes import build_natural_lakes
-from terrain_pipeline.surface_rivers import metric_lake_channel_coupling as coupling
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.channel_geometry import GeometryConfig, build_channel_geometry
+from terrain_pipeline.channel_geometry import ChannelNetwork
+from terrain_pipeline.common_infra import TerrainGrid
+from terrain_pipeline.lake import LakeChannelConfig as LakeChannelConfig
+from terrain_pipeline.lake import LakeChannelForcing as LakeChannelForcing
+from terrain_pipeline.lake import LakeChannelPort as LakeChannelPort
+from terrain_pipeline.lake import load_lake_channel as load_lake_channel
+from terrain_pipeline.lake import save_lake_channel as save_lake_channel
+from terrain_pipeline.lake import solve_lake_channel as solve_lake_channel
+from terrain_pipeline.lake import validate_lake_channel as validate_lake_channel
+from terrain_pipeline.lake import _mesh_sample as _mesh_sample
+from terrain_pipeline.lake import build_natural_lakes as build_natural_lakes
+import terrain_pipeline.lake as coupling
 
 
 def fixture(*, kind="tailwater", unknown=False):
@@ -56,7 +60,8 @@ def fixture(*, kind="tailwater", unknown=False):
         terminal_kind=np.array(["interior", "closed_wall"]),
         source_identity_sha256=geometry["identity_sha256"],
         section_source="analytical rectangular sections",
-        roughness_source="analytical Manning roughness")
+        roughness_source="analytical Manning roughness",
+        receiver_distance_m=np.array([np.linalg.norm(points[0] - points[1]), 0.]))
     ports = (LakeChannelPort(0, 1, .2, "analytical finite weir"),) if kind == "tailwater" else ()
     return domain, geometry, network, ports
 
@@ -71,11 +76,30 @@ def forcing(domain, network, *, duration=1., channel_q=0., lake_q=0., tailwater=
 
 
 class LakeChannelTests(unittest.TestCase):
+    def test_cold_distance_binding_and_legacy_split_controls(self):
+        domain, geometry, network, ports = fixture()
+        result = solve_lake_channel(domain, geometry, network, ports,
+                                    forcing(domain, network, duration=.1), np.zeros(2), np.zeros(2))
+        altered = deepcopy(result)
+        altered["arrays"]["network_receiver_distance_m"] = np.array([2., 0.])
+        altered["arrays"]["network_bed_slope"] = network.bed_slope * 2.
+        altered["identity_sha256"] = identity(altered["arrays"], altered["metadata"])
+        with self.assertRaisesRegex(ValueError, "receiver distances"):
+            validate_lake_channel(altered)
+        legacy = deepcopy(result)
+        legacy["arrays"].pop("network_receiver_distance_m")
+        legacy["metadata"].pop("geometry_semantics")
+        legacy["metadata"]["schema"] = "terragenesis-natural-lake-channel-port-v1"
+        legacy["identity_sha256"] = identity(legacy["arrays"], legacy["metadata"])
+        before = legacy["identity_sha256"]
+        self.assertTrue(validate_lake_channel(legacy))
+        self.assertEqual(before, identity(legacy["arrays"], legacy["metadata"]))
+
     def test_unknown_terminal_inventory_and_trace_budget_are_witnessed(self):
         domain, geometry, network, ports = fixture()
         values = {name: getattr(network, name).copy() for name in
                   ("receiver", "length_m", "width_m", "bed_elevation_m", "bed_slope",
-                   "roughness", "max_depth_m", "terminal_kind")}
+                   "roughness", "max_depth_m", "terminal_kind", "receiver_distance_m")}
         values["terminal_kind"][1] = "unknown_boundary"
         unknown = ChannelNetwork(**values, source_identity_sha256=geometry["identity_sha256"],
                                  section_source="analytical", roughness_source="analytical")
@@ -83,8 +107,8 @@ class LakeChannelTests(unittest.TestCase):
             solve_lake_channel(domain, geometry, unknown, ports,
                                forcing(domain, unknown), np.array([0., .1]), np.zeros(2))
         drive = forcing(domain, network, duration=1., channel_q=1.)
-        base = coupling._trace_bytes(domain, geometry, network, ports, drive, 0)
-        one = coupling._trace_bytes(domain, geometry, network, ports, drive, 1)
+        base = coupling.lakechannel_trace_bytes(domain, geometry, network, ports, drive, 0)
+        one = coupling.lakechannel_trace_bytes(domain, geometry, network, ports, drive, 1)
         with patch.object(coupling, "MAX_BYTES", one + (one - base) // 2):
             result = solve_lake_channel(domain, geometry, network, ports, drive,
                                         np.zeros(2), np.zeros(2),
@@ -99,14 +123,14 @@ class LakeChannelTests(unittest.TestCase):
         drive = forcing(domain, network)
         base = {name: getattr(network, name).copy() for name in
                 ("receiver", "length_m", "width_m", "bed_elevation_m", "bed_slope",
-                 "roughness", "max_depth_m", "terminal_kind")}
+                 "roughness", "max_depth_m", "terminal_kind", "receiver_distance_m")}
         for field in ("length_m", "bed_elevation_m", "bed_slope"):
             modified = {key: value.copy() for key, value in base.items()}
             modified[field][0] += .01
-            candidate = ChannelNetwork(**modified,
-                source_identity_sha256=geometry["identity_sha256"],
-                section_source="forged", roughness_source="analytical")
             with self.subTest(field=field), self.assertRaises(ValueError):
+                candidate = ChannelNetwork(**modified,
+                    source_identity_sha256=geometry["identity_sha256"],
+                    section_source="forged", roughness_source="analytical")
                 solve_lake_channel(domain, geometry, candidate, ports, drive,
                                    np.zeros(2), np.zeros(2))
         wrong_source = ChannelNetwork(**base,

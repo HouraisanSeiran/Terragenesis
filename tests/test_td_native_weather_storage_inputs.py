@@ -3,10 +3,10 @@ import tempfile
 import json
 from pathlib import Path
 import numpy as np
-from terrain_pipeline.td_basin_source import make_td_source
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy
-from terrain_pipeline.td_basin_storage_compiled_driver import simulate_basin_storage
-from terrain_pipeline.mountain_source_adapter import identity
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_storage import compileddriver_simulate as simulate_basin_storage
+from terrain_pipeline.common_infra import identity
 
 
 class SpatialContinuationTests(unittest.TestCase):

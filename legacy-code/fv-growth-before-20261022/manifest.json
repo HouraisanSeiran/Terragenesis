@@ -1,0 +1,403 @@
+{
+  "fixtures": [
+    {
+      "checkpoint_path": "verification/fluvial-delta/natural-fv-growth-v2-1320s-20261019-01/checkpoint-0002176.npz",
+      "checkpoint_schema": "finite-FV-growth-checkpoint-v2",
+      "checkpoint_sha256": "4f5132ec95de3f4a689f02efd2372161aa48b5f0f3c2ed7ab035f7bb50267ff4",
+      "implementation_hashes": {
+        "terrain_pipeline/regional_surface_hydraulics.py": "e8a75f8ddeff4705127e61d30411282bec37e635babd739583beef66918b44da",
+        "terrain_pipeline/single_domain_shallow_water_accelerated_v7.py": "09792c557aed7527515369dec0101dba22c8e87414c2a9b4555f247a44e1197e",
+        "terrain_pipeline/single_domain_shallow_water_execution_v7.py": "818b0076e8e596edcd7898bb8bab8d1854e09455eac5db266fc1e7092d54b6e3",
+        "terrain_pipeline/single_domain_shallow_water_support_v7.py": "0b5a8476d34364db1261a9409172e1a293aef2145fc166cfb02005d6ccd4c04c",
+        "terrain_pipeline/surface_rivers/metric_fv_coastal_sediment.py": "47bd10ac502a845a8ce399304f9ba5b4ca6f3e86c1499bd7dd334091504c14ca",
+        "terrain_pipeline/surface_rivers/metric_fv_growth_coupling.py": "3a439557e983f26e215748fb6b0aba0606ac3bac1eb3bd163cfa29d9d04859e2",
+        "terrain_pipeline/surface_rivers/metric_fv_suspended_supply.py": "619c1ced4356f51ec8d988e10446159ff5e95834d770f47b4b82e04df185857f",
+        "terrain_pipeline/surface_rivers/metric_natural_delta.py": "c19b6ccef7438b731ebd3e19a8e8a659d7f906deff058ad8fba087892855b027",
+        "tools/run_natural_delta_fv_water.py": "60c71cdb50dbce1978e5bcf01a2fe8ce77360ce54e8e873464c779c0344dda4f",
+        "tools/run_natural_fv_growth.py": "0d3028c16af2c5b1b20236cd8d8c4bef23acc90dedab5154499e7378b4d66db4",
+        "tools/run_natural_fv_growth_v2.py": "3f02a0723a7051e7807dfe43ded124303aac28b97ee3bbe3fc8ed219d8cf1699"
+      },
+      "parameter_template_archive_path": "parameter-templates/v2/summary.json",
+      "parameter_template_original_path": "verification/fluvial-delta/natural-fv-growth-v2-1320s-20261019-01/summary.json",
+      "parameter_template_sha256": "3186ff43a13eb68d71e7a775bb18ddf5574fcd6086a770ab9ca5392e7a583e48",
+      "profile": "v2"
+    },
+    {
+      "checkpoint_path": "verification/fluvial-delta/natural-fv-v3-bank-tidewave112s-prefix-20261019-01/checkpoint-0000576.npz",
+      "checkpoint_schema": "finite-FV-growth-checkpoint-v3",
+      "checkpoint_sha256": "dd74212791db519873080b8f7b1061da7511d36a9921a70cc4d69764cc478e2e",
+      "implementation_hashes": {
+        "terrain_pipeline/regional_surface_hydraulics.py": "e8a75f8ddeff4705127e61d30411282bec37e635babd739583beef66918b44da",
+        "terrain_pipeline/single_domain_shallow_water_accelerated_v7.py": "09792c557aed7527515369dec0101dba22c8e87414c2a9b4555f247a44e1197e",
+        "terrain_pipeline/single_domain_shallow_water_execution_v7.py": "818b0076e8e596edcd7898bb8bab8d1854e09455eac5db266fc1e7092d54b6e3",
+        "terrain_pipeline/single_domain_shallow_water_support_v7.py": "0b5a8476d34364db1261a9409172e1a293aef2145fc166cfb02005d6ccd4c04c",
+        "terrain_pipeline/surface_rivers/metric_fv_coastal_sediment.py": "47bd10ac502a845a8ce399304f9ba5b4ca6f3e86c1499bd7dd334091504c14ca",
+        "terrain_pipeline/surface_rivers/metric_fv_exchange_v3.py": "e1dee17bcd0db0d6081eb5ba07d892c78b494ae6a13bc3a8e52eb354ce2a6834",
+        "terrain_pipeline/surface_rivers/metric_fv_growth_coupling.py": "3a439557e983f26e215748fb6b0aba0606ac3bac1eb3bd163cfa29d9d04859e2",
+        "terrain_pipeline/surface_rivers/metric_fv_growth_coupling_v3.py": "e19365e6e9645addbe7c178166842f1cd738d3957bf3ee7bd29dd80522e74dce",
+        "terrain_pipeline/surface_rivers/metric_fv_suspended_supply.py": "619c1ced4356f51ec8d988e10446159ff5e95834d770f47b4b82e04df185857f",
+        "terrain_pipeline/surface_rivers/metric_natural_delta.py": "c19b6ccef7438b731ebd3e19a8e8a659d7f906deff058ad8fba087892855b027",
+        "tools/run_natural_delta_fv_water.py": "60c71cdb50dbce1978e5bcf01a2fe8ce77360ce54e8e873464c779c0344dda4f",
+        "tools/run_natural_fv_growth.py": "0d3028c16af2c5b1b20236cd8d8c4bef23acc90dedab5154499e7378b4d66db4",
+        "tools/run_natural_fv_growth_interval_v3.py": "b53fe6786f44556cc089b0ea9107abec05b10f17994f2bd8a54137b19abd80cd",
+        "tools/run_natural_fv_growth_v2.py": "3f02a0723a7051e7807dfe43ded124303aac28b97ee3bbe3fc8ed219d8cf1699",
+        "tools/run_natural_fv_growth_v3.py": "61e8e40ab9fdf08b6efd68c0ebe6568c9d79557f5de4fd8a5ecb91c92e955379"
+      },
+      "parameter_template_archive_path": "parameter-templates/v3/summary.json",
+      "parameter_template_original_path": "verification/fluvial-delta/natural-fv-v3-bank-tidewave112s-prefix-20261019-01/summary.json",
+      "parameter_template_sha256": "7fc22b47c5320c24ef4aaf19d985a3632cd582979047d52825330a32e4950684",
+      "profile": "v3"
+    },
+    {
+      "checkpoint_path": "verification/fluvial-delta/natural-fv-v4-bank-tidecycle712s-20261019-01/checkpoint-0000712.npz",
+      "checkpoint_schema": "finite-FV-growth-checkpoint-v4",
+      "checkpoint_sha256": "b8c6429fb67cea631558c0460cd0a7d2d1d5a22286ffe1f12a2d2e265d6f205d",
+      "implementation_hashes": {
+        "terrain_pipeline/regional_surface_hydraulics.py": "e8a75f8ddeff4705127e61d30411282bec37e635babd739583beef66918b44da",
+        "terrain_pipeline/single_domain_shallow_water_accelerated_v7.py": "09792c557aed7527515369dec0101dba22c8e87414c2a9b4555f247a44e1197e",
+        "terrain_pipeline/single_domain_shallow_water_execution_v7.py": "818b0076e8e596edcd7898bb8bab8d1854e09455eac5db266fc1e7092d54b6e3",
+        "terrain_pipeline/single_domain_shallow_water_support_v7.py": "0b5a8476d34364db1261a9409172e1a293aef2145fc166cfb02005d6ccd4c04c",
+        "terrain_pipeline/surface_rivers/metric_fv_bedload_v4.py": "d0e602bf75393c5e3f106b8f5bb88c38daf0d8376fab47b5900203fbfe75e565",
+        "terrain_pipeline/surface_rivers/metric_fv_coastal_sediment.py": "47bd10ac502a845a8ce399304f9ba5b4ca6f3e86c1499bd7dd334091504c14ca",
+        "terrain_pipeline/surface_rivers/metric_fv_exchange_v3.py": "e1dee17bcd0db0d6081eb5ba07d892c78b494ae6a13bc3a8e52eb354ce2a6834",
+        "terrain_pipeline/surface_rivers/metric_fv_growth_coupling.py": "3a439557e983f26e215748fb6b0aba0606ac3bac1eb3bd163cfa29d9d04859e2",
+        "terrain_pipeline/surface_rivers/metric_fv_growth_coupling_v3.py": "e19365e6e9645addbe7c178166842f1cd738d3957bf3ee7bd29dd80522e74dce",
+        "terrain_pipeline/surface_rivers/metric_fv_growth_coupling_v4.py": "19555fdfb093116cf4e23f90b8f21e376d9c1a67645929cf045970e7a76aa33c",
+        "terrain_pipeline/surface_rivers/metric_fv_incident_wave_vectorized.py": "22e2f896d5ce5e9ce682c5aa6417464af16dd07bbcc847b907dcfb8948198e2e",
+        "terrain_pipeline/surface_rivers/metric_fv_suspended_supply.py": "619c1ced4356f51ec8d988e10446159ff5e95834d770f47b4b82e04df185857f",
+        "terrain_pipeline/surface_rivers/metric_natural_delta.py": "c19b6ccef7438b731ebd3e19a8e8a659d7f906deff058ad8fba087892855b027",
+        "tools/run_natural_delta_fv_water.py": "60c71cdb50dbce1978e5bcf01a2fe8ce77360ce54e8e873464c779c0344dda4f",
+        "tools/run_natural_fv_growth.py": "0d3028c16af2c5b1b20236cd8d8c4bef23acc90dedab5154499e7378b4d66db4",
+        "tools/run_natural_fv_growth_interval_v3.py": "b53fe6786f44556cc089b0ea9107abec05b10f17994f2bd8a54137b19abd80cd",
+        "tools/run_natural_fv_growth_v2.py": "3f02a0723a7051e7807dfe43ded124303aac28b97ee3bbe3fc8ed219d8cf1699",
+        "tools/run_natural_fv_growth_v3.py": "61e8e40ab9fdf08b6efd68c0ebe6568c9d79557f5de4fd8a5ecb91c92e955379",
+        "tools/run_natural_fv_growth_v4.py": "8d7f63316f5798976fa42eccbf773efcbca5510e14a699dd9c5b4958903d321e"
+      },
+      "parameter_template_archive_path": "parameter-templates/v4/summary.json",
+      "parameter_template_original_path": "verification/fluvial-delta/natural-fv-v4-bank-tidecycle712s-20261019-01/summary.json",
+      "parameter_template_sha256": "5009f703f4f91871935bbc98e1494bbd8f8b055c19bcd2d1b64eceed773410b1",
+      "profile": "v4"
+    }
+  ],
+  "schema": "fv-growth-legacy-snapshot-v1",
+  "scope": "FV before structural consolidation; individual original bytes; includes package initialization and direct old numerical tests",
+  "source_files": [
+    {
+      "archive_path": "sources/diffusion/__init__.py",
+      "bytes": 87,
+      "original_path": "diffusion/__init__.py",
+      "sha256": "e856d59e1b529fd4ecbe4c6ab16a89355fd8428631eebdbbc48c91f449096f4f"
+    },
+    {
+      "archive_path": "sources/diffusion/paths.py",
+      "bytes": 1016,
+      "original_path": "diffusion/paths.py",
+      "sha256": "a5b01300b7299c91cb4a86741600f481f768a203e888920239e28cdd2a26fd28"
+    },
+    {
+      "archive_path": "sources/diffusion/physical_config.py",
+      "bytes": 4443,
+      "original_path": "diffusion/physical_config.py",
+      "sha256": "4a144d97fdefb54bc099797e034d595d7c46935c4aa5f05c1a3523c8577a709b"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/__init__.py",
+      "bytes": 74,
+      "original_path": "terrain_pipeline/__init__.py",
+      "sha256": "c80efc19fd5775d1b9ea03698338cb589faa18d76d758eed0920fdd9b5e268df"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/mountain_source_adapter.py",
+      "bytes": 18440,
+      "original_path": "terrain_pipeline/mountain_source_adapter.py",
+      "sha256": "796e763097d4b49ca74dcffc052afdd5f1fc5ad03cbdeb26f4cadc57b5cc3c85"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/rainfall_runoff.py",
+      "bytes": 17770,
+      "original_path": "terrain_pipeline/rainfall_runoff.py",
+      "sha256": "d10b6e965b6483e0d5e6bf71c5115f196752c8780749ddb2fe0b8788daebfee8"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/regional_surface_hydraulics.py",
+      "bytes": 21159,
+      "original_path": "terrain_pipeline/regional_surface_hydraulics.py",
+      "sha256": "e8a75f8ddeff4705127e61d30411282bec37e635babd739583beef66918b44da"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/single_domain_fine_geometry.py",
+      "bytes": 37511,
+      "original_path": "terrain_pipeline/single_domain_fine_geometry.py",
+      "sha256": "06e2a8f5b3b07657626566806d81b3b2a812c6993e3d0a2dd1bd90489413bac5"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/single_domain_shallow_water.py",
+      "bytes": 9690,
+      "original_path": "terrain_pipeline/single_domain_shallow_water.py",
+      "sha256": "92054ad0ec3242993297a174638f0a76fbac60ae288de43ed94c702be54afc2c"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/single_domain_shallow_water_accelerated_v7.py",
+      "bytes": 10814,
+      "original_path": "terrain_pipeline/single_domain_shallow_water_accelerated_v7.py",
+      "sha256": "09792c557aed7527515369dec0101dba22c8e87414c2a9b4555f247a44e1197e"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/single_domain_shallow_water_execution_v7.py",
+      "bytes": 10633,
+      "original_path": "terrain_pipeline/single_domain_shallow_water_execution_v7.py",
+      "sha256": "818b0076e8e596edcd7898bb8bab8d1854e09455eac5db266fc1e7092d54b6e3"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/single_domain_shallow_water_support.py",
+      "bytes": 6095,
+      "original_path": "terrain_pipeline/single_domain_shallow_water_support.py",
+      "sha256": "908c51928d0c48c1c76cbe950ccdab2b4148a1dfb89b68bf18ee8958836b7230"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/single_domain_shallow_water_support_v3.py",
+      "bytes": 5328,
+      "original_path": "terrain_pipeline/single_domain_shallow_water_support_v3.py",
+      "sha256": "e6bac216f87e080f717d5a3425b01a98ecd67889db7c0b9c9414949e1bbd7537"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/single_domain_shallow_water_support_v7.py",
+      "bytes": 1012,
+      "original_path": "terrain_pipeline/single_domain_shallow_water_support_v7.py",
+      "sha256": "0b5a8476d34364db1261a9409172e1a293aef2145fc166cfb02005d6ccd4c04c"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/__init__.py",
+      "bytes": 289,
+      "original_path": "terrain_pipeline/surface_rivers/__init__.py",
+      "sha256": "958582062780ab117b04ad85874eced8c9a2cad4dda461838f188421dd7de7b2"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/contracts.py",
+      "bytes": 2305,
+      "original_path": "terrain_pipeline/surface_rivers/contracts.py",
+      "sha256": "3d5979691fea7631ab101c05500050ad5d2d48dce94db11160fd5f40dd6ed3a5"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/drainage.py",
+      "bytes": 6823,
+      "original_path": "terrain_pipeline/surface_rivers/drainage.py",
+      "sha256": "b291370a13aa918cc3f2cf498b73f7864825e15b2f9a558a2fd5d001fc1388af"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_contracts.py",
+      "bytes": 16059,
+      "original_path": "terrain_pipeline/surface_rivers/metric_contracts.py",
+      "sha256": "476259e49caf33ae8e8b5629f690510f5d745a4c68bcfd57d651356c1377b61a"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_fluvial_delta.py",
+      "bytes": 18774,
+      "original_path": "terrain_pipeline/surface_rivers/metric_fluvial_delta.py",
+      "sha256": "98d7d24293e52da963e06ad9b4974119ffa6e2baa5ee1bdf17da236af0d6b9f8"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_fluvial_morphodynamics.py",
+      "bytes": 66046,
+      "original_path": "terrain_pipeline/surface_rivers/metric_fluvial_morphodynamics.py",
+      "sha256": "2786e8b2050b90268381ce3208218a4b8e1abdc8e7c8d9184cfcd98f3ed82f2c"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_fluvial_native_routers.py",
+      "bytes": 6683,
+      "original_path": "terrain_pipeline/surface_rivers/metric_fluvial_native_routers.py",
+      "sha256": "0d8b8d7da0e0f75684e2968b17c5529f77b65ba61bcdaa37cdb541541bb12ced"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_fluvial_slope_stability.py",
+      "bytes": 7105,
+      "original_path": "terrain_pipeline/surface_rivers/metric_fluvial_slope_stability.py",
+      "sha256": "5a95b06792bf673fc6b14510206df5f15b2c1c86b1b5b014ada6e85bd6aaa530"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_fluvial_water_diagnostic.py",
+      "bytes": 4707,
+      "original_path": "terrain_pipeline/surface_rivers/metric_fluvial_water_diagnostic.py",
+      "sha256": "84e1f15e502ad519c3f0710cf554ff3dd9339872aa9d62ccba3b823fe4ddaa3f"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_fluvial_water_repair.py",
+      "bytes": 7228,
+      "original_path": "terrain_pipeline/surface_rivers/metric_fluvial_water_repair.py",
+      "sha256": "285e918b116aa72acc22a315ee82305c5d85d04fb4b5e2bd51d832c7fb4ced43"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_fv_bedload_v4.py",
+      "bytes": 7379,
+      "original_path": "terrain_pipeline/surface_rivers/metric_fv_bedload_v4.py",
+      "sha256": "d0e602bf75393c5e3f106b8f5bb88c38daf0d8376fab47b5900203fbfe75e565"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_fv_coastal_sediment.py",
+      "bytes": 13579,
+      "original_path": "terrain_pipeline/surface_rivers/metric_fv_coastal_sediment.py",
+      "sha256": "47bd10ac502a845a8ce399304f9ba5b4ca6f3e86c1499bd7dd334091504c14ca"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_fv_exchange_v3.py",
+      "bytes": 5931,
+      "original_path": "terrain_pipeline/surface_rivers/metric_fv_exchange_v3.py",
+      "sha256": "e1dee17bcd0db0d6081eb5ba07d892c78b494ae6a13bc3a8e52eb354ce2a6834"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_fv_growth_coupling.py",
+      "bytes": 8838,
+      "original_path": "terrain_pipeline/surface_rivers/metric_fv_growth_coupling.py",
+      "sha256": "3a439557e983f26e215748fb6b0aba0606ac3bac1eb3bd163cfa29d9d04859e2"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_fv_growth_coupling_v3.py",
+      "bytes": 11244,
+      "original_path": "terrain_pipeline/surface_rivers/metric_fv_growth_coupling_v3.py",
+      "sha256": "e19365e6e9645addbe7c178166842f1cd738d3957bf3ee7bd29dd80522e74dce"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_fv_growth_coupling_v4.py",
+      "bytes": 1566,
+      "original_path": "terrain_pipeline/surface_rivers/metric_fv_growth_coupling_v4.py",
+      "sha256": "19555fdfb093116cf4e23f90b8f21e376d9c1a67645929cf045970e7a76aa33c"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_fv_incident_wave_vectorized.py",
+      "bytes": 2430,
+      "original_path": "terrain_pipeline/surface_rivers/metric_fv_incident_wave_vectorized.py",
+      "sha256": "22e2f896d5ce5e9ce682c5aa6417464af16dd07bbcc847b907dcfb8948198e2e"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_fv_suspended_supply.py",
+      "bytes": 8713,
+      "original_path": "terrain_pipeline/surface_rivers/metric_fv_suspended_supply.py",
+      "sha256": "619c1ced4356f51ec8d988e10446159ff5e95834d770f47b4b82e04df185857f"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_natural_delta.py",
+      "bytes": 13646,
+      "original_path": "terrain_pipeline/surface_rivers/metric_natural_delta.py",
+      "sha256": "c19b6ccef7438b731ebd3e19a8e8a659d7f906deff058ad8fba087892855b027"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/surface_rivers/metric_reference_erosion.py",
+      "bytes": 3628,
+      "original_path": "terrain_pipeline/surface_rivers/metric_reference_erosion.py",
+      "sha256": "e6de03ffbb175f0552762961c963a5140c3dc902007ec5a61740e588aecfcf23"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/td_basin_hierarchy.py",
+      "bytes": 19131,
+      "original_path": "terrain_pipeline/td_basin_hierarchy.py",
+      "sha256": "e618ac7177e34a877efa9ef50abaa5002e6669e152a090cb82917061507dc895"
+    },
+    {
+      "archive_path": "sources/terrain_pipeline/td_basin_source.py",
+      "bytes": 4954,
+      "original_path": "terrain_pipeline/td_basin_source.py",
+      "sha256": "d1ea7cdad04b0dae0d3fbb5bf304fb1fddd62bada95878f05a0a578234732f81"
+    },
+    {
+      "archive_path": "sources/tests/test_fv_bedload_v4.py",
+      "bytes": 6557,
+      "original_path": "tests/test_fv_bedload_v4.py",
+      "sha256": "82797934e16c48a50fd64d0dca9188ef65e20194460599b51c3ac4f7d0cdd779"
+    },
+    {
+      "archive_path": "sources/tests/test_fv_growth_v3.py",
+      "bytes": 5557,
+      "original_path": "tests/test_fv_growth_v3.py",
+      "sha256": "efc2a7b4eaa5ab72adde267015065a434455f273ef1caf4ea14255236ab8afe9"
+    },
+    {
+      "archive_path": "sources/tests/test_fv_suspended_growth.py",
+      "bytes": 6724,
+      "original_path": "tests/test_fv_suspended_growth.py",
+      "sha256": "5f8b7b7ed831f254221db3cb3dc6047d1a9bf2bbdbf6ab29a41a8f6b79e40173"
+    },
+    {
+      "archive_path": "sources/tools/inspect_natural_fv_growth.py",
+      "bytes": 30929,
+      "original_path": "tools/inspect_natural_fv_growth.py",
+      "sha256": "57d7edb2549e2eeb118c87fe53acb65315a9042f2b37604365940d6496b26f5e"
+    },
+    {
+      "archive_path": "sources/tools/recover_natural_fv_growth_v3_prefix.py",
+      "bytes": 6242,
+      "original_path": "tools/recover_natural_fv_growth_v3_prefix.py",
+      "sha256": "d12c4e0a3cae2f1e57886ef94ca2fd940ba3133e67ef8ed822a72574528645a8"
+    },
+    {
+      "archive_path": "sources/tools/run_natural_delta_fv_water.py",
+      "bytes": 10651,
+      "original_path": "tools/run_natural_delta_fv_water.py",
+      "sha256": "60c71cdb50dbce1978e5bcf01a2fe8ce77360ce54e8e873464c779c0344dda4f"
+    },
+    {
+      "archive_path": "sources/tools/run_natural_fv_growth.py",
+      "bytes": 17705,
+      "original_path": "tools/run_natural_fv_growth.py",
+      "sha256": "0d3028c16af2c5b1b20236cd8d8c4bef23acc90dedab5154499e7378b4d66db4"
+    },
+    {
+      "archive_path": "sources/tools/run_natural_fv_growth_interval_v3.py",
+      "bytes": 19038,
+      "original_path": "tools/run_natural_fv_growth_interval_v3.py",
+      "sha256": "b53fe6786f44556cc089b0ea9107abec05b10f17994f2bd8a54137b19abd80cd"
+    },
+    {
+      "archive_path": "sources/tools/run_natural_fv_growth_v2.py",
+      "bytes": 13389,
+      "original_path": "tools/run_natural_fv_growth_v2.py",
+      "sha256": "3f02a0723a7051e7807dfe43ded124303aac28b97ee3bbe3fc8ed219d8cf1699"
+    },
+    {
+      "archive_path": "sources/tools/run_natural_fv_growth_v3.py",
+      "bytes": 10990,
+      "original_path": "tools/run_natural_fv_growth_v3.py",
+      "sha256": "61e8e40ab9fdf08b6efd68c0ebe6568c9d79557f5de4fd8a5ecb91c92e955379"
+    },
+    {
+      "archive_path": "sources/tools/run_natural_fv_growth_v4.py",
+      "bytes": 8385,
+      "original_path": "tools/run_natural_fv_growth_v4.py",
+      "sha256": "8d7f63316f5798976fa42eccbf773efcbca5510e14a699dd9c5b4958903d321e"
+    },
+    {
+      "archive_path": "sources/tools/verify_fluvial_channel_remobilization.py",
+      "bytes": 31299,
+      "original_path": "tools/verify_fluvial_channel_remobilization.py",
+      "sha256": "53b0aa0dea5c4f438144bf0634dae2cd406d0ad1a177a61d4f00ebbc91082ee7"
+    },
+    {
+      "archive_path": "sources/tools/verify_fluvial_delta.py",
+      "bytes": 30779,
+      "original_path": "tools/verify_fluvial_delta.py",
+      "sha256": "cc81af2698b87c779b488ef6a37878d8c3d991d804abf83b930822f8509cce31"
+    },
+    {
+      "archive_path": "sources/tools/verify_mountain_rainfall.py",
+      "bytes": 28936,
+      "original_path": "tools/verify_mountain_rainfall.py",
+      "sha256": "9f2160d4b5440d4fcb6d6ca3ef71c888e20ede2fb9313152a2b44d396d156a81"
+    }
+  ],
+  "templates": [
+    {
+      "archive_path": "parameter-templates/v2/summary.json",
+      "bytes": 34133,
+      "sha256": "3186ff43a13eb68d71e7a775bb18ddf5574fcd6086a770ab9ca5392e7a583e48"
+    },
+    {
+      "archive_path": "parameter-templates/v3/summary.json",
+      "bytes": 13742,
+      "sha256": "7fc22b47c5320c24ef4aaf19d985a3632cd582979047d52825330a32e4950684"
+    },
+    {
+      "archive_path": "parameter-templates/v4/summary.json",
+      "bytes": 24812,
+      "sha256": "5009f703f4f91871935bbc98e1494bbd8f8b055c19bcd2d1b64eceed773410b1"
+    }
+  ]
+}

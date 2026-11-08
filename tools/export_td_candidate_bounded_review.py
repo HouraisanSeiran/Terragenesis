@@ -7,7 +7,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
 from terrain_pipeline.td_candidate_weather_jobs import export_candidate_weather_review
 
 

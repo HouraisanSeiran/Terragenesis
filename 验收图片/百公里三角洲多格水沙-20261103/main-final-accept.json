@@ -1,0 +1,385 @@
+{
+  "pass": true,
+  "checks": {
+    "source_identity": true,
+    "base_and_unknown_unchanged": true,
+    "original_land_within_10micron": true,
+    "single_full_event": true,
+    "solid_budget": true,
+    "unresolved_untouched": true,
+    "finite_nonnegative": true,
+    "unique_packet_ids": true,
+    "exclusive_footprints": true,
+    "fine_within_grid_stock": true,
+    "fine_bed_matches_saved_hydraulics": true,
+    "owner_cells_consistent": true,
+    "effective_width_within_owned_area": true,
+    "actual_hundred_km_body": true,
+    "multiple_real_wet_mouths_at_mean_sea": true,
+    "multiple_mouths_delivered_sediment": true
+  },
+  "inputs": {
+    "initial": "network-v3-mouth-extension-v3-prepared",
+    "final": "network-v3-mouth-extension-v3-final",
+    "event_report": "mouth-extension-v3-case-report.json"
+  },
+  "initial_morphology": {
+    "largest_emerged_fragment_area_km2": 1855.44,
+    "principal_spans_km": [
+      73.52637960062194,
+      43.583314279621966
+    ],
+    "total_emerged_area_km2": 2905.92,
+    "connected_depositional_body_area_km2": 3675.6,
+    "connected_depositional_body_spans_km": [
+      106.71181035475776,
+      50.61334623453631
+    ],
+    "body_definition": "source-ocean connected sediment thickness >1m, including incised wet channels and submerged lobes; emerged fragments reported separately",
+    "above_high_tide_km2": 2886.84,
+    "intertidal_km2": 31.68
+  },
+  "final_morphology": {
+    "largest_emerged_fragment_area_km2": 1853.28,
+    "principal_spans_km": [
+      73.52120265274439,
+      43.593632457277394
+    ],
+    "total_emerged_area_km2": 2904.84,
+    "connected_depositional_body_area_km2": 3676.68,
+    "connected_depositional_body_spans_km": [
+      107.2653382787693,
+      50.614118627243805
+    ],
+    "body_definition": "source-ocean connected sediment thickness >1m, including incised wet channels and submerged lobes; emerged fragments reported separately",
+    "above_high_tide_km2": 2885.04,
+    "intertidal_km2": 33.48
+  },
+  "fine_bed_max_error_m": 6.217248937900877e-15,
+  "tide_diagnostics": [
+    {
+      "sea_level_m": -0.3,
+      "accepted_q_m3_s": 15000.0,
+      "routes": [
+        {
+          "outlet_zx": [
+            247,
+            214
+          ],
+          "q_m3_s": 6731.410139552099,
+          "minimum_depth_m": 5.0284323588898365,
+          "fully_wet": true,
+          "solved_nodes": 74,
+          "total_nodes": 74
+        },
+        {
+          "outlet_zx": [
+            232,
+            283
+          ],
+          "q_m3_s": 2708.8678256652424,
+          "minimum_depth_m": 1.6759257798104923,
+          "fully_wet": true,
+          "solved_nodes": 102,
+          "total_nodes": 102
+        },
+        {
+          "outlet_zx": [
+            222,
+            281
+          ],
+          "q_m3_s": 2732.1744016027237,
+          "minimum_depth_m": 1.686378016241349,
+          "fully_wet": true,
+          "solved_nodes": 101,
+          "total_nodes": 101
+        },
+        {
+          "outlet_zx": [
+            183,
+            123
+          ],
+          "q_m3_s": 2827.5476331799337,
+          "minimum_depth_m": 1.7239342207573838,
+          "fully_wet": true,
+          "solved_nodes": 105,
+          "total_nodes": 105
+        }
+      ]
+    },
+    {
+      "sea_level_m": 0.0,
+      "accepted_q_m3_s": 15000.0,
+      "routes": [
+        {
+          "outlet_zx": [
+            247,
+            214
+          ],
+          "q_m3_s": 6786.708915108248,
+          "minimum_depth_m": 5.304663381053885,
+          "fully_wet": true,
+          "solved_nodes": 74,
+          "total_nodes": 74
+        },
+        {
+          "outlet_zx": [
+            232,
+            283
+          ],
+          "q_m3_s": 2760.9206977485715,
+          "minimum_depth_m": 1.7667220898590321,
+          "fully_wet": true,
+          "solved_nodes": 102,
+          "total_nodes": 102
+        },
+        {
+          "outlet_zx": [
+            222,
+            281
+          ],
+          "q_m3_s": 2812.542023040065,
+          "minimum_depth_m": 1.7639775882757713,
+          "fully_wet": true,
+          "solved_nodes": 101,
+          "total_nodes": 101
+        },
+        {
+          "outlet_zx": [
+            183,
+            123
+          ],
+          "q_m3_s": 2639.8283641031157,
+          "minimum_depth_m": 1.710735057507061,
+          "fully_wet": true,
+          "solved_nodes": 105,
+          "total_nodes": 105
+        }
+      ]
+    },
+    {
+      "sea_level_m": 0.3,
+      "accepted_q_m3_s": 15000.0,
+      "routes": [
+        {
+          "outlet_zx": [
+            247,
+            214
+          ],
+          "q_m3_s": 6811.380187210563,
+          "minimum_depth_m": 5.584320214819696,
+          "fully_wet": true,
+          "solved_nodes": 74,
+          "total_nodes": 74
+        },
+        {
+          "outlet_zx": [
+            232,
+            283
+          ],
+          "q_m3_s": 2799.556927934532,
+          "minimum_depth_m": 1.8653621338109077,
+          "fully_wet": true,
+          "solved_nodes": 102,
+          "total_nodes": 102
+        },
+        {
+          "outlet_zx": [
+            222,
+            281
+          ],
+          "q_m3_s": 2873.3877188998877,
+          "minimum_depth_m": 1.8444730285156354,
+          "fully_wet": true,
+          "solved_nodes": 101,
+          "total_nodes": 101
+        },
+        {
+          "outlet_zx": [
+            183,
+            123
+          ],
+          "q_m3_s": 2515.675165955017,
+          "minimum_depth_m": 1.7285155464361464,
+          "fully_wet": true,
+          "solved_nodes": 105,
+          "total_nodes": 105
+        }
+      ]
+    }
+  ],
+  "original_land_max_event_change_m": 9.800517758451477e-10,
+  "grid_bed_delta_min_max_m": [
+    -1.5424379925345129,
+    3.3294651488594877
+  ],
+  "changed_grid_cells_gt_1mm": 2411,
+  "final_effective_width_min_max_m": [
+    546.175506560162,
+    2165.9233177490746
+  ],
+  "event": {
+    "input_id": "hundred-km:mouth-extension-25h:v2",
+    "water_m3": 1350000000.0,
+    "solid_m3": 1800000.0,
+    "delivered_water_m3": 1350000000.0,
+    "delivered_solid_m3": 1800000.0,
+    "undelivered_water_m3": 0.0,
+    "undelivered_solid_m3": 0.0,
+    "internal_transfer_solid_m3": 854104271.3275169,
+    "entrained_solid_m3": 11718522.399731765,
+    "outlet_delivery": [
+      {
+        "mouth_zx": [
+          183,
+          123
+        ],
+        "exterior_face_zx": [
+          183,
+          122
+        ],
+        "gross_solid_m3": 2396100.0733990557
+      },
+      {
+        "mouth_zx": [
+          222,
+          281
+        ],
+        "exterior_face_zx": [
+          222,
+          282
+        ],
+        "gross_solid_m3": 1258408.464458275
+      },
+      {
+        "mouth_zx": [
+          222,
+          281
+        ],
+        "exterior_face_zx": [
+          223,
+          281
+        ],
+        "gross_solid_m3": 1630753.4417643684
+      },
+      {
+        "mouth_zx": [
+          231,
+          284
+        ],
+        "exterior_face_zx": [
+          231,
+          285
+        ],
+        "gross_solid_m3": 340090.89680097584
+      },
+      {
+        "mouth_zx": [
+          231,
+          284
+        ],
+        "exterior_face_zx": [
+          232,
+          284
+        ],
+        "gross_solid_m3": 509608.61932048947
+      },
+      {
+        "mouth_zx": [
+          247,
+          214
+        ],
+        "exterior_face_zx": [
+          247,
+          213
+        ],
+        "gross_solid_m3": 7365038.504256838
+      }
+    ],
+    "mouth_update": {
+      "extended": true,
+      "trigger": "extended",
+      "extensions": [
+        {
+          "route_index": 1,
+          "old_mouth": [
+            231,
+            284
+          ],
+          "new_mouth": [
+            232,
+            283
+          ],
+          "path": [
+            [
+              231,
+              284
+            ],
+            [
+              232,
+              283
+            ]
+          ],
+          "path_xz_m": [
+            [
+              -75539.1392663182,
+              15613.46571038431
+            ],
+            [
+              -76026.2038259287,
+              16141.350226132008
+            ]
+          ],
+          "length_m": 718.2575771927095,
+          "widths_m": [
+            546.175506560162
+          ],
+          "outer_to_fine_m3": {
+            "bed_solid_m3": 232881.0881782522,
+            "mobile_solid_m3": 0.12705225049973115,
+            "stranded_solid_m3": 0.0
+          },
+          "solid_cut_m3": 0.0
+        }
+      ],
+      "failures": [],
+      "solid_cut_m3": 0.0,
+      "geometry_updates": [],
+      "sea_level_m": 0.0,
+      "max_cut_m": 0.5,
+      "radius_m": 2000.0
+    },
+    "floodplain": {
+      "diverted_water_m3": 0.0,
+      "returned_water_m3": 0.0,
+      "deposited_solid_m3": 0.0,
+      "stranded_solid_m3": 0.0,
+      "rewetted_solid_m3": 0.0
+    },
+    "solid_residual_m3": 0.0,
+    "unresolved_delta_m3": 0.0,
+    "physical_time_s": 270000.0,
+    "elapsed_s": 445.18274910000036,
+    "rss_bytes_end": null,
+    "event_policy": "one call; active layer cap retained for whole 25h",
+    "code_sha256": {}
+  },
+  "current_code_sha256": {
+    "coastal_delta_multicell.py": "56d9b90a091325f22155f4d163a723a390909b1ff10b292278abf437c5a62ce2",
+    "coastal_delta_node_inventory.py": "fe70fb3e98625185cd2a9cb598b14c1683d6ff95308ea896574f21a9ba59bea9",
+    "coastal_delta_evolution.py": "5ed54184277298b603b3344c2ad7ec8663c7dae92e74864d99e68618516ae301",
+    "coastal_delta_branching.py": "01d12b4ee524219612d26af9c0210e3386f0488f2be02c96a8db2c6834260113",
+    "coastal_delta_avulsion.py": "aae53d02883adc3f96e9dc98efff857eb7c6239c5dffb2321911c58ff5ab864a",
+    "coastal_delta_mouth_extension.py": "47ebf9824d3b767039031632f1c45e9a768a4ae446336e93a20da497227e8d48"
+  },
+  "code_changed_since_start": [],
+  "code_review_note": "Inputs and source identities are retained; closed mouths at low tide are reported rather than forced open. Start and current source hashes recorded.",
+  "limitations": [
+    "600m area mean DEM; subgrid channels are separate sections",
+    "fixed planar footprint; event not a bank migration model",
+    "geological mixing is not a physical date prediction",
+    "four initial outlets constructed; no claim of four spontaneous avulsions",
+    "default 400m flood reach is below 600m cell spacing; no resolved floodplain exchange in this case",
+    "river event transports and entrains; river settling represented by annual approximation, sea settling by event solver"
+  ]
+}

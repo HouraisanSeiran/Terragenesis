@@ -11,8 +11,8 @@ import psutil
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
 from terrain_pipeline.td_fine_bed_shards import build_fine_bed_shards, save_fine_bed_shards
 
 BASE = ROOT / "verification/natural-river-network/fine-bed-raster-lake-entry-20261005-01"
@@ -103,7 +103,7 @@ def main():
               "code_sha256": {name: file_sha256(ROOT / name) for name in (
                   "terrain_pipeline/td_fine_bed_shards.py", "tools/prepare_td_fine_bed_shards.py",
                   "terrain_pipeline/td_fine_bed_raster.py", "terrain_pipeline/mountain_source_adapter.py",
-                  "terrain_pipeline/td_basin_hierarchy.py")}, **flags}
+                  'terrain_pipeline/basin_topology.py')}, **flags}
     publish_bytes(output / "index.json", json.dumps(result, sort_keys=True, allow_nan=False, indent=2).encode())
     print(json.dumps({"summary": result["summary"], "coverage": result["coverage"]}, sort_keys=True))
 

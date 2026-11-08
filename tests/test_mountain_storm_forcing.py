@@ -6,12 +6,9 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.mountain_source_adapter import identity
-from terrain_pipeline.mountain_storm_forcing import (
-    StormParameters, generate_forcing, interval_mean_mm_h, load_forcing,
-    preflight, save_forcing, validate_forcing,
-)
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.common_infra import identity
+from terrain_pipeline.climate_forcing import StormParameters, storm_generate_forcing as generate_forcing, interval_mean_mm_h, storm_load_forcing as load_forcing, storm_preflight as preflight, save_forcing, validate_forcing
 
 
 class StormForcingTests(unittest.TestCase):
@@ -83,7 +80,7 @@ class StormForcingTests(unittest.TestCase):
             save_forcing(path,forcing)
             with self.assertRaises(FileExistsError):
                 save_forcing(path,forcing)
-            with patch("terrain_pipeline.mountain_storm_forcing.generate_forcing",side_effect=AssertionError("weather prepare")):
+            with patch('terrain_pipeline.climate_forcing.storm_generate_forcing',side_effect=AssertionError("weather prepare")):
                 loaded=load_forcing(path,expected_sha256=file_sha256(path),cell_owner=owner,
                     source_identity="a"*64,selection_identity="b"*64)
             self.assertEqual(loaded["identity_sha256"],forcing["identity_sha256"])

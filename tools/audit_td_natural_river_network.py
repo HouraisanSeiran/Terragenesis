@@ -2,7 +2,7 @@
 
 import numpy as np
 
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
 from terrain_pipeline.td_natural_river_network import load_natural_river_network
 
 
@@ -13,9 +13,7 @@ def _require(condition, message):
 
 def audit_saved_network(*, network_record, hierarchy_record, geometry_record=None,
                         window_record=None):
-    from terrain_pipeline.td_natural_channel_geometry import (
-        load_natural_channel_geometry, load_natural_channel_window,
-    )
+    from terrain_pipeline.channel_geometry import load_natural_channel_geometry, load_natural_channel_window
 
     network = load_natural_river_network(**network_record)
     hierarchy = load_basin_hierarchy(**hierarchy_record)

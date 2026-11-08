@@ -1,0 +1,201 @@
+{
+  "passed": true,
+  "checks": {
+    "geological_source_and_stock_audit": true,
+    "frozen_td_source_hash": true,
+    "all_checkpoint_checks": true,
+    "event_external_solid_closure": true,
+    "expected_600_physical_seconds": true,
+    "event_received_declared_solid_m3": true,
+    "saved_input_chain": true,
+    "topology_not_repainted": true
+  },
+  "checkpoints": [
+    {
+      "checkpoint": ".scratch\\delta-morphology-acceptance-20261104\\network-initial-b\\initial",
+      "checks": {
+        "source_grid_preserved": true,
+        "base_valid_seed_porosity_preserved": true,
+        "four_distinct_actual_mouths": true,
+        "unique_nodes_and_physical_edges": true,
+        "finite_nonnegative_stock": true,
+        "fractional_area_not_duplicated": true,
+        "owned_stock_within_grid": true,
+        "bed_matches_owned_stock": true,
+        "effective_width_within_owned_area": true,
+        "physical_node_and_mouth_q_conserved": true,
+        "all_four_routes_wet_to_actual_sea": true,
+        "no_hidden_bank_overtopping": true,
+        "fresh_solve_matches_saved": true,
+        "input_files_unchanged": true
+      },
+      "sha256": {
+        "json": "66f630241088a82c9bf52497592e94fb6e39391f86144c677f345f5669920b8f",
+        "npz": "16f5577377b1b871b9c43c9aed7b7ae2765b7c7dcab5bfed335ae7cd3cef6127"
+      },
+      "routes": [
+        {
+          "mouth_zx": [
+            207,
+            149
+          ],
+          "mouth_q_m3_s": 388.97166040430375,
+          "min_edge_q_m3_s": 388.97166040427885,
+          "min_depth_m": 3.0117838862044954,
+          "min_effective_width_m": 98.53008983735009,
+          "actual_exterior_faces": 1
+        },
+        {
+          "mouth_zx": [
+            184,
+            172
+          ],
+          "mouth_q_m3_s": 384.62771720470636,
+          "min_edge_q_m3_s": 384.6277172044565,
+          "min_depth_m": 2.832239239519226,
+          "min_effective_width_m": 106.35351252697832,
+          "actual_exterior_faces": 6
+        },
+        {
+          "mouth_zx": [
+            198,
+            163
+          ],
+          "mouth_q_m3_s": 393.1938688901193,
+          "min_edge_q_m3_s": 393.1938688899664,
+          "min_depth_m": 2.950993338286204,
+          "min_effective_width_m": 106.35351252697832,
+          "actual_exterior_faces": 4
+        },
+        {
+          "mouth_zx": [
+            210,
+            141
+          ],
+          "mouth_q_m3_s": 333.2067535016186,
+          "min_edge_q_m3_s": 333.20675350158376,
+          "min_depth_m": 2.867941767830069,
+          "min_effective_width_m": 98.53008983735009,
+          "actual_exterior_faces": 4
+        }
+      ],
+      "accepted_q_m3_s": 1500.0,
+      "minimum_bank_freeboard_m": 0.6155934228443721,
+      "fresh_solve_max_error": 0.0,
+      "max_node_q_residual_m3_s": 1.1198153515579179e-11,
+      "max_effective_width_excess_m": 1.4210854715202004e-14,
+      "total_solid_m3": 9250440000.000004,
+      "physical_time_s": 0.0,
+      "annual_progress_years": 0.0
+    },
+    {
+      "checkpoint": ".scratch\\delta-morphology-acceptance-20261104\\event-600s-b\\final",
+      "checks": {
+        "source_grid_preserved": true,
+        "base_valid_seed_porosity_preserved": true,
+        "four_distinct_actual_mouths": true,
+        "unique_nodes_and_physical_edges": true,
+        "finite_nonnegative_stock": true,
+        "fractional_area_not_duplicated": true,
+        "owned_stock_within_grid": true,
+        "bed_matches_owned_stock": true,
+        "effective_width_within_owned_area": true,
+        "physical_node_and_mouth_q_conserved": true,
+        "all_four_routes_wet_to_actual_sea": true,
+        "no_hidden_bank_overtopping": true,
+        "fresh_solve_matches_saved": true,
+        "input_files_unchanged": true
+      },
+      "sha256": {
+        "json": "c6b746a8637ab073f00a9230fdc4ee7d057dbdd1a0b0c8d522fe386237d313b9",
+        "npz": "de521e73fd6f206ba7ad96f3431f5aec4c6f4f8831f56fb438a9c341f077598b"
+      },
+      "routes": [
+        {
+          "mouth_zx": [
+            207,
+            149
+          ],
+          "mouth_q_m3_s": 390.46827843804937,
+          "min_edge_q_m3_s": 390.46827843802373,
+          "min_depth_m": 3.0529145311414236,
+          "min_effective_width_m": 98.53008983735009,
+          "actual_exterior_faces": 1
+        },
+        {
+          "mouth_zx": [
+            184,
+            172
+          ],
+          "mouth_q_m3_s": 385.8490185075369,
+          "min_edge_q_m3_s": 385.84901850729676,
+          "min_depth_m": 2.873517043579052,
+          "min_effective_width_m": 106.35351252697832,
+          "actual_exterior_faces": 6
+        },
+        {
+          "mouth_zx": [
+            198,
+            163
+          ],
+          "mouth_q_m3_s": 392.8473686307449,
+          "min_edge_q_m3_s": 392.84736863059294,
+          "min_depth_m": 2.9971486558246347,
+          "min_effective_width_m": 106.35351252697832,
+          "actual_exterior_faces": 4
+        },
+        {
+          "mouth_zx": [
+            210,
+            141
+          ],
+          "mouth_q_m3_s": 330.8353344244078,
+          "min_edge_q_m3_s": 330.8353344243716,
+          "min_depth_m": 2.913525931848062,
+          "min_effective_width_m": 98.53008983735009,
+          "actual_exterior_faces": 4
+        }
+      ],
+      "accepted_q_m3_s": 1500.0,
+      "minimum_bank_freeboard_m": 0.6170636010481348,
+      "fresh_solve_max_error": 0.0,
+      "max_node_q_residual_m3_s": 1.0857093002414331e-11,
+      "max_effective_width_excess_m": 1.4210854715202004e-14,
+      "total_solid_m3": 9250441800.000004,
+      "physical_time_s": 600.0,
+      "annual_progress_years": 0.0
+    }
+  ],
+  "physical_event_external_solid_m3": 1800.0,
+  "event_closure_residual_m3": 0.0,
+  "visible_bed_change_m": [
+    -0.36693929811486603,
+    6.420822033081919e-05
+  ],
+  "geological_body_audit": {
+    "passed": true,
+    "checks": {
+      "original_land_unchanged": true,
+      "no_sediment_outside_original_ocean": true,
+      "base_valid_seeds_porosity_unchanged": true,
+      "unknown_excluded": true,
+      "finite_nonnegative_stock": true,
+      "source_identity_unchanged": true,
+      "geological_physical_clock_unchanged": true,
+      "finite_external_solid_closure": true,
+      "input_bed_matches_source_roundoff": true
+    },
+    "closure_residual_m3": 3.814697265625e-06,
+    "external_geological_solid_m3": 3155760000.0,
+    "deposited_added_solid_m3": 91472868.46549188,
+    "numerical_mobile_m3": 3064287131.5345106,
+    "new_contiguous_land_km2": 28.62,
+    "maximum_distance_from_original_land_km": 3.9623225512317903,
+    "new_land_bed_min_max_m": [
+      0.04582901442027065,
+      2.0
+    ],
+    "input_reconstruction_roundoff_m": 8.881784197001252e-16
+  },
+  "scope": "explicit constructive delta on TD; 600s operability; not spontaneous geological growth"
+}

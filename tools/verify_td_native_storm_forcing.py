@@ -16,11 +16,9 @@ import psutil
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_source import load_td_source_bundle
-from terrain_pipeline.td_native_storm_forcing import (
-    SOURCE_RECORD, fixed_storm, generate_native_storm, load_native_storm, save_native_storm,
-)
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_storage import load_td_source_bundle as load_td_source_bundle
+from terrain_pipeline.climate_forcing import SOURCE_RECORD, fixed_storm, generate_native_storm, load_native_storm, save_native_storm
 from tests.test_td_native_storm_forcing import NativeStormTests
 
 
@@ -64,10 +62,10 @@ def main():
             raise MemoryError("native weather job lacks passing RSS/private resource evidence")
     if file_sha256(record["path"]) != record["expected_sha256"]:
         raise ValueError("source changed during weather export")
-    names = ("terrain_pipeline/td_native_storm_forcing.py", "tests/test_td_native_storm_forcing.py",
+    names = ("terrain_pipeline/climate_forcing.py", "tests/test_td_native_storm_forcing.py",
              "tools/verify_td_native_storm_forcing.py", ".scratch/terrain-framework/td-native-storm-forcing-spec-v1.md",
-             "terrain_pipeline/mountain_storm_forcing.py", "terrain_pipeline/mountain_source_adapter.py",
-             "terrain_pipeline/td_basin_source.py")
+             "terrain_pipeline/climate_forcing.py", "terrain_pipeline/mountain_source_adapter.py",
+             'terrain_pipeline/basin_storage.py')
     report = dict(schema="td-native-storm-forcing-index-v1", source=record, cases=cases,
         tests=tests.testsRun, tests_passed=True, resource=memory(), within_1GiB=True, numeric_library_threads=1,
         output_bytes=sum(path.stat().st_size for path in directory.glob("*.npz")),

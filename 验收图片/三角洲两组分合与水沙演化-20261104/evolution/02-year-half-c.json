@@ -1,0 +1,1609 @@
+{
+  "input_id": "v7-year-half-c",
+  "input": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-reference-shapes-20261104\\reference-case-v7\\event-10s-c\\final",
+  "input_sha256": {
+    "npz": "c72164379df126ab42ea0499480dd9754d53f9f64a67291f635c476925d1d61d",
+    "json": "2f8cd1ce8a7f862318c675a2b34b7d53b3c0e523edada1abdc168e64df861c4d"
+  },
+  "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+  "parameters": {
+    "initial": ".scratch\\delta-reference-shapes-20261104\\reference-case-v7\\event-10s-c\\final",
+    "output": ".scratch\\delta-reference-shapes-20261104\\reference-case-v7\\year-half-c",
+    "id": "v7-year-half-c",
+    "duration_s": 0.0,
+    "stage_m": null,
+    "sea_level_m": 0.0,
+    "tide_amplitude_m": 0.0,
+    "solid_rate_m3_s": 3.0,
+    "years": 0.5,
+    "step_years": 0.1,
+    "reference_length_m": 1000.0,
+    "marine_step_s": 300.0,
+    "annual_channel_exchange": "capacity_balance",
+    "annual_erosion_depth_m_per_year": 0.1
+  },
+  "physical_seconds": 0.0,
+  "equivalent_years": 0.5,
+  "initial_total_solid_m3": 1175760030.0,
+  "final_total_solid_m3": 1223096429.9999988,
+  "event_budget": {},
+  "history": [
+    {
+      "event": "river_stage_activity",
+      "input_id": "v7:select-physical-edge-graph",
+      "time_s": 0.0,
+      "active": [
+        true
+      ],
+      "route_q_m3_s": [
+        1500.0000000000007
+      ]
+    },
+    {
+      "event": "branch_attachment",
+      "attached": true,
+      "reason": "attached",
+      "route_index": 1,
+      "widths_m": [
+        27.75468402927689,
+        195.18132799504738,
+        196.70476244620755,
+        197.00695366709996,
+        198.03837701313375,
+        198.1662865801403,
+        197.00501834369348,
+        195.61741668846665,
+        198.1662865801403,
+        193.78005541483458,
+        184.2904016686853,
+        198.1662865801403,
+        183.72953020790314,
+        194.4096892566534,
+        198.1662865801403,
+        196.31221618806774,
+        198.1662865801403,
+        163.98889320913122,
+        24.294761015486998
+      ],
+      "nominal_width_m": 198.1662865801403,
+      "solid_cut_m3": 106734.375,
+      "path_zx": [
+        [
+          66,
+          13
+        ],
+        [
+          66,
+          14
+        ],
+        [
+          66,
+          15
+        ],
+        [
+          66,
+          16
+        ],
+        [
+          67,
+          17
+        ],
+        [
+          67,
+          18
+        ],
+        [
+          67,
+          19
+        ],
+        [
+          68,
+          20
+        ],
+        [
+          69,
+          20
+        ],
+        [
+          70,
+          20
+        ],
+        [
+          71,
+          20
+        ],
+        [
+          72,
+          20
+        ],
+        [
+          73,
+          20
+        ],
+        [
+          74,
+          20
+        ],
+        [
+          75,
+          20
+        ],
+        [
+          76,
+          20
+        ],
+        [
+          77,
+          19
+        ],
+        [
+          77,
+          18
+        ],
+        [
+          78,
+          17
+        ],
+        [
+          78,
+          16
+        ],
+        [
+          78,
+          15
+        ]
+      ],
+      "path_xz_m": [
+        [
+          361.88677813943264,
+          3628.610883178989
+        ],
+        [
+          480.164944284926,
+          3675.416944960523
+        ],
+        [
+          542.9218288074555,
+          3673.117616935834
+        ],
+        [
+          660.8517620499304,
+          3663.4853751599544
+        ],
+        [
+          731.0596687436387,
+          3721.979902741687
+        ],
+        [
+          862.9327156420638,
+          3732.3112847884254
+        ],
+        [
+          916.6489981818918,
+          3774.212432330269
+        ],
+        [
+          1038.7502696305764,
+          3872.748760413842
+        ],
+        [
+          1061.7618989508765,
+          3953.752546600635
+        ],
+        [
+          1080.2906485174224,
+          4079.0518139116393
+        ],
+        [
+          1067.8384602483775,
+          4123.299312944845
+        ],
+        [
+          1069.1137398184806,
+          4270.845897372503
+        ],
+        [
+          1055.7601746084606,
+          4323.411682106145
+        ],
+        [
+          1056.1817504664302,
+          4441.72127286805
+        ],
+        [
+          1018.956889888705,
+          4524.645988297246
+        ],
+        [
+          1029.01228129314,
+          4622.912980579802
+        ],
+        [
+          980.818385264639,
+          4736.620570277298
+        ],
+        [
+          820.9966322831596,
+          4759.43740692612
+        ],
+        [
+          726.9031214928932,
+          4820.711656631285
+        ],
+        [
+          632.9060158659402,
+          4846.853617017763
+        ],
+        [
+          559.3010227878364,
+          4880.53392790796
+        ]
+      ],
+      "rejoin_index": 42
+    },
+    {
+      "event": "branch_attachment",
+      "attached": true,
+      "reason": "attached",
+      "route_index": 2,
+      "widths_m": [
+        89.35277524206771,
+        145.06621280032246,
+        143.56406741928492,
+        145.06621280032246,
+        143.69953512271184,
+        145.06621280032246,
+        142.36996209343042,
+        144.16486269953103,
+        145.06621280032246,
+        145.06621280032246,
+        145.06621280032246,
+        145.06621280032246,
+        145.06621280032246,
+        144.54858029617174,
+        144.3375126761316,
+        141.5350477300946,
+        57.92795748146494
+      ],
+      "nominal_width_m": 145.06621280032246,
+      "solid_cut_m3": 77906.25,
+      "path_zx": [
+        [
+          81,
+          16
+        ],
+        [
+          81,
+          17
+        ],
+        [
+          81,
+          18
+        ],
+        [
+          82,
+          19
+        ],
+        [
+          82,
+          20
+        ],
+        [
+          82,
+          21
+        ],
+        [
+          83,
+          22
+        ],
+        [
+          84,
+          22
+        ],
+        [
+          85,
+          23
+        ],
+        [
+          86,
+          23
+        ],
+        [
+          87,
+          23
+        ],
+        [
+          88,
+          23
+        ],
+        [
+          89,
+          23
+        ],
+        [
+          90,
+          23
+        ],
+        [
+          91,
+          23
+        ],
+        [
+          92,
+          22
+        ],
+        [
+          93,
+          21
+        ],
+        [
+          93,
+          20
+        ],
+        [
+          93,
+          19
+        ]
+      ],
+      "path_xz_m": [
+        [
+          623.9780337645753,
+          5166.775193414298
+        ],
+        [
+          777.8284315377044,
+          5142.990098245743
+        ],
+        [
+          834.822236581347,
+          5151.740636281582
+        ],
+        [
+          968.9924945180117,
+          5227.561517335825
+        ],
+        [
+          1021.4277031461535,
+          5255.058455014877
+        ],
+        [
+          1160.9943181488472,
+          5240.46720216606
+        ],
+        [
+          1251.9708877935302,
+          5326.164796068374
+        ],
+        [
+          1274.6999481777996,
+          5478.223325434621
+        ],
+        [
+          1346.5243231678853,
+          5575.1342466023125
+        ],
+        [
+          1366.1958307620187,
+          5653.675028249545
+        ],
+        [
+          1357.788753041905,
+          5757.66793125928
+        ],
+        [
+          1363.4556260229851,
+          5828.535159041617
+        ],
+        [
+          1326.8763811237338,
+          5981.785466320191
+        ],
+        [
+          1322.0484860884926,
+          6017.615795401283
+        ],
+        [
+          1334.236268583626,
+          6143.395604815364
+        ],
+        [
+          1251.1528712099428,
+          6224.00889419878
+        ],
+        [
+          1178.0838723326517,
+          6332.801547507972
+        ],
+        [
+          1040.1683279012977,
+          6322.299928398224
+        ],
+        [
+          956.3734702605324,
+          6375.112120492233
+        ]
+      ],
+      "rejoin_index": 57
+    },
+    {
+      "event": "river_stage_activity",
+      "input_id": "morphology:after",
+      "time_s": 0.0,
+      "active": [
+        true,
+        true,
+        true
+      ],
+      "route_q_m3_s": [
+        1500.0000000009052,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "event": "river_stage_activity",
+      "input_id": "v7-event-10s-c:event",
+      "time_s": 5.0,
+      "active": [
+        true,
+        true,
+        true
+      ],
+      "route_q_m3_s": [
+        1500.0000000007253,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "event": "river_stage_activity",
+      "input_id": "v7-event-10s-c:event",
+      "time_s": 10.0,
+      "active": [
+        true,
+        true,
+        true
+      ],
+      "route_q_m3_s": [
+        1500.0000000006046,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "event": "mouth_extension",
+      "extended": false,
+      "trigger": "already_open",
+      "extensions": [],
+      "failures": [],
+      "solid_cut_m3": 0,
+      "numerical_failures": [],
+      "geometry_updates": [],
+      "sea_level_m": 0.0,
+      "max_cut_m": 0.5,
+      "radius_m": 2000.0
+    },
+    {
+      "event": "river_stage_activity",
+      "input_id": "v7-event-10s-c:event:next-width",
+      "time_s": 10.0,
+      "active": [
+        true,
+        true,
+        true
+      ],
+      "route_q_m3_s": [
+        1500.000000004993,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "event": "river_stage_activity",
+      "input_id": "v7-event-10s-c:event:floodplain",
+      "time_s": 10.0,
+      "active": [
+        true,
+        true,
+        true
+      ],
+      "route_q_m3_s": [
+        1500.0000000049943,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "event": "floodplain_exchange",
+      "input_id": "v7-event-10s-c:event",
+      "diverted_water_m3": 749.9999999999969,
+      "returned_water_m3": 749.9999999999969,
+      "deposited_solid_m3": 1.0242833910634666,
+      "stranded_solid_m3": 6.331299781875001,
+      "rewetted_solid_m3": 4.7437266438101283e-20,
+      "new_solid_m3": 7.355583172938464,
+      "wet_area_m2": 319.10290490684247,
+      "parameters": {
+        "exchange_fraction": 0.05,
+        "settling_velocity_m_s": 0.0001,
+        "residence_s": 3600.0,
+        "max_lateral_distance_m": 400.0,
+        "max_solid_fraction": 0.01
+      }
+    },
+    {
+      "event": "physical_forcing",
+      "input_id": "v7-event-10s-c:event",
+      "marine": {
+        "sea_level_m": 0.0,
+        "tide_amplitude_m": 0.0,
+        "tide_period_s": 44712.0,
+        "wave_height_m": 0.0,
+        "wave_direction_xz": [
+          1.0,
+          0.0
+        ],
+        "transport_rate_s": 0.0,
+        "entrainment_rate_s": 0.0,
+        "settling_rate_s": 0.0,
+        "export_rate_s": 0.0,
+        "step_s": 5.0,
+        "transverse_diffusivity_m2_s": 10.0,
+        "active_sediment_layer_m": 0.1,
+        "same_cell_wet_dry": false,
+        "settling_velocity_m_s": null,
+        "minimum_depth_m": 1.0,
+        "material_source": "unknown"
+      },
+      "hydraulic": {
+        "upstream_stage_limit_m": 10.0,
+        "roughness": 0.035,
+        "gravity_m_s2": 9.81
+      },
+      "solid_rate_m3_s": 3.0
+    },
+    {
+      "event": "integrated_years",
+      "input_id": "v7-year-half-c:years:0",
+      "years": 0.1,
+      "accepted_q_m3_s": 1500.0,
+      "route_q_m3_s": [
+        1500.0000000049943,
+        0.0,
+        0.0
+      ],
+      "mouth_handoffs": [
+        {
+          "mouth_zx": [
+            100,
+            20
+          ],
+          "exterior_zx": [
+            102,
+            20
+          ],
+          "gross_solid_m3": 9674910.171548754
+        }
+      ],
+      "river_deposited_solid_m3": 0.0,
+      "mouth_delivered_solid_m3": 9674910.171548754,
+      "marine_deposited_solid_m3": 2473178.5401917645,
+      "floodplain": {
+        "diverted_water_m3": 11046325.343290105,
+        "returned_water_m3": 11046325.343290105,
+        "deposited_solid_m3": 0.8015733164757238,
+        "stranded_solid_m3": 1.0203919860938442e-15,
+        "rewetted_solid_m3": 6.3312997818751,
+        "new_solid_m3": 1.7484899247956937e-15,
+        "wet_area_m2": 5000000.0,
+        "parameters": {
+          "exchange_fraction": 0.05,
+          "settling_velocity_m_s": 0.0001,
+          "residence_s": 3600.0,
+          "max_lateral_distance_m": 400.0,
+          "max_solid_fraction": 0.01
+        }
+      },
+      "lateral_geometry": "fixed footprint",
+      "annual_channel_exchange": "capacity_balance",
+      "annual_erosion_depth_m_per_year": 0.1,
+      "river_eroded_solid_m3": 14368.15160406153
+    },
+    {
+      "event": "mouth_extension",
+      "extended": false,
+      "trigger": "already_open",
+      "extensions": [],
+      "failures": [],
+      "solid_cut_m3": 0,
+      "numerical_failures": [],
+      "geometry_updates": [],
+      "sea_level_m": 0.0,
+      "max_cut_m": 0.5,
+      "radius_m": 2000.0
+    },
+    {
+      "event": "shoreline_extension",
+      "extended": false,
+      "trigger": "already_open",
+      "extensions": [],
+      "failures": [],
+      "solid_cut_m3": 0,
+      "numerical_failures": [],
+      "geometry_updates": [],
+      "sea_level_m": 0.0,
+      "max_cut_m": 0.5,
+      "radius_m": 2000.0
+    },
+    {
+      "event": "avulsion_check",
+      "activated": false,
+      "trigger": "missing_hierarchical_plan"
+    },
+    {
+      "event": "river_stage_activity",
+      "input_id": "v7-year-half-c:years:0:final",
+      "time_s": 10.0,
+      "active": [
+        true,
+        true,
+        true
+      ],
+      "route_q_m3_s": [
+        1500.0000000005523,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "event": "river_stage_activity",
+      "input_id": "v7-year-half-c:years:0:next-width",
+      "time_s": 10.0,
+      "active": [
+        true,
+        true,
+        true
+      ],
+      "route_q_m3_s": [
+        1500.0000000003017,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "event": "integrated_years",
+      "input_id": "v7-year-half-c:years:1",
+      "years": 0.1,
+      "accepted_q_m3_s": 1500.0,
+      "route_q_m3_s": [
+        1500.0000000003017,
+        0.0,
+        0.0
+      ],
+      "mouth_handoffs": [
+        {
+          "mouth_zx": [
+            100,
+            20
+          ],
+          "exterior_zx": [
+            102,
+            21
+          ],
+          "gross_solid_m3": 9481683.440829597
+        }
+      ],
+      "river_deposited_solid_m3": 0.0,
+      "mouth_delivered_solid_m3": 9481683.440829597,
+      "marine_deposited_solid_m3": 4122674.3362917257,
+      "floodplain": {
+        "diverted_water_m3": 11156491.107551357,
+        "returned_water_m3": 11156491.107551357,
+        "deposited_solid_m3": 2.9724369778892295e-06,
+        "stranded_solid_m3": 1.2679675036899484e-05,
+        "rewetted_solid_m3": 0.0,
+        "new_solid_m3": 1.5652112014788716e-05,
+        "wet_area_m2": 5000000.0,
+        "parameters": {
+          "exchange_fraction": 0.05,
+          "settling_velocity_m_s": 0.0001,
+          "residence_s": 3600.0,
+          "max_lateral_distance_m": 400.0,
+          "max_solid_fraction": 0.01
+        }
+      },
+      "lateral_geometry": "fixed footprint",
+      "annual_channel_exchange": "capacity_balance",
+      "annual_erosion_depth_m_per_year": 0.1,
+      "river_eroded_solid_m3": 14383.372833503621
+    },
+    {
+      "event": "mouth_extension",
+      "extended": false,
+      "trigger": "already_open",
+      "extensions": [],
+      "failures": [],
+      "solid_cut_m3": 0,
+      "numerical_failures": [],
+      "geometry_updates": [],
+      "sea_level_m": 0.0,
+      "max_cut_m": 0.5,
+      "radius_m": 2000.0
+    },
+    {
+      "event": "shoreline_extension",
+      "extended": false,
+      "trigger": "already_open",
+      "extensions": [],
+      "failures": [],
+      "solid_cut_m3": 0,
+      "numerical_failures": [],
+      "geometry_updates": [],
+      "sea_level_m": 0.0,
+      "max_cut_m": 0.5,
+      "radius_m": 2000.0
+    },
+    {
+      "event": "avulsion_check",
+      "activated": false,
+      "trigger": "missing_hierarchical_plan"
+    },
+    {
+      "event": "river_stage_activity",
+      "input_id": "v7-year-half-c:years:1:final",
+      "time_s": 10.0,
+      "active": [
+        true,
+        true,
+        true
+      ],
+      "route_q_m3_s": [
+        1500.0000000013042,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "event": "integrated_years",
+      "input_id": "v7-year-half-c:years:2",
+      "years": 0.1,
+      "accepted_q_m3_s": 1500.0,
+      "route_q_m3_s": [
+        1500.0000000013042,
+        0.0,
+        0.0
+      ],
+      "mouth_handoffs": [
+        {
+          "mouth_zx": [
+            100,
+            20
+          ],
+          "exterior_zx": [
+            102,
+            19
+          ],
+          "gross_solid_m3": 9481771.95925543
+        }
+      ],
+      "river_deposited_solid_m3": 0.0,
+      "mouth_delivered_solid_m3": 9481771.95925543,
+      "marine_deposited_solid_m3": 4724235.66278882,
+      "floodplain": {
+        "diverted_water_m3": 11115227.963446075,
+        "returned_water_m3": 11115227.963446075,
+        "deposited_solid_m3": 1.4520679734989937e-05,
+        "stranded_solid_m3": 6.147882513524343e-05,
+        "rewetted_solid_m3": 6.5457267578237125e-22,
+        "new_solid_m3": 7.599950487023339e-05,
+        "wet_area_m2": 5000000.0,
+        "parameters": {
+          "exchange_fraction": 0.05,
+          "settling_velocity_m_s": 0.0001,
+          "residence_s": 3600.0,
+          "max_lateral_distance_m": 400.0,
+          "max_solid_fraction": 0.01
+        }
+      },
+      "lateral_geometry": "fixed footprint",
+      "annual_channel_exchange": "capacity_balance",
+      "annual_erosion_depth_m_per_year": 0.1,
+      "river_eroded_solid_m3": 14415.170497827934
+    },
+    {
+      "event": "mouth_extension",
+      "extended": false,
+      "trigger": "already_open",
+      "extensions": [],
+      "failures": [],
+      "solid_cut_m3": 0,
+      "numerical_failures": [],
+      "geometry_updates": [],
+      "sea_level_m": 0.0,
+      "max_cut_m": 0.5,
+      "radius_m": 2000.0
+    },
+    {
+      "event": "shoreline_extension",
+      "extended": false,
+      "trigger": "already_open",
+      "extensions": [],
+      "failures": [],
+      "solid_cut_m3": 0,
+      "numerical_failures": [],
+      "geometry_updates": [],
+      "sea_level_m": 0.0,
+      "max_cut_m": 0.5,
+      "radius_m": 2000.0
+    },
+    {
+      "event": "avulsion_check",
+      "activated": false,
+      "trigger": "missing_hierarchical_plan"
+    },
+    {
+      "event": "river_stage_activity",
+      "input_id": "v7-year-half-c:years:2:final",
+      "time_s": 10.0,
+      "active": [
+        true,
+        true,
+        true
+      ],
+      "route_q_m3_s": [
+        1500.0000000009593,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "event": "river_stage_activity",
+      "input_id": "v7-year-half-c:years:2:next-width",
+      "time_s": 10.0,
+      "active": [
+        true,
+        true,
+        true
+      ],
+      "route_q_m3_s": [
+        1500.0000000009557,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "event": "integrated_years",
+      "input_id": "v7-year-half-c:years:3",
+      "years": 0.1,
+      "accepted_q_m3_s": 1500.0,
+      "route_q_m3_s": [
+        1500.0000000009557,
+        0.0,
+        0.0
+      ],
+      "mouth_handoffs": [
+        {
+          "mouth_zx": [
+            100,
+            20
+          ],
+          "exterior_zx": [
+            102,
+            21
+          ],
+          "gross_solid_m3": 9481839.047371058
+        }
+      ],
+      "river_deposited_solid_m3": 0.0,
+      "mouth_delivered_solid_m3": 9481839.047371058,
+      "marine_deposited_solid_m3": 5095914.595361214,
+      "floodplain": {
+        "diverted_water_m3": 11071343.321492547,
+        "returned_water_m3": 11071343.321492547,
+        "deposited_solid_m3": 3.484269979171212e-05,
+        "stranded_solid_m3": 0.00014612854083297802,
+        "rewetted_solid_m3": 5.057323494265569e-22,
+        "new_solid_m3": 0.00018097124062468995,
+        "wet_area_m2": 5000000.0,
+        "parameters": {
+          "exchange_fraction": 0.05,
+          "settling_velocity_m_s": 0.0001,
+          "residence_s": 3600.0,
+          "max_lateral_distance_m": 400.0,
+          "max_solid_fraction": 0.01
+        }
+      },
+      "lateral_geometry": "fixed footprint",
+      "annual_channel_exchange": "capacity_balance",
+      "annual_erosion_depth_m_per_year": 0.1,
+      "river_eroded_solid_m3": 14428.169439259742
+    },
+    {
+      "event": "mouth_extension",
+      "extended": false,
+      "trigger": "already_open",
+      "extensions": [],
+      "failures": [],
+      "solid_cut_m3": 0,
+      "numerical_failures": [],
+      "geometry_updates": [],
+      "sea_level_m": 0.0,
+      "max_cut_m": 0.5,
+      "radius_m": 2000.0
+    },
+    {
+      "event": "shoreline_extension",
+      "extended": false,
+      "trigger": "already_open",
+      "extensions": [],
+      "failures": [],
+      "solid_cut_m3": 0,
+      "numerical_failures": [],
+      "geometry_updates": [],
+      "sea_level_m": 0.0,
+      "max_cut_m": 0.5,
+      "radius_m": 2000.0
+    },
+    {
+      "event": "avulsion_check",
+      "activated": false,
+      "trigger": "missing_hierarchical_plan"
+    },
+    {
+      "event": "river_stage_activity",
+      "input_id": "v7-year-half-c:years:3:final",
+      "time_s": 10.0,
+      "active": [
+        true,
+        true,
+        true
+      ],
+      "route_q_m3_s": [
+        1500.000000001496,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "event": "river_stage_activity",
+      "input_id": "v7-year-half-c:years:3:next-width",
+      "time_s": 10.0,
+      "active": [
+        true,
+        true,
+        true
+      ],
+      "route_q_m3_s": [
+        1500.0000000014911,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "event": "integrated_years",
+      "input_id": "v7-year-half-c:years:4",
+      "years": 0.1,
+      "accepted_q_m3_s": 1500.0,
+      "route_q_m3_s": [
+        1500.0000000014911,
+        0.0,
+        0.0
+      ],
+      "mouth_handoffs": [
+        {
+          "mouth_zx": [
+            100,
+            20
+          ],
+          "exterior_zx": [
+            102,
+            20
+          ],
+          "gross_solid_m3": 9481874.186331205
+        }
+      ],
+      "river_deposited_solid_m3": 0.0,
+      "mouth_delivered_solid_m3": 9481874.186331205,
+      "marine_deposited_solid_m3": 5360613.658260116,
+      "floodplain": {
+        "diverted_water_m3": 11022678.127448222,
+        "returned_water_m3": 11022678.127448222,
+        "deposited_solid_m3": 5.975561730642722e-05,
+        "stranded_solid_m3": 0.00024791900139835705,
+        "rewetted_solid_m3": 2.616964897283338e-21,
+        "new_solid_m3": 0.0003076746187047843,
+        "wet_area_m2": 5000000.0,
+        "parameters": {
+          "exchange_fraction": 0.05,
+          "settling_velocity_m_s": 0.0001,
+          "residence_s": 3600.0,
+          "max_lateral_distance_m": 400.0,
+          "max_solid_fraction": 0.01
+        }
+      },
+      "lateral_geometry": "fixed footprint",
+      "annual_channel_exchange": "capacity_balance",
+      "annual_erosion_depth_m_per_year": 0.1,
+      "river_eroded_solid_m3": 14437.916231651934
+    },
+    {
+      "event": "mouth_extension",
+      "extended": false,
+      "trigger": "already_open",
+      "extensions": [],
+      "failures": [],
+      "solid_cut_m3": 0,
+      "numerical_failures": [],
+      "geometry_updates": [],
+      "sea_level_m": 0.0,
+      "max_cut_m": 0.5,
+      "radius_m": 2000.0
+    },
+    {
+      "event": "shoreline_extension",
+      "extended": false,
+      "trigger": "already_open",
+      "extensions": [],
+      "failures": [],
+      "solid_cut_m3": 0,
+      "numerical_failures": [],
+      "geometry_updates": [],
+      "sea_level_m": 0.0,
+      "max_cut_m": 0.5,
+      "radius_m": 2000.0
+    },
+    {
+      "event": "avulsion_check",
+      "activated": false,
+      "trigger": "missing_hierarchical_plan"
+    },
+    {
+      "event": "river_stage_activity",
+      "input_id": "v7-year-half-c:years:4:final",
+      "time_s": 10.0,
+      "active": [
+        true,
+        true,
+        true
+      ],
+      "route_q_m3_s": [
+        1500.0000000032317,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "event": "river_stage_activity",
+      "input_id": "v7-year-half-c:years:4:next-width",
+      "time_s": 10.0,
+      "active": [
+        true,
+        true,
+        true
+      ],
+      "route_q_m3_s": [
+        1500.000000003238,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "source_hashes": {
+    "terrain_pipeline\\coastal_delta_avulsion.py": "bc9b24b9a294550ed76c781112b97e5fa29f148150fdf2fff9e60b2e5fae562f",
+    "terrain_pipeline\\coastal_delta_bank_formation.py": "980a86c35afdf9edad70b876a746e871c99bddf0a38afbf43023c48d67423fa6",
+    "terrain_pipeline\\coastal_delta_branch_attachment.py": "8d9b79ac53a989f6fe3d484c7583dc15b295e1b7cfd7c0147dbdeafa2b9545b5",
+    "terrain_pipeline\\coastal_delta_branching.py": "94ae3aaa142c6aeb72a338babbb485a2bffd99dc04febe748832c1730788f36f",
+    "terrain_pipeline\\coastal_delta_deposition_scaling.py": "5d6e3673db0c0ee3fb7d5e81d259a180933c4845b6f33ec851b071550a58d940",
+    "terrain_pipeline\\coastal_delta_evolution.py": "11725eba7ebf3d5244b5acf330a165168a0c811939875e692688becb7c7c935c",
+    "terrain_pipeline\\coastal_delta_formation.py": "558e5d5640d269de445b45600866303639874ad3bdae15017c99ee4b61f4eced",
+    "terrain_pipeline\\coastal_delta_geological.py": "7e2ec94d4560dda5be3bb941d280ab3cdc95e4e91a09a7265b1c9a87d231a69d",
+    "terrain_pipeline\\coastal_delta_geological_network.py": "4c81260e76e542127b3bf71954bdea4f43b5540791294b31386d7d7643e86ea6",
+    "terrain_pipeline\\coastal_delta_graph_hydraulics.py": "5a56c36834a7d75883356c5457cce6a55268055770cec104ee77c36bc1053ad8",
+    "terrain_pipeline\\coastal_delta_growth.py": "dd46a75e427acb7382f5b1f32a80eab4990231d8ba673f9736ffeb2aa6a8f48e",
+    "terrain_pipeline\\coastal_delta_hydraulics.py": "1c61a29eebea1726be267cf5990efed448eacb7378d15e993e362f01f712f91c",
+    "terrain_pipeline\\coastal_delta_lobes.py": "6b50d284963099e85bd4b3204fe114739059ae437f3c4a96ec7e127f183fd0f9",
+    "terrain_pipeline\\coastal_delta_morphology.py": "c9243c7431c35f786aa163c09fbdb6deb062f82c4e7ebc735b758ea678e7e7c9",
+    "terrain_pipeline\\coastal_delta_mouth_extension.py": "28a23cc4d82e481f15d01feed7a656eb0602b8da444a1da1b3aa00e5c19ff10c",
+    "terrain_pipeline\\coastal_delta_multicell.py": "1227942950548bd16b685066c88f5e075b2c85a02d588fbafb6f21c5dcd99e9d",
+    "terrain_pipeline\\coastal_delta_multicell_avulsion.py": "1158cdaed1b7f11508f04c25326bf2a1cd9c055923e9c82ae42acac6c42408ba",
+    "terrain_pipeline\\coastal_delta_network_plan.py": "935ebc0205d4e6cb286e2ddc9fd9b7ed360e59a3a843e6db122df6113352f8a1",
+    "terrain_pipeline\\coastal_delta_node_inventory.py": "fe70fb3e98625185cd2a9cb598b14c1683d6ff95308ea896574f21a9ba59bea9",
+    "terrain_pipeline\\coastal_delta_pipeline.py": "f313f6d49fe265a83699c6bc87fc2920f5cbe521aa5ba8a8752cd70c15195a72",
+    "terrain_pipeline\\coastal_delta_plain.py": "96ef0963f3e1f8cda9cd7f3a24e3e22dbe1f67baba85b3c5cd9fb2c2626dd022",
+    "terrain_pipeline\\coastal_delta_product.py": "f63c117ba0bf848b7cb5450036019927566f86893f0c36ebd1955257745026a9",
+    "terrain_pipeline\\coastal_delta_regional.py": "78f10665f8bbafb6b8da25fe829e57da99defd3411d1e3aaa4d5bd32c6faa9d4",
+    "terrain_pipeline\\coastal_delta_routes.py": "851523783be5957bdbe0feb686226cf8abf625ac6074c19f2ff1e1b4d6147628",
+    "terrain_pipeline\\coastal_delta_window.py": "d05f26b1daab2ac574a19526a44bd165b8fd9d87debd7dd246c1b5fe3ca0dd55",
+    "terrain_pipeline\\coastal_marine_sediment.py": "0721b9ea30f61354b2d823d6067c4e8c1eeac5557b2eb8864090cda15af2848a",
+    "terrain_pipeline\\coastal_marine_longterm.py": "758671411bb51b7eaae9b8c91428fcbeebc81de098673fdb7e8df78138445cde",
+    ".scratch\\delta-reference-shapes-20261104\\reference-case-v7\\run.py": "33b61b6ba32e6fdbbb195e12eb97a934203cbaff3d0e2a413400b6fc94f8b1e5"
+  },
+  "elapsed_s": 162.87872659999994,
+  "checkpoints": {
+    "initial": {
+      "json": "2f8cd1ce8a7f862318c675a2b34b7d53b3c0e523edada1abdc168e64df861c4d",
+      "npz": "c72164379df126ab42ea0499480dd9754d53f9f64a67291f635c476925d1d61d"
+    },
+    "middle": {
+      "json": "2f8cd1ce8a7f862318c675a2b34b7d53b3c0e523edada1abdc168e64df861c4d",
+      "npz": "c72164379df126ab42ea0499480dd9754d53f9f64a67291f635c476925d1d61d"
+    },
+    "final": {
+      "json": "18a71116716f063cfc81b69a7bd726edc3c4e86c1ef83c897aa1d5bd720d86ef",
+      "npz": "94bb2a4d36e7906da4fe95883caa4f913af66fbda78a427502cec80aa1d57118"
+    }
+  },
+  "mean_sea_level_m": 0.0,
+  "physical_seconds_added": 0.0,
+  "equivalent_years_added": 0.5,
+  "annual_parameters": {
+    "requested_mode": "capacity_balance",
+    "requested_erosion_depth_m_per_year": 0.1,
+    "saved_identity": {
+      "marine": {
+        "sea_level_m": 0.0,
+        "velocity_x_m_s": 0.01,
+        "velocity_z_m_s": 0.002,
+        "diffusivity_m2_s": 30.0,
+        "settling_velocity_m_s": 1e-05,
+        "minimum_depth_m": 1.0,
+        "boundary_rate_s": 1e-05,
+        "max_step_s": 31557600.0,
+        "max_rise_m": 1.0,
+        "source_relocation_cells": 3
+      },
+      "hydraulic": {
+        "upstream_stage_limit_m": 10.0,
+        "roughness": 0.035,
+        "gravity_m_s2": 9.81
+      },
+      "floodplain": {
+        "exchange_fraction": 0.05,
+        "settling_velocity_m_s": 0.0001,
+        "residence_s": 3600.0,
+        "max_lateral_distance_m": 400.0,
+        "max_solid_fraction": 0.01
+      },
+      "river_deposition_fraction": 0.01,
+      "capacity_concentration": 0.01,
+      "lateral_geometry": "fixed footprint",
+      "river_deposition_mode": "reference_length",
+      "river_deposition_reference_length_m": 1000.0,
+      "annual_channel_exchange": "capacity_balance",
+      "annual_erosion_depth_m_per_year": 0.1,
+      "annual_channel_algorithm": "finite-capacity-balance-v1"
+    },
+    "identity_transitions": [],
+    "time_basis": "equivalent years only; rate times dt_years, independent of physical duration_s"
+  },
+  "physical_seconds_final": 10.0,
+  "equivalent_years_final": 0.5,
+  "stages": [
+    {
+      "stage": "initial",
+      "physical_seconds": 10.0,
+      "equivalent_years": 0.0,
+      "equivalent_step_years": null,
+      "annual_parameter_identity": {},
+      "annual_erosion_depth_limit_m": null,
+      "bed_solid_m3": 1170087748.698771,
+      "mobile_solid_m3": 193411.92649600952,
+      "stranded_solid_m3": 6.331299781875244,
+      "exported_solid_m3": 0.0,
+      "unresolved_solid_m3": 5478863.043433154,
+      "total_solid_m3": 1175760030.0,
+      "actual_q_m3_s": 1500.0,
+      "route_q_m3_s": [
+        1500.0000000049943,
+        0.0,
+        0.0
+      ],
+      "wet_section_count": 101,
+      "channel_section_count": 101,
+      "footprint_area_m2": 1874062.5,
+      "mouths_zx": [
+        [
+          100,
+          20
+        ],
+        [
+          100,
+          20
+        ],
+        [
+          100,
+          20
+        ]
+      ]
+    },
+    {
+      "stage": "after physical event",
+      "physical_seconds": 10.0,
+      "equivalent_years": 0.0,
+      "equivalent_step_years": null,
+      "annual_parameter_identity": {},
+      "annual_erosion_depth_limit_m": null,
+      "bed_solid_m3": 1170087748.698771,
+      "mobile_solid_m3": 193411.92649600952,
+      "stranded_solid_m3": 6.331299781875244,
+      "exported_solid_m3": 0.0,
+      "unresolved_solid_m3": 5478863.043433154,
+      "total_solid_m3": 1175760030.0,
+      "actual_q_m3_s": 1500.0,
+      "route_q_m3_s": [
+        1500.0000000049943,
+        0.0,
+        0.0
+      ],
+      "wet_section_count": 101,
+      "channel_section_count": 101,
+      "footprint_area_m2": 1874062.5,
+      "mouths_zx": [
+        [
+          100,
+          20
+        ],
+        [
+          100,
+          20
+        ],
+        [
+          100,
+          20
+        ]
+      ]
+    },
+    {
+      "stage": "equivalent-year step 1",
+      "physical_seconds": 10.0,
+      "equivalent_years": 0.1,
+      "equivalent_step_years": 0.1,
+      "annual_parameter_identity": {
+        "marine": {
+          "sea_level_m": 0.0,
+          "velocity_x_m_s": 0.01,
+          "velocity_z_m_s": 0.002,
+          "diffusivity_m2_s": 30.0,
+          "settling_velocity_m_s": 1e-05,
+          "minimum_depth_m": 1.0,
+          "boundary_rate_s": 1e-05,
+          "max_step_s": 31557600.0,
+          "max_rise_m": 1.0,
+          "source_relocation_cells": 3
+        },
+        "hydraulic": {
+          "upstream_stage_limit_m": 10.0,
+          "roughness": 0.035,
+          "gravity_m_s2": 9.81
+        },
+        "floodplain": {
+          "exchange_fraction": 0.05,
+          "settling_velocity_m_s": 0.0001,
+          "residence_s": 3600.0,
+          "max_lateral_distance_m": 400.0,
+          "max_solid_fraction": 0.01
+        },
+        "river_deposition_fraction": 0.01,
+        "capacity_concentration": 0.01,
+        "lateral_geometry": "fixed footprint",
+        "river_deposition_mode": "reference_length",
+        "river_deposition_reference_length_m": 1000.0,
+        "annual_channel_exchange": "capacity_balance",
+        "annual_erosion_depth_m_per_year": 0.1,
+        "annual_channel_algorithm": "finite-capacity-balance-v1"
+      },
+      "annual_erosion_depth_limit_m": 0.010000000000000002,
+      "bed_solid_m3": 1172546559.888932,
+      "mobile_solid_m3": 133460.09402638345,
+      "stranded_solid_m3": 0.0,
+      "exported_solid_m3": 7068426.973608796,
+      "unresolved_solid_m3": 5478863.043433154,
+      "total_solid_m3": 1185227310.0000002,
+      "actual_q_m3_s": 1500.0,
+      "route_q_m3_s": [
+        1500.0000000003017,
+        0.0,
+        0.0
+      ],
+      "wet_section_count": 101,
+      "channel_section_count": 101,
+      "footprint_area_m2": 1874062.5,
+      "mouths_zx": [
+        [
+          100,
+          20
+        ],
+        [
+          100,
+          20
+        ],
+        [
+          100,
+          20
+        ]
+      ]
+    },
+    {
+      "stage": "equivalent-year step 2",
+      "physical_seconds": 10.0,
+      "equivalent_years": 0.2,
+      "equivalent_step_years": 0.1,
+      "annual_parameter_identity": {
+        "marine": {
+          "sea_level_m": 0.0,
+          "velocity_x_m_s": 0.01,
+          "velocity_z_m_s": 0.002,
+          "diffusivity_m2_s": 30.0,
+          "settling_velocity_m_s": 1e-05,
+          "minimum_depth_m": 1.0,
+          "boundary_rate_s": 1e-05,
+          "max_step_s": 31557600.0,
+          "max_rise_m": 1.0,
+          "source_relocation_cells": 3
+        },
+        "hydraulic": {
+          "upstream_stage_limit_m": 10.0,
+          "roughness": 0.035,
+          "gravity_m_s2": 9.81
+        },
+        "floodplain": {
+          "exchange_fraction": 0.05,
+          "settling_velocity_m_s": 0.0001,
+          "residence_s": 3600.0,
+          "max_lateral_distance_m": 400.0,
+          "max_solid_fraction": 0.01
+        },
+        "river_deposition_fraction": 0.01,
+        "capacity_concentration": 0.01,
+        "lateral_geometry": "fixed footprint",
+        "river_deposition_mode": "reference_length",
+        "river_deposition_reference_length_m": 1000.0,
+        "annual_channel_exchange": "capacity_balance",
+        "annual_erosion_depth_m_per_year": 0.1,
+        "annual_channel_algorithm": "finite-capacity-balance-v1"
+      },
+      "annual_erosion_depth_limit_m": 0.010000000000000002,
+      "bed_solid_m3": 1176654850.8523932,
+      "mobile_solid_m3": 453344.608961484,
+      "stranded_solid_m3": 6.5457267578237125e-22,
+      "exported_solid_m3": 12107531.495212836,
+      "unresolved_solid_m3": 5478863.043433154,
+      "total_solid_m3": 1194694590.0000007,
+      "actual_q_m3_s": 1500.0,
+      "route_q_m3_s": [
+        1500.0000000013042,
+        0.0,
+        0.0
+      ],
+      "wet_section_count": 101,
+      "channel_section_count": 101,
+      "footprint_area_m2": 1874062.5,
+      "mouths_zx": [
+        [
+          100,
+          20
+        ],
+        [
+          100,
+          20
+        ],
+        [
+          100,
+          20
+        ]
+      ]
+    },
+    {
+      "stage": "equivalent-year step 3",
+      "physical_seconds": 10.0,
+      "equivalent_years": 0.30000000000000004,
+      "equivalent_step_years": 0.1,
+      "annual_parameter_identity": {
+        "marine": {
+          "sea_level_m": 0.0,
+          "velocity_x_m_s": 0.01,
+          "velocity_z_m_s": 0.002,
+          "diffusivity_m2_s": 30.0,
+          "settling_velocity_m_s": 1e-05,
+          "minimum_depth_m": 1.0,
+          "boundary_rate_s": 1e-05,
+          "max_step_s": 31557600.0,
+          "max_rise_m": 1.0,
+          "source_relocation_cells": 3
+        },
+        "hydraulic": {
+          "upstream_stage_limit_m": 10.0,
+          "roughness": 0.035,
+          "gravity_m_s2": 9.81
+        },
+        "floodplain": {
+          "exchange_fraction": 0.05,
+          "settling_velocity_m_s": 0.0001,
+          "residence_s": 3600.0,
+          "max_lateral_distance_m": 400.0,
+          "max_solid_fraction": 0.01
+        },
+        "river_deposition_fraction": 0.01,
+        "capacity_concentration": 0.01,
+        "lateral_geometry": "fixed footprint",
+        "river_deposition_mode": "reference_length",
+        "river_deposition_reference_length_m": 1000.0,
+        "annual_channel_exchange": "capacity_balance",
+        "annual_erosion_depth_m_per_year": 0.1,
+        "annual_channel_algorithm": "finite-capacity-balance-v1"
+      },
+      "annual_erosion_depth_limit_m": 0.010000000000000002,
+      "bed_solid_m3": 1181364671.3446987,
+      "mobile_solid_m3": 715380.9636304685,
+      "stranded_solid_m3": 5.057323494265569e-22,
+      "exported_solid_m3": 16602954.648237742,
+      "unresolved_solid_m3": 5478863.043433154,
+      "total_solid_m3": 1204161870.0,
+      "actual_q_m3_s": 1500.0,
+      "route_q_m3_s": [
+        1500.0000000009557,
+        0.0,
+        0.0
+      ],
+      "wet_section_count": 101,
+      "channel_section_count": 101,
+      "footprint_area_m2": 1874062.5,
+      "mouths_zx": [
+        [
+          100,
+          20
+        ],
+        [
+          100,
+          20
+        ],
+        [
+          100,
+          20
+        ]
+      ]
+    },
+    {
+      "stage": "equivalent-year step 4",
+      "physical_seconds": 10.0,
+      "equivalent_years": 0.4,
+      "equivalent_step_years": 0.1,
+      "annual_parameter_identity": {
+        "marine": {
+          "sea_level_m": 0.0,
+          "velocity_x_m_s": 0.01,
+          "velocity_z_m_s": 0.002,
+          "diffusivity_m2_s": 30.0,
+          "settling_velocity_m_s": 1e-05,
+          "minimum_depth_m": 1.0,
+          "boundary_rate_s": 1e-05,
+          "max_step_s": 31557600.0,
+          "max_rise_m": 1.0,
+          "source_relocation_cells": 3
+        },
+        "hydraulic": {
+          "upstream_stage_limit_m": 10.0,
+          "roughness": 0.035,
+          "gravity_m_s2": 9.81
+        },
+        "floodplain": {
+          "exchange_fraction": 0.05,
+          "settling_velocity_m_s": 0.0001,
+          "residence_s": 3600.0,
+          "max_lateral_distance_m": 400.0,
+          "max_solid_fraction": 0.01
+        },
+        "river_deposition_fraction": 0.01,
+        "capacity_concentration": 0.01,
+        "lateral_geometry": "fixed footprint",
+        "river_deposition_mode": "reference_length",
+        "river_deposition_reference_length_m": 1000.0,
+        "annual_channel_exchange": "capacity_balance",
+        "annual_erosion_depth_m_per_year": 0.1,
+        "annual_channel_algorithm": "finite-capacity-balance-v1"
+      },
+      "annual_erosion_depth_limit_m": 0.010000000000000002,
+      "bed_solid_m3": 1186446157.7706556,
+      "mobile_solid_m3": 882405.5792295749,
+      "stranded_solid_m3": 2.616964897283338e-21,
+      "exported_solid_m3": 20821723.60668086,
+      "unresolved_solid_m3": 5478863.043433154,
+      "total_solid_m3": 1213629149.9999993,
+      "actual_q_m3_s": 1500.0,
+      "route_q_m3_s": [
+        1500.0000000014911,
+        0.0,
+        0.0
+      ],
+      "wet_section_count": 101,
+      "channel_section_count": 101,
+      "footprint_area_m2": 1874062.5,
+      "mouths_zx": [
+        [
+          100,
+          20
+        ],
+        [
+          100,
+          20
+        ],
+        [
+          100,
+          20
+        ]
+      ]
+    },
+    {
+      "stage": "equivalent-year step 5",
+      "physical_seconds": 10.0,
+      "equivalent_years": 0.5,
+      "equivalent_step_years": 0.1,
+      "annual_parameter_identity": {
+        "marine": {
+          "sea_level_m": 0.0,
+          "velocity_x_m_s": 0.01,
+          "velocity_z_m_s": 0.002,
+          "diffusivity_m2_s": 30.0,
+          "settling_velocity_m_s": 1e-05,
+          "minimum_depth_m": 1.0,
+          "boundary_rate_s": 1e-05,
+          "max_step_s": 31557600.0,
+          "max_rise_m": 1.0,
+          "source_relocation_cells": 3
+        },
+        "hydraulic": {
+          "upstream_stage_limit_m": 10.0,
+          "roughness": 0.035,
+          "gravity_m_s2": 9.81
+        },
+        "floodplain": {
+          "exchange_fraction": 0.05,
+          "settling_velocity_m_s": 0.0001,
+          "residence_s": 3600.0,
+          "max_lateral_distance_m": 400.0,
+          "max_solid_fraction": 0.01
+        },
+        "river_deposition_fraction": 0.01,
+        "capacity_concentration": 0.01,
+        "lateral_geometry": "fixed footprint",
+        "river_deposition_mode": "reference_length",
+        "river_deposition_reference_length_m": 1000.0,
+        "annual_channel_exchange": "capacity_balance",
+        "annual_erosion_depth_m_per_year": 0.1,
+        "annual_channel_algorithm": "finite-capacity-balance-v1"
+      },
+      "annual_erosion_depth_limit_m": 0.010000000000000002,
+      "bed_solid_m3": 1191792333.5127437,
+      "mobile_solid_m3": 918646.9402093742,
+      "stranded_solid_m3": 5.718155776682664e-21,
+      "exported_solid_m3": 24906586.50361251,
+      "unresolved_solid_m3": 5478863.043433154,
+      "total_solid_m3": 1223096429.9999988,
+      "actual_q_m3_s": 1500.0,
+      "route_q_m3_s": [
+        1500.000000003238,
+        0.0,
+        0.0
+      ],
+      "wet_section_count": 101,
+      "channel_section_count": 101,
+      "footprint_area_m2": 1874062.5,
+      "mouths_zx": [
+        [
+          100,
+          20
+        ],
+        [
+          100,
+          20
+        ],
+        [
+          100,
+          20
+        ]
+      ]
+    }
+  ],
+  "scenario_note": "non-observed fixed forcing; annual mean-stage approximation; tide only in physical event",
+  "event_step_note": "marine step <= 300 s is a numerical approximation; adaptive river steps may be smaller"
+}

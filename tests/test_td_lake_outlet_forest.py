@@ -2,7 +2,7 @@ from copy import deepcopy
 import json
 import unittest
 
-from terrain_pipeline.td_lake_outlet_forest import build_outlet_forest
+from terrain_pipeline.basin_topology import build_outlet_forest as build_outlet_forest
 
 
 def edge(face_id, source, receiver, net=1.0):

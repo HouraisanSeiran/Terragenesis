@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-02",
+  "world_seed": 20261020,
+  "source_identity": "c751a09a6f02e8c336b6b9b8fb4b11b5dc67386e9a8470b0b1d90858bf1ffb72",
+  "source_manifest": "../../.scratch/delta-tides-bars-20261102/source-v1/source-manifest.json",
+  "source_references": {
+    "terrain": {
+      "path": "../../large-delta-20261101/terrain-product-v2/terrain.npz",
+      "sha256": "a777962e5599db5ce1ee6c6764c3afc8c60364a437be4c1d74393d910e6f4d7d"
+    },
+    "terrain_manifest": {
+      "path": "../../large-delta-20261101/terrain-product-v2/manifest.json",
+      "sha256": "34a58d77755a154808f0b28181537439e9f2ba97cd021169cfc7736ad2a5be1d"
+    },
+    "network": {
+      "path": "../../large-delta-20261101/active-network-v12/network.npz",
+      "sha256": "ae4e32a5d94561328ea30babb52554c65885459b60f33b6f45ad5a29adcd0297"
+    },
+    "network_metrics": {
+      "path": "../../large-delta-20261101/active-network-v12/metrics.json",
+      "sha256": "c216b8887b9feba77ab2d07d5b65b80c2757731a8d688f43cee198c4510b7bd6"
+    },
+    "forcing": {
+      "path": "../../large-delta-20261101/active-source-v1/forcing.npz",
+      "sha256": "66d986275ba343b9425e651389e9f06d9a4f52f0f09b9fa422a5df9ba4dafec1"
+    },
+    "forcing_manifest": {
+      "path": "../../large-delta-20261101/active-source-v1/manifest.json",
+      "sha256": "3c7e0d146c63c8385062bac2f844153acb8befc8999273bc028ae710cf26dfb0"
+    }
+  },
+  "references_resolve_relative_to": "source_manifest",
+  "product_manifest": "../../.scratch/delta-tides-bars-20261102/tidal-segmented-v6/manifest.json",
+  "product_manifest_sha256": "20daeb43c03efbe84a785550fb56939f704f8bb7e689a98c07fa24d6289c0827",
+  "simulation_seconds": 2592000.0,
+  "native_spacing_m": 30,
+  "coastal_solver_spacing_m": 300,
+  "physical_coverage_km": [
+    18.6,
+    16.8
+  ],
+  "imagery": "terrain-coloured remote-sensing-style synthetic view",
+  "caveats": [
+    "partial hydraulic coverage",
+    "native water is conservative subgrid representation",
+    "grid imprint reduced but not eliminated",
+    "initial geological delta is not 30-day growth"
+  ],
+  "images": [
+    {
+      "file": "tidal-overview-50km.png",
+      "pixels": [
+        1350,
+        1350
+      ],
+      "sha256": "81f8cb7acd04cb965a8e0afdff031f4442380d5082ea5f7b731bfc3f5204b26f",
+      "terrain_basis": "saved Terrain Diffusion derived delta pre-event bed",
+      "source_identity": "c751a09a6f02e8c336b6b9b8fb4b11b5dc67386e9a8470b0b1d90858bf1ffb72",
+      "coverage_status": "partial",
+      "algorithms": [
+        "TD-derived initial delta",
+        "segmented rivers",
+        "M2/S2 tidal storage",
+        "finite erosion and deposition",
+        "conservative water projection"
+      ]
+    },
+    {
+      "file": "tidal-low-high.png",
+      "pixels": [
+        1950,
+        1050
+      ],
+      "sha256": "332c6d1d4dcd6a6d68603623f4e012db98f5df64c49863f8cc0caea339b05414",
+      "terrain_basis": "saved Terrain Diffusion derived delta pre-event bed",
+      "source_identity": "c751a09a6f02e8c336b6b9b8fb4b11b5dc67386e9a8470b0b1d90858bf1ffb72",
+      "coverage_status": "partial",
+      "algorithms": [
+        "TD-derived initial delta",
+        "segmented rivers",
+        "M2/S2 tidal storage",
+        "finite erosion and deposition",
+        "conservative water projection"
+      ]
+    },
+    {
+      "file": "tidal-bed-change.png",
+      "pixels": [
+        2400,
+        900
+      ],
+      "sha256": "7dcc23bc21f6af867cb4734610872fa174d3ad7b5005df25c08307fcbd969d0d",
+      "terrain_basis": "saved Terrain Diffusion derived delta pre-event bed",
+      "source_identity": "c751a09a6f02e8c336b6b9b8fb4b11b5dc67386e9a8470b0b1d90858bf1ffb72",
+      "coverage_status": "partial",
+      "algorithms": [
+        "TD-derived initial delta",
+        "segmented rivers",
+        "M2/S2 tidal storage",
+        "finite erosion and deposition",
+        "conservative water projection"
+      ]
+    },
+    {
+      "file": "wave-minus-tide.png",
+      "pixels": [
+        1200,
+        1050
+      ],
+      "sha256": "b6e6ac4688f074d0fb6fb6baa8480d3bccbb4b3a83c6b872e035a08a20e357b8",
+      "terrain_basis": "saved Terrain Diffusion derived delta pre-event bed",
+      "source_identity": "c751a09a6f02e8c336b6b9b8fb4b11b5dc67386e9a8470b0b1d90858bf1ffb72",
+      "coverage_status": "partial",
+      "algorithms": [
+        "TD-derived initial delta",
+        "segmented rivers",
+        "M2/S2 tidal storage",
+        "finite erosion and deposition",
+        "conservative water projection",
+        "prescribed wave face transport comparison"
+      ]
+    }
+  ],
+  "pass_image_source_checks": true
+}

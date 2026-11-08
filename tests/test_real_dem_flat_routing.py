@@ -6,8 +6,9 @@ from unittest.mock import patch
 import numpy as np
 
 from terrain_pipeline.artifacts.contracts import array_hash
-from terrain_pipeline.real_dem_flat_routing import resolve_dem_flats, validate_flat_routing
-from terrain_pipeline.real_dem_tiled_network import build_tiled_network
+from terrain_pipeline.drainage import resolve_dem_flats as resolve_dem_flats
+from terrain_pipeline.drainage import validate_flat_routing as validate_flat_routing
+from terrain_pipeline.drainage import build_tiled_network as build_tiled_network
 
 
 def fixture(height):
@@ -57,7 +58,10 @@ class RealDemFlatRoutingTests(unittest.TestCase):
         self.assertEqual([record["component_id"] for record in result["components"]], [0, 3])
         self.assertEqual(result["summary"]["resolved_terminals"], 2)
         self.assertTrue(all(record["touches_unknown"] for record in result["components"]))
-        self.assertFalse(result["network"].unknown_adjacent_terminal[0, 0])
+        mesh = result["network"].mesh
+        adjacent = mesh.indices[mesh.indptr[0]:mesh.indptr[1]]
+        self.assertEqual(result["network"].unknown_adjacent_terminal[0, 0],
+                         bool((~candidate["arrays"]["valid_mask"].ravel()[adjacent]).any()))
         self.assertTrue(result["network"].unknown_adjacent_terminal[0, 3])
         self.assertTrue(np.all(result["component_id"][:, 2] == -1))
         self.assertTrue(np.all(result["distance_to_exit"][:, 2] == -1))
@@ -71,11 +75,11 @@ class RealDemFlatRoutingTests(unittest.TestCase):
         self.assertEqual(result["summary"]["resolved_terminals"], 2)
         self.assertEqual(result["summary"]["contributing_cells_sum"], 15)
 
-    def test_d8_diagonal_equal_connectivity_and_singletons(self):
+    def test_unknown_corner_contacts_do_not_bridge_equal_components(self):
         candidate = fixture([[2, np.nan, np.nan], [np.nan, 2, np.nan], [np.nan, np.nan, 2]])
         result = resolve_dem_flats(candidate)
-        self.assertEqual(len(result["components"]), 1)
-        self.assertEqual(result["network"].receiver[2, 2], 4)
+        self.assertEqual(len(result["components"]), 3)
+        self.assertEqual(result["network"].receiver[2, 2], -1)
         self.assertTrue(validate_flat_routing(candidate, result)["verified"])
         single = fixture([[3.]])
         result = resolve_dem_flats(single)
@@ -101,8 +105,8 @@ class RealDemFlatRoutingTests(unittest.TestCase):
     def test_validator_does_not_replay_resolver_or_tiled_builder(self):
         candidate = fixture([[5, 5, 5], [5, 5, 0]])
         result = resolve_dem_flats(candidate)
-        with patch("terrain_pipeline.real_dem_flat_routing.resolve_dem_flats", side_effect=AssertionError("no replay")), \
-                patch("terrain_pipeline.real_dem_flat_routing.build_tiled_network", side_effect=AssertionError("no rebuild")):
+        with patch('terrain_pipeline.drainage.resolve_dem_flats', side_effect=AssertionError("no replay")), \
+                patch('terrain_pipeline.drainage.build_tiled_network', side_effect=AssertionError("no rebuild")):
             self.assertTrue(validate_flat_routing(candidate, result)["verified"])
 
     def test_malicious_receiver_order_component_distance_accumulation_and_flags(self):

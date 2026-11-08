@@ -1,0 +1,572 @@
+{
+  "source_prefix": ".scratch\\delta-hundred-km-20261103\\network-v3-mouth-followup-25h",
+  "source_identity": "d041c7d0a73888ac4a53653f02098659cd7ce8a0c5c4c2209f3064265dacfd77",
+  "prepared_prefix": ".scratch\\delta-hundred-km-20261103\\network-v3-mouth-extension-v3-prepared",
+  "final_prefix": ".scratch\\delta-hundred-km-20261103\\network-v3-mouth-extension-v3-final",
+  "preparation": {
+    "extended": true,
+    "trigger": "extended",
+    "extensions": [
+      {
+        "route_index": 1,
+        "old_mouth": [
+          230,
+          283
+        ],
+        "new_mouth": [
+          231,
+          284
+        ],
+        "path": [
+          [
+            230,
+            283
+          ],
+          [
+            231,
+            284
+          ]
+        ],
+        "path_xz_m": [
+          [
+            -75892.32338704247,
+            15211.547798379499
+          ],
+          [
+            -75539.1392663182,
+            15613.46571038431
+          ]
+        ],
+        "length_m": 535.0486250071868,
+        "widths_m": [
+          588.9865998637251
+        ],
+        "outer_to_fine_m3": {
+          "bed_solid_m3": 181166.76082264967,
+          "mobile_solid_m3": 0.11060136223445914,
+          "stranded_solid_m3": 0.0
+        },
+        "solid_cut_m3": 0.0
+      },
+      {
+        "route_index": 2,
+        "old_mouth": [
+          222,
+          279
+        ],
+        "new_mouth": [
+          222,
+          281
+        ],
+        "path": [
+          [
+            222,
+            279
+          ],
+          [
+            222,
+            280
+          ],
+          [
+            222,
+            281
+          ]
+        ],
+        "path_xz_m": [
+          [
+            -78265.45910965443,
+            10379.890583938373
+          ],
+          [
+            -77908.61357997768,
+            10307.746329299784
+          ],
+          [
+            -77308.98281989117,
+            10493.387040504631
+          ]
+        ],
+        "length_m": 991.7750199760774,
+        "widths_m": [
+          725.9710977771623,
+          586.457836476057
+        ],
+        "outer_to_fine_m3": {
+          "bed_solid_m3": 1236209.5195808634,
+          "mobile_solid_m3": 1.0375067411010928,
+          "stranded_solid_m3": 152130.84337984573
+        },
+        "solid_cut_m3": 0.0
+      },
+      {
+        "route_index": 3,
+        "old_mouth": [
+          182,
+          125
+        ],
+        "new_mouth": [
+          183,
+          123
+        ],
+        "path": [
+          [
+            182,
+            125
+          ],
+          [
+            183,
+            124
+          ],
+          [
+            183,
+            123
+          ]
+        ],
+        "path_xz_m": [
+          [
+            -170919.0636535783,
+            -13544.879298185702
+          ],
+          [
+            -171329.1413650304,
+            -13227.63097503524
+          ],
+          [
+            -171845.37204786646,
+            -13064.313531180898
+          ]
+        ],
+        "length_m": 1059.9178294155693,
+        "widths_m": [
+          679.2979418008306,
+          630.7773567083303
+        ],
+        "outer_to_fine_m3": {
+          "bed_solid_m3": 1665295.1359764114,
+          "mobile_solid_m3": 1.2583886263367579,
+          "stranded_solid_m3": 145942.05188777554
+        },
+        "solid_cut_m3": 0.0
+      }
+    ],
+    "failures": [],
+    "solid_cut_m3": 0.0,
+    "geometry_updates": [],
+    "sea_level_m": 0.0,
+    "max_cut_m": 0.5,
+    "radius_m": 2000.0
+  },
+  "event": {
+    "input_id": "hundred-km:mouth-extension-25h:v2",
+    "water_m3": 1350000000.0,
+    "solid_m3": 1800000.0,
+    "delivered_water_m3": 1350000000.0,
+    "delivered_solid_m3": 1800000.0,
+    "undelivered_water_m3": 0.0,
+    "undelivered_solid_m3": 0.0,
+    "internal_transfer_solid_m3": 854104271.3275169,
+    "entrained_solid_m3": 11718522.399731765,
+    "outlet_delivery": [
+      {
+        "mouth_zx": [
+          183,
+          123
+        ],
+        "exterior_face_zx": [
+          183,
+          122
+        ],
+        "gross_solid_m3": 2396100.0733990557
+      },
+      {
+        "mouth_zx": [
+          222,
+          281
+        ],
+        "exterior_face_zx": [
+          222,
+          282
+        ],
+        "gross_solid_m3": 1258408.464458275
+      },
+      {
+        "mouth_zx": [
+          222,
+          281
+        ],
+        "exterior_face_zx": [
+          223,
+          281
+        ],
+        "gross_solid_m3": 1630753.4417643684
+      },
+      {
+        "mouth_zx": [
+          231,
+          284
+        ],
+        "exterior_face_zx": [
+          231,
+          285
+        ],
+        "gross_solid_m3": 340090.89680097584
+      },
+      {
+        "mouth_zx": [
+          231,
+          284
+        ],
+        "exterior_face_zx": [
+          232,
+          284
+        ],
+        "gross_solid_m3": 509608.61932048947
+      },
+      {
+        "mouth_zx": [
+          247,
+          214
+        ],
+        "exterior_face_zx": [
+          247,
+          213
+        ],
+        "gross_solid_m3": 7365038.504256838
+      }
+    ],
+    "mouth_update": {
+      "extended": true,
+      "trigger": "extended",
+      "extensions": [
+        {
+          "route_index": 1,
+          "old_mouth": [
+            231,
+            284
+          ],
+          "new_mouth": [
+            232,
+            283
+          ],
+          "path": [
+            [
+              231,
+              284
+            ],
+            [
+              232,
+              283
+            ]
+          ],
+          "path_xz_m": [
+            [
+              -75539.1392663182,
+              15613.46571038431
+            ],
+            [
+              -76026.2038259287,
+              16141.350226132008
+            ]
+          ],
+          "length_m": 718.2575771927095,
+          "widths_m": [
+            546.175506560162
+          ],
+          "outer_to_fine_m3": {
+            "bed_solid_m3": 232881.0881782522,
+            "mobile_solid_m3": 0.12705225049973115,
+            "stranded_solid_m3": 0.0
+          },
+          "solid_cut_m3": 0.0
+        }
+      ],
+      "failures": [],
+      "solid_cut_m3": 0.0,
+      "geometry_updates": [],
+      "sea_level_m": 0.0,
+      "max_cut_m": 0.5,
+      "radius_m": 2000.0
+    },
+    "floodplain": {
+      "diverted_water_m3": 0.0,
+      "returned_water_m3": 0.0,
+      "deposited_solid_m3": 0.0,
+      "stranded_solid_m3": 0.0,
+      "rewetted_solid_m3": 0.0
+    }
+  },
+  "elapsed_s": 445.18274910000036,
+  "time_start_s": 180000.0,
+  "time_end_s": 270000.0,
+  "preparation_solid_delta_m3": 0.0,
+  "event_solid_residual_m3": 0.0,
+  "tides": [
+    {
+      "sea_level_m": -0.3,
+      "accepted_q_m3_s": 15000.0,
+      "routes": [
+        {
+          "mouth": [
+            247,
+            214
+          ],
+          "q_m3_s": 6731.410139552099,
+          "exterior_faces": [
+            [
+              247,
+              213
+            ],
+            [
+              246,
+              212
+            ],
+            [
+              247,
+              213
+            ],
+            [
+              247,
+              216
+            ],
+            [
+              248,
+              215
+            ]
+          ],
+          "minimum_depth_m": 5.0284323588898365
+        },
+        {
+          "mouth": [
+            232,
+            283
+          ],
+          "q_m3_s": 2708.8678256652424,
+          "exterior_faces": [
+            [
+              233,
+              283
+            ]
+          ],
+          "minimum_depth_m": 1.6759257798104923
+        },
+        {
+          "mouth": [
+            222,
+            281
+          ],
+          "q_m3_s": 2732.1744016027237,
+          "exterior_faces": [
+            [
+              223,
+              281
+            ]
+          ],
+          "minimum_depth_m": 1.686378016241349
+        },
+        {
+          "mouth": [
+            183,
+            123
+          ],
+          "q_m3_s": 2827.5476331799337,
+          "exterior_faces": [
+            [
+              184,
+              123
+            ],
+            [
+              182,
+              123
+            ]
+          ],
+          "minimum_depth_m": 1.7239342207573838
+        }
+      ]
+    },
+    {
+      "sea_level_m": 0.0,
+      "accepted_q_m3_s": 15000.0,
+      "routes": [
+        {
+          "mouth": [
+            247,
+            214
+          ],
+          "q_m3_s": 6786.708915108248,
+          "exterior_faces": [
+            [
+              247,
+              213
+            ],
+            [
+              246,
+              212
+            ],
+            [
+              247,
+              213
+            ],
+            [
+              247,
+              216
+            ],
+            [
+              248,
+              215
+            ]
+          ],
+          "minimum_depth_m": 5.304663381053885
+        },
+        {
+          "mouth": [
+            232,
+            283
+          ],
+          "q_m3_s": 2760.9206977485715,
+          "exterior_faces": [
+            [
+              233,
+              283
+            ]
+          ],
+          "minimum_depth_m": 1.7667220898590321
+        },
+        {
+          "mouth": [
+            222,
+            281
+          ],
+          "q_m3_s": 2812.542023040065,
+          "exterior_faces": [
+            [
+              223,
+              281
+            ]
+          ],
+          "minimum_depth_m": 1.7639775882757713
+        },
+        {
+          "mouth": [
+            183,
+            123
+          ],
+          "q_m3_s": 2639.8283641031157,
+          "exterior_faces": [
+            [
+              184,
+              123
+            ],
+            [
+              182,
+              123
+            ]
+          ],
+          "minimum_depth_m": 1.710735057507061
+        }
+      ]
+    },
+    {
+      "sea_level_m": 0.3,
+      "accepted_q_m3_s": 15000.0,
+      "routes": [
+        {
+          "mouth": [
+            247,
+            214
+          ],
+          "q_m3_s": 6811.380187210563,
+          "exterior_faces": [
+            [
+              247,
+              213
+            ],
+            [
+              246,
+              212
+            ],
+            [
+              248,
+              214
+            ],
+            [
+              247,
+              213
+            ],
+            [
+              247,
+              216
+            ],
+            [
+              248,
+              215
+            ]
+          ],
+          "minimum_depth_m": 5.584320214819696
+        },
+        {
+          "mouth": [
+            232,
+            283
+          ],
+          "q_m3_s": 2799.556927934532,
+          "exterior_faces": [
+            [
+              232,
+              284
+            ],
+            [
+              233,
+              283
+            ],
+            [
+              232,
+              282
+            ]
+          ],
+          "minimum_depth_m": 1.8653621338109077
+        },
+        {
+          "mouth": [
+            222,
+            281
+          ],
+          "q_m3_s": 2873.3877188998877,
+          "exterior_faces": [
+            [
+              222,
+              282
+            ],
+            [
+              223,
+              281
+            ]
+          ],
+          "minimum_depth_m": 1.8444730285156354
+        },
+        {
+          "mouth": [
+            183,
+            123
+          ],
+          "q_m3_s": 2515.675165955017,
+          "exterior_faces": [
+            [
+              184,
+              123
+            ],
+            [
+              183,
+              122
+            ],
+            [
+              182,
+              123
+            ]
+          ],
+          "minimum_depth_m": 1.7285155464361464
+        }
+      ]
+    }
+  ],
+  "metadata_normalization": "After v2 run, appended base/base/zero historical geometry metadata to new owner rows; no stocks, sections, flow, or clock changed."
+}

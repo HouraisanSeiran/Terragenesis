@@ -8,7 +8,7 @@ from pathlib import Path
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity, publish_bytes
+from terrain_pipeline.common_infra import identity, publish_bytes
 
 SCHEMA = "td-fine-bed-raster-v1"
 ALGORITHM = "native-bilinear-global-center-triangle-raster-v1"

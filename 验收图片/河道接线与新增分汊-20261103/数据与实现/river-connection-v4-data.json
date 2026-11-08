@@ -1,0 +1,112 @@
+{
+  "schema": "river-connection-v4",
+  "world_seed": 20261020,
+  "marine_source_identity": "a306c5127b7510e5f6b7e1359cfb36dfd342c3023cb7dc576a4f6cb97436c60c",
+  "td_source_identity": "4fc3ec6ac77d2ea49dafa2242b5012871ee8c61b8d5b23f155d48ca3acff1a01",
+  "old_data_sha256": "c4898e51fcbbb77b2a6906410dad45e8af8f2423eb279a1088544ff1c976c8b5",
+  "event_state_sha256": "019f2e9c217d320acd6d60cd6a4ab5ef7c42e463522d8e092bdf31870e9aa769",
+  "data_sha256": "8a119292fba078b9d70eaa4cac2ed11ab976ea61402a21dc453650ec9ff5194a",
+  "marine_sha256": "7b045d8ed4e726a2fcb1096e71bce7b517ec2313d84bfea023c90c4c71c9334d",
+  "first_marine_sha256": "afb778bd7ee2e8ae62c894a0ac4deeab121dadc2206869b3176f818cb5f71c3a",
+  "source_manifest_sha256": "b81acbf22a2a7b595022d37252bbef988f009ab243b0a4e863fd9f329806515f",
+  "td_pages": [
+    {
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_+0",
+      "raw_sha256": "46a59645068cd8a9c413939a256b44a8b341c468da830d7e42d278e25080f59f",
+      "manifest_sha256": "7df387601f02756d8dde00a2bcb50c641f3b5bfc1faa0687f7f67a801512a887"
+    },
+    {
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_+0",
+      "raw_sha256": "adf0cbb99bd9c98af164925ffa96d8ae29f22e2bc1f64b2a5634f0c9f964f9c6",
+      "manifest_sha256": "0575ed6267c0dc55a132d5e2a2daef835190e48deff174700b412aa7e79a0d92"
+    }
+  ],
+  "algorithm": "bounded 30m 8-neighbour path; cost length*(1+relief_above_930m_local_min/40m)+12*uphill_m",
+  "corridor_m": 450.0,
+  "maximum_deviation_m": 450.0,
+  "path_length_m": 18241.463197058358,
+  "original_path_length_m": 19636.753236814715,
+  "width_m": 80.25657447569039,
+  "manning_n": 0.035,
+  "q_m3_s": 150.0,
+  "solid_rate_m3_s": 0.08,
+  "mouth_sea_level_m": 0.0,
+  "grade_basis": 0.026218378251283335,
+  "control_depth_m": 0.7087897429156944,
+  "minimum_sampled_depth_m": 0.708790277931385,
+  "minimum_section_area_m2": 42.38973191078346,
+  "minimum_section_capacity_m3_s": 167.22656676977513,
+  "friction_slope": 0.026446061140277102,
+  "wet_d8_connected": true,
+  "port_stage_m": 0.0,
+  "port_bed_m": -0.9980016350746155,
+  "marine_port_bed_after_m": -0.993724406277634,
+  "port_bed_difference_after_m": 0.004277228796981447,
+  "old_removed_bulk_m3": 4747600.0,
+  "old_max_cut_m": 19.549528121948242,
+  "removed_bulk_m3": 1707695.294387951,
+  "max_cut_m": 10.131955935416343,
+  "ledger": {
+    "input_id": "rank4-v4-event-190800-280800",
+    "start_s": 190800.0,
+    "end_s": 280800.0,
+    "travel_time_s": 32596.830108069,
+    "upstream_water_m3": 13500000.0,
+    "upstream_solid_m3": 7200.0,
+    "in_transit_water_m3": 4889524.51621035,
+    "in_transit_solid_m3": 2607.74640864552,
+    "marine_delivered_water_m3": 8610475.483789649,
+    "marine_delivered_solid_m3": 4592.25359135448,
+    "marine_pending_solid_m3": 0.0,
+    "config": {
+      "sea_level_m": 0.0,
+      "tide_amplitude_m": 0.0,
+      "tide_period_s": 44712.0,
+      "wave_height_m": 0.0,
+      "wave_direction_xz": [
+        1.0,
+        0.0
+      ],
+      "transport_rate_s": 0.0,
+      "entrainment_rate_s": 0.0,
+      "settling_rate_s": 1e-05,
+      "export_rate_s": 0.0,
+      "step_s": 9000.0,
+      "transverse_diffusivity_m2_s": 0.0,
+      "active_sediment_layer_m": 0.1
+    },
+    "second_period_delivered_water_m3": 4889524.516210349,
+    "second_period_delivered_solid_m3": 2607.74640864552,
+    "final_in_transit_water_m3": 1.862645149230957e-09,
+    "final_in_transit_solid_m3": 0.0,
+    "marine_inventory_delta_m3": 7199.999999523163,
+    "marine_mass_residual_m3": 4.76837158203125e-07,
+    "upstream_solid_residual_m3": 0.0,
+    "upstream_water_residual_m3": 0.0,
+    "excavated_bulk_m3_unallocated": 1707695.294387951
+  },
+  "coverage_status": "partial",
+  "sources": {
+    "parent_data": ".scratch\\coast-marine-reorganization-20261102\\river-connection-data.npz",
+    "parent_metadata": ".scratch\\coast-marine-reorganization-20261102\\river-connection-data.json",
+    "parent_metadata_sha256": "fe047b1e64e706d540b31af7fb87013b1b1e525a2a2963e38ee1a389886b1b37",
+    "marine_checkpoint": ".scratch\\coast-marine-reorganization-20261102\\ltransport-v2-lobe-event",
+    "marine_checkpoint_metadata_sha256": "597e30e034db17774f04f5db22c0af27b11d51bec4eacdc58f2796c1a5e97083",
+    "coast_manifest": ".scratch/delta-scale-suite-20261102/source-case300/manifest.json",
+    "coast_base_bed": ".scratch/delta-scale-suite-20261102/source-case300/bed_m.npy",
+    "coast_base_bed_sha256": "efd166803fb98e0b606c0ac508663ec0bccd6c81f8efc1888e90c3a9b6ed4793",
+    "correction": "checkpoint bed minus coast base bed, bilinearly sampled at 600 m; added to 30 m TD"
+  },
+  "coordinates": "x east, z south, metres, array [z,x], cell centres",
+  "section_half_extent_m": 55.12828723784519,
+  "scenario_periods_s": [
+    [
+      190800.0,
+      280800.0
+    ],
+    [
+      280800.0,
+      370800.0
+    ]
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "terrain_basis": "saved TD-derived final_bed_m",
+  "source_identity": "4fc3ec6ac77d2ea49dafa2242b5012871ee8c61b8d5b23f155d48ca3acff1a01",
+  "world_seed": 20261020,
+  "source_manifest_sha256": null,
+  "regional_source_manifest_sha256": "b81acbf22a2a7b595022d37252bbef988f009ab243b0a4e863fd9f329806515f",
+  "product_sha256": "79c685098d917e2cb85cbbe2e4304a2ebf933ad95c304c12b358293f3ef75dab",
+  "image_sha256": "3d154905c471b40cc08614f9af725878cb32d3f1c751d83233e124106a7c107b",
+  "algorithms": [
+    "finite geologic initialization",
+    "scale-aware initialized network",
+    "terrain_map_style.banded_relief_rgb"
+  ],
+  "sampling_spacing_m": 600,
+  "origin_xz_m": [
+    -245760,
+    -122880
+  ],
+  "extent_km": [
+    -246.06,
+    92.33999999999997,
+    -123.18,
+    92.22
+  ],
+  "illumination": "NW physical hillshade, no vertical exaggeration",
+  "coverage_status": "partial: network shown, event is not mapped",
+  "river_symbol": "0.85 pt enhanced analytic centre line; actual widths are in saved sections",
+  "unknown": "gray; not classified as land or sea",
+  "classification": "elevation tint, not measured vegetation or satellite imagery",
+  "time": "geological and network initialization; no event snapshot"
+}

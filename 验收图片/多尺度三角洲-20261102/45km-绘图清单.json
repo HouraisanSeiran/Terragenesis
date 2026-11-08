@@ -1,0 +1,31 @@
+{
+  "terrain_basis": "saved TD-derived final_bed_m",
+  "source_identity": "c751a09a6f02e8c336b6b9b8fb4b11b5dc67386e9a8470b0b1d90858bf1ffb72",
+  "world_seed": 20261020,
+  "source_manifest_sha256": "7ce130fbba28c8ecfa4030c740583e9a61ef0566c48f15a8480fb396e2a6ccc3",
+  "regional_source_manifest_sha256": "86447be266536c34b4158fe5b109884882970c88474b25207674e25bda9eadf8",
+  "product_sha256": "9d066bffc935ec76832447a1f952669178b124866747c06282b77d8c13e564a9",
+  "image_sha256": "34a4661b6f0fe0dc25c461ed7c0054cafa93c926426ffb6970c2ea7b6bb0eba8",
+  "algorithms": [
+    "finite geologic initialization",
+    "scale-aware initialized network",
+    "terrain_map_style.banded_relief_rgb"
+  ],
+  "sampling_spacing_m": 120,
+  "origin_xz_m": [
+    -5940,
+    -61440
+  ],
+  "extent_km": [
+    -6.0,
+    54.0,
+    -61.5,
+    -1.5
+  ],
+  "illumination": "NW physical hillshade, no vertical exaggeration",
+  "coverage_status": "partial: network shown, event is not mapped",
+  "river_symbol": "0.85 pt enhanced analytic centre line; actual widths are in saved sections",
+  "unknown": "gray; not classified as land or sea",
+  "classification": "elevation tint, not measured vegetation or satellite imagery",
+  "time": "geological and network initialization; no event snapshot"
+}

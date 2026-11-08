@@ -1,0 +1,1687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD Journal Publishing with OASIS Tables v3.0 20080202//EN" "journalpub-oasis3.dtd">
+<article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:oasis="http://docs.oasis-open.org/ns/oasis-exchange/table" xml:lang="en" dtd-version="3.0">
+  <front>
+    <journal-meta><journal-id journal-id-type="publisher">ESurf</journal-id><journal-title-group>
+    <journal-title>Earth Surface Dynamics</journal-title>
+    <abbrev-journal-title abbrev-type="publisher">ESurf</abbrev-journal-title><abbrev-journal-title abbrev-type="nlm-ta">Earth Surf. Dynam.</abbrev-journal-title>
+  </journal-title-group><issn pub-type="epub">2196-632X</issn><publisher>
+    <publisher-name>Copernicus Publications</publisher-name>
+    <publisher-loc>Göttingen, Germany</publisher-loc>
+  </publisher></journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.5194/esurf-7-231-2019</article-id><title-group><article-title>Observations and scaling of tidal mass transport across the lower Ganges–Brahmaputra delta plain:
+implications for delta management and sustainability</article-title><alt-title>Implications for delta management and sustainability</alt-title>
+      </title-group><?xmltex \runningtitle{Implications for delta management and sustainability}?><?xmltex \runningauthor{R. Hale et al.}?>
+      <contrib-group>
+        <contrib contrib-type="author" corresp="yes" rid="aff1">
+          <name><surname>Hale</surname><given-names>Richard</given-names></name>
+          <email>rphale@odu.edu</email>
+        <ext-link>https://orcid.org/0000-0002-7670-8959</ext-link></contrib>
+        <contrib contrib-type="author" corresp="no" rid="aff2">
+          <name><surname>Bain</surname><given-names>Rachel</given-names></name>
+          
+        </contrib>
+        <contrib contrib-type="author" corresp="no" rid="aff2">
+          <name><surname>Goodbred Jr.</surname><given-names>Steven</given-names></name>
+          
+        <ext-link>https://orcid.org/0000-0001-7626-9864</ext-link></contrib>
+        <contrib contrib-type="author" corresp="no" rid="aff3">
+          <name><surname>Best</surname><given-names>Jim</given-names></name>
+          
+        <ext-link>https://orcid.org/0000-0001-5314-6140</ext-link></contrib>
+        <aff id="aff1"><label>1</label><institution>Dept. of Ocean, Earth, and Atmos. Sci., Old Dominion University, Norfolk, VA, USA</institution>
+        </aff>
+        <aff id="aff2"><label>2</label><institution>Earth and Environmental Sciences Dept., Vanderbilt University, Nashville, TN, USA</institution>
+        </aff>
+        <aff id="aff3"><label>3</label><institution>Departments of Geology, Geography &amp; GIS, Mechanical Science and
+Engineering and Ven Te Chow Hydrosystems Laboratory, University of Illinois, Urbana, IL, USA</institution>
+        </aff>
+      </contrib-group>
+      <author-notes><corresp id="corr1">Richard Hale (rphale@odu.edu)</corresp></author-notes><pub-date><day>12</day><month>March</month><year>2019</year></pub-date>
+      
+      <volume>7</volume>
+      <issue>1</issue>
+      <fpage>231</fpage><lpage>245</lpage>
+      <history>
+        <date date-type="received"><day>16</day><month>August</month><year>2018</year></date>
+           <date date-type="rev-request"><day>19</day><month>September</month><year>2018</year></date>
+           <date date-type="rev-recd"><day>28</day><month>December</month><year>2018</year></date>
+           <date date-type="accepted"><day>12</day><month>January</month><year>2019</year></date>
+      </history>
+      <permissions>
+        <copyright-statement>Copyright: © 2019 Richard Hale et al.</copyright-statement>
+        <copyright-year>2019</copyright-year>
+      <license license-type="open-access"><license-p>This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link></license-p></license></permissions><self-uri xlink:href="https://esurf.copernicus.org/articles/7/231/2019/esurf-7-231-2019.html">This article is available from https://esurf.copernicus.org/articles/7/231/2019/esurf-7-231-2019.html</self-uri><self-uri xlink:href="https://esurf.copernicus.org/articles/7/231/2019/esurf-7-231-2019.pdf">The full text article is available as a PDF file from https://esurf.copernicus.org/articles/7/231/2019/esurf-7-231-2019.pdf</self-uri>
+      <abstract><title>Abstract</title>
+    <p id="d1e121">The landscape of southwest Bangladesh, a region constructed primarily by
+fluvial processes associated with the Ganges River and Brahmaputra River, is now
+maintained almost exclusively by tidal processes as the fluvial system has
+migrated east and eliminated the most direct fluvial input. In natural areas such
+as the Sundarbans National Forest, year-round inundation during spring high
+tides delivers sufficient sediment that enables vertical accretion to keep
+pace with relative sea-level rise. However, recent human modification of the
+landscape in the form of embankment construction has terminated this pathway
+of sediment delivery for much of the region, resulting in a startling
+elevation imbalance, with inhabited areas often sitting <inline-formula><mml:math id="M1" display="inline"><mml:mrow><mml:mo>&gt;</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:math></inline-formula> m
+below mean high water. Restoring this landscape, or preventing land loss in
+the natural system, requires an understanding of how rates of water and
+sediment flux vary across timescales ranging from hours to months. In this
+study, we combine time series observations of water level, salinity, and
+suspended sediment concentration with ship-based measurements of large
+tidal-channel hydrodynamics and sediment transport. To capture the greatest
+possible range of variability, cross-channel transects designed to encompass
+a 12.4 h tidal cycle were performed in both dry and wet seasons during
+spring and neap tides.</p>
+    <p id="d1e134">Regional suspended sediment concentration begins to increase in August,
+coincident with a decrease in local salinity, indicating the arrival of the
+sediment-laden, freshwater plume of the combined Ganges–Brahmaputra–Meghna
+rivers. We observe profound seasonality in sediment transport, despite
+comparatively modest seasonal variability in the magnitude of water
+discharge. These observations emphasize the importance of seasonal sediment
+delivery from the main-stem rivers to this remote tidal region. On tidal
+timescales, spring tides transport an order of magnitude more sediment than
+neap tides in both the wet and dry seasons. In aggregate, sediment transport
+is flood oriented, likely as a result of tidal pumping. Finally, we note that
+rates of sediment and water discharge in the tidal channels are of the same
+scale as the annually averaged values for the Ganges and Brahmaputra rivers.
+These observations provide context for examining the relative importance of
+fluvial and tidal processes in what has been defined as a quintessentially
+tidally influenced delta in the classification scheme of Galloway (1975).
+These data also inform critical questions regarding the timing and magnitude
+of sediment delivery to the region, which are especially important in
+predicting and preparing for responses of the natural system to ongoing
+environmental change.</p>
+  </abstract>
+    </article-meta>
+  </front>
+<body>
+      
+
+<?pagebreak page232?><sec id="Ch1.S1" sec-type="intro">
+  <title>Introduction</title>
+      <p id="d1e144">The world's great deltas are currently threatened by a variety of factors,
+including global sea-level rise (Overeem and Syvitski, 2009), overpopulation
+(Ericson et al., 2006), changes in sediment supply (Syvitski, 2003; Syvitski
+and Milliman, 2007; Anthony et al., 2015; Darby et al., 2016; Best, 2019),
+and other human-related activities such as water diversions, flood control
+structures, and groundwater and hydrocarbon extraction (Syvitski et al.,
+2009). The Ganges–Brahmaputra–Meghna (GBM) delta is one of the most heavily
+populated regions that is undergoing locally accelerated sea-level rise
+(<inline-formula><mml:math id="M2" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">0.5</mml:mn></mml:mrow></mml:math></inline-formula> cm yr<inline-formula><mml:math id="M3" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>; Higgins et al., 2014) due to a combination of
+natural and anthropogenic factors including eustatic sea-level change,
+tectonic subsidence, fine-grained sediment compaction, and groundwater
+extraction (Overeem and Syvitski, 2009; Syvitski, 2008; Steckler et al.,
+2010). In addition, when factors such as tidal amplification due to
+anthropogenic reworking of the distributary channel network are considered,
+the relative rate of sea-level rise can exceed 1.6 cm yr<inline-formula><mml:math id="M4" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> (Pethick and
+Orford, 2013). Furthermore, the future viability of the delta is threatened
+by the proposed construction of dams and water diversions associated with
+India's National River Linking Project, which, if completed as proposed,
+could drastically reduce sediment delivery to Bangladesh (Higgins et al., 2018).</p>
+      <p id="d1e181">Restoration of land-surface elevation in many populated areas in the GBM
+delta is already necessary due to the relative loss in elevation that has
+occurred since the widespread construction of embankments during the 1960s
+to 1980s. Both planned (tidal river management) and unplanned (embankment
+failures) flooding of local polders (the embanked islands) has demonstrated
+the capacity of the natural system for effective sediment transport and
+deposition, with decimeters of annual accretion observed during recent
+breach events (Khadim et al., 2013; Auerbach et al., 2015; Kamal et al.,
+2018; Darby et al., 2018).
+One of the most important strategies that has
+been forwarded to reduce the threat of unintended inundations in SW
+Bangladesh is a plan for polder management (Brammer, 2014). However, many
+questions concerning potential management strategies remain, not the least
+of which are an accurate quantification of total available sediment mass and
+an understanding of the tidal processes involved in its transport and
+deposition. Toward these goals, the present study provides observation-based
+calculations of water and sediment transport through a major tidal channel
+in the delta across spring–neap tidal cycles and seasonal timescales, with
+the goal of identifying the timing and magnitude of mass sediment exchange
+between the different tidal channels. Not considered in the present study
+are the potential impacts of tropical cyclones, which directly impact
+Bangladesh 0.3–1.5 times per year (Murty et al., 1986; Alam et al., 2003;
+Saha and Khan, 2014) and can significantly affect the local landscape
+(Auerbach et al., 2015). The results presented herein are considered in the
+context of prior research concerning sediment accumulation and rates of
+channel infilling to better understand the role of tidal mass transport
+within the lower GBM delta plain.</p>
+</sec>
+<sec id="Ch1.S2">
+  <title>Background</title>
+      <p id="d1e190">Much of the low-lying coastal region of SW Bangladesh is under threat of
+long-term inundation (Auerbach et al., 2015; Brown and Nicholls, 2015). The
+risk is particularly acute for islands that were embanked (“poldered”) in
+the 1960s and 1970s as part of a program designed to increase the area of
+arable land through the prevention of tidal inundation in agricultural areas
+(Islam, 2006; Nowreen et al., 2014). Approximately 5000 km of polder
+embankments were built by hand, generating 9000 km<inline-formula><mml:math id="M5" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">2</mml:mn></mml:msup></mml:math></inline-formula> of new farmland,
+but also eliminating the semi-diurnal exchange of water and sediment between
+the tidal channels and tidal platform (Islam, 2006; Nowreen et al., 2014).
+As a result, sediment resupply pathways have been effectively terminated and
+the former floodplain surface in these regions now lies 1.0–1.5 m below mean
+high water due to a combination of sediment starvation, enhanced compaction,
+and tidal-range amplification (Auerbach et al., 2015; Pethick and Orford, 2013).</p>
+      <p id="d1e202">In contrast to the poldered landscape, the adjacent mangrove system of the
+Sundarbans National Forest is primarily inundated during spring high
+tides, and its sedimentation and vegetation are keeping pace with sea-level
+rise (Rogers et al., 2013; Auerbach et al., 2015). Protecting the
+Sundarbans National Forest is of
+critical importance, as coastal wetlands and mangroves provide irreplaceable
+ecosystem services including storm-surge buffering (Uddin et al., 2013;
+Marois and Mitsch, 2015; Hossain et al., 2016; Sakib et al., 2015), serving
+as effective carbon traps (Mcleod et al., 2011; Alongi, 2014; Pendleton et
+al., 2012), and perhaps even helping to combat the impacts of ocean
+acidification (Yan, 2016).</p>
+      <p id="d1e205">For the GBM delta, a unit-scale analysis of mass balance (Rogers et al.,
+2013) suggests that the annual sediment load of the GBM river system
+(<inline-formula><mml:math id="M6" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">1.1</mml:mn></mml:mrow></mml:math></inline-formula> Gt yr<inline-formula><mml:math id="M7" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>) is sufficient to aggrade the entire delta system
+at rates <inline-formula><mml:math id="M8" display="inline"><mml:mrow><mml:mo>≥</mml:mo><mml:mn mathvariant="normal">0.5</mml:mn></mml:mrow></mml:math></inline-formula> cm yr<inline-formula><mml:math id="M9" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> and thus provides potential to keep pace with
+moderately high rates of sea-level rise. Such aggradation, of course,
+requires effective dispersal of riverine sediment to disparate regions of
+the delta. Recent research suggests a close coupling of discharge at the
+river mouth to sediment deposition in the remote delta plain by way of tidal
+exchange (Allison and Kepple, 2001; Rogers et al., 2013; Auerbach et al.,
+2015; Wilson et al., 2017). Such tidally supported sedimentation yields mean
+accretion rates of <inline-formula><mml:math id="M10" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:math></inline-formula> cm yr<inline-formula><mml:math id="M11" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>, with local observations
+regularly reaching 3–5 cm yr<inline-formula><mml:math id="M12" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>, which together indicate robust sediment
+delivery to the Sundarbans and SW coastal region (Rogers et al., 2013;
+Rogers and Overeem, 2017). Thus, as the principal conduit for sediment that
+can maintain the elevation of this region, an understanding and
+quantification of the tidal water and sediment exchange is essential<?pagebreak page233?> to
+foresee impacts of accelerated sea-level rise and the potential for
+mitigation.</p>
+</sec>
+<sec id="Ch1.S3">
+  <title>Methods</title>
+<sec id="Ch1.S3.SS1">
+  <title>Study area</title>
+      <p id="d1e298">Our research concerns a network of tidal channels located approximately
+80 km from the coast along the Pussur River system, itself one of five
+similarly sized tidal distributary networks (Fig. 1). Tidal exchange extends
+<inline-formula><mml:math id="M13" display="inline"><mml:mrow><mml:mo>&gt;</mml:mo><mml:mn mathvariant="normal">120</mml:mn></mml:mrow></mml:math></inline-formula> km inland of the coast along the Pussur River, with one
+branch ultimately connecting to the Gorai River, a distributary of the
+main-stem Ganges River (Fig. 1). The tidal range along the Pussur River
+approaches its maximum in the study area at 4–5 m for the spring tidal
+range compared with 3–3.5 m on the coast at Hiron Point. The area is
+also societally relevant, lying at the transition from the pristine
+Sundarbans Forest to the embanked polders near the formerly active
+shipping port of Mongla and cyclone- and flood- impacted island of Polder 32
+(labeled P32 in Fig. 1; Auerbach et al., 2015).</p>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F1" specific-use="star"><label>Figure 1</label><caption><p id="d1e313"><bold>(a)</bold> Location of Bangladesh and the specific region of interest for
+this study, as well as the approximate outlines of the five major tidal
+distributary basins of the SW delta in purple. <bold>(b)</bold> Satellite image of P-32
+study area, with bathymetry overlain in the regions of the northern and
+southern transects. Long-term and short-term pressure sensor locations are
+also identified. <bold>(c)</bold> Characteristic river cross sections for the northern and
+southern transects. The specific transects used for these cross sections are
+highlighted in black in <bold>(b)</bold>.</p></caption>
+          <?xmltex \igopts{width=369.885827pt}?><graphic xlink:href="https://esurf.copernicus.org/articles/7/231/2019/esurf-7-231-2019-f01.jpg"/>
+
+        </fig>
+
+      <p id="d1e333">Within this area, our observations were collected in the primary tidal
+channel of the Shibsa River and two of its major bifurcations that connect
+with the Pussur channel, the Dhaki River and Bhadra River (Fig. 1). The
+Shibsa River is the largest of these channels, with local widths of 1–2 km
+compared to 0.25–0.8 and 0.15–0.3 km for the Dhaki and Bhadra,
+respectively. At its eastern extent, the Dhaki River connects to the Pussur, serving as the first major cross-channel to link the Shibsa and
+Pussur River channels after they bifurcate <inline-formula><mml:math id="M14" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">60</mml:mn></mml:mrow></mml:math></inline-formula> km to the
+south (Fig. 1). At its upstream extent, the Pussur tidal channel connects
+with the downstream mouth of the Gorai River, which delivers a water
+discharge of <inline-formula><mml:math id="M15" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">3000</mml:mn></mml:mrow></mml:math></inline-formula> m<inline-formula><mml:math id="M16" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math id="M17" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> during the monsoon season and
+decreasing to <inline-formula><mml:math id="M18" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">0</mml:mn></mml:mrow></mml:math></inline-formula> m<inline-formula><mml:math id="M19" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math id="M20" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> during the dry season (Winterwerp
+and Giardino, 2012). Salinity in the study area ranges from 0–1 PSU during
+the monsoon to 20–30 PSU during the dry season (Shaha and Cho, 2016; Ayers
+et al., 2017). This seasonal variation in salinity is controlled by local
+runoff, freshwater discharge from the Gorai River, and to a much larger
+extent, the magnitude of the regional discharge plume of the GBM rivers
+(Rogers et al., 2013).</p>
+</sec>
+<sec id="Ch1.S3.SS2">
+  <title>Hydrodynamic observations</title>
+      <p id="d1e415">To establish tidal stage and capture surface-water elevations during the
+hydrodynamic surveys, pressure sensors were deployed at multiple locations
+across the study area (Fig. 1). All sensors were deployed as close to low
+water as possible and recorded at 5 or 10 min intervals. Periods of
+subaerial sensor exposure (of up to 150 min at low tide) were
+interpolated using a robust ordinary least-squares method provided by
+Grinsted (2008). The agreement between measurement and prediction was
+generally good, with the predicted range being 0.98 of the measured range for a
+given time period, thus suggesting that the interpolated data are both
+reasonable and conservative. The values reported herein are of the
+interpolated values. Tidal range, water temperature, and conductivity have
+also been monitored continuously since 2014 at the Sutarkhali station
+(Fig. 1b), with an optical backscatter sensor (OBS) calibrated to measure
+suspended sediment concentration (SSC) added in late March 2015. Prior to
+deployment in the tidal channel, this OBS was used to measure vertical
+profiles of SSC on the Shibsa River, with simultaneous water samples being
+collected to calibrate the instrument response to SSC. Water samples were
+filtered using pre-weighed 0.4 <inline-formula><mml:math id="M21" display="inline"><mml:mrow class="unit"><mml:mi mathvariant="normal">µ</mml:mi></mml:mrow></mml:math></inline-formula>m nitrocellulose filters and washed
+with freshwater to remove salts. The filters were then dried overnight and
+reweighed to determine the volume concentration of sediment. The OBS
+measurements were calibrated by comparing the voltage response observed in
+the field with the measured concentrations from the same time and location
+in a method modified from Ogston and Sternberg (1999). Correlation between
+filtered samples and instrument voltage was strong, with an average
+<inline-formula><mml:math id="M22" display="inline"><mml:mi>r</mml:mi></mml:math></inline-formula> squared value of <inline-formula><mml:math id="M23" display="inline"><mml:mrow><mml:mn mathvariant="normal">0.83</mml:mn><mml:mo>±</mml:mo><mml:mn mathvariant="normal">0.1</mml:mn></mml:mrow></mml:math></inline-formula>. While the sediment concentrations
+recorded by this near-bed instrument are not directly comparable to the
+depth-averaged measurements made during the present cross-channel surveys,
+we herein use these data to extend our understanding of system behavior
+between the dry and monsoon seasons. For a broader context, data from the
+sensors deployed at the Sutarkhali station are also compared to monthly
+averaged water discharge for the Ganges and Brahmaputra rivers for the
+period 1980–2000 based on data from the Bangladesh Water Development Board
+and Ganges River sediment discharge data digitized from Lupker et al. (2011).</p>
+      <p id="d1e445">To quantify water and sediment flux in this area of the tidal transport
+system, cross-channel hydrodynamic surveys were conducted during spring and
+neap tidal conditions at two transects on the Shibsa River during the dry
+(March 2015) and wet (August–September 2015) seasons. An additional wet
+season transect was also conducted during moderate tides on the Pussur
+River. On the Shibsa River, the southern transect was located south of the
+poldered landscape and entirely within the confines of the Sundarbans Forest
+(Fig. 1). The northern transect was located <inline-formula><mml:math id="M24" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">12</mml:mn></mml:mrow></mml:math></inline-formula> km upstream in
+the poldered region, just south of the Dhaki–Shibsa confluence and adjacent
+to Polder 32 to the east and Polder 10–12 to the west (Fig. 1b). Two
+secondary channels are present between these transect locations that divert
+water onto the Sundarbans tidal platform and associated creek network. Dry
+season surveys at both the southern and northern transects took place during
+peak neap (15–16 March) and spring (21–22 March) tides. During the ensuing
+monsoon season, spring tides were measured on 30–31 August (southern
+transect) and 2 September  (northern transect), followed by neap tides on
+7 and 8 September  (northern and southern transects, respectively). Surveys
+lasted for 11–13 h as conditions allowed, encompassing approximately
+one-half of a tidal cycle (i.e., one high and one low tide). Because this
+system is largely<?pagebreak page234?> semi-diurnal with a minimal mixed component, we are
+confident that this time interval was long enough to accurately describe the
+system dynamics.</p>
+      <p id="d1e458">The surveys were conducted using SonTek M9 multifrequency ADCPs to collect
+flow-perpendicular observations of current velocity and direction. Data were
+collected at 1 Hz using both 1.0 and 3.0 MHz transducers, resulting in
+vertical bins ranging in height from 0.1–1.0 m. From these values, total
+discharge was calculated by integrating velocity over space and time. River
+conventions are used for presenting velocity and discharge data, wherein
+positive values refer to the ebb or downstream direction and negative values
+to the flood or upstream transport. A typical survey day included 50–60
+individual river crossings at the transect location, measuring cumulative
+discharge in both directions across the channel. Examples of cross-channel
+transects of velocity and SSC used to compute instantaneous water and
+sediment discharge can be found in Fig. 2. Because surveys could only be
+conducted during daylight hours and as weather conditions allowed, discharge
+is interpolated to complete a 12.4 h tidal cycle, which is the average
+tidal cycle duration in the area (range: 11.9–13.1 h). By assuming that the
+change in tidal prism is negligible between consecutive tides, as suggested
+by the similarity in tidal elevations (Fig. 3), we can tile measurements in
+12.4 h increments and interpolate using a cubic spline. Working conditions
+were particularly challenging during the monsoon season, resulting in
+especially short-duration survey days. In the absence of measured discharge,
+we use a mass balance approach to constrain the magnitude of the missing
+tidal-prism data. For the monsoon season spring tides, we treat the region
+between the southern and northern transects and the southern Bhadra River as
+a closed system with no long-term (<inline-formula><mml:math id="M25" display="inline"><mml:mrow><mml:mo>&gt;</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:math></inline-formula> semi-diurnal period) water
+storage. Using measured Bhadra River discharge values and assuming a
+negligible to slightly southerly directed net flux through the adjacent
+Sundarbans allows us to determine the likely range of values for the
+unmeasured ebb prism at the southern transect. For the monsoon season neap
+tides, we consider the larger region bounded by the southern transect to the
+southwest, the Pussur River below the Dhaki River confluence to the
+southwest, and the Bangladesh Water Development Board gauging station at the
+Gorai Railway Bridge <inline-formula><mml:math id="M26" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">275</mml:mn></mml:mrow></mml:math></inline-formula> river km to the north. Balancing
+the measured net flux through the Pussur River and the recorded upstream
+discharge of the Gorai River of 3000 m<inline-formula><mml:math id="M27" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math id="M28" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> with the measured ebb prism
+at the southern transect allows us to estimate the missing southern-transect
+flood prism. We then repeated this spring tide procedure to estimate the
+unmeasured neap flood prism at the northern transect.</p>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F2" specific-use="star"><label>Figure 2</label><caption><p id="d1e504">Example channel cross sections of velocity and SSC collected near
+maximum ebb-oriented tides during the wet season at the north <bold>(a)</bold> and
+south <bold>(b)</bold> transects. Velocity measurements are spatially integrated to
+compute water discharge. SSC are averaged, with the product of velocity and
+SSC used to compute sediment discharge.</p></caption>
+          <?xmltex \igopts{width=398.338583pt}?><graphic xlink:href="https://esurf.copernicus.org/articles/7/231/2019/esurf-7-231-2019-f02.png"/>
+
+        </fig>
+
+</sec>
+<?pagebreak page235?><sec id="Ch1.S3.SS3">
+  <title>Sediment observations</title>
+      <p id="d1e525">In addition to water discharge, observations of SSC along the transect lines
+were made using a combination of filtered water samples and
+optical backscatter (OBS) measurements. While the exact sampling method
+varied depending on available instrumentation and river conditions, the
+general approach involved collecting OBS profiles to the maximum possible
+depth (<inline-formula><mml:math id="M29" display="inline"><mml:mrow><mml:mo>&lt;</mml:mo><mml:mn mathvariant="normal">10</mml:mn></mml:mrow></mml:math></inline-formula> m) at either two (northern transect) or three (southern
+transect) locations along the channel edges and centerline (Figs. 1, 2). OBS
+measurements were supplemented by simultaneous water samples (100–200 mL)
+collected from various depths using a Niskin sampler, which were used to
+calibrate the OBS as described above (Sect. 3.1).</p>
+      <p id="d1e538">In order to calculate total sediment fluxes, the vertically and horizontally
+distributed SSC observations collected for each channel cross section were
+averaged to produce a series of temporally discrete SSC values over the
+course of one tidal cycle (Figs. 2, 4). This spatial averaging appears
+suitable because the variance was considerably smaller than the temporal
+variability associated with tidal discharge and strong seasonal contrasts.
+Using wet season data as an example, the average standard deviation of SSC
+through time at one sample location was 0.2 g L<inline-formula><mml:math id="M30" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>, while the average standard
+deviation of SSC between stations at any given time was 0.13 g L<inline-formula><mml:math id="M31" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>. When
+conditions did not allow samples to be collected at depths below the water
+surface, a scaling factor of 1.25 was applied to account for the higher
+subsurface SSC, which we determined by the relationship between
+depth-averaged concentrations and surface concentrations from the other
+available data. Similarly, measurements from 15 March (dry season neap tide)
+were only collected at depths of 5 and 15 m and were thus scaled by a factor
+of 0.81 to be comparable to other measurements that included surface SSC values.</p>
+      <p id="d1e565">An important caveat for all SSC measurements is that we present data
+collected primarily from the upper water column and not sampled
+isokinetically due to instrument limitations and high current velocities.
+Thus, our values principally represent suspended load and do not account for
+bedload transport, which likely represents an additional component of total
+sediment transport. As with our water-discharge measurements, SSC values
+were calculated over an entire tidal<?pagebreak page236?> cycle by repeating a measured time
+series in 12.4 h increments, then interpolating using a cubic spline.
+From these values, the integrated product of water discharge and SSC yields
+net sediment flux, which we compute using the time series for each component
+as calculated using the aforementioned methods.</p>
+</sec>
+</sec>
+<sec id="Ch1.S4">
+  <title>Results</title>
+<sec id="Ch1.S4.SS1">
+  <title>Long-term pressure and OBS</title>
+      <p id="d1e580">At our long-term station deployed in a secondary tidal channel (Fig. 1),
+recorded water-level variations show tidal-period excursions with a range of
+1.8 to 4.8 m over the 12 months of observation (Fig. 3). This variance is,
+of course, driven primarily by the fortnightly spring–neap tidal cycle, but
+there is also a seasonal variability showing the monsoon period to have a
+reduced tidal range compared with the dry season. In this case, the neap
+tidal range is <inline-formula><mml:math id="M32" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">10</mml:mn></mml:mrow></mml:math></inline-formula> % less during the monsoon season, and the spring
+tidal range is as much <inline-formula><mml:math id="M33" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">20</mml:mn></mml:mrow></mml:math></inline-formula> % less, accounting for a nearly 1 m
+difference (3.9 m vs. 4.8 m). This reduced range in the monsoon season,
+however, is not manifested in the elevation of high-tide water levels, which
+remained largely consistent between seasons. Rather, the difference is caused
+by higher water levels during low tide (Fig. 3), which has the effect of
+truncating the tidal range and yielding an overall higher mean water level.
+These higher low-water levels associated with the monsoon suggest that they
+are tied to regional freshwater drainage and discharge. In addition, another
+contributing factor could be the seasonally reversing monsoon wind stresses,
+but such a setup should enhance high water levels as well, suggesting that
+they are not the primary cause. Although further research on this topic is
+needed, these distinctions are important herein for understanding the
+behavior of the tidal delta plain, as landscape elevations in this region are
+closely tied to mean high-tide water levels, and not mean sea level (Auerbach
+et al., 2015). Thus, as first demonstrated by Pethick and Orford (2013), the
+monthly mean tide-gauge data often used to track seasonal to interannual
+variations in water level may have relatively little bearing on the tidal
+inundation period and sedimentation rates that control tidal-platform
+elevation (Rogers et al., 2013).</p>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F3" specific-use="star"><label>Figure 3</label><caption><p id="d1e605"><bold>(a)</bold> Long-term water-level elevation (blue) and suspended sediment
+concentration (red) recorded at Sutarkhali. Black is the tidally filtered
+water level to highlight seasonal trends of relatively higher water during
+the monsoon, despite similar maximum tidal elevation. Also note the arrival
+of increased SSC associated with monsoon discharge of the GBM, beginning in
+August. Areas shaded in gray depict the periods of focused fieldwork,
+highlighted below in panels <bold>(b)</bold> and <bold>(c)</bold>. Days on which transect measurements
+were recorded are noted with vertical black lines; solid are from the
+southern transect, and dashed are from the northern transect. In <bold>(b)</bold>, the
+horizontal red line represents the maximum SSC observed in the spring–neap
+tidal cycle following our focused fieldwork, as SSC was not measured at
+this location previously.</p></caption>
+          <?xmltex \igopts{width=426.791339pt}?><graphic xlink:href="https://esurf.copernicus.org/articles/7/231/2019/esurf-7-231-2019-f03.png"/>
+
+        </fig>
+
+      <p id="d1e625">The arrival of fully freshwater (wet season) conditions occurs in July,
+following the peak in Brahmaputra River water discharge and roughly
+coincident with peak Ganges River water discharge (Fig. 4). Coupled with our
+long-term pressure gauge, the OBS sensor recorded relatively constant, but
+low, mean SSC from the late dry season into the early monsoon period (late
+March through July), with weak but noticeable spring–neap variability
+ranging from <inline-formula><mml:math id="M34" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">0.01</mml:mn></mml:mrow></mml:math></inline-formula> to 0.20 g L<inline-formula><mml:math id="M35" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> (Fig. 3). However, moving
+into peak monsoon season, SSC increases markedly from early August through
+September, concurrent with the Ganges River sediment discharge peak (Figs. 2,
+3). Individual measurements regularly exceeded 0.50 g L<inline-formula><mml:math id="M36" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> during this time,
+with maxima <inline-formula><mml:math id="M37" display="inline"><mml:mrow><mml:mo>&gt;</mml:mo><mml:mn mathvariant="normal">2.5</mml:mn></mml:mrow></mml:math></inline-formula> g L<inline-formula><mml:math id="M38" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> (Fig. 3). SSC variability around the
+semi-diurnal tide and spring–neap cycles was greatly enhanced compared with
+that during the dry season, with SSC values during spring tidal cycles
+exceeding those observed during neap conditions by a factor of 2–10. By the
+end of observations in October 2015, SSC began to drop to levels similar to
+those observed in mid-August (0.01–1.0 g L<inline-formula><mml:math id="M39" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>; Fig. 3), but on average remained
+well above those of the dry season. For comparison, the mean annual SSC of
+the main-stem Ganges–Brahmaputra River is <inline-formula><mml:math id="M40" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:math></inline-formula> g L<inline-formula><mml:math id="M41" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>, and
+depth-averaged values in the main estuary mouth and on the inner shelf
+commonly range 2–5 g L<inline-formula><mml:math id="M42" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> during high river discharge (Barua et al., 1994; Ali
+et al., 2007). In total, SSC
+values well in excess of 1 g L<inline-formula><mml:math id="M43" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> are regularly
+observed during the wet season from the main-stem river to the inner shelf
+and into the tidal channels of the lower delta plain. These results support
+previous evidence for the strong coupling of seasonal river discharge with
+penecontemporaneous sedimentation in the remote tidal delta plain (Rogers et
+al., 2013).</p>
+
+      <?xmltex \floatpos{p}?><fig id="Ch1.F4"><label>Figure 4</label><caption><p id="d1e746"><bold>(a)</bold> Ganges and Brahmaputra River water discharge (<inline-formula><mml:math id="M44" display="inline"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>w</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>) and salinity
+measured at Sutarkhali station, demonstrating the reduction in P-32 salinity
+associated with the arrival of freshwater from the GBM rivers. <bold>(b)</bold> Ganges
+River sediment discharge (<inline-formula><mml:math id="M45" display="inline"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>s</mml:mtext></mml:msub></mml:mrow></mml:math></inline-formula>) interpolated from Lupker et al. (2011) and SSC
+measured at Sutarkhali station, demonstrating the increase in local SSC
+coincident with the peak SSC discharge of the Ganges.</p></caption>
+          <?xmltex \igopts{width=241.848425pt}?><graphic xlink:href="https://esurf.copernicus.org/articles/7/231/2019/esurf-7-231-2019-f04.png"/>
+
+        </fig>
+
+</sec>
+<sec id="Ch1.S4.SS2">
+  <title>Hydrography – water discharge</title>
+      <p id="d1e788">Dry season tidal range on the Shibsa River, as measured at Nalian near the
+northern transect (Fig. 1b), varied from 2.3 m during the neap minima to 5.6 m
+during spring maxima (Fig. 3). The tidal period was slightly longer during
+neap tides than spring tides (12.9 h vs. 12.3 h), and the mixed component of
+the semi-diurnal tide was more pronounced, with consecutive tidal ranges
+varying by as much as 0.55 m during neap tides versus 0.23 m during spring
+tides (Fig. 3). During the monsoon fieldwork, the tidal range was 2.4 and
+4.2 m for neap and spring tides, respectively. As with the dry season, total
+tidal period during neap tides was slightly longer than spring tides (12.8 h
+vs. 12.0 h). The mixed semi-diurnal variability was again greater during
+neap tides as well, which varied by as much as 0.25 m, while spring tide
+variability was typically <inline-formula><mml:math id="M46" display="inline"><mml:mrow><mml:mo>&lt;</mml:mo><mml:mn mathvariant="normal">0.10</mml:mn></mml:mrow></mml:math></inline-formula> m (Fig. 3).</p>
+      <p id="d1e801">In this study, we calculate the tidal prism by integrating water discharge
+over the individual ebb and flood limbs of the tide, with net discharge
+calculated as the difference between them. During the dry season, our
+observations captured both peak flood and ebb discharges, with interpolation
+being used over the remaining <inline-formula><mml:math id="M47" display="inline"><mml:mrow><mml:mo>&lt;</mml:mo><mml:mn mathvariant="normal">5</mml:mn></mml:mrow></mml:math></inline-formula>–15 % of the tidal cycle (Fig. 5).
+During the wet season, field conditions during several surveys limited
+our measurement to only a partial tidal cycle (<inline-formula><mml:math id="M48" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">8</mml:mn></mml:mrow></mml:math></inline-formula>–9 h
+survey; Fig. 5). Only during northern-transect spring tides were conditions
+favorable for collecting observations of similar duration to the dry season
+(<inline-formula><mml:math id="M49" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">11</mml:mn></mml:mrow></mml:math></inline-formula> h survey; Fig. 5). Within these limits, however, we
+have used conservative interpolation methods to generate error-bound
+estimates of total water discharge, the resulting patterns of which provide
+robust observations concerning system behavior (see Sect. 2; Fig. 5).</p>
+
+      <?xmltex \floatpos{p}?><fig id="Ch1.F5" specific-use="star"><label>Figure 5</label><caption><p id="d1e836">Instantaneous water discharge, water level, and depth and
+width-averaged SSC for each day of cross-channel transects. Dry season
+measurements are in <bold>(a)</bold>, while monsoon season transects are in
+<bold>(b)</bold>. Spring tides in either season are shaded in gray. The two left
+columns are southern measurements, and the two right columns are from the
+northern transect. Black dots correspond to specific measurements, while
+gray lines represent the estimated error tiled forwards and backwards by
+12.4 h. For discharge, dashed lines in the monsoon represent maxima
+based on extrapolations from the dry season ratio. While seemingly
+unreasonable, they are provided here for context.</p></caption>
+          <?xmltex \igopts{width=455.244094pt}?><graphic xlink:href="https://esurf.copernicus.org/articles/7/231/2019/esurf-7-231-2019-f05.png"/>
+
+        </fig>
+
+      <p id="d1e851">The average tidal-prism magnitudes for the northern and southern transects
+are <inline-formula><mml:math id="M50" display="inline"><mml:mrow><mml:mn mathvariant="normal">2.1</mml:mn><mml:mo>±</mml:mo><mml:mn mathvariant="normal">0.7</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> and <inline-formula><mml:math id="M51" display="inline"><mml:mrow><mml:mn mathvariant="normal">3.4</mml:mn><mml:mo>±</mml:mo><mml:mn mathvariant="normal">1.4</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> m<inline-formula><mml:math id="M52" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula>,
+respectively. Included in these averages are the<?pagebreak page237?> absolute
+values of flood and ebb tidal prisms measured on spring and neap tides
+during both wet and dry seasons (Table 1). Thus, the tidal prism at the
+northern transect averages only <inline-formula><mml:math id="M53" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">60</mml:mn><mml:mo>±</mml:mo><mml:mn mathvariant="normal">10</mml:mn></mml:mrow></mml:math></inline-formula> % that of the
+southern transect regardless of season, even though they are located just 10 km
+apart. Most of this difference in discharge (ca. 80–100 %) can be balanced
+by water storage between the two locations, with the product of tidal range
+and area between transects being ca. <inline-formula><mml:math id="M54" display="inline"><mml:mrow><mml:mn mathvariant="normal">6.7</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> m<inline-formula><mml:math id="M55" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula>. Considering
+differences in seasonal discharge, results show that the neap ebb prism is
+<inline-formula><mml:math id="M56" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">30</mml:mn></mml:mrow></mml:math></inline-formula> % greater during the monsoon at both transects, despite
+having a smaller tidal range compared with the dry season survey. This
+difference of 4–<inline-formula><mml:math id="M57" display="inline"><mml:mrow><mml:mn mathvariant="normal">6</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> m<inline-formula><mml:math id="M58" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> equates to an excess ebb
+discharge of 1800–2800 m<inline-formula><mml:math id="M59" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math id="M60" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>, which is about 45–70 % of the mean
+monsoon discharge of the upstream Gorai River. We thus take the greater
+wet season ebb prism to simply reflect the addition of local freshwater
+discharge from the Gorai River (Table 1; Fig. 1).</p>
+
+<?xmltex \floatpos{t}?><table-wrap id="Ch1.T1" specific-use="star"><label>Table 1</label><caption><p id="d1e999">Measurements of sediment flux and tidal prism from the Shibsa
+River. Within each season, the bottom two rows represent measurements taken during spring
+tides.</p></caption><oasis:table frame="topbot"><oasis:tgroup cols="9">
+     <oasis:colspec colnum="1" colname="col1" align="left"/>
+     <oasis:colspec colnum="2" colname="col2" align="left"/>
+     <oasis:colspec colnum="3" colname="col3" align="right" colsep="1"/>
+     <oasis:colspec colnum="4" colname="col4" align="right"/>
+     <oasis:colspec colnum="5" colname="col5" align="right"/>
+     <oasis:colspec colnum="6" colname="col6" align="right" colsep="1"/>
+     <oasis:colspec colnum="7" colname="col7" align="right"/>
+     <oasis:colspec colnum="8" colname="col8" align="right"/>
+     <oasis:colspec colnum="9" colname="col9" align="right"/>
+     <oasis:thead>
+       <oasis:row>
+
+         <oasis:entry colname="col1"/>
+
+         <oasis:entry colname="col2">Transect</oasis:entry>
+
+         <oasis:entry rowsep="1" colname="col3">Tidal</oasis:entry>
+
+         <oasis:entry rowsep="1" namest="col4" nameend="col6" align="center" colsep="1">Tidal prism (m<inline-formula><mml:math id="M61" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula>) </oasis:entry>
+
+         <oasis:entry rowsep="1" namest="col7" nameend="col9" align="center">Sediment load (kg) </oasis:entry>
+
+       </oasis:row>
+       <oasis:row rowsep="1">
+
+         <oasis:entry colname="col1"/>
+
+         <oasis:entry colname="col2"/>
+
+         <oasis:entry colname="col3">Range (m)</oasis:entry>
+
+         <oasis:entry colname="col4">Ebb</oasis:entry>
+
+         <oasis:entry colname="col5">Flood</oasis:entry>
+
+         <oasis:entry colname="col6">Net</oasis:entry>
+
+         <oasis:entry colname="col7">Ebb</oasis:entry>
+
+         <oasis:entry colname="col8">Flood</oasis:entry>
+
+         <oasis:entry colname="col9">Net</oasis:entry>
+
+       </oasis:row>
+     </oasis:thead>
+     <oasis:tbody>
+       <oasis:row>
+
+         <?xmltex \rotentry?><oasis:entry rowsep="1" colname="col1" morerows="3">Dry season</oasis:entry>
+
+         <oasis:entry colname="col2">South</oasis:entry>
+
+         <oasis:entry colname="col3">2.1</oasis:entry>
+
+         <oasis:entry colname="col4"><inline-formula><mml:math id="M62" display="inline"><mml:mrow><mml:mn mathvariant="normal">2.00</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col5"><inline-formula><mml:math id="M63" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">2.00</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col6"><inline-formula><mml:math id="M64" display="inline"><mml:mrow><mml:mn mathvariant="normal">4.30</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">5</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col7"><inline-formula><mml:math id="M65" display="inline"><mml:mrow><mml:mn mathvariant="normal">2.05</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col8"><inline-formula><mml:math id="M66" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">4.70</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col9"><inline-formula><mml:math id="M67" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">2.66</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+       </oasis:row>
+       <oasis:row>
+
+         <oasis:entry colname="col2">North</oasis:entry>
+
+         <oasis:entry colname="col3">2.2</oasis:entry>
+
+         <oasis:entry colname="col4"><inline-formula><mml:math id="M68" display="inline"><mml:mrow><mml:mn mathvariant="normal">1.40</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col5"><inline-formula><mml:math id="M69" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1.50</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col6"><inline-formula><mml:math id="M70" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1.30</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col7"><inline-formula><mml:math id="M71" display="inline"><mml:mrow><mml:mn mathvariant="normal">1.55</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col8"><inline-formula><mml:math id="M72" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">2.37</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col9"><inline-formula><mml:math id="M73" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">8.21</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">6</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+       </oasis:row>
+       <oasis:row>
+
+         <oasis:entry colname="col2">South</oasis:entry>
+
+         <oasis:entry colname="col3">5.5</oasis:entry>
+
+         <oasis:entry colname="col4"><inline-formula><mml:math id="M74" display="inline"><mml:mrow><mml:mn mathvariant="normal">4.50</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col5"><inline-formula><mml:math id="M75" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">4.30</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col6"><inline-formula><mml:math id="M76" display="inline"><mml:mrow><mml:mn mathvariant="normal">2.30</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col7"><inline-formula><mml:math id="M77" display="inline"><mml:mrow><mml:mn mathvariant="normal">1.83</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col8"><inline-formula><mml:math id="M78" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">2.30</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col9"><inline-formula><mml:math id="M79" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">4.69</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+       </oasis:row>
+       <oasis:row rowsep="1">
+
+         <oasis:entry colname="col2">North</oasis:entry>
+
+         <oasis:entry colname="col3">5.7</oasis:entry>
+
+         <oasis:entry colname="col4"><inline-formula><mml:math id="M80" display="inline"><mml:mrow><mml:mn mathvariant="normal">3.10</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col5"><inline-formula><mml:math id="M81" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">2.30</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col6"><inline-formula><mml:math id="M82" display="inline"><mml:mrow><mml:mn mathvariant="normal">7.90</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col7"><inline-formula><mml:math id="M83" display="inline"><mml:mrow><mml:mn mathvariant="normal">2.15</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col8"><inline-formula><mml:math id="M84" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1.90</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col9"><inline-formula><mml:math id="M85" display="inline"><mml:mrow><mml:mn mathvariant="normal">2.49</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+       </oasis:row>
+       <oasis:row>
+
+         <?xmltex \rotentry?><oasis:entry colname="col1" morerows="3">Monsoon</oasis:entry>
+
+         <oasis:entry colname="col2">South</oasis:entry>
+
+         <oasis:entry colname="col3">2.7</oasis:entry>
+
+         <oasis:entry colname="col4"><inline-formula><mml:math id="M86" display="inline"><mml:mrow><mml:mn mathvariant="normal">2.64</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col5"><inline-formula><mml:math id="M87" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1.81</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col6"><inline-formula><mml:math id="M88" display="inline"><mml:mrow><mml:mn mathvariant="normal">8.28</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col7"><inline-formula><mml:math id="M89" display="inline"><mml:mrow><mml:mn mathvariant="normal">4.47</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col8"><inline-formula><mml:math id="M90" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">3.89</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col9"><inline-formula><mml:math id="M91" display="inline"><mml:mrow><mml:mn mathvariant="normal">5.77</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">6</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+       </oasis:row>
+       <oasis:row>
+
+         <oasis:entry colname="col2">North</oasis:entry>
+
+         <oasis:entry colname="col3">2.2</oasis:entry>
+
+         <oasis:entry colname="col4"><inline-formula><mml:math id="M92" display="inline"><mml:mrow><mml:mn mathvariant="normal">1.83</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col5"><inline-formula><mml:math id="M93" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1.06</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col6"><inline-formula><mml:math id="M94" display="inline"><mml:mrow><mml:mn mathvariant="normal">7.69</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col7"><inline-formula><mml:math id="M95" display="inline"><mml:mrow><mml:mn mathvariant="normal">6.20</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col8"><inline-formula><mml:math id="M96" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">4.12</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col9"><inline-formula><mml:math id="M97" display="inline"><mml:mrow><mml:mn mathvariant="normal">2.08</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+       </oasis:row>
+       <oasis:row>
+
+         <oasis:entry colname="col2">South</oasis:entry>
+
+         <oasis:entry colname="col3">4</oasis:entry>
+
+         <oasis:entry colname="col4"><inline-formula><mml:math id="M98" display="inline"><mml:mrow><mml:mn mathvariant="normal">4.71</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col5"><inline-formula><mml:math id="M99" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">5.12</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col6"><inline-formula><mml:math id="M100" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">4.16</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col7"><inline-formula><mml:math id="M101" display="inline"><mml:mrow><mml:mn mathvariant="normal">3.20</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col8"><inline-formula><mml:math id="M102" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">3.85</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col9"><inline-formula><mml:math id="M103" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">6.50</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+       </oasis:row>
+       <oasis:row>
+
+         <oasis:entry colname="col2">North</oasis:entry>
+
+         <oasis:entry colname="col3">3.9</oasis:entry>
+
+         <oasis:entry colname="col4"><inline-formula><mml:math id="M104" display="inline"><mml:mrow><mml:mn mathvariant="normal">2.40</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col5"><inline-formula><mml:math id="M105" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">2.85</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col6"><inline-formula><mml:math id="M106" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">4.43</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col7"><inline-formula><mml:math id="M107" display="inline"><mml:mrow><mml:mn mathvariant="normal">2.54</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col8"><inline-formula><mml:math id="M108" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">3.31</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+         <oasis:entry colname="col9"><inline-formula><mml:math id="M109" display="inline"><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">7.65</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula></oasis:entry>
+
+       </oasis:row>
+     </oasis:tbody>
+   </oasis:tgroup></oasis:table></table-wrap>
+
+      <p id="d1e1993">Strictly speaking, defining a tidal regime as either ebb or flood dominant
+refers to the water velocity rather than discharge (Pethick, 1980; Brown and
+Davies, 2010). In the present study, however, we are interested in the net
+movement of water and sediment and thus refer to a particular discharge
+regime as either ebb or flood “dominated” or “oriented” based on the net
+tidal prism (i.e., the difference between ebb and flood discharge). With
+this in mind, our surveys suggest that the system varies between ebb and
+flood orientation across both tidal phase and season (Table 1). For example,
+both transects during the dry, spring and wet, and neap surveys show the average
+ebb tidal prism to be <inline-formula><mml:math id="M110" display="inline"><mml:mrow><mml:mn mathvariant="normal">26</mml:mn><mml:mo>±</mml:mo><mml:mn mathvariant="normal">16</mml:mn></mml:mrow></mml:math></inline-formula> % larger than the flood limb. In
+contrast, the other two survey periods (dry, neap and wet, spring) yielded
+balanced to slightly flood-dominated tidal prisms (<inline-formula><mml:math id="M111" display="inline"><mml:mrow><mml:mn mathvariant="normal">9</mml:mn><mml:mo>±</mml:mo><mml:mn mathvariant="normal">8</mml:mn></mml:mrow></mml:math></inline-formula> %). In
+summary, although our results on water balance are insufficient for a full
+understanding of the patterns, a key finding is that the ebb and flood tidal
+prisms rarely balance at this location. These tidal-prism asymmetries appear
+to be a salient characteristic of the complex, interconnected channel
+network of the GBMD tidal delta plain. Thus, even our limited observations
+require a lateral (east–west) exchange of water between the Shibsa and
+parallel Pussur channels (Fig. 1), which we presume to be driven by locally
+nonuniform tidal phasing within the channel network. Given these emergent
+circulation patterns, it is clear that individual channels do not operate as
+closed systems and exhibit local nonuniform mass exchange, providing a
+first indication of how the morphologic evolution of this tidal delta plain and
+its channel network may occur.</p>
+      <?pagebreak page238?><p id="d1e2020">Although relative dominance between the ebb and flood tidal prisms
+persistently covaries (as described above), the mean and instantaneous water
+discharge (m<inline-formula><mml:math id="M112" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math id="M113" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>) is almost always flood dominant (Fig. 6). This
+circumstance arises from the significant phase shift that occurs as the tide
+wave propagates up channel, resulting in a shorter flood period and thus
+higher peak discharge. From our measurements of instantaneous discharge
+across seasons and tidal conditions, we calculate mean ebb and flood
+discharges (m<inline-formula><mml:math id="M114" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math id="M115" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>) for each transect (Fig. 6). Mean discharge for the
+northern transect is <inline-formula><mml:math id="M116" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">9100</mml:mn></mml:mrow></mml:math></inline-formula> m<inline-formula><mml:math id="M117" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math id="M118" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> on the flood and 8600 m<inline-formula><mml:math id="M119" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math id="M120" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>
+on the ebb, and for the southern transect, mean flood and ebb
+discharges are <inline-formula><mml:math id="M121" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">14</mml:mn></mml:mrow></mml:math></inline-formula> 600 and 14 200 m<inline-formula><mml:math id="M122" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math id="M123" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>, respectively.
+From these results, we observe that mean discharge at the northern transect
+is again <inline-formula><mml:math id="M124" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">61</mml:mn><mml:mo>±</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:math></inline-formula> % of that of the southern transect, as
+also recognized for the tidal prism. Another notable result is that the mean
+flood discharge (m<inline-formula><mml:math id="M125" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math id="M126" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>) is 3–6 % greater than on the ebb tide, despite
+the tidal prism generally being ebb dominant. This disparity is a function
+of the shallow-water distortion of the M2 tide, which produces an
+asymmetrical waveform with a steeper rising limb than falling limb, and a
+corresponding reduction in the duration of the flood tide by <inline-formula><mml:math id="M127" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">60</mml:mn></mml:mrow></mml:math></inline-formula>–90 min.</p>
+
+      <?xmltex \floatpos{p}?><fig id="Ch1.F6" specific-use="star"><label>Figure 6</label><caption><p id="d1e2197">Comparison of mean (diamond), median (black line), 25th and
+75th percentile (lower and upper limits of darkly shaded box), and total
+range (lightly shaded box) for water discharge <bold>(a)</bold> and sediment discharge
+<bold>(b)</bold>. <bold>(a)</bold> Demonstration that median and mean discharge along either transect
+are comparable to those of either the Ganges or Brahmaputra River.
+<bold>(b)</bold> Demonstration that as with water, mean sediment discharge on both the flood
+and ebb tides is approximately the same as the weekly averaged Ganges
+sediment discharge.</p></caption>
+          <?xmltex \igopts{width=398.338583pt}?><graphic xlink:href="https://esurf.copernicus.org/articles/7/231/2019/esurf-7-231-2019-f06.png"/>
+
+        </fig>
+
+</sec>
+<sec id="Ch1.S4.SS3">
+  <title>Hydrography – sediment transport</title>
+      <?pagebreak page240?><p id="d1e2224">Suspended sediment measurements collected during the hydrographic surveys
+show similar patterns to those of our long-term OBS station. Wet season
+sediment concentrations were generally 30–50 % higher than during the
+dry season (Fig. 5). Much greater differences in SSC were observed, however,
+between neap and spring tidal conditions, with the latter concentrations
+being typically <inline-formula><mml:math id="M128" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">3</mml:mn></mml:mrow></mml:math></inline-formula>-fold greater (0.3–1.5 g L<inline-formula><mml:math id="M129" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>
+vs. 0.1–0.5 g L<inline-formula><mml:math id="M130" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>). These sediment concentrations, coupled with the
+water-discharge observations, were then extrapolated over the tidal cycle to
+generate estimates of the rates and magnitude of sediment transport
+(Table 1). Results show that integrated sediment transport over a tidal limb
+varied by more than an order of magnitude at both transects. Minima of <inline-formula><mml:math id="M131" display="inline"><mml:mrow><mml:mn mathvariant="normal">0.16</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> kg (north) and <inline-formula><mml:math id="M132" display="inline"><mml:mrow><mml:mn mathvariant="normal">0.2</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> kg (south) of sediment
+exchange were observed during the neap dry season ebb tide, with maxima
+during spring monsoon flood tides being an order of magnitude greater at <inline-formula><mml:math id="M133" display="inline"><mml:mrow><mml:mn mathvariant="normal">3.3</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> kg (north) and <inline-formula><mml:math id="M134" display="inline"><mml:mrow><mml:mn mathvariant="normal">3.9</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> kg (south) . These values
+equate to mean rates of sediment transport ranging from <inline-formula><mml:math id="M135" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">700</mml:mn></mml:mrow></mml:math></inline-formula> kg s<inline-formula><mml:math id="M136" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> during neap dry season conditions to <inline-formula><mml:math id="M137" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">17</mml:mn></mml:mrow></mml:math></inline-formula> 000 kg s<inline-formula><mml:math id="M138" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> during monsoon season spring tides. Comparing the ebb
+and flood limbs of our surveys, the mean sediment discharge for the ebb tide
+is 5800 kg s<inline-formula><mml:math id="M139" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> compared to 7800 kg s<inline-formula><mml:math id="M140" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> for the flood tide,
+demonstrating an overall flood dominance in sediment transport.</p>
+      <p id="d1e2391">These patterns are further supported by the net sediment transport values
+(i.e., ebb–flood; Table 1). For a given tidal cycle, net sediment
+transport was typically 10<inline-formula><mml:math id="M141" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">6</mml:mn></mml:msup></mml:math></inline-formula>–10<inline-formula><mml:math id="M142" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">7</mml:mn></mml:msup></mml:math></inline-formula> kg, with magnitude varying largely
+with tidal phase and spring tides generating 1.5 to 3 times greater net
+transport than during neap tides (Table 1). Seasonally, net sediment
+transport rates were <inline-formula><mml:math id="M143" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">30</mml:mn></mml:mrow></mml:math></inline-formula> % greater during the wet season,
+similar to our observations of suspended sediment concentration. Finally, a
+comparison of net sediment transport with corresponding net water discharge
+shows the two to covary, as expected, with greater net water discharge
+resulting in greater net sediment transport (Fig. 7). However, an important
+attribute of this relationship reveals a significant bias toward
+flood-dominant sediment transport. Data show that even neutral to weakly ebb-dominant water discharge yields net sediment transport in the flood
+direction (Fig. 7). As noted for water discharge (m<inline-formula><mml:math id="M144" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> s<inline-formula><mml:math id="M145" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>), this disparity
+is a function of the non-negligible tidal components beyond M2 that result
+in a shortened flood limb and extended ebb period (Fig. 3; Table 1).
+Together, mean sediment discharge and net sediment transport patterns thus
+indicate an overall flood-oriented asymmetry and net onshore transport of sediment.</p>
+
+      <?xmltex \floatpos{t}?><fig id="Ch1.F7"><label>Figure 7</label><caption><p id="d1e2445">Net water discharge vs. net sediment discharge for all of the
+survey days on the Shibsa River. As expected, we observe a positive trend to
+this relationship. The negative <inline-formula><mml:math id="M146" display="inline"><mml:mi>y</mml:mi></mml:math></inline-formula> intercept of the best-fit curve
+demonstrates the overall flood-oriented nature of sediment transport in this
+tidal channel.</p></caption>
+          <?xmltex \igopts{width=236.157874pt}?><graphic xlink:href="https://esurf.copernicus.org/articles/7/231/2019/esurf-7-231-2019-f07.png"/>
+
+        </fig>
+
+</sec>
+</sec>
+<sec id="Ch1.S5">
+  <title>Discussion</title>
+<sec id="Ch1.S5.SS1">
+  <title>Relative importance of tides and river</title>
+      <p id="d1e2474">The GBM tidal delta plain comprises a complex channel network that has been
+little studied and will require substantial investigation to be understood
+well. Nevertheless, results of the current study allow for numerous
+observations on the scaling and magnitude of tidal mass transport within
+this region, establishing a baseline for the role that tides play in
+defining the delta system, particularly in the southwest region away from
+direct fluvial inputs. To begin, we take an average of the flood and ebb
+tidal prisms measured at the two sites on the Shibsa River over both spring
+and neap tidal phases during wet and dry seasons and extrapolate the mean
+tidal prism over 1 year. In other words, an average <inline-formula><mml:math id="M147" display="inline"><mml:mrow><mml:mn mathvariant="normal">2.7</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">8</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> m<inline-formula><mml:math id="M148" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> of water passes through this region on each of the
+<inline-formula><mml:math id="M149" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">705</mml:mn></mml:mrow></mml:math></inline-formula> tides per year. This basic estimation accounts for an
+average <inline-formula><mml:math id="M150" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">2</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">11</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> m<inline-formula><mml:math id="M151" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> of water annually
+conveyed through our survey locations 80 km inland of the coast.
+Furthermore, this mass exchange is principally tidal water, as the 50–75 %
+of annual Gorai River discharge captured by the Shibsa River (i.e.,
+<inline-formula><mml:math id="M152" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">0.2</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">11</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> m<inline-formula><mml:math id="M153" display="inline"><mml:mrow><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup><mml:mo>)</mml:mo></mml:mrow></mml:math></inline-formula> accounts for only 10 %
+of the total water exchange observed for that channel.</p>
+      <p id="d1e2567">The significance of these observations from the upstream Shibsa River tidal
+channel becomes more apparent when compared with the main-stem GBM rivers. In
+this case, the <inline-formula><mml:math id="M154" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">2</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">11</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> m<inline-formula><mml:math id="M155" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> of water
+conveyed annually through the upper Shibsa River is nearly 20 % of the
+<inline-formula><mml:math id="M156" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">11</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">11</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> m<inline-formula><mml:math id="M157" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> of total annual water
+discharge from the entire GBM watershed (Lupker et al., 2011; Fig. 4). This
+is an impressive exchange of mass through the upper reaches of a single
+tidal channel along the GBM tidal delta plain. For context, the Shibsa River
+comprises approximately half (by planform area) of the Pussur River tidal
+system (Fig. 1), itself just one of five major tidal drainages along the GBM
+tidal delta plain (Fig. 1). Taken together, these basins include
+<inline-formula><mml:math id="M158" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">10</mml:mn></mml:mrow></mml:math></inline-formula> tidal channels having a similar area (width <inline-formula><mml:math id="M159" display="inline"><mml:mo>×</mml:mo></mml:math></inline-formula> length)
+to the Shibsa River. We take the tidal flow through these systems to
+be broadly similar given the linear relationship between peak tidal
+discharge and the cross-sectional area of large tidal channels (Rinaldo et
+al., 1999), plus the fact that land-surface elevation and tidal range are
+similar across the region (Chatterjee et al., 2013). Thus, even at a
+first order, estimates of total mass transport across the tidal region would
+well exceed the <inline-formula><mml:math id="M160" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">11</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">11</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> m<inline-formula><mml:math id="M161" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula> total volume
+discharged by the main-stem GBM rivers.</p>
+      <p id="d1e2666">The comparable values between our observations of tidal water exchange in
+this limited study area and the total<?pagebreak page241?> freshwater discharge of the GBM rivers
+demonstrates how tides hold equivalence in controlling landscape development
+in the GBMD, which was suggested as far back as Galloway (1975). To further
+consider the geomorphic importance of tides to the GBMD, we make analogous
+estimations of sediment transport (<inline-formula><mml:math id="M162" display="inline"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>s</mml:mtext></mml:msub><mml:mo>)</mml:mo></mml:mrow></mml:math></inline-formula> that supports land-surface
+aggradation and the dominant water discharge (<inline-formula><mml:math id="M163" display="inline"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mtext>dom</mml:mtext></mml:msub><mml:mo>)</mml:mo></mml:mrow></mml:math></inline-formula> that controls tidal-channel morphology (Rinaldo et al., 1999). As done for water discharge, by
+taking the average of our tidal hydrography data for sediment transport, we
+calculate the mean annual exchange of suspended sediment through the Shibsa
+River tidal station to be <inline-formula><mml:math id="M164" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">1</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">11</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> kg
+(<inline-formula><mml:math id="M165" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">100</mml:mn></mml:mrow></mml:math></inline-formula> Mt). For comparison, this estimate of sediment load is
+roughly 15 % of the <inline-formula><mml:math id="M166" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">700</mml:mn></mml:mrow></mml:math></inline-formula> Mt of sediment annually discharged
+to the coast by the GBM rivers (Goodbred and Kuehl, 1999). Thus, if we
+extrapolate any similar transport value to the other nine GBM tidal
+channels, then the sediment exchange through the tidal channels is easily
+found to be comparable to the main river mouth. There is, of course, the
+important caveat that tidal sediment transport is not unidirectional, so
+this integrated exchange of tidal sediment is not a net flux as it is for
+river sediment discharge. Nevertheless, the relevant point is that local
+geomorphic reaches of the tidal delta plain have the opportunity for
+landscape building through tidal water and sediment exchange at a similar
+magnitude to the main-stem GBM rivers. This assertion is not surprising given
+the relative stability of the tidal delta plain, which experiences
+relatively little net erosion (<inline-formula><mml:math id="M167" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">4</mml:mn></mml:mrow></mml:math></inline-formula> km<inline-formula><mml:math id="M168" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">2</mml:mn></mml:msup></mml:math></inline-formula> yr<inline-formula><mml:math id="M169" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>, or
+<inline-formula><mml:math id="M170" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">0.02</mml:mn></mml:mrow></mml:math></inline-formula> % annual loss; Sarwar and Woodroffe, 2013) and is
+offset by widespread sediment deposition on both the land surface (Rogers et
+al., 2013) and in channels (Wilson et al., 2017).</p>
+      <p id="d1e2774">From this study, we understand that tidal energy, independent of the main
+river mouth, accounts for a twice-daily exchange of a mass equivalent to
+4–15 % of the yearly averaged daily GBM river discharge. In primary
+channels, the magnitude of this exchange is controlled more by the
+spring–neap tidal variability than by the seasonal input of new material
+(Fig. 5). In the smaller Bhadra tidal channel, on the other hand, SSC
+variability demonstrates profound seasonality, presumably because discharge
+(and therefore stream power) is at least an order of magnitude smaller here
+than in the Shibsa River. This disparity is important when we consider
+land-building processes, as the majority of the Sundarbans Forest is plumbed
+by tidal channels on the scale of the Bhadra River or smaller. Storms may
+also play a role in remobilizing sediment from the shelf onto the tidal
+delta plain, as suggested by Hanebuth et al. (2013) in their study of ancient
+salt kilns buried along the coast. However, there are no observations of
+significant direct storm deposition from recent cyclones (Aila, 2009 and
+Sidr, 2007), such as that recognized from the offshore Bengal shelf and
+Swatch of No Ground canyon (e.g., Kudrass et al., 1998, 2018; Michels et
+al., 1998; Rogers and Goodbred, 2010). The potentially limited impact of storms on
+sedimentation and the channel network of the tidal delta plain may be due its
+frequent and persistent exposure to high sediment concentrations and strong
+currents (<inline-formula><mml:math id="M171" display="inline"><mml:mrow><mml:mo>&gt;</mml:mo><mml:mn mathvariant="normal">3</mml:mn></mml:mrow></mml:math></inline-formula> m s<inline-formula><mml:math id="M172" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>) driven by the tides. Nevertheless, future
+research should aim to quantify storm inputs and their relative importance
+upon sedimentation and morphodynamics of the tidal delta plain.</p>
+      <p id="d1e2800">These findings and discussion points emphasize the essential role that tides
+play in maintaining the largest portion of the GBM lower delta plain, which
+is not under direct river influence. However, despite the essential role of
+tides in mixing and dispersing sediment to large areas of the delta, the
+supply of sediment remains largely contemporaneous with seasonal fluvial
+discharge, especially in the secondary and tertiary channels that irrigate
+the Sundarbans. Together, the coupled system in which the GBM rivers deliver
+sediment that is subsequently redistributed by tidal energy is fundamentally
+responsible for the sustainability of this region relative to sea-level change
+(e.g., Angamuthu et al., 2018). A significant corollary of this fact is that
+a change in sediment supply from the GBM rivers, such as that proposed under
+India's National River Linking Project, could pose a serious threat to delta
+sustainability (Higgins et al., 2018; Best, 2019).</p>
+      <p id="d1e2803">To summarize, as the central coastal region receives little direct water and
+sediment discharge from the GBM, the results herein emphasize that tidal
+exchange is the dominant geomorphic agent in the region with a mass and
+energy exchange of comparable or greater magnitude to the main-stem rivers.
+It is, of course, essential to recognize that most freshwater and sediment
+exchanged within the tidal system is ultimately sourced by the main rivers
+and that these are intrinsically coupled systems. Thus, the continued
+sustainability of the region will require the sustained delivery and
+exchange of water and sediment between the fluvial and tidal portions of
+the delta.</p>
+</sec>
+<sec id="Ch1.S5.SS2">
+  <title>Sedimentation in the Sundarbans and infilling of tidal channels</title>
+      <p id="d1e2812">Our observations of tidal sediment exchange provide a useful baseline for
+examining sedimentation in the Sundarbans and broader tidal delta plain,
+which are at risk from sea-level rise and inundation without an adequate
+supply of sediment. To date, the best estimate of total sedimentation in the
+Sundarbans is <inline-formula><mml:math id="M173" display="inline"><mml:mrow><mml:mn mathvariant="normal">1.1</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">11</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> kg yr<inline-formula><mml:math id="M174" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> (<inline-formula><mml:math id="M175" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">100</mml:mn></mml:mrow></mml:math></inline-formula> Mt)
+based on one season of direct sedimentation measures at 48 stations across
+the region (Rogers et al., 2013). This mass of sediment deposited in the
+Sundarbans is basically equivalent to the <inline-formula><mml:math id="M176" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">100</mml:mn></mml:mrow></mml:math></inline-formula> Mt of sediment
+that we observe transported through the Shibsa River transects. Thus,
+recalling that our local measurements likely capture just 5–10 % of total
+suspended sediment transported through the tidal channels of the region, it
+becomes evident that there is generally adequate suspended sediment
+available to support regional sedimentation in the Sundarbans.</p>
+      <p id="d1e2862">Another plausible implication is that there appears to be adequate sediment
+available for the restoration of land elevation within the poldered region,
+which is a major challenge<?pagebreak page242?> facing coastal Bangladesh (Amir et al., 2013).
+Although a definitive answer remains to be determined, this general
+assertion is supported by observations of the rapid sedimentation that
+occurred on Polder 32 in the 2 years following the embankment failures
+caused by cyclone Aila in 2009 (Auerbach et al., 2015). Measurements at
+Polder 32 after these failures found an average of <inline-formula><mml:math id="M177" display="inline"><mml:mrow><mml:mn mathvariant="normal">37</mml:mn><mml:mo>±</mml:mo><mml:mn mathvariant="normal">17</mml:mn></mml:mrow></mml:math></inline-formula> cm yr<inline-formula><mml:math id="M178" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> of
+tidal sedimentation sustained over its 2-year exposure to tidal
+inundation, corresponding to a total annual deposition of <inline-formula><mml:math id="M179" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">5</mml:mn></mml:mrow></mml:math></inline-formula> Mt.
+Based on inundation depth and period, this accounts for an average of
+<inline-formula><mml:math id="M180" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">0.2</mml:mn></mml:mrow></mml:math></inline-formula> g L<inline-formula><mml:math id="M181" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> of sediment extracted from the tidal waters that
+flooded the island during this time. This value compares to a mean suspended
+sediment concentration of <inline-formula><mml:math id="M182" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">0.6</mml:mn></mml:mrow></mml:math></inline-formula> g L<inline-formula><mml:math id="M183" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula> measured during our
+hydrographic surveys, suggesting that roughly one-third of the tidal
+sediment inundating the landscape generated these very rapid sedimentation
+rates. Ultimately, limitations in the present data preclude a closed,
+precise sediment budget, but our collective observations over several
+different studies remain consistent in direction and magnitude. These
+indicate persistent and relatively rapid rates of deposition that are
+sustained by the large-magnitude conveyance of sediment through the tidal
+channels and ultimately supplied by seasonal discharge of the main-stem
+rivers (Rogers et al., 2013; Auerbach et al., 2015; this study).</p>
+      <p id="d1e2944">Upstream of our transect sites, the landscape is almost entirely embanked by
+polder systems. With limited opportunity for sediment deposition on this
+formerly intertidal platform and with the resulting reduction or
+redistribution of the tidal prism upstream, channel sedimentation and
+infilling has become a major problem. Wilson et al. (2017) demonstrate that
+by preventing the inundation of the intertidal platform, poldering has
+reduced the tidal prism of the broader southwest region by as much as
+<inline-formula><mml:math id="M184" display="inline"><mml:mrow><mml:mn mathvariant="normal">1.4</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">9</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> m<inline-formula><mml:math id="M185" display="inline"><mml:msup><mml:mi/><mml:mn mathvariant="normal">3</mml:mn></mml:msup></mml:math></inline-formula>. If we assume that this volume reduction is
+relatively evenly dispersed across the delta plain, then it would have led
+to a 25–50 % reduction in the local tidal prism measured at our sites.
+These effects are at least partially responsible for the <inline-formula><mml:math id="M186" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">1400</mml:mn></mml:mrow></mml:math></inline-formula> km
+of channel infilling that has taken place over the last few decades,
+resulting in the creation of new agriculture and aquaculture opportunities
+but also altering drainage, transportation routes, and feedback responses of
+the regional tidal hydrodynamics (Wilson et al., 2017). The mass of sediment
+that has infilled these channels is calculated to be <inline-formula><mml:math id="M187" display="inline"><mml:mrow><mml:mn mathvariant="normal">6.15</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">11</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> kg, which would be <inline-formula><mml:math id="M188" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">1.2</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">10</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> kg yr<inline-formula><mml:math id="M189" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>
+assuming a roughly constant rate (Wilson et al., 2017). Of these infilled
+channels, <inline-formula><mml:math id="M190" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">15</mml:mn></mml:mrow></mml:math></inline-formula> % (<inline-formula><mml:math id="M191" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">200</mml:mn></mml:mrow></mml:math></inline-formula> km) are part of the
+former channel network connecting upstream of our northern transect
+(Fig. 1). Thus, a proportional rate of sedimentation lost to these channels would
+be <inline-formula><mml:math id="M192" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">0.18</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">10</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> kg yr<inline-formula><mml:math id="M193" display="inline"><mml:msup><mml:mi/><mml:mrow><mml:mo>-</mml:mo><mml:mn mathvariant="normal">1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>, which is <inline-formula><mml:math id="M194" display="inline"><mml:mrow><mml:mo>∼</mml:mo><mml:mn mathvariant="normal">25</mml:mn></mml:mrow></mml:math></inline-formula> %
+of the estimated <inline-formula><mml:math id="M195" display="inline"><mml:mrow><mml:mn mathvariant="normal">0.68</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn mathvariant="normal">10</mml:mn><mml:mn mathvariant="normal">10</mml:mn></mml:msup></mml:mrow></mml:math></inline-formula> kg fluxing through the
+northern transect (to the north) each year. While this sediment exchange is
+4 times greater than the expected total based on infilling rates from
+Wilson et al. (2017), it relies on the same previously described assumptions
+(i.e., no lateral exchange with neighboring rivers, non-end-member flux
+reflecting an average of end-member conditions). More importantly, it
+appears that there is sufficient sediment available to continue infilling
+channels, and future studies should constrain whether this region is, in
+fact, infilling faster than other areas on the tidal delta plain, as this
+would hold important implications for regional navigation and hydrodynamic changes.</p>
+</sec>
+</sec>
+<sec id="Ch1.S6" sec-type="conclusions">
+  <title>Conclusions</title>
+      <p id="d1e3108">In the present study, we have measured tidal and seasonal
+variability associated with water discharge and suspended sediment
+concentration (SSC), and we used these observations to compute the magnitude
+of water and sediment exchange through a single tidal channel. As has been
+suggested previously, the wet season is found to exert a strong control on
+the timing and magnitude of sediment transport in this system, despite
+seemingly modest changes to the hydrodynamics. Indeed, despite a reduced
+tidal range and similar peak SSC, sediment transport during the monsoon is
+always of greater magnitude than during the dry season. Understanding this
+relationship is critical for planning any potential land recovery strategies
+in the future. The importance of the monsoon also provides a new perspective
+on the meaning of a “tidal delta”. While it is clearly the tides that
+perform much of the work to shape the delta – including driving a net
+flood-oriented direction of sediment flux – it is the seasonal influx of
+riverine sediment that allows this work to continue. Finally, this research
+demonstrates that the mass of sediment transported north of our study area is
+more than sufficient to fill channels and create additional land. Ideally,
+future land-use management strategies could divert some of this excess
+sediment into polder interiors through tidal river management (e.g., Seijger
+et al., 2018; Shampa and Pramanik, 2012; van Staveren et al., 2016) and allow
+this landscape to continue to prosper.</p>
+</sec>
+
+      
+      </body>
+    <back><notes notes-type="dataavailability"><title>Data availability</title>
+
+      <p id="d1e3115">Data used for this publication will be archived
+in the Marine Geoscience Data System
+<uri>http://www.marine-geo.org/tools/search/DataSets.php?data_set_uids=24710,24711</uri>
+(last access: 28 February 2019, Hale et al., 2019a, b).</p>
+  </notes><notes notes-type="sampleavailability"><title>Sample availability</title>
+
+      <p id="d1e3124">Samples from this publication are stored in the sedimentology laboratory at
+Vanderbilt University.</p>
+  </notes><notes notes-type="authorcontribution"><title>Author contributions</title>
+
+      <p id="d1e3130">The experiment was designed by RH and SG, with input from RB and JB. RH and
+RB led the field research efforts with support from SG and JB. RH wrote the
+majority of the paper and figures, with substantial input from SG. RB
+and JB also contributed to the paper and figures.</p>
+  </notes><notes notes-type="competinginterests"><title>Competing interests</title>
+
+      <?pagebreak page243?><p id="d1e3136">The authors declare that they have no conflict of
+interest.</p>
+  </notes><ack><title>Acknowledgements</title><p id="d1e3142">This work would not be possible without the support of our local
+collaborators, Kazi Matin Ahmed and Syed Humayun Akchter from Dhaka
+University, who oversaw in-country logistics and offered local guidance. We
+would also like to thank Abu Naser Hossain of the Forestry Crime Department
+for his help with permitting, Nasrul Islam Bachchu of Pugmark Tours, and the
+captain and crew of the M/V <italic>Bawali</italic> and M/L <italic>Mawali</italic> for their
+seemingly endless patience with our field logistics. We would also like to
+thank Md. Saddam Hossain, Abrar Hossain, Mynul Hassan, Carol Wilson, and Mike
+Reed for their field support. This research was supported by the US Office of
+Naval Research (N00014-11-1-0683) and the National Science Foundation
+(Coastal SEES no. 1600319). We are grateful to the external reviewers,
+Mead Allison and John Shaw,
+for their valuable insights and contributions to the
+strength of the final paper.
+<?xmltex \hack{\newline}?><?xmltex \hack{\newline}?> Edited by: Daniel
+Parsons<?xmltex \hack{\newline}?> Reviewed by: Mead Allison and John Shaw</p></ack><ref-list>
+    <title>References</title>
+
+      <ref id="bib1.bib1"><label>1</label><mixed-citation>
+Alam, M. A., Hossain, M. A., and Shafee S.: Frequency of Bay of Bengal cyclonic
+storms and depressions crossing different coastal zones, Int. J.
+Climatol., 23, 1119–1125, 2003.</mixed-citation></ref>
+      <ref id="bib1.bib2"><label>2</label><mixed-citation>
+Ali, A., Mynett, A. E., and Azam, M. H.: Sediment dynamics in the Meghna
+estuary, Bangladesh: A model study, J. Waterw. Port Coast.
+Ocean Eng.-ASCE, 133, 255–263, 2007.</mixed-citation></ref>
+      <ref id="bib1.bib3"><label>3</label><mixed-citation>
+Allison, M. and Kepple, E.: Modern sediment supply to the lower delta plain
+of the Ganges-Brahmaputra River in Bangladesh, Geo-Mar. Lett.,  21, 66–74, 2001.</mixed-citation></ref>
+      <ref id="bib1.bib4"><label>4</label><mixed-citation>
+Alongi, D. M.: Carbon cycling and storage in mangrove forests,
+Annu. Rev. Mar. Sci., 6, 195–219, 2014.</mixed-citation></ref>
+      <ref id="bib1.bib5"><label>5</label><mixed-citation>
+Amir, M. S. I. I., Khan, M. S. A., Khan, M. K., Rasul, M. G., and Akram, F.: Tidal
+river sediment management-A case study in southwestern
+Bangladesh, Int. J. Environm. Chem. Ecol. Geol. Geophys. Eng., 7, 176–185, 2013.</mixed-citation></ref>
+      <ref id="bib1.bib6"><label>6</label><mixed-citation>Angamuthu, B., Darby, S. E., and Nicholls, R. J.: Impacts of natural and human
+drivers on the multi-decadal morphological evolution of tidally-influenced
+deltas, Proc. Roy. Soc. A, 474, 20180396, <ext-link xlink:href="https://doi.org/10.1098/rspa.2018.0396" ext-link-type="DOI">10.1098/rspa.2018.0396</ext-link>, 2018.</mixed-citation></ref>
+      <ref id="bib1.bib7"><label>7</label><mixed-citation>Anthony, E. J., Brunier, G., Besset, M., Goichot, M., Dussouillez, P., and
+Nguyen, V. L.: Linking rapid erosion of the Mekong River delta to human
+activities, Sci. Rep., 5, 14745, <ext-link xlink:href="https://doi.org/10.1038/srep14745" ext-link-type="DOI">10.1038/srep14745</ext-link>, 2015.</mixed-citation></ref>
+      <ref id="bib1.bib8"><label>8</label><mixed-citation>Auerbach, L. W., Goodbred Jr., S. L., Mondal, D. R., Wilson, C. A., Ahmed, K. R.,
+Roy, K., Steckler, M. S., Small, C., Gilligan, J. M., and Ackerly, B. A.: Flood
+risk of natural and embanked landscapes on the Ganges–Brahmaputra tidal
+delta plain, Nat. Climate Change, 5, 153–157, <ext-link xlink:href="https://doi.org/10.1038/NCLIMATE2472" ext-link-type="DOI">10.1038/NCLIMATE2472</ext-link>, 2015.</mixed-citation></ref>
+      <ref id="bib1.bib9"><label>9</label><mixed-citation>Ayers, J. C., George, G., Fry, D., Benneyworth, L., Wilson, C., Auerbach,
+L., Roy, K., Karim, M. R., Akter, F., and Goodbred, S.: Salinization and arsenic
+contamination of surface water in southwest Bangladesh, Geochem. Trans.,
+18, 4, <ext-link xlink:href="https://doi.org/10.1186/s12932-017-0042-3" ext-link-type="DOI">10.1186/s12932-017-0042-3</ext-link>, 2017.</mixed-citation></ref>
+      <ref id="bib1.bib10"><label>10</label><mixed-citation>
+Barua, D. K., Kuehl, S. A., Miller, R. L., and Moore, W. S.: Suspended
+sediment distribution and residual transport in the coastal ocean off the
+Ganges-Brahmaputra river mouth, Mar. Geol., 120, 41–61, 1994.</mixed-citation></ref>
+      <ref id="bib1.bib11"><label>11</label><mixed-citation>Best, J.: Anthropogenic stresses on the world's big rivers, Nat. Geosci., 12,
+7–21, <ext-link xlink:href="https://doi.org/10.1038/s41561-018-0262-x" ext-link-type="DOI">10.1038/s41561-018-0262-x</ext-link>, 2019.</mixed-citation></ref>
+      <ref id="bib1.bib12"><label>12</label><mixed-citation>
+Brammer, H.: Bangladesh's dynamic coastal regions and sea-level
+rise, Clim. Risk Manage., 1, 51–62, 2014.</mixed-citation></ref>
+      <ref id="bib1.bib13"><label>13</label><mixed-citation>
+Brown, J. M. and Davies, A. G.: Flood/ebb tidal asymmetry in a shallow sandy
+estuary and the impact on net sand transport, Geomorphology, 114, 431–439, 2010.</mixed-citation></ref>
+      <ref id="bib1.bib14"><label>14</label><mixed-citation>
+Brown, S. and Nicholls, R. J.: Subsidence and human influences in mega deltas:
+the case of the Ganges–Brahmaputra–Meghna, Sci. Total Environ., 527, 362–374, 2015.</mixed-citation></ref>
+      <ref id="bib1.bib15"><label>15</label><mixed-citation>
+Chatterjee, M., Shankar, D., Sen, G. K., Sanyal, P., Sundar, D., Michael,
+G. S., Chatterjee, A., Amol, P., Mukherjee, D., Suprit, K., and Mukherjee,
+A.: Tidal variations in the Sundarbans estuarine system, India, J. Earth Syst.
+Sci., 122, 899–933, 2013.</mixed-citation></ref>
+      <ref id="bib1.bib16"><label>16</label><mixed-citation>Darby, S. E., Hackney, C. R., Leyland, J., Kummu, M., Lauri, H., Parsons,
+D. R., Best, J. L., Nicholas, A. P., and Aalto, R.: Fluvial sediment supply to a
+mega-delta reduced by shifting tropical-cyclone
+activity, Nature, 539, 276–279, <ext-link xlink:href="https://doi.org/10.1038/nature19809" ext-link-type="DOI">10.1038/nature19809</ext-link>, 2016.</mixed-citation></ref>
+      <ref id="bib1.bib17"><label>17</label><mixed-citation>
+Darby, S. E., Nicholls, R. J., Rahman, M. M., Brown, S., and Karim, R.: A
+Sustainable Future Supply of Fluvial Sediment for the Ganges-Brahmaputra
+Delta, in:  Ecosystem Services for Well-Being in Deltas,  277–291,
+Palgrave Macmillan, Cham, 2018.</mixed-citation></ref>
+      <ref id="bib1.bib18"><label>18</label><mixed-citation>
+Ericson, J. P., Vörösmarty, C. J., Dingman, S. L., Ward, L. G., and
+Meybeck, M.: Effective sea-level rise and deltas: causes of change and human
+dimension implications, Global  Planet. Change, 50, 63–82, 2006.</mixed-citation></ref>
+      <ref id="bib1.bib19"><label>19</label><mixed-citation>
+Galloway, W. E.: Process framework for describing the morphologic and
+stratigraphic evolution of deltaic depositional systems in: Deltas: models for exploration,
+edited by:  Broussard, M. L., 87–98, Houston Geological Society, 1975.</mixed-citation></ref>
+      <ref id="bib1.bib20"><label>20</label><mixed-citation>
+Goodbred Jr., S. L. and Kuehl, S. A.: Holocene and modern sediment budgets for
+the Ganges-Brahmaputra river system: Evidence for highstand dispersal to
+flood-plain, shelf, and deep-sea depocenters, Geology, 27, 559–562, 1999.</mixed-citation></ref>
+      <ref id="bib1.bib21"><label>21</label><mixed-citation>Grinsted, A.: Tidal fitting toolbox (v 1.3.0.0), Matlab code,
+available at:
+<uri>https://www.mathworks.com/matlabcentral/fileexchange/19099-tidal-fitting-toolbox?s_tid=srchtitle</uri>
+(last access: 1 October 2018), 2008.</mixed-citation></ref>
+      <ref id="bib1.bib22"><label>22</label><mixed-citation>Hale, R., Bain, R., Goodbred, S., and Best,  J.:  Uncalibrated
+Hydrographic Data from the Ganges-Brahmaputra Delta, Interdisciplinary Earth
+Data Alliance (IEDA), <ext-link xlink:href="https://doi.org/10.1594/IEDA/324710" ext-link-type="DOI">10.1594/IEDA/324710</ext-link>, 2019a.</mixed-citation></ref>
+      <ref id="bib1.bib23"><label>23</label><mixed-citation>Hale, R., Bain, R., Goodbred, S., and Best, J.:  Uncalibrated
+Hydrographic Data from the Ganges-Brahmaputra Delta, Interdisciplinary Earth
+Data Alliance (IEDA), <ext-link xlink:href="https://doi.org/10.1594/IEDA/324711" ext-link-type="DOI">10.1594/IEDA/324711</ext-link>, 2019b.</mixed-citation></ref>
+      <ref id="bib1.bib24"><label>24</label><mixed-citation>
+Hanebuth, T. J. J., Kudrass, H. R., Linstadter, J., Islam, B., and Zander,
+A. M.: Rapid coastal subsidence in the central Ganges-Brahmaputra Delta
+(Bangladesh) since the 17th century deduced from submerged salt-producing
+kilns, Geology, 41, 987–990, 2013.</mixed-citation></ref>
+      <?pagebreak page244?><ref id="bib1.bib25"><label>25</label><mixed-citation>
+Higgins, S. A., Overeem, I., Steckler, M. S., Syvitski, J. P., Seeber, L., and
+Akhter, S. H.: InSAR measurements of compaction and subsidence in the
+Ganges-Brahmaputra Delta, Bangladesh, J. Geophys. Res.-Earth Surf., 119, 1768–1781, 2014.</mixed-citation></ref>
+      <ref id="bib1.bib26"><label>26</label><mixed-citation>Higgins, S., Overeem, I., Rogers, K., and Kalina, E.: River linking in India:
+Downstream impacts on water discharge and suspended sediment transport to
+deltas, Elem. Sci. Anth., 6, p. 20, <ext-link xlink:href="https://doi.org/10.1525/elementa.269" ext-link-type="DOI">10.1525/elementa.269</ext-link>, 2018.</mixed-citation></ref>
+      <ref id="bib1.bib27"><label>27</label><mixed-citation>
+Hossain, M. S., Dearing, J. A., Rahman, M. M., and Salehin, M.: Recent changes in
+ecosystem services and human well-being in the Bangladesh coastal zone,
+Reg. Environ. Change, 16, 429–443, 2016.</mixed-citation></ref>
+      <ref id="bib1.bib28"><label>28</label><mixed-citation>
+Islam, M. R.: Managing Diverse Land Uses in Coastal Bangladesh: Institutional
+Approaches, Environment and livelihoods in tropical coastal zones, p. 237, 2006.</mixed-citation></ref>
+      <ref id="bib1.bib29"><label>29</label><mixed-citation>
+Kamal, A. S. M., Hossain, A., Hossain, B. M., Hassan, S. M., and Rashid, A.
+K. M.: Physical and Social Assessment of the Waterlogged Area and Suitability of
+the “Inclusive and Adaptive Tidal River Management Technique” to Alleviate
+Waterlogging in Southwest Bangladesh, Proc. Eng., 212, 760–767, 2018.</mixed-citation></ref>
+      <ref id="bib1.bib30"><label>30</label><mixed-citation>Khadim, F. K., Kar, K. K., Halder, P. K., Rahman, M. A., and Morshed, A. M.:
+Integrated water resources management (IWRM) impacts in south west coastal
+zone of Bangladesh and fact-finding on tidal river management (TRM), J.
+Water Resour. Protect., 5, 38240, <ext-link xlink:href="https://doi.org/10.4236/jwarp.2013.510098" ext-link-type="DOI">10.4236/jwarp.2013.510098</ext-link>,  2013.</mixed-citation></ref>
+      <ref id="bib1.bib31"><label>31</label><mixed-citation>
+Kudrass, H. R., Michels, K. H., Wiedicke, M., and Suckow, A.: Cyclones and tides as
+feeders ofa submarine canyon off Bangladesh, Geology, 26, 715–718, 1998.</mixed-citation></ref>
+      <ref id="bib1.bib32"><label>32</label><mixed-citation>
+Kudrass, H. R., Machalett, B., Palamenghi, L., Meyer, I., and Zhang, W.:
+Sediment transport by tropical cyclones recorded in a submarine canyon off
+Bangladesh, Geo-Mar. Lett., 38, 481–496, 2018.</mixed-citation></ref>
+      <ref id="bib1.bib33"><label>33</label><mixed-citation>
+Lupker, M., France-Lanord, C., Lavé, J., Bouchez, J., Galy, V.,
+Métivier, F., Gaillardet, J., Lartiges, B., and Mugnier, J. L.: A
+Rouse-based method to integrate the chemical composition of river sediments:
+Application to the Ganga basin, J. Geophys. Res.-Earth Surf., 116, 1–24, 2011.</mixed-citation></ref>
+      <ref id="bib1.bib34"><label>34</label><mixed-citation>
+Marois, D. E. and Mitsch, W. J.: Coastal protection from tsunamis and cyclones
+provided by mangrove wetlands – a review, Int. J. Biodiv. Sci.,
+Ecosyst. Serv. Manage., 11, 71–83, 2015.</mixed-citation></ref>
+      <ref id="bib1.bib35"><label>35</label><mixed-citation>Mcleod, E., Chmura, G. L., Bouillon, S., Salm, R., Björk, M., Duarte,
+C. M., Lovelock, C. E., Schlesinger, W. H., and Silliman, B. R.: A blueprint for
+blue carbon: toward an improved understanding of the role of vegetated
+coastal habitats in sequestering <inline-formula><mml:math id="M196" display="inline"><mml:mrow class="chem"><mml:msub><mml:mi mathvariant="normal">CO</mml:mi><mml:mn mathvariant="normal">2</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>, Front. Ecol. Environ., 9, 552–560, 2011.</mixed-citation></ref>
+      <ref id="bib1.bib36"><label>36</label><mixed-citation>
+Michels, K. H., Kudrass, H. R., and Hu, C.: The submarine delta of the Ganges-
+Brahmaputra?: cyclone-dominated sedimentation patterns, Mar. Geol., 149, 133–154, 1998.</mixed-citation></ref>
+      <ref id="bib1.bib37"><label>37</label><mixed-citation>Murty, T. S., Flather, R. A., and Henry, R. F.: The storm surge problem in the
+bay of Bengal, Prog. Oceanogr., 16, 195–233,
+<ext-link xlink:href="https://doi.org/10.1016/0079-6611(86)90039-X" ext-link-type="DOI">10.1016/0079-6611(86)90039-X</ext-link>, 1986.</mixed-citation></ref>
+      <ref id="bib1.bib38"><label>38</label><mixed-citation>
+Nowreen, S., Jalal, M. R., and Khan, M. S. A.: Historical analysis of
+rationalizing South West coastal polders of Bangladesh, Water Pol., 16, 264–279,
+2014.</mixed-citation></ref>
+      <ref id="bib1.bib39"><label>39</label><mixed-citation>
+Ogston, A. S. and Sternberg, R. W.: Sediment-transport events on the northern
+California continental shelf, Mar. Geol., 154, 69–82, 1999.</mixed-citation></ref>
+      <ref id="bib1.bib40"><label>40</label><mixed-citation>
+Overeem, I. and Syvitski, J. P. M.: Dynamics and Vulnerability of Delta Systems:
+LOICZ Reports and Studies, No 35, GKSS Research Center, Geesthacht, p. 54,
+2009.</mixed-citation></ref>
+      <ref id="bib1.bib41"><label>41</label><mixed-citation>Pendleton, L., Donato, D. C., Murray, B. C., Crooks, S., Jenkins, W. A.,
+Sifleet, S., Craft, C., Fourqurean, J. W., Kauffman, J. B., Marbà, N., and
+Megonigal, P.: Estimating global “blue carbon” emissions from conversion
+and degradation of vegetated coastal ecosystems, PloS One, 7, e43542,
+<ext-link xlink:href="https://doi.org/10.1371/journal.pone.0043542" ext-link-type="DOI">10.1371/journal.pone.0043542</ext-link>, 2012.</mixed-citation></ref>
+      <ref id="bib1.bib42"><label>42</label><mixed-citation>
+Pethick, J. S.: Velocity surges and asymmetry in tidal channels, Estuar. Coast. Mar. Sci.
+11, 331–345, 1980.</mixed-citation></ref>
+      <ref id="bib1.bib43"><label>43</label><mixed-citation>
+Pethick, J. and Orford, J. D.: Rapid rise in effective sea-level in southwest
+Bangladesh: its causes and contemporary rates, Global  Planet. Change, 111, 237–245, 2013.</mixed-citation></ref>
+      <ref id="bib1.bib44"><label>44</label><mixed-citation>
+Rinaldo, A., Fagherazzi, S., Lanzoni, S., Marani, M., and Dietrich, W. E.:
+Tidal networks: 3. Landscape-forming discharges and studies in empirical
+geomorphic relationships, Water Resour. Res., 35, 3919–3929, 1999.</mixed-citation></ref>
+      <ref id="bib1.bib45"><label>45</label><mixed-citation>Rogers, K. G. and Goodbred, S. L.: Mass failures associated with the passage
+of a large tropical cyclone over the Swatch of No Ground submarine canyon
+(Bay of Bengal), Geology, 38, 1051–1054, <ext-link xlink:href="https://doi.org/101.1130/G41181.1" ext-link-type="DOI">101.1130/G41181.1</ext-link>, 2010.</mixed-citation></ref>
+      <ref id="bib1.bib46"><label>46</label><mixed-citation>Rogers, K. G. and Overeem, I.: Doomed to drown? Sediment dynamics in the
+human-controlled floodplains of the active Bengal Delta,
+Elementa: Sci. Anthrop., 6, 66, <ext-link xlink:href="https://doi.org/10.1525/elementa.250" ext-link-type="DOI">10.1525/elementa.250</ext-link>, 2017.</mixed-citation></ref>
+      <ref id="bib1.bib47"><label>47</label><mixed-citation>
+Rogers, K. G., Goodbred Jr., S. L., and Mondal, D. R.: Monsoon sedimentation on
+the “abandoned” tide-influenced Ganges–Brahmaputra delta plain,
+Estuar. Coast. Shelf Sci., 131, 297–309, 2013.</mixed-citation></ref>
+      <ref id="bib1.bib48"><label>48</label><mixed-citation>
+Saha, M. K. and Khan, N.: Changing profile of cyclones in the context of
+climate change and adaptation strategies in Bangladesh, J. Bangladesh Inst. Plann.,
+7, 63–78, 2014.</mixed-citation></ref>
+      <ref id="bib1.bib49"><label>49</label><mixed-citation>
+Sakib, M., Nihal, F., Haque, A., Rahman, M., and Ali, M.: Sundarban as a
+Buffer against Storm Surge Flooding, World J. Eng. Technol., 3, 59–64, 2015.</mixed-citation></ref>
+      <ref id="bib1.bib50"><label>50</label><mixed-citation>
+Sarwar, M. G. M. and Woodroffe, C. D.: Rates of shoreline change along the coast
+of Bangladesh, J. Coast. Conserv., 17, 515–526, 2013.</mixed-citation></ref>
+      <ref id="bib1.bib51"><label>51</label><mixed-citation>Seijger, C., Datta, D. K., Douven, W., van Halsema, G., and Khan, M. F.:
+Rethinking sediments, tidal rivers and delta livelihoods: tidal river
+management as a strategic innovation in Bangladesh, Water Pol.,
+21, wp2018212, <ext-link xlink:href="https://doi.org/10.2166/wp.2018.212" ext-link-type="DOI">10.2166/wp.2018.212</ext-link>, 2018.</mixed-citation></ref>
+      <ref id="bib1.bib52"><label>52</label><mixed-citation>
+Shaha, D. C. and Cho, Y. K.: Salt plug formation caused by decreased river
+discharge in a multi-channel estuary, Sci. Rep., 6, p. 27176, 2016.</mixed-citation></ref>
+      <ref id="bib1.bib53"><label>53</label><mixed-citation>
+Shampa, M. and Pramanik, I. M.: Tidal River Management (TRM) for Selected
+Coastal Area of Bangladesh to Mitigate Drainage Congestion,
+Int. J. Sci. Technol. Res., 1, 1–6, 2012.</mixed-citation></ref>
+      <ref id="bib1.bib54"><label>54</label><mixed-citation>Steckler, M. S., Nooner, S. L., Akhter, S. H., Chowdhury, S. K., Bettadpur, S.,
+Seeber, L., and Kogan, M. G.: Modeling Earth deformation from monsoonal
+flooding in Bangladesh using hydrographic, GPS, and Gravity Recovery and
+Climate Experiment (GRACE) data, J. Geophys. Res.-Solid Earth, 115, B8,
+<ext-link xlink:href="https://doi.org/10.1029/2009JB007018" ext-link-type="DOI">10.1029/2009JB007018</ext-link>, 2010.</mixed-citation></ref>
+      <ref id="bib1.bib55"><label>55</label><mixed-citation>
+Syvitski, J. P.: Supply and flux of sediment along hydrological pathways:
+research for the 21st century, Global Planet. Change, 39, 1–11, 2003.</mixed-citation></ref>
+      <?pagebreak page245?><ref id="bib1.bib56"><label>56</label><mixed-citation>
+Syvitski, J. P.: Deltas at risk, Sustain. Sci., 3, 23–32, 2008.</mixed-citation></ref>
+      <ref id="bib1.bib57"><label>57</label><mixed-citation>
+Syvitski, J. P. and Milliman, J. D.: Geology, geography, and humans battle for
+dominance over the delivery of fluvial sediment to the coastal ocean,
+The J. Geol., 115, 1–19, 2007.</mixed-citation></ref>
+      <ref id="bib1.bib58"><label>58</label><mixed-citation>
+Syvitski, J. P., Kettner, A. J., Overeem, I., Hutton, E. W., Hannon, M. T.,
+Brakenridge, G. R., Day, J., Vörösmarty, C., Saito, Y., Giosan, L.,
+and Nicholls, R. J.: Sinking deltas due to human activities,
+Nat. Geosci., 2, 681–686, 2009.</mixed-citation></ref>
+      <ref id="bib1.bib59"><label>59</label><mixed-citation>
+Uddin, M. S., van Steveninck, E. D. R., Stuip, M., and Shah, M. A. R.:
+Economic valuation of provisioning and cultural services of a protected
+mangrove ecosystem: a case study on Sundarbans Reserve Forest,
+Bangladesh, Ecosyst. Serv., 5, 88–93, 2013.</mixed-citation></ref>
+      <ref id="bib1.bib60"><label>60</label><mixed-citation>van Staveren, M. F., Warner, J. F., Khan, M. S. A., and Shah Alam Khan, M.:
+Bringing in the tides. From closing down to opening up delta polders via
+Tidal River Management in the southwest delta of Bangladesh, Water Pol., 19,
+147–164, 2016.
+ </mixed-citation></ref><?xmltex \hack{\newpage}?>
+      <ref id="bib1.bib61"><label>61</label><mixed-citation>Wilson, C., Goodbred, S., Small, C., Gilligan, J., Sams, S., Mallick, B., and
+Hale, R.: Widespread infilling of tidal channels and navigable waterways in
+human-modified tidal deltaplain of southwest Bangladesh, Elem. Sci. Anth, 5,
+78, <ext-link xlink:href="https://doi.org/10.1525/elementa.263" ext-link-type="DOI">10.1525/elementa.263</ext-link>, 2017.</mixed-citation></ref>
+      <ref id="bib1.bib62"><label>62</label><mixed-citation>Winterwerp, J. C. and Giardino, A.: Assessment of increasing freshwater input
+on salinity and sedimentation in the Gorai river system,
+World Bank Proj., 1206292–000, <ext-link xlink:href="https://doi.org/10.13140/2.1.1504.1286" ext-link-type="DOI">10.13140/2.1.1504.1286</ext-link>,
+2012.</mixed-citation></ref>
+      <ref id="bib1.bib63"><label>63</label><mixed-citation>Yan, W.: Can mangroves buffer ocean acidification?, Eos, 97, <ext-link xlink:href="https://doi.org/10.1029/2016EO053819" ext-link-type="DOI">10.1029/2016EO053819</ext-link>, 2016.</mixed-citation></ref>
+
+  </ref-list></back>
+    <!--<article-title-html>Observations and scaling of tidal mass transport across the lower Ganges–Brahmaputra delta plain: implications for delta management and sustainability</article-title-html>
+<abstract-html><p>The landscape of southwest Bangladesh, a region constructed primarily by
+fluvial processes associated with the Ganges River and Brahmaputra River, is now
+maintained almost exclusively by tidal processes as the fluvial system has
+migrated east and eliminated the most direct fluvial input. In natural areas such
+as the Sundarbans National Forest, year-round inundation during spring high
+tides delivers sufficient sediment that enables vertical accretion to keep
+pace with relative sea-level rise. However, recent human modification of the
+landscape in the form of embankment construction has terminated this pathway
+of sediment delivery for much of the region, resulting in a startling
+elevation imbalance, with inhabited areas often sitting  &gt; 1&thinsp;m
+below mean high water. Restoring this landscape, or preventing land loss in
+the natural system, requires an understanding of how rates of water and
+sediment flux vary across timescales ranging from hours to months. In this
+study, we combine time series observations of water level, salinity, and
+suspended sediment concentration with ship-based measurements of large
+tidal-channel hydrodynamics and sediment transport. To capture the greatest
+possible range of variability, cross-channel transects designed to encompass
+a 12.4&thinsp;h tidal cycle were performed in both dry and wet seasons during
+spring and neap tides.</p><p>Regional suspended sediment concentration begins to increase in August,
+coincident with a decrease in local salinity, indicating the arrival of the
+sediment-laden, freshwater plume of the combined Ganges–Brahmaputra–Meghna
+rivers. We observe profound seasonality in sediment transport, despite
+comparatively modest seasonal variability in the magnitude of water
+discharge. These observations emphasize the importance of seasonal sediment
+delivery from the main-stem rivers to this remote tidal region. On tidal
+timescales, spring tides transport an order of magnitude more sediment than
+neap tides in both the wet and dry seasons. In aggregate, sediment transport
+is flood oriented, likely as a result of tidal pumping. Finally, we note that
+rates of sediment and water discharge in the tidal channels are of the same
+scale as the annually averaged values for the Ganges and Brahmaputra rivers.
+These observations provide context for examining the relative importance of
+fluvial and tidal processes in what has been defined as a quintessentially
+tidally influenced delta in the classification scheme of Galloway (1975).
+These data also inform critical questions regarding the timing and magnitude
+of sediment delivery to the region, which are especially important in
+predicting and preparing for responses of the natural system to ongoing
+environmental change.</p></abstract-html>
+<ref-html id="bib1.bib1"><label>1</label><mixed-citation>
+Alam, M. A., Hossain, M. A., and Shafee S.: Frequency of Bay of Bengal cyclonic
+storms and depressions crossing different coastal zones, Int. J.
+Climatol., 23, 1119–1125, 2003.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib2"><label>2</label><mixed-citation>
+Ali, A., Mynett, A. E., and Azam, M. H.: Sediment dynamics in the Meghna
+estuary, Bangladesh: A model study, J. Waterw. Port Coast.
+Ocean Eng.-ASCE, 133, 255–263, 2007.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib3"><label>3</label><mixed-citation>
+Allison, M. and Kepple, E.: Modern sediment supply to the lower delta plain
+of the Ganges-Brahmaputra River in Bangladesh, Geo-Mar. Lett.,  21, 66–74, 2001.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib4"><label>4</label><mixed-citation>
+Alongi, D. M.: Carbon cycling and storage in mangrove forests,
+Annu. Rev. Mar. Sci., 6, 195–219, 2014.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib5"><label>5</label><mixed-citation>
+Amir, M. S. I. I., Khan, M. S. A., Khan, M. K., Rasul, M. G., and Akram, F.: Tidal
+river sediment management-A case study in southwestern
+Bangladesh, Int. J. Environm. Chem. Ecol. Geol. Geophys. Eng., 7, 176–185, 2013.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib6"><label>6</label><mixed-citation>
+Angamuthu, B., Darby, S. E., and Nicholls, R. J.: Impacts of natural and human
+drivers on the multi-decadal morphological evolution of tidally-influenced
+deltas, Proc. Roy. Soc. A, 474, 20180396, <a href="https://doi.org/10.1098/rspa.2018.0396" target="_blank">https://doi.org/10.1098/rspa.2018.0396</a>, 2018.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib7"><label>7</label><mixed-citation>
+Anthony, E. J., Brunier, G., Besset, M., Goichot, M., Dussouillez, P., and
+Nguyen, V. L.: Linking rapid erosion of the Mekong River delta to human
+activities, Sci. Rep., 5, 14745, <a href="https://doi.org/10.1038/srep14745" target="_blank">https://doi.org/10.1038/srep14745</a>, 2015.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib8"><label>8</label><mixed-citation>
+Auerbach, L. W., Goodbred Jr., S. L., Mondal, D. R., Wilson, C. A., Ahmed, K. R.,
+Roy, K., Steckler, M. S., Small, C., Gilligan, J. M., and Ackerly, B. A.: Flood
+risk of natural and embanked landscapes on the Ganges–Brahmaputra tidal
+delta plain, Nat. Climate Change, 5, 153–157, <a href="https://doi.org/10.1038/NCLIMATE2472" target="_blank">https://doi.org/10.1038/NCLIMATE2472</a>, 2015.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib9"><label>9</label><mixed-citation>
+Ayers, J. C., George, G., Fry, D., Benneyworth, L., Wilson, C., Auerbach,
+L., Roy, K., Karim, M. R., Akter, F., and Goodbred, S.: Salinization and arsenic
+contamination of surface water in southwest Bangladesh, Geochem. Trans.,
+18, 4, <a href="https://doi.org/10.1186/s12932-017-0042-3" target="_blank">https://doi.org/10.1186/s12932-017-0042-3</a>, 2017.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib10"><label>10</label><mixed-citation>
+Barua, D. K., Kuehl, S. A., Miller, R. L., and Moore, W. S.: Suspended
+sediment distribution and residual transport in the coastal ocean off the
+Ganges-Brahmaputra river mouth, Mar. Geol., 120, 41–61, 1994.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib11"><label>11</label><mixed-citation>
+Best, J.: Anthropogenic stresses on the world's big rivers, Nat. Geosci., 12,
+7–21, <a href="https://doi.org/10.1038/s41561-018-0262-x" target="_blank">https://doi.org/10.1038/s41561-018-0262-x</a>, 2019.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib12"><label>12</label><mixed-citation>
+Brammer, H.: Bangladesh's dynamic coastal regions and sea-level
+rise, Clim. Risk Manage., 1, 51–62, 2014.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib13"><label>13</label><mixed-citation>
+Brown, J. M. and Davies, A. G.: Flood/ebb tidal asymmetry in a shallow sandy
+estuary and the impact on net sand transport, Geomorphology, 114, 431–439, 2010.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib14"><label>14</label><mixed-citation>
+Brown, S. and Nicholls, R. J.: Subsidence and human influences in mega deltas:
+the case of the Ganges–Brahmaputra–Meghna, Sci. Total Environ., 527, 362–374, 2015.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib15"><label>15</label><mixed-citation>
+Chatterjee, M., Shankar, D., Sen, G. K., Sanyal, P., Sundar, D., Michael,
+G. S., Chatterjee, A., Amol, P., Mukherjee, D., Suprit, K., and Mukherjee,
+A.: Tidal variations in the Sundarbans estuarine system, India, J. Earth Syst.
+Sci., 122, 899–933, 2013.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib16"><label>16</label><mixed-citation>
+Darby, S. E., Hackney, C. R., Leyland, J., Kummu, M., Lauri, H., Parsons,
+D. R., Best, J. L., Nicholas, A. P., and Aalto, R.: Fluvial sediment supply to a
+mega-delta reduced by shifting tropical-cyclone
+activity, Nature, 539, 276–279, <a href="https://doi.org/10.1038/nature19809" target="_blank">https://doi.org/10.1038/nature19809</a>, 2016.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib17"><label>17</label><mixed-citation>
+Darby, S. E., Nicholls, R. J., Rahman, M. M., Brown, S., and Karim, R.: A
+Sustainable Future Supply of Fluvial Sediment for the Ganges-Brahmaputra
+Delta, in:  Ecosystem Services for Well-Being in Deltas,  277–291,
+Palgrave Macmillan, Cham, 2018.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib18"><label>18</label><mixed-citation>
+Ericson, J. P., Vörösmarty, C. J., Dingman, S. L., Ward, L. G., and
+Meybeck, M.: Effective sea-level rise and deltas: causes of change and human
+dimension implications, Global  Planet. Change, 50, 63–82, 2006.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib19"><label>19</label><mixed-citation>
+Galloway, W. E.: Process framework for describing the morphologic and
+stratigraphic evolution of deltaic depositional systems in: Deltas: models for exploration,
+edited by:  Broussard, M. L., 87–98, Houston Geological Society, 1975.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib20"><label>20</label><mixed-citation>
+Goodbred Jr., S. L. and Kuehl, S. A.: Holocene and modern sediment budgets for
+the Ganges-Brahmaputra river system: Evidence for highstand dispersal to
+flood-plain, shelf, and deep-sea depocenters, Geology, 27, 559–562, 1999.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib21"><label>21</label><mixed-citation>
+Grinsted, A.: Tidal fitting toolbox (v 1.3.0.0), Matlab code,
+available at:
+<a href="https://www.mathworks.com/matlabcentral/fileexchange/19099-tidal-fitting-toolbox?s_tid=srchtitle" target="_blank">https://www.mathworks.com/matlabcentral/fileexchange/19099-tidal-fitting-toolbox?s_tid=srchtitle</a>
+(last access: 1 October 2018), 2008.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib22"><label>22</label><mixed-citation>
+Hale, R., Bain, R., Goodbred, S., and Best,  J.:  Uncalibrated
+Hydrographic Data from the Ganges-Brahmaputra Delta, Interdisciplinary Earth
+Data Alliance (IEDA), <a href="https://doi.org/10.1594/IEDA/324710" target="_blank">https://doi.org/10.1594/IEDA/324710</a>, 2019a.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib23"><label>23</label><mixed-citation>
+Hale, R., Bain, R., Goodbred, S., and Best, J.:  Uncalibrated
+Hydrographic Data from the Ganges-Brahmaputra Delta, Interdisciplinary Earth
+Data Alliance (IEDA), <a href="https://doi.org/10.1594/IEDA/324711" target="_blank">https://doi.org/10.1594/IEDA/324711</a>, 2019b.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib24"><label>24</label><mixed-citation>
+Hanebuth, T. J. J., Kudrass, H. R., Linstadter, J., Islam, B., and Zander,
+A. M.: Rapid coastal subsidence in the central Ganges-Brahmaputra Delta
+(Bangladesh) since the 17th century deduced from submerged salt-producing
+kilns, Geology, 41, 987–990, 2013.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib25"><label>25</label><mixed-citation>
+Higgins, S. A., Overeem, I., Steckler, M. S., Syvitski, J. P., Seeber, L., and
+Akhter, S. H.: InSAR measurements of compaction and subsidence in the
+Ganges-Brahmaputra Delta, Bangladesh, J. Geophys. Res.-Earth Surf., 119, 1768–1781, 2014.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib26"><label>26</label><mixed-citation>
+Higgins, S., Overeem, I., Rogers, K., and Kalina, E.: River linking in India:
+Downstream impacts on water discharge and suspended sediment transport to
+deltas, Elem. Sci. Anth., 6, p. 20, <a href="https://doi.org/10.1525/elementa.269" target="_blank">https://doi.org/10.1525/elementa.269</a>, 2018.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib27"><label>27</label><mixed-citation>
+Hossain, M. S., Dearing, J. A., Rahman, M. M., and Salehin, M.: Recent changes in
+ecosystem services and human well-being in the Bangladesh coastal zone,
+Reg. Environ. Change, 16, 429–443, 2016.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib28"><label>28</label><mixed-citation>
+Islam, M. R.: Managing Diverse Land Uses in Coastal Bangladesh: Institutional
+Approaches, Environment and livelihoods in tropical coastal zones, p. 237, 2006.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib29"><label>29</label><mixed-citation>
+Kamal, A. S. M., Hossain, A., Hossain, B. M., Hassan, S. M., and Rashid, A.
+K. M.: Physical and Social Assessment of the Waterlogged Area and Suitability of
+the “Inclusive and Adaptive Tidal River Management Technique” to Alleviate
+Waterlogging in Southwest Bangladesh, Proc. Eng., 212, 760–767, 2018.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib30"><label>30</label><mixed-citation>
+Khadim, F. K., Kar, K. K., Halder, P. K., Rahman, M. A., and Morshed, A. M.:
+Integrated water resources management (IWRM) impacts in south west coastal
+zone of Bangladesh and fact-finding on tidal river management (TRM), J.
+Water Resour. Protect., 5, 38240, <a href="https://doi.org/10.4236/jwarp.2013.510098" target="_blank">https://doi.org/10.4236/jwarp.2013.510098</a>,  2013.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib31"><label>31</label><mixed-citation>
+Kudrass, H. R., Michels, K. H., Wiedicke, M., and Suckow, A.: Cyclones and tides as
+feeders ofa submarine canyon off Bangladesh, Geology, 26, 715–718, 1998.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib32"><label>32</label><mixed-citation>
+Kudrass, H. R., Machalett, B., Palamenghi, L., Meyer, I., and Zhang, W.:
+Sediment transport by tropical cyclones recorded in a submarine canyon off
+Bangladesh, Geo-Mar. Lett., 38, 481–496, 2018.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib33"><label>33</label><mixed-citation>
+Lupker, M., France-Lanord, C., Lavé, J., Bouchez, J., Galy, V.,
+Métivier, F., Gaillardet, J., Lartiges, B., and Mugnier, J. L.: A
+Rouse-based method to integrate the chemical composition of river sediments:
+Application to the Ganga basin, J. Geophys. Res.-Earth Surf., 116, 1–24, 2011.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib34"><label>34</label><mixed-citation>
+Marois, D. E. and Mitsch, W. J.: Coastal protection from tsunamis and cyclones
+provided by mangrove wetlands – a review, Int. J. Biodiv. Sci.,
+Ecosyst. Serv. Manage., 11, 71–83, 2015.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib35"><label>35</label><mixed-citation>
+Mcleod, E., Chmura, G. L., Bouillon, S., Salm, R., Björk, M., Duarte,
+C. M., Lovelock, C. E., Schlesinger, W. H., and Silliman, B. R.: A blueprint for
+blue carbon: toward an improved understanding of the role of vegetated
+coastal habitats in sequestering CO<sub>2</sub>, Front. Ecol. Environ., 9, 552–560, 2011.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib36"><label>36</label><mixed-citation>
+Michels, K. H., Kudrass, H. R., and Hu, C.: The submarine delta of the Ganges-
+Brahmaputra?: cyclone-dominated sedimentation patterns, Mar. Geol., 149, 133–154, 1998.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib37"><label>37</label><mixed-citation>
+Murty, T. S., Flather, R. A., and Henry, R. F.: The storm surge problem in the
+bay of Bengal, Prog. Oceanogr., 16, 195–233,
+<a href="https://doi.org/10.1016/0079-6611(86)90039-X" target="_blank">https://doi.org/10.1016/0079-6611(86)90039-X</a>, 1986.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib38"><label>38</label><mixed-citation>
+Nowreen, S., Jalal, M. R., and Khan, M. S. A.: Historical analysis of
+rationalizing South West coastal polders of Bangladesh, Water Pol., 16, 264–279,
+2014.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib39"><label>39</label><mixed-citation>
+Ogston, A. S. and Sternberg, R. W.: Sediment-transport events on the northern
+California continental shelf, Mar. Geol., 154, 69–82, 1999.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib40"><label>40</label><mixed-citation>
+Overeem, I. and Syvitski, J. P. M.: Dynamics and Vulnerability of Delta Systems:
+LOICZ Reports and Studies, No 35, GKSS Research Center, Geesthacht, p. 54,
+2009.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib41"><label>41</label><mixed-citation>
+Pendleton, L., Donato, D. C., Murray, B. C., Crooks, S., Jenkins, W. A.,
+Sifleet, S., Craft, C., Fourqurean, J. W., Kauffman, J. B., Marbà, N., and
+Megonigal, P.: Estimating global “blue carbon” emissions from conversion
+and degradation of vegetated coastal ecosystems, PloS One, 7, e43542,
+<a href="https://doi.org/10.1371/journal.pone.0043542" target="_blank">https://doi.org/10.1371/journal.pone.0043542</a>, 2012.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib42"><label>42</label><mixed-citation>
+Pethick, J. S.: Velocity surges and asymmetry in tidal channels, Estuar. Coast. Mar. Sci.
+11, 331–345, 1980.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib43"><label>43</label><mixed-citation>
+Pethick, J. and Orford, J. D.: Rapid rise in effective sea-level in southwest
+Bangladesh: its causes and contemporary rates, Global  Planet. Change, 111, 237–245, 2013.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib44"><label>44</label><mixed-citation>
+Rinaldo, A., Fagherazzi, S., Lanzoni, S., Marani, M., and Dietrich, W. E.:
+Tidal networks: 3. Landscape-forming discharges and studies in empirical
+geomorphic relationships, Water Resour. Res., 35, 3919–3929, 1999.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib45"><label>45</label><mixed-citation>
+Rogers, K. G. and Goodbred, S. L.: Mass failures associated with the passage
+of a large tropical cyclone over the Swatch of No Ground submarine canyon
+(Bay of Bengal), Geology, 38, 1051–1054, <a href="https://doi.org/101.1130/G41181.1" target="_blank">https://doi.org/101.1130/G41181.1</a>, 2010.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib46"><label>46</label><mixed-citation>
+Rogers, K. G. and Overeem, I.: Doomed to drown? Sediment dynamics in the
+human-controlled floodplains of the active Bengal Delta,
+Elementa: Sci. Anthrop., 6, 66, <a href="https://doi.org/10.1525/elementa.250" target="_blank">https://doi.org/10.1525/elementa.250</a>, 2017.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib47"><label>47</label><mixed-citation>
+Rogers, K. G., Goodbred Jr., S. L., and Mondal, D. R.: Monsoon sedimentation on
+the “abandoned” tide-influenced Ganges–Brahmaputra delta plain,
+Estuar. Coast. Shelf Sci., 131, 297–309, 2013.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib48"><label>48</label><mixed-citation>
+Saha, M. K. and Khan, N.: Changing profile of cyclones in the context of
+climate change and adaptation strategies in Bangladesh, J. Bangladesh Inst. Plann.,
+7, 63–78, 2014.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib49"><label>49</label><mixed-citation>
+Sakib, M., Nihal, F., Haque, A., Rahman, M., and Ali, M.: Sundarban as a
+Buffer against Storm Surge Flooding, World J. Eng. Technol., 3, 59–64, 2015.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib50"><label>50</label><mixed-citation>
+Sarwar, M. G. M. and Woodroffe, C. D.: Rates of shoreline change along the coast
+of Bangladesh, J. Coast. Conserv., 17, 515–526, 2013.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib51"><label>51</label><mixed-citation>
+Seijger, C., Datta, D. K., Douven, W., van Halsema, G., and Khan, M. F.:
+Rethinking sediments, tidal rivers and delta livelihoods: tidal river
+management as a strategic innovation in Bangladesh, Water Pol.,
+21, wp2018212, <a href="https://doi.org/10.2166/wp.2018.212" target="_blank">https://doi.org/10.2166/wp.2018.212</a>, 2018.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib52"><label>52</label><mixed-citation>
+Shaha, D. C. and Cho, Y. K.: Salt plug formation caused by decreased river
+discharge in a multi-channel estuary, Sci. Rep., 6, p. 27176, 2016.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib53"><label>53</label><mixed-citation>
+Shampa, M. and Pramanik, I. M.: Tidal River Management (TRM) for Selected
+Coastal Area of Bangladesh to Mitigate Drainage Congestion,
+Int. J. Sci. Technol. Res., 1, 1–6, 2012.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib54"><label>54</label><mixed-citation>
+Steckler, M. S., Nooner, S. L., Akhter, S. H., Chowdhury, S. K., Bettadpur, S.,
+Seeber, L., and Kogan, M. G.: Modeling Earth deformation from monsoonal
+flooding in Bangladesh using hydrographic, GPS, and Gravity Recovery and
+Climate Experiment (GRACE) data, J. Geophys. Res.-Solid Earth, 115, B8,
+<a href="https://doi.org/10.1029/2009JB007018" target="_blank">https://doi.org/10.1029/2009JB007018</a>, 2010.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib55"><label>55</label><mixed-citation>
+Syvitski, J. P.: Supply and flux of sediment along hydrological pathways:
+research for the 21st century, Global Planet. Change, 39, 1–11, 2003.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib56"><label>56</label><mixed-citation>
+Syvitski, J. P.: Deltas at risk, Sustain. Sci., 3, 23–32, 2008.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib57"><label>57</label><mixed-citation>
+Syvitski, J. P. and Milliman, J. D.: Geology, geography, and humans battle for
+dominance over the delivery of fluvial sediment to the coastal ocean,
+The J. Geol., 115, 1–19, 2007.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib58"><label>58</label><mixed-citation>
+Syvitski, J. P., Kettner, A. J., Overeem, I., Hutton, E. W., Hannon, M. T.,
+Brakenridge, G. R., Day, J., Vörösmarty, C., Saito, Y., Giosan, L.,
+and Nicholls, R. J.: Sinking deltas due to human activities,
+Nat. Geosci., 2, 681–686, 2009.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib59"><label>59</label><mixed-citation>
+Uddin, M. S., van Steveninck, E. D. R., Stuip, M., and Shah, M. A. R.:
+Economic valuation of provisioning and cultural services of a protected
+mangrove ecosystem: a case study on Sundarbans Reserve Forest,
+Bangladesh, Ecosyst. Serv., 5, 88–93, 2013.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib60"><label>60</label><mixed-citation>
+van Staveren, M. F., Warner, J. F., Khan, M. S. A., and Shah Alam Khan, M.:
+Bringing in the tides. From closing down to opening up delta polders via
+Tidal River Management in the southwest delta of Bangladesh, Water Pol., 19,
+147–164, 2016.
+
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib61"><label>61</label><mixed-citation>
+Wilson, C., Goodbred, S., Small, C., Gilligan, J., Sams, S., Mallick, B., and
+Hale, R.: Widespread infilling of tidal channels and navigable waterways in
+human-modified tidal deltaplain of southwest Bangladesh, Elem. Sci. Anth, 5,
+78, <a href="https://doi.org/10.1525/elementa.263" target="_blank">https://doi.org/10.1525/elementa.263</a>, 2017.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib62"><label>62</label><mixed-citation>
+Winterwerp, J. C. and Giardino, A.: Assessment of increasing freshwater input
+on salinity and sedimentation in the Gorai river system,
+World Bank Proj., 1206292–000, <a href="https://doi.org/10.13140/2.1.1504.1286" target="_blank">https://doi.org/10.13140/2.1.1504.1286</a>,
+2012.
+</mixed-citation></ref-html>
+<ref-html id="bib1.bib63"><label>63</label><mixed-citation>
+Yan, W.: Can mangroves buffer ocean acidification?, Eos, 97, <a href="https://doi.org/10.1029/2016EO053819" target="_blank">https://doi.org/10.1029/2016EO053819</a>, 2016.
+</mixed-citation></ref-html>--></article>

@@ -12,10 +12,10 @@ sys.path.insert(0, str(ROOT))
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, load_bundle
+from terrain_pipeline.common_infra import file_sha256, load_bundle
 from terrain_pipeline.single_domain_surface_consumer import load_consumer_manifest
-from terrain_pipeline.surface_adaptive_water import load_consumer_adaptive_frame
-from terrain_pipeline.fine_domain_mosaic import partition_saved_window
+from terrain_pipeline.adaptive_mesh import load_consumer_adaptive_frame
+from terrain_pipeline.surface_domain import partition_saved_window
 
 ACCEPTANCE = ROOT / "verification/single-domain-stage/acceptance-20261004-03/acceptance-index.json"
 ACCEPTANCE_SHA = "74f4b419f7341990e254c216cd2d37798f587abbabde6bc44ed507e92629971c"
@@ -96,12 +96,12 @@ def frame(package, scenario, index):
     else:
         bundle, bed = _load(item, entry["artifact"]), _load(item, declared["geometry"])
         if package == "native":
-            from terrain_pipeline.single_domain_surface_geometry import validate_water_frame
+            from terrain_pipeline.fine_subgrid import validate_water_frame
             validate_water_frame(bundle)
             if bundle["metadata"]["geometry_identity"] != bed["identity_sha256"]:
                 raise ValueError("native bed binding mismatch")
         else:
-            from terrain_pipeline.single_domain_fine_geometry import validate_fine_water_frame
+            from terrain_pipeline.fine_subgrid import validate_fine_water_frame
             validate_fine_water_frame(bundle)
             if bundle["metadata"]["bed_identity"] != bed["identity_sha256"]:
                 raise ValueError("uniform bed binding mismatch")

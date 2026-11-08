@@ -5,7 +5,7 @@ import unittest
 from unittest.mock import patch
 
 from tests.test_td_hour_pages_acceptance_io import fixture, write_json
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 from terrain_pipeline.td_surface_reaches import _plain
 from terrain_pipeline.td_hour_pages_acceptance_io import load_hour_pages_index
 from tools.audit_td_storage_continuation import audit_scenario

@@ -10,8 +10,9 @@ import numpy as np
 import rasterio
 from rasterio.transform import from_origin
 
-from terrain_pipeline.dem_domain import prepare_dem_candidate, save_dem_candidate
-from terrain_pipeline.real_dem_surface_network import build_real_dem_network
+from terrain_pipeline.td_source import prepare_dem_candidate, save_dem_candidate
+from terrain_pipeline.drainage import build_real_dem_network as build_real_dem_network
+from terrain_pipeline.drainage import candidate_mesh as candidate_mesh
 from tools import verify_real_dem_tiled_network as exporter
 from tools.verify_real_dem_outlet_classification import package_manifest
 
@@ -49,7 +50,8 @@ class TiledNetworkExportTests(unittest.TestCase):
              "unchanged": True}]}))
         self.vectors_path = self.root / "vectors.json"
         self.vectors_path.write_bytes(exporter.canonical_bytes({"source_archive_sha256": record["sha256"]}))
-        network = build_real_dem_network(candidate["arrays"]["height_m"], candidate["arrays"]["valid_mask"])
+        network = build_real_dem_network(candidate["arrays"]["height_m"], candidate["arrays"]["valid_mask"],
+                                         mesh=candidate_mesh(candidate))
         valid = candidate["arrays"]["valid_mask"]
         records = []
         counts = dict.fromkeys(("unknown_adjacent", "boundary_clip", "internal_sink"), 0)

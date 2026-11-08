@@ -1,0 +1,36 @@
+{
+  "kind": "requested mathematical curve, documentation only",
+  "k": 1,
+  "theta_unit": "degree, real XZ turn; zero straight",
+  "penalty_unit": "dimensionless",
+  "formula": "0 for 0<=theta<=45; k*(theta-45)/(90-theta) for 45<theta<90; +infinity for theta>=90",
+  "samples": [
+    {
+      "theta_deg": 60,
+      "penalty": 0.5,
+      "cost_multiplier": 1.5
+    },
+    {
+      "theta_deg": 75,
+      "penalty": 2.0,
+      "cost_multiplier": 3.0
+    },
+    {
+      "theta_deg": 85,
+      "penalty": 8.0,
+      "cost_multiplier": 9.0
+    },
+    {
+      "theta_deg": 89,
+      "penalty": 44.0,
+      "cost_multiplier": 45.0
+    }
+  ],
+  "plot_max_sample_theta_deg": 89.9,
+  "at_or_above_90": "forbidden, no finite plotted value",
+  "script_sha256": "5eade15a3a2dd8c6368624ff7928fe7202ef6c34e14890884b2c62a7b805980d",
+  "files_sha256": {
+    "README.md": "2a52ebae05217961417678b70aba1e7714c90b90d9b74fe59543a794ea828e6a",
+    "turn-penalty.png": "d6af3a09203ac1e5725cdbf811db2f06850fc7af0b77a6bfb4abaaac80596b6b"
+  }
+}

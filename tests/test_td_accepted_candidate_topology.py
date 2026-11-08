@@ -5,9 +5,12 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.td_basin_source import load_td_source_bundle, make_td_source, save_td_source
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy, save_basin_hierarchy
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.basin_storage import load_td_source_bundle as load_td_source_bundle
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_storage import save_td_source as save_td_source
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_topology import save_basin_hierarchy as save_basin_hierarchy
 from terrain_pipeline.td_surface_reaches import _hash, _plain
 from tests import test_td_accepted_water_morphology as morphology_fixture
 from tools.rebuild_td_accepted_candidate_topology import publish_topology, load_topology_index

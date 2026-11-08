@@ -5,7 +5,7 @@ import math
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, load_bundle, readonly, save_bundle
+from terrain_pipeline.common_infra import file_sha256, identity, load_bundle, readonly, save_bundle
 from terrain_pipeline.td_native_channel_geometry import validate_channel_geometry
 
 

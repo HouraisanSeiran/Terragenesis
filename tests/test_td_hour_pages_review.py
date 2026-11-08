@@ -8,7 +8,7 @@ import sys
 import numpy as np
 from unittest.mock import patch
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 from terrain_pipeline.td_hour_pages_review import export_hour_pages_review, load_hour_pages_review, _hash, MAX_BYTES
 from tests.test_td_hour_pages_acceptance_io import fixture, write_json
 
@@ -120,7 +120,7 @@ class HourPagesReviewTests(unittest.TestCase):
 
     def test_failed_refinement_is_explicit_diagnostic(self):
         from terrain_pipeline.td_hour_pages_review import _manifest
-        from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
+        from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
         accepted = {"scenarios": {"ordinary": {"numerical_gate_passed": False}, "strong": {"numerical_gate_passed": True}}}
         result = _manifest(self.input_index, self.arguments, accepted, load_basin_hierarchy(**self.arguments["hierarchy_record"]), [])
         self.assertTrue(result["diagnostic_only"])

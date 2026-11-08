@@ -14,8 +14,8 @@ import psutil
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.rainfall_runoff import _strict_json
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.runoff import _strict_json as _strict_json
 from tools.audit_td_candidate_coupling import read_record
 
 ACCEPTANCE_SHA256 = "c7da55e59be8d9d91fc81c45f17a0c6421848b06fafe215fc268608b1b00a24f"

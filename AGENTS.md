@@ -1,6 +1,6 @@
 # Terragenesis 工程约定
 
-先阅读 CONTRIBUTING.md。保留 TODO.md 作为工作总览；具体任务与规格放在下述本地任务目录。
+先阅读 CONTRIBUTING.md。保留 TODO.md 作为工作总览；现行文档索引见 docs/README.md。具体任务与规格放在下述本地任务目录。
 
 ## Agent skills
 

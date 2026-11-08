@@ -14,9 +14,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from terrain_pipeline.artifacts.contracts import digest
-from terrain_pipeline.dem_domain import load_dem_candidate
+from terrain_pipeline.td_source import load_dem_candidate
 from terrain_pipeline.real_dem_outlet_classification import validate_outlet_classification
-from terrain_pipeline.real_dem_surface_network import build_real_dem_network
+from terrain_pipeline.drainage import build_real_dem_network as build_real_dem_network
 from tools.verify_real_dem_outlet_classification import (
     DEFAULT_AUDIT, DEFAULT_CANDIDATE, DEFAULT_VECTORS, read_json, verify_package,
 )

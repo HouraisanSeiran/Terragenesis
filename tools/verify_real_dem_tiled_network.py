@@ -1,4 +1,4 @@
-"""Strict D8 tiled traversal comparison, not a streamed or dynamic solver.
+"""Strict irregular-graph tiled traversal comparison.
 
 Cold verification may reconstruct static evidence, but never modifies sources,
 publishes files, or advances dynamic state. Height and network state are global
@@ -22,8 +22,10 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.dem_domain import load_dem_candidate
-from terrain_pipeline.real_dem_surface_network import RealDemNetwork, build_real_dem_network
+from terrain_pipeline.td_source import load_dem_candidate
+from terrain_pipeline.drainage import RealDemNetwork as RealDemNetwork
+from terrain_pipeline.drainage import build_real_dem_network as build_real_dem_network
+from terrain_pipeline.drainage import candidate_mesh as candidate_mesh
 from tools import verify_real_dem_outlet_classification as stage_a_exporter
 from tools.verify_real_dem_outlet_classification import (
     DEFAULT_AUDIT, DEFAULT_CANDIDATE, DEFAULT_VECTORS, canonical_bytes,
@@ -33,11 +35,11 @@ from tools.verify_real_dem_outlet_classification import (
 
 DEFAULT_STAGE_A = ROOT / "verification/real-dem-outlet-classification/run-20261001T151020146526Z"
 DEFAULT_OUTPUT_ROOT = ROOT / "verification/real-dem-tiled-network"
-ALGORITHM = "real-dem-tiled-network-export-v1"
+ALGORITHM = "real-dem-tiled-network-export-irregular-v2"
 ARRAY_NAMES = ("receiver", "order", "accumulation_cells", "boundary_outlet",
                "unknown_adjacent_terminal")
 CONFIG = {"tile_sizes": [256, 512, 128], "tile_orders": ["row_major", "reversed"],
-          "connectivity": 8, "stored_tile_size": 256, "stored_tile_order": "row_major"}
+          "topology": "irregular_Delaunay", "stored_tile_size": 256, "stored_tile_order": "row_major"}
 
 
 def load_inputs(candidate_path, stage_a_path, vectors_path, audit_path):
@@ -170,10 +172,10 @@ def tile_statistics(network, tile_size):
 
 
 def compute(candidate, classification):
-    module = importlib.import_module("terrain_pipeline.real_dem_tiled_network")
+    module = importlib.import_module('terrain_pipeline.drainage')
     arrays = candidate["arrays"]
     started = perf_counter()
-    reference = build_real_dem_network(arrays["height_m"], arrays["valid_mask"], connectivity=8)
+    reference = build_real_dem_network(arrays["height_m"], arrays["valid_mask"], mesh=candidate_mesh(candidate))
     reference_runtime = perf_counter() - started
     evidence = classification_check(candidate, classification, reference)
     comparisons = []
@@ -204,7 +206,7 @@ def compute(candidate, classification):
               "notes": ["Global network state and height ndarray/mask retained in memory.",
                         "Tiled traversal is not a streamed solver or bounded-memory solver.",
                         "Actual candidate shape only; no 1024 real DEM claim.",
-                        "Strict downhill D8 reference; no height modification or dynamic advancement.",
+                        "Strict downhill irregular-graph reference; no height modification or dynamic advancement.",
                         "Unknown cells are barriers, not ocean; all terminals remain classified."]}
     algorithm = {"version": ALGORITHM, "export_code_sha256": file_sha256(__file__),
                  "tiled_code_sha256": file_sha256(module.__file__),

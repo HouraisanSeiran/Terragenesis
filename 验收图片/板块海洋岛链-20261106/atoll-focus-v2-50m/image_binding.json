@@ -1,0 +1,399 @@
+{
+  "product_identity": "e1e2c5297d45988d16c5ee47f7ca4e8292b00fb85cc6fa4908bfb91f0fcc779c",
+  "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+  "algorithm": "ocean-islands-curved-valleys-v2",
+  "source_world_seed": 20260903,
+  "world_seed": 20260903,
+  "frozen_product": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\ocean-islands-20261106\\run-curved-v2-2km\\islands.npz",
+  "frozen_sha256": "7f50d0d3fa8fcc0b45b11a6c3b0970b985d1811167bf3a1c23bf74032a7b94fd",
+  "source_run_manifest": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\ocean-islands-20261106\\run-curved-v2-2km\\delivery_manifest.json",
+  "feature_id": "hotspot:20260903:0:1:stage:4",
+  "selection": "first atoll by feature ID, no visual reselection",
+  "description": "Read-only 50m direct geometry raster, 2x2 area refinement; no TD or added morphology",
+  "export": {
+    "product_identity": "e1e2c5297d45988d16c5ee47f7ca4e8292b00fb85cc6fa4908bfb91f0fcc779c",
+    "source_identity": "78e2a5fc5ba6e3f6c0cd53d29d99f508d9fb03bfe6c7078c33c61d413459d0bb",
+    "source_world_seed": 20260903,
+    "coordinates": "X east, Z south; metres; cell centres",
+    "shape_zx": [
+      505,
+      505
+    ],
+    "bounds_m": [
+      1491.8824865276765,
+      148963.48400916462,
+      26723.894924468223,
+      174195.4964471052
+    ],
+    "spacing_m": 50,
+    "land_area_method": "1x1 regular samples; potential exposed inner supports refined 2x2; finite quadrature can miss narrower strips",
+    "refined_cells": 255025,
+    "refinement_query_points": 1020100,
+    "area_refinement_requested": 2,
+    "area_refinement_used": 2,
+    "area_error": "No exact vector-area bound. Fractions are approximate; narrower than spacing/2 may remain unresolved. Never inflate a detected island to one full cell.",
+    "feature_support_cells": [
+      {
+        "feature_id": "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+        "kind": "arc",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:-1:-3:stage:0",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:-1:-3:stage:1",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:-1:-3:stage:2",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:-1:-3:stage:3",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:-1:3:stage:0",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:-1:3:stage:1",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:-1:3:stage:2",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:-3:-3:stage:0",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:-3:-3:stage:1",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:0:1:stage:0",
+        "kind": "hotspot",
+        "support_cells_zx": [
+          0,
+          124,
+          505,
+          505
+        ]
+      },
+      {
+        "feature_id": "hotspot:20260903:0:1:stage:1",
+        "kind": "hotspot",
+        "support_cells_zx": [
+          0,
+          0,
+          505,
+          505
+        ]
+      },
+      {
+        "feature_id": "hotspot:20260903:0:1:stage:2",
+        "kind": "hotspot",
+        "support_cells_zx": [
+          0,
+          0,
+          505,
+          505
+        ]
+      },
+      {
+        "feature_id": "hotspot:20260903:0:1:stage:3",
+        "kind": "hotspot",
+        "support_cells_zx": [
+          0,
+          0,
+          505,
+          505
+        ]
+      },
+      {
+        "feature_id": "hotspot:20260903:0:1:stage:4",
+        "kind": "atoll",
+        "support_cells_zx": [
+          0,
+          0,
+          505,
+          505
+        ]
+      },
+      {
+        "feature_id": "hotspot:20260903:0:1:stage:5",
+        "kind": "atoll",
+        "support_cells_zx": [
+          0,
+          0,
+          505,
+          505
+        ]
+      },
+      {
+        "feature_id": "hotspot:20260903:0:1:stage:6",
+        "kind": "seamount",
+        "support_cells_zx": [
+          0,
+          0,
+          505,
+          469
+        ]
+      },
+      {
+        "feature_id": "hotspot:20260903:2:0:stage:0",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:2:0:stage:1",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:2:0:stage:2",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:2:0:stage:3",
+        "kind": "atoll",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:2:0:stage:4",
+        "kind": "seamount",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:3:2:stage:0",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:3:3:stage:0",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:3:3:stage:1",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:3:3:stage:2",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:3:4:stage:0",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:3:4:stage:1",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "hotspot:20260903:4:2:stage:0",
+        "kind": "hotspot",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:030d9e149ecef9bd96390013",
+        "kind": "ridge",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:0644b9e1591dbbb5d7a44672",
+        "kind": "ridge",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:1254f82ce64738b799e14083",
+        "kind": "ridge",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:3c01e143317c5d98092bb07d",
+        "kind": "ridge",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:4328170d46099bae06e679ff",
+        "kind": "ridge",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:634fe3c0a2e6eb37930db90f",
+        "kind": "ridge",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+        "kind": "ridge",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:6f6d1afad0b0fd33355e1ff6",
+        "kind": "ridge",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:7a3329de68367d0fbb9c4512",
+        "kind": "ridge",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:7aaec1910637fdc905d4b3f5",
+        "kind": "ridge",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:7eb1ec6ed847068f6a0a19eb",
+        "kind": "ridge",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:be41c4dbc8d63dbcd8f46b31",
+        "kind": "ridge",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:c77421b5327be411aa5016f8",
+        "kind": "ridge",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:cc656372d4de1059b5e59b7b",
+        "kind": "ridge",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:d7672a6f9023efcd7ea73c18",
+        "kind": "ridge",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:e399bfa4c19940381db64935",
+        "kind": "ridge",
+        "support_cells_zx": null
+      },
+      {
+        "feature_id": "ridge:20260903:f66b8f43e29ec02c1c8fe269",
+        "kind": "ridge",
+        "support_cells_zx": null
+      }
+    ],
+    "feature_ids": [
+      "arc:20260903:0a95e2ec253a6ce1f6d33de2",
+      "hotspot:20260903:-1:-3:stage:0",
+      "hotspot:20260903:-1:-3:stage:1",
+      "hotspot:20260903:-1:-3:stage:2",
+      "hotspot:20260903:-1:-3:stage:3",
+      "hotspot:20260903:-1:3:stage:0",
+      "hotspot:20260903:-1:3:stage:1",
+      "hotspot:20260903:-1:3:stage:2",
+      "hotspot:20260903:-3:-3:stage:0",
+      "hotspot:20260903:-3:-3:stage:1",
+      "hotspot:20260903:0:1:stage:0",
+      "hotspot:20260903:0:1:stage:1",
+      "hotspot:20260903:0:1:stage:2",
+      "hotspot:20260903:0:1:stage:3",
+      "hotspot:20260903:0:1:stage:4",
+      "hotspot:20260903:0:1:stage:5",
+      "hotspot:20260903:0:1:stage:6",
+      "hotspot:20260903:2:0:stage:0",
+      "hotspot:20260903:2:0:stage:1",
+      "hotspot:20260903:2:0:stage:2",
+      "hotspot:20260903:2:0:stage:3",
+      "hotspot:20260903:2:0:stage:4",
+      "hotspot:20260903:3:2:stage:0",
+      "hotspot:20260903:3:3:stage:0",
+      "hotspot:20260903:3:3:stage:1",
+      "hotspot:20260903:3:3:stage:2",
+      "hotspot:20260903:3:4:stage:0",
+      "hotspot:20260903:3:4:stage:1",
+      "hotspot:20260903:4:2:stage:0",
+      "ridge:20260903:030d9e149ecef9bd96390013",
+      "ridge:20260903:0644b9e1591dbbb5d7a44672",
+      "ridge:20260903:1254f82ce64738b799e14083",
+      "ridge:20260903:3c01e143317c5d98092bb07d",
+      "ridge:20260903:4328170d46099bae06e679ff",
+      "ridge:20260903:634fe3c0a2e6eb37930db90f",
+      "ridge:20260903:6ca686a2eeb8a3f4725335a2",
+      "ridge:20260903:6f6d1afad0b0fd33355e1ff6",
+      "ridge:20260903:7a3329de68367d0fbb9c4512",
+      "ridge:20260903:7aaec1910637fdc905d4b3f5",
+      "ridge:20260903:7eb1ec6ed847068f6a0a19eb",
+      "ridge:20260903:be41c4dbc8d63dbcd8f46b31",
+      "ridge:20260903:c77421b5327be411aa5016f8",
+      "ridge:20260903:cc656372d4de1059b5e59b7b",
+      "ridge:20260903:d7672a6f9023efcd7ea73c18",
+      "ridge:20260903:e399bfa4c19940381db64935",
+      "ridge:20260903:f66b8f43e29ec02c1c8fe269"
+    ],
+    "feature_authority": "frozen vector inventory retained independently of raster",
+    "topology": "window only; global ocean topology not computed",
+    "elevation_png_mapping": {
+      "zero_code_m": -8000,
+      "max_code_m": 8000,
+      "code_to_m": "-8000 + code * 16000 / 65535 (16-bit); 255 denominator for 8-bit",
+      "clipped_below_count": 0,
+      "clipped_above_count": 0,
+      "vertical_unit": "metres; sea level 0m; float NPY/NPZ remains authoritative"
+    },
+    "preview": "height colour + physical hillshade; no real vegetation/land cover, no water/river ecology"
+  },
+  "coverage_status": "complete_in_window",
+  "audited_cells": 255025,
+  "wall_seconds": 7.465003199999046,
+  "files": {
+    "atoll_focus.npz": {
+      "sha256": "445ebde581d66fc0ca7636db4dd341451a1ee02532612f22ee61d7753f2bcfa8",
+      "bytes": 5029249
+    },
+    "atoll_focus_base16.png": {
+      "sha256": "08d6c078e520def6f0961acbb404ebc44faa52607bb96120fdd0367335c5ebc0",
+      "bytes": 15903
+    },
+    "atoll_focus_base_preview.png": {
+      "sha256": "8d77573a0a81fb8f2005e18a943838c3b87680e031a67d159a5af1084bf3b209",
+      "bytes": 2787
+    },
+    "atoll_focus_comparison.png": {
+      "sha256": "baff86ec5019e04f79dc09e00d5561a079828d1c910513bfe582c82f375fdeec",
+      "bytes": 116440
+    },
+    "atoll_focus_elevation16.png": {
+      "sha256": "749854c3aa39cd2318385e3ace4b0180b345a3e1152e2d455172a4e912773779",
+      "bytes": 64812
+    },
+    "atoll_focus_elevation8.png": {
+      "sha256": "91cfd06e99da06162d09287e13433e888b321ee7b933ede17d5d60de768ed52d",
+      "bytes": 6149
+    },
+    "atoll_focus_elevation_m.npy": {
+      "sha256": "7d9c88a82489367ae4b1bbe74930ca819c2a77147ddb57e97fceab7d1b238463",
+      "bytes": 1020228
+    },
+    "atoll_focus_terrain_preview.png": {
+      "sha256": "fe6922ebaa13ef149b7f8e14576c3fbbf6d9597e542a95e8b6504cc6507dc17f",
+      "bytes": 23458
+    }
+  }
+}

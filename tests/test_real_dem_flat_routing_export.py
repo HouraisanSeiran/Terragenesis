@@ -4,7 +4,8 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.real_dem_flat_routing import resolve_dem_flats, validate_flat_routing
+from terrain_pipeline.drainage import resolve_dem_flats as resolve_dem_flats
+from terrain_pipeline.drainage import validate_flat_routing as validate_flat_routing
 from tests import test_real_dem_tiled_network_export as tiled_tests
 from tools import verify_real_dem_flat_routing as exporter
 

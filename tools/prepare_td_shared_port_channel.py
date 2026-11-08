@@ -10,7 +10,7 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 from terrain_pipeline.td_shared_port_channel import (
     FLAGS, MAX_BYTES, MAX_FACES, MAX_NODES, MAX_NODES_HARD, MAX_RSS,
     PARAMETERS, POLICY_IDENTITY_SHA256, FragmentComposer, build_midpoint_port,

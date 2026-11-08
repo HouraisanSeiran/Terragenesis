@@ -10,10 +10,12 @@ sys.path.insert(0, str(ROOT))
 
 import numpy as np
 
-from terrain_pipeline.td_basin_storage import load_basin_storage
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from tools.verify_td_basin_storage import HIERARCHY, HIERARCHY_SHA256, HIERARCHY_IDENTITY
+from terrain_pipeline.basin_storage import load_basin_storage as load_basin_storage
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from tools.verify_basin_storage import threshold_storage_HIERARCHY as HIERARCHY
+from tools.verify_basin_storage import threshold_storage_HIERARCHY_SHA256 as HIERARCHY_SHA256
+from tools.verify_basin_storage import threshold_storage_HIERARCHY_IDENTITY as HIERARCHY_IDENTITY
 
 
 def verify(package):

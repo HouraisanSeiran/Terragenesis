@@ -32,6 +32,7 @@ public final class DerivedRegionVerification {
         };
         var tuned = new RawRegionTerrainSource(root, 17, model.identity(),
             RawRegionTerrainSource.TUNED_RECIPE, config, () -> model);
+        tuned.prepareRegion(0, 0);
         tuned.sample(0, 0);
         byte[] rawBefore = MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(RawRegionArtifact.path(tuned.directory(), 0, 0)));
         var source = new DerivedRegionTerrainSource(root, 17, "", config, () -> tuned);

@@ -1,0 +1,376 @@
+{
+  "passed": true,
+  "checks": {
+    "all_checkpoint_checks": true,
+    "old_nodes_edges_and_mouths_preserved": true,
+    "three_added_split_rejoin_loops_one_connected_graph": true,
+    "new_old_arms_wet_and_carry_over_40_m3_s": true,
+    "approximately_50m_minimum_owned_width": true,
+    "old_node_bank_heights_preserved": true,
+    "old_owned_inventory_preserved_at_construction": true,
+    "unclaimed_ground_unchanged_by_construction": true,
+    "immutable_base_and_classification_unchanged": true,
+    "construction_total_solid_conserved": true,
+    "construction_cut_explicitly_reserved": true,
+    "geology_uses_full_known_ocean_not_routing_fan": true,
+    "local_routing_and_deposition_have_no_shared_fan": true,
+    "event_external_solid_closure": true,
+    "event_is_600_seconds_without_topology_repaint": true,
+    "frozen_original_checkpoint_unchanged": true,
+    "frozen_td_source_unchanged": true,
+    "event_input_chain_matches_constructed_initial": true,
+    "production_implementation_matches_construction": true
+  },
+  "arms": [
+    {
+      "group": 0,
+      "fork_zx": [
+        180,
+        138
+      ],
+      "rejoin_zx": [
+        189,
+        143
+      ],
+      "new_edge_count": 12,
+      "initial_new_arm": {
+        "min_q_m3_s": 129.28016874470512,
+        "min_depth_m": 2.6600105821266498,
+        "min_width_m": 49.23081336300334,
+        "min_bank_freeboard_m": 1.2409430169276705
+      },
+      "final_new_arm": {
+        "min_q_m3_s": 130.464682724674,
+        "min_depth_m": 2.680437016813332,
+        "min_width_m": 49.23081336300334,
+        "min_bank_freeboard_m": 1.2533305663516958
+      },
+      "initial_original_arm": {
+        "min_q_m3_s": 588.1277392207676,
+        "min_depth_m": 3.465419002851671,
+        "min_width_m": 131.64723591032492,
+        "min_bank_freeboard_m": 1.2427367825905118
+      },
+      "final_original_arm": {
+        "min_q_m3_s": 585.4198590421777,
+        "min_depth_m": 3.499894763196569,
+        "min_width_m": 131.64723591032492,
+        "min_bank_freeboard_m": 1.2551420219867624
+      }
+    },
+    {
+      "group": 1,
+      "fork_zx": [
+        181,
+        151
+      ],
+      "rejoin_zx": [
+        183,
+        161
+      ],
+      "new_edge_count": 14,
+      "initial_new_arm": {
+        "min_q_m3_s": 106.10854048351293,
+        "min_depth_m": 2.444086114701548,
+        "min_width_m": 80.43938145812959,
+        "min_bank_freeboard_m": 1.5210222129384463
+      },
+      "final_new_arm": {
+        "min_q_m3_s": 100.493808225466,
+        "min_depth_m": 2.4699522404862866,
+        "min_width_m": 80.43938145812959,
+        "min_bank_freeboard_m": 1.5182854475024496
+      },
+      "initial_original_arm": {
+        "min_q_m3_s": 268.8742583853654,
+        "min_depth_m": 3.2543504092274986,
+        "min_width_m": 90.45323498690813,
+        "min_bank_freeboard_m": 1.5224210812455514
+      },
+      "final_original_arm": {
+        "min_q_m3_s": 276.8064734992362,
+        "min_depth_m": 3.2948829007308884,
+        "min_width_m": 90.45323498690813,
+        "min_bank_freeboard_m": 1.519964014512273
+      }
+    },
+    {
+      "group": 2,
+      "fork_zx": [
+        184,
+        148
+      ],
+      "rejoin_zx": [
+        195,
+        158
+      ],
+      "new_edge_count": 17,
+      "initial_new_arm": {
+        "min_q_m3_s": 119.41497860663623,
+        "min_depth_m": 2.400535779293468,
+        "min_width_m": 90.62636807708365,
+        "min_bank_freeboard_m": 1.5281179806434997
+      },
+      "final_new_arm": {
+        "min_q_m3_s": 114.64108001976615,
+        "min_depth_m": 2.4237442330519166,
+        "min_width_m": 90.59943109186871,
+        "min_bank_freeboard_m": 1.5248967859764235
+      },
+      "initial_original_arm": {
+        "min_q_m3_s": 288.19431456007015,
+        "min_depth_m": 3.193024970122464,
+        "min_width_m": 97.15582985659336,
+        "min_bank_freeboard_m": 1.529035446817265
+      },
+      "final_original_arm": {
+        "min_q_m3_s": 292.17409648868255,
+        "min_depth_m": 3.232367623988147,
+        "min_width_m": 97.15582985659336,
+        "min_bank_freeboard_m": 1.526197494614249
+      }
+    }
+  ],
+  "checkpoints": [
+    {
+      "checkpoint": ".scratch\\delta-braided-acceptance-20261104\\initial-fixed\\initial",
+      "checks": {
+        "source_grid_preserved": true,
+        "base_valid_seed_porosity_preserved": true,
+        "four_distinct_actual_mouths": true,
+        "unique_nodes_and_physical_edges": true,
+        "finite_nonnegative_stock": true,
+        "fractional_area_not_duplicated": true,
+        "owned_stock_within_grid": true,
+        "bed_matches_owned_stock": true,
+        "effective_width_within_owned_area": true,
+        "physical_node_and_mouth_q_conserved": true,
+        "all_four_routes_wet_to_actual_sea": true,
+        "no_hidden_bank_overtopping": true,
+        "fresh_solve_matches_saved": true,
+        "input_files_unchanged": true
+      },
+      "sha256": {
+        "json": "9f8b140810181dd990dc8c83a80d05acac1c1728dd94e8fa6f2b32721f665480",
+        "npz": "f4898e9f7a0bdd82781433d7c3fa19e820f208d96eade8a9f38256b9228f5c5a"
+      },
+      "routes": [
+        {
+          "mouth_zx": [
+            207,
+            149
+          ],
+          "mouth_q_m3_s": 386.40010172094856,
+          "min_edge_q_m3_s": 386.4001017208948,
+          "min_depth_m": 3.0116305330539097,
+          "min_effective_width_m": 98.53008983735009,
+          "actual_exterior_faces": 1
+        },
+        {
+          "mouth_zx": [
+            184,
+            172
+          ],
+          "mouth_q_m3_s": 374.98279886974444,
+          "min_edge_q_m3_s": 268.8742583853654,
+          "min_depth_m": 2.8315517810784745,
+          "min_effective_width_m": 90.45323498690813,
+          "actual_exterior_faces": 6
+        },
+        {
+          "mouth_zx": [
+            198,
+            163
+          ],
+          "mouth_q_m3_s": 407.6092931679174,
+          "min_edge_q_m3_s": 288.19431456007015,
+          "min_depth_m": 2.9519400824528383,
+          "min_effective_width_m": 97.15582985659336,
+          "actual_exterior_faces": 4
+        },
+        {
+          "mouth_zx": [
+            210,
+            141
+          ],
+          "mouth_q_m3_s": 331.00780624498043,
+          "min_edge_q_m3_s": 331.0078062449092,
+          "min_depth_m": 2.8678097100109077,
+          "min_effective_width_m": 98.53008983735009,
+          "actual_exterior_faces": 4
+        },
+        {
+          "mouth_zx": [
+            207,
+            149
+          ],
+          "mouth_q_m3_s": 386.40010172094856,
+          "min_edge_q_m3_s": 129.28016874470512,
+          "min_depth_m": 2.6600105821266498,
+          "min_effective_width_m": 49.23081336300334,
+          "actual_exterior_faces": 1
+        },
+        {
+          "mouth_zx": [
+            184,
+            172
+          ],
+          "mouth_q_m3_s": 374.98279886974444,
+          "min_edge_q_m3_s": 106.10854048351293,
+          "min_depth_m": 2.444086114701548,
+          "min_effective_width_m": 80.43938145812959,
+          "actual_exterior_faces": 6
+        },
+        {
+          "mouth_zx": [
+            198,
+            163
+          ],
+          "mouth_q_m3_s": 407.6092931679174,
+          "min_edge_q_m3_s": 119.41497860663623,
+          "min_depth_m": 2.400535779293468,
+          "min_effective_width_m": 90.62636807708365,
+          "actual_exterior_faces": 4
+        }
+      ],
+      "accepted_q_m3_s": 1500.0,
+      "minimum_bank_freeboard_m": 0.6146466786777378,
+      "fresh_solve_max_error": 0.0,
+      "max_node_q_residual_m3_s": 4.487787919060793e-11,
+      "max_effective_width_excess_m": 1.4210854715202004e-14,
+      "total_solid_m3": 9250440000.000004,
+      "physical_time_s": 0.0,
+      "annual_progress_years": 0.0
+    },
+    {
+      "checkpoint": ".scratch\\delta-braided-acceptance-20261104\\event-600s\\final",
+      "checks": {
+        "source_grid_preserved": true,
+        "base_valid_seed_porosity_preserved": true,
+        "four_distinct_actual_mouths": true,
+        "unique_nodes_and_physical_edges": true,
+        "finite_nonnegative_stock": true,
+        "fractional_area_not_duplicated": true,
+        "owned_stock_within_grid": true,
+        "bed_matches_owned_stock": true,
+        "effective_width_within_owned_area": true,
+        "physical_node_and_mouth_q_conserved": true,
+        "all_four_routes_wet_to_actual_sea": true,
+        "no_hidden_bank_overtopping": true,
+        "fresh_solve_matches_saved": true,
+        "input_files_unchanged": true
+      },
+      "sha256": {
+        "json": "6276e78b824a1c46c395e8b113e54b7a03ce99de9069ee7283027073b204e35e",
+        "npz": "649b932b11db27726d5a7b9de5c741b2ec1b6b8c76e24f09762457e5f1f71f12"
+      },
+      "routes": [
+        {
+          "mouth_zx": [
+            207,
+            149
+          ],
+          "mouth_q_m3_s": 387.72246949991114,
+          "min_edge_q_m3_s": 387.72246949991097,
+          "min_depth_m": 3.0528150100713387,
+          "min_effective_width_m": 98.53008983735009,
+          "actual_exterior_faces": 1
+        },
+        {
+          "mouth_zx": [
+            184,
+            172
+          ],
+          "mouth_q_m3_s": 377.30028172470423,
+          "min_edge_q_m3_s": 276.8064734992362,
+          "min_depth_m": 2.873225450049539,
+          "min_effective_width_m": 90.45323498690813,
+          "actual_exterior_faces": 6
+        },
+        {
+          "mouth_zx": [
+            198,
+            163
+          ],
+          "mouth_q_m3_s": 406.81517650845154,
+          "min_edge_q_m3_s": 292.17409648868255,
+          "min_depth_m": 2.9980281856514654,
+          "min_effective_width_m": 97.15582985659336,
+          "actual_exterior_faces": 4
+        },
+        {
+          "mouth_zx": [
+            210,
+            141
+          ],
+          "mouth_q_m3_s": 328.1620722669418,
+          "min_edge_q_m3_s": 328.1620722669416,
+          "min_depth_m": 2.9134253834842054,
+          "min_effective_width_m": 98.53008983735009,
+          "actual_exterior_faces": 4
+        },
+        {
+          "mouth_zx": [
+            207,
+            149
+          ],
+          "mouth_q_m3_s": 387.72246949991114,
+          "min_edge_q_m3_s": 130.464682724674,
+          "min_depth_m": 2.680437016813332,
+          "min_effective_width_m": 49.23081336300334,
+          "actual_exterior_faces": 1
+        },
+        {
+          "mouth_zx": [
+            184,
+            172
+          ],
+          "mouth_q_m3_s": 377.30028172470423,
+          "min_edge_q_m3_s": 100.493808225466,
+          "min_depth_m": 2.4699522404862866,
+          "min_effective_width_m": 80.43938145812959,
+          "actual_exterior_faces": 6
+        },
+        {
+          "mouth_zx": [
+            198,
+            163
+          ],
+          "mouth_q_m3_s": 406.81517650845154,
+          "min_edge_q_m3_s": 114.64108001976615,
+          "min_depth_m": 2.4237442330519166,
+          "min_effective_width_m": 90.59943109186871,
+          "actual_exterior_faces": 4
+        }
+      ],
+      "accepted_q_m3_s": 1500.0,
+      "minimum_bank_freeboard_m": 0.6162500123272078,
+      "fresh_solve_max_error": 0.0,
+      "max_node_q_residual_m3_s": 4.547473508864641e-13,
+      "max_effective_width_excess_m": 1.4210854715202004e-14,
+      "total_solid_m3": 9250441800.000004,
+      "physical_time_s": 600.0,
+      "annual_progress_years": 0.0
+    }
+  ],
+  "construction_reserved_solid_m3": 1038750.0,
+  "physical_event_external_solid_m3": 1800.0,
+  "event_solid_closure_residual_m3": 0.0,
+  "graph_before_after": {
+    "nodes": [
+      131,
+      171
+    ],
+    "edges": [
+      130,
+      173
+    ],
+    "independent_loops": [
+      0,
+      3
+    ]
+  },
+  "known_ocean_cells": 50743,
+  "full_ocean_mask_sha256": "854c0a2df6c7b59f0c867597513bcedefc7c76e7765a8283782905e68390e52e",
+  "scope": "explicit initial construction; three local split/rejoin loops on previously deposited plain; 600s operability, not spontaneous mature braiding"
+}

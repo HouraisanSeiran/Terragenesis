@@ -7,16 +7,20 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.td_basin_breach import load_saddle_breach
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy
-from terrain_pipeline.td_basin_overflow import OverflowParameters, build_overflow_topology
-from terrain_pipeline.td_basin_reception import _sha, build_basin_reception
-from terrain_pipeline.td_basin_source import make_td_source
-from terrain_pipeline.td_material_field import make_material_field
-from terrain_pipeline.td_stable_spill_paths import (
-    CASE_NAMES, _digest, build_stable_spill_paths, generate_bounded_candidates, trace_receiver_side,
-)
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.basin_topology import load_saddle_breach as load_saddle_breach
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_storage import OverflowParameters as OverflowParameters
+from terrain_pipeline.basin_storage import build_overflow_topology as build_overflow_topology
+from terrain_pipeline.basin_topology import _sha as _sha
+from terrain_pipeline.basin_topology import build_basin_reception as build_basin_reception
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.geology import make_material_field
+from terrain_pipeline.basin_topology import CASE_NAMES as CASE_NAMES
+from terrain_pipeline.basin_topology import _digest as _digest
+from terrain_pipeline.basin_topology import build_stable_spill_paths as build_stable_spill_paths
+from terrain_pipeline.basin_topology import generate_bounded_candidates as generate_bounded_candidates
+from terrain_pipeline.basin_topology import trace_receiver_side as trace_receiver_side
 from tools.prepare_td_stable_spill_paths import _json, load_fixed_inputs, prepare, verify_pins
 
 
@@ -221,7 +225,7 @@ class StableSpillPathTests(unittest.TestCase):
         hierarchy, topology, cases = fixture()
         report = build_stable_spill_paths(hierarchy, topology, cases)
         materials = make_material_field((1, 4), origin_m_xz=(0, 0), spacing_m=1.)
-        with patch("terrain_pipeline.td_stable_spill_paths.generate_saddle_breach", side_effect=ValueError("failed")) as generate:
+        with patch('terrain_pipeline.basin_topology.generate_saddle_breach', side_effect=ValueError("failed")) as generate:
             result = generate_bounded_candidates(report, hierarchy, materials, max_candidates=1)
         self.assertEqual(generate.call_count, 1)
         self.assertEqual(result["generation_calls"], 1)
@@ -290,7 +294,7 @@ class StableSpillPathTests(unittest.TestCase):
             self.assertEqual(report["candidate_status_counts"], {"rejected": 2})
             for attempt in report["candidate_attempts"]:
                 pin = attempt["artifact"]
-                with patch("terrain_pipeline.td_basin_breach.generate_saddle_breach", side_effect=AssertionError("cold generation forbidden")):
+                with patch('terrain_pipeline.basin_topology.generate_saddle_breach', side_effect=AssertionError("cold generation forbidden")):
                     saved = load_saddle_breach(output / pin["path"], expected_sha256=pin["sha256"], expected_identity=pin["identity_sha256"])
                 self.assertEqual(saved["metadata"]["status"], attempt["status"])
                 np.testing.assert_array_equal(saved["arrays"]["original_height_m"], hierarchy["arrays"]["height_m"])
@@ -310,8 +314,8 @@ class StableSpillPathTests(unittest.TestCase):
 
 class FixedStableSpillColdReadTests(unittest.TestCase):
     def test_actual_pinned_reception_paths_without_solver_or_baseline_mutation(self):
-        with patch("terrain_pipeline.td_basin_hierarchy.build_basin_hierarchy", side_effect=AssertionError("cold hierarchy generation forbidden")), \
-             patch("terrain_pipeline.td_basin_overflow_radau.simulate_radau_overflow", side_effect=AssertionError("cold solver forbidden")):
+        with patch('terrain_pipeline.basin_topology.build_basin_hierarchy', side_effect=AssertionError("cold hierarchy generation forbidden")), \
+             patch('terrain_pipeline.basin_storage.simulate_radau_overflow', side_effect=AssertionError("cold solver forbidden")):
             inputs = load_fixed_inputs()
             baseline = inputs["hierarchy"]["arrays"]["height_m"].copy()
             report = build_stable_spill_paths(inputs["hierarchy"], inputs["topology"], inputs["cases"])

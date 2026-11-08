@@ -1,0 +1,242 @@
+[
+  {
+    "path": "algorithm/manifest.json",
+    "primary": "X4",
+    "purpose": "算法/测试依赖或逻辑边界清单",
+    "source_sha256": "8c0cf0b862b3c4ba9e674bdd6d1b4d7134eccb3c3433866a259b3ecc1755d648"
+  },
+  {
+    "path": "algorithm/requirements-fluvial-morphodynamics.txt",
+    "primary": "X4",
+    "purpose": "算法/测试依赖或逻辑边界清单",
+    "source_sha256": "8484ff5c10118e780a4f63530477d06ecf3f3350add78665d04c66db3ead8fd6"
+  },
+  {
+    "path": "algorithm/requirements-reference.txt",
+    "primary": "X4",
+    "purpose": "算法/测试依赖或逻辑边界清单",
+    "source_sha256": "de3bf109d3492467325d321c03c20e523b7fe962f58b89aecf27f3d04a280628"
+  },
+  {
+    "path": "algorithm/requirements.txt",
+    "primary": "X4",
+    "purpose": "算法/测试依赖或逻辑边界清单",
+    "source_sha256": "0e11591c0d1e95c1dfc5f139f65a60fcab04fec93e118a6454e04f888d8e4e09"
+  },
+  {
+    "path": "bootstrap-assets/model-manifest.json",
+    "primary": "X2",
+    "purpose": "模型、上游版本和安装环境清单；不把第三方权重计为模块",
+    "source_sha256": "1b906f70813c54b1f933346442ed37037f42da95cf8d396a073ce4aa501222bc"
+  },
+  {
+    "path": "bootstrap-assets/requirements-lock.txt",
+    "primary": "X2",
+    "purpose": "模型、上游版本和安装环境清单；不把第三方权重计为模块",
+    "source_sha256": "d5e7fd2ab670f5184925132d8c1af82054b8446f6172bf3aef444257110a03f6"
+  },
+  {
+    "path": "bootstrap-assets/upstream-manifest.json",
+    "primary": "X2",
+    "purpose": "模型、上游版本和安装环境清单；不把第三方权重计为模块",
+    "source_sha256": "83e087f546adbc20d520f06cb845d6a266b974fb29443abfd3146d87cfb43f4c"
+  },
+  {
+    "path": "gradle.properties",
+    "primary": "S4/J6",
+    "purpose": "现有Java消费边界/构建清单",
+    "source_sha256": "66b746b6f13831db7304b86dbd1f77f13db48bab79228dcf9e27c41a0b4dca2a"
+  },
+  {
+    "path": "minecraft-mod/manifest.json",
+    "primary": "S4/J6",
+    "purpose": "现有Java消费边界/构建清单",
+    "source_sha256": "4da76f85cf010bbf7559cb5935f0dc8728f089286b90fe8de220e5987cf4d594"
+  },
+  {
+    "path": "pytest.ini",
+    "primary": "X4",
+    "purpose": "算法/测试依赖或逻辑边界清单",
+    "source_sha256": "762694cd41fb7877381caaa2a158a0316f1f1b031717e1f63ffaefc73512328a"
+  },
+  {
+    "path": "requirements-test.txt",
+    "primary": "X4",
+    "purpose": "算法/测试依赖或逻辑边界清单",
+    "source_sha256": "76642f4b5338759fd2fa550dbfbd67bb8d98a827a9f7c6ab62fa2180c45868a0"
+  },
+  {
+    "path": "src/main/resources/assets/remotemountains/lang/en_us.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "620f1efba99380d84c61a03189a6b65b4e1d98ef111a904154720ac27beca5eb"
+  },
+  {
+    "path": "src/main/resources/assets/remotemountains/lang/zh_cn.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "50693fa8ceb4b86ef3711a0307b0fd9a55fe3d243ee1b93681783cf7b550a3ce"
+  },
+  {
+    "path": "src/main/resources/assets/remotemountains/terrain/demo.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "78cabf0536aa438af0f7dea85d949b99b3e73217756ac1282a9a0eab123038c8"
+  },
+  {
+    "path": "src/main/resources/data/minecraft/tags/worldgen/world_preset/normal.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "a37b1cd2b4abebd2324a142c1cb57bc3b80c1135cd05874f50ac39060576e09c"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/dimension_type/overworld_1024.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "bdae292fabee968b9cd7c1541497be160768e0601ac351f02785104ba6734437"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/biome/inselberg_arid.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "b8a5198af5d33c967c0c6f6b4135df12116b051b62e893e979c714241ac28921"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/biome/inselberg_humid.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "8b071456b0732e369c6a54c85110062cb0b589b8b7cd36d8b2d2f690a352c68d"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/biome/inselberg_snowy.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "55d8befd8129738a935de7c58f7dfe746c4e0c15f007640d52f70cce8b4ec8fa"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/biome/inselberg_temperate.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "60a1a1e5377107ae2e2dc6856c163e61b38e1c63688a8af53af0a508823a7fc6"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/biome/karst_arid.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "b8a5198af5d33c967c0c6f6b4135df12116b051b62e893e979c714241ac28921"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/biome/karst_humid.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "8b071456b0732e369c6a54c85110062cb0b589b8b7cd36d8b2d2f690a352c68d"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/biome/karst_snowy.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "55d8befd8129738a935de7c58f7dfe746c4e0c15f007640d52f70cce8b4ec8fa"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/biome/karst_temperate.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "60a1a1e5377107ae2e2dc6856c163e61b38e1c63688a8af53af0a508823a7fc6"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/biome/pillars_arid.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "b8a5198af5d33c967c0c6f6b4135df12116b051b62e893e979c714241ac28921"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/biome/pillars_humid.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "8b071456b0732e369c6a54c85110062cb0b589b8b7cd36d8b2d2f690a352c68d"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/biome/pillars_snowy.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "55d8befd8129738a935de7c58f7dfe746c4e0c15f007640d52f70cce8b4ec8fa"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/biome/pillars_temperate.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "60a1a1e5377107ae2e2dc6856c163e61b38e1c63688a8af53af0a508823a7fc6"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/biome/rift_arid.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "b8a5198af5d33c967c0c6f6b4135df12116b051b62e893e979c714241ac28921"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/biome/rift_humid.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "8b071456b0732e369c6a54c85110062cb0b589b8b7cd36d8b2d2f690a352c68d"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/biome/rift_snowy.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "55d8befd8129738a935de7c58f7dfe746c4e0c15f007640d52f70cce8b4ec8fa"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/biome/rift_temperate.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "60a1a1e5377107ae2e2dc6856c163e61b38e1c63688a8af53af0a508823a7fc6"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/world_preset/canyon.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "7cc7a71253b4efece7d98587c354fd735ea7b49d009a7631f92936b5cd0347c9"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/world_preset/canyon_single.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "a9fad85ba8d60fa03e56acf1e94627950e5a4471a36663faf08218ee8562eb23"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/world_preset/global_landforms.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "7a407e573f1f516502f19b456ca0e94be237405c4a064998ba52a7331b43d8a5"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/world_preset/landforms.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "c7b0edc49e49465513da364f72c9a94e6cd22e9cf51e9f77a502fbe184fe1a96"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/world_preset/region_landforms.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "0644c0b9ad781af286d8372dffbb96fb8734a314d75035ade4a623b00655393f"
+  },
+  {
+    "path": "src/main/resources/data/remotemountains/worldgen/world_preset/watershed.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "7a908ebd8135dbcbc8194b5d8689dacc782da59268cf129756c80ebfd90783e7"
+  },
+  {
+    "path": "src/main/resources/fabric.mod.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "36b52585a7e649947fd1e91a6656a0090a803b3ea6bb01ef9df9b000a8422ba8"
+  },
+  {
+    "path": "src/main/resources/remotemountains.client.mixins.json",
+    "primary": "S4/J6",
+    "purpose": "既有Mod资源、群系/世界预设及语言数据",
+    "source_sha256": "c4dddc86f0fe1349da988d3f56acc3009154bcf30c8764208c64ae1dee54e697"
+  }
+]

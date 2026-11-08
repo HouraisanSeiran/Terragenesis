@@ -11,20 +11,26 @@ sys.path.insert(0, str(ROOT))
 
 import numpy as np
 
-from terrain_pipeline.mountain_depression_geometry import (
-    prepare_mountain_geometry, save_mountain_geometry, screen_single_pool_lakes, window_boundary,
-)
-from terrain_pipeline.mountain_lake_coupling import (
-    build_group_topology, contribution_mask, couple_rainfall, group_lake_specs,
-    load_coupling, save_coupling, single_pool_proof, terminal_ownership, validate_coupling,
-)
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, load_legacy_source, save_source
-from terrain_pipeline.rainfall_runoff import RunoffParameters
+from terrain_pipeline.lake import prepare_mountain_geometry as prepare_mountain_geometry
+from terrain_pipeline.lake import save_mountain_geometry as save_mountain_geometry
+from terrain_pipeline.lake import screen_single_pool_lakes as screen_single_pool_lakes
+from terrain_pipeline.lake import window_boundary as window_boundary
+from terrain_pipeline.lake import build_group_topology as build_group_topology
+from terrain_pipeline.lake import contribution_mask as contribution_mask
+from terrain_pipeline.lake import couple_rainfall as couple_rainfall
+from terrain_pipeline.lake import group_lake_specs as group_lake_specs
+from terrain_pipeline.lake import load_coupling as load_coupling
+from terrain_pipeline.lake import save_coupling as save_coupling
+from terrain_pipeline.lake import single_pool_proof as single_pool_proof
+from terrain_pipeline.lake import terminal_ownership as terminal_ownership
+from terrain_pipeline.lake import validate_coupling as validate_coupling
+from terrain_pipeline.common_infra import file_sha256, identity, load_legacy_source, save_source
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
 from tools.verify_mountain_source_adapter import assert_unchanged, snapshot, write_json
 
 
-DELIVERY_FILES = ("terrain_pipeline/mountain_source_adapter.py", "terrain_pipeline/mountain_lake_coupling.py",
-    "terrain_pipeline/mountain_depression_geometry.py", "tools/verify_mountain_lake_coupling.py",
+DELIVERY_FILES = ("terrain_pipeline/mountain_source_adapter.py", 'terrain_pipeline/lake.py',
+    'terrain_pipeline/lake.py', "tools/verify_mountain_lake_coupling.py",
     "tools/verify_mountain_source_adapter.py", "tests/test_mountain_source_adapter.py",
     "tests/test_mountain_lake_coupling.py", "docs/mountain-source-and-coupling-v1.md")
 
@@ -186,7 +192,7 @@ def run_complete_group(destination, name, source, geometry, group):
             failure = dict(result)
             lake = failure.pop("lake_failure", None)
             if lake is not None:
-                from terrain_pipeline.lake_routing import save_lake_routing
+                from terrain_pipeline.lake import save_lake_routing as save_lake_routing
 
                 path = destination / f"{name}-{scenario}-failed-lake.npz"
                 save_lake_routing(lake, path)
@@ -338,7 +344,7 @@ def export_review_case(destination, name, scenario, source, geometry, topology, 
 
 
 def write_review(destination, report):
-    from terrain_pipeline.mountain_source_adapter import publish_bytes
+    from terrain_pipeline.common_infra import publish_bytes
 
     options = []
     for name, sample in report["samples"].items():
@@ -394,10 +400,10 @@ def freeze_saved_run(source_directory, destination):
     """Revalidate saved equations, then export current read-only consumers without advancing."""
     import json
     import shutil
-    from terrain_pipeline.mountain_depression_geometry import load_mountain_geometry
-    from terrain_pipeline.mountain_source_adapter import checked_archive
-    from terrain_pipeline.lake_routing import lake_routing_hash
-    from terrain_pipeline.rainfall_runoff import _strict_json
+    from terrain_pipeline.lake import load_mountain_geometry as load_mountain_geometry
+    from terrain_pipeline.common_infra import checked_archive
+    from terrain_pipeline.lake import lake_routing_hash as lake_routing_hash
+    from terrain_pipeline.runoff import _strict_json as _strict_json
 
     source_directory = source_directory.resolve()
     if destination.exists():
@@ -484,7 +490,7 @@ def freeze_saved_run(source_directory, destination):
 
 
 def verify_sensitivity(destination):
-    from terrain_pipeline.mountain_depression_geometry import load_mountain_geometry
+    from terrain_pipeline.lake import load_mountain_geometry as load_mountain_geometry
 
     if destination.exists():
         raise FileExistsError(destination)

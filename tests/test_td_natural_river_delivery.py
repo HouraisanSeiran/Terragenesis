@@ -6,13 +6,11 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy, save_basin_hierarchy
-from terrain_pipeline.td_basin_source import make_td_source
-from terrain_pipeline.td_natural_channel_geometry import (
-    build_natural_channel_geometry, evaluate_natural_channel_window,
-    save_natural_channel_geometry, save_natural_channel_window,
-)
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_topology import save_basin_hierarchy as save_basin_hierarchy
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.channel_geometry import build_natural_channel_geometry, evaluate_natural_channel_window, save_natural_channel_geometry, save_natural_channel_window
 from terrain_pipeline.td_natural_river_network import (
     build_natural_river_network, save_natural_river_network,
 )
@@ -49,8 +47,8 @@ class NaturalDeliveryTests(unittest.TestCase):
 
     def test_cold_export_and_independent_saved_audit(self):
         with patch("terrain_pipeline.td_natural_river_network.build_natural_river_network", side_effect=AssertionError("rebuild")), \
-                patch("terrain_pipeline.td_natural_channel_geometry.build_natural_channel_geometry", side_effect=AssertionError("geometry")), \
-                patch("terrain_pipeline.td_basin_hierarchy.build_basin_hierarchy", side_effect=AssertionError("routing")):
+                patch('terrain_pipeline.channel_geometry.build_natural_channel_geometry', side_effect=AssertionError("geometry")), \
+                patch('terrain_pipeline.basin_topology.build_basin_hierarchy', side_effect=AssertionError("routing")):
             report = audit_saved_network(network_record=self.network, hierarchy_record=self.hierarchy,
                                           geometry_record=self.geometry, window_record=self.window)
             output = self.directory / "review.json"
@@ -100,8 +98,8 @@ class NaturalDeliveryTests(unittest.TestCase):
     def test_v2_cold_review_has_real_fine_bed_and_inspection_priors(self):
         index, unused_record = self._delivery_index()
         with patch("terrain_pipeline.td_natural_river_network.build_natural_river_network", side_effect=AssertionError("rebuild")), \
-                patch("terrain_pipeline.td_natural_channel_geometry.evaluate_natural_channel_window", side_effect=AssertionError("resample")), \
-                patch("terrain_pipeline.td_natural_channel_geometry.build_natural_channel_geometry", side_effect=AssertionError("geometry")):
+                patch('terrain_pipeline.channel_geometry.evaluate_natural_channel_window', side_effect=AssertionError("resample")), \
+                patch('terrain_pipeline.channel_geometry.build_natural_channel_geometry', side_effect=AssertionError("geometry")):
             result = export_review_v2(self.directory / "review-v2.json", index_path=index,
                                       index_sha256=file_sha256(index))
         record = json.loads(Path(result["path"]).read_text(encoding="utf-8"))

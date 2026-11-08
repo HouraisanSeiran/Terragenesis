@@ -12,16 +12,17 @@ import time
 import numpy as np
 import psutil
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
 from terrain_pipeline.td_native_weather_storage_io import _json
 from terrain_pipeline.td_native_weather_storage_v10_io import (
     PHYSICS, STEPS, load_native_weather_storage_v10_index, load_native_weather_v10_hour)
-from terrain_pipeline.td_basin_source import load_td_source_bundle
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_native_storm_forcing import load_native_storm
-from terrain_pipeline.td_basin_storage_v10_io import load_storage, load_checkpoint
+from terrain_pipeline.basin_storage import load_td_source_bundle as load_td_source_bundle
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.climate_forcing import load_native_storm
+from terrain_pipeline.basin_storage import storagev10_load_storage as load_storage
+from terrain_pipeline.basin_storage import storagev10_load_checkpoint as load_checkpoint
 from terrain_pipeline.td_surface_reaches import _hash, _plain
-from terrain_pipeline.rainfall_runoff import RunoffParameters
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
 from dataclasses import asdict
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,17 +33,17 @@ FLAGS = dict(hydraulic_ready=False, transient_converged=False, publishable=False
 DEPENDENCY_ROOTS = (
     "terrain_pipeline/td_candidate_weather_jobs.py",
     "tools/run_td_candidate_weather_jobs.py",
-    "terrain_pipeline/td_basin_storage_v10.py",
+    'terrain_pipeline/basin_storage.py',
     "terrain_pipeline/td_native_weather_storage_v10_io.py",
     "terrain_pipeline/td_native_weather_v10_review.py",
-    "tools/verify_td_native_weather_storage.py",
-    "tools/verify_td_native_weather_storage_v10.py",
+    'tools/verify_basin_storage_execution.py',
+    'tools/verify_basin_storage_execution.py',
     "tools/rebuild_td_accepted_candidate_topology.py",
     "tools/audit_td_native_weather_v10_final.py",
-    "terrain_pipeline/td_basin_storage_v6.py",
-    "terrain_pipeline/td_basin_storage_v5.py",
-    "terrain_pipeline/td_basin_storage_v4.py",
-    "terrain_pipeline/td_basin_storage_v3.py",
+    'terrain_pipeline/basin_storage.py',
+    'terrain_pipeline/basin_storage.py',
+    'terrain_pipeline/basin_storage.py',
+    'terrain_pipeline/basin_storage.py',
 )
 
 
@@ -250,9 +251,10 @@ def run_candidate_weather_job(plan_record, directory, *, candidate_id, execute=F
         stream.write(json.dumps(dict(candidate_id=candidate_id, pid=os.getpid(), created_utc=datetime.now(timezone.utc).isoformat())))
     monitor = None
     try:
-        from terrain_pipeline.td_basin_storage_v10 import simulate_hour
-        from terrain_pipeline.td_basin_storage_v10_io import save_storage, save_checkpoint
-        from tools.verify_td_native_weather_storage import ResourceMonitor
+        from terrain_pipeline.basin_storage import simulate_hour as simulate_hour
+        from terrain_pipeline.basin_storage import storagev10_save_storage as save_storage
+        from terrain_pipeline.basin_storage import save_checkpoint as save_checkpoint
+        from tools.verify_basin_storage_execution import NativeWeatherResourceMonitor as ResourceMonitor
         hierarchy = load_basin_hierarchy(**plan["candidates"][candidate_id]["hierarchy_record"])
         source = plan["original_weather_source_record"]
         weather = _json(plan["weather_index_record"])

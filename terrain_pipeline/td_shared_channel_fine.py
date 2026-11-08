@@ -5,7 +5,7 @@ import math
 
 import numpy as np
 
-from terrain_pipeline import td_source_conforming_banks as source
+from terrain_pipeline import channel_geometry as source
 from terrain_pipeline.td_fine_bed_raster import LEDGER_KEYS
 from terrain_pipeline.td_ported_network_composition import check_memory
 

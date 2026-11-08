@@ -11,7 +11,7 @@ import psutil
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
 from tools.audit_td_entry_shallow_water import read_bundle, read_json, check_memory
 from tools.export_td_entry_pulse_review import _static, _frame
 

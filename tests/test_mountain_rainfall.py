@@ -89,7 +89,8 @@ class MountainRainfallTests(unittest.TestCase):
             independent_budget(arrays, 1000)
 
     def test_actual_mountain_runoff_wet_dry_and_late_recession(self):
-        from terrain_pipeline.rainfall_runoff import RunoffParameters, simulate_rainfall_runoff
+        from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+        from terrain_pipeline.runoff import simulate_rainfall_runoff as simulate_rainfall_runoff
 
         source = load_source("normal_mountain")
         owner, area, mean, lower, upper = response_units(source["height_m"], 30)

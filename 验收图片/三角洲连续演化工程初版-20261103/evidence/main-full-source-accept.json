@@ -1,0 +1,20 @@
+{
+  "source_hash_exact": true,
+  "state_hash_exact": true,
+  "identity_exact": true,
+  "shape": [
+    450,
+    450
+  ],
+  "spacing_m": 100.0,
+  "all_valid": true,
+  "source_ocean_base_positive_cells": 0,
+  "non_ocean_base_exact": true,
+  "inventory_residual_m3": -1.1920928955078125e-07,
+  "old_records_exact": true,
+  "clock_exact": true,
+  "finite_state": true,
+  "unknown_wet_cells": 822,
+  "original_land_inventory_is_stranded": true,
+  "pass": true
+}

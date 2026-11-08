@@ -10,7 +10,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
 from terrain_pipeline.td_catchment_dynamic_review import export_catchment_dynamic_review, load_catchment_dynamic_review, _load_inputs
 from tools.verify_td_basin_spill_network import peak_process_memory
 

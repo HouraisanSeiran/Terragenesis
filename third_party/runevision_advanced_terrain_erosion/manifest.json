@@ -1,0 +1,47 @@
+{
+    "retrieved_on":  "2026-11-03",
+    "repository":  "https://github.com/lpmitchell/AdvancedTerrainErosion",
+    "commit":  "57e79cc331d17e2a45c897bea9c4c022d1fc5551",
+    "commit_date":  "2026-04-02T13:37:55Z",
+    "original_shader":  "https://www.shadertoy.com/view/wXcfWn",
+    "author_linked_port_evidence":  "https://blog.runevision.com/2026/03/fast-and-gorgeous-erosion-filter.html",
+    "source_status":  "Author-linked third-party C# translation; direct Shadertoy GLSL unavailable",
+    "files":  [
+                  {
+                      "local_file":  "AdvancedTerrainErosion.cs",
+                      "upstream_path":  "package/Runtime/LPMGames.Terrain.Erosion/AdvancedTerrainErosion.cs",
+                      "git_blob_sha1":  "115812e21b7286c5627d6278401d9386c30d168e",
+                      "sha256":  "ec0ee64eff989325a3a69323f74482556512e41fefacbfddf2a558f53adf5ef7",
+                      "bytes":  31851,
+                      "source_url":  "https://github.com/lpmitchell/AdvancedTerrainErosion/blob/57e79cc331d17e2a45c897bea9c4c022d1fc5551/package/Runtime/LPMGames.Terrain.Erosion/AdvancedTerrainErosion.cs",
+                      "retrieval_url":  "https://api.github.com/repos/lpmitchell/AdvancedTerrainErosion/git/blobs/115812e21b7286c5627d6278401d9386c30d168e"
+                  },
+                  {
+                      "local_file":  "LICENSE",
+                      "upstream_path":  "LICENSE",
+                      "git_blob_sha1":  "d0a1fa1482eea82e19510e7920cbe3a03e41f691",
+                      "sha256":  "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
+                      "bytes":  16726,
+                      "source_url":  "https://github.com/lpmitchell/AdvancedTerrainErosion/blob/57e79cc331d17e2a45c897bea9c4c022d1fc5551/LICENSE",
+                      "retrieval_url":  "https://api.github.com/repos/lpmitchell/AdvancedTerrainErosion/git/blobs/d0a1fa1482eea82e19510e7920cbe3a03e41f691"
+                  },
+                  {
+                      "local_file":  "THIRD_PARTY_NOTICES.md",
+                      "upstream_path":  "THIRD_PARTY_NOTICES.md",
+                      "git_blob_sha1":  "3de4ec913c9ce6d8171141dd74728e3e8c4b3b05",
+                      "sha256":  "106849ee9bd0f503e8dd3a821b35fe7c484f732102fff71d820f1f2fa3665916",
+                      "bytes":  2279,
+                      "source_url":  "https://github.com/lpmitchell/AdvancedTerrainErosion/blob/57e79cc331d17e2a45c897bea9c4c022d1fc5551/THIRD_PARTY_NOTICES.md",
+                      "retrieval_url":  "https://api.github.com/repos/lpmitchell/AdvancedTerrainErosion/git/blobs/3de4ec913c9ce6d8171141dd74728e3e8c4b3b05"
+                  },
+                  {
+                      "local_file":  "README.md",
+                      "upstream_path":  "README.md",
+                      "git_blob_sha1":  "99cca00dcd64cbd51bd0801a89991071b597512a",
+                      "sha256":  "aa8cfdaa7294e860f41e3436807a0a9762bffb6d1bedc9a2c6a84f4724e34054",
+                      "bytes":  3989,
+                      "source_url":  "https://github.com/lpmitchell/AdvancedTerrainErosion/blob/57e79cc331d17e2a45c897bea9c4c022d1fc5551/README.md",
+                      "retrieval_url":  "https://api.github.com/repos/lpmitchell/AdvancedTerrainErosion/git/blobs/99cca00dcd64cbd51bd0801a89991071b597512a"
+                  }
+              ]
+}

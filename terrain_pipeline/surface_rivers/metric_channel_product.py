@@ -4,15 +4,17 @@ import math
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity, load_bundle, readonly, save_bundle
+from terrain_pipeline.common_infra import identity, load_bundle, readonly, save_bundle
+from terrain_pipeline.channel_geometry import GEOMETRY_SEMANTICS, validate_channel_geometry_identity, validate_receiver_acyclic
 
 
-SCHEMA = "terragenesis-channel-diagnostic-v1"
-OUTPUT_SCHEMA = "terragenesis-channel-output-v1"
-ALGORITHM = "manning-rectangular-explicit-v1"
+SCHEMA = "terragenesis-channel-diagnostic-v2"
+OUTPUT_SCHEMA = "terragenesis-channel-output-v2"
+LEGACY_ALGORITHM = "manning-rectangular-explicit-v1"
+ALGORITHM = "manning-rectangular-explicit-v2"
 MAX_BYTES = 128 * 1024 * 1024
 NETWORK_FIELDS = ("receiver", "length_m", "width_m", "bed_elevation_m", "bed_slope",
-                  "roughness", "max_depth_m", "terminal_kind")
+                  "roughness", "max_depth_m", "receiver_distance_m", "terminal_kind")
 STATE_FIELDS = ("volume_m3", "outflow_end_q_m3_s", "depth_m", "stage_m", "area_m2")
 STEP_FIELDS = ("inflow_q_m3_s", "outflow_q_m3_s", "local_q_m3_s",
                "boundary_outflow_volume_m3", "balance_residual_m3")
@@ -22,7 +24,20 @@ SEMANTICS = {"time_seconds": "committed_numerical_step_endpoints",
              "outflow_end_q_m3_s": "instantaneous_manning_from_state",
              "inflow_q_m3_s": "same_step_donor_outflow_only",
              "local_q_m3_s": "piecewise_constant_external_input",
-             "positive_direction": "downstream_out_of_domain_at_open_terminal"}
+             "positive_direction": "downstream_out_of_domain_at_open_terminal",
+             "geometry": GEOMETRY_SEMANTICS}
+LEGACY_NETWORK_FIELDS = tuple(name for name in NETWORK_FIELDS if name != "receiver_distance_m")
+LEGACY_SEMANTICS = {key: value for key, value in SEMANTICS.items() if key != "geometry"}
+
+
+def _geometry_distance(arrays, legacy_receiver_distance_m):
+    if "network_receiver_distance_m" in arrays:
+        if legacy_receiver_distance_m is not None:
+            raise ValueError("legacy distance cannot override serialized geometry")
+        return arrays["network_receiver_distance_m"]
+    if legacy_receiver_distance_m is not None:
+        return legacy_receiver_distance_m
+    return np.where(arrays["network_receiver"] >= 0, arrays["network_length_m"], 0.)
 
 
 def _sha(value):
@@ -46,7 +61,7 @@ def _network_arrays(network):
     return {"network_" + name: np.asarray(getattr(network, name)).copy() for name in NETWORK_FIELDS}
 
 
-def _next_failure_reason(arrays, config):
+def _next_failure_reason(arrays, config, *, legacy=False):
     """Re-evaluate one candidate after the committed prefix, without calling the solver."""
     times = arrays["trace_time_seconds"]
     steps = times.size - 1
@@ -80,6 +95,10 @@ def _next_failure_reason(arrays, config):
     if now + dt == now:
         return "time resolution exhausted"
     next_time = segment_end if now + dt >= segment_end else now + dt
+    if not legacy and next_time - now > dt:
+        next_time = float(np.nextafter(next_time, now))
+    if next_time <= now:
+        return "time resolution exhausted"
     actual_dt = next_time - now
     if actual_dt > config["max_dt_seconds"] * (1. + 1e-12):
         return "maximum internal step exceeded at time resolution"
@@ -111,7 +130,7 @@ def _next_failure_reason(arrays, config):
 
 
 def make_channel_product(network, forcing, result):
-    if result["metadata"].get("algorithm") != ALGORITHM:
+    if result["metadata"].get("algorithm") not in (ALGORITHM, LEGACY_ALGORITHM):
         raise ValueError("unsupported channel solver algorithm")
     arrays = _network_arrays(network)
     arrays["forcing_time_seconds"] = forcing.time_seconds.copy()
@@ -125,7 +144,7 @@ def make_channel_product(network, forcing, result):
     boundary_volume = float(np.sum(arrays["trace_boundary_outflow_volume_m3"], dtype=np.float64))
     initial = float(np.sum(arrays["trace_volume_m3"][0], dtype=np.float64))
     final = float(np.sum(arrays["trace_volume_m3"][-1], dtype=np.float64))
-    metadata = {"schema": SCHEMA, "algorithm": ALGORITHM, "status": status,
+    metadata = {"schema": SCHEMA, "algorithm": result["metadata"]["algorithm"], "status": status,
                 "failure_reason": result["metadata"]["failure_reason"],
                 "requested_end_time_seconds": result["metadata"]["requested_end_time_seconds"],
                 "last_time_seconds": result["metadata"]["last_time_seconds"],
@@ -147,11 +166,14 @@ def make_channel_product(network, forcing, result):
     return product
 
 
-def validate_channel_product(product):
+def validate_channel_product(product, *, legacy_receiver_distance_m=None):
+    """V1 uses the M3 reach-length contract unless bound external geometry is supplied."""
     if not isinstance(product, dict) or set(product) != {"arrays", "metadata", "identity_sha256"}:
         raise ValueError("invalid channel product")
     arrays, meta = product["arrays"], product["metadata"]
-    expected = {"network_" + name for name in NETWORK_FIELDS} | {"forcing_time_seconds", "forcing_local_q_m3_s"}
+    legacy = meta.get("schema") == "terragenesis-channel-diagnostic-v1"
+    network_fields = LEGACY_NETWORK_FIELDS if legacy else NETWORK_FIELDS
+    expected = {"network_" + name for name in network_fields} | {"forcing_time_seconds", "forcing_local_q_m3_s"}
     expected |= {"trace_time_seconds", "trace_cfl_number"}
     expected |= {"trace_" + name for name in STATE_FIELDS + STEP_FIELDS}
     if (set(arrays) != expected or set(meta) != {"schema", "algorithm", "status", "failure_reason",
@@ -159,8 +181,8 @@ def validate_channel_product(product):
             "network_source_identity_sha256", "section_source", "roughness_source",
             "forcing_source_identity_sha256", "semantics", "water_budget_m3",
             "hydraulic_ready", "natural_outlet_verified", "publishable"}
-            or meta["schema"] != SCHEMA or meta["algorithm"] != ALGORITHM
-            or meta["semantics"] != SEMANTICS
+            or meta["schema"] != ("terragenesis-channel-diagnostic-v1" if legacy else SCHEMA) or meta["algorithm"] not in (ALGORITHM, LEGACY_ALGORITHM)
+            or meta["semantics"] != (LEGACY_SEMANTICS if legacy else SEMANTICS)
             or any(meta[key] is not False for key in
                    ("hydraulic_ready", "natural_outlet_verified", "publishable"))
             or product["identity_sha256"] != identity(arrays, meta)):
@@ -181,16 +203,9 @@ def validate_channel_product(product):
             or np.any((receiver == -1) != (kind != "interior"))
             or np.any((receiver >= 0) & (receiver >= n)) or np.any(receiver < -1)):
         raise ValueError("invalid channel terminal graph")
-    for node in range(n):
-        seen = set()
-        current = node
-        while current >= 0:
-            if current in seen:
-                raise ValueError("cyclic channel graph")
-            seen.add(current)
-            current = int(receiver[current])
+    validate_receiver_acyclic(receiver)
     parameters = {}
-    for name in NETWORK_FIELDS[1:-1]:
+    for name in network_fields[1:-1]:
         value = arrays["network_" + name]
         if value.dtype != np.float64 or value.shape != (n,) or not np.isfinite(value).all():
             raise ValueError("invalid channel geometry: " + name)
@@ -201,6 +216,7 @@ def validate_channel_product(product):
             or np.any(max_depth <= 0.) or np.any(slope < 0.)
             or np.any(slope[np.isin(kind, ("interior", "open_outflow"))] <= 0.)):
         raise ValueError("invalid channel physical bounds")
+    validate_channel_geometry_identity(receiver, bed, slope, _geometry_distance(arrays, legacy_receiver_distance_m))
     force_time, force_q = arrays["forcing_time_seconds"], arrays["forcing_local_q_m3_s"]
     if (force_time.dtype != np.float64 or force_time.ndim != 1 or not 2 <= force_time.size <= 100001
             or not np.isfinite(force_time).all() or np.any(force_time < 0.)
@@ -297,7 +313,7 @@ def validate_channel_product(product):
           or not meta["failure_reason"].strip() or
           meta["unfinished_time_seconds"] != [float(times[-1]), float(force_time[-1])]):
         raise ValueError("invalid channel failure prefix")
-    if status == "failed_prefix" and meta["failure_reason"] != _next_failure_reason(arrays, config):
+    if status == "failed_prefix" and meta["failure_reason"] != _next_failure_reason(arrays, config, legacy=meta["algorithm"] == LEGACY_ALGORITHM):
         raise ValueError("channel failure reason does not match next numerical candidate")
     budget = meta["water_budget_m3"]
     actual = {"initial_storage": float(np.sum(volume[0])),
@@ -317,17 +333,19 @@ def save_channel_product(path, product):
     save_bundle(path, product, validator=validate_channel_product)
 
 
-def load_channel_product(path, *, expected_sha256, expected_identity):
+def load_channel_product(path, *, expected_sha256, expected_identity, legacy_receiver_distance_m=None):
     product = load_bundle(path, expected_sha256=expected_sha256,
-                          validator=validate_channel_product, max_bytes=MAX_BYTES)
+                          validator=lambda bundle: validate_channel_product(bundle,
+                              legacy_receiver_distance_m=legacy_receiver_distance_m), max_bytes=MAX_BYTES)
     if product["identity_sha256"] != expected_identity:
         raise ValueError("external channel identity mismatch")
     return product
 
 
-def sample_channel_output(product, state_time_seconds):
-    validate_channel_product(product)
+def sample_channel_output(product, state_time_seconds, *, legacy_receiver_distance_m=None):
+    validate_channel_product(product, legacy_receiver_distance_m=legacy_receiver_distance_m)
     source = product["arrays"]
+    distance = _geometry_distance(source, legacy_receiver_distance_m)
     trace_times = source["trace_time_seconds"]
     requested = np.asarray(state_time_seconds)
     if (requested.dtype != np.float64 or requested.ndim != 1 or requested.size < 1
@@ -340,7 +358,7 @@ def sample_channel_output(product, state_time_seconds):
     n = volume.shape[1]
     states = requested.size
     groups = states - 1
-    network_bytes = sum(source["network_" + name].nbytes for name in NETWORK_FIELDS)
+    network_bytes = sum(source["network_" + name].nbytes for name in LEGACY_NETWORK_FIELDS) + distance.nbytes
     output_bytes = 8 * (5 * states * n + 3 * groups * n + 2 * states) + network_bytes
     if states > 1_000_001 or output_bytes > MAX_BYTES:
         raise ValueError("sampled channel output resource budget exceeded")
@@ -376,32 +394,38 @@ def sample_channel_output(product, state_time_seconds):
               "local_q_m3_s": readonly(local), "outflow_q_m3_s": readonly(outflow),
               "boundary_outflow_volume_m3": readonly(boundary),
               "cumulative_boundary_outflow_volume_m3": readonly(np.r_[0., np.cumsum(np.sum(boundary, axis=1))])}
-    arrays.update({name: source[name] for name in ("network_receiver", "network_length_m",
-                  "network_width_m", "network_bed_elevation_m", "network_bed_slope",
-                  "network_roughness", "network_max_depth_m", "network_terminal_kind")})
+    arrays.update({"network_" + name: source["network_" + name] for name in LEGACY_NETWORK_FIELDS})
+    arrays["network_receiver_distance_m"] = readonly(distance)
     metadata = {"schema": OUTPUT_SCHEMA, "source_product_identity_sha256": product["identity_sha256"],
                 "source_status": product["metadata"]["status"],
                 "source_water_budget_m3": dict(product["metadata"]["water_budget_m3"]),
                 "state_semantics": "sampled_initial_and_numerical_state_interpolation",
                 "q_semantics": "overlap_integrated_interval_average",
+                "geometry_semantics": dict(GEOMETRY_SEMANTICS),
                 "hydraulic_ready": False, "natural_outlet_verified": False, "publishable": False}
     sampled = {"arrays": arrays, "metadata": metadata, "identity_sha256": identity(arrays, metadata)}
     validate_channel_output(sampled)
     return sampled
 
 
-def validate_channel_output(sampled):
+def validate_channel_output(sampled, *, legacy_receiver_distance_m=None):
     if not isinstance(sampled, dict) or set(sampled) != {"arrays", "metadata", "identity_sha256"}:
         raise ValueError("invalid sampled channel bundle")
     arrays, meta = sampled["arrays"], sampled["metadata"]
+    legacy = meta.get("schema") == "terragenesis-channel-output-v1"
+    network_fields = LEGACY_NETWORK_FIELDS if legacy else NETWORK_FIELDS
     expected = {"time_seconds", "volume_m3", "area_m2", "depth_m", "stage_m",
                 "outflow_end_q_m3_s", "local_q_m3_s", "outflow_q_m3_s",
                 "boundary_outflow_volume_m3", "cumulative_boundary_outflow_volume_m3"}
-    expected |= {"network_" + name for name in NETWORK_FIELDS}
-    if (set(arrays) != expected or set(meta) != {"schema", "source_product_identity_sha256",
+    expected |= {"network_" + name for name in network_fields}
+    metadata_fields = {"schema", "source_product_identity_sha256",
             "source_status", "source_water_budget_m3", "state_semantics", "q_semantics",
             "hydraulic_ready", "natural_outlet_verified", "publishable"}
-            or meta["schema"] != OUTPUT_SCHEMA or not _sha(meta["source_product_identity_sha256"])
+    if not legacy:
+        metadata_fields.add("geometry_semantics")
+    if (set(arrays) != expected or set(meta) != metadata_fields
+            or meta["schema"] != ("terragenesis-channel-output-v1" if legacy else OUTPUT_SCHEMA) or not _sha(meta["source_product_identity_sha256"])
+            or (not legacy and meta["geometry_semantics"] != GEOMETRY_SEMANTICS)
             or meta["source_status"] not in ("complete", "failed_prefix")
             or meta["state_semantics"] != "sampled_initial_and_numerical_state_interpolation"
             or meta["q_semantics"] != "overlap_integrated_interval_average"
@@ -418,7 +442,7 @@ def validate_channel_output(sampled):
     n, states, groups = receiver.size, times.size, times.size - 1
     if sum(value.nbytes for value in arrays.values()) > MAX_BYTES:
         raise ValueError("sampled channel byte budget exceeded")
-    for name in NETWORK_FIELDS[1:-1]:
+    for name in network_fields[1:-1]:
         value = arrays["network_" + name]
         if value.dtype != np.float64 or value.shape != (n,) or not np.isfinite(value).all():
             raise ValueError("invalid sampled geometry: " + name)
@@ -454,6 +478,7 @@ def validate_channel_output(sampled):
             or np.any(slope[np.isin(kind, ("interior", "open_outflow"))] <= 0.)
             or not np.isfinite(length * width * limit).all()):
         raise ValueError("invalid sampled physical geometry")
+    validate_channel_geometry_identity(receiver, bed, slope, _geometry_distance(arrays, legacy_receiver_distance_m))
     active = np.isin(kind, ("interior", "open_outflow"))
     area, depth, end_q, _ = _manning(volume, length, width, slope, roughness, active)
     if (np.any(depth > limit + 1e-10) or
@@ -500,9 +525,11 @@ def save_channel_output(path, sampled):
     save_bundle(path, sampled, validator=validate_channel_output)
 
 
-def load_channel_output(path, *, expected_sha256, expected_identity, expected_product_identity):
+def load_channel_output(path, *, expected_sha256, expected_identity, expected_product_identity,
+                        legacy_receiver_distance_m=None):
     sampled = load_bundle(path, expected_sha256=expected_sha256,
-                          validator=validate_channel_output, max_bytes=MAX_BYTES)
+                          validator=lambda bundle: validate_channel_output(bundle,
+                              legacy_receiver_distance_m=legacy_receiver_distance_m), max_bytes=MAX_BYTES)
     if (sampled["identity_sha256"] != expected_identity
             or sampled["metadata"]["source_product_identity_sha256"] != expected_product_identity):
         raise ValueError("external channel output identity mismatch")

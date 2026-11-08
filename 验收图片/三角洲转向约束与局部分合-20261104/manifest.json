@@ -1,0 +1,62 @@
+{
+  "kind": "frozen read-only image delivery",
+  "coverage_status": "partial",
+  "title": "四口三角洲：转向约束与三组局部分合",
+  "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+  "terrain_basis": "existing TD source plus explicitly derived shallow marine bed and saved geological/channel construction",
+  "final_checkpoint": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-angle-600s\\final",
+  "physical_seconds": 600.0,
+  "geological_years": 5.0,
+  "geological_numerical_sweeps": 700,
+  "algorithms": [
+    "existing TD sampled source",
+    "explicit finite-stock geological deposition",
+    "irregular river graph",
+    "explicit split/rejoin attachment",
+    "graph hydraulics",
+    "600-second physical event"
+  ],
+  "independent_checks_passed": true,
+  "independent_check_count": 22,
+  "source_files": {
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-angle-600s\\preview-final\\main.png": "3c7a7844d3f13548312626f77a93affa95b1f5fd65073d7f4f63bfe544fe4fd5",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-angle-600s\\preview-final\\source-comparison.png": "41d81ac2e4f33e65c065898e97cf29a4b92bfbc3819d85ccda3f56e698f1e1f3",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-angle-600s\\preview-final\\delta-detail.png": "c1aee960fdbc453b9f926f2954467e9b2d23a510c33185b9f853f9ff2725eb50",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-angle-600s\\preview-final\\actual-flow.png": "101cd8aa8f6aaa308920c5d08a6b34605fc4699f2fba1dcda6f40908e3734c77",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-angle-600s\\preview-final\\bed-and-depth.png": "8cdc92690ca097c45036bd4f064cfa0e0307810778028bbde12995e4aae66423",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\event-angle-600s\\preview-final\\manifest.json": "a971ec2c37d678aae6cd5baf9fc4247f077e5d6488d144290e9f9bd22de8d4bd",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\independent-angle-acceptance.json": "804969f89584afceb5ce6515e06d7cb39fcdd11c3f0acf91231af63cd35bd2ef",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\angle-review-final\\turn-angle-review.json": "6d2da1120bae69a491333e8ee256d841ca3458692525843a54e05a1276ced6ce",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\turn-penalty-curve\\turn-penalty.png": "d6af3a09203ac1e5725cdbf811db2f06850fc7af0b77a6bfb4abaaac80596b6b",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\turn-penalty-curve\\manifest.json": "5c2f5c2b448bccf08b75201b1c8cd8b895b8278788a69fdcac465eeb95a82b4e",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\initial-angle-fixed-final\\manifest.json": "c9eb7d78a61140897c063e22c31140c27a9fa2ec685ad308a1ec2aeb9f17ca61",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\candidate-and-fan-review.md": "99945df60f1933494e6463c65457b40328d4014475893c93bb9b0794aa108a37",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-braided-acceptance-20261104\\candidate-survey.json": "14efe1216e96942429083db2154238b1547b24c6152c4a0abd39b6e7561d691d"
+  },
+  "final_checkpoint_sha256": {
+    ".json": "7dea23b1eec29e3c057dd248035e9e6d53b259b7a857645124b0e909de770adb",
+    ".npz": "bdee5d9286888a8c4f582235233ba187da7504a1be88815d9c92191db52b03a0"
+  },
+  "files": {
+    "actual-flow.png": "101cd8aa8f6aaa308920c5d08a6b34605fc4699f2fba1dcda6f40908e3734c77",
+    "bed-and-depth.png": "8cdc92690ca097c45036bd4f064cfa0e0307810778028bbde12995e4aae66423",
+    "candidate-and-fan-review.md": "99945df60f1933494e6463c65457b40328d4014475893c93bb9b0794aa108a37",
+    "candidate-survey.json": "14efe1216e96942429083db2154238b1547b24c6152c4a0abd39b6e7561d691d",
+    "construction-manifest.json": "c9eb7d78a61140897c063e22c31140c27a9fa2ec685ad308a1ec2aeb9f17ca61",
+    "delta-detail.png": "c1aee960fdbc453b9f926f2954467e9b2d23a510c33185b9f853f9ff2725eb50",
+    "independent-angle-acceptance.json": "804969f89584afceb5ce6515e06d7cb39fcdd11c3f0acf91231af63cd35bd2ef",
+    "main.png": "3c7a7844d3f13548312626f77a93affa95b1f5fd65073d7f4f63bfe544fe4fd5",
+    "README.md": "ec272137123ae1cd016c05a0dcec3a14ad3fff0d0d480c84286a4d142093bfae",
+    "render-manifest.json": "a971ec2c37d678aae6cd5baf9fc4247f077e5d6488d144290e9f9bd22de8d4bd",
+    "source-comparison.png": "41d81ac2e4f33e65c065898e97cf29a4b92bfbc3819d85ccda3f56e698f1e1f3",
+    "turn-angle-review.json": "6d2da1120bae69a491333e8ee256d841ca3458692525843a54e05a1276ced6ce",
+    "turn-penalty-manifest.json": "5c2f5c2b448bccf08b75201b1c8cd8b895b8278788a69fdcac465eeb95a82b4e",
+    "turn-penalty.png": "d6af3a09203ac1e5725cdbf811db2f06850fc7af0b77a6bfb4abaaac80596b6b"
+  },
+  "notes": [
+    "actual wet footprint widths preserved; no river thickening",
+    "three constructed local split/rejoin groups enclose inherited plain; no dynamic island claim",
+    "routing fan does not limit deposition domain",
+    "older image deliveries untouched"
+  ]
+}

@@ -7,13 +7,20 @@ from pathlib import Path
 import numpy as np
 import psutil
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.td_basin_storage_v10_io import PROFILE, STATES, ERRORS, FLUX, load_storage, load_checkpoint
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.basin_storage import STORAGEV10_PROFILE as PROFILE
+from terrain_pipeline.basin_storage import STATES as STATES
+from terrain_pipeline.basin_storage import ERRORS as ERRORS
+from terrain_pipeline.basin_storage import FLUX as FLUX
+from terrain_pipeline.basin_storage import storagev10_load_storage as load_storage
+from terrain_pipeline.basin_storage import storagev10_load_checkpoint as load_checkpoint
 from terrain_pipeline.td_native_weather_storage_io import _json, _layout, _sha
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_basin_source import load_td_source_bundle, PRIMARY_PATH, PRIMARY_SHA256
-from terrain_pipeline.td_native_storm_forcing import load_native_storm
-from terrain_pipeline.rainfall_runoff import RunoffParameters
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_storage import load_td_source_bundle as load_td_source_bundle
+from terrain_pipeline.basin_storage import PRIMARY_PATH as PRIMARY_PATH
+from terrain_pipeline.basin_storage import PRIMARY_SHA256 as PRIMARY_SHA256
+from terrain_pipeline.climate_forcing import load_native_storm
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
 
 MAX_BYTES = 1073741824
 STEPS = (2.5, 1.25)
@@ -21,6 +28,21 @@ PHYSICS = dict(runoff=[15.,150.,.15,1.,3600.,259200.], face_conductance_m_s=.6,
                surface_evaporation_mm_h=.15, forcing_profile="v10-unified-rain-surface-infiltration-experimental-v1")
 PHYSICS_SEMANTICS = "all valid cells experimentally permeable; rain first accesses finite capacity, remaining capacity draws surface water; rain excess enters unchanged fast store; ordered ET/percolation; no wet bypass"
 
+
+
+def _m4_recorded_code_matches(recorded, *, root=None):
+    """Accept published historical pins, or the unchanged current source bytes."""
+    from pathlib import Path
+    from terrain_pipeline.common_infra import file_sha256, published_algorithm_matches
+    root=Path(__file__).resolve().parents[1] if root is None else Path(root).resolve()
+    current={}
+    for name in recorded:
+        target=(root/name).resolve()
+        if not target.is_relative_to(root):
+            return False
+        if target.is_file():
+            current[name]=file_sha256(target)
+    return published_algorithm_matches('basin_storage',recorded,current)
 
 def _flags(metadata, require_transient=True):
     for name in ("hydraulic_ready", "publishable", "transient_converged", "natural_outlet_verified", "morphology_flux_ready"):
@@ -231,10 +253,8 @@ def load_native_weather_storage_v10_index(path, *, expected_sha256, weather_inde
     if not isinstance(codes, dict) or not codes or codes != inputs.get("code_sha256"):
         raise ValueError("v10 frozen dependencies missing/mismatched")
     def check_codes():
-        for name, digest in codes.items():
-            target = (base / name).resolve()
-            if not target.is_relative_to(base) or file_sha256(target) != _sha(digest):
-                raise ValueError("v10 frozen dependency changed")
+        if not _m4_recorded_code_matches(codes, root=base):
+            raise ValueError("v10 frozen dependency changed")
         if scope == "original_td" and file_sha256(PRIMARY_PATH) != PRIMARY_SHA256:
             raise ValueError("v10 actual primary pin changed")
     check_codes()

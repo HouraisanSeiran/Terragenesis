@@ -1,0 +1,7303 @@
+{
+  "schema": "river-shape-final-v4",
+  "source": ".scratch\\river-backbone-precompute-v1\\finite-handoff-v1\\results-main-v7\\source_lines.json",
+  "cell_m": 30.0,
+  "budget_m": 30.0,
+  "tolerance_ladder_m": [
+    30.0,
+    15.0,
+    10.0,
+    5.0,
+    1.0,
+    0.0
+  ],
+  "backward_step_cells": 0.1,
+  "method_constant_m": 1.5,
+  "certificate_wording": "certified_le_30 = (forward \u7cbe\u786e\u503c <=30) AND (backward \u4e0a\u754c <=30)\u3002backward \u4e0a\u754c >30 \u53ea\u80fd\u8bf4**\u5f53\u524d\u65b9\u6cd5\u65e0\u6cd5\u8ba4\u8bc1 \u226430**\uff0c\u4e0d\u6784\u6210\u201c\u5b9e\u6d4b\u504f\u79fb >30\u201d\u7684\u7ed3\u8bba\u3002\u539f trace \u81ea\u8eab forward=0\uff0c\u5176 backward \u4e0a\u754c\u53ea\u7b49\u4e8e\u65b9\u6cd5\u5e38\u6570 1.5 m\uff0c\u5355\u72ec\u6807\u8bb0\u800c\u975e\u5931\u8d25\u3002",
+  "groups": {
+    "G1": {
+      "reach_count": 371,
+      "confluence_cells": 138,
+      "history": [
+        {
+          "round": 1,
+          "blamed": [
+            0,
+            80,
+            111,
+            126,
+            130,
+            178,
+            182,
+            185
+          ],
+          "tightened": [
+            [
+              0,
+              15.0
+            ],
+            [
+              80,
+              15.0
+            ],
+            [
+              111,
+              15.0
+            ],
+            [
+              126,
+              15.0
+            ],
+            [
+              130,
+              15.0
+            ],
+            [
+              178,
+              15.0
+            ],
+            [
+              182,
+              15.0
+            ],
+            [
+              185,
+              15.0
+            ]
+          ],
+          "new_pairs": [
+            [
+              126,
+              130
+            ]
+          ],
+          "uncertified": [
+            0,
+            80,
+            111,
+            178,
+            182,
+            185
+          ]
+        }
+      ],
+      "tightened": {
+        "0": 15.0,
+        "80": 15.0,
+        "111": 15.0,
+        "126": 15.0,
+        "130": 15.0,
+        "178": 15.0,
+        "182": 15.0,
+        "185": 15.0
+      },
+      "tightened_count": 8,
+      "reverted_to_original_count": 107,
+      "original_trace_already_minimal_count": 107,
+      "tightened_then_reverted_count": 0,
+      "revert_note": "`is_original_trace` \u4e3a\u771f\u7684\u6bb5\u5206\u4e24\u7c7b\uff1a\u2460\u5728 30 m \u65f6\u5c31\u5df2\u9876\u70b9\u6700\u5c0f\uff08\u591a\u6570\u662f 1\u20132 \u683c\u7684\u77ed reach\uff0cDP \u672c\u6765\u65e0\u53ef\u5220\uff09\u2014\u2014\u8fd9**\u4e0d\u662f**\u56de\u9000\uff1b\u2461\u6536\u7d27\u540e\u4ecd\u4e0d\u8fbe\u6807\u624d\u9000\u56de\u539f\u7ebf\u3002\u4e24\u7c7b\u5206\u5f00\u8ba1\u6570\uff0c\u4e0d\u80fd\u628a\u2460\u5f53\u6210\u201c\u5931\u8d25\u56de\u9000\u201d\u3002",
+      "final_vertices": 851,
+      "original_cells": 3269,
+      "uncertified_reaches": [],
+      "anchor_missing_reaches": [],
+      "endpoint_failures": [],
+      "new_pair_count": 0,
+      "new_pairs": [],
+      "existing_crossing_moved_count": 0,
+      "forward_exact_worst_m": 29.768336301410027,
+      "backward_upper_worst_m": 28.998597046052055,
+      "method_constant_m": 1.5,
+      "mixed_complete": true,
+      "blocking_reasons": [],
+      "per_reach": {
+        "0": {
+          "tolerance_m": 15.0,
+          "vertices": 9,
+          "is_original_trace": false,
+          "forward_exact_m": 13.416407864998739,
+          "backward_upper_m": 13.756517540542815,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 12.256517540542816,
+          "confluence_missing": []
+        },
+        "6": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "7": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "10": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "15": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "16": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "17": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "20": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "24": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "29": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "34": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "39": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "42": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "44": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "45": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "46": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "47": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "48": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "49": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "54": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "56": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "58": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "62": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "64": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "69": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "72": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "77": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "78": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "80": {
+          "tolerance_m": 15.0,
+          "vertices": 7,
+          "is_original_trace": false,
+          "forward_exact_m": 13.416407864998739,
+          "backward_upper_m": 13.49007150706953,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 11.99007150706953,
+          "confluence_missing": []
+        },
+        "81": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "83": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "87": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "89": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "90": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "91": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "93": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "97": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "98": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "102": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "105": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "107": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "111": {
+          "tolerance_m": 15.0,
+          "vertices": 5,
+          "is_original_trace": false,
+          "forward_exact_m": 14.795908857482157,
+          "backward_upper_m": 15.270491803225015,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 13.770491803225013,
+          "confluence_missing": []
+        },
+        "112": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "118": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "122": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "125": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "126": {
+          "tolerance_m": 15.0,
+          "vertices": 3,
+          "is_original_trace": false,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "130": {
+          "tolerance_m": 15.0,
+          "vertices": 4,
+          "is_original_trace": false,
+          "forward_exact_m": 12.0,
+          "backward_upper_m": 12.89999999992142,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 11.39999999992142,
+          "confluence_missing": []
+        },
+        "132": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "137": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "138": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "143": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "147": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "149": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "151": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "155": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "157": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "160": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "162": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "171": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "178": {
+          "tolerance_m": 15.0,
+          "vertices": 3,
+          "is_original_trace": false,
+          "forward_exact_m": 13.416407864998739,
+          "backward_upper_m": 13.49007150706953,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 11.99007150706953,
+          "confluence_missing": []
+        },
+        "181": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "182": {
+          "tolerance_m": 15.0,
+          "vertices": 9,
+          "is_original_trace": false,
+          "forward_exact_m": 12.0,
+          "backward_upper_m": 12.89999999992142,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 11.39999999992142,
+          "confluence_missing": []
+        },
+        "185": {
+          "tolerance_m": 15.0,
+          "vertices": 4,
+          "is_original_trace": false,
+          "forward_exact_m": 12.727922061357855,
+          "backward_upper_m": 13.330985915585188,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 11.830985915585188,
+          "confluence_missing": []
+        },
+        "186": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "197": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "204": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "210": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "211": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "214": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "219": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "220": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "224": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "234": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "240": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "247": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "248": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "252": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "254": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "260": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "264": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "265": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "266": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "270": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "271": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "273": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "274": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "275": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "278": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "279": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "281": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "282": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "292": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "293": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "298": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "302": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "309": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "312": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "315": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "318": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "323": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "325": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "329": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "332": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "333": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "334": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "335": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "341": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "359": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "360": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "361": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "366": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "368": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "369": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "370": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        }
+      },
+      "final_display_lines": {
+        "0": [
+          [
+            42304,
+            42874
+          ],
+          [
+            42334,
+            42874
+          ],
+          [
+            42335,
+            42875
+          ],
+          [
+            42340,
+            42875
+          ],
+          [
+            42341,
+            42874
+          ],
+          [
+            42356,
+            42874
+          ],
+          [
+            42360,
+            42876
+          ],
+          [
+            42364,
+            42880
+          ],
+          [
+            42365,
+            42880
+          ]
+        ],
+        "1": [
+          [
+            42212,
+            42875
+          ],
+          [
+            42213,
+            42874
+          ]
+        ],
+        "2": [
+          [
+            42416,
+            42876
+          ],
+          [
+            42418,
+            42880
+          ]
+        ],
+        "3": [
+          [
+            42190,
+            42878
+          ],
+          [
+            42186,
+            42874
+          ],
+          [
+            42183,
+            42874
+          ]
+        ],
+        "4": [
+          [
+            42410,
+            42880
+          ],
+          [
+            42417,
+            42880
+          ]
+        ],
+        "5": [
+          [
+            42248,
+            42881
+          ],
+          [
+            42252,
+            42884
+          ],
+          [
+            42254,
+            42891
+          ]
+        ],
+        "6": [
+          [
+            42365,
+            42881
+          ]
+        ],
+        "7": [
+          [
+            42366,
+            42881
+          ]
+        ],
+        "8": [
+          [
+            42417,
+            42881
+          ],
+          [
+            42417,
+            42885
+          ]
+        ],
+        "9": [
+          [
+            42373,
+            42882
+          ],
+          [
+            42381,
+            42881
+          ],
+          [
+            42394,
+            42874
+          ]
+        ],
+        "10": [
+          [
+            42173,
+            42888
+          ]
+        ],
+        "11": [
+          [
+            42230,
+            42888
+          ],
+          [
+            42238,
+            42890
+          ],
+          [
+            42241,
+            42893
+          ],
+          [
+            42241,
+            42901
+          ],
+          [
+            42237,
+            42909
+          ]
+        ],
+        "12": [
+          [
+            42278,
+            42888
+          ],
+          [
+            42278,
+            42895
+          ]
+        ],
+        "13": [
+          [
+            42280,
+            42888
+          ],
+          [
+            42279,
+            42895
+          ]
+        ],
+        "14": [
+          [
+            42184,
+            42889
+          ],
+          [
+            42174,
+            42888
+          ]
+        ],
+        "15": [
+          [
+            42417,
+            42889
+          ]
+        ],
+        "16": [
+          [
+            42186,
+            42891
+          ],
+          [
+            42185,
+            42890
+          ]
+        ],
+        "17": [
+          [
+            42255,
+            42891
+          ]
+        ],
+        "18": [
+          [
+            42192,
+            42892
+          ],
+          [
+            42189,
+            42892
+          ],
+          [
+            42185,
+            42889
+          ]
+        ],
+        "19": [
+          [
+            42254,
+            42892
+          ],
+          [
+            42252,
+            42903
+          ],
+          [
+            42249,
+            42906
+          ],
+          [
+            42249,
+            42919
+          ],
+          [
+            42246,
+            42923
+          ],
+          [
+            42247,
+            42928
+          ]
+        ],
+        "20": [
+          [
+            42419,
+            42894
+          ],
+          [
+            42418,
+            42894
+          ]
+        ],
+        "21": [
+          [
+            42224,
+            42896
+          ],
+          [
+            42229,
+            42897
+          ],
+          [
+            42233,
+            42901
+          ],
+          [
+            42236,
+            42909
+          ]
+        ],
+        "22": [
+          [
+            42279,
+            42896
+          ],
+          [
+            42280,
+            42898
+          ]
+        ],
+        "23": [
+          [
+            42326,
+            42896
+          ],
+          [
+            42330,
+            42896
+          ],
+          [
+            42337,
+            42902
+          ]
+        ],
+        "24": [
+          [
+            42278,
+            42897
+          ],
+          [
+            42279,
+            42898
+          ]
+        ],
+        "25": [
+          [
+            42334,
+            42897
+          ],
+          [
+            42337,
+            42901
+          ]
+        ],
+        "26": [
+          [
+            42349,
+            42897
+          ],
+          [
+            42353,
+            42904
+          ]
+        ],
+        "27": [
+          [
+            42280,
+            42899
+          ],
+          [
+            42280,
+            42904
+          ]
+        ],
+        "28": [
+          [
+            42304,
+            42899
+          ],
+          [
+            42304,
+            42903
+          ]
+        ],
+        "29": [
+          [
+            42416,
+            42899
+          ],
+          [
+            42417,
+            42898
+          ]
+        ],
+        "30": [
+          [
+            42281,
+            42900
+          ],
+          [
+            42281,
+            42904
+          ]
+        ],
+        "31": [
+          [
+            42303,
+            42900
+          ],
+          [
+            42303,
+            42903
+          ]
+        ],
+        "32": [
+          [
+            42177,
+            42901
+          ],
+          [
+            42173,
+            42895
+          ],
+          [
+            42173,
+            42889
+          ]
+        ],
+        "33": [
+          [
+            42338,
+            42902
+          ],
+          [
+            42345,
+            42906
+          ],
+          [
+            42353,
+            42905
+          ]
+        ],
+        "34": [
+          [
+            42413,
+            42902
+          ]
+        ],
+        "35": [
+          [
+            42304,
+            42904
+          ],
+          [
+            42308,
+            42911
+          ]
+        ],
+        "36": [
+          [
+            42217,
+            42905
+          ],
+          [
+            42221,
+            42912
+          ]
+        ],
+        "37": [
+          [
+            42280,
+            42905
+          ],
+          [
+            42279,
+            42910
+          ],
+          [
+            42275,
+            42914
+          ]
+        ],
+        "38": [
+          [
+            42354,
+            42905
+          ],
+          [
+            42356,
+            42908
+          ],
+          [
+            42355,
+            42912
+          ]
+        ],
+        "39": [
+          [
+            42405,
+            42909
+          ]
+        ],
+        "40": [
+          [
+            42212,
+            42910
+          ],
+          [
+            42214,
+            42912
+          ],
+          [
+            42221,
+            42913
+          ]
+        ],
+        "41": [
+          [
+            42237,
+            42910
+          ],
+          [
+            42244,
+            42926
+          ]
+        ],
+        "42": [
+          [
+            42307,
+            42911
+          ],
+          [
+            42308,
+            42912
+          ]
+        ],
+        "43": [
+          [
+            42309,
+            42912
+          ],
+          [
+            42316,
+            42918
+          ]
+        ],
+        "44": [
+          [
+            42354,
+            42912
+          ]
+        ],
+        "45": [
+          [
+            42361,
+            42912
+          ]
+        ],
+        "46": [
+          [
+            42403,
+            42912
+          ]
+        ],
+        "47": [
+          [
+            42222,
+            42913
+          ],
+          [
+            42223,
+            42914
+          ]
+        ],
+        "48": [
+          [
+            42274,
+            42914
+          ]
+        ],
+        "49": [
+          [
+            42368,
+            42914
+          ],
+          [
+            42367,
+            42914
+          ]
+        ],
+        "50": [
+          [
+            42219,
+            42915
+          ],
+          [
+            42223,
+            42915
+          ]
+        ],
+        "51": [
+          [
+            42224,
+            42915
+          ],
+          [
+            42236,
+            42919
+          ],
+          [
+            42244,
+            42927
+          ]
+        ],
+        "52": [
+          [
+            42274,
+            42915
+          ],
+          [
+            42265,
+            42925
+          ]
+        ],
+        "53": [
+          [
+            42401,
+            42915
+          ],
+          [
+            42400,
+            42919
+          ]
+        ],
+        "54": [
+          [
+            42382,
+            42916
+          ]
+        ],
+        "55": [
+          [
+            42423,
+            42916
+          ],
+          [
+            42426,
+            42912
+          ],
+          [
+            42426,
+            42908
+          ],
+          [
+            42422,
+            42905
+          ]
+        ],
+        "56": [
+          [
+            42317,
+            42918
+          ]
+        ],
+        "57": [
+          [
+            42188,
+            42919
+          ],
+          [
+            42188,
+            42930
+          ]
+        ],
+        "58": [
+          [
+            42317,
+            42919
+          ]
+        ],
+        "59": [
+          [
+            42318,
+            42919
+          ],
+          [
+            42323,
+            42920
+          ]
+        ],
+        "60": [
+          [
+            42429,
+            42919
+          ],
+          [
+            42429,
+            42913
+          ],
+          [
+            42427,
+            42908
+          ]
+        ],
+        "61": [
+          [
+            42391,
+            42920
+          ],
+          [
+            42399,
+            42921
+          ]
+        ],
+        "62": [
+          [
+            42324,
+            42921
+          ]
+        ],
+        "63": [
+          [
+            42277,
+            42923
+          ],
+          [
+            42268,
+            42923
+          ],
+          [
+            42266,
+            42925
+          ]
+        ],
+        "64": [
+          [
+            42324,
+            42923
+          ],
+          [
+            42324,
+            42922
+          ]
+        ],
+        "65": [
+          [
+            42251,
+            42925
+          ],
+          [
+            42248,
+            42929
+          ]
+        ],
+        "66": [
+          [
+            42330,
+            42925
+          ],
+          [
+            42332,
+            42922
+          ],
+          [
+            42344,
+            42921
+          ],
+          [
+            42353,
+            42912
+          ]
+        ],
+        "67": [
+          [
+            42193,
+            42926
+          ],
+          [
+            42192,
+            42934
+          ]
+        ],
+        "68": [
+          [
+            42265,
+            42926
+          ],
+          [
+            42256,
+            42935
+          ],
+          [
+            42254,
+            42942
+          ],
+          [
+            42250,
+            42946
+          ]
+        ],
+        "69": [
+          [
+            42245,
+            42927
+          ],
+          [
+            42246,
+            42928
+          ]
+        ],
+        "70": [
+          [
+            42187,
+            42928
+          ],
+          [
+            42187,
+            42930
+          ]
+        ],
+        "71": [
+          [
+            42225,
+            42929
+          ],
+          [
+            42230,
+            42933
+          ],
+          [
+            42236,
+            42933
+          ],
+          [
+            42239,
+            42935
+          ]
+        ],
+        "72": [
+          [
+            42247,
+            42929
+          ]
+        ],
+        "73": [
+          [
+            42303,
+            42929
+          ],
+          [
+            42316,
+            42919
+          ]
+        ],
+        "74": [
+          [
+            42248,
+            42930
+          ],
+          [
+            42248,
+            42932
+          ],
+          [
+            42251,
+            42935
+          ],
+          [
+            42249,
+            42940
+          ]
+        ],
+        "75": [
+          [
+            42188,
+            42931
+          ],
+          [
+            42191,
+            42934
+          ]
+        ],
+        "76": [
+          [
+            42403,
+            42933
+          ],
+          [
+            42400,
+            42932
+          ],
+          [
+            42399,
+            42923
+          ]
+        ],
+        "77": [
+          [
+            42192,
+            42935
+          ],
+          [
+            42193,
+            42936
+          ]
+        ],
+        "78": [
+          [
+            42194,
+            42936
+          ]
+        ],
+        "79": [
+          [
+            42240,
+            42936
+          ],
+          [
+            42245,
+            42937
+          ],
+          [
+            42248,
+            42940
+          ]
+        ],
+        "80": [
+          [
+            42194,
+            42937
+          ],
+          [
+            42195,
+            42939
+          ],
+          [
+            42195,
+            42942
+          ],
+          [
+            42194,
+            42943
+          ],
+          [
+            42194,
+            42954
+          ],
+          [
+            42195,
+            42956
+          ],
+          [
+            42194,
+            42957
+          ]
+        ],
+        "81": [
+          [
+            42238,
+            42937
+          ],
+          [
+            42239,
+            42937
+          ]
+        ],
+        "82": [
+          [
+            42271,
+            42938
+          ],
+          [
+            42258,
+            42940
+          ],
+          [
+            42250,
+            42947
+          ]
+        ],
+        "83": [
+          [
+            42400,
+            42938
+          ],
+          [
+            42400,
+            42937
+          ]
+        ],
+        "84": [
+          [
+            42249,
+            42941
+          ],
+          [
+            42249,
+            42945
+          ]
+        ],
+        "85": [
+          [
+            42179,
+            42942
+          ],
+          [
+            42181,
+            42947
+          ],
+          [
+            42193,
+            42957
+          ]
+        ],
+        "86": [
+          [
+            42367,
+            42942
+          ],
+          [
+            42363,
+            42943
+          ]
+        ],
+        "87": [
+          [
+            42362,
+            42943
+          ]
+        ],
+        "88": [
+          [
+            42342,
+            42944
+          ],
+          [
+            42350,
+            42941
+          ],
+          [
+            42359,
+            42941
+          ],
+          [
+            42361,
+            42943
+          ]
+        ],
+        "89": [
+          [
+            42248,
+            42945
+          ]
+        ],
+        "90": [
+          [
+            42250,
+            42945
+          ]
+        ],
+        "91": [
+          [
+            42249,
+            42946
+          ]
+        ],
+        "92": [
+          [
+            42318,
+            42946
+          ],
+          [
+            42322,
+            42948
+          ],
+          [
+            42335,
+            42947
+          ]
+        ],
+        "93": [
+          [
+            42249,
+            42947
+          ]
+        ],
+        "94": [
+          [
+            42221,
+            42948
+          ],
+          [
+            42249,
+            42956
+          ]
+        ],
+        "95": [
+          [
+            42249,
+            42948
+          ],
+          [
+            42250,
+            42956
+          ]
+        ],
+        "96": [
+          [
+            42413,
+            42948
+          ],
+          [
+            42404,
+            42949
+          ],
+          [
+            42399,
+            42945
+          ]
+        ],
+        "97": [
+          [
+            42398,
+            42949
+          ],
+          [
+            42398,
+            42948
+          ]
+        ],
+        "98": [
+          [
+            42255,
+            42952
+          ]
+        ],
+        "99": [
+          [
+            42255,
+            42953
+          ],
+          [
+            42251,
+            42959
+          ]
+        ],
+        "100": [
+          [
+            42263,
+            42953
+          ],
+          [
+            42256,
+            42953
+          ]
+        ],
+        "101": [
+          [
+            42298,
+            42954
+          ],
+          [
+            42299,
+            42961
+          ]
+        ],
+        "102": [
+          [
+            42399,
+            42955
+          ],
+          [
+            42399,
+            42954
+          ]
+        ],
+        "103": [
+          [
+            42250,
+            42957
+          ],
+          [
+            42250,
+            42959
+          ]
+        ],
+        "104": [
+          [
+            42194,
+            42958
+          ],
+          [
+            42203,
+            42966
+          ],
+          [
+            42207,
+            42976
+          ]
+        ],
+        "105": [
+          [
+            42399,
+            42958
+          ]
+        ],
+        "106": [
+          [
+            42251,
+            42960
+          ],
+          [
+            42251,
+            42963
+          ]
+        ],
+        "107": [
+          [
+            42300,
+            42961
+          ]
+        ],
+        "108": [
+          [
+            42299,
+            42962
+          ],
+          [
+            42296,
+            42967
+          ]
+        ],
+        "109": [
+          [
+            42403,
+            42963
+          ],
+          [
+            42399,
+            42959
+          ]
+        ],
+        "110": [
+          [
+            42351,
+            42964
+          ],
+          [
+            42356,
+            42964
+          ]
+        ],
+        "111": [
+          [
+            42357,
+            42964
+          ],
+          [
+            42362,
+            42958
+          ],
+          [
+            42362,
+            42951
+          ],
+          [
+            42363,
+            42950
+          ],
+          [
+            42362,
+            42944
+          ]
+        ],
+        "112": [
+          [
+            42405,
+            42965
+          ],
+          [
+            42404,
+            42964
+          ]
+        ],
+        "113": [
+          [
+            42251,
+            42966
+          ],
+          [
+            42250,
+            42974
+          ]
+        ],
+        "114": [
+          [
+            42351,
+            42967
+          ],
+          [
+            42356,
+            42965
+          ]
+        ],
+        "115": [
+          [
+            42173,
+            42968
+          ],
+          [
+            42173,
+            42978
+          ]
+        ],
+        "116": [
+          [
+            42319,
+            42968
+          ],
+          [
+            42315,
+            42972
+          ]
+        ],
+        "117": [
+          [
+            42313,
+            42972
+          ],
+          [
+            42310,
+            42971
+          ]
+        ],
+        "118": [
+          [
+            42314,
+            42972
+          ]
+        ],
+        "119": [
+          [
+            42367,
+            42973
+          ],
+          [
+            42378,
+            42974
+          ]
+        ],
+        "120": [
+          [
+            42379,
+            42973
+          ],
+          [
+            42398,
+            42958
+          ]
+        ],
+        "121": [
+          [
+            42304,
+            42974
+          ],
+          [
+            42297,
+            42972
+          ],
+          [
+            42272,
+            42971
+          ],
+          [
+            42267,
+            42972
+          ],
+          [
+            42263,
+            42975
+          ],
+          [
+            42259,
+            42975
+          ]
+        ],
+        "122": [
+          [
+            42379,
+            42974
+          ]
+        ],
+        "123": [
+          [
+            42250,
+            42975
+          ],
+          [
+            42248,
+            42980
+          ]
+        ],
+        "124": [
+          [
+            42258,
+            42975
+          ],
+          [
+            42251,
+            42974
+          ]
+        ],
+        "125": [
+          [
+            42379,
+            42975
+          ]
+        ],
+        "126": [
+          [
+            42320,
+            42976
+          ],
+          [
+            42318,
+            42976
+          ],
+          [
+            42315,
+            42973
+          ]
+        ],
+        "127": [
+          [
+            42234,
+            42978
+          ],
+          [
+            42246,
+            42985
+          ]
+        ],
+        "128": [
+          [
+            42205,
+            42979
+          ],
+          [
+            42208,
+            42978
+          ],
+          [
+            42228,
+            42997
+          ],
+          [
+            42232,
+            42998
+          ],
+          [
+            42234,
+            43000
+          ],
+          [
+            42233,
+            43004
+          ]
+        ],
+        "129": [
+          [
+            42428,
+            42979
+          ],
+          [
+            42420,
+            42971
+          ],
+          [
+            42411,
+            42968
+          ]
+        ],
+        "130": [
+          [
+            42325,
+            42981
+          ],
+          [
+            42321,
+            42978
+          ],
+          [
+            42318,
+            42977
+          ],
+          [
+            42314,
+            42973
+          ]
+        ],
+        "131": [
+          [
+            42246,
+            42986
+          ],
+          [
+            42245,
+            42991
+          ],
+          [
+            42239,
+            42998
+          ]
+        ],
+        "132": [
+          [
+            42334,
+            42987
+          ],
+          [
+            42333,
+            42986
+          ]
+        ],
+        "133": [
+          [
+            42178,
+            42988
+          ],
+          [
+            42174,
+            42992
+          ]
+        ],
+        "134": [
+          [
+            42283,
+            42989
+          ],
+          [
+            42264,
+            42976
+          ],
+          [
+            42259,
+            42976
+          ]
+        ],
+        "135": [
+          [
+            42400,
+            42989
+          ],
+          [
+            42401,
+            42970
+          ],
+          [
+            42403,
+            42964
+          ]
+        ],
+        "136": [
+          [
+            42361,
+            42990
+          ],
+          [
+            42378,
+            42975
+          ]
+        ],
+        "137": [
+          [
+            42400,
+            42991
+          ],
+          [
+            42400,
+            42990
+          ]
+        ],
+        "138": [
+          [
+            42173,
+            42992
+          ]
+        ],
+        "139": [
+          [
+            42391,
+            42992
+          ],
+          [
+            42399,
+            42990
+          ]
+        ],
+        "140": [
+          [
+            42173,
+            42993
+          ],
+          [
+            42173,
+            42997
+          ]
+        ],
+        "141": [
+          [
+            42286,
+            42993
+          ],
+          [
+            42284,
+            42990
+          ]
+        ],
+        "142": [
+          [
+            42388,
+            42993
+          ],
+          [
+            42390,
+            42992
+          ]
+        ],
+        "143": [
+          [
+            42389,
+            42994
+          ],
+          [
+            42390,
+            42993
+          ]
+        ],
+        "144": [
+          [
+            42268,
+            42997
+          ],
+          [
+            42253,
+            42985
+          ],
+          [
+            42247,
+            42985
+          ]
+        ],
+        "145": [
+          [
+            42341,
+            42998
+          ],
+          [
+            42345,
+            42995
+          ],
+          [
+            42349,
+            42995
+          ],
+          [
+            42360,
+            42990
+          ]
+        ],
+        "146": [
+          [
+            42238,
+            42999
+          ],
+          [
+            42235,
+            43002
+          ]
+        ],
+        "147": [
+          [
+            42239,
+            42999
+          ]
+        ],
+        "148": [
+          [
+            42297,
+            42999
+          ],
+          [
+            42294,
+            42996
+          ],
+          [
+            42290,
+            42995
+          ],
+          [
+            42284,
+            42989
+          ]
+        ],
+        "149": [
+          [
+            42298,
+            43000
+          ]
+        ],
+        "150": [
+          [
+            42213,
+            43001
+          ],
+          [
+            42221,
+            43004
+          ],
+          [
+            42224,
+            43007
+          ],
+          [
+            42225,
+            43012
+          ],
+          [
+            42222,
+            43015
+          ]
+        ],
+        "151": [
+          [
+            42235,
+            43003
+          ],
+          [
+            42234,
+            43004
+          ]
+        ],
+        "152": [
+          [
+            42307,
+            43003
+          ],
+          [
+            42299,
+            43000
+          ]
+        ],
+        "153": [
+          [
+            42399,
+            43003
+          ],
+          [
+            42400,
+            42992
+          ]
+        ],
+        "154": [
+          [
+            42363,
+            43004
+          ],
+          [
+            42361,
+            42991
+          ]
+        ],
+        "155": [
+          [
+            42399,
+            43004
+          ]
+        ],
+        "156": [
+          [
+            42233,
+            43005
+          ],
+          [
+            42232,
+            43007
+          ]
+        ],
+        "157": [
+          [
+            42363,
+            43005
+          ]
+        ],
+        "158": [
+          [
+            42297,
+            43006
+          ],
+          [
+            42297,
+            43000
+          ]
+        ],
+        "159": [
+          [
+            42425,
+            43006
+          ],
+          [
+            42417,
+            42997
+          ],
+          [
+            42401,
+            42992
+          ]
+        ],
+        "160": [
+          [
+            42426,
+            43007
+          ]
+        ],
+        "161": [
+          [
+            42231,
+            43008
+          ],
+          [
+            42229,
+            43009
+          ]
+        ],
+        "162": [
+          [
+            42233,
+            43009
+          ],
+          [
+            42232,
+            43008
+          ]
+        ],
+        "163": [
+          [
+            42360,
+            43009
+          ],
+          [
+            42362,
+            43008
+          ],
+          [
+            42362,
+            43005
+          ]
+        ],
+        "164": [
+          [
+            42196,
+            43010
+          ],
+          [
+            42206,
+            43020
+          ]
+        ],
+        "165": [
+          [
+            42299,
+            43010
+          ],
+          [
+            42298,
+            43001
+          ]
+        ],
+        "166": [
+          [
+            42424,
+            43010
+          ],
+          [
+            42425,
+            43007
+          ]
+        ],
+        "167": [
+          [
+            42332,
+            43012
+          ],
+          [
+            42318,
+            43004
+          ],
+          [
+            42312,
+            43002
+          ],
+          [
+            42308,
+            43003
+          ]
+        ],
+        "168": [
+          [
+            42317,
+            43013
+          ],
+          [
+            42308,
+            43004
+          ]
+        ],
+        "169": [
+          [
+            42221,
+            43016
+          ],
+          [
+            42219,
+            43017
+          ]
+        ],
+        "170": [
+          [
+            42204,
+            43017
+          ],
+          [
+            42207,
+            43020
+          ]
+        ],
+        "171": [
+          [
+            42173,
+            43018
+          ]
+        ],
+        "172": [
+          [
+            42382,
+            43018
+          ],
+          [
+            42398,
+            43005
+          ]
+        ],
+        "173": [
+          [
+            42178,
+            43021
+          ],
+          [
+            42180,
+            43023
+          ]
+        ],
+        "174": [
+          [
+            42207,
+            43021
+          ],
+          [
+            42207,
+            43023
+          ]
+        ],
+        "175": [
+          [
+            42214,
+            43021
+          ],
+          [
+            42211,
+            43021
+          ],
+          [
+            42208,
+            43024
+          ]
+        ],
+        "176": [
+          [
+            42331,
+            43022
+          ],
+          [
+            42318,
+            43013
+          ]
+        ],
+        "177": [
+          [
+            42207,
+            43024
+          ],
+          [
+            42205,
+            43024
+          ],
+          [
+            42201,
+            43028
+          ]
+        ],
+        "178": [
+          [
+            42200,
+            43025
+          ],
+          [
+            42201,
+            43026
+          ],
+          [
+            42200,
+            43028
+          ]
+        ],
+        "179": [
+          [
+            42397,
+            43025
+          ],
+          [
+            42401,
+            43020
+          ],
+          [
+            42401,
+            43013
+          ],
+          [
+            42398,
+            43007
+          ],
+          [
+            42399,
+            43005
+          ]
+        ],
+        "180": [
+          [
+            42199,
+            43029
+          ],
+          [
+            42193,
+            43030
+          ]
+        ],
+        "181": [
+          [
+            42200,
+            43029
+          ]
+        ],
+        "182": [
+          [
+            42406,
+            43029
+          ],
+          [
+            42406,
+            43026
+          ],
+          [
+            42407,
+            43025
+          ],
+          [
+            42407,
+            43021
+          ],
+          [
+            42406,
+            43020
+          ],
+          [
+            42406,
+            43012
+          ],
+          [
+            42403,
+            43008
+          ],
+          [
+            42403,
+            43007
+          ],
+          [
+            42400,
+            43004
+          ]
+        ],
+        "183": [
+          [
+            42290,
+            43030
+          ],
+          [
+            42279,
+            43027
+          ],
+          [
+            42272,
+            43021
+          ],
+          [
+            42264,
+            43018
+          ],
+          [
+            42257,
+            43011
+          ],
+          [
+            42249,
+            43008
+          ],
+          [
+            42242,
+            43003
+          ],
+          [
+            42236,
+            43003
+          ]
+        ],
+        "184": [
+          [
+            42348,
+            43030
+          ],
+          [
+            42359,
+            43052
+          ],
+          [
+            42361,
+            43062
+          ]
+        ],
+        "185": [
+          [
+            42317,
+            43031
+          ],
+          [
+            42317,
+            43022
+          ],
+          [
+            42316,
+            43021
+          ],
+          [
+            42317,
+            43014
+          ]
+        ],
+        "186": [
+          [
+            42316,
+            43033
+          ],
+          [
+            42317,
+            43032
+          ]
+        ],
+        "187": [
+          [
+            42318,
+            43034
+          ],
+          [
+            42318,
+            43032
+          ]
+        ],
+        "188": [
+          [
+            42218,
+            43040
+          ],
+          [
+            42213,
+            43039
+          ],
+          [
+            42204,
+            43029
+          ],
+          [
+            42201,
+            43029
+          ]
+        ],
+        "189": [
+          [
+            42197,
+            43042
+          ],
+          [
+            42194,
+            43039
+          ],
+          [
+            42189,
+            43042
+          ]
+        ],
+        "190": [
+          [
+            42231,
+            43043
+          ],
+          [
+            42219,
+            43040
+          ]
+        ],
+        "191": [
+          [
+            42234,
+            43045
+          ],
+          [
+            42232,
+            43043
+          ]
+        ],
+        "192": [
+          [
+            42374,
+            43048
+          ],
+          [
+            42370,
+            43055
+          ],
+          [
+            42363,
+            43062
+          ]
+        ],
+        "193": [
+          [
+            42288,
+            43051
+          ],
+          [
+            42277,
+            43047
+          ],
+          [
+            42273,
+            43043
+          ],
+          [
+            42249,
+            43034
+          ],
+          [
+            42222,
+            43016
+          ]
+        ],
+        "194": [
+          [
+            42429,
+            43051
+          ],
+          [
+            42429,
+            43068
+          ]
+        ],
+        "195": [
+          [
+            42218,
+            43053
+          ],
+          [
+            42218,
+            43041
+          ]
+        ],
+        "196": [
+          [
+            42241,
+            43053
+          ],
+          [
+            42232,
+            43044
+          ]
+        ],
+        "197": [
+          [
+            42290,
+            43053
+          ],
+          [
+            42289,
+            43052
+          ]
+        ],
+        "198": [
+          [
+            42375,
+            43053
+          ],
+          [
+            42372,
+            43054
+          ]
+        ],
+        "199": [
+          [
+            42294,
+            43054
+          ],
+          [
+            42289,
+            43051
+          ]
+        ],
+        "200": [
+          [
+            42371,
+            43055
+          ],
+          [
+            42363,
+            43064
+          ]
+        ],
+        "201": [
+          [
+            42382,
+            43055
+          ],
+          [
+            42372,
+            43055
+          ]
+        ],
+        "202": [
+          [
+            42187,
+            43057
+          ],
+          [
+            42173,
+            43044
+          ]
+        ],
+        "203": [
+          [
+            42250,
+            43057
+          ],
+          [
+            42242,
+            43053
+          ]
+        ],
+        "204": [
+          [
+            42251,
+            43057
+          ]
+        ],
+        "205": [
+          [
+            42173,
+            43058
+          ],
+          [
+            42173,
+            43054
+          ],
+          [
+            42175,
+            43054
+          ]
+        ],
+        "206": [
+          [
+            42407,
+            43058
+          ],
+          [
+            42411,
+            43062
+          ],
+          [
+            42414,
+            43069
+          ],
+          [
+            42414,
+            43074
+          ],
+          [
+            42411,
+            43076
+          ]
+        ],
+        "207": [
+          [
+            42201,
+            43062
+          ],
+          [
+            42184,
+            43046
+          ],
+          [
+            42185,
+            43044
+          ]
+        ],
+        "208": [
+          [
+            42241,
+            43062
+          ],
+          [
+            42241,
+            43054
+          ]
+        ],
+        "209": [
+          [
+            42253,
+            43062
+          ],
+          [
+            42251,
+            43058
+          ]
+        ],
+        "210": [
+          [
+            42202,
+            43063
+          ]
+        ],
+        "211": [
+          [
+            42362,
+            43063
+          ],
+          [
+            42362,
+            43064
+          ]
+        ],
+        "212": [
+          [
+            42257,
+            43065
+          ],
+          [
+            42254,
+            43063
+          ]
+        ],
+        "213": [
+          [
+            42260,
+            43065
+          ],
+          [
+            42258,
+            43065
+          ]
+        ],
+        "214": [
+          [
+            42363,
+            43065
+          ],
+          [
+            42363,
+            43066
+          ]
+        ],
+        "215": [
+          [
+            42254,
+            43066
+          ],
+          [
+            42253,
+            43063
+          ]
+        ],
+        "216": [
+          [
+            42319,
+            43067
+          ],
+          [
+            42320,
+            43073
+          ]
+        ],
+        "217": [
+          [
+            42184,
+            43068
+          ],
+          [
+            42176,
+            43059
+          ],
+          [
+            42174,
+            43059
+          ]
+        ],
+        "218": [
+          [
+            42259,
+            43068
+          ],
+          [
+            42258,
+            43066
+          ]
+        ],
+        "219": [
+          [
+            42429,
+            43069
+          ]
+        ],
+        "220": [
+          [
+            42260,
+            43070
+          ],
+          [
+            42259,
+            43069
+          ]
+        ],
+        "221": [
+          [
+            42275,
+            43070
+          ],
+          [
+            42272,
+            43071
+          ]
+        ],
+        "222": [
+          [
+            42322,
+            43070
+          ],
+          [
+            42321,
+            43073
+          ]
+        ],
+        "223": [
+          [
+            42368,
+            43070
+          ],
+          [
+            42364,
+            43070
+          ],
+          [
+            42362,
+            43074
+          ]
+        ],
+        "224": [
+          [
+            42429,
+            43070
+          ]
+        ],
+        "225": [
+          [
+            42175,
+            43071
+          ],
+          [
+            42173,
+            43069
+          ],
+          [
+            42173,
+            43059
+          ]
+        ],
+        "226": [
+          [
+            42271,
+            43071
+          ],
+          [
+            42264,
+            43071
+          ],
+          [
+            42260,
+            43069
+          ]
+        ],
+        "227": [
+          [
+            42276,
+            43072
+          ],
+          [
+            42272,
+            43072
+          ]
+        ],
+        "228": [
+          [
+            42411,
+            43073
+          ],
+          [
+            42411,
+            43075
+          ]
+        ],
+        "229": [
+          [
+            42321,
+            43074
+          ],
+          [
+            42322,
+            43084
+          ]
+        ],
+        "230": [
+          [
+            42361,
+            43076
+          ],
+          [
+            42355,
+            43084
+          ]
+        ],
+        "231": [
+          [
+            42392,
+            43076
+          ],
+          [
+            42394,
+            43082
+          ],
+          [
+            42398,
+            43087
+          ]
+        ],
+        "232": [
+          [
+            42410,
+            43076
+          ],
+          [
+            42405,
+            43082
+          ],
+          [
+            42401,
+            43083
+          ],
+          [
+            42399,
+            43087
+          ]
+        ],
+        "233": [
+          [
+            42227,
+            43078
+          ],
+          [
+            42220,
+            43073
+          ],
+          [
+            42210,
+            43069
+          ],
+          [
+            42202,
+            43062
+          ]
+        ],
+        "234": [
+          [
+            42228,
+            43079
+          ]
+        ],
+        "235": [
+          [
+            42351,
+            43079
+          ],
+          [
+            42354,
+            43084
+          ]
+        ],
+        "236": [
+          [
+            42268,
+            43080
+          ],
+          [
+            42268,
+            43078
+          ],
+          [
+            42261,
+            43071
+          ]
+        ],
+        "237": [
+          [
+            42315,
+            43080
+          ],
+          [
+            42321,
+            43084
+          ]
+        ],
+        "238": [
+          [
+            42259,
+            43081
+          ],
+          [
+            42260,
+            43071
+          ]
+        ],
+        "239": [
+          [
+            42235,
+            43082
+          ],
+          [
+            42228,
+            43078
+          ]
+        ],
+        "240": [
+          [
+            42235,
+            43083
+          ]
+        ],
+        "241": [
+          [
+            42238,
+            43084
+          ],
+          [
+            42236,
+            43082
+          ]
+        ],
+        "242": [
+          [
+            42258,
+            43084
+          ],
+          [
+            42258,
+            43082
+          ]
+        ],
+        "243": [
+          [
+            42322,
+            43085
+          ],
+          [
+            42323,
+            43091
+          ],
+          [
+            42332,
+            43097
+          ],
+          [
+            42336,
+            43102
+          ]
+        ],
+        "244": [
+          [
+            42354,
+            43085
+          ],
+          [
+            42350,
+            43090
+          ],
+          [
+            42349,
+            43095
+          ]
+        ],
+        "245": [
+          [
+            42300,
+            43086
+          ],
+          [
+            42307,
+            43093
+          ]
+        ],
+        "246": [
+          [
+            42261,
+            43087
+          ],
+          [
+            42259,
+            43082
+          ]
+        ],
+        "247": [
+          [
+            42394,
+            43088
+          ],
+          [
+            42395,
+            43089
+          ]
+        ],
+        "248": [
+          [
+            42398,
+            43088
+          ],
+          [
+            42397,
+            43089
+          ]
+        ],
+        "249": [
+          [
+            42176,
+            43089
+          ],
+          [
+            42173,
+            43087
+          ]
+        ],
+        "250": [
+          [
+            42242,
+            43089
+          ],
+          [
+            42236,
+            43083
+          ]
+        ],
+        "251": [
+          [
+            42187,
+            43090
+          ],
+          [
+            42185,
+            43091
+          ]
+        ],
+        "252": [
+          [
+            42396,
+            43090
+          ],
+          [
+            42396,
+            43091
+          ]
+        ],
+        "253": [
+          [
+            42184,
+            43091
+          ],
+          [
+            42177,
+            43089
+          ]
+        ],
+        "254": [
+          [
+            42397,
+            43091
+          ]
+        ],
+        "255": [
+          [
+            42294,
+            43092
+          ],
+          [
+            42301,
+            43092
+          ],
+          [
+            42307,
+            43094
+          ]
+        ],
+        "256": [
+          [
+            42338,
+            43092
+          ],
+          [
+            42337,
+            43102
+          ]
+        ],
+        "257": [
+          [
+            42396,
+            43092
+          ],
+          [
+            42393,
+            43094
+          ]
+        ],
+        "258": [
+          [
+            42308,
+            43094
+          ],
+          [
+            42313,
+            43097
+          ],
+          [
+            42319,
+            43097
+          ],
+          [
+            42330,
+            43102
+          ],
+          [
+            42336,
+            43103
+          ]
+        ],
+        "259": [
+          [
+            42211,
+            43095
+          ],
+          [
+            42201,
+            43099
+          ]
+        ],
+        "260": [
+          [
+            42212,
+            43095
+          ]
+        ],
+        "261": [
+          [
+            42429,
+            43097
+          ],
+          [
+            42429,
+            43110
+          ]
+        ],
+        "262": [
+          [
+            42371,
+            43098
+          ],
+          [
+            42371,
+            43103
+          ],
+          [
+            42374,
+            43106
+          ],
+          [
+            42373,
+            43113
+          ],
+          [
+            42359,
+            43123
+          ]
+        ],
+        "263": [
+          [
+            42200,
+            43099
+          ],
+          [
+            42188,
+            43095
+          ],
+          [
+            42185,
+            43092
+          ]
+        ],
+        "264": [
+          [
+            42391,
+            43099
+          ],
+          [
+            42390,
+            43100
+          ]
+        ],
+        "265": [
+          [
+            42390,
+            43101
+          ]
+        ],
+        "266": [
+          [
+            42391,
+            43102
+          ],
+          [
+            42390,
+            43102
+          ]
+        ],
+        "267": [
+          [
+            42185,
+            43103
+          ],
+          [
+            42177,
+            43090
+          ]
+        ],
+        "268": [
+          [
+            42226,
+            43103
+          ],
+          [
+            42212,
+            43096
+          ]
+        ],
+        "269": [
+          [
+            42337,
+            43103
+          ],
+          [
+            42342,
+            43108
+          ],
+          [
+            42343,
+            43114
+          ],
+          [
+            42346,
+            43118
+          ]
+        ],
+        "270": [
+          [
+            42352,
+            43104
+          ]
+        ],
+        "271": [
+          [
+            42185,
+            43105
+          ],
+          [
+            42185,
+            43104
+          ]
+        ],
+        "272": [
+          [
+            42386,
+            43106
+          ],
+          [
+            42388,
+            43104
+          ]
+        ],
+        "273": [
+          [
+            42383,
+            43107
+          ],
+          [
+            42384,
+            43107
+          ]
+        ],
+        "274": [
+          [
+            42385,
+            43107
+          ]
+        ],
+        "275": [
+          [
+            42385,
+            43108
+          ]
+        ],
+        "276": [
+          [
+            42278,
+            43109
+          ],
+          [
+            42284,
+            43116
+          ],
+          [
+            42284,
+            43119
+          ],
+          [
+            42291,
+            43126
+          ]
+        ],
+        "277": [
+          [
+            42393,
+            43111
+          ],
+          [
+            42386,
+            43107
+          ]
+        ],
+        "278": [
+          [
+            42394,
+            43111
+          ]
+        ],
+        "279": [
+          [
+            42428,
+            43111
+          ]
+        ],
+        "280": [
+          [
+            42429,
+            43111
+          ],
+          [
+            42429,
+            43113
+          ]
+        ],
+        "281": [
+          [
+            42393,
+            43112
+          ]
+        ],
+        "282": [
+          [
+            42173,
+            43114
+          ]
+        ],
+        "283": [
+          [
+            42255,
+            43115
+          ],
+          [
+            42258,
+            43118
+          ],
+          [
+            42258,
+            43120
+          ]
+        ],
+        "284": [
+          [
+            42337,
+            43115
+          ],
+          [
+            42339,
+            43117
+          ],
+          [
+            42346,
+            43119
+          ]
+        ],
+        "285": [
+          [
+            42228,
+            43116
+          ],
+          [
+            42214,
+            43111
+          ],
+          [
+            42201,
+            43100
+          ]
+        ],
+        "286": [
+          [
+            42259,
+            43116
+          ],
+          [
+            42259,
+            43120
+          ]
+        ],
+        "287": [
+          [
+            42205,
+            43118
+          ],
+          [
+            42196,
+            43114
+          ],
+          [
+            42186,
+            43104
+          ]
+        ],
+        "288": [
+          [
+            42347,
+            43119
+          ],
+          [
+            42349,
+            43119
+          ],
+          [
+            42353,
+            43124
+          ]
+        ],
+        "289": [
+          [
+            42429,
+            43119
+          ],
+          [
+            42429,
+            43121
+          ]
+        ],
+        "290": [
+          [
+            42259,
+            43121
+          ],
+          [
+            42265,
+            43136
+          ]
+        ],
+        "291": [
+          [
+            42288,
+            43124
+          ],
+          [
+            42291,
+            43127
+          ]
+        ],
+        "292": [
+          [
+            42355,
+            43124
+          ],
+          [
+            42354,
+            43124
+          ]
+        ],
+        "293": [
+          [
+            42353,
+            43125
+          ]
+        ],
+        "294": [
+          [
+            42292,
+            43127
+          ],
+          [
+            42308,
+            43134
+          ],
+          [
+            42320,
+            43147
+          ],
+          [
+            42320,
+            43149
+          ]
+        ],
+        "295": [
+          [
+            42247,
+            43129
+          ],
+          [
+            42252,
+            43130
+          ],
+          [
+            42259,
+            43136
+          ],
+          [
+            42264,
+            43136
+          ]
+        ],
+        "296": [
+          [
+            42318,
+            43129
+          ],
+          [
+            42329,
+            43141
+          ]
+        ],
+        "297": [
+          [
+            42188,
+            43130
+          ],
+          [
+            42180,
+            43135
+          ],
+          [
+            42173,
+            43136
+          ]
+        ],
+        "298": [
+          [
+            42346,
+            43133
+          ]
+        ],
+        "299": [
+          [
+            42338,
+            43135
+          ],
+          [
+            42342,
+            43134
+          ]
+        ],
+        "300": [
+          [
+            42429,
+            43135
+          ],
+          [
+            42429,
+            43141
+          ]
+        ],
+        "301": [
+          [
+            42217,
+            43136
+          ],
+          [
+            42213,
+            43136
+          ],
+          [
+            42208,
+            43139
+          ],
+          [
+            42202,
+            43140
+          ],
+          [
+            42191,
+            43140
+          ]
+        ],
+        "302": [
+          [
+            42335,
+            43136
+          ]
+        ],
+        "303": [
+          [
+            42379,
+            43136
+          ],
+          [
+            42381,
+            43145
+          ]
+        ],
+        "304": [
+          [
+            42265,
+            43137
+          ],
+          [
+            42271,
+            43149
+          ],
+          [
+            42278,
+            43157
+          ]
+        ],
+        "305": [
+          [
+            42420,
+            43137
+          ],
+          [
+            42425,
+            43141
+          ],
+          [
+            42428,
+            43141
+          ]
+        ],
+        "306": [
+          [
+            42190,
+            43140
+          ],
+          [
+            42173,
+            43140
+          ]
+        ],
+        "307": [
+          [
+            42330,
+            43141
+          ],
+          [
+            42332,
+            43139
+          ]
+        ],
+        "308": [
+          [
+            42382,
+            43142
+          ],
+          [
+            42382,
+            43145
+          ]
+        ],
+        "309": [
+          [
+            42429,
+            43142
+          ]
+        ],
+        "310": [
+          [
+            42203,
+            43144
+          ],
+          [
+            42199,
+            43141
+          ],
+          [
+            42191,
+            43141
+          ]
+        ],
+        "311": [
+          [
+            42244,
+            43144
+          ],
+          [
+            42246,
+            43148
+          ],
+          [
+            42246,
+            43153
+          ],
+          [
+            42249,
+            43157
+          ]
+        ],
+        "312": [
+          [
+            42373,
+            43145
+          ],
+          [
+            42374,
+            43145
+          ]
+        ],
+        "313": [
+          [
+            42375,
+            43145
+          ],
+          [
+            42379,
+            43145
+          ],
+          [
+            42383,
+            43148
+          ]
+        ],
+        "314": [
+          [
+            42325,
+            43146
+          ],
+          [
+            42329,
+            43142
+          ]
+        ],
+        "315": [
+          [
+            42382,
+            43146
+          ],
+          [
+            42383,
+            43147
+          ]
+        ],
+        "316": [
+          [
+            42367,
+            43147
+          ],
+          [
+            42374,
+            43146
+          ]
+        ],
+        "317": [
+          [
+            42384,
+            43148
+          ],
+          [
+            42392,
+            43155
+          ],
+          [
+            42396,
+            43162
+          ]
+        ],
+        "318": [
+          [
+            42429,
+            43150
+          ],
+          [
+            42429,
+            43149
+          ]
+        ],
+        "319": [
+          [
+            42282,
+            43152
+          ],
+          [
+            42279,
+            43157
+          ]
+        ],
+        "320": [
+          [
+            42402,
+            43152
+          ],
+          [
+            42402,
+            43155
+          ],
+          [
+            42399,
+            43159
+          ]
+        ],
+        "321": [
+          [
+            42180,
+            43153
+          ],
+          [
+            42173,
+            43150
+          ]
+        ],
+        "322": [
+          [
+            42242,
+            43153
+          ],
+          [
+            42248,
+            43157
+          ]
+        ],
+        "323": [
+          [
+            42315,
+            43153
+          ]
+        ],
+        "324": [
+          [
+            42304,
+            43154
+          ],
+          [
+            42305,
+            43156
+          ],
+          [
+            42307,
+            43156
+          ]
+        ],
+        "325": [
+          [
+            42310,
+            43155
+          ],
+          [
+            42309,
+            43155
+          ]
+        ],
+        "326": [
+          [
+            42249,
+            43158
+          ],
+          [
+            42260,
+            43172
+          ],
+          [
+            42262,
+            43176
+          ],
+          [
+            42261,
+            43178
+          ]
+        ],
+        "327": [
+          [
+            42279,
+            43158
+          ],
+          [
+            42279,
+            43161
+          ],
+          [
+            42282,
+            43164
+          ],
+          [
+            42282,
+            43166
+          ]
+        ],
+        "328": [
+          [
+            42406,
+            43158
+          ],
+          [
+            42400,
+            43159
+          ]
+        ],
+        "329": [
+          [
+            42301,
+            43159
+          ]
+        ],
+        "330": [
+          [
+            42362,
+            43159
+          ],
+          [
+            42366,
+            43160
+          ],
+          [
+            42372,
+            43166
+          ]
+        ],
+        "331": [
+          [
+            42399,
+            43160
+          ],
+          [
+            42397,
+            43163
+          ]
+        ],
+        "332": [
+          [
+            42289,
+            43163
+          ]
+        ],
+        "333": [
+          [
+            42293,
+            43163
+          ]
+        ],
+        "334": [
+          [
+            42294,
+            43163
+          ]
+        ],
+        "335": [
+          [
+            42396,
+            43163
+          ]
+        ],
+        "336": [
+          [
+            42223,
+            43164
+          ],
+          [
+            42224,
+            43185
+          ]
+        ],
+        "337": [
+          [
+            42397,
+            43164
+          ],
+          [
+            42399,
+            43171
+          ]
+        ],
+        "338": [
+          [
+            42373,
+            43166
+          ],
+          [
+            42395,
+            43162
+          ]
+        ],
+        "339": [
+          [
+            42198,
+            43167
+          ],
+          [
+            42195,
+            43179
+          ]
+        ],
+        "340": [
+          [
+            42303,
+            43167
+          ],
+          [
+            42303,
+            43165
+          ],
+          [
+            42298,
+            43161
+          ]
+        ],
+        "341": [
+          [
+            42277,
+            43169
+          ]
+        ],
+        "342": [
+          [
+            42272,
+            43172
+          ],
+          [
+            42269,
+            43174
+          ]
+        ],
+        "343": [
+          [
+            42188,
+            43173
+          ],
+          [
+            42187,
+            43180
+          ],
+          [
+            42189,
+            43182
+          ]
+        ],
+        "344": [
+          [
+            42358,
+            43173
+          ],
+          [
+            42372,
+            43167
+          ]
+        ],
+        "345": [
+          [
+            42201,
+            43174
+          ],
+          [
+            42196,
+            43179
+          ]
+        ],
+        "346": [
+          [
+            42351,
+            43174
+          ],
+          [
+            42357,
+            43173
+          ]
+        ],
+        "347": [
+          [
+            42298,
+            43176
+          ],
+          [
+            42298,
+            43171
+          ],
+          [
+            42293,
+            43164
+          ]
+        ],
+        "348": [
+          [
+            42429,
+            43176
+          ],
+          [
+            42429,
+            43189
+          ]
+        ],
+        "349": [
+          [
+            42351,
+            43177
+          ],
+          [
+            42357,
+            43174
+          ]
+        ],
+        "350": [
+          [
+            42401,
+            43177
+          ],
+          [
+            42404,
+            43189
+          ]
+        ],
+        "351": [
+          [
+            42333,
+            43178
+          ],
+          [
+            42343,
+            43182
+          ],
+          [
+            42347,
+            43181
+          ],
+          [
+            42350,
+            43178
+          ]
+        ],
+        "352": [
+          [
+            42348,
+            43178
+          ],
+          [
+            42350,
+            43177
+          ]
+        ],
+        "353": [
+          [
+            42185,
+            43179
+          ],
+          [
+            42188,
+            43182
+          ]
+        ],
+        "354": [
+          [
+            42195,
+            43180
+          ],
+          [
+            42192,
+            43185
+          ]
+        ],
+        "355": [
+          [
+            42256,
+            43180
+          ],
+          [
+            42256,
+            43182
+          ],
+          [
+            42251,
+            43186
+          ]
+        ],
+        "356": [
+          [
+            42421,
+            43180
+          ],
+          [
+            42422,
+            43189
+          ],
+          [
+            42424,
+            43190
+          ]
+        ],
+        "357": [
+          [
+            42189,
+            43183
+          ],
+          [
+            42191,
+            43185
+          ]
+        ],
+        "358": [
+          [
+            42183,
+            43184
+          ],
+          [
+            42188,
+            43184
+          ],
+          [
+            42191,
+            43186
+          ]
+        ],
+        "359": [
+          [
+            42223,
+            43185
+          ]
+        ],
+        "360": [
+          [
+            42250,
+            43185
+          ],
+          [
+            42250,
+            43186
+          ]
+        ],
+        "361": [
+          [
+            42192,
+            43186
+          ]
+        ],
+        "362": [
+          [
+            42224,
+            43186
+          ],
+          [
+            42224,
+            43190
+          ]
+        ],
+        "363": [
+          [
+            42192,
+            43187
+          ],
+          [
+            42192,
+            43190
+          ]
+        ],
+        "364": [
+          [
+            42250,
+            43187
+          ],
+          [
+            42249,
+            43190
+          ]
+        ],
+        "365": [
+          [
+            42371,
+            43188
+          ],
+          [
+            42373,
+            43190
+          ],
+          [
+            42404,
+            43190
+          ]
+        ],
+        "366": [
+          [
+            42193,
+            43190
+          ]
+        ],
+        "367": [
+          [
+            42201,
+            43190
+          ],
+          [
+            42194,
+            43190
+          ]
+        ],
+        "368": [
+          [
+            42341,
+            43190
+          ]
+        ],
+        "369": [
+          [
+            42405,
+            43190
+          ]
+        ],
+        "370": [
+          [
+            42429,
+            43190
+          ]
+        ]
+      }
+    },
+    "G2": {
+      "reach_count": 72,
+      "confluence_cells": 18,
+      "history": [],
+      "tightened": {},
+      "tightened_count": 0,
+      "reverted_to_original_count": 13,
+      "original_trace_already_minimal_count": 13,
+      "tightened_then_reverted_count": 0,
+      "revert_note": "`is_original_trace` \u4e3a\u771f\u7684\u6bb5\u5206\u4e24\u7c7b\uff1a\u2460\u5728 30 m \u65f6\u5c31\u5df2\u9876\u70b9\u6700\u5c0f\uff08\u591a\u6570\u662f 1\u20132 \u683c\u7684\u77ed reach\uff0cDP \u672c\u6765\u65e0\u53ef\u5220\uff09\u2014\u2014\u8fd9**\u4e0d\u662f**\u56de\u9000\uff1b\u2461\u6536\u7d27\u540e\u4ecd\u4e0d\u8fbe\u6807\u624d\u9000\u56de\u539f\u7ebf\u3002\u4e24\u7c7b\u5206\u5f00\u8ba1\u6570\uff0c\u4e0d\u80fd\u628a\u2460\u5f53\u6210\u201c\u5931\u8d25\u56de\u9000\u201d\u3002",
+      "final_vertices": 222,
+      "original_cells": 1201,
+      "uncertified_reaches": [],
+      "anchor_missing_reaches": [],
+      "endpoint_failures": [],
+      "new_pair_count": 0,
+      "new_pairs": [],
+      "existing_crossing_moved_count": 0,
+      "forward_exact_worst_m": 29.13857587071793,
+      "backward_upper_worst_m": 28.273946083690554,
+      "method_constant_m": 1.5,
+      "mixed_complete": true,
+      "blocking_reasons": [],
+      "per_reach": {
+        "1": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "7": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "9": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "12": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "15": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "16": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "18": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "22": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "35": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "44": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "63": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "70": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "71": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        }
+      },
+      "final_display_lines": {
+        "0": [
+          [
+            42345,
+            42874
+          ],
+          [
+            42356,
+            42874
+          ],
+          [
+            42366,
+            42881
+          ]
+        ],
+        "1": [
+          [
+            42173,
+            42888
+          ]
+        ],
+        "2": [
+          [
+            42253,
+            42895
+          ],
+          [
+            42252,
+            42903
+          ],
+          [
+            42249,
+            42906
+          ],
+          [
+            42249,
+            42919
+          ],
+          [
+            42246,
+            42923
+          ],
+          [
+            42247,
+            42928
+          ]
+        ],
+        "3": [
+          [
+            42341,
+            42904
+          ],
+          [
+            42345,
+            42906
+          ],
+          [
+            42354,
+            42905
+          ],
+          [
+            42356,
+            42908
+          ],
+          [
+            42355,
+            42912
+          ]
+        ],
+        "4": [
+          [
+            42280,
+            42905
+          ],
+          [
+            42279,
+            42910
+          ],
+          [
+            42256,
+            42935
+          ],
+          [
+            42254,
+            42942
+          ],
+          [
+            42250,
+            42946
+          ]
+        ],
+        "5": [
+          [
+            42237,
+            42910
+          ],
+          [
+            42244,
+            42926
+          ]
+        ],
+        "6": [
+          [
+            42309,
+            42912
+          ],
+          [
+            42316,
+            42918
+          ]
+        ],
+        "7": [
+          [
+            42354,
+            42912
+          ]
+        ],
+        "8": [
+          [
+            42224,
+            42915
+          ],
+          [
+            42236,
+            42919
+          ],
+          [
+            42244,
+            42927
+          ]
+        ],
+        "9": [
+          [
+            42316,
+            42919
+          ]
+        ],
+        "10": [
+          [
+            42317,
+            42919
+          ],
+          [
+            42322,
+            42919
+          ],
+          [
+            42324,
+            42921
+          ]
+        ],
+        "11": [
+          [
+            42345,
+            42920
+          ],
+          [
+            42353,
+            42912
+          ]
+        ],
+        "12": [
+          [
+            42245,
+            42927
+          ],
+          [
+            42246,
+            42928
+          ]
+        ],
+        "13": [
+          [
+            42247,
+            42929
+          ],
+          [
+            42251,
+            42935
+          ],
+          [
+            42249,
+            42940
+          ],
+          [
+            42249,
+            42946
+          ]
+        ],
+        "14": [
+          [
+            42192,
+            42935
+          ],
+          [
+            42195,
+            42939
+          ],
+          [
+            42194,
+            42958
+          ],
+          [
+            42203,
+            42966
+          ],
+          [
+            42207,
+            42976
+          ]
+        ],
+        "15": [
+          [
+            42361,
+            42943
+          ]
+        ],
+        "16": [
+          [
+            42362,
+            42943
+          ]
+        ],
+        "17": [
+          [
+            42249,
+            42947
+          ],
+          [
+            42250,
+            42956
+          ]
+        ],
+        "18": [
+          [
+            42334,
+            42947
+          ],
+          [
+            42335,
+            42947
+          ]
+        ],
+        "19": [
+          [
+            42363,
+            42950
+          ],
+          [
+            42362,
+            42944
+          ]
+        ],
+        "20": [
+          [
+            42234,
+            42952
+          ],
+          [
+            42249,
+            42956
+          ]
+        ],
+        "21": [
+          [
+            42250,
+            42957
+          ],
+          [
+            42251,
+            42963
+          ]
+        ],
+        "22": [
+          [
+            42399,
+            42958
+          ]
+        ],
+        "23": [
+          [
+            42298,
+            42964
+          ],
+          [
+            42296,
+            42967
+          ]
+        ],
+        "24": [
+          [
+            42416,
+            42969
+          ],
+          [
+            42411,
+            42968
+          ]
+        ],
+        "25": [
+          [
+            42279,
+            42972
+          ],
+          [
+            42272,
+            42971
+          ],
+          [
+            42267,
+            42972
+          ],
+          [
+            42263,
+            42975
+          ],
+          [
+            42259,
+            42975
+          ]
+        ],
+        "26": [
+          [
+            42313,
+            42972
+          ],
+          [
+            42310,
+            42971
+          ]
+        ],
+        "27": [
+          [
+            42258,
+            42975
+          ],
+          [
+            42251,
+            42974
+          ],
+          [
+            42248,
+            42980
+          ]
+        ],
+        "28": [
+          [
+            42246,
+            42986
+          ],
+          [
+            42245,
+            42991
+          ],
+          [
+            42235,
+            43002
+          ]
+        ],
+        "29": [
+          [
+            42219,
+            42988
+          ],
+          [
+            42228,
+            42997
+          ],
+          [
+            42234,
+            43000
+          ],
+          [
+            42233,
+            43004
+          ]
+        ],
+        "30": [
+          [
+            42361,
+            42990
+          ],
+          [
+            42368,
+            42985
+          ],
+          [
+            42389,
+            42964
+          ],
+          [
+            42393,
+            42963
+          ],
+          [
+            42398,
+            42958
+          ]
+        ],
+        "31": [
+          [
+            42400,
+            42991
+          ],
+          [
+            42400,
+            42979
+          ],
+          [
+            42403,
+            42963
+          ],
+          [
+            42399,
+            42959
+          ]
+        ],
+        "32": [
+          [
+            42355,
+            42992
+          ],
+          [
+            42360,
+            42990
+          ]
+        ],
+        "33": [
+          [
+            42362,
+            42995
+          ],
+          [
+            42361,
+            42991
+          ]
+        ],
+        "34": [
+          [
+            42411,
+            42995
+          ],
+          [
+            42401,
+            42992
+          ]
+        ],
+        "35": [
+          [
+            42235,
+            43003
+          ],
+          [
+            42234,
+            43004
+          ]
+        ],
+        "36": [
+          [
+            42399,
+            43004
+          ],
+          [
+            42400,
+            42992
+          ]
+        ],
+        "37": [
+          [
+            42233,
+            43005
+          ],
+          [
+            42229,
+            43009
+          ]
+        ],
+        "38": [
+          [
+            42316,
+            43020
+          ],
+          [
+            42317,
+            43013
+          ],
+          [
+            42306,
+            43002
+          ],
+          [
+            42298,
+            43000
+          ],
+          [
+            42273,
+            42981
+          ],
+          [
+            42264,
+            42976
+          ],
+          [
+            42259,
+            42976
+          ]
+        ],
+        "39": [
+          [
+            42273,
+            43022
+          ],
+          [
+            42264,
+            43018
+          ],
+          [
+            42257,
+            43011
+          ],
+          [
+            42249,
+            43008
+          ],
+          [
+            42242,
+            43003
+          ],
+          [
+            42236,
+            43003
+          ]
+        ],
+        "40": [
+          [
+            42207,
+            43024
+          ],
+          [
+            42205,
+            43024
+          ],
+          [
+            42201,
+            43028
+          ]
+        ],
+        "41": [
+          [
+            42200,
+            43029
+          ],
+          [
+            42193,
+            43030
+          ]
+        ],
+        "42": [
+          [
+            42352,
+            43039
+          ],
+          [
+            42359,
+            43052
+          ],
+          [
+            42360,
+            43060
+          ],
+          [
+            42363,
+            43066
+          ]
+        ],
+        "43": [
+          [
+            42287,
+            43050
+          ],
+          [
+            42279,
+            43048
+          ],
+          [
+            42273,
+            43043
+          ],
+          [
+            42266,
+            43040
+          ],
+          [
+            42253,
+            43036
+          ],
+          [
+            42238,
+            43026
+          ],
+          [
+            42236,
+            43026
+          ],
+          [
+            42228,
+            43019
+          ],
+          [
+            42222,
+            43016
+          ],
+          [
+            42219,
+            43017
+          ]
+        ],
+        "44": [
+          [
+            42429,
+            43068
+          ],
+          [
+            42429,
+            43069
+          ]
+        ],
+        "45": [
+          [
+            42260,
+            43070
+          ],
+          [
+            42259,
+            43067
+          ],
+          [
+            42253,
+            43062
+          ],
+          [
+            42249,
+            43056
+          ],
+          [
+            42241,
+            43053
+          ],
+          [
+            42231,
+            43043
+          ],
+          [
+            42223,
+            43040
+          ],
+          [
+            42213,
+            43039
+          ],
+          [
+            42204,
+            43029
+          ],
+          [
+            42201,
+            43029
+          ]
+        ],
+        "46": [
+          [
+            42410,
+            43076
+          ],
+          [
+            42405,
+            43082
+          ],
+          [
+            42401,
+            43083
+          ],
+          [
+            42396,
+            43092
+          ],
+          [
+            42393,
+            43094
+          ]
+        ],
+        "47": [
+          [
+            42229,
+            43078
+          ],
+          [
+            42207,
+            43067
+          ],
+          [
+            42184,
+            43046
+          ],
+          [
+            42185,
+            43044
+          ]
+        ],
+        "48": [
+          [
+            42321,
+            43080
+          ],
+          [
+            42323,
+            43091
+          ],
+          [
+            42332,
+            43097
+          ],
+          [
+            42336,
+            43102
+          ]
+        ],
+        "49": [
+          [
+            42354,
+            43085
+          ],
+          [
+            42350,
+            43090
+          ],
+          [
+            42349,
+            43095
+          ]
+        ],
+        "50": [
+          [
+            42176,
+            43089
+          ],
+          [
+            42173,
+            43087
+          ]
+        ],
+        "51": [
+          [
+            42178,
+            43093
+          ],
+          [
+            42177,
+            43090
+          ]
+        ],
+        "52": [
+          [
+            42308,
+            43094
+          ],
+          [
+            42313,
+            43097
+          ],
+          [
+            42319,
+            43097
+          ],
+          [
+            42330,
+            43102
+          ],
+          [
+            42336,
+            43103
+          ]
+        ],
+        "53": [
+          [
+            42209,
+            43096
+          ],
+          [
+            42201,
+            43099
+          ]
+        ],
+        "54": [
+          [
+            42200,
+            43099
+          ],
+          [
+            42188,
+            43095
+          ],
+          [
+            42184,
+            43091
+          ],
+          [
+            42177,
+            43089
+          ]
+        ],
+        "55": [
+          [
+            42337,
+            43103
+          ],
+          [
+            42342,
+            43108
+          ],
+          [
+            42345,
+            43117
+          ],
+          [
+            42349,
+            43119
+          ],
+          [
+            42353,
+            43123
+          ],
+          [
+            42353,
+            43125
+          ]
+        ],
+        "56": [
+          [
+            42386,
+            43106
+          ],
+          [
+            42388,
+            43104
+          ]
+        ],
+        "57": [
+          [
+            42209,
+            43107
+          ],
+          [
+            42201,
+            43100
+          ]
+        ],
+        "58": [
+          [
+            42365,
+            43118
+          ],
+          [
+            42359,
+            43123
+          ]
+        ],
+        "59": [
+          [
+            42292,
+            43127
+          ],
+          [
+            42308,
+            43134
+          ],
+          [
+            42320,
+            43147
+          ],
+          [
+            42320,
+            43149
+          ]
+        ],
+        "60": [
+          [
+            42262,
+            43129
+          ],
+          [
+            42271,
+            43149
+          ],
+          [
+            42279,
+            43158
+          ],
+          [
+            42279,
+            43161
+          ],
+          [
+            42282,
+            43164
+          ],
+          [
+            42282,
+            43166
+          ]
+        ],
+        "61": [
+          [
+            42194,
+            43140
+          ],
+          [
+            42173,
+            43140
+          ]
+        ],
+        "62": [
+          [
+            42330,
+            43141
+          ],
+          [
+            42332,
+            43139
+          ]
+        ],
+        "63": [
+          [
+            42429,
+            43142
+          ]
+        ],
+        "64": [
+          [
+            42382,
+            43146
+          ],
+          [
+            42392,
+            43155
+          ],
+          [
+            42396,
+            43162
+          ]
+        ],
+        "65": [
+          [
+            42251,
+            43161
+          ],
+          [
+            42260,
+            43172
+          ],
+          [
+            42262,
+            43176
+          ],
+          [
+            42261,
+            43178
+          ]
+        ],
+        "66": [
+          [
+            42396,
+            43163
+          ],
+          [
+            42399,
+            43171
+          ]
+        ],
+        "67": [
+          [
+            42358,
+            43173
+          ],
+          [
+            42374,
+            43165
+          ],
+          [
+            42389,
+            43164
+          ],
+          [
+            42395,
+            43162
+          ]
+        ],
+        "68": [
+          [
+            42224,
+            43181
+          ],
+          [
+            42224,
+            43190
+          ]
+        ],
+        "69": [
+          [
+            42192,
+            43186
+          ],
+          [
+            42193,
+            43190
+          ]
+        ],
+        "70": [
+          [
+            42249,
+            43189
+          ],
+          [
+            42249,
+            43190
+          ]
+        ],
+        "71": [
+          [
+            42405,
+            43190
+          ]
+        ]
+      }
+    },
+    "G3": {
+      "reach_count": 33,
+      "confluence_cells": 5,
+      "history": [
+        {
+          "round": 1,
+          "blamed": [
+            5,
+            6
+          ],
+          "tightened": [
+            [
+              5,
+              15.0
+            ],
+            [
+              6,
+              15.0
+            ]
+          ],
+          "new_pairs": [],
+          "uncertified": [
+            5,
+            6
+          ]
+        }
+      ],
+      "tightened": {
+        "5": 15.0,
+        "6": 15.0
+      },
+      "tightened_count": 2,
+      "reverted_to_original_count": 6,
+      "original_trace_already_minimal_count": 6,
+      "tightened_then_reverted_count": 0,
+      "revert_note": "`is_original_trace` \u4e3a\u771f\u7684\u6bb5\u5206\u4e24\u7c7b\uff1a\u2460\u5728 30 m \u65f6\u5c31\u5df2\u9876\u70b9\u6700\u5c0f\uff08\u591a\u6570\u662f 1\u20132 \u683c\u7684\u77ed reach\uff0cDP \u672c\u6765\u65e0\u53ef\u5220\uff09\u2014\u2014\u8fd9**\u4e0d\u662f**\u56de\u9000\uff1b\u2461\u6536\u7d27\u540e\u4ecd\u4e0d\u8fbe\u6807\u624d\u9000\u56de\u539f\u7ebf\u3002\u4e24\u7c7b\u5206\u5f00\u8ba1\u6570\uff0c\u4e0d\u80fd\u628a\u2460\u5f53\u6210\u201c\u5931\u8d25\u56de\u9000\u201d\u3002",
+      "final_vertices": 111,
+      "original_cells": 660,
+      "uncertified_reaches": [],
+      "anchor_missing_reaches": [],
+      "endpoint_failures": [],
+      "new_pair_count": 0,
+      "new_pairs": [],
+      "existing_crossing_moved_count": 0,
+      "forward_exact_worst_m": 28.725075851405116,
+      "backward_upper_worst_m": 29.75726141076302,
+      "method_constant_m": 1.5,
+      "mixed_complete": true,
+      "blocking_reasons": [],
+      "per_reach": {
+        "4": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "5": {
+          "tolerance_m": 15.0,
+          "vertices": 4,
+          "is_original_trace": false,
+          "forward_exact_m": 12.727922061357855,
+          "backward_upper_m": 13.330985915585188,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 11.830985915585188,
+          "confluence_missing": []
+        },
+        "6": {
+          "tolerance_m": 15.0,
+          "vertices": 7,
+          "is_original_trace": false,
+          "forward_exact_m": 14.948186373673195,
+          "backward_upper_m": 16.051205662422433,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 14.551205662422431,
+          "confluence_missing": []
+        },
+        "7": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "19": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        },
+        "30": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "31": {
+          "tolerance_m": 30.0,
+          "vertices": 2,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 1.5,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "backward_sample_m": 0.0,
+          "confluence_missing": []
+        },
+        "32": {
+          "tolerance_m": 30.0,
+          "vertices": 1,
+          "is_original_trace": true,
+          "forward_exact_m": 0.0,
+          "backward_upper_m": 0.0,
+          "certified_le_30": true,
+          "endpoints_ok": true,
+          "confluence_missing": []
+        }
+      },
+      "final_display_lines": {
+        "0": [
+          [
+            42356,
+            42912
+          ],
+          [
+            42354,
+            42912
+          ]
+        ],
+        "1": [
+          [
+            42274,
+            42916
+          ],
+          [
+            42256,
+            42935
+          ],
+          [
+            42254,
+            42942
+          ],
+          [
+            42250,
+            42946
+          ]
+        ],
+        "2": [
+          [
+            42317,
+            42919
+          ],
+          [
+            42322,
+            42919
+          ],
+          [
+            42324,
+            42921
+          ]
+        ],
+        "3": [
+          [
+            42245,
+            42927
+          ],
+          [
+            42251,
+            42935
+          ],
+          [
+            42249,
+            42940
+          ],
+          [
+            42249,
+            42946
+          ]
+        ],
+        "4": [
+          [
+            42362,
+            42943
+          ]
+        ],
+        "5": [
+          [
+            42249,
+            42947
+          ],
+          [
+            42249,
+            42955
+          ],
+          [
+            42250,
+            42956
+          ],
+          [
+            42251,
+            42963
+          ]
+        ],
+        "6": [
+          [
+            42194,
+            42948
+          ],
+          [
+            42194,
+            42954
+          ],
+          [
+            42195,
+            42955
+          ],
+          [
+            42194,
+            42958
+          ],
+          [
+            42203,
+            42966
+          ],
+          [
+            42207,
+            42974
+          ],
+          [
+            42207,
+            42976
+          ]
+        ],
+        "7": [
+          [
+            42399,
+            42958
+          ]
+        ],
+        "8": [
+          [
+            42361,
+            42990
+          ],
+          [
+            42368,
+            42985
+          ],
+          [
+            42389,
+            42964
+          ],
+          [
+            42393,
+            42963
+          ],
+          [
+            42398,
+            42958
+          ]
+        ],
+        "9": [
+          [
+            42238,
+            42999
+          ],
+          [
+            42235,
+            43002
+          ]
+        ],
+        "10": [
+          [
+            42235,
+            43003
+          ],
+          [
+            42229,
+            43009
+          ]
+        ],
+        "11": [
+          [
+            42399,
+            43003
+          ],
+          [
+            42400,
+            42979
+          ],
+          [
+            42403,
+            42965
+          ],
+          [
+            42403,
+            42963
+          ],
+          [
+            42399,
+            42959
+          ]
+        ],
+        "12": [
+          [
+            42254,
+            43010
+          ],
+          [
+            42242,
+            43003
+          ],
+          [
+            42236,
+            43003
+          ]
+        ],
+        "13": [
+          [
+            42317,
+            43013
+          ],
+          [
+            42306,
+            43002
+          ],
+          [
+            42298,
+            43000
+          ],
+          [
+            42273,
+            42981
+          ],
+          [
+            42264,
+            42976
+          ],
+          [
+            42251,
+            42974
+          ],
+          [
+            42248,
+            42980
+          ]
+        ],
+        "14": [
+          [
+            42268,
+            43041
+          ],
+          [
+            42249,
+            43034
+          ],
+          [
+            42222,
+            43016
+          ],
+          [
+            42219,
+            43017
+          ]
+        ],
+        "15": [
+          [
+            42358,
+            43051
+          ],
+          [
+            42363,
+            43066
+          ]
+        ],
+        "16": [
+          [
+            42259,
+            43068
+          ],
+          [
+            42249,
+            43056
+          ],
+          [
+            42241,
+            43053
+          ],
+          [
+            42231,
+            43043
+          ],
+          [
+            42223,
+            43040
+          ],
+          [
+            42213,
+            43039
+          ],
+          [
+            42204,
+            43029
+          ],
+          [
+            42193,
+            43030
+          ]
+        ],
+        "17": [
+          [
+            42211,
+            43069
+          ],
+          [
+            42198,
+            43060
+          ],
+          [
+            42184,
+            43046
+          ],
+          [
+            42185,
+            43044
+          ]
+        ],
+        "18": [
+          [
+            42398,
+            43088
+          ],
+          [
+            42396,
+            43092
+          ],
+          [
+            42393,
+            43094
+          ]
+        ],
+        "19": [
+          [
+            42349,
+            43095
+          ]
+        ],
+        "20": [
+          [
+            42200,
+            43099
+          ],
+          [
+            42188,
+            43095
+          ],
+          [
+            42184,
+            43091
+          ],
+          [
+            42178,
+            43090
+          ],
+          [
+            42173,
+            43087
+          ]
+        ],
+        "21": [
+          [
+            42322,
+            43099
+          ],
+          [
+            42336,
+            43103
+          ]
+        ],
+        "22": [
+          [
+            42335,
+            43100
+          ],
+          [
+            42336,
+            43102
+          ]
+        ],
+        "23": [
+          [
+            42337,
+            43103
+          ],
+          [
+            42342,
+            43108
+          ],
+          [
+            42345,
+            43117
+          ],
+          [
+            42349,
+            43119
+          ],
+          [
+            42353,
+            43123
+          ],
+          [
+            42353,
+            43125
+          ]
+        ],
+        "24": [
+          [
+            42303,
+            43131
+          ],
+          [
+            42313,
+            43139
+          ],
+          [
+            42320,
+            43147
+          ],
+          [
+            42320,
+            43149
+          ]
+        ],
+        "25": [
+          [
+            42265,
+            43137
+          ],
+          [
+            42271,
+            43149
+          ],
+          [
+            42279,
+            43158
+          ],
+          [
+            42279,
+            43161
+          ],
+          [
+            42282,
+            43164
+          ],
+          [
+            42282,
+            43166
+          ]
+        ],
+        "26": [
+          [
+            42179,
+            43140
+          ],
+          [
+            42173,
+            43140
+          ]
+        ],
+        "27": [
+          [
+            42384,
+            43148
+          ],
+          [
+            42392,
+            43155
+          ],
+          [
+            42396,
+            43162
+          ]
+        ],
+        "28": [
+          [
+            42396,
+            43163
+          ],
+          [
+            42399,
+            43171
+          ]
+        ],
+        "29": [
+          [
+            42373,
+            43166
+          ],
+          [
+            42395,
+            43162
+          ]
+        ],
+        "30": [
+          [
+            42262,
+            43177
+          ],
+          [
+            42261,
+            43178
+          ]
+        ],
+        "31": [
+          [
+            42192,
+            43190
+          ],
+          [
+            42193,
+            43190
+          ]
+        ],
+        "32": [
+          [
+            42405,
+            43190
+          ]
+        ]
+      }
+    }
+  }
+}

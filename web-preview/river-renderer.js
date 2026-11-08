@@ -10,10 +10,10 @@
  */
 (function installRiverRenderer(global) {
     const endpointConvention = 'positive signedEdgeQ flows from graph.edges[index][0] to graph.edges[index][1]';
-    const topologyColor = '#9aaea0';
-    const centerlineColor = '#e3bb72';
-    const channelColor = '#a97954';
-    const waterColor = '#72c8d3';
+    const topologyColor = '#a89d82';
+    const centerlineColor = '#f1c36a';
+    const channelColor = '#b08a5c';
+    const waterColor = '#5cc0c8';
 
     function flowInterval(data, state) {
         const series = data.timeseries;
@@ -89,6 +89,25 @@
         const interval = flowInterval(data, state);
         const graphPoints = bed;
 
+        const terrain = data.originalBed;
+        if (terrain?.height_m && state.layers.bed) {
+            const heights = terrain.height_m, spacing = terrain.spacing_m;
+            const values = heights.flat().filter(Number.isFinite);
+            const lo = Math.min(...values), hi = Math.max(...values);
+            const vertex = (row, col) => [(terrain.origin_column + col) * spacing,
+                heights[row][col], (terrain.origin_row + row) * spacing];
+            const faces = [];
+            for (let row = 0; row < heights.length - 1; row++) for (let col = 0; col < heights[row].length - 1; col++) {
+                const corners = [vertex(row,col),vertex(row,col+1),vertex(row+1,col+1),vertex(row+1,col)];
+                if (!corners.every(point => Number.isFinite(point[1]))) continue;
+                const points = corners.map(projection), t = (heights[row][col] - lo) / (hi - lo || 1);
+                faces.push({points, depth:camera?points.reduce((sum,p)=>sum+p[2]/4,0):0,
+                    color:global.TerraTheme?global.TerraTheme.relief(t):`rgb(${46+Math.round(85*t)},${75+Math.round(65*t)},${53+Math.round(45*t)})`});
+            }
+            faces.sort((a,b)=>b.depth-a.depth);
+            faces.forEach(face=>{drawTriangle([face.points[0],face.points[1],face.points[2]],face.color);drawTriangle([face.points[0],face.points[2],face.points[3]],face.color)});
+        }
+
         if (state.layers.edges !== false) {
             graph.edges.forEach((edge, index) => {
                 const start = graphPoints[edge[0]];
@@ -106,7 +125,7 @@
                         to,
                         [to[0] - 7 * Math.cos(angle - 0.5), to[1] - 7 * Math.sin(angle - 0.5)],
                         [to[0] - 7 * Math.cos(angle + 0.5), to[1] - 7 * Math.sin(angle + 0.5)]
-                    ], rate < 0 ? '#e18170' : '#b7d2ba');
+                    ], rate < 0 ? '#cf6b4b' : '#a3b36c');
                 }
             });
         }
@@ -115,15 +134,15 @@
         const order = vertices.map((_, index) => index);
         if (camera) order.sort((left, right) => water[right][2] - water[left][2]);
         for (const index of order) {
-            if (state.layers.bed && state.layers.water && camera) drawLine([bed[index], water[index]], '#8ba08d', 1);
+            if (state.layers.bed && state.layers.water && camera) drawLine([bed[index], water[index]], '#8f8468', 1);
             const radius = graph.boundary[index] ? 6 : 4;
             if (state.layers.bed) {
                 context.beginPath(); context.arc(bed[index][0], bed[index][1], radius, 0, Math.PI * 2);
-                context.fillStyle = '#cfaa75'; context.fill(); context.strokeStyle = '#d7ead8'; context.stroke();
+                context.fillStyle = '#d9b06a'; context.fill(); context.strokeStyle = '#ece0c4'; context.stroke();
             }
             if (state.layers.water && Number.isFinite(stages[index])) {
                 context.beginPath(); context.arc(water[index][0], water[index][1], Math.max(2, radius - 1), 0, Math.PI * 2);
-                context.fillStyle = waterColor; context.fill(); context.strokeStyle = '#d7ead8'; context.stroke();
+                context.fillStyle = waterColor; context.fill(); context.strokeStyle = '#ece0c4'; context.stroke();
             }
         }
         return {

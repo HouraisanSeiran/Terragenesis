@@ -8,7 +8,7 @@ import numpy as np
 import psutil
 
 from terrain_pipeline import td_ported_junction as junction
-from terrain_pipeline import td_source_conforming_banks as geometry
+from terrain_pipeline import channel_geometry as geometry
 
 SCHEMA = "td-ported-network-composition-v1"
 MAX_HUBS = 256

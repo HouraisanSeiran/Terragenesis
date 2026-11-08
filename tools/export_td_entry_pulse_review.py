@@ -14,7 +14,7 @@ import psutil
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, load_bundle, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, identity, load_bundle, publish_bytes
 from tools.export_td_entry_shallow_water_review import _encoded_array, _json, _memory_check, _pin
 
 MAX_JSON_BYTES = 64 * 1024**2
@@ -278,7 +278,7 @@ def _review(index_path, input_sha, audit_path, audit_sha):
         audit_code_sha256=audit["audit_code_sha256"],
         exporter_code_sha256={filename: file_sha256(ROOT / filename) for filename in
                              ("tools/export_td_entry_pulse_review.py", "tools/export_td_entry_shallow_water_review.py",
-                              "terrain_pipeline/mountain_source_adapter.py")},
+                              "terrain_pipeline/common_infra.py")},
         frames=frames, source_isolated_reception=audit["source_isolated_reception"],
         comparison=audit["comparison"], independent_case_audits=audit["cases"],
         diagnostic_gates={"independent_audit_status": audit["status"],

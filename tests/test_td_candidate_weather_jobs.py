@@ -3,16 +3,32 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
-import builtins
+from contextlib import ExitStack, contextmanager
 from unittest.mock import patch
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 from terrain_pipeline.td_surface_reaches import _hash
 from terrain_pipeline.td_candidate_weather_jobs import prepare_candidate_weather_jobs, load_candidate_weather_plan, run_candidate_weather_job, PHYSICS, FLAGS
-from tests import test_td_native_weather_storage_v10_io as weather_fixture
+import tests.test_basin_weather_pages as weather_fixture
 from terrain_pipeline.td_candidate_weather_jobs import publish_candidate_weather_selection, load_candidate_weather_selection, export_candidate_weather_review
 from terrain_pipeline.td_candidate_weather_jobs import execution_dependency_names, _check_execution_dependencies, ROOT
 
+
+
+@contextmanager
+def forbid_cold_execution():
+    entries = (
+        "terrain_pipeline.basin_storage.simulate_hour",
+        "terrain_pipeline.basin_storage.advance_hour_permeable",
+        "terrain_pipeline.basin_topology.build_basin_hierarchy",
+        "terrain_pipeline.climate_forcing.generate_native_storm",
+    )
+    with ExitStack() as guards:
+        calls = [guards.enter_context(patch(entry, side_effect=AssertionError("cold IO executed: " + entry)))
+                 for entry in entries]
+        yield
+        for call in calls:
+            call.assert_not_called()
 
 class CandidateWeatherPreparationTests(unittest.TestCase):
     def setUp(self):
@@ -43,7 +59,7 @@ class CandidateWeatherPreparationTests(unittest.TestCase):
             actual = prepare_candidate_weather_jobs(self.baseline_record, self.topologies, self.output)
             record = dict(path=str(self.output/"index.json"), expected_sha256=file_sha256(self.output/"index.json"), expected_identity=actual["identity_sha256"])
             self.assertEqual(load_candidate_weather_plan(record), expected)
-            with patch.dict("sys.modules", {"terrain_pipeline.td_basin_storage_v10":None}):
+            with forbid_cold_execution():
                 status = run_candidate_weather_job(record, self.root/"run", candidate_id="valley_incision")
             self.assertFalse(status["solver_advanced"])
             self.assertFalse((self.root/"run").exists())
@@ -80,19 +96,17 @@ class CandidateWeatherPreparationTests(unittest.TestCase):
 
     def test_recursive_freeze_includes_execution_and_monitor_dependencies(self):
         names = execution_dependency_names()
-        required = ("td_basin_transport_v6", "td_basin_storage_v6", "td_basin_storage_v5",
-                    "td_basin_storage_v4", "td_basin_storage_v3", "td_basin_forcing_v10",
-                    "td_basin_storage_v10_io", "td_basin_hierarchy", "td_basin_source")
+        required = ("basin_storage", "basin_topology", "runoff", "climate_forcing", "td_native_weather_storage_v10_io")
         for name in required:
             self.assertIn("terrain_pipeline/" + name + ".py", names)
-        self.assertIn("tools/verify_td_native_weather_storage.py", names)
+        self.assertIn('tools/verify_basin_storage_execution.py', names)
         self.assertIn("tools/run_td_candidate_weather_jobs.py", names)
         codes = {name: file_sha256(ROOT / name) for name in names}
         _check_execution_dependencies(codes)
-        codes["terrain_pipeline/td_basin_transport_v6.py"] = "0" * 64
+        codes['terrain_pipeline/basin_storage.py'] = "0" * 64
         with self.assertRaisesRegex(ValueError, "frozen dependency changed"):
             _check_execution_dependencies(codes)
-        codes.pop("terrain_pipeline/td_basin_transport_v6.py")
+        codes.pop('terrain_pipeline/basin_storage.py')
         with self.assertRaisesRegex(ValueError, "recursive dependency set"):
             _check_execution_dependencies(codes)
 
@@ -104,7 +118,7 @@ if __name__ == "__main__":
 class CandidateWeatherAccountsTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.fixture = weather_fixture.NativeWeatherV10IoTests()
+        cls.fixture = weather_fixture.NativeWeatherStorageProfile10IoNativeWeatherV10IoTests()
         cls.fixture.setUp()
         cls.root = cls.fixture.root
         cls.arguments = cls.fixture._whole_fixture()
@@ -158,17 +172,7 @@ class CandidateWeatherAccountsTests(unittest.TestCase):
 
     def test_complete_saved_accounts_selection_and_native_review(self):
         first, second = self._boundaries()
-        original_import = builtins.__import__
-        forbidden = ("numba", "terrain_pipeline.td_basin_storage_v10", "terrain_pipeline.td_basin_forcing_v10",
-                     "terrain_pipeline.td_basin_storage_compiled", "terrain_pipeline.td_basin_storage_compiled_driver",
-                     "terrain_pipeline.td_basin_transport_v6", "terrain_pipeline.td_basin_storage_v6",
-                     "terrain_pipeline.td_basin_storage_v5", "terrain_pipeline.td_basin_storage_v4",
-                     "terrain_pipeline.td_basin_storage_v3")
-        def pure_import(name, *args, **kwargs):
-            if name in forbidden or name.startswith("numba."):
-                raise AssertionError("pure IO imported solver: " + name)
-            return original_import(name, *args, **kwargs)
-        with first, second, patch("terrain_pipeline.td_candidate_weather_jobs._recheck_publication"), patch("builtins.__import__", side_effect=pure_import):
+        with first, second, patch("terrain_pipeline.td_candidate_weather_jobs._recheck_publication"), forbid_cold_execution():
             directory = self.root/"candidate-selection"
             result = self._publish(directory)
             record = dict(path=str(directory/"index.json"), expected_sha256=file_sha256(directory/"index.json"), expected_identity=result["identity_sha256"])

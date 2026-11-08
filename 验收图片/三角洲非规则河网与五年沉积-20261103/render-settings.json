@@ -1,0 +1,16 @@
+{
+  "window_xz_m": [
+    [
+      -7360.0,
+      3320.0
+    ],
+    [
+      295.8635365369098,
+      12631.361017237397
+    ]
+  ],
+  "bed_difference_colour_abs_m": 0.22581393286120682,
+  "vertical_exaggeration": "inherited terrain renderer",
+  "river_width": "saved wet cross section converted to display units; no minimum-width enlargement",
+  "terrain_basis": "frozen TD with inherited coastal bed and shared sediment inventory"
+}

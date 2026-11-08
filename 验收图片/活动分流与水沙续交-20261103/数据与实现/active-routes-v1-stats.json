@@ -1,0 +1,147 @@
+{
+  "input_id": "active-routes-v1-inlet",
+  "water_m3": 270000000.0,
+  "solid_m3": 144000.0,
+  "delivered_water_m3": 270000000.0,
+  "delivered_solid_m3": 92160.0,
+  "undelivered_water_m3": 0.0,
+  "undelivered_solid_m3": 51840.0,
+  "internal_transfer_solid_m3": 62289356.38751804,
+  "entrained_solid_m3": 4668722.9153939225,
+  "capacity_concentration": 0.01,
+  "active_layer_m": 0.5,
+  "max_velocity_m_s": 2.0,
+  "active": [
+    true,
+    true,
+    false,
+    true,
+    true
+  ],
+  "actual_shares": [
+    0.4799999999999994,
+    0.16999999999999993,
+    0.0,
+    0.1700000000000001,
+    0.18000000000000055
+  ],
+  "actual_q_m3_s": [
+    1439.9999999999982,
+    509.9999999999998,
+    0.0,
+    510.0000000000003,
+    540.0000000000016
+  ],
+  "exterior_faces": [
+    [
+      [
+        226,
+        415
+      ],
+      [
+        225,
+        414
+      ]
+    ],
+    [
+      [
+        198,
+        434
+      ],
+      [
+        199,
+        433
+      ],
+      [
+        197,
+        433
+      ]
+    ],
+    [
+      [
+        213,
+        430
+      ],
+      [
+        214,
+        429
+      ],
+      [
+        212,
+        429
+      ]
+    ],
+    [
+      [
+        211,
+        431
+      ],
+      [
+        212,
+        430
+      ],
+      [
+        210,
+        430
+      ]
+    ],
+    [
+      [
+        230,
+        393
+      ],
+      [
+        231,
+        392
+      ],
+      [
+        230,
+        391
+      ]
+    ]
+  ],
+  "activity_history": [
+    {
+      "event": "route_activity",
+      "input_id": "active-routes-v1-inlet",
+      "time_s": 190800.0,
+      "active": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "actual_shares": [
+        0.17999999999999944,
+        0.16999999999999993,
+        0.3,
+        0.1700000000000001,
+        0.18000000000000055
+      ]
+    },
+    {
+      "event": "route_activity",
+      "input_id": "active-routes-v1-inlet",
+      "time_s": 243000.0,
+      "active": [
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "actual_shares": [
+        0.4799999999999994,
+        0.16999999999999993,
+        0.0,
+        0.1700000000000001,
+        0.18000000000000055
+      ]
+    }
+  ],
+  "solid_residual_m3": 4.76837158203125e-07,
+  "water_delta_m3": 270000000.0,
+  "reload_matches": true,
+  "record_count": 1
+}

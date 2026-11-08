@@ -10,9 +10,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from terrain_pipeline.dynamic_surface_hydraulics import (
-    HydraulicsInput, ResourceLimits, evaluate, validate,
-)
+from terrain_pipeline.surface_hydraulics import HydraulicsInput, ResourceLimits, evaluate, validate
 
 
 def _grid_edges(shape):

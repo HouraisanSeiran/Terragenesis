@@ -16,7 +16,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, load_bundle, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, identity, load_bundle, publish_bytes
 
 PARENT_SHA = "79d6b056cb4a3d612009daea42e1f45fbf5ed19950b625d1c7ee5e8d90e401f6"
 PARENT_AUDIT_SHA = "bff158c828efedfecb975d6201986128b1b73059a40f96ca3216062bc58fbded"
@@ -30,35 +30,35 @@ FLAGS = {
     "junction_patch_ready", "bed_rasterized", "generation_requested", "fine_dem_available",
     "water_surface_meshed", "channel_verified", "is_terrestrial_river", "is_sea_outlet"}
 FORBIDDEN = (
-    "terrain_pipeline.td_watershed_paths.build_watershed_paths",
-    "terrain_pipeline.td_watershed_paths._build",
-    "terrain_pipeline.td_watershed_paths._inputs",
-    "terrain_pipeline.td_watershed_paths.validate_watershed_paths",
-    "terrain_pipeline.td_watershed_paths.build_outlet_forest",
-    "terrain_pipeline.td_watershed_paths.trace_spill_connection",
-    "terrain_pipeline.td_watershed_paths.trace_engineering_outlet",
-    "terrain_pipeline.td_watershed_sections.build_watershed_sections",
-    "terrain_pipeline.td_watershed_sections._carriers",
-    "terrain_pipeline.td_watershed_sections._width_depth",
-    "terrain_pipeline.td_watershed_sections.validate_watershed_sections",
-    "terrain_pipeline.td_lake_outlet_forest.build_outlet_forest",
-    "terrain_pipeline.td_lake_spill_graph.build_lake_spill_graph",
-    "terrain_pipeline.td_lake_spill_graph.build_outlet_forest",
-    "terrain_pipeline.td_lake_spill_geometry.trace_spill_connection",
-    "terrain_pipeline.td_lake_spill_geometry.trace_engineering_outlet",
-    "terrain_pipeline.td_basin_hierarchy.build_basin_hierarchy",
-    "terrain_pipeline.td_basin_overflow.build_overflow_topology",
-    "terrain_pipeline.td_basin_overflow.simulate_overflow",
-    "terrain_pipeline.td_basin_runoff_exchange.simulate_runoff_exchange",
-    "terrain_pipeline.td_basin_runoff_exchange.simulate_rainfall_runoff",
-    "terrain_pipeline.td_basin_runoff_exchange.Radau",
-    "terrain_pipeline.td_basin_runoff_exchange.load_runoff_exchange",
-    "terrain_pipeline.td_basin_runoff_exchange.validate_runoff_exchange",
-    "terrain_pipeline.td_basin_overflow_radau.simulate_radau_overflow",
-    "terrain_pipeline.td_basin_overflow_radau.Radau",
+    'terrain_pipeline.channel_geometry.build_watershed_paths',
+    'terrain_pipeline.channel_geometry._td_watershed_paths_build',
+    'terrain_pipeline.channel_geometry._td_watershed_paths_inputs',
+    'terrain_pipeline.channel_geometry.validate_watershed_paths',
+    'terrain_pipeline.channel_geometry._i49_build_outlet_forest',
+    'terrain_pipeline.channel_geometry._i49_trace_spill_connection',
+    'terrain_pipeline.channel_geometry._i49_trace_engineering_outlet',
+    'terrain_pipeline.channel_geometry.build_watershed_sections',
+    'terrain_pipeline.channel_geometry._carriers',
+    'terrain_pipeline.channel_geometry._i50__width_depth',
+    'terrain_pipeline.channel_geometry.validate_watershed_sections',
+    'terrain_pipeline.basin_topology.build_outlet_forest',
+    'terrain_pipeline.basin_topology.build_lake_spill_graph',
+    'terrain_pipeline.basin_topology.build_outlet_forest',
+    'terrain_pipeline.basin_topology.trace_spill_connection',
+    'terrain_pipeline.basin_topology.trace_engineering_outlet',
+    'terrain_pipeline.basin_topology.build_basin_hierarchy',
+    'terrain_pipeline.basin_storage.build_overflow_topology',
+    'terrain_pipeline.basin_storage.simulate_overflow',
+    'terrain_pipeline.basin_storage.simulate_runoff_exchange',
+    'terrain_pipeline.runoff.simulate_rainfall_runoff',
+    'scipy.integrate.Radau',
+    'terrain_pipeline.basin_storage.load_runoff_exchange',
+    'terrain_pipeline.basin_storage.validate_runoff_exchange',
+    'terrain_pipeline.basin_storage.simulate_radau_overflow',
+    'scipy.integrate.Radau',
     "terrain_pipeline.td_natural_river_network.build_natural_river_network",
     "terrain_pipeline.td_natural_river_network._width_depth",
-    "terrain_pipeline.rainfall_runoff.simulate_rainfall_runoff",
+    'terrain_pipeline.runoff.simulate_rainfall_runoff',
     "scipy.integrate.solve_ivp", "scipy.integrate.Radau",
     "tools.prepare_td_watershed_geometry.run",
     "tools.prepare_td_watershed_geometry.build_watershed_paths",
@@ -776,9 +776,9 @@ def audit_saved(directory, index_sha256, seen):
         for name, sha in source["code_sha256"].items():
             pinned(dict(path=name, sha256=sha), ROOT, seen)
     require(set(index["code_sha256"]) == {"terrain_pipeline/td_watershed_paths.py", "terrain_pipeline/td_watershed_sections.py",
-            "terrain_pipeline/td_natural_river_network.py", "terrain_pipeline/mountain_source_adapter.py",
-            "terrain_pipeline/td_basin_hierarchy.py", "terrain_pipeline/td_basin_overflow.py",
-            "terrain_pipeline/td_basin_runoff_exchange.py", "tools/prepare_td_watershed_geometry.py"}, "preparation code pin coverage")
+            "terrain_pipeline/td_natural_river_network.py", "terrain_pipeline/common_infra.py",
+            'terrain_pipeline/basin_topology.py', 'terrain_pipeline/basin_storage.py',
+            'terrain_pipeline/basin_storage.py', "tools/prepare_td_watershed_geometry.py"}, "preparation code pin coverage")
     source = next(case for case in parent["cases"] if case["case_id"] == "baseline")
     expected_pins = dict(hierarchy=source["inputs"]["hierarchy"], topology=source["inputs"]["topology"], ordinary=source["inputs"]["events"]["ordinary"])
     require(set(index["inputs"]) == set(expected_pins), "ordinary-only input pins")

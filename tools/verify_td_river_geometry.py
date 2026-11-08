@@ -11,13 +11,11 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.surface_rivers.metric_contracts import TerrainGrid
-from terrain_pipeline.surface_rivers.metric_channel_geometry import (
-    GeometryConfig, build_channel_geometry, load_channel_geometry, save_channel_geometry,
-)
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.common_infra import TerrainGrid
+from terrain_pipeline.channel_geometry import GeometryConfig, build_channel_geometry, load_channel_geometry, save_channel_geometry
 from terrain_pipeline.surface_rivers.metric_product import load_diagnostic_product
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
 
 
 ROOT = Path(__file__).resolve().parents[1]

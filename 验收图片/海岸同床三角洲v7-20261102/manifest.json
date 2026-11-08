@@ -1,0 +1,67 @@
+{
+  "status": "accepted_coarse_marine_delta_milestone; full_goal_active",
+  "terrain_basis": "frozen Voronoi plate-conditioned Terrain Diffusion; inherited coast-following base-product-v2",
+  "source_identity": "a306c5127b7510e5f6b7e1359cfb36dfd342c3023cb7dc576a4f6cb97436c60c",
+  "world_seed": 20261020,
+  "spacing_m": 600,
+  "origin_xz_m": [
+    -245760,
+    -122880
+  ],
+  "td_page_provenance_manifest": "D:\\codexwork\\山川形意Terragenesis\\验收图片\\海岸大陆架与沉积-20261102\\manifest.json",
+  "algorithms": [
+    "coast-following-v2",
+    "finite geological delta formation",
+    "connected-boundary marine transit",
+    "highwater overbank deposition",
+    "active-layer periodic marine sediment"
+  ],
+  "source_artifacts": {
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\sediment-v3-state.npz": "2707947997e28c601fff5f476235ff89af510866c662bb62e3a6b07e99e4d13c",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\base-product-v2\\manifest.json": "1374fa6fef78bb01fbb88a1266f7f25672ccfd7b4ecb9bd7ef79f54748bf44bb",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\delta-v7-moderate.npz": "e09574a680bc74b435ce33b1f93093b3da9cb37dadc1e79342b8195766da1dea",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\delta-v7-moderate.json": "bfd388ec25971cd47b8edc3223a6e954fd0d6b1f4f96ca8b6129592aa5188bcd",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\delta-v7-moderate-event.npz": "d71faaed8e073c3fc00f65850377e1e29383b138cbd49774d183a3bb9b0e9865",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\delta-v7-moderate-event.json": "0f6a819c29be639397918085480b079f5c862ffccde8d73adf937411ddd256db",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\delta-v7-large.npz": "0e6e8e04043c97c6bcffb0277e50820f69908f1c79f33dddd75a844a3434e563",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\delta-v7-large.json": "2a734d0552ec25d6f9c06be67aac6a173a82df61462d698336c66404063ffe21",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\delta-v7-large-event.npz": "a7132961c1fe96bf53e0e1a1d158a6f5eea53232033ab6119ff783506a387cc8",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\delta-v7-large-event.json": "3d67972b1f60c6f62a841f8db3fd95f54bfdd95e040d7378c412bcb416b96a63",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\delta-v7-run.py": "e73256a917b49394acbe4ccb4693e176b367de92b71b34bf3a5d621d42c61d9b"
+  },
+  "files_sha256": {
+    "delta-v7-moderate-review.png": "3dc99575248a83fc84cf17800f16772f34b81fdb2e000705fb336bb26ad00d36",
+    "delta-v7-large-review.png": "afb08f2914a7c15a83ce9b8ab54eda2da80de50891a7c3ccb03c2bc74124953d",
+    "delta-v7-moderate-event-review.png": "3176517c9eb05fe814ee75c0d22973aa72aba23ddcc825d2b22fc482fcab5245",
+    "delta-v7-large-event-review.png": "b88381e451f5e7484bee9a134763a1ae9fff7f62522eb187c1532ccd9e5978bf",
+    "delta-v7-moderate-budget.json": "7bc642edd55e65219910d7e97c52931b48ff34dfe1ac7499889e72210ab95218",
+    "delta-v7-large-budget.json": "c6380c343e0883be4cb784a5312317bdef805e9e19c757c786e18b987ab60820",
+    "main-delta-v7-check.json": "27ec40c38dc18049f1e8fc4e08844cf6114f977679fc1703f54608c1c7d023f2",
+    "main-delta-v7-review.md": "635bbbffa5c4e0bc925e47fb96d0a01260374645f3e3a6fc51ee300516f45625",
+    "implementation-snapshot/coastal_marine_base.py": "613bc23ae9df1cadd50d22934a583a64759f3c15f351fee2c6b268c6349a14be",
+    "implementation-snapshot/coastal_marine_product.py": "c1a4ed4af2420c67cd900e50827a8a48a04ce46e7f0e284bd53b6f33be1c94a4",
+    "implementation-snapshot/coastal_marine_sediment.py": "96c7e9f78e87673dd18846d7e516b9f596f7fbfe9ca063299c4a42508d1c30f1",
+    "implementation-snapshot/coastal_delta_product.py": "051b895b20a4bc645fe900966e6d646314657c2cadf5b8aa4866a5f2935b8f0a",
+    "implementation-snapshot/coastal_delta_formation.py": "558e5d5640d269de445b45600866303639874ad3bdae15017c99ee4b61f4eced"
+  },
+  "images": {
+    "delta-v7-moderate-review.png": {
+      "coverage_status": "partial",
+      "meaning": "saved-data coarse DEM / physical-event comparison; not full upstream river or 100km delta"
+    },
+    "delta-v7-large-review.png": {
+      "coverage_status": "partial",
+      "meaning": "saved-data coarse DEM / physical-event comparison; not full upstream river or 100km delta"
+    },
+    "delta-v7-moderate-event-review.png": {
+      "coverage_status": "partial",
+      "meaning": "saved-data coarse DEM / physical-event comparison; not full upstream river or 100km delta"
+    },
+    "delta-v7-large-event-review.png": {
+      "coverage_status": "partial",
+      "meaning": "saved-data coarse DEM / physical-event comparison; not full upstream river or 100km delta"
+    }
+  },
+  "rendering": "terrain color + LightSource315/45, vertical shading exaggeration12; not vegetation/satellite observation; no image generation",
+  "scenario": "150m3/s water, .08m3/s solid; 400/800 equivalent years; separate90000s event, tide amplitude1m, period44712s, waves1.5m, exposed sediment layer .1m"
+}

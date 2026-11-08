@@ -5,11 +5,13 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, save_bundle
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy, save_basin_hierarchy
-from terrain_pipeline.td_basin_source import make_td_source, save_td_source
+from terrain_pipeline.common_infra import file_sha256, identity, save_bundle
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_topology import save_basin_hierarchy as save_basin_hierarchy
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_storage import save_td_source as save_td_source
 from terrain_pipeline.td_surface_reaches import _hash
-from tests import test_td_native_weather_storage_v10_io as weather_fixture
+from tests import test_basin_weather_pages as weather_fixture
 from tools.audit_td_candidate_coupling import read_record
 from tools.audit_td_candidate_weather import audit_execution
 
@@ -17,7 +19,7 @@ from tools.audit_td_candidate_weather import audit_execution
 class IndependentCandidateWeatherTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.fixture = weather_fixture.NativeWeatherV10IoTests()
+        cls.fixture = weather_fixture.NativeWeatherStorageProfile10IoNativeWeatherV10IoTests()
         cls.fixture.setUp()
         cls.arguments = cls.fixture._whole_fixture()
         cls.root = cls.fixture.root

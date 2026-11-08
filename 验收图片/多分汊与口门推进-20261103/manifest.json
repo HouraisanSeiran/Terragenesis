@@ -1,0 +1,144 @@
+{
+  "world_seed": 20261020,
+  "terrain_basis": "saved plate-conditioned Terrain Diffusion",
+  "source_manifest": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-scale-suite-20261102\\source-case300\\manifest.json",
+  "source_manifest_sha256": "b81acbf22a2a7b595022d37252bbef988f009ab243b0a4e863fd9f329806515f",
+  "source_identity": "a306c5127b7510e5f6b7e1359cfb36dfd342c3023cb7dc576a4f6cb97436c60c",
+  "native_td_spacing_m": 30,
+  "calculation_spacing_m": 600,
+  "coordinates": "arrays Z,X; X east, Z south/down in maps",
+  "algorithms": [
+    "shared marine bed",
+    "finite longterm sediment",
+    "deposition feedback split",
+    "finite shoreline mouth extension",
+    "river internal sediment exchange",
+    "marine tide and waves"
+  ],
+  "scenario": {
+    "Q_m3_s": 3000,
+    "solid_m3_s": 1.6,
+    "event_duration_s": 90000,
+    "tide_amplitude_m": 1,
+    "wave_height_m": 1.5,
+    "finite_channel_layer_m": 0.5,
+    "capacity_solid_volume_fraction": 0.01,
+    "river_velocity_limit_m_s": 2
+  },
+  "coverage_status": "mechanism_only",
+  "local_independent_acceptance": true,
+  "long_independent_acceptance": false,
+  "cartography": "existing LAND_COLORS 0..500m, ocean 0..35m depth; physical hillshade; no vertical exaggeration; routes enhanced for visibility, not resolved widths",
+  "files": [
+    {
+      "file": "01-同源多分汊与潮浪.png",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\multi-branch-v3-main-map.png",
+      "sha256": "2f1549964038c7bbb914c7f71c28466757493b987287222173a169f8eb491f5e"
+    },
+    {
+      "file": "02-事件床面变化.png",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\multi-branch-v3-event-change.png",
+      "sha256": "d69b956bddec4c7b281acd37c3e72e8223d232fbb18550afdc0a50e9e00fb26f"
+    },
+    {
+      "file": "局部机制验收.md",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-multi-v3-review.md",
+      "sha256": "53cec442d81e1972e19611ca7c6e8d871f68249107c2e1fb62737be4a0547d43"
+    },
+    {
+      "file": "数据与实现/coastal_delta_branching.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-multi-v3-implementation.py",
+      "sha256": "4d1491ae1f64355619656dbc30a1ac37a0f9e97fe5159f7a10ef70e4c910b290"
+    },
+    {
+      "file": "数据与实现/test_coastal_delta_branching.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-multi-v3-tests.py",
+      "sha256": "ab85a069960c7df704c882ab4c5a26eac6be53f157091336f01a79c79a05cb7f"
+    },
+    {
+      "file": "长期未通过诊断.md",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-multi-long-review.md",
+      "sha256": "b7fb5ee0e6931ad78281d13b20bc6ed9ecdcd8ecc89ccf0e42f040bbf8c519ff"
+    },
+    {
+      "file": "数据与实现/growth-v3-stage10.npz",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\growth-v3-stage10.npz",
+      "sha256": "9e5821f596815ef75ceb1f1896fcb827c69c170aed39d7b48c3a3a40d70b21c1"
+    },
+    {
+      "file": "数据与实现/growth-v3-stage10.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\growth-v3-stage10.json",
+      "sha256": "f2d7cc99e96565ceb2b5098c43b041adb358a7437c2cf22118a9c48c25a87006"
+    },
+    {
+      "file": "数据与实现/multi-branch-v3-repaired-stage.npz",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\multi-branch-v3-repaired-stage.npz",
+      "sha256": "0e4fe1bcdbc464e11356a67d80ffea46d0d2abe83fe7101018f96fdbcee92c58"
+    },
+    {
+      "file": "数据与实现/multi-branch-v3-repaired-stage.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\multi-branch-v3-repaired-stage.json",
+      "sha256": "ff3956b72791e96135f8a182a1cc9e42f453caf672aabe5a5bd72bfec7d993aa"
+    },
+    {
+      "file": "数据与实现/multi-branch-v3-repaired-event.npz",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\multi-branch-v3-repaired-event.npz",
+      "sha256": "8f5c06f70ac54fa50099d82bfe0f238d749697bed8304dcfd8eef6e874202e6a"
+    },
+    {
+      "file": "数据与实现/multi-branch-v3-repaired-event.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\multi-branch-v3-repaired-event.json",
+      "sha256": "ea88d1715ddf25e6c824a5d0be79409ba5f5872916549a350a470d2971faf694"
+    },
+    {
+      "file": "数据与实现/multi-branch-v3-stage.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\multi-branch-v3-stage.py",
+      "sha256": "0ca1d71eb7d9ec0d31a18bd8cbabebb8f56d59a16fb2c309649c9bc10c00068c"
+    },
+    {
+      "file": "数据与实现/multi-branch-v3-event-run.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\multi-branch-v3-event-run.py",
+      "sha256": "d958c28f4c9dc94228efc62b6846046535329fdd3b90810ea243561982b6f65d"
+    },
+    {
+      "file": "数据与实现/multi-branch-v3-event-stats.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\multi-branch-v3-event-stats.json",
+      "sha256": "aeb83a5b4b87c16df4d8923986e4a33714c6de60c29d2509b36bee5f2622c579"
+    },
+    {
+      "file": "数据与实现/main-multi-branch-v3-repaired-accept.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-multi-branch-v3-repaired-accept.json",
+      "sha256": "b63c4ff329b229a10bebdea23ebc8144ed6fd79482d3a8b5cdf15c9b0efc0ab9"
+    },
+    {
+      "file": "数据与实现/multi-branch-v3-long-checks.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\multi-branch-v3-long-checks.json",
+      "sha256": "9d4e67b0647803d7d9eeb1c47de65264527ea67417816903efc38da51aa2e808"
+    },
+    {
+      "file": "数据与实现/multi-branch-v3-long-stats.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\multi-branch-v3-long-stats.json",
+      "sha256": "cefec615ba57230da32072d1f641e521b560c303c29075e275583671c9c5b315"
+    },
+    {
+      "file": "数据与实现/multi-branch-v3-long-event-stats.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\multi-branch-v3-long-event-stats.json",
+      "sha256": "42d5d9b3e54ea057f532f24ea1e72f5c8981ae43ab8b1bf4de5b38b4f356c024"
+    },
+    {
+      "file": "数据与实现/multi-branch-v3-long-event-step-600-stats.json",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\multi-branch-v3-long-event-step-600-stats.json",
+      "sha256": "1b1998df0d1509700d5cbe05ea95866bc2e63a08783c5b826a457ec007a9cbd8"
+    },
+    {
+      "file": "数据与实现/main-multi-accept.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-multi-accept.py",
+      "sha256": "dae99d2061ab9d3cdc30416207cef9a9aba9731f9d7110872e5161563bd11b67"
+    },
+    {
+      "file": "数据与实现/main-multi-figures.py",
+      "source": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\main-multi-figures.py",
+      "sha256": "4cee500dfd3b6334de35805d6ae8a2b5ec56649ec0af671f611901afefbf4278"
+    }
+  ]
+}

@@ -4,8 +4,8 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline import mountain_depression_geometry as geometry
-from terrain_pipeline import mountain_fine_geometry as fine
+import terrain_pipeline.lake as geometry
+from terrain_pipeline import channel_geometry as fine
 from tools.verify_mountain_rainfall import load_source
 
 
@@ -43,7 +43,7 @@ class MountainFineGeometryTests(unittest.TestCase):
 
     def test_bilinear_source_is_not_repeated_center_column(self):
         height = np.array([[0., 2.], [4., 6.]])
-        sampled = fine._sample(height, np.array([0., .5, 1.]), np.array([.5, .5, .5]))
+        sampled = fine._mountain_fine_geometry_sample(height, np.array([0., .5, 1.]), np.array([.5, .5, .5]))
         np.testing.assert_array_equal(sampled, [2., 3., 4.])
 
 

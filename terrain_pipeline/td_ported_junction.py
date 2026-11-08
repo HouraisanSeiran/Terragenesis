@@ -8,8 +8,8 @@ import tempfile
 
 import numpy as np
 
-from terrain_pipeline import td_source_conforming_banks as geometry
-from terrain_pipeline import td_source_conforming_banks_v3 as source_banks
+from terrain_pipeline import channel_geometry as geometry
+from terrain_pipeline import channel_geometry as source_banks
 
 SCHEMA = "td-ported-junction-v1"
 MAX_BYTES = 64 * 1024**2
@@ -240,7 +240,7 @@ def _edge_proofs(segments, record, context):
                 context["v3_legacy_knots"].setdefault(source_banks._bucket(point), []).append(constraint)
     result = []
     for segment in segments:
-        proof = source_banks._proof(segment, context)
+        proof = source_banks._td_source_conforming_banks_mechanism_3_proof(segment, context)
         binding = _stub_binding(segment, record)
         proof["bound_original_section"] = binding
         if binding is not None:
@@ -294,7 +294,7 @@ def build_ported_junction(hierarchy, paths, sections, *, hub_node_id, incident_a
     arc_ids = sorted(arc["arc_id"] for index, arc in actual)
     if incident_arc_ids is not None and sorted(incident_arc_ids) != arc_ids:
         raise ValueError("explicit incident arcs differ from complete actual hub census")
-    context = geometry._context(hierarchy, sections["selected_leaf_ids"], wet_protection)
+    context = geometry._i46__context(hierarchy, sections["selected_leaf_ids"], wet_protection)
     hub_section_index, hub_section = section_map[hub_node_id]
     reasons = set()
     if len(actual) != 3:

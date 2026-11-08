@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
+from terrain_pipeline.common_infra import file_sha256, identity
 from terrain_pipeline.td_native_water_surface import (
     _grid, build_water_surface, export_water_obj, load_pinned_page, load_water_surface,
     save_water_surface, validate_water_surface,

@@ -7,12 +7,18 @@ from unittest.mock import patch
 import numpy as np
 
 from tests.test_mountain_source_adapter import mock_source
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.mountain_lake_coupling import (
-    build_group_topology, contribution_mask, couple_rainfall, group_lake_specs,
-    load_coupling, local_allocation, save_coupling, single_pool_proof,
-    terminal_ownership, validate_coupling, validate_selection,
-)
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.lake import build_group_topology as build_group_topology
+from terrain_pipeline.lake import contribution_mask as contribution_mask
+from terrain_pipeline.lake import couple_rainfall as couple_rainfall
+from terrain_pipeline.lake import group_lake_specs as group_lake_specs
+from terrain_pipeline.lake import load_coupling as load_coupling
+from terrain_pipeline.lake import local_allocation as local_allocation
+from terrain_pipeline.lake import save_coupling as save_coupling
+from terrain_pipeline.lake import single_pool_proof as single_pool_proof
+from terrain_pipeline.lake import terminal_ownership as terminal_ownership
+from terrain_pipeline.lake import validate_coupling as validate_coupling
+from terrain_pipeline.lake import validate_selection as validate_selection
 
 
 def mock_topology():
@@ -34,7 +40,7 @@ def mock_topology():
 
 class CouplingTests(unittest.TestCase):
     def setUp(self):
-        self.binding_patch = patch("terrain_pipeline.mountain_lake_coupling.geometry_binding",
+        self.binding_patch = patch('terrain_pipeline.lake.geometry_binding',
             side_effect=lambda source, topology, geometry, selection=None: True if geometry else (_ for _ in ()).throw(ValueError("geometry missing")))
         self.binding_patch.start()
         self.addCleanup(self.binding_patch.stop)
@@ -44,6 +50,16 @@ class CouplingTests(unittest.TestCase):
         partition = terminal_ownership(receiver, np.ones(receiver.shape, bool))
         self.assertEqual(partition["terminal_flat"].size, 3600)
         self.assertEqual(partition["contributing_counts"].sum(), 3600)
+
+    def test_nonlocal_graph_edge_preserves_ownership_but_cannot_cross_unknown(self):
+        receiver = np.full((4, 6), -1, np.int64)
+        receiver[1, 1] = 1 * 6 + 4
+        valid = np.ones(receiver.shape, bool)
+        partition = terminal_ownership(receiver, valid)
+        self.assertEqual(partition['terminal_owner'][1, 1], 10)
+        valid[1, 2] = False
+        with self.assertRaisesRegex(ValueError, 'segment crosses'):
+            terminal_ownership(receiver, valid)
 
     def test_contribution_complete_and_first_node_allocation(self):
         source, topology, owner, geometry = mock_topology()
@@ -65,9 +81,9 @@ class CouplingTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "coupling.npz"
             save_coupling(path, result)
-            with patch("terrain_pipeline.mountain_lake_coupling.local_allocation", side_effect=AssertionError("prepare")), \
-                    patch("terrain_pipeline.mountain_lake_coupling.couple_rainfall", side_effect=AssertionError("advance")), \
-                    patch("terrain_pipeline.mountain_lake_coupling.evaluate_lake_routing", side_effect=AssertionError("solve")):
+            with patch('terrain_pipeline.lake.local_allocation', side_effect=AssertionError("prepare")), \
+                    patch('terrain_pipeline.lake.couple_rainfall', side_effect=AssertionError("advance")), \
+                    patch('terrain_pipeline.lake.evaluate_lake_routing', side_effect=AssertionError("solve")):
                 loaded = load_coupling(path, expected_sha256=file_sha256(path), source=source,
                     topology=topology, geometry=geometry)
             self.assertEqual(loaded["identity_sha256"], result["identity_sha256"])
@@ -131,7 +147,7 @@ class CouplingTests(unittest.TestCase):
                 np.ones((7, 7), bool), np.zeros((7, 7), bool), legal, max_stage_m=6.)
 
     def test_free_weir_rejects_receiving_stage_at_any_state(self):
-        from terrain_pipeline.mountain_lake_coupling import _free_weir_tailwater
+        from terrain_pipeline.lake import _free_weir_tailwater as _free_weir_tailwater
 
         _free_weir_tailwater(5., np.array([0., 4., 5.]))
         with self.assertRaisesRegex(ValueError, "receiving_pool_submerges_free_weir"):
@@ -141,8 +157,8 @@ class CouplingTests(unittest.TestCase):
 class ActualGeometryCouplingTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        from terrain_pipeline.mountain_source_adapter import load_legacy_source
-        from terrain_pipeline.mountain_depression_geometry import load_mountain_geometry
+        from terrain_pipeline.common_infra import load_legacy_source
+        from terrain_pipeline.lake import load_mountain_geometry as load_mountain_geometry
 
         root = Path(__file__).resolve().parents[1]
         cls.source = load_legacy_source("pressure_mountain", boundary_policy="all_edges_open")
@@ -167,9 +183,9 @@ class ActualGeometryCouplingTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "real.npz"
             save_coupling(path, self.result)
-            with patch("terrain_pipeline.mountain_lake_coupling.local_allocation", side_effect=AssertionError("prepare")), \
-                    patch("terrain_pipeline.mountain_lake_coupling.evaluate_lake_routing", side_effect=AssertionError("advance")), \
-                    patch("terrain_pipeline.mountain_depression_geometry.prepare_mountain_geometry", side_effect=AssertionError("geometry prepare")):
+            with patch('terrain_pipeline.lake.local_allocation', side_effect=AssertionError("prepare")), \
+                    patch('terrain_pipeline.lake.evaluate_lake_routing', side_effect=AssertionError("advance")), \
+                    patch('terrain_pipeline.lake.prepare_mountain_geometry', side_effect=AssertionError("geometry prepare")):
                 loaded = load_coupling(path, expected_sha256=file_sha256(path), source=self.source,
                     topology=self.topology, geometry=self.geometry, selection=self.selection)
             self.assertEqual(loaded["identity_sha256"], self.result["identity_sha256"])
@@ -209,7 +225,7 @@ class ActualGeometryCouplingTests(unittest.TestCase):
     def test_resigned_geometry_cannot_route_lake_as_linear_river(self):
         forged_topology = copy.deepcopy(self.topology)
         forged_topology["node_kind"][0] = "river"
-        from terrain_pipeline.mountain_lake_coupling import geometry_binding
+        from terrain_pipeline.lake import geometry_binding as geometry_binding
 
         with self.assertRaises(ValueError):
             geometry_binding(self.source, forged_topology, self.geometry, self.selection)
@@ -237,7 +253,7 @@ class ActualGeometryCouplingTests(unittest.TestCase):
         self.assertIn("arrays", result)
         validate_coupling(result, source=self.source, topology=topology,
             geometry=self.geometry, selection=selection)
-        from terrain_pipeline.mountain_lake_coupling import _check_pool_path
+        from terrain_pipeline.lake import _check_pool_path as _check_pool_path
 
         for node, spec in specs.items():
             _check_pool_path(topology["receiver"], spec["downstream_path_grid_zx"], spec["legal_outlet_mask"],

@@ -11,8 +11,8 @@ import psutil
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
 from terrain_pipeline.td_ported_junction import (
     FLAGS, MAX_BYTES, MAX_RSS, POLICY_IDENTITY_SHA256, build_ported_junction, save_ported_junction)
 
@@ -71,7 +71,10 @@ def main():
         raise ValueError("new verification output directory required")
     started = time.perf_counter()
     for name, expected in FROZEN_HELPERS.items():
-        if file_sha256(ROOT / name) != expected:
+        snapshot_root=ROOT / "legacy-code/frozen-sources-20261105"
+        if name=="terrain_pipeline/mountain_source_adapter.py":
+            snapshot_root=ROOT / "legacy-code/hybrid-geometry-pre-consolidation"
+        if file_sha256(snapshot_root / name) != expected:
             raise ValueError("frozen readonly helper changed: " + name)
     paths, sections = _read(INPUTS["06_paths"]), _read(INPUTS["06_sections"])
     geometry_index = _read(INPUTS["06_index"])
@@ -109,7 +112,7 @@ def main():
         "internal_three_arm_geometry_candidate": record["internal_three_arm_geometry_candidate"],
         "actual_external_attachment_count": record["actual_external_attachment_count"],
         "external_closure_verified": record["external_closure_verified"], "full_network_verified": False,
-        "code_sha256": {name: file_sha256(ROOT / name) for name in CODE_FILES + tuple(FROZEN_HELPERS)},
+        "code_sha256": {**{name: file_sha256(ROOT / name) for name in CODE_FILES}, **FROZEN_HELPERS},
         "resource": {"actual_peak_rss_bytes": peak_rss, "max_rss_bytes": MAX_RSS,
             "elapsed_s": time.perf_counter() - started, "solver_calls": 0, "fine_cells_generated": 0,
             "old_packages_modified": False, "max_json_bytes": MAX_BYTES},

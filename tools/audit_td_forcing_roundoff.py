@@ -13,8 +13,8 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.rainfall_runoff import RunoffParameters
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
 
 
 def reference_half(state, rainfall_rate, duration, runoff, config):
@@ -50,7 +50,7 @@ def reference_half(state, rainfall_rate, duration, runoff, config):
 def audit(version, substep):
     if version not in ("v5", "v6", "compensated") or substep not in (5., 2.5):
         raise ValueError("explicit frozen forcing version and step required")
-    module_name = "terrain_pipeline.td_basin_forcing_compensated" if version == "compensated" else "terrain_pipeline.td_basin_storage_" + version
+    module_name = 'terrain_pipeline.basin_storage' if version == "compensated" else "terrain_pipeline.td_basin_storage_" + version
     solver = importlib.import_module(module_name)
     runoff = RunoffParameters()
     config = {"wet_threshold_m": 1e-9, "surface_evaporation_mm_h": .15}

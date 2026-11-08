@@ -5,11 +5,12 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.td_basin_breach import (
-    generate_saddle_breach, load_saddle_breach, saddle_path_face_identity, save_saddle_breach,
-)
-from terrain_pipeline.td_material_field import _bundle, _save_bundle, make_material_field
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.basin_topology import generate_saddle_breach as generate_saddle_breach
+from terrain_pipeline.basin_topology import load_saddle_breach as load_saddle_breach
+from terrain_pipeline.basin_topology import saddle_path_face_identity as saddle_path_face_identity
+from terrain_pipeline.basin_topology import save_saddle_breach as save_saddle_breach
+from terrain_pipeline.geology import _material_bundle as _bundle, _save_bundle, make_material_field
 from tests.test_td_material_field import malicious_archive
 
 
@@ -151,7 +152,7 @@ class SaddleBreachTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "saddle.npz"
             save_saddle_breach(result, path)
-            with patch("terrain_pipeline.td_basin_breach.generate_saddle_breach", side_effect=AssertionError("forbidden")), patch("terrain_pipeline.td_material_field.make_material_field", side_effect=AssertionError("forbidden")):
+            with patch('terrain_pipeline.basin_topology.generate_saddle_breach', side_effect=AssertionError("forbidden")), patch('terrain_pipeline.geology.make_material_field', side_effect=AssertionError("forbidden")):
                 loaded = load_saddle_breach(path, expected_sha256=file_sha256(path), expected_identity=result["identity_sha256"])
             self.assertEqual(result["identity_sha256"], loaded["identity_sha256"])
             with self.assertRaises(FileExistsError):

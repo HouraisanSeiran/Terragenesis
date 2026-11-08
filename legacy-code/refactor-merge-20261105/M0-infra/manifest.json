@@ -1,0 +1,62 @@
+{
+ "schema": "refactor-merge-archive-v1",
+ "batch": "M0-infra",
+ "moved": [
+  {
+   "source_path": "terrain_pipeline/artifacts/bundles.py",
+   "archive_path": "legacy-code/refactor-merge-20261105/M0-infra/terrain_pipeline/artifacts/bundles.py",
+   "sha256": "6220a6e86515e189ff728668a8fe0734299974e131627275d5c9420d2baec36f",
+   "bytes": 5590,
+   "target_module": "terrain_pipeline/common_infra.py",
+   "function": "有界 NPZ bundle 读写与原子发布",
+   "reason": "整文件并入：checked_archive / readonly / identity / publish_bytes / save_bundle / load_bundle / MAX_BYTES / MAX_METADATA 搬进 common_infra。"
+  },
+  {
+   "source_path": "terrain_pipeline/artifacts/encoding.py",
+   "archive_path": "legacy-code/refactor-merge-20261105/M0-infra/terrain_pipeline/artifacts/encoding.py",
+   "sha256": "0b1a748a6edc6d9f700fa35f80ff401d00d056d137dab31f385c57f1964c56ba",
+   "bytes": 1093,
+   "target_module": "terrain_pipeline/common_infra.py",
+   "function": "紧凑 JSON 与形状摘要",
+   "reason": "整文件并入：json_text→canonical_json、shaped_array_hash→array_sha256、strict_json 搬进 common_infra。"
+  },
+  {
+   "source_path": "terrain_pipeline/artifacts/storage.py",
+   "archive_path": "legacy-code/refactor-merge-20261105/M0-infra/terrain_pipeline/artifacts/storage.py",
+   "sha256": "4321d8ce555bd2532cb8bd012ce5155f1c04e239d6fb91561296fea3a60803e4",
+   "bytes": 6646,
+   "target_module": "terrain_pipeline/common_infra.py",
+   "function": "TerrainArtifact 目录读写",
+   "reason": "整文件并入：load_artifact / save_artifact 原样搬进 common_infra（依赖 artifacts.contracts 的冻结数据类）。"
+  },
+  {
+   "source_path": "terrain_pipeline/mountain_source_adapter.py",
+   "archive_path": "legacy-code/refactor-merge-20261105/M0-infra/terrain_pipeline/mountain_source_adapter.py",
+   "sha256": "70f8215a8aee8138170ad05603d45d6aefed9e319a658746a8d9e2c94593134f",
+   "bytes": 13305,
+   "target_module": "terrain_pipeline/common_infra.py",
+   "function": "bundle 序列化、有界外部源校验、原子发布",
+   "reason": "整文件并入：函数体已搬进 common_infra（file_sha256 / identity / readonly / publish_bytes / checked_archive / save_bundle / load_bundle / make_source / validate_source / load_legacy_source / load_physical_source / save_source / load_source_bundle + MAX_* 常量）；696 处 import 改为指向 common_infra，不留别名。"
+  },
+  {
+   "source_path": "terrain_pipeline/surface_rivers/metric_contracts.py",
+   "archive_path": "legacy-code/refactor-merge-20261105/M0-infra/terrain_pipeline/surface_rivers/metric_contracts.py",
+   "sha256": "863f29d4e7a22765215815c36bee2be21b2e395838fad28aa093f74fcf0f36e8",
+   "bytes": 15844,
+   "target_module": "terrain_pipeline/common_infra.py",
+   "function": "米制网格与物理区间契约（TerrainGrid / BoundaryGrid / RainfallForcing / RoutingGraph）",
+   "reason": "整文件并入：公开符号 TerrainGrid、BoundaryGrid、RainfallForcing、RoutingGraph、MAX_CELLS（重命名为 GRID_MAX_CELLS）、MAX_FORCING_ENTRIES 搬进 common_infra；121 个调用方改 import。"
+  },
+  {
+   "source_path": "terrain_pipeline/world_seed.py",
+   "archive_path": "legacy-code/refactor-merge-20261105/M0-infra/terrain_pipeline/world_seed.py",
+   "sha256": "ff3c7ae6e1480222a18e564d880fbb1fe857dc4410d2fae6fe401e839d749fa4",
+   "bytes": 800,
+   "target_module": "terrain_pipeline/common_infra.py",
+   "function": "世界种子与 mountains-v1 子种子派生",
+   "reason": "整文件并入：WORLD_SEED / SEED_DERIVATION / derive_subseed（→ seed_mountains_v1）搬进 common_infra。"
+  }
+ ],
+ "tests_moved": [],
+ "frozen_copy_added": []
+}

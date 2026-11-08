@@ -8,15 +8,19 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.rainfall_runoff import RunoffParameters, simulate_rainfall_runoff
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy
-from terrain_pipeline.td_basin_overflow import OverflowParameters, build_overflow_topology
-from terrain_pipeline.td_basin_runoff_exchange import (
-    _RunoffExchange, RunoffExchangeParameters, load_runoff_exchange,
-    save_runoff_exchange, simulate_runoff_exchange, validate_runoff_exchange,
-)
-from terrain_pipeline.td_basin_source import make_td_source
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+from terrain_pipeline.runoff import simulate_rainfall_runoff as simulate_rainfall_runoff
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_storage import OverflowParameters as OverflowParameters
+from terrain_pipeline.basin_storage import build_overflow_topology as build_overflow_topology
+from terrain_pipeline.basin_storage import _RunoffExchange as _RunoffExchange
+from terrain_pipeline.basin_storage import RunoffExchangeParameters as RunoffExchangeParameters
+from terrain_pipeline.basin_storage import load_runoff_exchange as load_runoff_exchange
+from terrain_pipeline.basin_storage import save_runoff_exchange as save_runoff_exchange
+from terrain_pipeline.basin_storage import simulate_runoff_exchange as simulate_runoff_exchange
+from terrain_pipeline.basin_storage import validate_runoff_exchange as validate_runoff_exchange
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
 
 
 class RunoffExchangeTests(unittest.TestCase):
@@ -181,7 +185,7 @@ class RunoffExchangeTests(unittest.TestCase):
         topology["identity_sha256"] = "0" * 64
         with self.assertRaises(ValueError):
             self.simulate(topology)
-        with patch("terrain_pipeline.td_basin_runoff_exchange.MAX_ARRAY_BYTES", 1), self.assertRaises(ValueError):
+        with patch('terrain_pipeline.basin_storage.EXCHANGE_MAX_ARRAY_BYTES', 1), self.assertRaises(ValueError):
             self.simulate()
 
     def test_saved_cold_io_is_solver_free_pinned_readonly_and_no_overwrite(self):
@@ -191,7 +195,7 @@ class RunoffExchangeTests(unittest.TestCase):
             path = Path(directory) / "exchange.npz"
             save_runoff_exchange(event, path, topology)
             pin = file_sha256(path)
-            with patch("terrain_pipeline.td_basin_runoff_exchange.Radau", side_effect=AssertionError("cold solver forbidden")), patch("terrain_pipeline.td_basin_runoff_exchange.simulate_rainfall_runoff", side_effect=AssertionError("cold runoff forbidden")):
+            with patch('scipy.integrate.Radau', side_effect=AssertionError("cold solver forbidden")), patch('terrain_pipeline.runoff.simulate_rainfall_runoff', side_effect=AssertionError("cold runoff forbidden")):
                 saved = load_runoff_exchange(path, expected_sha256=pin, expected_identity=event["identity_sha256"], topology=topology)
             for key, value in saved["arrays"].items():
                 np.testing.assert_array_equal(value, event["arrays"][key])
@@ -205,7 +209,7 @@ class RunoffExchangeTests(unittest.TestCase):
             damaged["arrays"]["unknown"] = np.zeros(1)
             self.repin(damaged)
             bad_path = Path(directory) / "unknown.npz"
-            from terrain_pipeline.mountain_source_adapter import save_bundle
+            from terrain_pipeline.common_infra import save_bundle
             save_bundle(bad_path, damaged, validator=lambda _: True)
             with self.assertRaisesRegex(ValueError, "archive fields"):
                 load_runoff_exchange(bad_path, expected_sha256=file_sha256(bad_path), expected_identity=damaged["identity_sha256"], topology=topology)

@@ -1,0 +1,22 @@
+{
+  "source_directory": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\world-mountain-belts-20261104\\run-5km-preview-v1",
+  "product_manifest_sha256": "5f4acb5997e20da8010cc495ade777185828caf149ea92738264e37edab83caf",
+  "copies_sha256": {
+    "base_elevation_m_16bit.png": "0e196551d4e7fa5d4f691b5ff9903c8862600be18ff037db703df640a5641f2b",
+    "base_elevation_m_16bit_preview.png": "a5c5b862d07d714bb1989e2a137361f76725878f9b4332878b90aa70c1ec59d0",
+    "continental_closeup.png": "3624e6e26522fdc433956b1468bb7622d2f2cb4d04a45b3160f1f19ed266ce1b",
+    "elevation_m_16bit.png": "18da9bf9c7a775a9a3cd2b75d3ad2f50d54178b0fa6060fef13c72ce8dce99f0",
+    "elevation_m_16bit_preview.png": "52f2288c7cd343164a0688568a6789cfe4b9fafa78796b0315e952ade7b97e90",
+    "mountain_inventory.png": "cc74fbf50dc54f793c40b0c8727251743bbdda93c053f82ce662d663c0ae961c",
+    "raw_elevation_m_16bit.png": "d0555e464ac0acaa86755758c2e865749be518b77ef114b9b0cf8a07eef82c7f",
+    "raw_elevation_m_16bit_preview.png": "ec7e22b5224a4741e58e5b948141d8f8c47308893e20a8ee9839c0f03166fbff",
+    "ridge_profile.png": "2dc0bd455c041bf83f9cbd10281ceb84ddfbec9aebb5d994a53979b076fff465",
+    "world_comparison.png": "c0ed2f9b8c8c6b6ba6e307895e56ddc968fd26c7479ba5ae7f547f9469564709",
+    "world_terrain.png": "e72512a637042dff7c3b94eff06367f04dafab5c1073fcc94904540bb30cbf52",
+    "manifest.json": "5f4acb5997e20da8010cc495ade777185828caf149ea92738264e37edab83caf",
+    "README.md": "7e1e8f00719e8b4afdcc73e1b32d82637fdb6e23f78b01405bc2e8202a96a837",
+    "source_inventory.json": "7868195e7143a2061c885c6bcc9e7a18b1d16d008bfdf81c0337c348b7087477"
+  },
+  "copy_checks_passed": true,
+  "td_binding": null
+}

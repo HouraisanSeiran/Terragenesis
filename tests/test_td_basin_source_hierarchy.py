@@ -5,11 +5,13 @@ from pathlib import Path
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.td_basin_source import make_td_source, validate_td_source
-from terrain_pipeline.td_basin_hierarchy import (
-    basin_volume_at_level, build_basin_hierarchy, load_basin_hierarchy, save_basin_hierarchy,
-)
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_storage import validate_td_source as validate_td_source
+from terrain_pipeline.basin_topology import basin_volume_at_level as basin_volume_at_level
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_topology import save_basin_hierarchy as save_basin_hierarchy
 
 
 class BasinHierarchyTests(unittest.TestCase):
@@ -98,7 +100,7 @@ class BasinHierarchyTests(unittest.TestCase):
             path = Path(directory) / "hierarchy.npz"
             save_basin_hierarchy(path, result)
             sha = file_sha256(path)
-            with patch("terrain_pipeline.td_basin_hierarchy.build_basin_hierarchy", side_effect=AssertionError("cold generation forbidden")):
+            with patch('terrain_pipeline.basin_topology.build_basin_hierarchy', side_effect=AssertionError("cold generation forbidden")):
                 loaded = load_basin_hierarchy(path, expected_sha256=sha, expected_identity=result["identity_sha256"])
             self.assertEqual(loaded["identity_sha256"], result["identity_sha256"])
             with self.assertRaises(ValueError):

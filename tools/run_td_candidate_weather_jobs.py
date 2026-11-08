@@ -10,7 +10,7 @@ sys.path.insert(0, str(ROOT))
 
 from terrain_pipeline.td_candidate_weather_jobs import (prepare_candidate_weather_jobs, run_candidate_weather_job,
     publish_candidate_weather_selection, export_candidate_weather_review)
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 
 
 def main():

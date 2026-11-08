@@ -1,0 +1,102 @@
+{
+  "algorithm": "fixed-owner-nearest30-parent-edge-overlap-v2",
+  "geological_uplift": {
+    "method": "depth-limited-exponential-v1",
+    "retained_depth_fraction": 0.1,
+    "softening_start_fraction_of_capacity": 0.9
+  },
+  "world_seed": 20261020,
+  "origin_xz_m": [
+    -19950.0,
+    -19950.0
+  ],
+  "spacing_m": 100.0,
+  "shape_zx": [
+    450,
+    450
+  ],
+  "pages": [
+    {
+      "page_xz": [
+        -1,
+        -1
+      ],
+      "identity": "1ddb05a325179aadae5ddee4ed6b40ff3be239acb9975f0853bbb760d389e468",
+      "raw_td_sha256": "77705a39fb93397d22cebaeece6659e80f4a9d243ff1073cc9504651af480d33",
+      "manifest_sha256": "e90833603644318cbfab0f8f5780ad93e06dd2dde5196dff73fe611370c3f4b3",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_-1"
+    },
+    {
+      "page_xz": [
+        0,
+        -1
+      ],
+      "identity": "7ad4b2bfee232e4d65ab43a0c397d25f09e12d0746e02b799be5b46a973a5179",
+      "raw_td_sha256": "a0c0b5ee6cdd8c4b1cbd92781e82d91e5e8712515726a9d614d7ce809887df8f",
+      "manifest_sha256": "eccb987fe1a724dfb340315273120ce8b160887c20d80270eb000514ab5f5261",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_-1"
+    },
+    {
+      "page_xz": [
+        -1,
+        0
+      ],
+      "identity": "a4b5a09c2f232b30598896567f5bd02815207a09635fa618c51a44f8a8c64bad",
+      "raw_td_sha256": "46a59645068cd8a9c413939a256b44a8b341c468da830d7e42d278e25080f59f",
+      "manifest_sha256": "7df387601f02756d8dde00a2bcb50c641f3b5bfc1faa0687f7f67a801512a887",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_+0"
+    },
+    {
+      "page_xz": [
+        0,
+        0
+      ],
+      "identity": "ed91c6c3806c4446f56c987f68bb4c1293f8eacca1ef651a994301e9016d0eda",
+      "raw_td_sha256": "adf0cbb99bd9c98af164925ffa96d8ae29f22e2bc1f64b2a5634f0c9f964f9c6",
+      "manifest_sha256": "0575ed6267c0dc55a132d5e2a2daef835190e48deff174700b412aa7e79a0d92",
+      "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_+0"
+    }
+  ],
+  "parent_identity": "4fc3ec6ac77d2ea49dafa2242b5012871ee8c61b8d5b23f155d48ca3acff1a01",
+  "base_identity": "a306c5127b7510e5f6b7e1359cfb36dfd342c3023cb7dc576a4f6cb97436c60c",
+  "old_state_sha256": "87609b0fd1c8e258780f9e810d3874179d437d86f5fdb83d8c44e267104745ef",
+  "schema": "coastal-delta-window-v1",
+  "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+  "source_sha256": "c95f3bc2fda697ad05fdf0e827b20edb2c778e13517b95a6a5ecba49a11b3240",
+  "state_sha256": "8e6aa151d5ec9a9a52be881cb8ad5536b1f3d317968cd287c396a1bcd83df3b7",
+  "old_checkpoint_json_sha256": "52cd37f8e429e6dcd805a8aa9ae1aacd13814ec92270ccbfe292aa1468c6fe15",
+  "crop_inventory": {
+    "bed_solid_m3": {
+      "old_m3": 842561372.0488648,
+      "inside_m3": 823499924.0168707,
+      "outside_crop_m3": 19061448.031994104
+    },
+    "mobile_solid_m3": {
+      "old_m3": 684962.1716804852,
+      "inside_m3": 648179.6335559506,
+      "outside_crop_m3": 36782.53812453465
+    },
+    "stranded_solid_m3": {
+      "old_m3": 22973956.427458167,
+      "inside_m3": 22973955.82682963,
+      "outside_crop_m3": 0.6006285361945629
+    }
+  },
+  "conflict_to_stranded_m3": 27158925.083385002,
+  "valid_cells": 202500,
+  "ocean_cells": 100451,
+  "unknown_wet_cells": 822,
+  "sample_difference_m": {
+    "mean": 0.12072822451591492,
+    "rms": 13.752601623535156,
+    "max_abs": 146.9391632080078
+  },
+  "coastline_sign_disagreement_cells": 1376,
+  "elapsed_s": 0.5562246999998024,
+  "notes": [
+    "Nearest native 30 m samples; no 600 m terrain upsampling.",
+    "Coarse geological correction sampled continuously on connected source ocean; positive uplift smoothly limited by source depth, land and unknown unchanged.",
+    "Historical outside crop is not export; no nested flux coupling.",
+    "Historical counters and packet identities retained; no new evolution."
+  ]
+}

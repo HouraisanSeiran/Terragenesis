@@ -3,12 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Terragenesis · 河网与 VDM 审查工作台</title>
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#16120d">
+  <title>Terragenesis · 山川形意 审查工作台</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="topbar">
-  <div class="brand"><span class="mark">TG</span><div><div class="eyebrow">TERRAGENESIS / REVIEW CONSOLE</div><h1>河网与 VDM 审查工作台</h1></div></div>
+  <div class="brand"><span class="mark">山川</span><div><div class="eyebrow">TERRAGENESIS · REVIEW CONSOLE</div><h1>山川形意 · 河网与 VDM 审查工作台</h1></div></div>
   <div class="topnote"><span class="signal"></span><span id="bridgeStatus">只读证据 · 等待桥接</span></div>
 </header>
 <main class="shell">
@@ -20,6 +22,17 @@
     </nav>
     <section class="control-section review-navigation">
       <label for="reviewProject">审查项目</label><select id="reviewProject"></select>
+    </section>
+    <section id="riverTerrainControls" class="control-section hidden">
+      <label for="riverTerrainInput">地形基础</label><output id="riverTerrainInput" class="evidence">等待保存来源</output>
+      <div id="riverTerrainStatus" class="statusline"></div>
+    </section>
+    <section id="riverResultControls" class="control-section hidden">
+      <label for="resultCase">真实成果案例</label><select id="resultCase"></select>
+      <label for="resultLayer">床面比较</label><select id="resultLayer"><option value="cut">切深 · 真实米制</option><option value="bed">加工床</option><option value="original">原床</option></select>
+      <label for="resultSection">真实横断面</label><select id="resultSection"></select>
+      <div id="resultTimePanel" class="hidden"><label for="resultTime">侵蚀沉积保存时序</label><input id="resultTime" type="range" min="0" max="0" value="0"><p id="resultTimeLabel" class="muted"></p></div>
+      <p class="muted">河槽直接来自保存三角网；无推测水面。横断面来自原床与加工床的同位置采样。</p>
     </section>
     <section class="control-section surface-controls hidden">
       <label for="caseSelect">审查案例</label><select id="caseSelect"></select>
@@ -61,10 +74,30 @@
     <section id="tdSummary" class="work-panel hidden"><div class="panelKicker">TD 保存动态</div><p id="tdCatalogText" class="muted">逐页读取保存状态；不重跑求解器。</p><div id="tdStats"></div><div class="tdScenario"><label for="tdScenario">动态场景</label><select id="tdScenario"><option value="eastward">eastward · 25状态</option><option value="westward">westward · 25状态</option></select></div><label for="tdLayer">当前页图层</label><select id="tdLayer"><option value="depth">保存水深 m</option><option value="rain">该小时雨强 mm/h</option><option value="bed">原生床高程 m</option></select><div class="tdMetrics" id="tdMetrics"></div><p class="muted">0 状态为首小时起点，1–24 为相应小时末态；30 m 原生网格每 4 格取 1 格绘制。全域统计不按显示抽稀重算。旧诊断水面与河链来自另一固定来源，不叠到细步页上。</p></section>
     <section id="basinControls" class="work-panel hidden"><div class="panelKicker">盆地与出口证据</div><p class="muted">三种候选都保持为诊断记录；自然海口尚未认证，不会自动升格为可发布结果。</p><div id="basinCandidates" class="candidate-list"></div><div id="basinLimitations" class="statusline"></div></section>
     <section id="morphologyControls" class="work-panel hidden"><div class="panelKicker">真实TD · 形态候选</div><label for="morphologyFeature">候选图层</label><select id="morphologyFeature"><option value="all">全部候选叠加</option><option value="delta">河口三角洲</option><option value="cutoff">截弯取直/牛轭湖</option><option value="bank">外弯冲刷/内弯点坝</option><option value="braided">辫状分汊/沙洲</option><option value="fan">冲积扇</option><option value="floodplain">洪泛平原</option></select><label for="morphologyLayer">地形状态</label><select id="morphologyLayer"><option value="original">原始TD地形</option><option value="candidate">候选形态高程变化</option></select><div id="morphologyStatus" class="statusline">真实TD局部窗口 · 明确局部水陆解释 · 尚未认证自然河口</div></section>
+    <section id="globalGeometryControls" class="control-section hidden">
+      <div class="panelKicker">全域谷地河槽 · 覆盖</div>
+      <div id="globalGeometryStatus" class="statusline"></div>
+      <label><input id="globalAccepted" type="checkbox" checked> 已通过局部几何 · 绿色</label>
+      <label><input id="globalExcluded" type="checkbox" checked> 本轮排除 · 红色</label>
+      <label for="globalEdge">排除河段</label><select id="globalEdge"><option value="">全部</option></select>
+      <div id="globalGeometrySummary" class="evidence"></div>
+    </section>
+    <section id="specialControls" class="work-panel hidden">
+      <div class="panelKicker">特殊地形 · 合成图幅</div>
+      <label for="specialForm">图幅</label><select id="specialForm"></select>
+      <label for="specialField">二维图层</label><select id="specialField"><option value="change">侵蚀变化 · m</option><option value="elevation">地表高程 · m</option></select>
+      <div id="specialStatus" class="statusline">合成分析图幅 · 非地理参照 · 非水力成果</div>
+    </section>
+    <section id="pillars3dControls" class="work-panel hidden">
+      <div class="panelKicker">石柱群 · 真三维闭合实体</div>
+      <label for="pillars3dShade">平面着色</label><select id="pillars3dShade"><option value="height">柱高</option><option value="carve">雕刻深度 step</option></select>
+      <div id="pillars3dStatus" class="statusline">合成分析几何 · 非地理参照 · 非水力成果 · 未认证</div>
+      <p class="muted">几何来自节理胞多边形棱柱加上柱壁 VDM 雕刻；高度场版本的值已作废。保持为 candidate，六项能力位全为 False。</p>
+    </section>
   </aside>
   <section class="stage"><div class="stage-head"><div><div class="panelKicker" id="viewTitle">河网算法</div><h2 id="viewSubtitle">读取固定保存结果</h2></div><button id="reset" class="quiet" title="重置相机视图">重置视图</button></div><div class="canvas-wrap"><canvas id="surface" aria-label="地形审查画布"></canvas><div id="error" class="error hidden" role="alert"></div><div id="loading" class="loading hidden">读取保存证据…</div></div><div class="stage-foot"><span id="coords">未选取</span><span id="stats"></span></div></section>
   <aside class="inspector"><section><div class="panelKicker">选中内容</div><h2 id="selectionTitle">尚未选取</h2><pre id="selection">在地图点选节点、网格或动态边</pre></section><section id="chartSection"><div class="panelKicker">剖面／时间序列</div><select id="chartMetric"><option value="stage">stage / profile (m)</option><option value="storage">storage (m³)</option><option value="q">signed Q (m³/s)</option><option value="vh">V(h) saved knots</option></select><canvas id="chart" height="190"></canvas></section><section><div class="panelKicker">每域 / 全局保存 ledger</div><pre id="ledger"></pre></section><section><div class="panelKicker">证据与限制</div><div id="evidence" class="evidence"></div></section><section id="sourceRegistrySection"><div class="panelKicker">固定入口登记</div><div id="sourceRegistry" class="evidence"></div></section><section><div class="panelKicker">审查备注</div><textarea id="notes" rows="4" placeholder="只写入本次导出的审查记录，不会修改验收包"></textarea><button id="exportReview" class="primary wide">导出审查记录</button></section></aside>
 </main>
 <script type="importmap">{"imports":{"three":"/vendor/node_modules/three/build/three.module.js"}}</script>
-<script src="renderer.js"></script><script src="river-renderer.js"></script><script src="app.js"></script><script type="module" src="fault-surface.js"></script><script type="module" src="saved-surface.js"></script>
+<script src="renderer.js"></script><script src="river-renderer.js"></script><script src="river-results.js"></script><script src="app.js"></script><script type="module" src="fault-surface.js"></script><script type="module" src="saved-surface.js"></script><script type="module" src="special-surface.js"></script><script type="module" src="pillars3d.js"></script>
 </body></html>

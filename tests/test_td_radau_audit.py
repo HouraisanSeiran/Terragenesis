@@ -7,8 +7,8 @@ from dataclasses import asdict
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.td_basin_overflow import OverflowParameters
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.basin_storage import OverflowParameters as OverflowParameters
 from tools import audit_td_radau_overflow as subject
 
 
@@ -54,8 +54,8 @@ class RadauAuditTests(unittest.TestCase):
                     levels[-1]["comparison_with_previous"] = {"passed": True}
             cases.append({"name": name, "levels": levels, "selected_level": 1,
                           "temporal_refinement_passed": True})
-        code_names = ("terrain_pipeline/td_basin_overflow_radau.py",
-                      "terrain_pipeline/td_basin_overflow_implicit.py", "terrain_pipeline/td_basin_overflow.py",
+        code_names = ('terrain_pipeline/basin_storage.py',
+                      'terrain_pipeline/basin_storage.py', 'terrain_pipeline/basin_storage.py',
                       "terrain_pipeline/mountain_source_adapter.py", "tools/audit_td_original_bed_overflow.py",
                       "tools/verify_td_stable_overflow.py", "tools/prepare_td_radau_overflow.py")
         self.index = {"schema": "td-radau-overflow-refinement-v1", "algorithm": subject.ALGORITHM,
@@ -116,7 +116,7 @@ class RadauAuditTests(unittest.TestCase):
                 "identity_sha256": "hierarchy", "metadata": {"source_identity_sha256": "source"}}), \
              patch.object(subject, "load_overflow_topology", return_value=self.topology), \
              patch.object(subject, "load_radau_overflow", side_effect=load_event), \
-             patch("terrain_pipeline.td_basin_overflow_radau.simulate_radau_overflow",
+             patch('terrain_pipeline.basin_storage.simulate_radau_overflow',
                    side_effect=AssertionError("solver forbidden")), \
              patch("tools.verify_td_stable_overflow.compare_events",
                    side_effect=AssertionError("comparison forbidden")):

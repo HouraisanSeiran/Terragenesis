@@ -1,0 +1,747 @@
+{
+  "binding": {
+    "scope": "macro mechanism diagnostics; not TD acceptance",
+    "td_binding": null,
+    "world_seed": 20261020,
+    "sources_sha256": {
+      "terrain_pipeline/tectonic_formation.py": "baa5d1928aa5dbfb3af891f6c793e989e2824597a68640a89270046fdee499c0",
+      "terrain_pipeline/tectonic_shapes.py": "4941bf19b7167e9b9c28ec03f6a566bf65b69330093bb10655df341b19b07ac8",
+      "terrain_pipeline/tectonic_evolution.py": "efb3eaa4159fa1c4cc67f91afa273881a31e8ace46246837525fd6bb1a281503",
+      "terrain_pipeline/tectonic_product.py": "a25453c23c2c29c53ce48e1e41d067c94d4a2d8ef19d1e444601865e9fac6236",
+      "tools/prepare_tectonic_world.py": "dddaee1f1a3f369f050c6c9ec586d51425376e1cc81dd52eaee2f6cb77d5a82d",
+      "tests/test_tectonic_shapes.py": "fa7db7853d9fbcd96fe31abb18697f1e22d0af175bf3adb639c6617bf2ef836a",
+      "tests/test_tectonic_formation.py": "bad65e71bea6e3f49188398fada148cb74bf876a02f5839fecdd014b6c105b59",
+      ".scratch\\plate-formation-coast-20261101\\shaped-compare.py": "fc34163fa8059435949bd217c6970af8f3db88763c41f0c37102b9cff733d1ad"
+    },
+    "products": {
+      "v3 compact": {
+        "path": ".scratch\\plate-formation-coast-20261101\\compact-run-v3-final\\product.npz",
+        "sha256": "547a5cf60ea567d2b76c149a1b127f7bafb90e724768f8097ab5649d8b5bdf6a",
+        "identity": "97a7fc402e7d5d4ee4a0800f8a3b19430d634bb3c3a434c104ca2c7ce7bcf7c6",
+        "algorithm": "kinematic-crust-3",
+        "schema": "tectonic-frozen-product-v2"
+      },
+      "v4 mixed shapes": {
+        "path": ".scratch\\plate-formation-coast-20261101\\shaped-run-v4\\product.npz",
+        "sha256": "7f1fa9e6aa5fe327000f1e850ad24ddddf20ffb3bf20d996259ba183af2c3ed3",
+        "identity": "b4c8bbdba29111b8c3ba3270e2f0d3a4fed3544655249fa07c506654b8ae6af9",
+        "algorithm": "kinematic-crust-4",
+        "schema": "tectonic-frozen-product-v2"
+      }
+    },
+    "config": {
+      "cell_size_m": 10000.0,
+      "continental_thickness_m": 35000.0,
+      "max_speed_m_per_step": 2000.0,
+      "microcells_per_plate": 64,
+      "min_plate_cells": 4,
+      "oceanic_thickness_m": 7000.0,
+      "origin_x_m": -800000.0,
+      "origin_z_m": -640000.0,
+      "plate_count": 8,
+      "rift_fraction": 1.0,
+      "shape": [
+        128,
+        160
+      ],
+      "steps": 40,
+      "subduction_fraction": 1.0,
+      "time_step": 1.0,
+      "world_seed": 20261020
+    },
+    "growth_shapes": [
+      {
+        "angle_rad": 2.381714805594031,
+        "aspect_ratio": 1.4421794881159342,
+        "family": "triangle",
+        "scale_cells": 1.0
+      },
+      {
+        "angle_rad": 0.1733378812215247,
+        "aspect_ratio": 5.46207930711847,
+        "family": "ellipse",
+        "scale_cells": 1.0
+      },
+      {
+        "angle_rad": 2.0285374488527244,
+        "aspect_ratio": 1.0,
+        "family": "circle",
+        "scale_cells": 1.0
+      },
+      {
+        "angle_rad": 2.27337160995288,
+        "aspect_ratio": 4.109469143323444,
+        "family": "ellipse",
+        "scale_cells": 1.0
+      },
+      {
+        "angle_rad": 1.1979544328529106,
+        "aspect_ratio": 1.0,
+        "family": "circle",
+        "scale_cells": 1.0
+      },
+      {
+        "angle_rad": 0.5439344023851674,
+        "aspect_ratio": 4.259057293291111,
+        "family": "ellipse",
+        "scale_cells": 1.0
+      },
+      {
+        "angle_rad": 2.7176995084395603,
+        "aspect_ratio": 1.0,
+        "family": "circle",
+        "scale_cells": 1.0
+      },
+      {
+        "angle_rad": 4.165581436935815,
+        "aspect_ratio": 1.251521946347462,
+        "family": "triangle",
+        "scale_cells": 1.0
+      }
+    ],
+    "shape_purpose_seed": 15003642411224944148,
+    "shape_seed_derivation": "SHA256(f'{world_seed}:tectonic:formation-shapes'), first 8 bytes little-endian",
+    "same_seed_full_regeneration_identity": "b4c8bbdba29111b8c3ba3270e2f0d3a4fed3544655249fa07c506654b8ae6af9",
+    "invariants": "identical sites, cores, embryos, initial elevation and velocities; old product bytes unchanged"
+  },
+  "measurements": {
+    "v3 compact": {
+      "initial": {
+        "plate_area_cells": [
+          2854,
+          2248,
+          2710,
+          2397,
+          3037,
+          2961,
+          2216,
+          2057
+        ],
+        "plate_area_m2": [
+          285400000000.0,
+          224800000000.0,
+          271000000000.0,
+          239700000000.0,
+          303700000000.0,
+          296100000000.0,
+          221600000000.0,
+          205700000000.0
+        ],
+        "periodic_components_per_plate": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "boundary_faces": 1188,
+        "plate_perimeter_m": [
+          3060000.0,
+          2800000.0,
+          3040000.0,
+          3140000.0,
+          3100000.0,
+          3180000.0,
+          2660000.0,
+          2780000.0
+        ],
+        "plates": [
+          {
+            "plate": 0,
+            "area_cells": 2854,
+            "area_m2": 285400000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2854,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.1320356436315615
+              }
+            ]
+          },
+          {
+            "plate": 1,
+            "area_cells": 2248,
+            "area_m2": 224800000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2248,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.3697481672745289
+              }
+            ]
+          },
+          {
+            "plate": 2,
+            "area_cells": 2710,
+            "area_m2": 271000000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2710,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.1818107865843144
+              }
+            ]
+          },
+          {
+            "plate": 3,
+            "area_cells": 2397,
+            "area_m2": 239700000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2397,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.2778192841165532
+              }
+            ]
+          },
+          {
+            "plate": 4,
+            "area_cells": 3037,
+            "area_m2": 303700000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 3037,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.2396565299892166
+              }
+            ]
+          },
+          {
+            "plate": 5,
+            "area_cells": 2961,
+            "area_m2": 296100000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2961,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.3682269411999328
+              }
+            ]
+          },
+          {
+            "plate": 6,
+            "area_cells": 2216,
+            "area_m2": 221600000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2216,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.257422899993942
+              }
+            ]
+          },
+          {
+            "plate": 7,
+            "area_cells": 2057,
+            "area_m2": 205700000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2057,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.3016087819698168
+              }
+            ]
+          }
+        ],
+        "moment_method": "BFS along periodic face adjacency; sqrt(lambda_max/lambda_min); null on winding conflict; separate fragments measured separately"
+      },
+      "final": {
+        "plate_area_cells": [
+          2717,
+          2294,
+          3042,
+          2108,
+          3102,
+          3022,
+          2135,
+          2060
+        ],
+        "plate_area_m2": [
+          271700000000.0,
+          229400000000.0,
+          304200000000.0,
+          210800000000.0,
+          310200000000.0,
+          302200000000.0,
+          213500000000.0,
+          206000000000.0
+        ],
+        "periodic_components_per_plate": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "boundary_faces": 1116,
+        "plate_perimeter_m": [
+          2900000.0,
+          2680000.0,
+          2900000.0,
+          2740000.0,
+          2920000.0,
+          3180000.0,
+          2520000.0,
+          2480000.0
+        ],
+        "plates": [
+          {
+            "plate": 0,
+            "area_cells": 2717,
+            "area_m2": 271700000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2717,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.0902701611015715
+              }
+            ]
+          },
+          {
+            "plate": 1,
+            "area_cells": 2294,
+            "area_m2": 229400000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2294,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.4193686430801407
+              }
+            ]
+          },
+          {
+            "plate": 2,
+            "area_cells": 3042,
+            "area_m2": 304200000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 3042,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.1429846749020105
+              }
+            ]
+          },
+          {
+            "plate": 3,
+            "area_cells": 2108,
+            "area_m2": 210800000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2108,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.2198748515935358
+              }
+            ]
+          },
+          {
+            "plate": 4,
+            "area_cells": 3102,
+            "area_m2": 310200000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 3102,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.1930682043312217
+              }
+            ]
+          },
+          {
+            "plate": 5,
+            "area_cells": 3022,
+            "area_m2": 302200000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 3022,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.2818554007717258
+              }
+            ]
+          },
+          {
+            "plate": 6,
+            "area_cells": 2135,
+            "area_m2": 213500000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2135,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.243920510851427
+              }
+            ]
+          },
+          {
+            "plate": 7,
+            "area_cells": 2060,
+            "area_m2": 206000000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2060,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.2101431665158169
+              }
+            ]
+          }
+        ],
+        "moment_method": "BFS along periodic face adjacency; sqrt(lambda_max/lambda_min); null on winding conflict; separate fragments measured separately"
+      },
+      "max_relative_material_balance_residual": 4.723558720964452e-16
+    },
+    "v4 mixed shapes": {
+      "initial": {
+        "plate_area_cells": [
+          2293,
+          2354,
+          3035,
+          2223,
+          3501,
+          2926,
+          2623,
+          1525
+        ],
+        "plate_area_m2": [
+          229300000000.0,
+          235400000000.0,
+          303500000000.0,
+          222300000000.0,
+          350100000000.0,
+          292600000000.0,
+          262300000000.0,
+          152500000000.0
+        ],
+        "periodic_components_per_plate": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "boundary_faces": 1273,
+        "plate_perimeter_m": [
+          2880000.0,
+          3580000.0,
+          3280000.0,
+          2860000.0,
+          3600000.0,
+          3520000.0,
+          3520000.0,
+          2220000.0
+        ],
+        "plates": [
+          {
+            "plate": 0,
+            "area_cells": 2293,
+            "area_m2": 229300000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2293,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.6958428691880962
+              }
+            ]
+          },
+          {
+            "plate": 1,
+            "area_cells": 2354,
+            "area_m2": 235400000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2354,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 2.89581889636999
+              }
+            ]
+          },
+          {
+            "plate": 2,
+            "area_cells": 3035,
+            "area_m2": 303500000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 3035,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.2596483679618047
+              }
+            ]
+          },
+          {
+            "plate": 3,
+            "area_cells": 2223,
+            "area_m2": 222300000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2223,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.8270402929012342
+              }
+            ]
+          },
+          {
+            "plate": 4,
+            "area_cells": 3501,
+            "area_m2": 350100000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 3501,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.0632982590125963
+              }
+            ]
+          },
+          {
+            "plate": 5,
+            "area_cells": 2926,
+            "area_m2": 292600000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2926,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 2.106271182448257
+              }
+            ]
+          },
+          {
+            "plate": 6,
+            "area_cells": 2623,
+            "area_m2": 262300000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2623,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.5138020308126967
+              }
+            ]
+          },
+          {
+            "plate": 7,
+            "area_cells": 1525,
+            "area_m2": 152500000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 1525,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.3700707857457173
+              }
+            ]
+          }
+        ],
+        "moment_method": "BFS along periodic face adjacency; sqrt(lambda_max/lambda_min); null on winding conflict; separate fragments measured separately"
+      },
+      "final": {
+        "plate_area_cells": [
+          2234,
+          2436,
+          3369,
+          2016,
+          3508,
+          2864,
+          2542,
+          1511
+        ],
+        "plate_area_m2": [
+          223400000000.0,
+          243600000000.0,
+          336900000000.0,
+          201600000000.0,
+          350800000000.0,
+          286400000000.0,
+          254200000000.0,
+          151100000000.0
+        ],
+        "periodic_components_per_plate": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "boundary_faces": 1158,
+        "plate_perimeter_m": [
+          2620000.0,
+          3160000.0,
+          3080000.0,
+          2600000.0,
+          3220000.0,
+          3240000.0,
+          3200000.0,
+          2040000.0
+        ],
+        "plates": [
+          {
+            "plate": 0,
+            "area_cells": 2234,
+            "area_m2": 223400000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2234,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.6060631940363024
+              }
+            ]
+          },
+          {
+            "plate": 1,
+            "area_cells": 2436,
+            "area_m2": 243600000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2436,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 2.83341695743919
+              }
+            ]
+          },
+          {
+            "plate": 2,
+            "area_cells": 3369,
+            "area_m2": 336900000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 3369,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.2594835126924164
+              }
+            ]
+          },
+          {
+            "plate": 3,
+            "area_cells": 2016,
+            "area_m2": 201600000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2016,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 2.020721507643455
+              }
+            ]
+          },
+          {
+            "plate": 4,
+            "area_cells": 3508,
+            "area_m2": 350800000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 3508,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.1356813934541434
+              }
+            ]
+          },
+          {
+            "plate": 5,
+            "area_cells": 2864,
+            "area_m2": 286400000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2864,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 2.0056074946955627
+              }
+            ]
+          },
+          {
+            "plate": 6,
+            "area_cells": 2542,
+            "area_m2": 254200000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 2542,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.6030648478646297
+              }
+            ]
+          },
+          {
+            "plate": 7,
+            "area_cells": 1511,
+            "area_m2": 151100000000.0,
+            "periodic_components": 1,
+            "cells_outside_largest_component": 0,
+            "components": [
+              {
+                "area_cells": 1511,
+                "winding_conflicting_directed_edges": 0,
+                "periodic_unfolded_second_moment_axis_ratio": 1.3537460441058837
+              }
+            ]
+          }
+        ],
+        "moment_method": "BFS along periodic face adjacency; sqrt(lambda_max/lambda_min); null on winding conflict; separate fragments measured separately"
+      },
+      "max_relative_material_balance_residual": 4.3493874570008275e-16
+    }
+  }
+}

@@ -6,14 +6,18 @@ from pathlib import Path
 import numpy as np
 from scipy.integrate import solve_ivp
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.surface_rivers.metric_contracts import TerrainGrid
-from terrain_pipeline.surface_rivers.metric_equilibrium_lake_support import (
-    EquilibriumLakeConfig, EquilibriumLakeForcing, advance_equilibrium_lakes,
-    load_equilibrium_lakes, project_equilibrium_lakes, save_equilibrium_lakes,
-    solve_equilibrium_lakes, validate_equilibrium_lakes,
-)
-from terrain_pipeline.surface_rivers.metric_natural_lakes import build_natural_lakes, lake_volume_at_stage
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.common_infra import TerrainGrid
+from terrain_pipeline.lake import EquilibriumLakeConfig as EquilibriumLakeConfig
+from terrain_pipeline.lake import EquilibriumLakeForcing as EquilibriumLakeForcing
+from terrain_pipeline.lake import advance_equilibrium_lakes as advance_equilibrium_lakes
+from terrain_pipeline.lake import load_equilibrium_lakes as load_equilibrium_lakes
+from terrain_pipeline.lake import project_equilibrium_lakes as project_equilibrium_lakes
+from terrain_pipeline.lake import save_equilibrium_lakes as save_equilibrium_lakes
+from terrain_pipeline.lake import solve_equilibrium_lakes as solve_equilibrium_lakes
+from terrain_pipeline.lake import validate_equilibrium_lakes as validate_equilibrium_lakes
+from terrain_pipeline.lake import build_natural_lakes as build_natural_lakes
+from terrain_pipeline.lake import lake_volume_at_stage as lake_volume_at_stage
 from tests.test_metric_natural_lakes import two_lakes, two_saddles
 
 
@@ -81,7 +85,7 @@ class EquilibriumLakeSupportTests(unittest.TestCase):
         joined, redistribution = project_equilibrium_lakes(domain, raw)
         np.testing.assert_array_equal(joined.component_id, [0, 0])
         self.assertAlmostEqual(joined.owner_volume_m3.sum(), raw.sum(), places=10)
-        from terrain_pipeline.surface_rivers.metric_equilibrium_lake_support import _geometry
+        from terrain_pipeline.lake import equilibrium_geometry as _geometry
         stages = _geometry(domain, joined.owner_volume_m3)[1]
         self.assertAlmostEqual(stages[0], stages[1], places=9)
         self.assertAlmostEqual(redistribution.sum(), 0., places=10)

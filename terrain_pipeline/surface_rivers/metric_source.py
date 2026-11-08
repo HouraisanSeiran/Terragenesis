@@ -4,9 +4,9 @@ from pathlib import Path
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, load_bundle, save_bundle
+from terrain_pipeline.common_infra import file_sha256, identity, load_bundle, save_bundle
 
-from .metric_contracts import BoundaryGrid, TerrainGrid
+from terrain_pipeline.common_infra import BoundaryGrid, TerrainGrid
 
 
 SCHEMA = "terragenesis-metric-source-registration-v1"

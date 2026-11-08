@@ -1,0 +1,192 @@
+{
+    "schema":  "single-domain-legacy-entrypoints-v1",
+    "scope":  "explicit-v4-v8-replay-only",
+    "entrypoints":  {
+                        "v8":  "terrain_pipeline.single_domain_shallow_water_v8",
+                        "v4":  "terrain_pipeline.single_domain_shallow_water_v4"
+                    },
+    "dependencies_policy":  "all-reachable-local-python-source-is-frozen-and-loaded-under-isolated-names",
+    "external_dependencies":  [
+                                  "numpy",
+                                  "scipy"
+                              ],
+    "files":  {
+                  "diffusion":  {
+                                    "original_path":  "diffusion/__init__.py",
+                                    "archive_path":  "diffusion/__init__.py",
+                                    "sha256":  "e856d59e1b529fd4ecbe4c6ab16a89355fd8428631eebdbbc48c91f449096f4f",
+                                    "dependencies":  [
+
+                                                     ]
+                                },
+                  "diffusion.paths":  {
+                                          "original_path":  "diffusion/paths.py",
+                                          "archive_path":  "diffusion/paths.py",
+                                          "sha256":  "a5b01300b7299c91cb4a86741600f481f768a203e888920239e28cdd2a26fd28",
+                                          "dependencies":  [
+                                                               "diffusion"
+                                                           ]
+                                      },
+                  "diffusion.physical_config":  {
+                                                    "original_path":  "diffusion/physical_config.py",
+                                                    "archive_path":  "diffusion/physical_config.py",
+                                                    "sha256":  "4a144d97fdefb54bc099797e034d595d7c46935c4aa5f05c1a3523c8577a709b",
+                                                    "dependencies":  [
+                                                                         "diffusion",
+                                                                         "diffusion.paths"
+                                                                     ]
+                                                },
+                  "terrain_pipeline":  {
+                                           "original_path":  "terrain_pipeline/__init__.py",
+                                           "archive_path":  "terrain_pipeline/__init__.py",
+                                           "sha256":  "c80efc19fd5775d1b9ea03698338cb589faa18d76d758eed0920fdd9b5e268df",
+                                           "dependencies":  [
+
+                                                            ]
+                                       },
+                  "terrain_pipeline.mountain_source_adapter":  {
+                                                                   "original_path":  "terrain_pipeline/mountain_source_adapter.py",
+                                                                   "archive_path":  "terrain_pipeline/mountain_source_adapter.py",
+                                                                   "sha256":  "796e763097d4b49ca74dcffc052afdd5f1fc5ad03cbdeb26f4cadc57b5cc3c85",
+                                                                   "dependencies":  [
+                                                                                        "diffusion.physical_config",
+                                                                                        "terrain_pipeline",
+                                                                                        "terrain_pipeline.rainfall_runoff"
+                                                                                    ]
+                                                               },
+                  "terrain_pipeline.rainfall_runoff":  {
+                                                           "original_path":  "terrain_pipeline/rainfall_runoff.py",
+                                                           "archive_path":  "terrain_pipeline/rainfall_runoff.py",
+                                                           "sha256":  "d10b6e965b6483e0d5e6bf71c5115f196752c8780749ddb2fe0b8788daebfee8",
+                                                           "dependencies":  [
+                                                                                "terrain_pipeline"
+                                                                            ]
+                                                       },
+                  "terrain_pipeline.regional_surface_hydraulics":  {
+                                                                       "original_path":  "terrain_pipeline/regional_surface_hydraulics.py",
+                                                                       "archive_path":  "terrain_pipeline/regional_surface_hydraulics.py",
+                                                                       "sha256":  "e8a75f8ddeff4705127e61d30411282bec37e635babd739583beef66918b44da",
+                                                                       "dependencies":  [
+                                                                                            "terrain_pipeline"
+                                                                                        ]
+                                                                   },
+                  "terrain_pipeline.single_domain_fine_geometry":  {
+                                                                       "original_path":  "terrain_pipeline/single_domain_fine_geometry.py",
+                                                                       "archive_path":  "terrain_pipeline/single_domain_fine_geometry.py",
+                                                                       "sha256":  "06e2a8f5b3b07657626566806d81b3b2a812c6993e3d0a2dd1bd90489413bac5",
+                                                                       "dependencies":  [
+                                                                                            "terrain_pipeline",
+                                                                                            "terrain_pipeline.mountain_source_adapter",
+                                                                                            "terrain_pipeline.td_basin_hierarchy"
+                                                                                        ]
+                                                                   },
+                  "terrain_pipeline.single_domain_shallow_water_execution":  {
+                                                                                 "original_path":  "terrain_pipeline/single_domain_shallow_water_execution.py",
+                                                                                 "archive_path":  "terrain_pipeline/single_domain_shallow_water_execution.py",
+                                                                                 "sha256":  "dc75ae9af965dd98a9e8a522ba86e691963b6959a3abae3b0981bb47e55b736e",
+                                                                                 "dependencies":  [
+                                                                                                      "terrain_pipeline",
+                                                                                                      "terrain_pipeline.regional_surface_hydraulics"
+                                                                                                  ]
+                                                                             },
+                  "terrain_pipeline.single_domain_shallow_water_execution_v8":  {
+                                                                                    "original_path":  "terrain_pipeline/single_domain_shallow_water_execution_v8.py",
+                                                                                    "archive_path":  "terrain_pipeline/single_domain_shallow_water_execution_v8.py",
+                                                                                    "sha256":  "dedb01ad2bf08d5d3686f56cdfdb7d9431dc2bbf5969143671b9aa0fd6c5b970",
+                                                                                    "dependencies":  [
+                                                                                                         "terrain_pipeline",
+                                                                                                         "terrain_pipeline.regional_surface_hydraulics"
+                                                                                                     ]
+                                                                                },
+                  "terrain_pipeline.single_domain_shallow_water_reconstruction_v8":  {
+                                                                                         "original_path":  "terrain_pipeline/single_domain_shallow_water_reconstruction_v8.py",
+                                                                                         "archive_path":  "terrain_pipeline/single_domain_shallow_water_reconstruction_v8.py",
+                                                                                         "sha256":  "7f67b15f14a18a3b669fe753de34c16c611ed63ffebe3f0a9b9ffb667dd87e46",
+                                                                                         "dependencies":  [
+                                                                                                              "terrain_pipeline",
+                                                                                                              "terrain_pipeline.single_domain_fine_geometry",
+                                                                                                              "terrain_pipeline.single_domain_shallow_water_support_v5"
+                                                                                                          ]
+                                                                                     },
+                  "terrain_pipeline.single_domain_shallow_water_support":  {
+                                                                               "original_path":  "terrain_pipeline/single_domain_shallow_water_support.py",
+                                                                               "archive_path":  "terrain_pipeline/single_domain_shallow_water_support.py",
+                                                                               "sha256":  "908c51928d0c48c1c76cbe950ccdab2b4148a1dfb89b68bf18ee8958836b7230",
+                                                                               "dependencies":  [
+                                                                                                    "terrain_pipeline"
+                                                                                                ]
+                                                                           },
+                  "terrain_pipeline.single_domain_shallow_water_support_v4":  {
+                                                                                  "original_path":  "terrain_pipeline/single_domain_shallow_water_support_v4.py",
+                                                                                  "archive_path":  "terrain_pipeline/single_domain_shallow_water_support_v4.py",
+                                                                                  "sha256":  "631d4d2834670ed21d9f24f9d2c948b737d1db721a4a8a45918020b0ccfc259b",
+                                                                                  "dependencies":  [
+                                                                                                       "terrain_pipeline",
+                                                                                                       "terrain_pipeline.single_domain_fine_geometry",
+                                                                                                       "terrain_pipeline.single_domain_shallow_water_support"
+                                                                                                   ]
+                                                                              },
+                  "terrain_pipeline.single_domain_shallow_water_support_v5":  {
+                                                                                  "original_path":  "terrain_pipeline/single_domain_shallow_water_support_v5.py",
+                                                                                  "archive_path":  "terrain_pipeline/single_domain_shallow_water_support_v5.py",
+                                                                                  "sha256":  "aae4e314669369f794863e9aceb5a25e4967e166dddd82f3793f68bb517b4dcd",
+                                                                                  "dependencies":  [
+                                                                                                       "terrain_pipeline",
+                                                                                                       "terrain_pipeline.single_domain_fine_geometry",
+                                                                                                       "terrain_pipeline.single_domain_shallow_water_support"
+                                                                                                   ]
+                                                                              },
+                  "terrain_pipeline.single_domain_shallow_water_support_v8":  {
+                                                                                  "original_path":  "terrain_pipeline/single_domain_shallow_water_support_v8.py",
+                                                                                  "archive_path":  "terrain_pipeline/single_domain_shallow_water_support_v8.py",
+                                                                                  "sha256":  "c1968ebfda6f6123cddb3d6522a6ff6e82c525d4293253179a96c8bb3389fd59",
+                                                                                  "dependencies":  [
+                                                                                                       "terrain_pipeline",
+                                                                                                       "terrain_pipeline.single_domain_shallow_water_reconstruction_v8",
+                                                                                                       "terrain_pipeline.single_domain_shallow_water_support"
+                                                                                                   ]
+                                                                              },
+                  "terrain_pipeline.single_domain_shallow_water_v4":  {
+                                                                          "original_path":  "terrain_pipeline/single_domain_shallow_water_v4.py",
+                                                                          "archive_path":  "terrain_pipeline/single_domain_shallow_water_v4.py",
+                                                                          "sha256":  "2fe792295590fffbbe29b9e9ef4441bf76d2ea764245de9663f2fc633721de5e",
+                                                                          "dependencies":  [
+                                                                                               "terrain_pipeline",
+                                                                                               "terrain_pipeline.single_domain_fine_geometry",
+                                                                                               "terrain_pipeline.single_domain_shallow_water_execution",
+                                                                                               "terrain_pipeline.single_domain_shallow_water_support_v4"
+                                                                                           ]
+                                                                      },
+                  "terrain_pipeline.single_domain_shallow_water_v8":  {
+                                                                          "original_path":  "terrain_pipeline/single_domain_shallow_water_v8.py",
+                                                                          "archive_path":  "terrain_pipeline/single_domain_shallow_water_v8.py",
+                                                                          "sha256":  "3c708dd14113f2349d86de6f259fd7973e0a9b840ac6110982d97eb951dc72fa",
+                                                                          "dependencies":  [
+                                                                                               "terrain_pipeline",
+                                                                                               "terrain_pipeline.single_domain_fine_geometry",
+                                                                                               "terrain_pipeline.single_domain_shallow_water_execution_v8",
+                                                                                               "terrain_pipeline.single_domain_shallow_water_reconstruction_v8",
+                                                                                               "terrain_pipeline.single_domain_shallow_water_support_v8"
+                                                                                           ]
+                                                                      },
+                  "terrain_pipeline.td_basin_hierarchy":  {
+                                                              "original_path":  "terrain_pipeline/td_basin_hierarchy.py",
+                                                              "archive_path":  "terrain_pipeline/td_basin_hierarchy.py",
+                                                              "sha256":  "e618ac7177e34a877efa9ef50abaa5002e6669e152a090cb82917061507dc895",
+                                                              "dependencies":  [
+                                                                                   "terrain_pipeline",
+                                                                                   "terrain_pipeline.mountain_source_adapter",
+                                                                                   "terrain_pipeline.td_basin_source"
+                                                                               ]
+                                                          },
+                  "terrain_pipeline.td_basin_source":  {
+                                                           "original_path":  "terrain_pipeline/td_basin_source.py",
+                                                           "archive_path":  "terrain_pipeline/td_basin_source.py",
+                                                           "sha256":  "d1ea7cdad04b0dae0d3fbb5bf304fb1fddd62bada95878f05a0a578234732f81",
+                                                           "dependencies":  [
+                                                                                "terrain_pipeline",
+                                                                                "terrain_pipeline.mountain_source_adapter"
+                                                                            ]
+                                                       }
+              }
+}

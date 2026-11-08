@@ -13,7 +13,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "terrain_pipeline/td_basin_storage_refinement.py"
+SOURCE = ROOT / 'terrain_pipeline/basin_storage.py'
 
 
 def freeze(output, *, profile="v2-full-refinement-6e9-v1"):
@@ -21,7 +21,7 @@ def freeze(output, *, profile="v2-full-refinement-6e9-v1"):
     manifest = {
         "schema": "td-basin-execution-code-v1",
         "execution_source": {
-            "path": "terrain_pipeline/td_basin_storage_refinement.py",
+            "path": 'terrain_pipeline/basin_storage.py',
             "sha256": hashlib.sha256(source).hexdigest(),
             "source_utf8": source.decode("utf-8"),
         },
@@ -38,7 +38,7 @@ def freeze(output, *, profile="v2-full-refinement-6e9-v1"):
             "platform": platform.platform(),
         },
         "cold_read": {
-            "requires": ["numpy", "numba", "terrain_pipeline/td_basin_storage_refinement.py"],
+            "requires": ["numpy", "numba", 'terrain_pipeline/basin_storage.py'],
             "validator_mode": "read JSON/NPZ metadata and SHA only; no module import, JIT, or solver advancement",
             "jit_on_cold_read": False,
             "advancement_on_cold_read": False,

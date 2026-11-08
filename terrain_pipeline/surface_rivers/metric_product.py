@@ -2,12 +2,17 @@
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity, load_bundle, readonly, save_bundle
-from terrain_pipeline.rainfall_runoff import ARRAY_KEYS, MAX_CELLS as RUNOFF_MAX_CELLS, MAX_ENTRIES as RUNOFF_MAX_ENTRIES, validate_rainfall_runoff_result
-from .metric_contracts import BoundaryGrid, RainfallForcing, RoutingGraph, TerrainGrid
-from .metric_drainage import accumulate_local_discharge, route_diagnostic
-from .metric_runoff import runoff_from_forcing
-from .metric_large_runoff import runoff_from_forcing_large, validate_large_rainfall_runoff_result
+from terrain_pipeline.common_infra import identity, load_bundle, readonly, save_bundle
+from terrain_pipeline.runoff import RUNOFF_ARRAY_KEYS as ARRAY_KEYS
+from terrain_pipeline.runoff import RUNOFF_MAX_CELLS as RUNOFF_MAX_CELLS
+from terrain_pipeline.runoff import RUNOFF_MAX_ENTRIES as RUNOFF_MAX_ENTRIES
+from terrain_pipeline.runoff import validate_rainfall_runoff_result as validate_rainfall_runoff_result
+from terrain_pipeline.common_infra import BoundaryGrid, RainfallForcing, RoutingGraph, TerrainGrid
+from terrain_pipeline.drainage import accumulate_local_discharge as accumulate_local_discharge
+from terrain_pipeline.drainage import route_diagnostic as route_diagnostic
+from terrain_pipeline.runoff import runoff_from_forcing as runoff_from_forcing
+from terrain_pipeline.runoff import runoff_from_forcing_large as runoff_from_forcing_large
+from terrain_pipeline.runoff import validate_large_rainfall_runoff_result as validate_large_rainfall_runoff_result
 
 SCHEMA = "terragenesis-river-diagnostic-v1"
 MAX_PRODUCT_BYTES = 1024 * 1024 * 1024
@@ -17,7 +22,7 @@ TERMINAL_TOTALS = {"open_outflow": "open_outflow_m3_s", "lake_retained": "lake_r
                    "prescribed_boundary_candidate": "prescribed_boundary_candidate_m3_s"}
 LIMITATIONS = ("no channel travel time or channel storage", "no stage or lake spill dynamics",
                "no sediment erosion or bed change", "open perimeter is engineering boundary, not natural outlet",
-               "original-bed D8 is a new diagnostic, not the pinned TD D4 hierarchy",
+               "original-bed irregular graph is a new diagnostic, not the pinned TD D4 hierarchy",
                "no AMR or uniform resolution certification")
 
 
@@ -119,8 +124,20 @@ def _equal(observed, expected, label):
         raise ValueError("diagnostic saved mismatch: " + label)
 
 
+def _equal_budget_residual(saved, computed):
+    terms = ("rain_input", "evapotranspiration", "hydrology_storage_change", *TERMINAL_TOTALS)
+    saved_residual = (saved["rain_input"] - saved["evapotranspiration"]
+                      - saved["hydrology_storage_change"] - sum(saved[key] for key in TERMINAL_TOTALS))
+    _equal(saved["combined_residual"], saved_residual, "saved global residual linkage")
+    # A near-zero cancellation residual inherits roundoff from the large volume
+    # operands. NumPy reduction backends can differ by a few operand ULPs.
+    roundoff_m3 = 8. * np.finfo(np.float64).eps * max(1., sum(abs(computed[key]) for key in terms))
+    if abs(saved["combined_residual"] - computed["combined_residual"]) > roundoff_m3:
+        raise ValueError("diagnostic saved mismatch: global water budget combined_residual")
+
+
 def _validate_graph_geometry(terrain, boundary, graph):
-    if graph.policy != "original_bed_d8_plateau_bfs_v1":
+    if graph.policy != "original_bed_irregular_plateau_bfs_v2":
         raise ValueError("unsupported saved routing policy")
     if not np.array_equal(graph.valid_mask, terrain.valid_mask) or boundary.kind.shape != terrain.valid_mask.shape:
         raise ValueError("saved routing domain differs")
@@ -129,30 +146,23 @@ def _validate_graph_geometry(terrain, boundary, graph):
     kind = boundary.kind.ravel()
     cells = np.flatnonzero(valid)
     rr, cc = np.divmod(cells, cols)
-    unknown_contact = np.zeros(valid.size, bool)
+    from terrain_pipeline.drainage import diagnostic_mesh as diagnostic_mesh
+    from terrain_pipeline.drainage import unknown_contacts as unknown_contacts
+    from terrain_pipeline.drainage import receiver_edges_valid as receiver_edges_valid
+    mesh = diagnostic_mesh(terrain)
+    unknown_contact = unknown_contacts(terrain.valid_mask, diagnostic_mesh(terrain, unmasked=True)).ravel()
     perimeter = np.zeros(valid.size, bool)
     perimeter[cells] = (rr == 0) | (rr == rows - 1) | (cc == 0) | (cc == cols - 1)
-    for dr in (-1, 0, 1):
-        for dc in (-1, 0, 1):
-            if dr == dc == 0:
-                continue
-            inside = (rr + dr >= 0) & (rr + dr < rows) & (cc + dc >= 0) & (cc + dc < cols)
-            ids = cells[inside]
-            unknown_contact[ids] |= ~valid[(rr[inside] + dr) * cols + cc[inside] + dc]
     fringe = perimeter | unknown_contact
     if (np.any(kind[~valid] != "unknown_boundary") or np.any((kind == "interior") & perimeter)
             or np.any(valid & ~fringe & (kind != "interior"))):
         raise ValueError("saved boundary placement differs from routing domain")
     donors = np.flatnonzero(graph.receiver >= 0)
     targets = graph.receiver[donors]
-    dr = targets // cols - donors // cols
-    dc = targets % cols - donors % cols
-    if np.any((np.abs(dr) > 1) | (np.abs(dc) > 1) | ((dr == 0) & (dc == 0))):
-        raise ValueError("saved routing edges must join adjacent cells")
-    diagonal = (dr != 0) & (dc != 0)
-    if np.any(~valid[donors[diagonal] + dr[diagonal] * cols]) or np.any(~valid[donors[diagonal] + dc[diagonal]]):
-        raise ValueError("saved diagonal crosses unknown corner")
-    length = np.hypot(dc * terrain.dx_m, dr * terrain.dz_m)
+    if not receiver_edges_valid(graph.receiver, mesh):
+        raise ValueError("saved routing edge is absent from the masked irregular graph")
+    length = np.hypot(mesh.node_x_m[targets] - mesh.node_x_m[donors],
+                      mesh.node_z_m[targets] - mesh.node_z_m[donors])
     drop = terrain.elevation_m.ravel()[donors] - terrain.elevation_m.ravel()[targets]
     if np.any(drop < 0.):
         raise ValueError("saved original-bed route climbs uphill")
@@ -254,7 +264,9 @@ def validate_diagnostic_product(result):
     if set(meta["water_budget_m3"]) != set(ledger) or not all(np.isfinite(value) for value in ledger.values()):
         raise ValueError("invalid global diagnostic ledger")
     for key, value in ledger.items():
-        _equal(meta["water_budget_m3"][key], value, "global water budget " + key)
+        if key != "combined_residual":
+            _equal(meta["water_budget_m3"][key], value, "global water budget " + key)
+    _equal_budget_residual(meta["water_budget_m3"], ledger)
     scale = max(1., ledger["rain_input"], abs(ledger["hydrology_storage_change"]))
     if abs(ledger["combined_residual"]) > 1e-10 * scale:
         raise ValueError("combined water budget failed")

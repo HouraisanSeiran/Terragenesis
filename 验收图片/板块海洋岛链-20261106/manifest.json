@@ -1,0 +1,16 @@
+{
+  "schema": "ocean-island-acceptance-gallery-v1",
+  "pass": true,
+  "pass_scope": "file binding, actual geometry, finite-window cold reads; not naturalness approval",
+  "terrain_basis": "frozen plate surface with procedural ocean-island geometry; no TD inference",
+  "algorithms": ["tectonic frozen background", "ocean-islands-absolute-slots-v1"],
+  "main_product_identity": "98ee93f8ebd91484d6f65295dbf63d1aab9838cfc7b114df68700e06d12b817c",
+  "topics": {
+    "main_2km": {"coverage_status": "complete_in_window", "binding": "run-main-2km/image_binding.json"},
+    "same_product_50m_atoll": {"coverage_status": "complete_in_window", "binding": "atoll-focus-50m/image_binding.json"},
+    "separate_legacy_source_arcs": {"coverage_status": "complete_in_window", "binding": "arc-reference-legacy/image_binding.json"},
+    "hydrology": {"coverage_status": "not_available"},
+    "td_model_response": {"coverage_status": "not_available"}
+  },
+  "limitations": ["Finite source; no infinite upstream generation proof", "Elevation pseudocolour is not land cover", "Fourfold valley artifact diagnosed and pending correction", "No external app wiring or hydrology verification"]
+}

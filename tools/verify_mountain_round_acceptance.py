@@ -20,8 +20,8 @@ MODULES = (
     "tests.test_mountain_pool_network",
     "tests.test_mountain_fine_geometry",
     "tests.test_mountain_fine_storage",
-    "tests.test_mountain_fine_mesh",
-    "tests.test_mountain_manning_storage",
+    "tests.test_channel_geometry.MountainFineMeshTests",
+    "tests.test_channel_geometry.MountainManningTests",
     "tests.test_mountain_source_adapter",
     "tests.test_mountain_lake_coupling",
     "tests.test_mountain_storm_forcing",
@@ -29,10 +29,10 @@ MODULES = (
     "tests.test_mountain_storm_100m",
     "tests.test_mountain_rainfall",
     "tests.test_mountain_runoff_routing",
-    "tests.test_rainfall_runoff",
+    'tests.test_runoff',
     "tests.test_lake_balance",
     "tests.test_lake_routing",
-    "tests.test_surface_variable_storage",
+    "tests.test_surface_domain.SurfaceVariableStorageTests",
     "tests.test_physical_generation",
     "tests.test_minecraft_preset",
 )
@@ -69,7 +69,10 @@ def publish_json(path, value):
 
 
 def module_path(name):
-    relative = Path(*name.split("."))
+    name = name.split(".")
+    if name[-1][:1].isupper():
+        name = name[:-1]
+    relative = Path(*name)
     for candidate in (ROOT / relative.with_suffix(".py"), ROOT / relative / "__init__.py"):
         if candidate.is_file():
             return candidate
@@ -177,7 +180,7 @@ def worker(output):
         suite = loader.loadTestsFromName(module)
         module_counts[module] = 0
         for test in flatten(suite):
-            if type(test).__module__ != module:
+            if type(test).__module__ != (module.rsplit(".", 1)[0] if module.rsplit(".", 1)[-1][:1].isupper() else module):
                 continue
             if test.id() in seen:
                 raise ValueError("duplicate declared test identity: " + test.id())

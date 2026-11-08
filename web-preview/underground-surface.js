@@ -9,17 +9,10 @@ canvas.id='undergroundSurface';
 canvas.className='saved-canvas hidden';
 canvas.setAttribute('aria-label','地下暗河局部 XYZ 米制几何');
 wrap.prepend(canvas);
-const scene=new THREE.Scene();
-scene.background=new THREE.Color('#101c1d');
-scene.add(new THREE.HemisphereLight(0xe3edf3,0x55503e,2.2));
-const light=new THREE.DirectionalLight(0xffffff,2);
-light.position.set(80,180,-80);
-scene.add(light);
+const scene=TerraView.createScene(THREE);
 const group=new THREE.Group();
 scene.add(group);
-const camera=new THREE.PerspectiveCamera(45,1,.01,100000);
-const mapCamera=new THREE.OrthographicCamera(-1,1,1,-1,.01,100000);
-mapCamera.up.set(0,0,-1);
+const {camera,mapCamera}=TerraView.createCameras(THREE);
 const layers={rock:true,cutter:false,removed:false,reference:false,sections:false,centerline:false};
 const scope='固定 125 m 山地样例 · 人工构造几何 · 非自然洞道发现';
 const clipPlane=new THREE.Plane();
@@ -29,20 +22,13 @@ const currentCamera=()=>isThree()?camera:mapCamera;
 const currentControls=()=>isThree()?controls:mapControls;
 function ensureRenderer(){
     if(renderer)return;
-    renderer=new THREE.WebGLRenderer({canvas,antialias:true,preserveDrawingBuffer:true});
-    renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+    renderer=TerraView.createRenderer(THREE,canvas);
     renderer.localClippingEnabled=true;
     controls=new OrbitControls(camera,canvas);
     mapControls=new OrbitControls(mapCamera,canvas);
-    for(const orbit of [controls,mapControls]){
-        orbit.rotateSpeed=-1;
-        orbit.minPolarAngle=.01;
-        orbit.maxPolarAngle=Math.PI-.01;
-        orbit.mouseButtons={LEFT:THREE.MOUSE.ROTATE,MIDDLE:THREE.MOUSE.DOLLY,RIGHT:THREE.MOUSE.PAN};
-        orbit.addEventListener('change',render);
-    }
-    mapControls.enableRotate=false;
-    mapControls.mouseButtons.LEFT=THREE.MOUSE.PAN;
+    TerraView.configureControls(THREE,controls);
+    TerraView.configureControls(THREE,mapControls,{map:true});
+    for(const orbit of [controls,mapControls])orbit.addEventListener('change',render);
 }
 function clear(){
     payload=null;selected=null;
@@ -115,19 +101,10 @@ function resetCamera(){
     const points=layers.rock||mode==='rock_before'||mode==='rock_after'
         ?payload.meshes.rock_before.vertices_local_xyz_m:payload.vdm.derived_local_xyz_m;
     for(const point of points)box.expandByPoint(new THREE.Vector3(point[0],point[1]*group.scale.y,point[2]));
-    const size=box.getSize(new THREE.Vector3()),center=box.getCenter(new THREE.Vector3());
-    const extent=Math.max(size.x,size.y,size.z,1),ratio=Math.max(1,wrap.clientWidth)/Math.max(1,wrap.clientHeight);
-    const angle=Math.min(camera.fov*Math.PI/360,Math.atan(Math.tan(camera.fov*Math.PI/360)*ratio));
-    const distance=box.getBoundingSphere(new THREE.Sphere()).radius/Math.sin(angle)*1.15;
-    camera.near=Math.max(.01,extent/10000);camera.far=Math.max(extent*30,distance*5);
-    camera.position.copy(center).add(new THREE.Vector3(.85,.65,.85).normalize().multiplyScalar(distance));
-    controls.target.copy(center);camera.updateProjectionMatrix();
-    const half=Math.max(size.z/2,size.x/(2*ratio),1)*1.15;
-    mapCamera.top=half;mapCamera.bottom=-half;mapCamera.left=-half*ratio;mapCamera.right=half*ratio;
-    mapCamera.near=.01;mapCamera.far=extent*30;mapCamera.zoom=1;
-    mapCamera.position.copy(center).add(new THREE.Vector3(0,extent*8,0));
-    mapControls.target.copy(center);mapCamera.updateProjectionMatrix();
-    controls.update();mapControls.update();render();
+    const ratio=Math.max(1,wrap.clientWidth)/Math.max(1,wrap.clientHeight);
+    TerraView.frame(THREE,{box,camera,controls,aspect:ratio,direction:[.85,.65,.85],pad:1.15,farFactor:30});
+    TerraView.frameMap(THREE,{box,mapCamera,mapControls,aspect:ratio,pad:1.15});
+    render();
 }
 function render(){
     if(!active)return;
@@ -141,21 +118,22 @@ function render(){
     group.scale.y=Number(element('verticalScale').value);group.updateMatrixWorld(true);
     if(payload)updateVisibility();
     renderer.render(scene,currentCamera());
+    TerraView.hud.show('地下暗河 · 几何',isThree());
 }
 function load(next){
     validate(next);clear();ensureRenderer();payload=next;
-    for(const [name,color,opacity] of [['rock_before',0xa3ab9b,.18],['rock_after',0xa3ab9b,.18],['cutter',0xedb85d,.45],['removed',0xe77768,.55]]){
+    for(const [name,color,opacity] of [['rock_before',TerraView.material.rock,.18],['rock_after',TerraView.material.rock,.18],['cutter',TerraView.material.cutter,.45],['removed',TerraView.material.removed,.55]]){
         mesh(name,next.meshes[name].vertices_local_xyz_m,next.meshes[name].triangles,color,opacity);
     }
-    mesh('derived',next.vdm.derived_local_xyz_m,next.vdm.triangles,0x75c4ba);
-    mesh('reference',next.vdm.reference_local_xyz_m,next.vdm.triangles,0xdac989,.65,true);
-    line('centerline',next.stations.map(station=>station.origin_local_xyz_m),0xb7d5e8);
-    next.stations.forEach((station,index)=>line(`section_${index}`,[...station.ring_local_xyz_m,station.ring_local_xyz_m[0]],0xf5d6a2));
+    mesh('derived',next.vdm.derived_local_xyz_m,next.vdm.triangles,TerraView.material.derived);
+    mesh('reference',next.vdm.reference_local_xyz_m,next.vdm.triangles,TerraView.material.reference,.65,true);
+    line('centerline',next.stations.map(station=>station.origin_local_xyz_m),TerraView.material.centerline);
+    next.stations.forEach((station,index)=>line(`section_${index}`,[...station.ring_local_xyz_m,station.ring_local_xyz_m[0]],TerraView.material.section));
     const portalPoints=next.portals.flatMap(portal=>{
         const [east,height,north]=portal.position_local_xyz_m;
         return [[east-1,height,north],[east+1,height,north],[east,height-1,north],[east,height+1,north],[east,height,north-1],[east,height,north+1]];
     });
-    line('centerline',portalPoints,0xff9982,true);
+    line('centerline',portalPoints,TerraView.material.portal,true);
     element('undergroundStation').max=String(next.stations.length-1);element('undergroundStation').value='0';
     element('viewSubtitle').textContent=`局部 XYZ · m · ${next.status}`;
     const metrics=next.metrics;
@@ -191,8 +169,8 @@ function reviewRecord(){
     const meshCounts=Object.fromEntries(Object.entries(payload.meshes).map(([name,mesh])=>[name,{vertices:mesh.vertices_local_xyz_m.length,triangles:mesh.triangles.length}]));
     return {schema:'underground-surface-review-v1',category:'rivers',workspace:'underground',caseId:'underground',identity:payload.identity_sha256,identity_sha256:payload.identity_sha256,mesh_counts:meshCounts,vdm_counts:{vertices:payload.vdm.derived_local_xyz_m.length,triangles:payload.vdm.triangles.length},station_count:payload.stations.length,portal_count:payload.portals.length,origin_xyz_m:payload.origin_xyz_m,parameters:payload.parameters,source_pins:payload.source_pins,status:payload.status,scope,capabilities:payload.capabilities,metrics:payload.metrics,water:null,view:window.surfaceRenderer.state.view,mode:element('undergroundMode').value,layers:{...layers},clip:{enabled:element('undergroundClip').checked,stationIndex:sectionIndex()},camera:{position:currentCamera().position.toArray(),target:currentControls().target.toArray(),vertical:group.scale.y,zoom:currentCamera().zoom},selection:selected};
 }
-window.undergroundSurface={load,clear,render,resetCamera,reviewRecord,isLoading:()=>pending,isActive:()=>active,
+window.undergroundSurface=TerraView.register('undergroundSurface',{load,clear,render,resetCamera,reviewRecord,isLoading:()=>pending,isActive:()=>active,
     begin(){active=true;pending=true;ensureRenderer();clear();render()},
     finish(){pending=false;render()},
-    close(){active=false;pending=false;clear();canvas.classList.add('hidden');element('surface').classList.remove('hidden');if(controls)controls.enabled=false;if(mapControls)mapControls.enabled=false}
-};
+    close(){active=false;pending=false;clear();TerraView.hud.hide();canvas.classList.add('hidden');element('surface').classList.remove('hidden');if(controls)controls.enabled=false;if(mapControls)mapControls.enabled=false}
+});

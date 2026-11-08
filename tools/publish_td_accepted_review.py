@@ -10,7 +10,7 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
 from terrain_pipeline.td_surface_reaches import _plain
 from terrain_pipeline.td_hour_pages_review import export_hour_pages_review, load_hour_pages_review
 from tools.audit_td_hour_pages_binary import audit as audit_binary
@@ -25,7 +25,8 @@ def frozen_dependencies():
 
 
 def recheck_dependencies(pins, acceptance_path, acceptance_sha256):
-    from terrain_pipeline.td_basin_source import PRIMARY_PATH, PRIMARY_SHA256
+    from terrain_pipeline.basin_storage import PRIMARY_PATH as PRIMARY_PATH
+    from terrain_pipeline.basin_storage import PRIMARY_SHA256 as PRIMARY_SHA256
 
     if frozen_dependencies() != pins or file_sha256(acceptance_path) != acceptance_sha256:
         raise ValueError("publisher dependencies or acceptance changed during publication")

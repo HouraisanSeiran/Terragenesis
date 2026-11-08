@@ -1,12 +1,99 @@
 ﻿# Terragenesis（山川形意）
 
+**现行文档入口：** [docs/README.md](docs/README.md)（必读、架构、专题、归档分列）。进度总览：[TODO.md](TODO.md)。
+
+[世界生成系统模块总览与四阶段分类](docs/architecture/world-generation-system/README.md) · [本轮数据清理记录](docs/architecture/world-generation-system/data-cleanup.md)（2026-11-07；仅逻辑分类，模块代码不变）。过时对话/旧实现状态已迁入 [docs/archive/](docs/archive/README.md)；[1–3 阶段科学评估](Terragenesis-1-3阶段科学评估与开源对照-20261104.md)仍为现行参考，未归档。
+
+## 工作区项目总览（2026-10-21）
+
+**工程定位（用户重申，2026-11-03）：以无限世界为基础的地形生成算法系统。** 全部地形、山体、水系、环境和三维地貌功能围绕可扩展、确定性、按需生成及有界资源设计，目标是在世界生成场景中部分替代 World Machine / Gaea 的作用。有限区域是验证与交付单元；最终需要证明覆盖范围扩展时，局部生成仍具有明确的依赖与资源上界。[既有有界规划决策](docs/adr/0001-bounded-hydrological-planning.md)继续适用，当前尚未完成端到端无限世界验收。
+
+项目共用世界种子及历史复验规则见 [CONTRIBUTING.md：共用世界种子](CONTRIBUTING.md#共用世界种子用户更新2026-11-03)。
+
+**2026-11-08 火山岛体量与Voronoi纹理已修正为v5候选。** 按用户反馈拆开紧凑上锥与低缓熔岩裙坡，去除侵蚀型放射硬槽；固定种子、扭曲平滑Voronoi实际改变堆积厚薄、口缘与岛岸，`volcanic_lava_strength`可关闭。主工程148项与织梦31项通过，旧v4精确回放；15张同址新旧/关闭/开启图供用户继续判断自然度，不代表岩浆物理或游戏验收。普通岛仍按>25km²处理。[验收](.scratch/volcanic-islands-refinement-20261108/review.md) · [图集](验收图片/火山岛Voronoi形态修正-20261108/README.md) · [接口](docs/ocean-islands.md#特殊火山岛)。
+
+**2026-11-07 岛屿山系面积条件已放宽。** 默认实际露海面积严格>25km²即可准备山系，无默认腹地宽度门槛；25–100km²岛requested峰高为300m加固定±10%波动，较大岛沿用原300–3000m面积曲线。普通世界生成已接线，CPU任务pending，显式GPU任务复用既有TD链；两遍整岛raw统计/共同scale保护海岸与区块接缝。真实TD单块及最终世界消费已验证，完整真实岛峰高仍因内存门槛未验。[当前规则](docs/island-mountains-current.md) · [放宽记录与统计](.scratch/ocean-islands-20261106/area25-relaxation/review.md) · [原模型验收](.scratch/ocean-islands-20261106/area100-world-system-v3/review.md)。
+
+
+**山体当前方向（用户调整，2026-11-04）：大陆基底 → 世界尺度粗山系 → Terrain Diffusion 局部山地及特殊形态加工。** 当前补充真实冻结大陆上的弯曲山带、平行/斜支脉、分段峰鞍与山间低地，先满足世界地图尺度的低精度形状需求；不再将下述独立局部算法试验作为替代TD自然度的当前主线。具体范围见[世界粗山系规格](.scratch/world-mountain-belts-20261104/spec.md)。粗山系向TD的条件接线、局部多形态与新地形水文仍须分别验证。
+
+世界粗山系首版[2km正式候选与5km预览](验收图片/大陆基底与世界粗山系-20261104/README.md)已交付：真实1600×1280km冻结大陆上生成弯曲山带/支脉/峰鞍/低地，18项核心/导出检查及主端全格心、灰度/快照/冷读审计通过。2km为512000格，核心生成2.123秒，采样RSS158.24MiB；[E1–E9与图审](.scratch/world-mountain-belts-20261104/review.md)保留串珠/模板感及跨精度插值误差，5/2km不能直接混接。有限粗布局候选通过不等于无限增量、局部自然山形、TD或水文已经完成。
+
+[无限世界地形生成评价标准](无限世界地形生成评价标准.md)：全工程的按需生成、有限依赖、多尺度、山体形态与资源评价入口。2026-11-03 启动的独立多形态山体研发保留为[历史任务与证据](.scratch/mountain-morphology/spec.md)，不将其有限窗口成绩视为TD替代完成。
+
+独立山体首轮实现采用世界坐标噪波 → Advanced Terrain Erosion Filter底座 → 区域特殊处理噪波；高度图仅为采样输出。可运行入口为`tools/prepare_procedural_mountains.py`，接口、实图审查和有限过程范围见[实施记录](.scratch/mountain-morphology/implementation-review.md)。当前为有形态缺口的候选，尚未切换默认TD来源或完成无限世界生产验收。
+
+后续已实现[Voronoi结构与沟槽保护候选](.scratch/mountain-voronoi/review.md)：在Advanced底座上比较岩体、脊带与混合塑形，保存无保护/带保护对照，并重新检查路由。入口`tools/prepare_voronoi_mountains.py`；保护形态凹槽核心不等于保护完整河网。
+
+直脊改进已完成[高斯柔化与噪波局部破缺功能候选](.scratch/mountain-ridge-breakup/review.md)：在固定世界辅助格点上柔化结构差值，叠加弯曲、正脊缺口和小幅岩面噪波；入口`tools/prepare_ridge_breakup.py`，保持Advanced底座与原保护位置。2026-11-04审查：75项相关测试通过，512²生成约18秒；[实图](验收图片/山脊柔化与破缺-20261104/README.md)仍有蜂窝组织和碎山，参考山自然度、真实河网保护及默认世界替换仍待完成。
+
+另一条[连续山脊乘胞状体量试验](.scratch/mountain-product/review.md)先形成宏观山体，再以其坡度驱动Advanced。已交付[16位灰度高度图与三种乘法强度对照](验收图片/连续山脊乘Voronoi-20261104/README.md)，入口`tools/prepare_product_mountains.py`；54项相关测试通过，512²生成约5.3秒。山体仍偏宽缓，Advanced沿脊细线残留，自然度及水文接线未通过。
+
+后续[局部胞状体量与深沟壑](.scratch/mountain-local-volume/review.md)仅取局部高值乘原山体后叠加，负雕刻深度增益2.4，并对低坡度淡入；[五组灰度及差分图](验收图片/局部Voronoi体量与深沟壑-20261104/README.md)已交付，48项相关测试通过，512²约11.5秒，参考山自然度仍未通过。[图形学方法筛选](research/图形学地形生成方法筛选-20261104.md)补充曲线骨架/可变截面、距离场、方向场及局部三维等研究方向，阅读结论与待验证接法分列。
+
+本轮已试验[分级山脊骨架与可变截面](.scratch/mountain-skeleton/review.md)：固定主峰与两级弯曲主支脊，三种截面共用几何，叠加连续低幅基底与既有Advanced。已保存[七组灰度、关闭细节的峰体及剖面](验收图片/分级山脊骨架与可变截面-20261104/README.md)，65项相关检查通过，512²近/远10.66/9.89秒。轮廓差异成立，但三向模板、源间主脊连接和沿脊细线仍待改进，未验收自然山系或接入默认世界。
+
+当前主线为 **Python 无限世界河网 → Python 地理环境与生态 → Python 非高度场三维地貌 → 算法成熟后的 Java/Minecraft 转换与导入**。前三阶段尚未整体验收；下方带日期的算法与 Mod 记录保留为历史，不代表新主线全部完成。
+
+| 入口 | 内容 |
+| --- | --- |
+| [四阶段路线与当前进度](docs/terrain-diffusion-four-stage-roadmap.md) | 当前主线、阶段边界与未完成项 |
+| [全仓模块职责台账](docs/architecture/module-catalog/README.md) | 逐文件作用、依据、符号、静态依赖与哈希；未审定项明确标记 |
+| [工程实现说明](docs/architecture/implementation-guide.md) | 四阶段具体方法、真实入口/数据流、已有能力与后续接线 |
+| [历史蓝图提炼与四阶段映射](docs/legacy-river-plan-takeaways-20261022.md) | 仍适用的方法与验收要求；两份根目录原文已移入 deprecated-plans/ |
+| [模块版本收敛审计](.scratch/module-version-consolidation-20261022/report.md) · [A方案执行清单](.scratch/module-version-consolidation-20261022/plan.md) | 按族迁移；首批3份旧算法已隔离，其余未完成 |
+| [首批独立验证](.scratch/module-version-consolidation-20261022/batch-01-independent-review.md) · [历史源码目录](legacy-code/README.md) | 默认最新版与显式历史复验分离；原始字节/哈希保留 |
+| [四阶段算法组成与详细规划表](.scratch/terrain-four-stage-review-20261021/algorithm-components-review.md) | R1–R9、G1–G20、V1–V8 组成、现状、缺口与审阅稿边界；不是全量批准实施清单 |
+| [第一阶段实施计划](.scratch/river-infinite-world/plan.md) | 任务顺序、依赖与验收门；同目录保存专题契约 |
+| [环境依赖矩阵](docs/terrain-geography-dependency-matrix.md) | 第二阶段概念、依赖与外在表现 |
+| [遥感式验收图片规范](docs/remote-sensing-acceptance.md) | 此后成果图片默认俯视遥感式合成影像，降水/气候等配同源定量专题图 |
+| [非高度场地貌目录](docs/terrain-non-heightfield-landforms-inventory.md) | 第三阶段形态与 TD 集成门槛 |
+| [自然环境交接](.scratch/infinite-world-geography/handoff-20261021.md) | 历史专题接口与证据，旧编号不换算为四阶段进度 |
+| [DeepSeek 任务交接目录](.scratch/deepseek-harness/) | 规格、验收、请求回复及返工、本地网关 |
+| [DeepSeek 代码审查报告](.scratch/deepseek-review-20261021/report.md) | 三个已复现问题、回归结果与审查限制；本次未修复 |
+| [工作区接手说明](vantaloom.md) · [工程 TODO](TODO.md) | 完整交接目录索引与工作总览 |
+
+具体进度以四阶段路线、专题契约与保存证据对照为准；第一阶段计划中的旧待办不覆盖后续已交付记录。
+
 ## 算法框架与代码仓库
+
+[河网工程交互总览](docs/river-engineering-map.html)：展开模块查看成果、剩余问题和后续方向。[总览源文档](docs/river-engineering-map.md) · [Markmap 使用说明](tools/markmap/README.md)。
+
+2026-10-15 [河流主导三角洲有限机制首版](docs/td-fluvial-delta-20261015.md)已完成：固定TD海口水沙输入、沉积及下一阶段水路反馈通过检查，保留入口淤堵反例。实际TD场景尚为水下沉积，合成浅水对照验证出露；潮汐须另行讨论后进入下一版，波浪在TODO。
+
+2026-10-15 同源38.4km TD河网已加入代表性流量及床岸硬度驱动的宽深规则：209处汇流增流、204处展宽、207处加深。已有米制断面与粗栅格切削预览；30m地形尚未解析全部窄河槽，材料账未接输沙。[结果与边界](docs/td-discharge-rock-channel-geometry-20261015.md)。
+
+2026-10-14 低地径流与可见河道分离首版已在同一38.4km TD大图实际运行：含季节性河道的低地密度减少43.30%，完整产流水量、主干连续性及湿地等同等承接对象水账通过关键检查。[报告与预览](docs/td-lowland-runoff-20261014.md)记录首版参数、未解终点及仍存在的形态问题，不代表成熟自然河网发布。
 
 本工程同时包含独立米制地形算法和历史 Minecraft 适配器。算法入口见 [algorithm/README.md](algorithm/README.md)，Mod 边界见 [minecraft-mod/README.md](minecraft-mod/README.md)。地形输入、地表/地下水系、VDM 岩壁和后续侵蚀属于算法层，不以 Minecraft 方块尺度定义物理模型。
 
 当前地表河槽已保存一个独立检查通过的真实 TD 派生片段：120节点、118条接回弧、18个分叉，最长连续路径1230m。地下闭环与VDM三维样例正在实施；实际交付状态见 [三维水系文档](docs/hybrid-river-network.md)。这不等于完整自然海口、全网水动力或地下水地质认证。
 
 代码仓库不包含模型权重、Python运行环境、区域缓存和大型验证产物。安装与证据范围见 [源码交付说明](docs/source-publication.md)。下方版本、安装与游戏案例是既有Mod路线的记录，不代表新算法默认接入了游戏世界。
+
+## 长期目标：TD 虚构世界中的自然可信河网
+
+本工程的河网目标，是在 Terrain Diffusion（TD）生成的**虚构世界**中，形成受该世界地形、集水与边界约束，具有可信支流、河槽、湖泊、出口和水沙地貌响应的河网；不是逐点复原某条现实河流，也不以地图看起来像河流作为验收。所谓“自然可信”，应同时经得起拓扑连通、汇水与河阶、纵坡与床面、河宽/流量、水量和泥沙守恒、湖泊与出口语义，以及跨种子/降雨情景的统计和反例审查。现实流域资料可作为分布与过程的对照，不应被误标为 TD 世界的真实答案。
+
+目前已有固定 TD 来源、局部河槽与若干有界形态候选，但这**不等于**全域自然河网、经认证自然海口或已耦合的三角洲分汊。真实 TD 高程上的人为划定陆水边界只能作为明确标注的局部算法测试；未经独立边界与水沙验收，候选不得升级成已发布河道。新算法遵循 [河网模块主线分类](docs/architecture/river-module-classification-20261009.md)，前端只读固定证据；Minecraft 是后续消费环节，不决定米制算法的物理语义。
+
+现行开发总路线为[最新版四阶段开发总览](docs/terrain-diffusion-four-stage-roadmap.md)，各阶段详细组成见[四阶段算法组成与证据表](.scratch/terrain-four-stage-review-20261021/algorithm-components-review.md)（审阅稿，不自动批准全部候选）。旧阶段 0–5 规划已废弃并移入 [deprecated-plans/](deprecated-plans/README.md)，不再作为任务发布依据；历史验收证据继续按原范围保留。
+
+阶段 0–5 本轮有限实现与评价交付见[最终报告](docs/td-natural-river-stages-0-5-20261011-final.md)：噪波气候接入原生河湖水账，独立留出 6 组中 5 组通过、1 组拒绝，原活动泥沙完整 900 秒空间与工程预算验收通过。最终只读页包含全部保存证据；形态仍为候选，不授予全域自然度或发布认证。
+
+六份完整原始 TD 地形上的[实际河网与河床生成](docs/td-terrain-generated-rivers-20261011.md)已贯通噪波降雨、地形路由、连续床面和唯一全局河床：22569/27336 条候选河段形成实际河床，4767 条真实超出 4m 切深预算而拒绝，最终六源独立冷读通过。四个实际数值或几何过约束问题已修复；固定视角仍显示栅格折角与中心窄深槽。这些调试用来源不再作为独立留出集，断面自然度、深洼湖泊、域外延续和自然可信认证仍待完成。
+
+[本轮河槽形态修复与六源关键验收已完成](docs/td-river-shape-repair-20261013-final.md)：第37批保留全部22569条旧接受河段、4767条旧拒绝，六源实际床面独立冷读通过；78张固定位置图已审阅，77处断面可完整比较、1处边界采样不足。普通≥30°转角5414→1604，实际底部与弯角整体改善，汇流口折角、局部不对称及谷侧偏位仍保留，不等于全域自然认证。论文采用程度与Nucleation候选见[交接记录](docs/river-progress-and-reference-use-20261013.md)。
+
+水文规划域已完成有限粗规划、冻结归属查询和首例12个月周期水账；真实TD关键位置的地形衔接正在验收。49个固定支持范围中35个成功、14个明确拒绝；这不是全世界覆盖证明。首例海岸/内流双域分别约34,700/26,700km²，内流湖日步全年水位526.122967–526.281611m，日步与半日步的月水位最大差约0.345mm。规划级PET尚未观测标定，水账不代表全网水动力。设计、失败证据和剩余工作见[水文规划域实施记录](docs/hydrological-planning-domain-progress.md)。
+
+2026-10-14现行v5开发样例的完整10km普通河段20片、14.142km海口29片和4.888km三臂联合床面已通过保存后独立检查及实际细粗端口连接；459个已归属粗单元到达合法终点。v5混合湖已通过年度重放、日/半日周期和190个临界水位连通检查，范围是细窗口及保留粗湖环。种子3、17、29固定12槽审查保留全部缺失与拒绝：部分河床不满足原约束，实际图中的条带、平整区、过度平滑和笔直路径使自然度不通过。本轮未训练或微调TD，已有TD模型提供原始地形，河网由后续规则和数值算法生成。水文准备默认两核低优先级，保留来源精度与冻结预算。详见[水文规划域实施记录](docs/hydrological-planning-domain-progress.md)及[本轮完成任务](.scratch/hydrological-planning-domain/issues/05-algorithm-completion.md)；当前只可冻结开发候选，首版整体仍未完成，Minecraft导入后置。
+
+2026-10-14接续的[同源地形保留与河床修复](docs/td-hydrology-naturalness-improvement-20261014.md)已加入独立可选投影：平滑延拓冻结边界的高程位移，并在宏观阶段加入采样横断面规划包络。固定seed29普通河段相对旧目标方案减少约35%的地形绝对改写量，原失败位置的60m细床及同一完整固定窗口4.04km、9段河床均已通过独立检查，最大切深3.707m。当前仍有规则条带和长直路径，不授予自然度或Minecraft导入认证。
+
+2026-10-14 的[38.4km 同源大图汇流修复](docs/td-large-map-confluence-20261014.md)已实际生成并保存后审查：浅洼溢流、同域共享下游和普通斜坡最大降坡选路接通，汇流点31→343、最长连续路径11.335→40.984km。静态页展示新旧全幅与汇流放大图。5个可见深洼、64个域端口和51个图幅边界端口仍未闭合；结果是路由/候选水面验收，不代表全图实际细床、自然度或Minecraft导入通过。
+
+随后图审确认上述版本把10km粗域标签误当不可跨越墙，造成矩形截河。已在同一TD来源上完成[原生汇水重规划](docs/td-large-map-native-replan-20261014.md)：64个内部人工端口清零，问题位置全部有继续下游路径；粗标签现在只作不相容诊断。新版仍是固定38.4km窗口内的局部候选，窗口外延续、深洼、实际细床和自然度仍未认证。
 
 ## 既有Mod路线
 
@@ -144,11 +231,17 @@ VDM 存储 Δx、Δy、Δz，单位为方块，参考平面 Y=72；最终顶点�
 
 ## 下一步
 
-- [实现状态](IMPLEMENTATION_STATUS.md)
+- [实现状态（已归档）](docs/archive/historical-reports/IMPLEMENTATION_STATUS.md) · [现行文档入口](docs/README.md)
 - [工程 TODO](TODO.md)
 - [Voronoi 岩壁、贴壁流水、侧蚀与倾角设计](research/岩壁Voronoi与贴壁流水设计.md)
 
 此前直接 VDM 扩散路线文档已保留在 research/history/，不代表当前功能状态。
+
+### 有限 TD 水量闭环验收
+
+`runtime/venv/Scripts/python.exe -B -m tools.verify_td_water_cycle --output verification/td-natural-river-stages/<新目录>` 复用既有原生产流、Manning 河道与湖泊共享步求解。固定 TD 的诊断 receiver 决定 96 格贡献域，单个邻接河段连接一个原生底格湖库存；横断面、湖支持与出口是明确的有限工程假设，不是认证自然海口。
+
+当前保存证据见 `verification/td-natural-river-stages/water-cycle-20261011-final-bound/`。`metric_water_cycle.py` 冷读验证来源/强迫/物理秒身份、贡献分域、河湖端口、原生面积、完整水账与 dense/sparse/hourly 保存帧；包内保存父来源、原生产流、河湖 trace 及采样结果。验收范围为 7200 秒局部有界水量闭环；不宣称二维全域联解、含湖床变或自然可信认证。详细实测与失败证据见 `.scratch/td-natural-river-stages/issues/02-water-morphology.md`。
 
 
 

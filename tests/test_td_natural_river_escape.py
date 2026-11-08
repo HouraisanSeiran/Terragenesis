@@ -112,11 +112,11 @@ class NaturalRiverEscapeTests(unittest.TestCase):
             _verify_pins_unchanged(pins)
 
     def test_cold_saved_diagnosis_does_not_build_any_artifact(self):
-        with patch("terrain_pipeline.td_basin_hierarchy.build_basin_hierarchy",
+        with patch('terrain_pipeline.basin_topology.build_basin_hierarchy',
                    side_effect=AssertionError("hierarchy build")), patch(
                 "terrain_pipeline.td_natural_river_network.build_natural_river_network",
                 side_effect=AssertionError("network build")), patch(
-                "terrain_pipeline.td_basin_escape_plan.make_basin_escape_plan",
+                'terrain_pipeline.basin_topology.make_basin_escape_plan',
                 side_effect=AssertionError("escape plan build")):
             network, hierarchy, plan, pins = load_saved_inputs()
             report = diagnose_escape_chain(network, hierarchy, plan, pins)

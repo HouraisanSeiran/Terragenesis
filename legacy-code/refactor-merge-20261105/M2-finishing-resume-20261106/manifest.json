@@ -1,0 +1,1649 @@
+[
+  {
+    "source_path": "tools/prepare_hybrid_river_hydraulics.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_hybrid_river_hydraulics.py",
+    "sha256": "862d8436683e3c90517c2f3a47139e5d81fb67857ea9339799e0f0f730f43a3c",
+    "bytes": 11642,
+    "target_module": "tools.prepare_hybrid_hydraulics",
+    "function": [
+      "CODE_FILES",
+      "ROOT",
+      "SURFACE_AUDIT_SHA",
+      "SURFACE_INDEX_SHA",
+      "main",
+      "prepare_experiments",
+      "prepare_graph",
+      "publish"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/prepare_hybrid_river_hydraulics_v8.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_hybrid_river_hydraulics_v8.py",
+    "sha256": "91fb257b54476ed33ed70c94c1e0abcaa817aa988aaa288f8df8fa8060163ee6",
+    "bytes": 14059,
+    "target_module": "tools.prepare_hybrid_hydraulics",
+    "function": [
+      "DATA_ROOT",
+      "NEW_CODE",
+      "ROOT",
+      "SCHEMA",
+      "accuracy_policy",
+      "main",
+      "prepare",
+      "source_identity"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/hybrid_hydraulics_preparation_common.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/hybrid_hydraulics_preparation_common.py",
+    "sha256": "d687ed1fbff779ff0b49f81f55112efdfc3fd7c6b1ff95732fc9e6adeece3d29",
+    "bytes": 10576,
+    "target_module": "tools.hybrid_hydraulics_records",
+    "function": [
+      "PHYSICAL_MODEL_FIELDS",
+      "accuracy_policy",
+      "atomic_save",
+      "check_original_pins",
+      "file_sha",
+      "meaningful_evidence",
+      "paired_refinement",
+      "physical_model_identity",
+      "pin",
+      "precision_experiments",
+      "saved_pin",
+      "validate_geometry"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/hybrid_hydraulics_legacy.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/hybrid_hydraulics_legacy.py",
+    "sha256": "0ec34cb863f362998b299dbdcfd5a3ef7b22efbb0f0d31f244f47cccd670c301",
+    "bytes": 7369,
+    "target_module": "tools.frozen_hybrid_hydraulics",
+    "function": [
+      "DATA_ROOT",
+      "HydraulicsLegacyReplay",
+      "MANIFEST_SHA256",
+      "SOURCE_ROOT",
+      "_COUNTER",
+      "_LOCAL_PACKAGES",
+      "_ReplayBindings",
+      "load_legacy_module"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/replay_hybrid_hydraulics_legacy.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/replay_hybrid_hydraulics_legacy.py",
+    "sha256": "48a1e03a4b39a8b6da275599bf52c368583d21e6c1cc674df97c09cb63785b60",
+    "bytes": 1060,
+    "target_module": "tools.replay_frozen_hybrid_hydraulics",
+    "function": [
+      "MODULES",
+      "main"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_hybrid_river_hydraulics.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_hybrid_river_hydraulics.py",
+    "sha256": "19c457910e24023bc661160ab9b5640ead1932acaa901cf656ab039c8907f6c5",
+    "bytes": 52350,
+    "target_module": "tools.audit_hybrid_hydraulics",
+    "function": [
+      "ARRAY_KEYS",
+      "AUDIT_SCHEMA",
+      "LEDGER_COLUMNS",
+      "LINK_KEYS",
+      "ROOT",
+      "accuracy_parameters",
+      "array",
+      "audit",
+      "check_accuracy_policy",
+      "check_case_binding",
+      "check_friction_probes",
+      "check_result",
+      "check_same_physics",
+      "check_three_origins",
+      "compare_saved",
+      "main",
+      "physical_identity",
+      "section_area",
+      "section_friction"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_hybrid_river_hydraulics_diagnostic.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_hybrid_river_hydraulics_diagnostic.py",
+    "sha256": "c1dabc023272ac41ab7528671a06760c30351ad480df47da0497837b1b406f0e",
+    "bytes": 7519,
+    "target_module": "tools.audit_hybrid_hydraulics",
+    "function": [
+      "ROOT",
+      "diagnose",
+      "main"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_hybrid_river_hydraulics_v8.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_hybrid_river_hydraulics_v8.py",
+    "sha256": "66677a1ba5525929b81b426954c02ee885333a355beddc4c068631ac07d2d9d1",
+    "bytes": 17155,
+    "target_module": "tools.audit_hybrid_hydraulics",
+    "function": [
+      "NUMERICAL_VERSION",
+      "ROOT",
+      "audit",
+      "check_accuracy",
+      "check_frame",
+      "expected_frame",
+      "local_geometry",
+      "main",
+      "projected_result"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/prepare_hybrid_geometry_current.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_hybrid_geometry_current.py",
+    "sha256": "c3be24e5a733ea22452d46b0fe8442bd5b53f068dd467ed581b58c6d82ae5061",
+    "bytes": 8934,
+    "target_module": "tools.prepare_hybrid_geometry",
+    "function": [
+      "CURRENT_FILES",
+      "POLICY",
+      "POLICY_SHA256",
+      "SCHEMA",
+      "main",
+      "prepare"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/prepare_hybrid_cave_geometry.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_hybrid_cave_geometry.py",
+    "sha256": "fff565d6c204e089a864456d0282f6b6dbf8c7741075bb806867a8550af38375",
+    "bytes": 9471,
+    "target_module": "tools.prepare_hybrid_geometry",
+    "function": [
+      "CODE_FILES",
+      "ROOT",
+      "SURFACE_AUDIT_SHA",
+      "SURFACE_INDEX_SHA",
+      "checked_identity",
+      "file_sha",
+      "load_inputs",
+      "main",
+      "prepare",
+      "read",
+      "sampler_grid_count",
+      "save"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/prepare_hybrid_river_faces.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_hybrid_river_faces.py",
+    "sha256": "3c4f6afbf888312a10c8178fde0f099b7b169324bf7ef0e4bbc2831e728789a1",
+    "bytes": 9000,
+    "target_module": "tools.prepare_hybrid_geometry",
+    "function": [
+      "AUDIT",
+      "AUDIT_SHA",
+      "BASE",
+      "CODE_FILES",
+      "GEOMETRY",
+      "GEOMETRY_SHA",
+      "GRAPH_SHA",
+      "ROOT",
+      "file_sha",
+      "load_inputs",
+      "main",
+      "prepare",
+      "read",
+      "save"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/prepare_hybrid_surface_composition.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_hybrid_surface_composition.py",
+    "sha256": "a136d55a2e24a0500b6e6072e21314bd211ce5abf4ff642b7666716142cd5610",
+    "bytes": 6429,
+    "target_module": "tools.prepare_hybrid_geometry",
+    "function": [
+      "CODE_FILES",
+      "DEPENDENCIES",
+      "ROOT",
+      "main",
+      "prepare",
+      "save"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/prepare_hybrid_surface_composition_v2.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_hybrid_surface_composition_v2.py",
+    "sha256": "e97ace224a4697fded5890e1bba8f94a429fc5b39f0eaf4fda8091d61e531282",
+    "bytes": 9856,
+    "target_module": "tools.prepare_hybrid_geometry",
+    "function": [
+      "CODE_FILES",
+      "DEPENDENCIES",
+      "FROZEN_V1_CODE",
+      "ROOT",
+      "main",
+      "prepare",
+      "refused_from_stage"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/prepare_hybrid_surface_composition_v3.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_hybrid_surface_composition_v3.py",
+    "sha256": "24717bccd7c547e7b110652db6ae44d798e674cb8db674788f6cf9bf12cc9509",
+    "bytes": 9991,
+    "target_module": "tools.prepare_hybrid_geometry",
+    "function": [
+      "CODE_FILES",
+      "FROZEN_SOURCE_CODE",
+      "ROOT",
+      "SOURCE",
+      "SOURCE_SHA",
+      "load_stage",
+      "main",
+      "prepare"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/hybrid_geometry_io.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/hybrid_geometry_io.py",
+    "sha256": "bb54f6b038d775760f10214cd93f55de37262de9f48b8a2fc807846e33c4da23",
+    "bytes": 5619,
+    "target_module": "tools.hybrid_geometry_records",
+    "function": [
+      "AUDIT",
+      "AUDIT_SHA",
+      "BASE",
+      "CURRENT_AUDIT_FILES",
+      "CURRENT_GENERATOR_FILES",
+      "GEOMETRY",
+      "GEOMETRY_SHA",
+      "GRAPH_SHA",
+      "ROOT",
+      "current_audit_code",
+      "file_sha",
+      "load_inputs",
+      "read",
+      "save",
+      "verify_current_code"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_hybrid_geometry_current.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_hybrid_geometry_current.py",
+    "sha256": "486f3ded1f15c5fe029dd21609f8e74b4514eadfd838c336e03064ceed33c7a6",
+    "bytes": 17291,
+    "target_module": "tools.audit_hybrid_geometry",
+    "function": [
+      "SCHEMA",
+      "audit_composition",
+      "audit_faces",
+      "load_native_for_geometry"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_hybrid_cave_geometry.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_hybrid_cave_geometry.py",
+    "sha256": "6161a0a0856600a5ca3356e9da4424547bbeb33a9a11ec9604e140e656a463a1",
+    "bytes": 14748,
+    "target_module": "tools.audit_hybrid_geometry",
+    "function": [
+      "AUDIT_SCHEMA",
+      "FROZEN_CODE",
+      "POLICY",
+      "ROOT",
+      "audit",
+      "main"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_hybrid_cave_geometry_v2.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_hybrid_cave_geometry_v2.py",
+    "sha256": "fb35600ba54c122e258624af475db0536f1a82b702610e885e04c858de33fde8",
+    "bytes": 14814,
+    "target_module": "tools.audit_hybrid_geometry",
+    "function": [
+      "AUDIT_SCHEMA",
+      "FROZEN_CODE",
+      "POLICY",
+      "ROOT",
+      "audit",
+      "main"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_hybrid_river_faces.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_hybrid_river_faces.py",
+    "sha256": "f16987cfbcef80977b96c948c125757d55002d0dbab9d6ae9d3eea80bde71ded",
+    "bytes": 36603,
+    "target_module": "tools.audit_hybrid_geometry",
+    "function": [
+      "AUDIT_SCHEMA",
+      "FROZEN_FACE_CODE",
+      "GEOMETRY_AUDIT_SHA256",
+      "GEOMETRY_SHA256",
+      "GRAPH_SHA256",
+      "PLANE_TOLERANCE_M",
+      "POLICY",
+      "ROOT",
+      "audit",
+      "audit_aperture",
+      "audit_face",
+      "audit_slice",
+      "check_plane",
+      "independently_slice",
+      "main",
+      "polygons_geometry",
+      "saved_slice_geometry",
+      "source_canonical_floor",
+      "triangle_plane_segments",
+      "verify_floor",
+      "whole_line_supported"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_hybrid_river_faces_v2.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_hybrid_river_faces_v2.py",
+    "sha256": "8f51ab07140bd4f6824a405ec3de6e2cd9f809a06724d5ebe32739722a27d1b0",
+    "bytes": 28601,
+    "target_module": "tools.audit_hybrid_geometry",
+    "function": [
+      "ROOT",
+      "SCHEMA",
+      "audit",
+      "audit_boundary",
+      "audit_role_slice",
+      "main",
+      "topology_roles"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_hybrid_surface_composition.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_hybrid_surface_composition.py",
+    "sha256": "bb655a3a06ae410b22c72810d18a73a5c7b576b809a4ce9d0ef853255337b585",
+    "bytes": 45854,
+    "target_module": "tools.audit_hybrid_geometry",
+    "function": [
+      "AUDIT_SCHEMA",
+      "EmptySolid",
+      "FROZEN_COMPOSITION_CODE",
+      "GEOMETRY_AUDIT_SHA256",
+      "GEOMETRY_SHA256",
+      "POLICY",
+      "ROOT",
+      "audit",
+      "audit_canonical_pieces",
+      "audit_connections",
+      "audit_material_solids",
+      "audit_prisms",
+      "audit_sampling_mismatches",
+      "exact_fan_cut",
+      "main",
+      "saved_patch_affine_depth",
+      "source_patch_height",
+      "volume_difference"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_hybrid_surface_composition_v2.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_hybrid_surface_composition_v2.py",
+    "sha256": "814c87591f8a6adecc82fab4c170424fa14fc0624d885c28802a09fd091cdf75",
+    "bytes": 41513,
+    "target_module": "tools.audit_hybrid_geometry",
+    "function": [
+      "AUDIT_SCHEMA",
+      "ERRORS",
+      "FROZEN_COMPOSITION_CODE",
+      "FROZEN_HELPERS",
+      "NUMERICAL_POLICY",
+      "NUMERICAL_POLICY_SHA256",
+      "POLICY",
+      "ROOT",
+      "SLICE_SCHEMA",
+      "audit",
+      "audit_exact_slice",
+      "audit_port",
+      "audit_side_loops",
+      "check_census",
+      "check_code_pins",
+      "check_shape",
+      "cross",
+      "domain_parts",
+      "dot",
+      "independent_triangle_trace",
+      "main",
+      "polygon_parts",
+      "rational_vector",
+      "signed_area"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_hybrid_surface_composition_v3.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_hybrid_surface_composition_v3.py",
+    "sha256": "6d1a59873b8543b25c532fdfbf4265fec2e93a9a394a0232242796926013cd3d",
+    "bytes": 71948,
+    "target_module": "tools.audit_hybrid_geometry",
+    "function": [
+      "AUDIT_SCHEMA",
+      "ERRORS",
+      "FROZEN_COMPOSITION_CODE",
+      "FROZEN_HELPERS",
+      "NUMERICAL_POLICY",
+      "NUMERICAL_POLICY_SHA256",
+      "POLICY",
+      "ROOT",
+      "SLICE_SCHEMA",
+      "SOURCE_CHECKPOINT_SHA256",
+      "SOURCE_COMPOSITION_SHA256",
+      "SOURCE_INDEX_SHA256",
+      "SOURCE_V2_CODE",
+      "Solid",
+      "area_upper",
+      "audit",
+      "audit_complete",
+      "audit_exact_slice",
+      "audit_port",
+      "audit_prisms",
+      "audit_side_loops",
+      "ceil_fraction",
+      "certified_side",
+      "check_census",
+      "check_code_pins",
+      "check_rational_boundaries",
+      "check_shape",
+      "check_stage_lineage",
+      "cross",
+      "domain_parts",
+      "dot",
+      "independent_triangle_trace",
+      "main",
+      "on_segment",
+      "planar_turn",
+      "polygon_parts",
+      "projection_certificate",
+      "rational_area",
+      "rational_contains",
+      "rational_vector",
+      "segments_meet",
+      "signed_area"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_hybrid_surface_composition_v4.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_hybrid_surface_composition_v4.py",
+    "sha256": "9db6e56a046c4fb3fc4319add596c2e828a1763dabfffaf372f0a94c03b39396",
+    "bytes": 14891,
+    "target_module": "tools.audit_hybrid_geometry",
+    "function": [
+      "AUDIT_SCHEMA",
+      "BASE",
+      "COMPOSITION_SHA256",
+      "ERRORS",
+      "PREVIOUS_AUDIT_SHA256",
+      "PREVIOUS_CODE",
+      "ROOT",
+      "audit",
+      "main",
+      "record_failure",
+      "resume",
+      "validate_material_account",
+      "validate_resume_parent"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_hybrid_surface_composition_v5.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_hybrid_surface_composition_v5.py",
+    "sha256": "bb1500f24ebdc3702645ea7676de6a774556f8bdd79b479ab7600eac4783fb16",
+    "bytes": 12365,
+    "target_module": "tools.audit_hybrid_geometry",
+    "function": [
+      "AUDIT_SCHEMA",
+      "ERRORS",
+      "INHERITED_FIELDS",
+      "PREVIOUS_AUDIT_SHA256",
+      "PREVIOUS_CODE",
+      "ROOT",
+      "audit",
+      "frozen",
+      "main",
+      "resume",
+      "validate_parent"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_hybrid_surface_composition_v6.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_hybrid_surface_composition_v6.py",
+    "sha256": "5e8775d0762bc1dc6a634520ec1c3f14c703b37b08f942c9f58e5cb9c50d4e4b",
+    "bytes": 13201,
+    "target_module": "tools.audit_hybrid_geometry",
+    "function": [
+      "AUDIT_SCHEMA",
+      "BASE",
+      "COMPOSITION_SHA256",
+      "ERRORS",
+      "ROOT",
+      "V4_AUDIT_SHA256",
+      "V4_PATH",
+      "V5_AUDIT_SHA256",
+      "V5_CODE",
+      "audit",
+      "iter_input_pins",
+      "main",
+      "resume",
+      "validate_parent"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/hybrid_geometry_legacy.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/hybrid_geometry_legacy.py",
+    "sha256": "8f3cc675a04b5a6b1f1407b6a28d86c3b0e836c80bbd4cb1f9fb15cb204053e2",
+    "bytes": 6713,
+    "target_module": "tools.frozen_hybrid_geometry",
+    "function": [
+      "CODE_ROOT",
+      "DATA_ROOT",
+      "GeometryLegacyReplay",
+      "MANIFEST_SHA256",
+      "_COUNTER",
+      "load_legacy_module"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/export_hybrid_cave_review.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/export_hybrid_cave_review.py",
+    "sha256": "688409942bc69c51cd5baa97ef7ce381dc4b3651a8f8a7f70529655e07403bc3",
+    "bytes": 16981,
+    "target_module": "tools.export_hybrid_geometry_review",
+    "function": [
+      "AUDIT_SCHEMA",
+      "MESH_NAMES",
+      "ROOT",
+      "SCHEMA",
+      "caseartifact",
+      "load_review",
+      "main",
+      "render_figures"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/export_hybrid_river_faces_review.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/export_hybrid_river_faces_review.py",
+    "sha256": "8aa5dbcf3611e8e3d9967ed13be8378171b20bf7286df33d835b20b5e6cb0434",
+    "bytes": 6650,
+    "target_module": "tools.export_hybrid_geometry_review",
+    "function": [
+      "ROOT",
+      "export",
+      "main"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/export_hybrid_river_hydraulics_review.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/export_hybrid_river_hydraulics_review.py",
+    "sha256": "af2ebca91471236e7d905a29ad39fa5fb86051f67d406c8402ed963b7e3e1a8e",
+    "bytes": 7959,
+    "target_module": "tools.export_hybrid_hydraulics_review",
+    "function": [
+      "ROOT",
+      "export",
+      "main",
+      "render"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/export_vdm_geometry_io_review.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/export_vdm_geometry_io_review.py",
+    "sha256": "9102783c444a4541659e258b3512d23caaa817de8e2e919f62ed358004eabfc0",
+    "bytes": 13081,
+    "target_module": "tools.export_vdm_cuts_review",
+    "function": [
+      "BASE",
+      "FIXED_PINS",
+      "FLAGS",
+      "MAX_BYTES",
+      "MESH_NAMES",
+      "ROOT",
+      "checked_path",
+      "content_identity",
+      "encoded",
+      "export",
+      "load_inputs",
+      "main",
+      "read_record",
+      "reject_constant",
+      "require",
+      "same_pin",
+      "sha256_file",
+      "unique_object",
+      "validate_mesh",
+      "validate_vectors",
+      "write_synced"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/prepare_special_terrain_forms.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_special_terrain_forms.py",
+    "sha256": "4efe8097abc3282fab427e7b50af808e17889ca96b3783af5ab303ebe629112c",
+    "bytes": 3164,
+    "target_module": "tools.prepare_special_terrain",
+    "function": [
+      "DEFAULT_OUTPUT",
+      "PROTECTION_IDENTITY",
+      "ROOT",
+      "SOURCE_IDENTITY",
+      "build_one",
+      "main"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/prepare_special_terrain_surface.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_special_terrain_surface.py",
+    "sha256": "6fb7b9544615b907abc289230e84a3891455e399d57a4d0dcee64f9fa10b35a9",
+    "bytes": 4599,
+    "target_module": "tools.prepare_special_terrain",
+    "function": [
+      "DEFAULT_OUTPUT",
+      "DEFAULT_PARENTS",
+      "ROOT",
+      "load_parent",
+      "main"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/preview_special_terrain_forms.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/preview_special_terrain_forms.py",
+    "sha256": "7c46ba0bb0ce88e20755f53d9559bea94a4977e6c4c3cbe84b7c95a583d03e12",
+    "bytes": 23180,
+    "target_module": "tools.preview_special_terrain",
+    "function": [
+      "CATEGORY_LABELS",
+      "CONTACT_SHEET",
+      "CONTACT_SLOTS",
+      "DEFAULT_BUNDLES",
+      "DEFAULT_OUTPUT",
+      "L1_PLACEHOLDERS",
+      "MAX_FACES",
+      "PNG_META",
+      "ROOT",
+      "SAMPLE_SEED",
+      "SIX_CATEGORIES",
+      "VERIFICATION_DIRECTORY",
+      "chart_extent",
+      "guard_output",
+      "load_manifest",
+      "main",
+      "measure",
+      "plot_plan",
+      "plot_profile",
+      "plot_solid",
+      "preview_kind",
+      "require",
+      "sha256_file",
+      "write_contact_sheet",
+      "write_placeholder"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/preview_td_special_terrain.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/preview_td_special_terrain.py",
+    "sha256": "add36b5745b071d5d1a31010cff7373844e3fd1eac1273ff2a0c9d59e1efb9aa",
+    "bytes": 21100,
+    "target_module": "tools.preview_special_terrain",
+    "function": [
+      "ALL_FLAGS",
+      "CHANNEL_SELECTION",
+      "DEFAULT_OUTPUT",
+      "FILL_ONLY_SEMANTICS",
+      "FOOT_ELEVATION_BASIS",
+      "POSITION_ASSUMPTION",
+      "ROOT",
+      "SAMPLE_SEED",
+      "SOURCE",
+      "SOURCE_PATH",
+      "VERIFICATION_DIRECTORY",
+      "WINDOW_CENTER_M_XZ",
+      "WINDOW_SIZE_M",
+      "_finite_number",
+      "_footprint_bed_min",
+      "build_case",
+      "case_record",
+      "cases_mask",
+      "centred_recipe",
+      "chart_center_m_xz",
+      "chart_size_m_xz",
+      "guard_output",
+      "main",
+      "replace_target",
+      "require"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_special_terrain_forms.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_special_terrain_forms.py",
+    "sha256": "f3070f70620f80d4b834e73c8ae69d3c05b1067999b8d326f659f590e7536a49",
+    "bytes": 14189,
+    "target_module": "tools.audit_special_terrain",
+    "function": [
+      "ARRAY_KEYS",
+      "AUDIT_SCHEMA",
+      "FLAGS",
+      "METADATA_KEYS",
+      "RECIPE_KEYS",
+      "ROOT",
+      "TARGET_KEYS",
+      "TOLERANCE",
+      "audit_bundle",
+      "audit_mesh",
+      "audit_sampling_gate",
+      "main",
+      "minimal_scope",
+      "rebuild_analytic_chart",
+      "rebuild_displacement",
+      "rebuild_relief",
+      "require",
+      "smoothstep"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_special_terrain_surface.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_special_terrain_surface.py",
+    "sha256": "1c6b5019a250e302afed747c4a9d4bb692f7c983cb87ad914bf311f79ac00080",
+    "bytes": 25072,
+    "target_module": "tools.audit_special_terrain",
+    "function": [
+      "ARRAY_KEYS",
+      "AUDIT_SCHEMA",
+      "DISSECTION_KEYS",
+      "FACET_KEYS",
+      "FLAGS",
+      "LEDGER_COUNTS",
+      "LEDGER_SCALARS",
+      "METADATA_KEYS",
+      "PARENT_ARRAY_KEYS",
+      "PARENT_SCHEMA",
+      "PHASE_KEYS",
+      "RETIRED_RECIPE_FIELDS",
+      "ROOT",
+      "SHA256_LENGTH",
+      "STEP_KEYS",
+      "SUPERSEDED",
+      "SURFACE_ALGORITHM",
+      "SURFACE_SCHEMA",
+      "TOLERANCE",
+      "audit_bundle",
+      "audit_mesh",
+      "audit_targets",
+      "lattice",
+      "main",
+      "minimal_scope",
+      "mixture",
+      "noise_field",
+      "parent_scope",
+      "rebuild_facet",
+      "require",
+      "smooth_noise",
+      "surface_headers",
+      "uniform_spacing"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/prepare_metric_vdm_fault.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_metric_vdm_fault.py",
+    "sha256": "8a78b71c62f76ab80c8369941b98effe29132ae286c94c513c25fa213d3389d6",
+    "bytes": 1719,
+    "target_module": "tools.prepare_vdm_fault",
+    "function": [
+      "ROOT",
+      "main",
+      "prepare"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/prepare_metric_vdm_fault_v2.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_metric_vdm_fault_v2.py",
+    "sha256": "c76884944d049b97066fea90294638047e015a3587be296b3159509274de893e",
+    "bytes": 4988,
+    "target_module": "tools.prepare_vdm_fault",
+    "function": [
+      "ROOT",
+      "prepare",
+      "publish"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/prepare_vdm_forms_gallery.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_vdm_forms_gallery.py",
+    "sha256": "4ebff571b5bd07a96385241c8b81f083ce880fa6d9efd5f9947677e792582c1e",
+    "bytes": 13929,
+    "target_module": "tools.prepare_vdm_gallery",
+    "function": [
+      "FORMS",
+      "ROOT",
+      "_parameter_section",
+      "_publish_json",
+      "build_gallery",
+      "plot_gallery"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/prepare_td_channel_vdm.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_td_channel_vdm.py",
+    "sha256": "18a99c4b8931a1f036f18ad63697f13b2c42202d08a9903889ef2934b310f6f3",
+    "bytes": 7306,
+    "target_module": "tools.prepare_channel_vdm",
+    "function": [
+      "ROOT",
+      "prepare"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_metric_vdm_fault.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_metric_vdm_fault.py",
+    "sha256": "a920aa6b80beef776a5f0f5da669f2d16f21c26ea93821e5072d8f3d6c78e9bb",
+    "bytes": 5707,
+    "target_module": "tools.audit_vdm_fault",
+    "function": [
+      "ROOT",
+      "_json_value",
+      "audit_fault",
+      "main"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/metric_vdm_fault_legacy_v1.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/metric_vdm_fault_legacy_v1.py",
+    "sha256": "db706e29d71f9ffeb727aaffc7f6c1c7e6a34e46ad4c3315a55667778894b4c4",
+    "bytes": 8662,
+    "target_module": "tools.frozen_vdm_fault",
+    "function": [
+      "ARCHIVE",
+      "MANIFEST_SHA256",
+      "ROOT",
+      "_BEFORE_FILES",
+      "_CACHE",
+      "_LOCK",
+      "_MODULE_ORDER",
+      "_ReplayImports",
+      "_modules",
+      "audit_legacy_fault",
+      "load_legacy_api",
+      "load_legacy_fault",
+      "replay_legacy_preparation",
+      "verify_archive"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/prepare_underground_river_v1.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_underground_river_v1.py",
+    "sha256": "09f36619acc6e3da65b8b0ebd1f2548afb2d9f436b131364f60717acecf81a4b",
+    "bytes": 5835,
+    "target_module": "tools.prepare_underground_rivers",
+    "function": [
+      "AUDIT_SHA",
+      "CODE_FILES",
+      "DEFAULT_OUTPUT",
+      "INDEX_SHA",
+      "ROOT",
+      "SOURCE",
+      "load_source",
+      "main",
+      "prepare"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/audit_underground_river_preview.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/audit_underground_river_preview.py",
+    "sha256": "c733ffe47b28f7129ec4abe6c25f57923b356151646a71ffdb02ea619cd53f77",
+    "bytes": 11100,
+    "target_module": "tools.audit_underground_rivers",
+    "function": [
+      "FLAGS",
+      "ROOT",
+      "SCHEMA",
+      "SOURCE_AUDIT_SHA",
+      "SOURCE_INDEX_SHA",
+      "audit",
+      "check_capabilities",
+      "check_saved_geometry",
+      "main"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/verify_real_dem_river_3d_adapter.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/verify_real_dem_river_3d_adapter.py",
+    "sha256": "e31ab26367ec2a50423385546a549362bb0f55b54af2503413931e7347c87da8",
+    "bytes": 15182,
+    "target_module": "tools.verify_river_bed_ribbons",
+    "function": [
+      "ALGORITHM",
+      "CONFIG",
+      "DEFAULT_FLAT",
+      "DEFAULT_OUTPUT_ROOT",
+      "DEFAULT_RAINFALL",
+      "JSON_KEYS",
+      "MAX_JSON_BYTES",
+      "ROOT",
+      "arrays_record",
+      "build",
+      "check_output",
+      "export_package",
+      "identity",
+      "load_inputs",
+      "main",
+      "make_manifest",
+      "obj_lines",
+      "obj_name",
+      "read_geometry",
+      "topology_report",
+      "validate_fixed",
+      "verify_package"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_cave_geometry.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_cave_geometry.py",
+    "sha256": "7f575365e4bf0dcc86f488f3d47dfa8d8a7b4c8cc86c0c33b746ac8c1881c5e6",
+    "bytes": 5731,
+    "target_module": "tests.test_hybrid_geometry",
+    "function": [
+      "CaveGeometryTests",
+      "flat_sampler",
+      "port_at"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_geometry_recovery.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_geometry_recovery.py",
+    "sha256": "23b64f35674575e1bec2d49cfc2b8f830ad912c8bac71e64a7c325df108dcabb",
+    "bytes": 5879,
+    "target_module": "tests.test_hybrid_geometry",
+    "function": [
+      "COLLAPSED_RING",
+      "CURRENT",
+      "CURRENT_SHA256",
+      "HybridGeometryPrecisionBlockerTests",
+      "HybridGeometrySavedRecoveryTests",
+      "ORIGINAL",
+      "ORIGINAL_SHA256",
+      "POSITIVE_SLIVER",
+      "ROOT",
+      "exact_binary64_area",
+      "read_pinned"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_river_faces.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_river_faces.py",
+    "sha256": "fc8c62861d823d8a5f9211f3adbdee495928afd0f2ca0f742bc8596672f17519",
+    "bytes": 4881,
+    "target_module": "tests.test_hybrid_geometry",
+    "function": [
+      "RiverFaceTests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_river_faces_v2.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_river_faces_v2.py",
+    "sha256": "a9f633ea4a1ac454bc90b4596bff8e25bdd56f28484384359c5a1178b1f29332",
+    "bytes": 10663,
+    "target_module": "tests.test_hybrid_geometry",
+    "function": [
+      "ActualPolygonFaceTests",
+      "fixture",
+      "slices_for"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_river_graph.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_river_graph.py",
+    "sha256": "0f3808c6e6f358c5b7ed0fedb6730ac69b9668cf764bc61eee82eb8dea40b413",
+    "bytes": 4826,
+    "target_module": "tests.test_hybrid_geometry",
+    "function": [
+      "HybridGraphTests",
+      "port"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_rock_boolean.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_rock_boolean.py",
+    "sha256": "68be3a6498d9f36dff776e666da83b227ad9823071f72ac2d6c6f0802de4b4a5",
+    "bytes": 11862,
+    "target_module": "tests.test_hybrid_geometry",
+    "function": [
+      "ORIGIN",
+      "RockBooleanTests",
+      "square_ring"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_surface_composition.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_surface_composition.py",
+    "sha256": "fa8982c6c8a894db286b0c9b7c77d31f33fdb431d67bf5c197b5c950f7baf25f",
+    "bytes": 3630,
+    "target_module": "tests.test_hybrid_geometry",
+    "function": [
+      "SurfaceCompositionTests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_surface_composition_v2.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_surface_composition_v2.py",
+    "sha256": "61e034ea7702335c50d40f743c32758d09c37bfb04238eaf1105d902f77b583b",
+    "bytes": 6183,
+    "target_module": "tests.test_hybrid_geometry",
+    "function": [
+      "SurfaceCompositionV2Tests",
+      "box"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_surface_composition_v3.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_surface_composition_v3.py",
+    "sha256": "817ed3f1ec6576f65bf77e0a9048ec31e1e4e17936bc2ff7f8ba6efe3b9356d2",
+    "bytes": 4437,
+    "target_module": "tests.test_hybrid_geometry",
+    "function": [
+      "SurfaceCompositionV3Tests",
+      "loop_data"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_cave_saved_audit.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_cave_saved_audit.py",
+    "sha256": "3f7382c7c05f5033a0eb323f1a5bf42e503968449bb7f84f670fe4c665b2a367",
+    "bytes": 4770,
+    "target_module": "tests.test_hybrid_geometry_saved_audit",
+    "function": [
+      "CaveSavedAuditTests",
+      "saved_solid"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_river_faces_saved_audit.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_river_faces_saved_audit.py",
+    "sha256": "d876f6568dfa589b0190fe9e839a2b66e38c9c6096a36f5da1f47bf5593bb28b",
+    "bytes": 7962,
+    "target_module": "tests.test_hybrid_geometry_saved_audit",
+    "function": [
+      "SavedFaceAuditTests",
+      "boundary_record",
+      "frame",
+      "open_fixture"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_river_faces_v2_saved_audit.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_river_faces_v2_saved_audit.py",
+    "sha256": "b25279ab520da35099b08468f628510cb0dcf75b786889a5332b6727d3ecee14",
+    "bytes": 4346,
+    "target_module": "tests.test_hybrid_geometry_saved_audit",
+    "function": [
+      "FaceRoleAuditTests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_saved_slice_geometry_adapter.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_saved_slice_geometry_adapter.py",
+    "sha256": "1726dc0636fb7c6c2cd6da5297673c1e42af6379cf4de22ba3d4e10e2af451b7",
+    "bytes": 2503,
+    "target_module": "tests.test_hybrid_geometry_saved_audit",
+    "function": [
+      "SavedSliceGeometryAdapterTests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_surface_composition_saved_audit.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_surface_composition_saved_audit.py",
+    "sha256": "756400d89ec22d71ce983949b7c4a2925fdfa9abeedda493c4465d7c8e35b464",
+    "bytes": 3421,
+    "target_module": "tests.test_hybrid_geometry_saved_audit",
+    "function": [
+      "SurfaceCompositionSavedAuditTests",
+      "box_solid",
+      "saved_solid"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_surface_composition_v2_saved_audit.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_surface_composition_v2_saved_audit.py",
+    "sha256": "7a06d77ca38505d8ff4018eaedd102af2d28df87364caea01132d742a0aca28f",
+    "bytes": 10275,
+    "target_module": "tests.test_hybrid_geometry_saved_audit",
+    "function": [
+      "FRAME",
+      "PIN",
+      "SurfaceCompositionV2SavedAuditTests",
+      "TRIANGLES",
+      "box_vertices",
+      "midpoint_fixture",
+      "record_base",
+      "seal"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_surface_composition_v3_saved_audit.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_surface_composition_v3_saved_audit.py",
+    "sha256": "5900221e64c864a909992daeb34c5aced97b5636d52fad137234d584d8f66924",
+    "bytes": 6752,
+    "target_module": "tests.test_hybrid_geometry_saved_audit",
+    "function": [
+      "SurfaceCompositionV3SavedAuditTests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_surface_composition_v4_saved_audit.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_surface_composition_v4_saved_audit.py",
+    "sha256": "c57b87e2efbd6225fd22db586ec7a2380ff9b5668ed6db0938a42e1c7924f2a6",
+    "bytes": 5147,
+    "target_module": "tests.test_hybrid_geometry_saved_audit",
+    "function": [
+      "SurfaceCompositionV4SavedAuditTests",
+      "sealed"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_surface_composition_v5_saved_audit.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_surface_composition_v5_saved_audit.py",
+    "sha256": "127a62a35c4b823e417f39bd3a70ef88a56a18aa468c863f684c306a6d0bed67",
+    "bytes": 2969,
+    "target_module": "tests.test_hybrid_geometry_saved_audit",
+    "function": [
+      "SurfaceCompositionV5SavedAuditTests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_surface_composition_v6_saved_audit.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_surface_composition_v6_saved_audit.py",
+    "sha256": "aa5b368bcdfde0ca664e90aa13a5f8981795f5d505a73f27047ed4f58cf1d1b7",
+    "bytes": 1296,
+    "target_module": "tests.test_hybrid_geometry_saved_audit",
+    "function": [
+      "SurfaceCompositionV6SavedAuditTests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_geometry_migration.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_geometry_migration.py",
+    "sha256": "bd2f1ea6a1a9c6552694fefe3c7889829087b98bf149efc02b4f8a50d5547e82",
+    "bytes": 12524,
+    "target_module": "tests.test_frozen_hybrid_geometry",
+    "function": [
+      "CurrentNativeIdentityBindingTests",
+      "HybridGeometryMigrationTests",
+      "ROOT"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_hydraulics_consolidation.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_hydraulics_consolidation.py",
+    "sha256": "3c18e3faec6eb65ef0c2c19f93f1e98bc82d824608c77beee45a1b18e5bcf53c",
+    "bytes": 16016,
+    "target_module": "tests.test_frozen_hybrid_hydraulics",
+    "function": [
+      "HydraulicsConsolidationTests",
+      "VOLATILE",
+      "stable"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_hydraulics_frozen_replay.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_hydraulics_frozen_replay.py",
+    "sha256": "a371302e871d42056988e268e681d0bdf06c26a3b5696a55935a317672e1f444",
+    "bytes": 510,
+    "target_module": "tests.test_frozen_hybrid_hydraulics",
+    "function": [
+      "load_tests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_river_hydraulics.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_river_hydraulics.py",
+    "sha256": "227839e238ead0f20ef321b074584fbbc45a85e1759ff4f2e73a9bce10cc05d5",
+    "bytes": 389,
+    "target_module": "tests.test_frozen_hybrid_hydraulics",
+    "function": [
+      "load_tests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_river_hydraulics_v3.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_river_hydraulics_v3.py",
+    "sha256": "44e0cfed6fbca0bccd30ae3798c6a57f01e8749e78d6545c910e5b32b6edb976",
+    "bytes": 392,
+    "target_module": "tests.test_frozen_hybrid_hydraulics",
+    "function": [
+      "load_tests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_river_hydraulics_v4.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_river_hydraulics_v4.py",
+    "sha256": "36876f06d7e87e307e9cf1ede118a5fc3821656345f94796ac87700f05e0f411",
+    "bytes": 392,
+    "target_module": "tests.test_frozen_hybrid_hydraulics",
+    "function": [
+      "load_tests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_river_hydraulics_v5.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_river_hydraulics_v5.py",
+    "sha256": "0530d2a27af146aac14649fbd4f8649098afb488604bb8f6fe93fb44f22edf85",
+    "bytes": 392,
+    "target_module": "tests.test_frozen_hybrid_hydraulics",
+    "function": [
+      "load_tests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_river_hydraulics_v6.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_river_hydraulics_v6.py",
+    "sha256": "12cafdd90c5aad1aaa24424a68ea2d8cc4059d3a0b175834bd16f2eff907e13a",
+    "bytes": 392,
+    "target_module": "tests.test_frozen_hybrid_hydraulics",
+    "function": [
+      "load_tests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_river_hydraulics_v7.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_river_hydraulics_v7.py",
+    "sha256": "56a438aa23d655fb25e6f3a92c763904ac0916fd74283a8c9a3df70927afbb11",
+    "bytes": 392,
+    "target_module": "tests.test_frozen_hybrid_hydraulics",
+    "function": [
+      "load_tests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_river_hydraulics_saved_audit.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_river_hydraulics_saved_audit.py",
+    "sha256": "956e1698c2f46fadf1f9ccad284a23c1fb8ae842ae0061208db2f7862b6e0232",
+    "bytes": 4881,
+    "target_module": "tests.test_hybrid_hydraulics_saved_audit",
+    "function": [
+      "SavedHydraulicsAuditTests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_river_hydraulics_v8_saved_audit.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_river_hydraulics_v8_saved_audit.py",
+    "sha256": "89ec8cda42d03cd484c823002baca08957d69d82c92bb2c98162d1b3597e15b6",
+    "bytes": 4314,
+    "target_module": "tests.test_hybrid_hydraulics_saved_audit",
+    "function": [
+      "LocalFrameSavedAuditTests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_river_hydraulics_v8.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_river_hydraulics_v8.py",
+    "sha256": "7517a317b67d10715af1411be34eabe8e844066ec39026041613af4cd28c7a14",
+    "bytes": 6157,
+    "target_module": "tests.test_hybrid_hydraulics",
+    "function": [
+      "LocalVerticalFrameTests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_hybrid_river_sections_v2.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_hybrid_river_sections_v2.py",
+    "sha256": "61451ba912e8a81f5f912a4028e35859988ca40fadb17835d5331c73359124ea",
+    "bytes": 5710,
+    "target_module": "tests.test_hybrid_hydraulics",
+    "function": [
+      "FastSectionTests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_metric_special_terrain_forms.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_metric_special_terrain_forms.py",
+    "sha256": "dffe6f6735bb9eafb63c661cfb2874a558efac49fa8f6445d66ef986a7ff4769",
+    "bytes": 10857,
+    "target_module": "tests.test_special_terrain",
+    "function": [
+      "ROOT",
+      "SpecialTerrainFormsTests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_metric_special_terrain_surface.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_metric_special_terrain_surface.py",
+    "sha256": "8c85150317ef5f2929c173012938745a3fe766a9c419627efc432688779b55c3",
+    "bytes": 18034,
+    "target_module": "tests.test_special_terrain",
+    "function": [
+      "ROOT",
+      "SMALL_HEIGHT_M",
+      "SMALL_RADIUS_M",
+      "SMALL_SIZE_M",
+      "SMALL_SPACING_M",
+      "SpecialTerrainSurfaceTests",
+      "asdict_of",
+      "small_parent",
+      "small_recipes"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_special_terrain_l1_cave_bridge.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_special_terrain_l1_cave_bridge.py",
+    "sha256": "6d8e8077bdfe09b91ea1c48f4749a154ef42d42b4f1861c02599660762f29dfc",
+    "bytes": 25142,
+    "target_module": "tests.test_special_terrain",
+    "function": [
+      "BRIDGE_ROLES",
+      "BridgeAndSkylights",
+      "CONTRACT_KEYS",
+      "ColdReadContract",
+      "DefaultLattice",
+      "IndependentGeometry",
+      "MaterialAccount",
+      "Refusals",
+      "SOLID_KEYS",
+      "WindingVerdicts",
+      "_REPORT",
+      "_SOLIDS",
+      "rebuild",
+      "replayed_ray",
+      "report"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_special_terrain_l1_rock_eggs.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_special_terrain_l1_rock_eggs.py",
+    "sha256": "2f2f1910d39a269de309cabbf677223a0c21479c2f52e07ea4256ca670a8acb4",
+    "bytes": 13339,
+    "target_module": "tests.test_special_terrain",
+    "function": [
+      "ALLOWED_METHODS",
+      "CONTRACT_KEYS",
+      "RockEggPileTests",
+      "independent_union",
+      "unsealed"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_special_terrain_l1_sinkhole.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_special_terrain_l1_sinkhole.py",
+    "sha256": "9e5b6c7a6cea1ce62599366d79679891f2809c4f24231e689629aa9300e65929",
+    "bytes": 14237,
+    "target_module": "tests.test_special_terrain",
+    "function": [
+      "SinkholeVolumeTests",
+      "cold_manifold"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_special_terrain_l1_uluru_flare.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_special_terrain_l1_uluru_flare.py",
+    "sha256": "9369fa28894d2489e62c50bf5a87c9d46516a87107e26c8e2a666d3872f192a6",
+    "bytes": 14235,
+    "target_module": "tests.test_special_terrain",
+    "function": [
+      "FlaredBaseTests",
+      "ROOT"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_td_special_terrain_adapter.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_td_special_terrain_adapter.py",
+    "sha256": "dfbb423499f3d427067ff1f70e27ae6b5b5c4972dcedd8caf3e7ce0b3a7647c2",
+    "bytes": 18962,
+    "target_module": "tests.test_special_terrain",
+    "function": [
+      "BuildChartTests",
+      "EndToEndTests",
+      "NATIVE_ORIGIN",
+      "NATIVE_SHAPE",
+      "REAL_HIERARCHY",
+      "ROOT",
+      "SelectWindowTests",
+      "_FakeHierarchy",
+      "select"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_metric_vdm.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_metric_vdm.py",
+    "sha256": "c1a0dc9e65b36219a8439cafe809f544b9eca594e6633fda358f625742ac0174",
+    "bytes": 6216,
+    "target_module": "tests.test_vdm_cuts",
+    "function": [
+      "MetricVdmTests",
+      "build",
+      "chart",
+      "recipe"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_metric_vdm_fault_v2.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_metric_vdm_fault_v2.py",
+    "sha256": "9cc360de21a2da0a995b06fb2fd5ff7c007d060896927cbe48287918703699b7",
+    "bytes": 3555,
+    "target_module": "tests.test_vdm_cuts",
+    "function": [
+      "DeformedFaultTests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_metric_vdm_forms.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_metric_vdm_forms.py",
+    "sha256": "f2fa9643108f8379f618844df5eac253a28c04dc9b0a18fd3d2c3e8da4a4940d",
+    "bytes": 11818,
+    "target_module": "tests.test_vdm_cuts",
+    "function": [
+      "MetricVdmFormsTests",
+      "build",
+      "chart",
+      "cliff"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_td_channel_vdm.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_td_channel_vdm.py",
+    "sha256": "020d211b23233bf561e8cc554550cb433837b3851902008f2b1232ade400a6ff",
+    "bytes": 1976,
+    "target_module": "tests.test_vdm_cuts",
+    "function": [
+      "ChannelVdmTests"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_real_dem_river_3d_adapter.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_real_dem_river_3d_adapter.py",
+    "sha256": "6af99f20cd7a97bb9d170f37d7f9694b2d53ecfeadcc5b5bab396abcda371bbc",
+    "bytes": 8056,
+    "target_module": "tests.test_underground_rivers",
+    "function": [
+      "RealDemRiver3DAdapterTests",
+      "fixture"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_underground_channel.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_underground_channel.py",
+    "sha256": "11c610085682ee7f5b573275517345cab700987c63763a9707779c5522d2d1ac",
+    "bytes": 2928,
+    "target_module": "tests.test_underground_rivers",
+    "function": [
+      "_plan",
+      "test_cover_is_required_and_grayscale_only_changes_ranking",
+      "test_paths_filters_and_explicit_exits"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_underground_river_preview_audit.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_underground_river_preview_audit.py",
+    "sha256": "ff517fe07918372772cbfd4b27b74fc7754cb9669c24de8a99df98b5a1ea0d89",
+    "bytes": 3555,
+    "target_module": "tests.test_underground_rivers",
+    "function": [
+      "SavedGalleryAuditTests",
+      "reseal"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tests/test_underground_river_v1.py",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tests/test_underground_river_v1.py",
+    "sha256": "5cd0a11fa4d167d14440c541f8c7f81496cc3f17236521bfe4b512029bb9cc61",
+    "bytes": 7055,
+    "target_module": "tests.test_underground_rivers",
+    "function": [
+      "ROOT",
+      "UndergroundRiverTests",
+      "flat_sampler",
+      "port_at"
+    ],
+    "reason": "complete implementation merged; no shim"
+  },
+  {
+    "source_path": "tools/prepare_hybrid_river_hydraulics_v2.py",
+    "sha256": "497494ad6b6ccd7350216f580673a7ffcb72a05afe4072eec76eb6659a44271a",
+    "bytes": 12146,
+    "target_module": "tools.replay_frozen_hybrid_hydraulics",
+    "function": [],
+    "reason": "Historical experiment driver retired; explicit immutable replay retains its published source",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_hybrid_river_hydraulics_v2.py"
+  },
+  {
+    "source_path": "tools/prepare_hybrid_river_hydraulics_v3.py",
+    "sha256": "c7d1c05ae4d678f44c0b0e4727ef527358a99ac1598454df9f48a44404e53ced",
+    "bytes": 12673,
+    "target_module": "tools.replay_frozen_hybrid_hydraulics",
+    "function": [],
+    "reason": "Historical experiment driver retired; explicit immutable replay retains its published source",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_hybrid_river_hydraulics_v3.py"
+  },
+  {
+    "source_path": "tools/prepare_hybrid_river_hydraulics_v4.py",
+    "sha256": "5b631dc3d236b72d5882d82e2c7c6411057b71e73fde6628ec2ce7d072f6a5f7",
+    "bytes": 17993,
+    "target_module": "tools.replay_frozen_hybrid_hydraulics",
+    "function": [],
+    "reason": "Historical experiment driver retired; explicit immutable replay retains its published source",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_hybrid_river_hydraulics_v4.py"
+  },
+  {
+    "source_path": "tools/prepare_hybrid_river_hydraulics_v5.py",
+    "sha256": "0a81cffbf6dffc8752789fa44e4c26635c452f0d0bc05b49017f0a6a09b9b0df",
+    "bytes": 19186,
+    "target_module": "tools.replay_frozen_hybrid_hydraulics",
+    "function": [],
+    "reason": "Historical experiment driver retired; explicit immutable replay retains its published source",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_hybrid_river_hydraulics_v5.py"
+  },
+  {
+    "source_path": "tools/prepare_hybrid_river_hydraulics_v6.py",
+    "sha256": "0d1e9a814bf970db9b553f43b71db9b63dc129167e1f59886949d7913ea6f7f9",
+    "bytes": 28843,
+    "target_module": "tools.replay_frozen_hybrid_hydraulics",
+    "function": [],
+    "reason": "Historical experiment driver retired; explicit immutable replay retains its published source",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_hybrid_river_hydraulics_v6.py"
+  },
+  {
+    "source_path": "tools/prepare_hybrid_river_hydraulics_v7.py",
+    "sha256": "90c47e3400a0fd408def8ea4ecde406c33319a6379f9816adfb92ce7cbc11467",
+    "bytes": 23181,
+    "target_module": "tools.replay_frozen_hybrid_hydraulics",
+    "function": [],
+    "reason": "Historical experiment driver retired; explicit immutable replay retains its published source",
+    "archive_path": "legacy-code/refactor-merge-20261105/M2-finishing/tools/prepare_hybrid_river_hydraulics_v7.py"
+  }
+]

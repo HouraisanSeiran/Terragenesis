@@ -1,0 +1,326 @@
+{
+  "algorithm_id": "product-mountains-v2-smooth-mass",
+  "world_seed": 20260903,
+  "source_sha256": {
+    "terrain_pipeline/product_mountains.py": "c7f04e7d0d0bd3b739c541ba99dd8a70da75afaec37a773e62ad026927db7381",
+    "terrain_pipeline/advanced_terrain_filter.py": "e0dc26f2e5405f28cec05465b44a0d76bcf278d1d2bb8a732ab446f92ef3b4f3",
+    "terrain_pipeline/voronoi_mountains.py": "3e6878df263093acf51ca62f04867d799a51e119f72ef8c145ef0acc380ee472",
+    "terrain_pipeline/procedural_mountains.py": "4f9afc89524c2076ae788c1ca665a36c0e511e99a0cf7f221e12c2e8fc3f7a28",
+    "terrain_pipeline/terrain_map_style.py": "5ba2a8256fcf4f7d66f38cddadd7c7d33aeea9978053af96f41e2b52b9550ff6",
+    "diffusion/geographic_noise.py": "7b0667dc26dcfc153267c9affb9f30831711d417a8c22232fd36ae8af37a50e1",
+    "terrain_pipeline/world_seed.py": "ff3c7ae6e1480222a18e564d880fbb1fe857dc4410d2fae6fe401e839d749fa4",
+    "tools/prepare_product_mountains.py": "fa58dd7803c12174f94dac4b7bfd01affc55836a879a53c3556f358f31d5e447"
+  },
+  "subseeds": {
+    "product-ridge": 1511883604618675461,
+    "product-warp": 6063670488463537375,
+    "product-voronoi-sites": 8428408912037286829
+  },
+  "subseed_derivation": "terrain_pipeline.world_seed.derive_subseed",
+  "advanced_filter": {
+    "algorithm_id": "advanced-terrain-filter-v2-stable-hash",
+    "config": {
+      "amplitude_m": 150.0,
+      "wavelength_m": 1800.0,
+      "octaves": 3,
+      "gain": 0.5,
+      "lacunarity": 2.0,
+      "gully_weight": 0.5,
+      "detail": 1.5,
+      "rounding": [
+        0.1,
+        0.0,
+        0.1,
+        2.0
+      ],
+      "onset": [
+        1.25,
+        1.25,
+        2.8,
+        1.5
+      ],
+      "assumed_slope": [
+        0.7,
+        1.0
+      ],
+      "cell_scale": 0.7,
+      "normalization": 0.5,
+      "hash_mode": "stable"
+    },
+    "stable_seed": 10860721302913963045,
+    "stable_seed_derivation": "SHA256 UTF-8 advanced-terrain-filter-v1:20260903:phacelle, first 8 bytes little-endian uint64"
+  },
+  "macro_formula": "base_m + amplitude_m * ridge ** ridge_power * ((1-alpha) + alpha * volume)",
+  "ridge_formula": "clip(1 - (sqrt(n*n + eps*eps) - eps) / (sqrt(1 + eps*eps) - eps), 0, 1); eps=ridge_smoothing",
+  "volume_formula": "1 - product(1 - exp(-2.2*d*d)*cutoff(d)) over 3x3 sites; cutoff=1-smoothstep(1,1.25,d)",
+  "coordinate_convention": "row Z south, column X east; metres; samples at origin + index * spacing",
+  "mapping": {
+    "minimum_m": -500.0,
+    "maximum_m": 4500.0,
+    "encode": "round(clip((height_m+500)/5000,0,1)*65535)",
+    "decode": "-500 + code * 5000 / 65535",
+    "rounding": "nearest, ties to even"
+  },
+  "plot_geometry": {
+    "surface_stride": 5,
+    "surface_vertical_exaggeration": 1.68,
+    "delta_color_limits_m": [
+      -262.5,
+      262.5
+    ]
+  },
+  "cases": [
+    {
+      "name": "main_alpha_0",
+      "origin_xz_m": [
+        0.0,
+        0.0
+      ],
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "config": {
+        "world_seed": 20260903,
+        "alpha": 0.0,
+        "base_m": 200.0,
+        "amplitude_m": 3200.0,
+        "ridge_power": 2.0,
+        "ridge_smoothing": 0.04,
+        "ridge_spacing_m": 9000.0,
+        "warp_m": 1700.0,
+        "cell_size_m": 6000.0,
+        "anisotropy": 1.6,
+        "advanced_enabled": true,
+        "advanced_amplitude_m": 150.0,
+        "advanced_wavelength_m": 1800.0,
+        "batch_size": 4096
+      },
+      "npz": "main_alpha_0.npz",
+      "npz_sha256": "a913e22b8b84aaf9c83b72ab0864ea5faa27d4f03f65932803859956a7bc26dd",
+      "height_images": {
+        "macro_height_m": {
+          "file": "main_alpha_0_macro_height_m.png",
+          "min_m": 577.8142077708492,
+          "max_m": 3399.9999947559368,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "max_abs_decode_error_m": 0.03814744647843327,
+          "sha256": "3f91bfd35eaa1fe6e2bc79e79859e67f375a9fdc11d8c980a767fa57fb2271da",
+          "preview_sha256": "0ae6a8af64d343ff6ff9537e5840d44a2572316f31966a84e94c002b7be0e85a"
+        },
+        "height_m": {
+          "file": "main_alpha_0_height_m.png",
+          "min_m": 473.81007884697334,
+          "max_m": 3652.3476742767443,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "max_abs_decode_error_m": 0.03814701105147833,
+          "sha256": "c69c0f4085bd2850c84f3a5090ec8790b157b3c961d560ac2cf045c49cfed8e7",
+          "preview_sha256": "f70db0333bf9b66fb14af4a140cf87dc3d38c93165b686f3cd38923a16c192f1"
+        }
+      }
+    },
+    {
+      "name": "main_alpha_0.65",
+      "origin_xz_m": [
+        0.0,
+        0.0
+      ],
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "config": {
+        "world_seed": 20260903,
+        "alpha": 0.65,
+        "base_m": 200.0,
+        "amplitude_m": 3200.0,
+        "ridge_power": 2.0,
+        "ridge_smoothing": 0.04,
+        "ridge_spacing_m": 9000.0,
+        "warp_m": 1700.0,
+        "cell_size_m": 6000.0,
+        "anisotropy": 1.6,
+        "advanced_enabled": true,
+        "advanced_amplitude_m": 150.0,
+        "advanced_wavelength_m": 1800.0,
+        "batch_size": 4096
+      },
+      "npz": "main_alpha_0.65.npz",
+      "npz_sha256": "69637a7e842ebea3fa7c6ec039c5304d35c14cd5f90a690c1caa55d4fa299b5f",
+      "height_images": {
+        "macro_height_m": {
+          "file": "main_alpha_0.65_macro_height_m.png",
+          "min_m": 536.2529506417268,
+          "max_m": 3336.029149500918,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "max_abs_decode_error_m": 0.03814753310734886,
+          "sha256": "7472524d42e02cee8e3d48fd2865924ea0302ce36b188690e4e812622f43f430",
+          "preview_sha256": "f5340255f5ad614f3eeb79b0b3dd276575c098cbdbb1409cfbbbe0d081bd89f0"
+        },
+        "height_m": {
+          "file": "main_alpha_0.65_height_m.png",
+          "min_m": 424.4731841487216,
+          "max_m": 3517.3880260477795,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "max_abs_decode_error_m": 0.03814718356943558,
+          "sha256": "4fe64a3eac8eed8f4f46f2130f0b9a218155800e6268a0e9ddd6741de7165516",
+          "preview_sha256": "d232a01a0f67d5f1f9d9a6439f40a586c026947ddce12caddd649e2748572fe6"
+        }
+      }
+    },
+    {
+      "name": "main_alpha_1",
+      "origin_xz_m": [
+        0.0,
+        0.0
+      ],
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "config": {
+        "world_seed": 20260903,
+        "alpha": 1.0,
+        "base_m": 200.0,
+        "amplitude_m": 3200.0,
+        "ridge_power": 2.0,
+        "ridge_smoothing": 0.04,
+        "ridge_spacing_m": 9000.0,
+        "warp_m": 1700.0,
+        "cell_size_m": 6000.0,
+        "anisotropy": 1.6,
+        "advanced_enabled": true,
+        "advanced_amplitude_m": 150.0,
+        "advanced_wavelength_m": 1800.0,
+        "batch_size": 4096
+      },
+      "npz": "main_alpha_1.npz",
+      "npz_sha256": "31e7ac4e78f96a69ab3fd2d43134dfa715fc1a0480e3918a1d086e96f671c189",
+      "height_images": {
+        "macro_height_m": {
+          "file": "main_alpha_1_macro_height_m.png",
+          "min_m": 506.8364406244385,
+          "max_m": 3302.9864657323487,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "max_abs_decode_error_m": 0.038147213652791834,
+          "sha256": "2159e8af22090abaf5663c888f57a8dd45ddd4b5d50ae61adcda0a5cdce7ae49",
+          "preview_sha256": "80c2711fdec3185d887da48929f434b9a50da718363999be21599861a762bbc8"
+        },
+        "height_m": {
+          "file": "main_alpha_1_height_m.png",
+          "min_m": 401.03711215186024,
+          "max_m": 3468.0288616330126,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "max_abs_decode_error_m": 0.03814746693069537,
+          "sha256": "70df3e234ecb6c0e362bdbafa67034ddc632e06ca5d600e30c2a5aeedf2f0c5f",
+          "preview_sha256": "4c2b2713af55d83fd505e6f5347ca9a6f4deb32e7cfad2418e2d4b06beeeaf4b"
+        }
+      }
+    },
+    {
+      "name": "negative_alpha_0.65",
+      "origin_xz_m": [
+        -24000.0,
+        -24000.0
+      ],
+      "shape_zx": [
+        401,
+        401
+      ],
+      "spacing_m": 60.0,
+      "config": {
+        "world_seed": 20260903,
+        "alpha": 0.65,
+        "base_m": 200.0,
+        "amplitude_m": 3200.0,
+        "ridge_power": 2.0,
+        "ridge_smoothing": 0.04,
+        "ridge_spacing_m": 9000.0,
+        "warp_m": 1700.0,
+        "cell_size_m": 6000.0,
+        "anisotropy": 1.6,
+        "advanced_enabled": true,
+        "advanced_amplitude_m": 150.0,
+        "advanced_wavelength_m": 1800.0,
+        "batch_size": 4096
+      },
+      "npz": "negative_alpha_0.65.npz",
+      "npz_sha256": "c9edf708426b0c0866fda9c353f6dc638c311fe70b5c917e6e98292547772573",
+      "height_images": {
+        "macro_height_m": {
+          "file": "negative_alpha_0.65_macro_height_m.png",
+          "min_m": 545.8523365965649,
+          "max_m": 3269.306530502857,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "max_abs_decode_error_m": 0.03814692486412241,
+          "sha256": "16696772f388a9e1a77d28abdbe9c751625693f9820d1693cb74bb0a025f8baf",
+          "preview_sha256": "b91f665b6b30cf6d03d5aeccf46d97c9ef85bbabbe276aa0dc6a02ec2ab7df4b"
+        },
+        "height_m": {
+          "file": "negative_alpha_0.65_height_m.png",
+          "min_m": 425.22565493125154,
+          "max_m": 3459.2657114488093,
+          "saturated_below_count": 0,
+          "saturated_above_count": 0,
+          "max_abs_decode_error_m": 0.038147391628172045,
+          "sha256": "d6bf412ff22e221e79ad7bf22e2450009b71be847b90199aaae093e851c963ad",
+          "preview_sha256": "3044acd9d5bd8a3ea3ef0570fbf908075c3bef1579c1c531a93595ca861d61f5"
+        }
+      }
+    }
+  ],
+  "images": {
+    "main_comparison.png": "efc6ddb968e18ab9295aaf2c60bebe4f3248c83ba40a20ae4e12ee6ee9b02bc9",
+    "main_comparison_terrain.png": "dce0e56dd4123950949b46ae3b1027a4d9a647b8e349e5d20e65b383c0132565",
+    "negative_comparison.png": "868813a1874bf0f47b8cf67d1098efa949d9cbed24829446ceff3bb1ae6f00f2",
+    "negative_comparison_terrain.png": "6cf4f3f33b6d7cab65c6742496a1db092f611d86ee1bfc26e2c0fc8a93011334"
+  },
+  "benchmark": [
+    {
+      "location": "near",
+      "origin_xz_m": [
+        0.0,
+        0.0
+      ],
+      "shape_zx": [
+        512,
+        512
+      ],
+      "spacing_m": 60,
+      "seconds": 5.33569179999995,
+      "tracemalloc_peak_bytes": 18683873,
+      "sampled_process_rss_peak_bytes": 157650944
+    },
+    {
+      "location": "far",
+      "origin_xz_m": [
+        500000000.0,
+        -500000000.0
+      ],
+      "shape_zx": [
+        512,
+        512
+      ],
+      "spacing_m": 60,
+      "seconds": 5.31051910000042,
+      "tracemalloc_peak_bytes": 18674297,
+      "sampled_process_rss_peak_bytes": 172851200
+    }
+  ],
+  "timings_seconds": {
+    "generation": 6.464159799998924,
+    "save": 1.9518070000003718,
+    "plot": 7.380508199998985
+  },
+  "benchmark_scope": "measured helper: perf_counter wall time, tracemalloc and 10ms sampled whole-process RSS; samples may miss peaks"
+}

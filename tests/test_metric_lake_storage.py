@@ -2,7 +2,8 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.surface_rivers.metric_lake_storage import LakeOutlet, LakeStorage
+from terrain_pipeline.lake import LakeOutlet as LakeOutlet
+from terrain_pipeline.lake import LakeStorage as LakeStorage
 
 
 def bowl():

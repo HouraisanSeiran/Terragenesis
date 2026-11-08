@@ -1,0 +1,205 @@
+{
+  "stages": [
+    {
+      "name": "final-initial",
+      "source_identity": "454292b47a107628748a3ba7d76093cbd2d7df4785884490f55418f9ebe368ce",
+      "finite_stocks": true,
+      "owner_bounded": true,
+      "source_unchanged": true,
+      "geometry_residual_m": 0.0,
+      "node_q_residual_m3_s": 0.0,
+      "accepted_q_m3_s": 0.0,
+      "pending_q_m3_s": null,
+      "route_q_residual_m3_s": 0.0,
+      "routes": [
+        {
+          "q_m3_s": 0.0,
+          "cells": 18,
+          "d4": true,
+          "no_cycles": true,
+          "min_actual_depth_m": null,
+          "actual_wet": true,
+          "exterior_faces": [
+            [
+              240,
+              177
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "final-formed",
+      "source_identity": "454292b47a107628748a3ba7d76093cbd2d7df4785884490f55418f9ebe368ce",
+      "finite_stocks": true,
+      "owner_bounded": true,
+      "source_unchanged": true,
+      "geometry_residual_m": 2.220446049250313e-16,
+      "node_q_residual_m3_s": 0.0,
+      "accepted_q_m3_s": 144.46999579668045,
+      "pending_q_m3_s": 5.53000420331955,
+      "route_q_residual_m3_s": 0.0,
+      "routes": [
+        {
+          "q_m3_s": 67.71571466950041,
+          "cells": 18,
+          "d4": true,
+          "no_cycles": true,
+          "min_actual_depth_m": 0.72023669294032,
+          "actual_wet": true,
+          "exterior_faces": [
+            [
+              240,
+              177
+            ]
+          ]
+        },
+        {
+          "q_m3_s": 50.19661569483682,
+          "cells": 27,
+          "d4": true,
+          "no_cycles": true,
+          "min_actual_depth_m": 0.7507550437983297,
+          "actual_wet": true,
+          "exterior_faces": [
+            [
+              239,
+              187
+            ],
+            [
+              240,
+              186
+            ]
+          ]
+        },
+        {
+          "q_m3_s": 26.5576654323432,
+          "cells": 64,
+          "d4": true,
+          "no_cycles": true,
+          "min_actual_depth_m": 0.5975460288491801,
+          "actual_wet": true,
+          "exterior_faces": [
+            [
+              240,
+              197
+            ],
+            [
+              241,
+              196
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "final-event",
+      "source_identity": "454292b47a107628748a3ba7d76093cbd2d7df4785884490f55418f9ebe368ce",
+      "finite_stocks": true,
+      "owner_bounded": true,
+      "source_unchanged": true,
+      "geometry_residual_m": 2.498001805406602e-16,
+      "node_q_residual_m3_s": 0.0,
+      "accepted_q_m3_s": 150.0,
+      "pending_q_m3_s": 0.0,
+      "route_q_residual_m3_s": 2.842170943040401e-14,
+      "routes": [
+        {
+          "q_m3_s": 72.90402205759801,
+          "cells": 18,
+          "d4": true,
+          "no_cycles": true,
+          "min_actual_depth_m": 0.8165716924255024,
+          "actual_wet": true,
+          "exterior_faces": [
+            [
+              240,
+              177
+            ],
+            [
+              239,
+              176
+            ]
+          ]
+        },
+        {
+          "q_m3_s": 48.873809275342914,
+          "cells": 27,
+          "d4": true,
+          "no_cycles": true,
+          "min_actual_depth_m": 0.863115488218716,
+          "actual_wet": true,
+          "exterior_faces": [
+            [
+              239,
+              187
+            ],
+            [
+              240,
+              186
+            ],
+            [
+              238,
+              186
+            ]
+          ]
+        },
+        {
+          "q_m3_s": 28.222168667059083,
+          "cells": 64,
+          "d4": true,
+          "no_cycles": true,
+          "min_actual_depth_m": 0.7558837158318461,
+          "actual_wet": true,
+          "exterior_faces": [
+            [
+              240,
+              197
+            ],
+            [
+              241,
+              196
+            ],
+            [
+              239,
+              196
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "years": 2.0,
+  "new_physical_duration_s": 90000.0,
+  "equivalent_solid_residual_m3": 0.0,
+  "event_solid_residual_m3": 0.0,
+  "event_water_residual_m3": 0.0,
+  "physical_event": {
+    "input_id": "constructed-forks-event",
+    "water_m3": 13500000.0,
+    "delivered_water_m3": 8814178.077578545,
+    "undelivered_water_m3": 4685821.922421455,
+    "solid_m3": 7200.0,
+    "delivered_solid_m3": 4700.894974708557,
+    "undelivered_solid_m3": 2499.105025291443
+  },
+  "initial_connected_ocean_new_emergence_km2": [
+    0.0,
+    0.0,
+    0.6
+  ],
+  "checks": {
+    "source": true,
+    "stocks": true,
+    "time_separation": true,
+    "meaningful_formation_and_event": true,
+    "equivalent_budget": true,
+    "physical_budget": true,
+    "shared_geometry": true,
+    "node_and_route_q": true,
+    "actual_wet_routes": true,
+    "three_actual_outlets": true,
+    "old_unknown_records": true
+  },
+  "pass": true
+}

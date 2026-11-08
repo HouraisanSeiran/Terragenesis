@@ -16,6 +16,8 @@ import math
 from typing import Iterator
 
 import numpy as np
+from terrain_pipeline.drainage import grid_mesh as grid_mesh
+from terrain_pipeline.drainage import strict_receivers as strict_receivers
 
 
 @dataclass(frozen=True)
@@ -25,7 +27,7 @@ class LargeScaleSpec:
     tile_size: int = 128
     halo: int = 1
     cell_size_m: float = 30.0
-    seed: int = 20261001
+    seed: int = 20261020
 
     def __post_init__(self) -> None:
         if min(self.rows, self.cols, self.tile_size) <= 0 or self.halo < 1:
@@ -123,30 +125,17 @@ def _iter_tiles(spec: LargeScaleSpec) -> Iterator[tuple[int, int]]:
 
 
 def build_river_network(spec: LargeScaleSpec, reader: BoundedTileReader) -> RiverNetwork:
-    """Build D8 routing with global IDs while only reading tile plus halo."""
-    receiver = np.full(spec.cell_count, -1, dtype=np.int64)
-    indegree = np.zeros(spec.cell_count, dtype=np.int32)
-    directions = ((-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1))
+    """Read terrain in bounded windows and build a resident irregular graph."""
+    height = np.empty((spec.rows, spec.cols), np.float64)
     for tr, tc in _iter_tiles(spec):
         local = reader.window(tr, tc)
         r0, c0 = tr * spec.tile_size, tc * spec.tile_size
-        row_offset = 1 if r0 > 0 else 0
-        col_offset = 1 if c0 > 0 else 0
-        for lr in range(spec.tile_size):
-            for lc in range(spec.tile_size):
-                base_r, base_c = lr + row_offset, lc + col_offset
-                best = float(local[base_r, base_c])
-                target = -1
-                for dr, dc in directions:
-                    nr, nc = r0 + lr + dr, c0 + lc + dc
-                    if 0 <= nr < spec.rows and 0 <= nc < spec.cols:
-                        value = float(local[base_r + dr, base_c + dc])
-                        if value < best:
-                            best, target = value, spec.cell_id(nr, nc)
-                cell = spec.cell_id(r0 + lr, c0 + lc)
-                receiver[cell] = target
-                if target >= 0:
-                    indegree[target] += 1
+        row_offset, col_offset = min(spec.halo, r0), min(spec.halo, c0)
+        height[r0:r0 + spec.tile_size, c0:c0 + spec.tile_size] = local[
+            row_offset:row_offset + spec.tile_size, col_offset:col_offset + spec.tile_size]
+    mesh = grid_mesh(height.shape, dx_m=spec.cell_size_m, world_seed=spec.seed)
+    receiver, _, _ = strict_receivers(height, mesh)
+    indegree = np.bincount(receiver[receiver >= 0], minlength=spec.cell_count).astype(np.int32)
 
     queue = deque(np.flatnonzero(indegree == 0).tolist())
     order = np.empty(spec.cell_count, dtype=np.int64)
@@ -161,7 +150,7 @@ def build_river_network(spec: LargeScaleSpec, reader: BoundedTileReader) -> Rive
             if indegree[target] == 0:
                 queue.append(target)
     if count != spec.cell_count:
-        raise RuntimeError("D8 graph contains a cycle")
+        raise RuntimeError("irregular receiver graph contains a cycle")
 
     accumulation = np.ones(spec.cell_count, dtype=np.float64)
     for cell in order:
@@ -197,7 +186,7 @@ def propagate_windowed(spec: LargeScaleSpec, reader: BoundedTileReader, network:
     rainfall_total = 0.0
     outlet_total = 0.0
     area = spec.cell_size_m ** 2
-    # Tile reads are part of the propagation contract even though D8 metadata
+    # Tile reads are part of the propagation contract even though graph metadata
     # is already available: each step proves the execution path is windowed.
     for _ in range(steps):
         for tr, tc in _iter_tiles(spec):
@@ -229,6 +218,8 @@ def run_benchmark(spec: LargeScaleSpec | None = None, max_windows: int = 3) -> d
     result = propagate_windowed(spec, reader, network)
     return {
         "schema": "large-scale-surface-tiles-v1",
+        "algorithm": "global-irregular-strict-metric-graph-v2",
+        "resident_state": "native_height_and_global_Delaunay_mesh_and_receiver_graph",
         "shape": [spec.rows, spec.cols], "tile_size": spec.tile_size,
         "tile_count": (spec.rows // spec.tile_size) * (spec.cols // spec.tile_size),
         "cell_count": spec.cell_count, "outlet_count": int(network.outlets.size),

@@ -12,26 +12,26 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.rainfall_runoff import _strict_json
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.runoff import _strict_json as _strict_json
 from tools.verify_mountain_source_adapter import write_json
 from tools.verify_mountain_round_acceptance import RecordedResult
 
 MODULES = (
     'tests.test_regional_source', 'tests.test_regional_forcing', 'tests.test_regional_source_network',
-    'tests.test_rainfall_runoff', 'tests.test_mountain_source_adapter',
-    'tests.test_mountain_depression_geometry', 'tests.test_regional_hydraulics', 'tests.test_regional_review',
+    'tests.test_runoff', 'tests.test_mountain_source_adapter',
+    'tests.test_mountain_depression_geometry', 'tests.test_surface_hydraulics.RegionalHydraulicsTests', 'tests.test_regional_review',
     'tests.test_regional_hydraulics_archive',
-    'tests.test_regional_hydraulics_compare',
-    'tests.test_regional_hydraulics_accelerated',
+    'tests.test_surface_hydraulics.RegionalComparisonTests',
+    'tests.test_surface_hydraulics.RegionalAccelerationTests',
     'tests.test_regional_review_diagnostics',
     'tests.test_regional_review_landing',
-    'tests.test_surface_network_consumer',
+    'tests.test_surface_domain.SurfaceNetworkConsumerTests',
 )
 
 
 def local_dependency_files():
-    pending = [ROOT / (module.replace('.', '/') + '.py') for module in MODULES]
+    pending = [ROOT / ((module.rsplit('.', 1)[0] if module.rsplit('.', 1)[-1][:1].isupper() else module).replace('.', '/') + '.py') for module in MODULES]
     pending.extend(ROOT.glob('tools/verify_regional*.py'))
     pending.extend(ROOT.glob('terrain_pipeline/regional*.py'))
     pending.append(ROOT / 'tools/verify_mountain_round_acceptance.py')
@@ -118,9 +118,10 @@ def verify(args):
     tests = []
     counts = {}
     for module in MODULES:
-        if importlib.util.find_spec(module) is None:
+        owner_module = module.rsplit('.', 1)[0] if module.rsplit('.', 1)[-1][:1].isupper() else module
+        if importlib.util.find_spec(owner_module) is None:
             raise ValueError('declared module absent: ' + module)
-        declared = [test for test in flatten(loader.loadTestsFromName(module)) if type(test).__module__ == module]
+        declared = [test for test in flatten(loader.loadTestsFromName(module)) if type(test).__module__ == owner_module]
         if not declared:
             raise ValueError('zero declared tests: ' + module)
         counts[module] = len(declared)

@@ -10,7 +10,7 @@ import time
 import numpy as np
 import psutil
 
-from terrain_pipeline.regional_surface_hydraulics import SurfaceBudget
+from terrain_pipeline.surface_hydraulics import SurfaceBudget
 from terrain_pipeline.td_entry_pulse_execution_v2 import advance_pulse_cold
 from terrain_pipeline.td_entry_pulse_propagation import validate_experiment
 from terrain_pipeline.td_entry_shallow_water import MAX_BYTES, MAX_CELLS, MAX_WORK, FLAGS, check_resource, finish

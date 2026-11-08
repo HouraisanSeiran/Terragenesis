@@ -1,0 +1,125 @@
+{
+  "source_identity_exact": true,
+  "unknown_records_preserved": true,
+  "base_exact": true,
+  "physical_elapsed_s": 90000.0,
+  "equivalent_years_change": 0.0,
+  "water_input_delta_m3": 9908715.838193893,
+  "record_delivered_water_m3": 9908715.838193893,
+  "external_records": [
+    {
+      "input_id": "river-stage-v1-event",
+      "source_id": "branch-event-inlet",
+      "start_s": 190800.0,
+      "end_s": 280800.0,
+      "known": true,
+      "row": 214,
+      "col": 401,
+      "direction_xz": [
+        0,
+        1
+      ],
+      "water_m3": 270000000.0,
+      "solid_m3": 144000.0,
+      "delivered_water_m3": 9908715.838193893,
+      "delivered_solid_m3": 5284.648447036743,
+      "pending_solid_m3": 0.0,
+      "undelivered_solid_m3": 138715.35155296326,
+      "undelivered_water_m3": 260091284.1618061,
+      "record_kind": "branch_event"
+    }
+  ],
+  "solid_residual_including_pending_m3": 4.76837158203125e-07,
+  "min_solid_stock_m3": 0.0,
+  "finite_stocks": true,
+  "hydraulics_reproduce": true,
+  "route_q_m3_s": [
+    19.733652770519196,
+    18.637338727712624,
+    32.88942128419876,
+    18.637338727712642,
+    19.733652770519317
+  ],
+  "accepted_q_m3_s": 109.63140428066254,
+  "rejected_q_m3_s": 2890.3685957193375,
+  "node_q_residual_m3_s": 7.105427357601002e-15,
+  "unique_nodes": true,
+  "min_river_depth_m": 1.3892278936636213,
+  "bed_depth_reconstruct": true,
+  "inlet_stage_m": 2.9999999125267838,
+  "upstream_stage_limit_m": 3.0,
+  "mouth_exterior_faces": [
+    [
+      [
+        225,
+        416
+      ],
+      [
+        226,
+        415
+      ],
+      [
+        225,
+        414
+      ]
+    ],
+    [
+      [
+        199,
+        433
+      ],
+      [
+        200,
+        432
+      ],
+      [
+        198,
+        432
+      ]
+    ],
+    [
+      [
+        216,
+        427
+      ],
+      [
+        217,
+        426
+      ],
+      [
+        215,
+        426
+      ]
+    ],
+    [
+      [
+        214,
+        428
+      ],
+      [
+        215,
+        427
+      ],
+      [
+        213,
+        427
+      ]
+    ],
+    [
+      [
+        228,
+        397
+      ],
+      [
+        227,
+        396
+      ],
+      [
+        226,
+        397
+      ]
+    ]
+  ],
+  "original_land_max_change_m": 0.0006155352182600424,
+  "pass": true
+}

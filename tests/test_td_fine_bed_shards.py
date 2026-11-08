@@ -6,7 +6,7 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity
+from terrain_pipeline.common_infra import identity
 from terrain_pipeline.td_fine_bed_raster import build_fine_bed_raster, _digest, _shape
 from terrain_pipeline.td_fine_bed_shards import (
     BYTE_REASON, build_fine_bed_shards, iter_merged_cells, load_fine_bed_shards,

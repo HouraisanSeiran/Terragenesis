@@ -3,7 +3,7 @@ import tempfile
 import unittest
 
 from tools.verify_regional_review_landing import build_landing
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 
 
 class LandingTests(unittest.TestCase):

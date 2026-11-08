@@ -34,6 +34,7 @@ public final class RawRegionVerification {
         RawRegionTerrainSource tuned = new RawRegionTerrainSource(directory, 1234, model.identity(),
             RawRegionTerrainSource.TUNED_RECIPE, config, () -> model);
         if (source.directory().equals(tuned.directory())) throw new AssertionError("Profiles share a cache directory");
+        source.prepareBounds(-48, -48, 48, 47);
         for (int[] point : new int[][] {{0, 0}, {47, 47}, {48, 0}, {-1, -1}, {-48, -48}})
             near(source.sample(point[0], point[1]).height(), 62 + .25 * point[0] + .5 * point[1]);
         if (calls.get() == 0) throw new AssertionError("Raw model was not sampled");
@@ -50,6 +51,7 @@ public final class RawRegionVerification {
         } finally { System.clearProperty("remotemountains.regionOffline"); }
         if (!source.directory().toString().contains(RawRegionTerrainSource.RECIPE))
             throw new AssertionError("Raw cache is not isolated by recipe");
+        tuned.prepareRegion(0, 0);
         near(tuned.sample(0, 0).height(), 62);
         try {
             RawRegionArtifact.read(tuned.directory(), 1234, model.identity(), RawRegionTerrainSource.RECIPE,

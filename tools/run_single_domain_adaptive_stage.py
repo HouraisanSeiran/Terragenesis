@@ -15,14 +15,14 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 import numpy as np
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.regional_surface_hydraulics import SurfaceBudget
-from terrain_pipeline.single_domain_fine_geometry import load_fine_geometry
-from terrain_pipeline.single_domain_fine_io import load_fine_run
-from terrain_pipeline.surface_adaptive_geometry import build_adaptive_geometry
-from terrain_pipeline.surface_adaptive_refinement import anticipated_spacing_map
-from terrain_pipeline.surface_adaptive_execution import advance_adaptive_surface
-from terrain_pipeline.surface_adaptive_io import save_adaptive_run
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.surface_hydraulics import SurfaceBudget
+from terrain_pipeline.fine_subgrid import load_fine_geometry
+from terrain_pipeline.fine_subgrid import load_fine_run
+from terrain_pipeline.adaptive_mesh import build_adaptive_geometry
+from terrain_pipeline.adaptive_mesh import anticipated_spacing_map
+from terrain_pipeline.adaptive_mesh import advance_adaptive_surface
+from terrain_pipeline.adaptive_mesh import save_adaptive_run
 from tools.run_single_domain_fine_stage import GATES, BUDGETS, FLAGS, json_record, freeze_execution_code, resources
 
 SOURCE_INDEX = ROOT / "verification/single-domain-fine/stage-v7-20261004-01/index.json"

@@ -6,9 +6,16 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import (
-    checked_archive, file_sha256, identity, load_legacy_source, load_physical_source,
-    load_source_bundle, make_source, save_source, validate_source,
+from terrain_pipeline.common_infra import (
+    checked_archive,
+    file_sha256,
+    identity,
+    load_legacy_source,
+    load_physical_source,
+    load_source_bundle,
+    make_source,
+    save_source,
+    validate_source,
 )
 
 
@@ -45,7 +52,7 @@ class SourceAdapterTests(unittest.TestCase):
             with self.assertRaises(FileExistsError):
                 save_source(path, source)
             self.assertEqual(path.read_bytes(), before)
-            with patch("terrain_pipeline.mountain_source_adapter.make_source", side_effect=AssertionError("prepare")):
+            with patch("terrain_pipeline.common_infra.make_source", side_effect=AssertionError("prepare")):
                 loaded = load_source_bundle(path, expected_sha256=file_sha256(path),
                     expected_identity=source["identity_sha256"], trusted_source=source)
             self.assertEqual(loaded["identity_sha256"], source["identity_sha256"])

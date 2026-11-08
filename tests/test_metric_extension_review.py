@@ -4,7 +4,7 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.surface_rivers.metric_channel_state import ChannelForcing
+from terrain_pipeline.channel_geometry import ChannelForcing
 from terrain_pipeline.surface_rivers.metric_morphology_coupling import MorphologyConfig, couple_morphology, validate_morphology_coupling
 from terrain_pipeline.surface_rivers.metric_sediment import MaterialParameters
 from tests import test_metric_morphology_coupling as fixtures

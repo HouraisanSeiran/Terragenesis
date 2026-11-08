@@ -1,0 +1,3 @@
+-r algorithm/requirements.txt
+pytest>=9.2,<10
+playwright>=1.49,<2

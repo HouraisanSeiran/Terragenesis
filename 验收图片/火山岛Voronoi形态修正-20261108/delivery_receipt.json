@@ -1,0 +1,55 @@
+{
+  "schema": "volcanic-v5-final-gallery-delivery-v1",
+  "all_image_hashes_valid": true,
+  "all_images_nonempty": true,
+  "actual_all_fields_cold_query_equal": true,
+  "controlled_all_fields_cold_query_equal": true,
+  "source_sha256": {
+    "terrain_pipeline/ocean_islands.py": "81a4a36ba84d59817d84ce94e88e387f18a80dc1c75eaec06f2e90b612c3a34b",
+    "terrain_pipeline/island_volcanoes.py": "07605199ac400516f1519a2d2f3428a9ad71a90736d7bc578b0f1539cc66c7ef",
+    "terrain_pipeline/island_volcanoes_v4.py": "fc9be55a1ec83bf8c84c08f6facc7ed12527e85e3f56b275214c39edfa6a848a",
+    "terrain_pipeline/ocean_island_consumers.py": "0b80d6973286dd77bab6ad8eb4dc5ae17965a6584b0f5b706f39465fa371a4b5",
+    "tools/prepare_ocean_islands.py": "6ec7088f17a72f4c042e8be30b9f44d01dda999570e1cdce1f324347283c0702"
+  },
+  "actual_on_identity": "7505d94d91a5fa7c58fe1f48a6ee97fae7657b03d6d4e64ca5b979c88b856d17",
+  "actual_off_identity": "4cd4535aef68322cafbf65e2d634d1466208dcd0896aabc512c723856682c775",
+  "main_export_wall_seconds": 76.90241999999853,
+  "png_count": 15,
+  "copied_comparison_images": {
+    "验收图片\\火山岛Voronoi形态修正-20261108\\old_off_on_caldera_geometry.png": "9bf999046ff6e76a191797688325e0c50d48c4783bf3b060dbbff1d66200880b",
+    "验收图片\\火山岛Voronoi形态修正-20261108\\old_off_on_eroded_geometry.png": "0323c816850e73e5d7626e767fea19ba1774185841010c719e06d0115d429987",
+    "验收图片\\火山岛Voronoi形态修正-20261108\\old_off_on_focus.png": "241f279320519361042ce94388c45f8f4bfa9d39e8a229d4ba845a070d40fc4f",
+    "验收图片\\火山岛Voronoi形态修正-20261108\\old_off_on_full_coast.png": "9a893769c45360087975b547f2efce5c85aeff555e4576097da431061fcb77f2",
+    "验收图片\\火山岛Voronoi形态修正-20261108\\old_off_on_mature_geometry.png": "5da9adc80b30c51d8508651d64ff44ce6a7ecaf29ffbac2ace1df3fd4545baf3",
+    "验收图片\\火山岛Voronoi形态修正-20261108\\old_off_on_young_geometry.png": "08eb862f2964830b29ad55c7a6f4bdb3ba883bc407c288acb4b62df3154240b9"
+  },
+  "toggle_height_metrics": {
+    "young": {
+      "max_abs_height_change_m": 551.1763704425457,
+      "mean_abs_height_change_m": 64.34995052847574,
+      "changed_sample_count": 236594,
+      "shoreline_land_flip_samples": 8055
+    },
+    "mature": {
+      "max_abs_height_change_m": 551.1763704425457,
+      "mean_abs_height_change_m": 64.45631931636304,
+      "changed_sample_count": 236594,
+      "shoreline_land_flip_samples": 8055
+    },
+    "caldera": {
+      "max_abs_height_change_m": 551.1763704425457,
+      "mean_abs_height_change_m": 65.32699828708861,
+      "changed_sample_count": 236594,
+      "shoreline_land_flip_samples": 8055
+    },
+    "eroded": {
+      "max_abs_height_change_m": 551.1763704425457,
+      "mean_abs_height_change_m": 63.19329155265455,
+      "changed_sample_count": 236594,
+      "shoreline_land_flip_samples": 8055
+    }
+  },
+  "primary_binding_sha256": "b7e475701e952657c0e8e533a72df699381494144b7b1b6c870d2869bd4af4c7",
+  "comparison_binding_sha256": "69096753209308b33d9353987f91710f767431d06215054ca388290e8780908b",
+  "semantics": "saved static procedural geometry; images are candidates for user morphology review"
+}

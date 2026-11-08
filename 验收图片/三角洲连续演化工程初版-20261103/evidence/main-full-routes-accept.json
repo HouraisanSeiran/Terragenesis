@@ -1,0 +1,25 @@
+{
+  "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+  "source_identity_exact": true,
+  "d4_connected": true,
+  "unique_cells": true,
+  "positive_depth": true,
+  "nonnegative_water_slope": true,
+  "minimum_capacity_m3_s": 150.0,
+  "requested_q_m3_s": 150.0,
+  "accepted_q_m3_s": 150.0,
+  "upstream_within_scenario_stage": true,
+  "independent_sea_face_m": 0.0,
+  "mouth_centre_stage_m": 0.32324931938982565,
+  "new_excavation_m3": 0.0,
+  "owner_stock_residuals_m3": {
+    "bed_solid_m3": 0.0,
+    "mobile_solid_m3": 0.0,
+    "stranded_solid_m3": 0.0
+  },
+  "owner_geometry_residual_m": {
+    "fine": 0.0,
+    "outer": 0.0
+  },
+  "pass": true
+}

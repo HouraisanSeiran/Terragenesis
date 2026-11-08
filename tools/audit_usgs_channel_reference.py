@@ -14,7 +14,7 @@ import requests
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
 
 BASE = "https://api.waterdata.usgs.gov/ogcapi/v1/collections/channel-measurements"
 UNITS = dict(channel_flow=("ft^3/s", .3048 ** 3, "m3/s"), channel_width=("ft", .3048, "m"),

@@ -124,6 +124,6 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     report = verify(args.url, args.output)
-    from terrain_pipeline.mountain_source_adapter import publish_bytes
+    from terrain_pipeline.common_infra import publish_bytes
     publish_bytes(args.output / "report.json", json.dumps(report, ensure_ascii=False, allow_nan=False, indent=2).encode("utf-8"))
     print(json.dumps({"status":report["status"], "screenshots":len(report["screenshots"])}, ensure_ascii=False))

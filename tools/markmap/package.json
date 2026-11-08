@@ -1,0 +1,12 @@
+{
+  "name": "terragenesis-markmap",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local offline Markmap export for the river engineering map.",
+  "scripts": {
+    "build": "markmap ../../docs/river-engineering-map.md --output ../../docs/river-engineering-map.html --offline --no-open"
+  },
+  "devDependencies": {
+    "markmap-cli": "0.18.12"
+  }
+}

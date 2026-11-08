@@ -1,0 +1,31 @@
+{
+  "identity": "97a7fc402e7d5d4ee4a0800f8a3b19430d634bb3c3a434c104ca2c7ce7bcf7c6",
+  "independent_regeneration_match": true,
+  "maximum_relative_material_residual": 4.717776640189363e-16,
+  "initial_area_cells": [
+    2854,
+    2248,
+    2710,
+    2397,
+    3037,
+    2961,
+    2216,
+    2057
+  ],
+  "initial_periodic_components": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "total_plate_perimeter_m": 23760000.0,
+  "area_weighted_perimeter_squared_over_area": 34.585546875,
+  "continuous_segments": 257,
+  "concave_vertices": 232,
+  "both_old_product_files_unchanged": true,
+  "initial_embryos_and_velocities_unchanged": true
+}

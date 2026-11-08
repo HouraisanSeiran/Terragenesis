@@ -1,0 +1,1454 @@
+{
+  "closure": "AST-imports-plus-literal-source-pins-plus-saved-original-code-map-union",
+  "data_root_policy": "original-workspace-read-only-input-pins-current-adapter-explicit-output",
+  "files": {
+    "diffusion/__init__.py": {
+      "imports": [],
+      "literal_source_dependencies": [],
+      "module": "diffusion",
+      "sha256": "e856d59e1b529fd4ecbe4c6ab16a89355fd8428631eebdbbc48c91f449096f4f"
+    },
+    "diffusion/paths.py": {
+      "imports": [
+        "diffusion/__init__.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "diffusion.paths",
+      "sha256": "a5b01300b7299c91cb4a86741600f481f768a203e888920239e28cdd2a26fd28"
+    },
+    "diffusion/physical_config.py": {
+      "imports": [
+        "diffusion/__init__.py",
+        "diffusion/paths.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "diffusion.physical_config",
+      "sha256": "4a144d97fdefb54bc099797e034d595d7c46935c4aa5f05c1a3523c8577a709b"
+    },
+    "terrain_pipeline/__init__.py": {
+      "imports": [],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline",
+      "sha256": "c80efc19fd5775d1b9ea03698338cb589faa18d76d758eed0920fdd9b5e268df"
+    },
+    "terrain_pipeline/hybrid_cave_geometry.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/hybrid_river_graph.py",
+        "terrain_pipeline/td_shared_channel_fine.py",
+        "terrain_pipeline/td_source_conforming_banks.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.hybrid_cave_geometry",
+      "sha256": "dd839163651239ba358b74b79e41acf6831487a6638e980483f9825243311b55"
+    },
+    "terrain_pipeline/hybrid_mesh_plane.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/hybrid_river_faces.py",
+        "terrain_pipeline/hybrid_river_graph.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.hybrid_mesh_plane",
+      "sha256": "ebe155432189c443e8bba0e0ef873873eeb7d4e65d46eaa7756c6877977e23f9"
+    },
+    "terrain_pipeline/hybrid_mesh_plane_v2.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/hybrid_mesh_plane.py",
+        "terrain_pipeline/hybrid_river_faces.py",
+        "terrain_pipeline/hybrid_river_graph.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.hybrid_mesh_plane_v2",
+      "sha256": "c08f36980976193961c6869b6c07d2e3d44d313be1ecc7ef9e5fcdbed5ae788c"
+    },
+    "terrain_pipeline/hybrid_river_faces.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/hybrid_river_graph.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.hybrid_river_faces",
+      "sha256": "73ae18fc30afabb70ed4b3d1c043606141e560c7d0d818f38053ac018b5acc8a"
+    },
+    "terrain_pipeline/hybrid_river_faces_v2.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/hybrid_mesh_plane_v2.py",
+        "terrain_pipeline/hybrid_river_faces.py",
+        "terrain_pipeline/hybrid_river_graph.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.hybrid_river_faces_v2",
+      "sha256": "aa30508df4c8668af1d2c0c801410a86b1cce07a4cf04878584676c5b5f4c402"
+    },
+    "terrain_pipeline/hybrid_river_graph.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.hybrid_river_graph",
+      "sha256": "063b2a3d037f366647aeb585161834a44a5eb18301dee919bb76b2b24052f8f6"
+    },
+    "terrain_pipeline/hybrid_river_hydraulics.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.hybrid_river_hydraulics",
+      "sha256": "896abd3ef8ec79bbbbdfe3638076361b83f2c2b61a1b0405378711366e372649"
+    },
+    "terrain_pipeline/hybrid_surface_composition.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/hybrid_cave_geometry.py",
+        "terrain_pipeline/hybrid_river_faces.py",
+        "terrain_pipeline/hybrid_river_graph.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.hybrid_surface_composition",
+      "sha256": "0a9b424ca1994d150c8bf6c3cb90c2ce8c263cd5ca78cace24134242b02c5dd3"
+    },
+    "terrain_pipeline/hybrid_surface_composition_v2.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/hybrid_cave_geometry.py",
+        "terrain_pipeline/hybrid_mesh_plane.py",
+        "terrain_pipeline/hybrid_river_faces.py",
+        "terrain_pipeline/hybrid_river_graph.py",
+        "terrain_pipeline/hybrid_surface_composition.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.hybrid_surface_composition_v2",
+      "sha256": "9ca048b281f6cbf3fa358d84bed4f9a9df97ebfe9e9b2ec2f66129311e0042bd"
+    },
+    "terrain_pipeline/hybrid_surface_composition_v3.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/hybrid_cave_geometry.py",
+        "terrain_pipeline/hybrid_mesh_plane_v2.py",
+        "terrain_pipeline/hybrid_river_faces.py",
+        "terrain_pipeline/hybrid_river_graph.py",
+        "terrain_pipeline/hybrid_surface_composition.py",
+        "terrain_pipeline/hybrid_surface_composition_v2.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.hybrid_surface_composition_v3",
+      "sha256": "4be72eb2607d47c9d6260a826d3c04d3624c7e31679bc2aa73c086a83c8828ea"
+    },
+    "terrain_pipeline/mountain_source_adapter.py": {
+      "imports": [
+        "diffusion/physical_config.py",
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/rainfall_runoff.py",
+        "tools/verify_mountain_rainfall.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.mountain_source_adapter",
+      "sha256": "796e763097d4b49ca74dcffc052afdd5f1fc5ad03cbdeb26f4cadc57b5cc3c85"
+    },
+    "terrain_pipeline/rainfall_runoff.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.rainfall_runoff",
+      "sha256": "d10b6e965b6483e0d5e6bf71c5115f196752c8780749ddb2fe0b8788daebfee8"
+    },
+    "terrain_pipeline/td_basin_hierarchy.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/mountain_source_adapter.py",
+        "terrain_pipeline/td_basin_source.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.td_basin_hierarchy",
+      "sha256": "e618ac7177e34a877efa9ef50abaa5002e6669e152a090cb82917061507dc895"
+    },
+    "terrain_pipeline/td_basin_source.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/mountain_source_adapter.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.td_basin_source",
+      "sha256": "d1ea7cdad04b0dae0d3fbb5bf304fb1fddd62bada95878f05a0a578234732f81"
+    },
+    "terrain_pipeline/td_fine_bed_raster.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/mountain_source_adapter.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.td_fine_bed_raster",
+      "sha256": "b46950b02aeb8524b58b3985353f480bf25b8d7167ef3492005c852d6f08a293"
+    },
+    "terrain_pipeline/td_fine_bed_shards.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/mountain_source_adapter.py",
+        "terrain_pipeline/td_fine_bed_raster.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.td_fine_bed_shards",
+      "sha256": "310a433b3f092a1f7b35e6dcc1d9b19ce16d07513f4e74695d581b962bc58ac6"
+    },
+    "terrain_pipeline/td_ported_junction.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/td_source_conforming_banks.py",
+        "terrain_pipeline/td_source_conforming_banks_v3.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.td_ported_junction",
+      "sha256": "7ff3d0d6ebbe7ac65aac16045d905c248d0e7768148303d998540c351a146eb5"
+    },
+    "terrain_pipeline/td_ported_network_composition.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/td_ported_junction.py",
+        "terrain_pipeline/td_source_conforming_banks.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.td_ported_network_composition",
+      "sha256": "b4db872c525aa65a186afb25857fc7edd7cf725a8a37f4f90c48c643227c9165"
+    },
+    "terrain_pipeline/td_shared_channel_fine.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/td_fine_bed_raster.py",
+        "terrain_pipeline/td_ported_network_composition.py",
+        "terrain_pipeline/td_source_conforming_banks.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.td_shared_channel_fine",
+      "sha256": "79bac00a25427dcc7285bedde0f047747bc8e34bd45875784300a6b405649dd0"
+    },
+    "terrain_pipeline/td_shared_port_channel.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/td_ported_junction.py",
+        "terrain_pipeline/td_ported_network_composition.py",
+        "terrain_pipeline/td_source_conforming_banks.py",
+        "terrain_pipeline/td_source_conforming_banks_v3.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.td_shared_port_channel",
+      "sha256": "fa44c986240480975934c494aa02443d81fc063c18634d9fa65bd47909aadcc8"
+    },
+    "terrain_pipeline/td_source_conforming_banks.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/mountain_source_adapter.py",
+        "terrain_pipeline/td_fine_bed_raster.py",
+        "terrain_pipeline/td_fine_bed_shards.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.td_source_conforming_banks",
+      "sha256": "b0978a4fc4d16a1d80fddc1a2d6f4274e59edddfaa7f40de52ee0410fb424353"
+    },
+    "terrain_pipeline/td_source_conforming_banks_v3.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/td_source_conforming_banks.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "terrain_pipeline.td_source_conforming_banks_v3",
+      "sha256": "075947dac928bc95c16b5bc95b7c5414d6e22cd8fae7a6c0b8ec3f88d24db29c"
+    },
+    "tests/test_hybrid_cave_geometry.py": {
+      "imports": [
+        "terrain_pipeline/hybrid_cave_geometry.py",
+        "terrain_pipeline/hybrid_river_hydraulics.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_hybrid_cave_geometry",
+      "sha256": "98c8c229432c0e5a4819d6d8ba482da722b45a825c3e43d73614e30b9f8d4b27"
+    },
+    "tests/test_hybrid_cave_saved_audit.py": {
+      "imports": [
+        "tools/export_hybrid_cave_review.py",
+        "tools/hybrid_cave_saved_audit.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_hybrid_cave_saved_audit",
+      "sha256": "3f7382c7c05f5033a0eb323f1a5bf42e503968449bb7f84f670fe4c665b2a367"
+    },
+    "tests/test_hybrid_river_faces.py": {
+      "imports": [
+        "terrain_pipeline/hybrid_river_faces.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_hybrid_river_faces",
+      "sha256": "a329e3850f7e211dbf07c756263650d0f3d1b7b3848f1ee7a8c833fe52b290e6"
+    },
+    "tests/test_hybrid_river_faces_saved_audit.py": {
+      "imports": [
+        "tools/audit_hybrid_river_faces.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_hybrid_river_faces_saved_audit",
+      "sha256": "d876f6568dfa589b0190fe9e839a2b66e38c9c6096a36f5da1f47bf5593bb28b"
+    },
+    "tests/test_hybrid_river_faces_v2.py": {
+      "imports": [
+        "terrain_pipeline/hybrid_cave_geometry.py",
+        "terrain_pipeline/hybrid_river_faces.py",
+        "terrain_pipeline/hybrid_river_faces_v2.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_hybrid_river_faces_v2",
+      "sha256": "a762c60ffcffd5cf10b43fea3ed8dd73ba1b503f7be21f83a6dc96be56b18998"
+    },
+    "tests/test_hybrid_river_faces_v2_saved_audit.py": {
+      "imports": [
+        "terrain_pipeline/hybrid_cave_geometry.py",
+        "terrain_pipeline/hybrid_river_faces.py",
+        "terrain_pipeline/hybrid_river_faces_v2.py",
+        "tools/audit_hybrid_river_faces_v2.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_hybrid_river_faces_v2_saved_audit",
+      "sha256": "214b77b80e31c8656406188a2ce699780b188ad7abaf7864afc6cef6d2f764b8"
+    },
+    "tests/test_hybrid_surface_composition.py": {
+      "imports": [
+        "terrain_pipeline/hybrid_cave_geometry.py",
+        "terrain_pipeline/hybrid_surface_composition.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_hybrid_surface_composition",
+      "sha256": "5df84c0c6c5cfb17b83c1f25cfc3819ee7c221c9b850d5d62dfbcaf443bc0ae7"
+    },
+    "tests/test_hybrid_surface_composition_saved_audit.py": {
+      "imports": [
+        "tools/audit_hybrid_surface_composition.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_hybrid_surface_composition_saved_audit",
+      "sha256": "756400d89ec22d71ce983949b7c4a2925fdfa9abeedda493c4465d7c8e35b464"
+    },
+    "tests/test_hybrid_surface_composition_v2.py": {
+      "imports": [
+        "terrain_pipeline/hybrid_cave_geometry.py",
+        "terrain_pipeline/hybrid_mesh_plane.py",
+        "terrain_pipeline/hybrid_river_faces.py",
+        "terrain_pipeline/hybrid_surface_composition_v2.py",
+        "tools/prepare_hybrid_surface_composition.py",
+        "tools/prepare_hybrid_surface_composition_v2.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_hybrid_surface_composition_v2",
+      "sha256": "2e41c913fa454d64598664947dc0e9cc40cb3e95763ac30c7bc011f4bdd7c18c"
+    },
+    "tests/test_hybrid_surface_composition_v2_saved_audit.py": {
+      "imports": [
+        "tools/audit_hybrid_surface_composition_v2.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_hybrid_surface_composition_v2_saved_audit",
+      "sha256": "7a06d77ca38505d8ff4018eaedd102af2d28df87364caea01132d742a0aca28f"
+    },
+    "tests/test_hybrid_surface_composition_v3.py": {
+      "imports": [
+        "terrain_pipeline/hybrid_mesh_plane_v2.py",
+        "terrain_pipeline/hybrid_river_faces.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_hybrid_surface_composition_v3",
+      "sha256": "2a6d40e57c115a74c758010d4c19a70c57d766dec1e8561908e3105e6ecd5a1a"
+    },
+    "tests/test_hybrid_surface_composition_v3_saved_audit.py": {
+      "imports": [
+        "tools/audit_hybrid_surface_composition_v3.py",
+        "tools/hybrid_exact_solid_saved_audit.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_hybrid_surface_composition_v3_saved_audit",
+      "sha256": "5900221e64c864a909992daeb34c5aced97b5636d52fad137234d584d8f66924"
+    },
+    "tests/test_hybrid_surface_composition_v4_saved_audit.py": {
+      "imports": [
+        "tools/audit_hybrid_surface_composition_v4.py",
+        "tools/hybrid_exact_solid_saved_audit.py",
+        "tools/hybrid_surface_resume_saved_audit.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_hybrid_surface_composition_v4_saved_audit",
+      "sha256": "c57b87e2efbd6225fd22db586ec7a2380ff9b5668ed6db0938a42e1c7924f2a6"
+    },
+    "tests/test_hybrid_surface_composition_v5_saved_audit.py": {
+      "imports": [
+        "tools/hybrid_exact_solid_saved_audit.py",
+        "tools/hybrid_interval_winding_saved_audit.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_hybrid_surface_composition_v5_saved_audit",
+      "sha256": "127a62a35c4b823e417f39bd3a70ef88a56a18aa468c863f684c306a6d0bed67"
+    },
+    "tests/test_hybrid_surface_composition_v6_saved_audit.py": {
+      "imports": [
+        "tools/audit_hybrid_surface_composition_v6.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_hybrid_surface_composition_v6_saved_audit",
+      "sha256": "aa5b368bcdfde0ca664e90aa13a5f8981795f5d505a73f27047ed4f58cf1d1b7"
+    },
+    "tests/test_mountain_rainfall.py": {
+      "imports": [
+        "terrain_pipeline/rainfall_runoff.py",
+        "tools/verify_mountain_rainfall.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_mountain_rainfall",
+      "sha256": "5890d9b8126116e07a6f2ced183e43dbe52688713f95dcb6820ac62c27cc45c8"
+    },
+    "tests/test_rainfall_runoff.py": {
+      "imports": [
+        "terrain_pipeline/rainfall_runoff.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_rainfall_runoff",
+      "sha256": "3babbfc1ce091af7470bde29272eda4e0537e4bbfc2fa5142e74108c78af66c2"
+    },
+    "tests/test_td_ported_junction.py": {
+      "imports": [
+        "terrain_pipeline/mountain_source_adapter.py",
+        "terrain_pipeline/td_ported_junction.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_td_ported_junction",
+      "sha256": "c3603653e4c715241e0a691a2dea0997b692fbe446fbdac599de3061b73dc03e"
+    },
+    "tests/test_td_ported_network_composition.py": {
+      "imports": [
+        "terrain_pipeline/td_ported_junction.py",
+        "terrain_pipeline/td_ported_network_composition.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_td_ported_network_composition",
+      "sha256": "08ecf11221ccbee91c33d54d7ca9240f7f43a73008782f3d0d47213f0646083e"
+    },
+    "tests/test_td_shared_channel_fine.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/mountain_source_adapter.py",
+        "terrain_pipeline/td_shared_channel_fine.py",
+        "terrain_pipeline/td_source_conforming_banks.py",
+        "tools/prepare_td_shared_channel_fine.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_td_shared_channel_fine",
+      "sha256": "730a9bbc375db40de2381985d9ead8192487d96534670a1fd5e9ed478d2f85e1"
+    },
+    "tests/test_td_shared_channel_fine_saved_audit.py": {
+      "imports": [
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_td_shared_channel_fine_saved_audit",
+      "sha256": "8044b42d608f93340805f8161eb92eb148a5380379c5b5f15cef7576039b1a9e"
+    },
+    "tests/test_td_shared_port_channel.py": {
+      "imports": [
+        "terrain_pipeline/mountain_source_adapter.py",
+        "terrain_pipeline/td_shared_port_channel.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tests.test_td_shared_port_channel",
+      "sha256": "831683a43dc50f3ee93e7ce62e359e31d320b6881075e3d75dd53c5c759fc586"
+    },
+    "tools/audit_hybrid_cave_geometry_v2.py": {
+      "imports": [
+        "tools/hybrid_cave_saved_audit.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/hybrid_cave_geometry.py",
+        "tests/test_hybrid_cave_geometry.py",
+        "tests/test_hybrid_cave_saved_audit.py",
+        "tools/audit_hybrid_cave_geometry_v2.py",
+        "tools/audit_td_shared_channel_fine.py",
+        "tools/hybrid_cave_saved_audit.py",
+        "tools/prepare_hybrid_cave_geometry.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "module": "tools.audit_hybrid_cave_geometry_v2",
+      "sha256": "fb35600ba54c122e258624af475db0536f1a82b702610e885e04c858de33fde8"
+    },
+    "tools/audit_hybrid_river_faces.py": {
+      "imports": [
+        "tools/hybrid_cave_saved_audit.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/hybrid_river_faces.py",
+        "tests/test_hybrid_river_faces.py",
+        "tests/test_hybrid_river_faces_saved_audit.py",
+        "tools/audit_hybrid_river_faces.py",
+        "tools/hybrid_cave_saved_audit.py",
+        "tools/prepare_hybrid_river_faces.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "module": "tools.audit_hybrid_river_faces",
+      "sha256": "f16987cfbcef80977b96c948c125757d55002d0dbab9d6ae9d3eea80bde71ded"
+    },
+    "tools/audit_hybrid_river_faces_v2.py": {
+      "imports": [
+        "tools/audit_hybrid_river_faces.py",
+        "tools/audit_hybrid_surface_composition_v3.py",
+        "tools/hybrid_exact_solid_saved_audit.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [
+        "tests/test_hybrid_river_faces_v2_saved_audit.py",
+        "tools/audit_hybrid_river_faces.py",
+        "tools/audit_hybrid_river_faces_v2.py",
+        "tools/audit_hybrid_surface_composition_v3.py",
+        "tools/hybrid_cave_saved_audit.py",
+        "tools/hybrid_exact_solid_saved_audit.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "module": "tools.audit_hybrid_river_faces_v2",
+      "sha256": "8f51ab07140bd4f6824a405ec3de6e2cd9f809a06724d5ebe32739722a27d1b0"
+    },
+    "tools/audit_hybrid_surface_composition.py": {
+      "imports": [
+        "tools/audit_hybrid_river_faces.py",
+        "tools/hybrid_cave_saved_audit.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/hybrid_surface_composition.py",
+        "tests/test_hybrid_surface_composition.py",
+        "tests/test_hybrid_surface_composition_saved_audit.py",
+        "tools/audit_hybrid_river_faces.py",
+        "tools/audit_hybrid_surface_composition.py",
+        "tools/hybrid_cave_saved_audit.py",
+        "tools/prepare_hybrid_surface_composition.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "module": "tools.audit_hybrid_surface_composition",
+      "sha256": "bb655a3a06ae410b22c72810d18a73a5c7b576b809a4ce9d0ef853255337b585"
+    },
+    "tools/audit_hybrid_surface_composition_v2.py": {
+      "imports": [
+        "tools/audit_hybrid_river_faces.py",
+        "tools/audit_hybrid_surface_composition.py",
+        "tools/hybrid_cave_saved_audit.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/hybrid_mesh_plane.py",
+        "terrain_pipeline/hybrid_surface_composition_v2.py",
+        "tests/test_hybrid_surface_composition_v2.py",
+        "tests/test_hybrid_surface_composition_v2_saved_audit.py",
+        "tools/audit_hybrid_river_faces.py",
+        "tools/audit_hybrid_surface_composition.py",
+        "tools/audit_hybrid_surface_composition_v2.py",
+        "tools/hybrid_cave_saved_audit.py",
+        "tools/prepare_hybrid_surface_composition_v2.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "module": "tools.audit_hybrid_surface_composition_v2",
+      "sha256": "814c87591f8a6adecc82fab4c170424fa14fc0624d885c28802a09fd091cdf75"
+    },
+    "tools/audit_hybrid_surface_composition_v3.py": {
+      "imports": [
+        "tools/audit_hybrid_river_faces.py",
+        "tools/audit_hybrid_surface_composition.py",
+        "tools/audit_hybrid_surface_composition_v2.py",
+        "tools/hybrid_cave_saved_audit.py",
+        "tools/hybrid_exact_solid_saved_audit.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/hybrid_mesh_plane.py",
+        "terrain_pipeline/hybrid_mesh_plane_v2.py",
+        "terrain_pipeline/hybrid_surface_composition_v2.py",
+        "terrain_pipeline/hybrid_surface_composition_v3.py",
+        "tests/test_hybrid_surface_composition_v2.py",
+        "tests/test_hybrid_surface_composition_v3.py",
+        "tests/test_hybrid_surface_composition_v3_saved_audit.py",
+        "tools/audit_hybrid_river_faces.py",
+        "tools/audit_hybrid_surface_composition.py",
+        "tools/audit_hybrid_surface_composition_v2.py",
+        "tools/audit_hybrid_surface_composition_v3.py",
+        "tools/hybrid_cave_saved_audit.py",
+        "tools/hybrid_exact_solid_saved_audit.py",
+        "tools/prepare_hybrid_surface_composition_v2.py",
+        "tools/prepare_hybrid_surface_composition_v3.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "module": "tools.audit_hybrid_surface_composition_v3",
+      "sha256": "6d1a59873b8543b25c532fdfbf4265fec2e93a9a394a0232242796926013cd3d"
+    },
+    "tools/audit_hybrid_surface_composition_v4.py": {
+      "imports": [
+        "tools/audit_hybrid_surface_composition_v3.py",
+        "tools/hybrid_surface_resume_saved_audit.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [
+        "tests/test_hybrid_surface_composition_v3_saved_audit.py",
+        "tests/test_hybrid_surface_composition_v4_saved_audit.py",
+        "tools/audit_hybrid_river_faces.py",
+        "tools/audit_hybrid_surface_composition.py",
+        "tools/audit_hybrid_surface_composition_v3.py",
+        "tools/audit_hybrid_surface_composition_v4.py",
+        "tools/hybrid_cave_saved_audit.py",
+        "tools/hybrid_exact_solid_saved_audit.py",
+        "tools/hybrid_surface_resume_saved_audit.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "module": "tools.audit_hybrid_surface_composition_v4",
+      "sha256": "9db6e56a046c4fb3fc4319add596c2e828a1763dabfffaf372f0a94c03b39396"
+    },
+    "tools/audit_hybrid_surface_composition_v5.py": {
+      "imports": [
+        "tools/audit_hybrid_surface_composition_v4.py",
+        "tools/hybrid_interval_winding_saved_audit.py",
+        "tools/hybrid_surface_resume_saved_audit.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [
+        "tests/test_hybrid_surface_composition_v4_saved_audit.py",
+        "tests/test_hybrid_surface_composition_v5_saved_audit.py",
+        "tools/audit_hybrid_surface_composition_v4.py",
+        "tools/audit_hybrid_surface_composition_v5.py",
+        "tools/hybrid_interval_winding_saved_audit.py",
+        "tools/hybrid_surface_resume_saved_audit.py"
+      ],
+      "module": "tools.audit_hybrid_surface_composition_v5",
+      "sha256": "bb1500f24ebdc3702645ea7676de6a774556f8bdd79b479ab7600eac4783fb16"
+    },
+    "tools/audit_hybrid_surface_composition_v6.py": {
+      "imports": [
+        "tools/audit_hybrid_surface_composition_v4.py",
+        "tools/audit_hybrid_surface_composition_v5.py",
+        "tools/hybrid_interval_winding_saved_audit.py",
+        "tools/hybrid_surface_resume_saved_audit.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [
+        "tests/test_hybrid_surface_composition_v4_saved_audit.py",
+        "tests/test_hybrid_surface_composition_v5_saved_audit.py",
+        "tests/test_hybrid_surface_composition_v6_saved_audit.py",
+        "tools/audit_hybrid_surface_composition_v4.py",
+        "tools/audit_hybrid_surface_composition_v5.py",
+        "tools/audit_hybrid_surface_composition_v6.py",
+        "tools/hybrid_interval_winding_saved_audit.py",
+        "tools/hybrid_surface_resume_saved_audit.py"
+      ],
+      "module": "tools.audit_hybrid_surface_composition_v6",
+      "sha256": "5e8775d0762bc1dc6a634520ec1c3f14c703b37b08f942c9f58e5cb9c50d4e4b"
+    },
+    "tools/audit_td_shared_channel_fine.py": {
+      "imports": [
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/td_shared_channel_fine.py",
+        "tests/test_td_shared_channel_fine.py",
+        "tests/test_td_shared_channel_fine_saved_audit.py",
+        "tools/audit_td_shared_channel_fine.py",
+        "tools/prepare_td_shared_channel_fine.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "module": "tools.audit_td_shared_channel_fine",
+      "sha256": "c9412fdd134e2e06c9feca5abebc7ee51d4298345c5ceeb0d1302a9e88b35be3"
+    },
+    "tools/export_hybrid_cave_review.py": {
+      "imports": [
+        "tools/export_td_watershed_inspection.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tools.export_hybrid_cave_review",
+      "sha256": "688409942bc69c51cd5baa97ef7ce381dc4b3651a8f8a7f70529655e07403bc3"
+    },
+    "tools/export_hybrid_river_faces_review_v2.py": {
+      "imports": [
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [
+        "tools/export_hybrid_river_faces_review_v2.py"
+      ],
+      "module": "tools.export_hybrid_river_faces_review_v2",
+      "sha256": "77cd039fa7f8db44f70ccd51cf9807e5cae583d2beee8424aaa876d20d420140"
+    },
+    "tools/export_td_watershed_inspection.py": {
+      "imports": [],
+      "literal_source_dependencies": [],
+      "module": "tools.export_td_watershed_inspection",
+      "sha256": "0dad10c02ea12828b6a76b97b809f99b66140bb0b85b8a56a5fe3d595faf4a6a"
+    },
+    "tools/hybrid_cave_saved_audit.py": {
+      "imports": [
+        "tools/audit_td_shared_channel_fine.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tools.hybrid_cave_saved_audit",
+      "sha256": "9fbdbb83b5b5ca54c3da815d1288d45ffd40fabad0bd12c2d22dd311d2b3474a"
+    },
+    "tools/hybrid_exact_solid_saved_audit.py": {
+      "imports": [
+        "tools/hybrid_cave_saved_audit.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tools.hybrid_exact_solid_saved_audit",
+      "sha256": "0fc1adcfabd817aa13558ff2eaade19d8f150d8a2a1322cda2ef8582733f333f"
+    },
+    "tools/hybrid_interval_winding_saved_audit.py": {
+      "imports": [
+        "tools/hybrid_cave_saved_audit.py",
+        "tools/hybrid_exact_solid_saved_audit.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tools.hybrid_interval_winding_saved_audit",
+      "sha256": "cc9fe11238bbdcd70ae14f32d73e83108c50c631515076412ed656715a563d81"
+    },
+    "tools/hybrid_surface_resume_saved_audit.py": {
+      "imports": [
+        "tools/hybrid_cave_saved_audit.py",
+        "tools/hybrid_exact_solid_saved_audit.py",
+        "tools/td_shared_channel_fine_saved_audit.py"
+      ],
+      "literal_source_dependencies": [],
+      "module": "tools.hybrid_surface_resume_saved_audit",
+      "sha256": "d96494f0bf0467700e70dcf8ef2231d96002f2cf56572aeeb896a77f4c0844f5"
+    },
+    "tools/prepare_hybrid_cave_geometry.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/hybrid_cave_geometry.py",
+        "terrain_pipeline/hybrid_river_graph.py",
+        "terrain_pipeline/td_basin_hierarchy.py",
+        "terrain_pipeline/td_source_conforming_banks.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/hybrid_cave_geometry.py",
+        "tests/test_hybrid_cave_geometry.py",
+        "tools/prepare_hybrid_cave_geometry.py"
+      ],
+      "module": "tools.prepare_hybrid_cave_geometry",
+      "sha256": "104d525135e081d14c5d0c1728d70d47391bf4707375c6d14ca0928a75e8e6a9"
+    },
+    "tools/prepare_hybrid_river_faces.py": {
+      "imports": [
+        "terrain_pipeline/hybrid_river_faces.py",
+        "terrain_pipeline/hybrid_river_graph.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/hybrid_river_faces.py",
+        "tests/test_hybrid_river_faces.py",
+        "tools/prepare_hybrid_river_faces.py"
+      ],
+      "module": "tools.prepare_hybrid_river_faces",
+      "sha256": "e4c7051473aaaa5dbe79baa5314fc4fe52e68af7e9197a8871eb68272b82fb2e"
+    },
+    "tools/prepare_hybrid_river_faces_v2.py": {
+      "imports": [
+        "terrain_pipeline/hybrid_mesh_plane_v2.py",
+        "terrain_pipeline/hybrid_river_faces_v2.py",
+        "terrain_pipeline/hybrid_river_graph.py",
+        "terrain_pipeline/hybrid_surface_composition_v3.py",
+        "tools/prepare_hybrid_river_faces.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/hybrid_mesh_plane_v2.py",
+        "terrain_pipeline/hybrid_river_faces.py",
+        "terrain_pipeline/hybrid_river_faces_v2.py",
+        "terrain_pipeline/hybrid_surface_composition.py",
+        "tests/test_hybrid_river_faces.py",
+        "tests/test_hybrid_river_faces_v2.py",
+        "tests/test_hybrid_surface_composition.py",
+        "tools/prepare_hybrid_river_faces.py",
+        "tools/prepare_hybrid_river_faces_v2.py",
+        "tools/prepare_hybrid_surface_composition.py"
+      ],
+      "module": "tools.prepare_hybrid_river_faces_v2",
+      "sha256": "3a2db8e7b2afe66c1611f85b0aa1ac8f9daf3b0f6b9d6c572cadfc531c2c5298"
+    },
+    "tools/prepare_hybrid_surface_composition.py": {
+      "imports": [
+        "terrain_pipeline/hybrid_river_faces.py",
+        "terrain_pipeline/hybrid_surface_composition.py",
+        "tools/prepare_hybrid_river_faces.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/hybrid_cave_geometry.py",
+        "terrain_pipeline/hybrid_river_faces.py",
+        "terrain_pipeline/hybrid_river_graph.py",
+        "terrain_pipeline/hybrid_surface_composition.py",
+        "tests/test_hybrid_surface_composition.py",
+        "tools/prepare_hybrid_river_faces.py",
+        "tools/prepare_hybrid_surface_composition.py"
+      ],
+      "module": "tools.prepare_hybrid_surface_composition",
+      "sha256": "93e50dec6ac93cbda8396fb2b344fd40204a1c72942c944a17e0ecd698bafff8"
+    },
+    "tools/prepare_hybrid_surface_composition_v2.py": {
+      "imports": [
+        "terrain_pipeline/hybrid_mesh_plane.py",
+        "terrain_pipeline/hybrid_river_faces.py",
+        "terrain_pipeline/hybrid_surface_composition_v2.py",
+        "tools/prepare_hybrid_river_faces.py",
+        "tools/prepare_hybrid_surface_composition.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/hybrid_cave_geometry.py",
+        "terrain_pipeline/hybrid_mesh_plane.py",
+        "terrain_pipeline/hybrid_river_faces.py",
+        "terrain_pipeline/hybrid_river_graph.py",
+        "terrain_pipeline/hybrid_surface_composition.py",
+        "terrain_pipeline/hybrid_surface_composition_v2.py",
+        "tests/test_hybrid_surface_composition.py",
+        "tests/test_hybrid_surface_composition_v2.py",
+        "tools/prepare_hybrid_river_faces.py",
+        "tools/prepare_hybrid_surface_composition.py",
+        "tools/prepare_hybrid_surface_composition_v2.py"
+      ],
+      "module": "tools.prepare_hybrid_surface_composition_v2",
+      "sha256": "c7d47d03afbd4c361d95a58c06468e8546a65ebfd7b2a96e19728907bb81509a"
+    },
+    "tools/prepare_hybrid_surface_composition_v3.py": {
+      "imports": [
+        "terrain_pipeline/hybrid_mesh_plane_v2.py",
+        "terrain_pipeline/hybrid_river_faces.py",
+        "terrain_pipeline/hybrid_surface_composition_v3.py",
+        "tools/prepare_hybrid_river_faces.py",
+        "tools/prepare_hybrid_surface_composition.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/hybrid_mesh_plane.py",
+        "terrain_pipeline/hybrid_mesh_plane_v2.py",
+        "terrain_pipeline/hybrid_surface_composition_v2.py",
+        "terrain_pipeline/hybrid_surface_composition_v3.py",
+        "tests/test_hybrid_surface_composition_v2.py",
+        "tests/test_hybrid_surface_composition_v3.py",
+        "tools/prepare_hybrid_surface_composition_v2.py",
+        "tools/prepare_hybrid_surface_composition_v3.py"
+      ],
+      "module": "tools.prepare_hybrid_surface_composition_v3",
+      "sha256": "6aa37cf6341d078753421caeaee95480a9c335a7b0bb1e3412fd93937dd2cb38"
+    },
+    "tools/prepare_td_ported_junction.py": {
+      "imports": [
+        "terrain_pipeline/mountain_source_adapter.py",
+        "terrain_pipeline/td_basin_hierarchy.py",
+        "terrain_pipeline/td_ported_junction.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/mountain_source_adapter.py",
+        "terrain_pipeline/td_basin_hierarchy.py",
+        "terrain_pipeline/td_fine_bed_raster.py",
+        "terrain_pipeline/td_ported_junction.py",
+        "terrain_pipeline/td_source_conforming_banks.py",
+        "terrain_pipeline/td_source_conforming_banks_v3.py",
+        "tests/test_td_ported_junction.py",
+        "tools/prepare_td_ported_junction.py"
+      ],
+      "module": "tools.prepare_td_ported_junction",
+      "sha256": "7cb7d67b6bdefdd06134bda55b3c0e95d436a00a29ce68cff16bba45cce0dba5"
+    },
+    "tools/prepare_td_ported_network_composition.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/mountain_source_adapter.py",
+        "terrain_pipeline/td_basin_hierarchy.py",
+        "terrain_pipeline/td_ported_junction.py",
+        "terrain_pipeline/td_ported_network_composition.py",
+        "terrain_pipeline/td_source_conforming_banks.py",
+        "tools/prepare_td_ported_junction.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/td_ported_junction.py",
+        "terrain_pipeline/td_ported_network_composition.py",
+        "tests/test_td_ported_junction.py",
+        "tests/test_td_ported_network_composition.py",
+        "tools/prepare_td_ported_junction.py",
+        "tools/prepare_td_ported_network_composition.py"
+      ],
+      "module": "tools.prepare_td_ported_network_composition",
+      "sha256": "a6182f7f1e15e5b9ef866c5def5b11f3ea2940706900347f81cf77f553bd1df3"
+    },
+    "tools/prepare_td_shared_channel_fine.py": {
+      "imports": [
+        "terrain_pipeline/__init__.py",
+        "terrain_pipeline/mountain_source_adapter.py",
+        "terrain_pipeline/td_basin_hierarchy.py",
+        "terrain_pipeline/td_ported_network_composition.py",
+        "terrain_pipeline/td_shared_channel_fine.py",
+        "terrain_pipeline/td_source_conforming_banks.py",
+        "tools/prepare_td_ported_junction.py",
+        "tools/prepare_td_ported_network_composition.py",
+        "tools/prepare_td_shared_port_channel.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/td_shared_channel_fine.py",
+        "terrain_pipeline/td_shared_port_channel.py",
+        "tests/test_td_shared_channel_fine.py",
+        "tests/test_td_shared_port_channel.py",
+        "tools/prepare_td_shared_channel_fine.py",
+        "tools/prepare_td_shared_port_channel.py"
+      ],
+      "module": "tools.prepare_td_shared_channel_fine",
+      "sha256": "e984f32667fe01bbed9a568bf06d50a222503104f88f0e19b0a3e291603b433a"
+    },
+    "tools/prepare_td_shared_port_channel.py": {
+      "imports": [
+        "terrain_pipeline/mountain_source_adapter.py",
+        "terrain_pipeline/td_ported_network_composition.py",
+        "terrain_pipeline/td_shared_port_channel.py",
+        "tools/prepare_td_ported_junction.py",
+        "tools/prepare_td_ported_network_composition.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/td_ported_network_composition.py",
+        "terrain_pipeline/td_shared_port_channel.py",
+        "tests/test_td_ported_network_composition.py",
+        "tests/test_td_shared_port_channel.py",
+        "tools/prepare_td_ported_network_composition.py",
+        "tools/prepare_td_shared_port_channel.py"
+      ],
+      "module": "tools.prepare_td_shared_port_channel",
+      "sha256": "bc6e116bf31d358c3af075df3592bf0a6f359d5f01a8b87ced1c2cccf19ae9b2"
+    },
+    "tools/td_shared_channel_fine_saved_audit.py": {
+      "imports": [],
+      "literal_source_dependencies": [],
+      "module": "tools.td_shared_channel_fine_saved_audit",
+      "sha256": "f654e5a9730280e5fdd5e03206be1d3de8cb9b92852aeb047b86cee91655b0a9"
+    },
+    "tools/verify_mountain_rainfall.py": {
+      "imports": [
+        "terrain_pipeline/rainfall_runoff.py"
+      ],
+      "literal_source_dependencies": [
+        "terrain_pipeline/rainfall_runoff.py",
+        "tests/test_mountain_rainfall.py",
+        "tests/test_rainfall_runoff.py"
+      ],
+      "module": "tools.verify_mountain_rainfall",
+      "sha256": "9f2160d4b5440d4fcb6d6ca3ef71c888e20ede2fb9313152a2b44d396d156a81"
+    }
+  },
+  "mode": "explicit-legacy-replay-only",
+  "roots": [
+    "terrain_pipeline/hybrid_mesh_plane.py",
+    "terrain_pipeline/hybrid_mesh_plane_v2.py",
+    "terrain_pipeline/hybrid_river_faces.py",
+    "terrain_pipeline/hybrid_river_faces_v2.py",
+    "terrain_pipeline/hybrid_surface_composition.py",
+    "terrain_pipeline/hybrid_surface_composition_v2.py",
+    "terrain_pipeline/hybrid_surface_composition_v3.py",
+    "tools/prepare_hybrid_river_faces.py",
+    "tools/prepare_hybrid_river_faces_v2.py",
+    "tools/prepare_hybrid_surface_composition.py",
+    "tools/prepare_hybrid_surface_composition_v2.py",
+    "tools/prepare_hybrid_surface_composition_v3.py",
+    "tools/audit_hybrid_river_faces.py",
+    "tools/audit_hybrid_river_faces_v2.py",
+    "tools/export_hybrid_river_faces_review_v2.py",
+    "tools/audit_hybrid_surface_composition.py",
+    "tools/audit_hybrid_surface_composition_v2.py",
+    "tools/audit_hybrid_surface_composition_v3.py",
+    "tools/audit_hybrid_surface_composition_v4.py",
+    "tools/audit_hybrid_surface_composition_v5.py",
+    "tools/audit_hybrid_surface_composition_v6.py",
+    "tests/test_hybrid_river_faces.py",
+    "tests/test_hybrid_river_faces_v2.py",
+    "tests/test_hybrid_river_faces_saved_audit.py",
+    "tests/test_hybrid_river_faces_v2_saved_audit.py",
+    "tests/test_hybrid_surface_composition.py",
+    "tests/test_hybrid_surface_composition_v2.py",
+    "tests/test_hybrid_surface_composition_v3.py",
+    "tests/test_hybrid_surface_composition_saved_audit.py",
+    "tests/test_hybrid_surface_composition_v2_saved_audit.py",
+    "tests/test_hybrid_surface_composition_v3_saved_audit.py",
+    "tests/test_hybrid_surface_composition_v4_saved_audit.py",
+    "tests/test_hybrid_surface_composition_v5_saved_audit.py",
+    "tests/test_hybrid_surface_composition_v6_saved_audit.py"
+  ],
+  "saved_source_map_origins": {
+    "terrain_pipeline/hybrid_cave_geometry.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/geometry.json",
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/geometry.json",
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/hybrid_mesh_plane.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/hybrid_mesh_plane_v2.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/hybrid_river_faces.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-river-faces-20261006-01/faces.json",
+      "verification/natural-river-network/hybrid-river-faces-20261006-01/index.json"
+    ],
+    "terrain_pipeline/hybrid_river_graph.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/geometry.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/hybrid_surface_composition.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/hybrid_surface_composition_v2.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/hybrid_surface_composition_v3.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/mountain_source_adapter.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/geometry.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/rainfall_runoff.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/geometry.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/td_basin_hierarchy.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/geometry.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/td_basin_source.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/geometry.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/td_fine_bed_raster.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/geometry.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/td_fine_bed_shards.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/geometry.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/td_ported_junction.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/geometry.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/td_ported_network_composition.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/geometry.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/td_shared_channel_fine.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/geometry.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/td_source_conforming_banks.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/geometry.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "terrain_pipeline/td_source_conforming_banks_v3.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/geometry.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "tests/test_hybrid_cave_geometry.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/geometry.json",
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "tests/test_hybrid_cave_saved_audit.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/independent-audit-v2.json"
+    ],
+    "tests/test_hybrid_river_faces.py": [
+      "verification/natural-river-network/hybrid-river-faces-20261006-01/faces.json",
+      "verification/natural-river-network/hybrid-river-faces-20261006-01/index.json"
+    ],
+    "tests/test_hybrid_river_faces_saved_audit.py": [
+      "verification/natural-river-network/hybrid-river-faces-20261006-01/independent-audit-v1.json"
+    ],
+    "tests/test_hybrid_surface_composition.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "tests/test_hybrid_surface_composition_v2.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "tests/test_hybrid_surface_composition_v2_saved_audit.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/independent-audit-v1.json"
+    ],
+    "tests/test_hybrid_surface_composition_v3.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "tests/test_hybrid_surface_composition_v3_saved_audit.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v3.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json"
+    ],
+    "tests/test_hybrid_surface_composition_v4_saved_audit.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v3.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json"
+    ],
+    "tests/test_hybrid_surface_composition_v5_saved_audit.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v3.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json"
+    ],
+    "tests/test_hybrid_surface_composition_v6_saved_audit.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json"
+    ],
+    "tools/audit_hybrid_cave_geometry_v2.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/independent-audit-v2.json"
+    ],
+    "tools/audit_hybrid_river_faces.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v3.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-river-faces-20261006-01/independent-audit-v1.json"
+    ],
+    "tools/audit_hybrid_surface_composition.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v3.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json"
+    ],
+    "tools/audit_hybrid_surface_composition_v2.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/independent-audit-v1.json"
+    ],
+    "tools/audit_hybrid_surface_composition_v3.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v3.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json"
+    ],
+    "tools/audit_hybrid_surface_composition_v4.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v3.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json"
+    ],
+    "tools/audit_hybrid_surface_composition_v5.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v3.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json"
+    ],
+    "tools/audit_hybrid_surface_composition_v6.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json"
+    ],
+    "tools/audit_td_shared_channel_fine.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/independent-audit-v2.json"
+    ],
+    "tools/hybrid_cave_saved_audit.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v3.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-river-faces-20261006-01/independent-audit-v1.json"
+    ],
+    "tools/hybrid_exact_solid_saved_audit.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v3.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json"
+    ],
+    "tools/hybrid_interval_winding_saved_audit.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v3.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json"
+    ],
+    "tools/hybrid_surface_resume_saved_audit.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v3.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json"
+    ],
+    "tools/prepare_hybrid_cave_geometry.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/geometry.json",
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "tools/prepare_hybrid_river_faces.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-river-faces-20261006-01/faces.json",
+      "verification/natural-river-network/hybrid-river-faces-20261006-01/index.json"
+    ],
+    "tools/prepare_hybrid_surface_composition.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-01/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "tools/prepare_hybrid_surface_composition_v2.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/checkpoint_boolean.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "tools/prepare_hybrid_surface_composition_v3.py": [
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/composition.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/index.json"
+    ],
+    "tools/td_shared_channel_fine_saved_audit.py": [
+      "verification/natural-river-network/hybrid-cave-geometry-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-02/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v1.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v2.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v3.json",
+      "verification/natural-river-network/hybrid-surface-composition-20261006-03/independent-audit-v4.json",
+      "verification/natural-river-network/hybrid-river-faces-20261006-01/independent-audit-v1.json"
+    ]
+  },
+  "schema": "hybrid-geometry-legacy-source-v1"
+}

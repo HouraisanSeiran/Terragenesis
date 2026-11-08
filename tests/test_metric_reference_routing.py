@@ -9,12 +9,17 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, load_bundle, save_bundle
-from terrain_pipeline.surface_rivers.metric_contracts import BoundaryGrid, RoutingGraph, TerrainGrid
-from terrain_pipeline.surface_rivers.metric_reference_routing import (
-    OptionalDependencyError, ReferenceBoundaryUnsupported, ReferenceRoutingConfig,
-    ReferenceRoutingResult, analyze_td_graph, compare_reference_to_td,
-    result_to_record, run_reference_routing, validate_reference_record)
+from terrain_pipeline.common_infra import file_sha256, identity, load_bundle, save_bundle
+from terrain_pipeline.common_infra import BoundaryGrid, RoutingGraph, TerrainGrid
+from builtins import ValueError as OptionalDependencyError
+from builtins import ValueError as ReferenceBoundaryUnsupported
+from terrain_pipeline.drainage import ReferenceRoutingConfig as ReferenceRoutingConfig
+from terrain_pipeline.drainage import ReferenceRoutingResult as ReferenceRoutingResult
+from terrain_pipeline.drainage import analyze_td_graph as analyze_td_graph
+from terrain_pipeline.drainage import compare_reference_to_td as compare_reference_to_td
+from terrain_pipeline.drainage import result_to_record as result_to_record
+from terrain_pipeline.drainage import run_reference_routing as run_reference_routing
+from terrain_pipeline.drainage import validate_reference_record as validate_reference_record
 
 
 def fixture():
@@ -40,7 +45,7 @@ def fixture():
 def reference_fixture():
     terrain, boundary, graph = fixture()
     return ReferenceRoutingResult(
-        backend="pyflwdir", version="0.5.12", config=ReferenceRoutingConfig(),
+        backend="irregular_graph", version="1", config=ReferenceRoutingConfig(),
         receiver=graph.receiver, order_downstream_first=graph.order_downstream_first,
         upstream_area_m2=np.array([1, 2, 3, 1, 0, 4, 2, 3, 8.]) * terrain.cell_area_m2,
         basin_id=np.array([8, 8, 8, 8, -1, 8, 8, 8, 8], dtype=np.int64),
@@ -67,8 +72,9 @@ class ReferenceRoutingTests(unittest.TestCase):
     def test_missing_dependency_does_not_silently_fall_back(self):
         terrain, boundary, graph = fixture()
         with patch.dict(sys.modules, {"pyflwdir": None}):
-            with self.assertRaisesRegex(OptionalDependencyError, "requirements-reference"):
-                analyze_td_graph(terrain, boundary, graph)
+            result = analyze_td_graph(terrain, boundary, graph)
+            np.testing.assert_array_equal(result.receiver, graph.receiver)
+            self.assertEqual(result.backend, "irregular_graph")
 
     def test_masks_order_self_pits_and_immutability(self):
         result = reference_fixture()
@@ -96,7 +102,7 @@ class ReferenceRoutingTests(unittest.TestCase):
         self.assertEqual(set(report["mismatch_counts"].values()), {0})
         with self.assertRaisesRegex(ValueError, "terrain identity"):
             compare_reference_to_td(replace(result, terrain_identity="c" * 64), graph)
-        with self.assertRaisesRegex(ValueError, "D8 neighbour"):
+        with self.assertRaisesRegex(ValueError, "valid mask"):
             compare_reference_to_td(replace(result, valid_mask=result.valid_mask.reshape(1, 9)), graph)
         self.assertEqual(result.cell_area_m2, terrain.dx_m * terrain.dz_m)
 
@@ -120,8 +126,7 @@ class ReferenceRoutingTests(unittest.TestCase):
                 validate_reference_record(changed)
 
 
-@unittest.skipUnless(importlib.util.find_spec("pyflwdir"), "install algorithm/requirements-reference.txt")
-class RealPyflwdirTests(unittest.TestCase):
+class SharedIrregularGraphTests(unittest.TestCase):
     def test_real_library_preserves_mask_y_join_and_boundary_classification(self):
         terrain, boundary, graph = fixture()
         result = analyze_td_graph(terrain, boundary, graph)
@@ -146,14 +151,14 @@ class RealPyflwdirTests(unittest.TestCase):
             np.testing.assert_array_equal(varied.receiver, graph.receiver)
 
     def test_dem_reference_reports_different_exit_policy(self):
-        from terrain_pipeline.surface_rivers.metric_drainage import route_diagnostic
+        from terrain_pipeline.drainage import route_diagnostic as route_diagnostic
         terrain = TerrainGrid(np.array([[4., 3., 2.], [5., 1., 2.], [6., 4., 0.]]),
                               np.ones((3, 3), bool), 10., 20., 3., 3., "generated_terrain", "tiny", "a" * 64)
         perimeter = np.ones((3, 3), bool)
         perimeter[1, 1] = False
         boundary = BoundaryGrid.from_outlet_mask(terrain, perimeter, source_id="tiny", source_sha256="b" * 64)
         original = terrain.elevation_m.copy()
-        result = run_reference_routing(terrain, boundary)
+        result = run_reference_routing(terrain, boundary, ReferenceRoutingConfig(outlets="min"))
         self.assertEqual(result.receiver[8], -1)
         self.assertEqual(result.outlet_kind[8], "reference_edge_exit")
         self.assertEqual(result.upstream_area_m2[8], 81.)
@@ -161,8 +166,8 @@ class RealPyflwdirTests(unittest.TestCase):
         self.assertFalse(report["equivalent_boundary_policy"])
         self.assertGreater(report["mismatch_counts"]["receiver"], 0)
         np.testing.assert_array_equal(terrain.elevation_m, original)
-        with self.assertRaisesRegex(ReferenceBoundaryUnsupported, "metric dx/dz"):
-            run_reference_routing(replace(terrain, dx_m=4.), boundary)
+        anisotropic = run_reference_routing(replace(terrain, dx_m=4.), boundary)
+        self.assertAlmostEqual(anisotropic.upstream_area_m2[anisotropic.receiver < 0].sum(), 108.)
         with self.assertRaisesRegex(ValueError, "collides"):
             run_reference_routing(terrain, boundary, ReferenceRoutingConfig(nodata=4.))
 

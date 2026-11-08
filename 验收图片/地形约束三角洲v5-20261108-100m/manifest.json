@@ -1,0 +1,51 @@
+{
+ "algorithms": [
+  "source-controlled finite-stock plain",
+  "source-steered v3 DAG",
+  "v4 channel cross-section stamp"
+ ],
+ "coverage_status": "complete_in_window",
+ "display_crop_local_km": {
+  "u": [
+   -8.0,
+   22.0
+  ],
+  "v": [
+   -16.0,
+   17.0
+  ]
+ },
+ "files": {
+  "base-dem.png": "dea9ff76d268833d66a0175e0840567bdecd83f0202c4a0c9f15af13e0ba2f7e",
+  "base-main.png": "f18b39c1778e2906ffae70b3c2c555343c41abe2de34b05aff9de4126bbc213c",
+  "base-source-and-change.png": "2865b991e8bcc2e016bb02eb4a140c86783de68f83e4a95bfaf2fc6a5ab01f8a",
+  "few_loops-dem.png": "8b59a5aca0440a922a2c6435bca79cc9bd09a007c993555a178a56143d0b55c4",
+  "few_loops-main.png": "16ffe74c44a7d42931566c07db4ebdcb213b5529659a1e0d6c3e1f1903976d0a",
+  "few_loops-source-and-change.png": "a9988c6219e9d4a95497d1f62cae544100d6de016301f99f4d1a773c87e96b91",
+  "many_loops-dem.png": "9a13afe54939226447cc9a01fb62a8bcd6fbc1801e1b1b2c71835ae0c1ecd514",
+  "many_loops-main.png": "8fe37b2a571ed1cd8ef1f0d4cdff9acbff95246b0bc177aaccbb42fa9c822b32",
+  "many_loops-source-and-change.png": "791be29494fd651d23aaaa6fb6adb7086e3f8bcd0dc4c60c2f2874f83ac81243"
+ },
+ "physical_elapsed_seconds": 0.0,
+ "rendering": "Saved bed hillshade and terrain colours; actual wet masks; no inferred vegetation; original coast overlay",
+ "source_cases": [
+  "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-completion-20261107\\source-controlled-v5-100m-r2\\base",
+  "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-completion-20261107\\source-controlled-v5-100m-r2\\few_loops",
+  "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-completion-20261107\\source-controlled-v5-100m-r2\\many_loops"
+ ],
+ "spacing_m": 100.0,
+ "terrain_basis": {
+  "bed_m.npy": {
+   "bytes": 67108992,
+   "path": ".scratch/river-upgrade-20261101/terrain-v3/bed_m.npy",
+   "sha256": "eb37ec4d383137e61412d5d2411bf5370c3aa942de6e825df4dbebb48a3e8f45"
+  },
+  "ocean_mask.npy": {
+   "bytes": 16777344,
+   "path": ".scratch/river-upgrade-20261101/terrain-v3/ocean_mask.npy",
+   "sha256": "ee6fd7f367469feab8047564d13b4e8ecf3b2947b20098eb9d6cac97a0613a68"
+  },
+  "origin_center_m": -61440.0,
+  "spacing_m": 30.0
+ }
+}

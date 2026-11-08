@@ -3,7 +3,7 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.regional_surface_hydraulics import prepare_surface_geometry
+from terrain_pipeline.surface_hydraulics import prepare_surface_geometry
 from terrain_pipeline.td_entry_shallow_water import finish
 from terrain_pipeline.td_entry_pulse_propagation import (
     ORDINARY_Q_M3_S, build_dry_drain_geometry, build_pulse_forcing,

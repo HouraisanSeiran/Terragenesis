@@ -1,0 +1,115 @@
+{
+  "input_id": "river-stage-v1-event",
+  "water_m3": 270000000.0,
+  "solid_m3": 144000.0,
+  "delivered_water_m3": 9908715.838193893,
+  "delivered_solid_m3": 5284.648447036743,
+  "undelivered_water_m3": 260091284.1618061,
+  "undelivered_solid_m3": 138715.35155296326,
+  "internal_transfer_solid_m3": 4277869.010025622,
+  "entrained_solid_m3": 657113.5217598622,
+  "capacity_concentration": 0.01,
+  "active_layer_m": 0.5,
+  "max_velocity_m_s": 2.0,
+  "physical_time_start_s": 190800.0,
+  "physical_time_end_s": 280800.0,
+  "years": 10.0,
+  "residual_solid_m3": 4.76837158203125e-07,
+  "actual_q_m3_s": [
+    19.733652770519196,
+    18.637338727712624,
+    32.88942128419876,
+    18.637338727712642,
+    19.733652770519317
+  ],
+  "sea_level_m": 0.9820590192291054,
+  "active": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "exterior_faces": [
+    [
+      [
+        225,
+        416
+      ],
+      [
+        226,
+        415
+      ],
+      [
+        225,
+        414
+      ]
+    ],
+    [
+      [
+        199,
+        433
+      ],
+      [
+        200,
+        432
+      ],
+      [
+        198,
+        432
+      ]
+    ],
+    [
+      [
+        216,
+        427
+      ],
+      [
+        217,
+        426
+      ],
+      [
+        215,
+        426
+      ]
+    ],
+    [
+      [
+        214,
+        428
+      ],
+      [
+        215,
+        427
+      ],
+      [
+        213,
+        427
+      ]
+    ],
+    [
+      [
+        228,
+        397
+      ],
+      [
+        227,
+        396
+      ],
+      [
+        226,
+        397
+      ]
+    ]
+  ],
+  "parameters": {
+    "upstream_stage_limit_m": 3.0,
+    "roughness": 0.035,
+    "gravity_m_s2": 9.81
+  },
+  "stock_bed_m3": 839937619.3495647,
+  "stock_mobile_m3": 26287912.603064448,
+  "stock_stranded_m3": 0.0,
+  "exported_solid_m3": 1153617712.6958199,
+  "finite": true
+}

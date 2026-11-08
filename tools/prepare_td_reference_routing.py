@@ -17,10 +17,11 @@ import tempfile
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, load_bundle, save_bundle
-from terrain_pipeline.surface_rivers.metric_routing_comparison import (
-    POLICIES, _terrain_boundary, decode_routing_comparison, load_routing_comparison,
-)
+from terrain_pipeline.common_infra import file_sha256, load_bundle, save_bundle
+from terrain_pipeline.drainage import POLICIES as POLICIES
+from terrain_pipeline.drainage import _terrain_boundary as _terrain_boundary
+from terrain_pipeline.drainage import decode_routing_comparison as decode_routing_comparison
+from terrain_pipeline.drainage import load_routing_comparison as load_routing_comparison
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,12 +29,12 @@ SCHEMA = "td-reference-graph-analysis-v1"
 READINESS = {"hydraulic_ready": False, "natural_outlet_verified": False, "publishable": False}
 CODE_PATHS = (
     "tools/prepare_td_reference_routing.py",
-    "terrain_pipeline/surface_rivers/metric_reference_routing.py",
-    "terrain_pipeline/surface_rivers/metric_routing_comparison.py",
+    'terrain_pipeline/drainage.py',
+    'terrain_pipeline/drainage.py',
     "terrain_pipeline/surface_rivers/metric_contracts.py",
-    "terrain_pipeline/surface_rivers/metric_drainage.py",
+    'terrain_pipeline/drainage.py',
     "terrain_pipeline/mountain_source_adapter.py",
-    "terrain_pipeline/rainfall_runoff.py",
+    'terrain_pipeline/runoff.py',
     "algorithm/requirements-reference.txt",
 )
 
@@ -95,7 +96,7 @@ def _reference_api():
         raise ImportError(
             "pyflwdir is required; install algorithm/requirements-reference.txt"
         ) from error
-    module = importlib.import_module("terrain_pipeline.surface_rivers.metric_reference_routing")
+    module = importlib.import_module('terrain_pipeline.drainage')
     required = ("analyze_td_graph", "compare_reference_to_td", "result_to_record",
                 "validate_reference_record")
     if any(not callable(getattr(module, name, None)) for name in required):
@@ -139,7 +140,7 @@ def _statistics(record, terrain, graph):
     }
 
 
-def prepare(input_dir, output, *, manifest_sha256, policy="original_bed_d8"):
+def prepare(input_dir, output, *, manifest_sha256, policy="original_bed_irregular"):
     """Publish only a cold-validated analysis; never overwrite or audit M1/M2 hydrology."""
     output = Path(output).absolute()
     if os.path.lexists(output):
@@ -214,7 +215,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, required=True)
     parser.add_argument("--manifest-sha256", required=True)
-    parser.add_argument("--policy", choices=POLICIES, default="original_bed_d8")
+    parser.add_argument("--policy", choices=POLICIES, default="original_bed_irregular")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
     try:

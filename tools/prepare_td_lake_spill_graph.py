@@ -11,18 +11,21 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_basin_overflow import load_overflow_topology
-from terrain_pipeline.td_basin_runoff_exchange import load_runoff_exchange
-from terrain_pipeline.td_lake_spill_graph import build_lake_spill_graph, digest, interval_ranges, save_lake_spill_graph
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_storage import load_overflow_topology as load_overflow_topology
+from terrain_pipeline.basin_storage import load_runoff_exchange as load_runoff_exchange
+from terrain_pipeline.basin_topology import build_lake_spill_graph as build_lake_spill_graph
+from terrain_pipeline.basin_topology import digest as digest
+from terrain_pipeline.basin_topology import interval_ranges as interval_ranges
+from terrain_pipeline.basin_topology import save_lake_spill_graph as save_lake_spill_graph
 
 PARENT = ROOT / "verification/natural-river-network/bounded-conditioning-20261005-01"
 PARENT_SHA = "9091396732558f7b795888bd83c86713c3e8c9e644768c3b8cb801ab9b152437"
 AUDIT_SHA = "636f619b0661bb0bb50ccd8bb9f242dae255f4a6a202f9c64a7162af889adbf6"
 BASELINE_SHA = "cd78c2f2ce9c6a1abbd98ae7ee528079dfb2ee1b5ce2905458e64137aa868e5f"
-CODE = ("terrain_pipeline/td_lake_spill_graph.py", "terrain_pipeline/td_lake_spill_geometry.py",
-        "terrain_pipeline/td_lake_outlet_forest.py", "tools/prepare_td_lake_spill_graph.py")
+CODE = ('terrain_pipeline/basin_topology.py', 'terrain_pipeline/basin_topology.py',
+        'terrain_pipeline/basin_topology.py', "tools/prepare_td_lake_spill_graph.py")
 NORMAL = "normal-spatial-recession-24h"
 STRONG = "strong-spatial-recession-6h"
 

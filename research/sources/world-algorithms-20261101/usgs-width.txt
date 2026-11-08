@@ -1,0 +1,996 @@
+
+
+<!DOCTYPE html>
+<html xmlns:mml="https://www.w3.org/1998/Math/MathML" xmlns:xlink="https://www.w3.org/1999/xlink" xmlns:ali="https://www.niso.org/schemas/ali/1.0/" xmlns:xi="https://www.w3.org/2001/XInclude" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" lang="en">
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Start SAS Google Tag Manager --> 
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-TVTCHDP');</script>
+        <!-- End SAS Google Tag Manager -->
+    
+        <!-- START USGS DAP Google Tag Manager -->
+        <!-- USE REQUIRED script for all public applications
+        IMPORTANT: REMOVE this script for any logged in pages and/or internal applications  -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TKQR8KP');</script>
+        <!-- END USGS DAP Google Tag Manager --> 
+
+        
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="title" content="USGS Publications Warehouse">
+    <meta name="keywords" content>
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>The hydraulic geometry of stream channels and some physiographic implications</title>
+    <meta NAME="title" content="The hydraulic geometry of stream channels and some physiographic implications" />
+    <meta name="description" content="Some hydraulic characteristics of stream channels - depth, width, velocity, and suspended load - are measured quantitatively and vary with discharge as simple power functions at a given river cross section. Similar variations in relation to discharge exist among the cross sections along the length of a river under the condition that discharge at all points is equal in frequency of occurrence. The functions derived for a given cross section and among various cross sections along the river differ only in numerical values of coefficients and exponents...." />
+    <META NAME="abstract" CONTENT="Some hydraulic characteristics of stream channels - depth, width, velocity, and suspended load - are measured quantitatively and vary with discharge as simple power functions at a given river cross section. Similar variations in relation to discharge exist among the cross sections along the length of a river under the condition that discharge at all points is equal in frequency of occurrence. The functions derived for a given cross section and among various cross sections along the river differ only in numerical values of coefficients and exponents." />
+    <meta NAME="author" content="Luna Bergere Leopold"/><meta NAME="author" content="Thomas Maddock Jr."/>
+    <meta name = "revised" content="2017-03-09T12:36:52"/>
+    <meta name = "created" content="1994-01-01T00:00:00"/>
+    <meta name = "date" content="1953"/>
+  <!-- meta tags for google scholar indexing and zotero/mendeley parsing -->
+    <meta name="citation_title" content="The hydraulic geometry of stream channels and some physiographic implications" />
+    <meta name="citation_publication_date" content="1953" />
+    <meta name="citation_date" content="1953" />
+    <meta name="citation_online_date" content="1994-01-01T00:00:00" />
+    <meta NAME="citation_author" content="Luna Bergere Leopold"/><meta NAME="citation_author" content="Thomas Maddock Jr."/>
+    
+    
+    
+    <meta name="citation_journal_title" content="Professional Paper" />
+    
+    
+    <meta name="citation_issn" content="2330-7102" />
+    
+    
+    
+    
+        
+        <meta name="citation_technical_report_institution" content="U.S. Government Printing Office" />
+        <meta name="citation_technical_report_number" content="252" />
+    
+    <meta name="citation_doi" content="10.3133/pp252" />
+    
+        <meta name="citation_pdf_url" content="https://pubs.usgs.gov/pp/0252/report.pdf" />
+    
+
+    
+        
+    
+        
+
+       <link rel="stylesheet" href="https://pubs.usgs.gov/static/vendor/academicons/css/academicons.css">
+    
+    
+    
+        
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [ ['^','^'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+  },
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process',
+    menuOptions: {
+      settings: {
+        zoom: 'Click',
+        zscale: '200%'
+      }
+    },
+    enableAssistiveMml: true,
+    enableEnrichment: true,
+    sre: {
+      speech: 'deep',         // or 'shallow', or 'deep'
+      domain: 'mathspeak',    // speech rules domain
+      style: 'default',       // speech rules style
+      locale: 'en'            // the language to use (en, fr, es, de, it)
+    },
+    enrichError: (doc, math, err) => doc.enrichError(doc, math, err),  // function to call if enrichment fails
+    enableExplorer: true,
+    a11y: {
+      infoType: true,                   // show semantic type on mouse hovering
+      infoRole: true,                   // show semantic role on mouse hovering
+      infoPrefix: true,                 // show speech prefixes on mouse hovering
+    }
+  }
+};
+</script>
+
+
+<script id="MathJax-script" async
+src="https://pubs.usgs.gov/static/vendor/MathJax/es5/tex-mml-svg.js"></script>
+    
+
+
+
+
+        <title>USGS Publications Warehouse</title>
+
+        <!-- USWDS 3 requires uswds-init to run in <head> BEFORE any stylesheet.
+             Keep this above the page_style/head_script blocks, which is where
+             child templates link their CSS. -->
+             <script src="https://pubs.usgs.gov/static/vendor/uswds-init.min.js"></script>
+             
+        
+        
+    
+        
+
+       <link rel="stylesheet" href="https://pubs.usgs.gov/static/vendor/academicons/css/academicons.css">
+    
+
+        <!--[if gt IE 8]><!-->
+        <script src="https://pubs.usgs.gov/static/vendor/polyfill.js"></script>
+        <script>
+            if (!String.prototype.startsWith) {
+                String.prototype.startsWith = function(search, pos) {
+                    return this.substr(!pos || pos < 0 ? 0 : +pos, search.length) === search;
+                };
+            }
+        </script>
+        <!--<![endif]-->
+        <script src="https://pubs.usgs.gov/static/vendor/system.js" defer></script>
+        
+    <script defer>
+        window.addEventListener('DOMContentLoaded', () => {
+            SystemJS.import("https://pubs.usgs.gov/static/scripts/common.a49e452e.js");
+        });
+    </script>
+
+        
+    <link rel="stylesheet" href="https://pubs.usgs.gov/static/pubs_base.45bf58dd.css" type="text/css" />
+    <link rel="shortcut icon" href="https://pubs.usgs.gov/static/images/pubswh/favicon.72b5542e.ico"/>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="USGS Pubs"/>
+    <link rel="unapi-server" type="application/xml" title="unAPI" href="/unapi" />
+    <link rel="alternate" type="application/rss+xml" title="USGS Publications Warehouse RSS Feed" href="https://pubs.usgs.gov/pubs-services/publication/rss"/>
+    <script>
+        var CONFIG = {
+            lookupUrl: 'https://pubs.usgs.gov/pubs-services/lookup',
+            requestArgs: JSON.parse('{}') <!-- set to True if only one value per key is desired -->
+        }
+    </script>
+
+    </head>
+    <body>
+        <!-- Start SAS Google Tag Manager (noscript) --> 
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVTCHDP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End SAS Google Tag Manager (noscript) -->
+    
+        
+        
+    <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+    <section class="usa-banner maxw-full" aria-label="Official government website">
+        <div class="usa-accordion">
+            <header class="usa-banner__header">
+                <div class="usa-banner__inner content-container">
+                    <div class="grid-col-auto">
+                        <img class="usa-banner__header-flag" src="https://pubs.usgs.gov/static/img/us_flag_small.37e6dc83.png" alt="U.S. flag">
+                    </div>
+                    <div class="grid-col-fill tablet:grid-col-auto">
+                        <p class="usa-banner__header-text">An official website of the United States government</p>
+                        <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+                    </div>
+                    <button class="usa-accordion__button usa-banner__button"
+                            aria-expanded="false" aria-controls="gov-banner">
+                        <span class="usa-banner__button-text">Here’s how you know</span>
+                    </button>
+                </div>
+            </header>
+            <div class="usa-banner__content usa-accordion__content" id="gov-banner">
+                <div class="grid-row grid-gap-lg">
+                    <div class="usa-banner__guidance tablet:grid-col-6">
+                        <img class="usa-banner__icon usa-media-block__img" src="https://pubs.usgs.gov/static/img/icon-dot-gov.42b4ac46.svg"
+                             alt="Dot gov">
+                        <div class="usa-media-block__body">
+                            <p>
+                                <strong>Official websites use .gov</strong>
+                                <br/>
+                                A <strong>.gov</strong> website belongs to an official government organization in the
+                                United States.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="usa-banner__guidance tablet:grid-col-6">
+                        <img class="usa-banner__icon usa-media-block__img" src="https://pubs.usgs.gov/static/img/icon-https.73abd866.svg"
+                             alt="Https">
+                        <div class="usa-media-block__body">
+                            <p>
+                                <strong>Secure .gov websites use HTTPS</strong>
+                                <br/>
+                                A <strong>lock</strong> (
+                                <span class="icon-lock">
+                                    <svg xmlns="https://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64" class="usa-banner__lock-image" role="img" aria-labelledby="banner-lock-title banner-lock-description"><title id="banner-lock-title">Lock</title><desc id="banner-lock-description">A locked padlock</desc><path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"/></svg>
+                                </span>
+                                ) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="usa-overlay"></div>
+
+    <header class="usa-header usa-header--extended usgs-header site-header" role="banner">
+        <div class="usgs-header-container">
+            <div class="usa-navbar">
+                <div class="usa-logo" id="extended-logo">
+                    <a href="https://www.usgs.gov" accesskey="1" title="Home" aria-label="Home">
+                        <img alt="USGS Home" src="https://pubs.usgs.gov/static/img/USGS_logo.356d51b9.svg"></img>
+                    </a>
+                    
+                </div>
+                <button class="usa-menu-btn">Menu</button>
+            </div>
+        </div>
+
+        
+            <nav role="navigation" class="usa-nav">
+                <div>
+                    <button class="usa-nav__close"><img src="https://pubs.usgs.gov/static/img/usa-icons/close.d9165ac7.svg" alt="close"></button>
+                    <ul class="usa-nav__primary usa-accordion">
+                        <li class="usa-nav__primary-item">
+                            <a class="usa-nav__link" href="/">USGS Publications Warehouse</a>
+                        </li>
+                        <li class="usa-nav__primary-item">
+                            <button class="usa-accordion__button usa-nav__link"
+                                    aria-expanded="false"
+                                    aria-controls="explore-section">
+                                <span>Explore</span>
+                            </button>
+                            <ul id="explore-section" class="usa-nav__submenu">
+                                <li class="usa-nav__submenu-item">
+                                 <a href="/newpubs">Explore recent publications by USGS authors</a>
+                                </li>
+                                <li class="usa-nav__submenu-item">
+                                    <a href="/browse/">
+                                        Browse all of Pubs Warehouse by publication type and year
+                                    </a>
+                                </li>
+                           </ul>
+                        </li>
+                        <li class="usa-nav__primary-item">
+                            <button class="usa-accordion__button usa-nav__link"
+                                    aria-expanded="false"
+                                    aria-controls="documentation-section">
+                                <span>Documentation</span>
+                            </button>
+                            <ul id="documentation-section" class="usa-nav__submenu">
+                                <li class="usa-nav__submenu-item">
+                                    <a href="/documentation/about">About</a>
+                                </li>
+                                <li class="usa-nav__submenu-item">
+                                    <a href="/documentation/faq">FAQs</a>
+                                </li>
+                                <li class="usa-nav__submenu-item">
+                                  <a href="/documentation/web_service_documentation">Web service documentation</a>
+                                </li>
+                                <li class="usa-nav__submenu-item">
+                                  <a href="/documentation/other_resources">Other resources</a>
+                                </li>
+                                <li class="usa-nav__submenu-item">
+                                    <a href="/documentation/usgs_series">
+                                        Descriptions of US Geological Survey Report Series
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="usa-nav__primary-item">
+                            <a class="usa-nav__link" href="/contact">Contact</a>
+                        </li>
+                        <li class="usa-nav__primary-item">
+                            <a class="usa-nav__link" href="https://www.usgs.gov/information-policies-and-instructions/liability#future-ips">Disclaimer</a>
+                        </li>
+                        
+                    </ul>
+                    <div class="usa-nav__secondary">
+                        <form class="usa-search usa-search--small" action="/search" method="get">
+                            <div role="search">
+                                <label class="usa-sr-only" for="extended-search-field-small">Search</label>
+                                <input class="usa-input" id="extended-search-field-small" type="search" name="q">
+                                <button class="usa-button" type="submit">
+                                    
+                                     <img class="usa-search__submit-icon"
+                                          src="https://pubs.usgs.gov/static/img/usa-icons-bg/search--white.d65004a6.svg"
+                                          alt="Search">
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        
+    </header>
+
+
+
+        <main id="main-content">
+            
+    
+
+    <div class="usa-prose">
+        
+    <main role ="main" id="publication-container" >
+        <!-- <script type="text/javascript">console.log('PUBSWH-369');</script> -->
+        <article itemscope itemtype="https://schema.org/ScholarlyArticle">
+            
+                <abbr class="unapi-id" title="https://pubs.usgs.gov/publication/pp252">
+                    <!-- avoid empty --></abbr>
+            
+
+            
+
+            <div class="publication-header-container">
+                <div class="pubs-thumbnail">
+                    
+                        <a class="usa-link"
+                           title="Main document link, right click to download or save as"
+                           href="https://pubs.usgs.gov/pp/0252/report.pdf">
+                
+                
+                    <img id="thumbnail"
+                         src="https://pubs.usgs.gov/pp/0252/report-thumb.jpg"
+                         alt="thumbnail"/>
+                
+            </a>
+                    
+                </div>
+                <div class="publication-header-info-container">
+                    
+                    <div class="publication-header-titles">
+                        <h3 class="publication-title" itemprop="name" style="margin-block-end: unset;">The hydraulic geometry of stream channels and some physiographic implications</h3>
+
+                        
+                            <div class="series-title" style="margin-block-end: unset;">Professional Paper
+                                252</div>
+                        
+
+                        
+
+                        
+
+                        
+                    </div>
+
+                    
+                    
+
+                    <section id="contributors"><div>
+                                <span class="list-title">By: </span><span class="contributor" itemprop="author"
+                              itemtype="https://schema.org/Person">Luna Bergere Leopold</span>&nbsp;and&nbsp;<span class="contributor" itemprop="author"
+                              itemtype="https://schema.org/Person">Thomas Maddock Jr.</span>
+                            </div>
+                        </section>
+                    <section>
+                        
+                        <div class="doi-container"><a itemprop="sameAs"
+                                                      class="usa-link"
+                                                      href="https://doi.org/10.3133/pp252"
+                                                      onclick="GA.trackGAEvent('Downloads', 'DOI', 'https://dx.doi.org/10.3133/pp252')">
+                            https://doi.org/10.3133/pp252</a>
+                        </div>
+                        
+                        <!-- <div id="doi-twitter-container">
+
+                            <a href="https://twitter.com/share"
+                               class="twitter-share-button"
+                               data-text="USGS Pub"
+                               data-via="USGS_Pubs"
+                               data-dnt="true">Tweet</a>
+                            <script>!function(d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0],
+                                    p = /^https:/.test(d.location) ? 'http' : 'https';
+                                if (!d.getElementById(id)) {
+                                    js = d.createElement(s);
+                                    js.id = id;
+                                    js.src = p + '://platform.twitter.com/widgets.js';
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }
+                            }(document, 'script', 'twitter-wjs');</script>
+                        </div> -->
+                        
+                        
+                        
+                            
+                                
+                            
+                        
+
+                        
+                            
+                                
+                                    
+                                
+                            
+                        
+                   
+                        
+                        
+                            <div id="metrics" class="pub-metrics">
+                                <p style="font-weight: bold;font-size: larger;margin-top: 0.25em;margin-bottom: 0.125em;">Metrics</p>
+                                
+                                    
+                                        <div id="altmetric" style="float:unset;margin-top:0.125em;">    
+                                            <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+                                            <div class='altmetric-embed' data-badge-type='1' data-doi="10.3133/pp252"></div>
+                                        </div>
+                                    
+                                
+                                
+                                    
+                                        
+                                            <div id="crossref" >
+                                                <div style="display: flex">Cited by <a hidden id="modal-button" aria-controls="citations"  id="crossref-cited-by-count" style="font-weight: bold;padding-right: 0.25em;padding-left: 0.25em;">1367</a> publications in Crossref</div>
+                                            </div>
+                                        
+                                    
+                                
+                                <a href="/documentation/faq#WhatMetricsAreAvailableForPublicationsInThePublicationsWarehouse" style="font-size:smaller;padding-top: 0.25em;display:flex;justify-content: center;">Metrics definitions</a>
+                            </div>
+                        
+
+
+                    </section>
+                </div>
+            </div>
+            
+            
+ 
+
+           
+
+            <section>
+                
+            </section>
+
+
+            <section id="disclaimer">
+                
+            </section>
+
+            
+            <section id="suggested">
+
+                
+                
+
+                
+                
+
+                
+                
+                <h4>Links</h4>
+                <ul class="usa-list">
+                    
+                    
+                    
+
+
+                    
+                    
+                        
+                        
+                              
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                        
+                        
+                        
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    
+                        
+                        
+                            
+                        
+
+                        
+                        
+                            
+                            
+                        
+
+                        
+                        
+                            
+                            
+                            
+                        
+
+                        
+                        
+                            
+                            
+                        
+                    
+                        <li style="max-width: 100%;">
+                        
+                        
+                        
+                        
+                            Document: 
+                        
+                        
+                        
+                                    
+                                    
+                                
+
+                                
+                                
+                    <a class="usa-link Document" href="https://pubs.usgs.gov/pp/0252/report.pdf" target="_blank"
+                       onclick="GA.trackGAEvent('Downloads', 'Document', 'https://pubs.usgs.gov/pp/0252/report.pdf')"
+                       title=" Document">
+                       
+                        
+                            
+                            
+                                
+                                    <strong>Report</strong> 
+                                
+
+                                
+                                    (pdf)
+                                
+                            
+                            
+                        
+
+                    </a>
+
+                     
+                                
+                                
+                                
+                        
+                        </li>
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                    <li>Download citation as: <a class="usa-link RIS"
+                            href="/publication/pp252?mimetype=ris">RIS</a>
+                        |
+                        <a class="usa-link DUBLIN_CORE" href="/publication/pp252?mimetype=dublincore">Dublin
+                            Core</a></li>
+                </ul>
+            </section>
+            
+                
+                    <section itemprop="description" id="abstract">
+                        <h4 id="abstract_head">Abstract</h4>
+                        <div>
+                            <div class="abstract-contents">
+
+                                <p>Some hydraulic characteristics of stream channels - depth, width, velocity, and suspended load - are measured quantitatively and vary with discharge as simple power functions at a given river cross section. Similar variations in relation to discharge exist among the cross sections along the length of a river under the condition that discharge at all points is equal in frequency of occurrence. The functions derived for a given cross section and among various cross sections along the river differ only in numerical values of coefficients and exponents.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                
+                
+                    
+                
+            
+            
+            
+            
+                <section>
+                    <h4>Suggested Citation</h4>
+                    <p id="suggested-citation">Leopold, L.B., and Maddock, T., 1953, The hydraulic geometry of stream channels and some physiographic implications: U.S. Geological Survey Professional Paper 252, vi, 57 p., https://doi.org/10.3133/pp252.</p>
+                    
+                        <p>ISSN: 2330-7102 (online)</p>
+                    
+                    
+                </section>
+            
+
+            <section id="details">
+                <table class="usa-table usa-table--borderless">
+                    <tbody>
+                    
+                        <tr>
+                            <th scope="row">Publication Type</th>
+                            <td>Report</td>
+                        </tr>
+                    
+                        <tr>
+                            <th scope="row">Publication Subtype</th>
+                            <td>USGS Numbered Series</td>
+                        </tr>
+                    
+                        <tr>
+                            <th scope="row">Title</th>
+                            <td>The hydraulic geometry of stream channels and some physiographic implications</td>
+                        </tr>
+                    
+                        <tr>
+                            <th scope="row">Series Title</th>
+                            <td>Professional Paper</td>
+                        </tr>
+                    
+                        <tr>
+                            <th scope="row">Series Number</th>
+                            <td>252</td>
+                        </tr>
+                    
+                        <tr>
+                            <th scope="row">DOI</th>
+                            <td>10.3133/pp252</td>
+                        </tr>
+                    
+                        <tr>
+                            <th scope="row">Year Published</th>
+                            <td>1953</td>
+                        </tr>
+                    
+                        <tr>
+                            <th scope="row">Language</th>
+                            <td>English</td>
+                        </tr>
+                    
+                        <tr>
+                            <th scope="row">Publisher</th>
+                            <td>U.S. Government Printing Office</td>
+                        </tr>
+                    
+                        <tr>
+                            <th scope="row">Publisher Location</th>
+                            <td>Washington, D.C.</td>
+                        </tr>
+                    
+                        <tr>
+                            <th scope="row">Description</th>
+                            <td>vi, 57 p.</td>
+                        </tr>
+                    
+                    </tbody>
+                    <caption>Additional Publication Details</caption>
+                </table>
+            </section>
+            
+                <aside>
+                    <small><p class="adobeReader">Part or all of this report is presented in Portable Document Format
+                        (PDF). For best results viewing and printing PDF documents, it is recommended that you download
+                        the documents to your computer and open them with Adobe Reader. PDF documents opened from your
+                        browser may not display or print as intended. Download the latest version of <a
+                                href="https://get.adobe.com/reader/">Adobe Reader</a>, free of charge. More information
+                        about viewing, downloading, and printing report files can be found at the <a
+                                href="https://pubs.usgs.gov/potential_problems.html">common download problems FAQ</a>.</p></small>
+                </aside>
+            
+            
+            <aside>
+                <i>*Disclaimer: English is the official language and authoritative version of all federal information.</i>
+            </aside>
+        </article>
+    </main>
+
+    
+        <div class="usa-modal usa-modal--lg" id="citations">
+            <div style="display:flex;justify-content: flex-end;padding-top: 0.5em;">
+                <button type="button" class="usa-button" aria-label="Close this window" data-close-modal style="background-color: unset;color:black">
+                    X
+                </button>
+            </div>
+            <div class="usa-modal__content">
+                <div class="usa-modal__main">
+                    
+                    <div id="modal_list_loading_indicator" hidden>Loading...</div>
+                    <div id="modal_list" class="citation-modal-list"></div>
+                    <div class="usa-modal__footer"></div>
+                </div>
+            </div>
+        </div>
+    
+    
+    
+    <script type="application/javascript" defer>
+
+        // returns true if the element or one of its parents has the class classname
+        function hasSomeParentTheClass(element, classname) {
+            if (element.className.split(' ').indexOf(classname)>=0) return true;
+            return element.parentElement && hasSomeParentTheClass(element.parentElement, classname);
+        }
+    
+        let modal_has_been_opened = false;
+    
+        const p = new Promise((resolve, reject) => {
+            window.addEventListener('load', (event) => {
+    
+                document.addEventListener("pubswh-page-loaded", (event) => {
+                    console.log('Event "pubswh-page-loaded" received: ', event.detail);
+                    let modal_button = document.getElementById("modal-button");
+                    if (modal_button){
+                        modal_button.hidden=false;
+                    }
+                });
+    
+                let postLoadActionSummary = [];
+    
+                // section-508 compliance
+                var mjx_assistive_mml = document.getElementsByTagName("mjx-assistive-mml");
+                for (var i = 0; i < mjx_assistive_mml.length; i++){
+                    mjx_assistive_mml[i].role = "math";
+                    mjx_assistive_mml[i].aria_label = "";
+                    
+                    postLoadActionSummary.push("Completed 508 operation [role=math, aria_label=''] on [mjx_assistive_mml] element ");
+                }
+    
+                // section-508 compliance
+                var mjx_container = document.getElementsByTagName("mjx-container");
+                for (var i = 0; i < mjx_container.length; i++){
+                    mjx_container[i].role = "math";
+                    mjx_container[i].aria_label = "";
+                    
+                    postLoadActionSummary.push("Completed 508 operation [role=math, aria_label=''] on [mjx_container] element: ");
+                }
+    
+                //section 508 compliance -- hide cells without 'headers' attribute. 
+                var y = Array.from(document.getElementsByTagName("td")).filter(e => e.headers == "")
+                for (var i = 0; i < y.length; i++){
+    
+                    y[i]['aria-hidden'] = "true";
+                    postLoadActionSummary.push("assigned headers attribute: " + y[i].headers);
+                }
+    
+                // sticky headers on tables
+                // For each table on the page,...
+                //      - Create Fixed Header
+                //      - Top and bottom scroll
+                var table_panels = document.getElementsByClassName("table-wrap");
+                for (var i = 0; i < table_panels.length; i++)
+                {
+                    // tables to skip 
+                    var x = hasSomeParentTheClass(table_panels[i], 'conversion-factors');
+                    if (!x){
+                        // assuming the first child element of the table is the anchor with id.
+                        var id = table_panels[i].firstChild.id;
+                        try
+                        {
+                            var table_scroll_container = table_panels[i].querySelector('.table-scroll-container');
+    
+                            // this should filter out tables used for formatting
+                            var table_pdf = table_panels[i].querySelector('.table-pdf');
+                            if (table_pdf != null)
+                            {
+                                var original_thead = table_scroll_container.getElementsByClassName('table-pdf')[0].getElementsByTagName('thead')[0];
+                                // filter out tables without thead
+                                if (original_thead != null)
+                                {
+                                    // if width of table is less than the width of the container, expand 
+                                    if (table_pdf.offsetWidth < table_scroll_container.offsetWidth){
+                                        table_pdf.width = table_scroll_container.offsetWidth;
+                                    }
+    
+                                    // container for cloned header which will stick to the top
+                                    var fixed_header_wrapper = table_panels[i].querySelector('.fixed-header-wrapper');
+                                    var fixed_header_div = fixed_header_wrapper.querySelector('.fixed-header');
+                                    
+                                    // create cloned header
+                                    var table_cloned = table_pdf.cloneNode(true);
+                                    table_cloned.removeChild(table_cloned.getElementsByTagName('tbody')[0]);
+                                    table_cloned.style['margin-bottom'] = '0rem';
+    
+                                    // attach cloned header to container
+                                    fixed_header_div.appendChild(table_cloned);
+                                    // set width of container to width of table (will match scrollbars)
+                                    fixed_header_div.style.width = table_pdf.offsetWidth + 'px';
+    
+                                    // hide original header
+                                    original_thead.style['visibility'] = 'collapse';
+    
+                                    // set original header aria-hidden
+                                    original_thead.ariaHidden = true;
+    
+                                    // go through the th's in the new fixed header, modify their ID to enforce uniqueness, and set aria-hidden to prevent further problems.
+                                    Array.from(table_cloned.getElementsByTagName('th')).forEach((el) => {
+                                        el.id = el.id + "_COLLAPSED";
+                                        el.ariaHidden = true;
+                                        //console.log("Modified ID of " + el.id.toString());
+                                    });
+    
+                                    // set width of cloned header to match width of table
+                                    table_cloned.style.width = 'inherit';
+    
+                                    // prevents vertical scrollbar from appearing when header is collapsed
+                                    table_scroll_container.style['overflow-y'] = 'hidden';
+    
+                                    original_thead.style.display = 'none;';
+    
+                                    // set event listeners to synchronize scrolling from top and bottom
+                                    if (fixed_header_wrapper != null && table_scroll_container != null){
+                                        // sync top scroll bar to bottom
+                                        fixed_header_wrapper.onscroll = function(e) {
+                                            e.target.parentElement.querySelector('.table-scroll-container').scrollLeft = e.target.scrollLeft;
+                                        };
+                                        // sync bottom scroll bar to top
+                                        table_scroll_container.onscroll = function(e) {
+                                            e.target.parentElement.querySelector('.fixed-header-wrapper').scrollLeft = e.target.scrollLeft;
+                                        };
+                                    }
+                                    
+                                    postLoadActionSummary.push("Completed Fixed Header operation");
+    
+                                }
+                            }
+                        }catch(error){
+                            console.log("problem with table id: " + id);
+                            console.log(error);
+                            reject(error);
+                        }
+                    }
+                }
+    
+               
+                
+                
+                
+                let modal_button = document.getElementById("modal-button");
+                modal_button.addEventListener("click", (event) => {
+                    // console.log(modal_has_been_opened);
+    
+                    if (modal_has_been_opened === false) {
+                        const p = new Promise((resolve, reject) => {
+                        
+                            let loading_indicator = document.getElementById("modal_list_loading_indicator");
+                            loading_indicator.hidden = false;
+    
+    
+                            let data = [{"citing_doi": "10.1029/WR015i006p01409", "type": "journal_article"}, {"citing_doi": "10.1007/s43832-024-00130-9", "type": "journal_article"}, {"citing_doi": "10.1111/jawr.12180", "type": "journal_article"}, {"citing_doi": "10.1186/s40677-023-00250-9", "type": "journal_article"}, {"citing_doi": "10.1016/0016-0032(71)90169-4", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3290190503", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-6-1-2018", "type": "journal_article"}, {"citing_doi": "10.1002/esp.4710", "type": "journal_article"}, {"citing_doi": "10.1002/esp.5083", "type": "journal_article"}, {"citing_doi": "10.1017/CBO9781107110632.012", "type": "book_content"}, {"citing_doi": "10.5194/hess-23-5199-2019", "type": "journal_article"}, {"citing_doi": "10.1177/030913339401800306", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2018.07.020", "type": "journal_article"}, {"citing_doi": "10.3389/frwa.2023.1147561", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.1976.tb02719.x", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3643", "type": "journal_article"}, {"citing_doi": "10.1029/2019WR026080", "type": "journal_article"}, {"citing_doi": "10.1007/s40899-023-00991-3", "type": "journal_article"}, {"citing_doi": "10.1144/SP408.10", "type": "journal_article"}, {"citing_doi": "10.1029/2024MS004295", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)HE.1943-5584.0000510", "type": "journal_article"}, {"citing_doi": "10.1111/j.1541-0064.1991.tb01299.x", "type": "journal_article"}, {"citing_doi": "10.70675/2fcf3565z9109z44e3zbd5fzf9f86ed97f59", "type": "dissertation"}, {"citing_doi": "10.5194/gmd-14-5155-2021", "type": "journal_article"}, {"citing_doi": "10.1002/rra.2602", "type": "journal_article"}, {"citing_doi": "10.3390/w13040554", "type": "journal_article"}, {"citing_doi": "10.1007/s10064-022-03051-w", "type": "journal_article"}, {"citing_doi": "10.1002/esp.4234", "type": "journal_article"}, {"citing_doi": "10.1111/j.1538-4632.1978.tb00651.x", "type": "journal_article"}, {"citing_doi": "10.3133/ofr20231023", "type": "report_paper_content"}, {"citing_doi": "10.1016/j.geomorph.2011.07.032", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-030-81768-8_27", "type": "book_content"}, {"citing_doi": "10.1002/9781119952497.ch26", "type": "book_content"}, {"citing_doi": "10.1007/978-3-319-43449-0_2", "type": "book_content"}, {"citing_doi": "10.1080/02626667.2024.2396062", "type": "journal_article"}, {"citing_doi": "10.1073/pnas.1512651112", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)0733-9496(1989)115:5(583)", "type": "journal_article"}, {"citing_doi": "10.1002/lno.12591", "type": "journal_article"}, {"citing_doi": "10.1016/S0169-555X(99)00022-7", "type": "journal_article"}, {"citing_doi": "10.1007/0-387-30842-3_56", "type": "book_content"}, {"citing_doi": "10.1002/rra.4201", "type": "journal_article"}, {"citing_doi": "10.1002/eco.220", "type": "journal_article"}, {"citing_doi": "10.1130/B31537.1", "type": "journal_article"}, {"citing_doi": "10.4296/cwrj2012-949", "type": "journal_article"}, {"citing_doi": "10.1029/2017JF004458", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3290010204", "type": "journal_article"}, {"citing_doi": "10.1029/2008RG000274", "type": "journal_article"}, {"citing_doi": "10.1177/0309133310363992", "type": "journal_article"}, {"citing_doi": "10.1002/9781118406618.ch7", "type": "book_content"}, {"citing_doi": "10.1002/9781118971437.ch28", "type": "book_content"}, {"citing_doi": "10.5194/esurf-13-1307-2025", "type": "journal_article"}, {"citing_doi": "10.1016/j.epsl.2012.06.047", "type": "journal_article"}, {"citing_doi": "10.1007/s12594-018-0951-5", "type": "journal_article"}, {"citing_doi": "10.1007/BF01449182", "type": "journal_article"}, {"citing_doi": "10.70675/28e907d5za8b7z4b8az8fd5z57043edcec97", "type": "dissertation"}, {"citing_doi": "10.1061/(ASCE)HE.1943-5584.0000334", "type": "journal_article"}, {"citing_doi": "10.1177/0309133314561649", "type": "journal_article"}, {"citing_doi": "10.1017/CBO9781139165440", "type": "book_title"}, {"citing_doi": "10.1007/s10666-010-9247-x", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2011.01.021", "type": "journal_article"}, {"citing_doi": "10.1002/2015JG002982", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)0733-9429(1985)111:3(503)", "type": "journal_article"}, {"citing_doi": "10.1002/esp.2169", "type": "journal_article"}, {"citing_doi": "10.3390/hydrology5040052", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2011.08.050", "type": "journal_article"}, {"citing_doi": "10.1002/2014GL062764", "type": "journal_article"}, {"citing_doi": "10.1007/978-981-19-9147-9_13", "type": "book_content"}, {"citing_doi": "10.12657/landfana-045-001", "type": "journal_article"}, {"citing_doi": "10.1029/2008JF001133", "type": "journal_article"}, {"citing_doi": "10.1111/1752-1688.12739", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2009.12.019", "type": "journal_article"}, {"citing_doi": "10.1002/9781118648551.ch11", "type": "book_content"}, {"citing_doi": "10.1177/030913337700100105", "type": "journal_article"}, {"citing_doi": "10.1029/WR006i006p01674", "type": "journal_article"}, {"citing_doi": "10.1016/S0921-8181(03)00019-5", "type": "journal_article"}, {"citing_doi": "10.1144/jgs2021-085", "type": "journal_article"}, {"citing_doi": "10.1002/eco.1460", "type": "journal_article"}, {"citing_doi": "10.1007/s00477-007-0119-0", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.1985.tb00199.x", "type": "journal_article"}, {"citing_doi": "10.1029/1999WR900285", "type": "journal_article"}, {"citing_doi": "10.1002/rra.1163", "type": "journal_article"}, {"citing_doi": "10.2110/jsr.2017.23", "type": "journal_article"}, {"citing_doi": "10.1111/1752-1688.12655", "type": "journal_article"}, {"citing_doi": "10.1111/j.1467-8306.1989.tb00271.x", "type": "journal_article"}, {"citing_doi": "10.1002/qj.2040", "type": "journal_article"}, {"citing_doi": "10.4236/ojg.2026.168024", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)0733-9429(1998)124:9(881)", "type": "journal_article"}, {"citing_doi": "10.1002/gea.21420", "type": "journal_article"}, {"citing_doi": "10.1016/j.pss.2012.09.009", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)HE.1943-5584.0000635", "type": "journal_article"}, {"citing_doi": "10.1016/j.catena.2025.108908", "type": "journal_article"}, {"citing_doi": "10.1080/02626667.2023.2245811", "type": "journal_article"}, {"citing_doi": "10.1002/rra.3048", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1369", "type": "journal_article"}, {"citing_doi": "10.1017/S0016774600001621", "type": "journal_article"}, {"citing_doi": "10.18182/tjf.476776", "type": "journal_article"}, {"citing_doi": "10.1029/2024WR038036", "type": "journal_article"}, {"citing_doi": "10.1029/2017EF000746", "type": "journal_article"}, {"citing_doi": "10.1061/JHYEFF.HEENG-6377", "type": "journal_article"}, {"citing_doi": "10.1111/jfr3.70057", "type": "journal_article"}, {"citing_doi": "10.1029/2026GL122483", "type": "journal_article"}, {"citing_doi": "10.1029/2004JF000164", "type": "journal_article"}, {"citing_doi": "10.1029/2005JF000284", "type": "journal_article"}, {"citing_doi": "10.1029/96WR04015", "type": "journal_article"}, {"citing_doi": "10.3390/su15129502", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.15051", "type": "journal_article"}, {"citing_doi": "10.1134/S187537282570009X", "type": "journal_article"}, {"citing_doi": "10.1029/2005JF000419", "type": "journal_article"}, {"citing_doi": "10.3390/rs15061672", "type": "journal_article"}, {"citing_doi": "10.1029/WR012i002p00245", "type": "journal_article"}, {"citing_doi": "10.1111/bre.12668", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)0733-9429(1990)116:1(145.2)", "type": "journal_article"}, {"citing_doi": "10.1111/j.1365-2400.2009.00656.x", "type": "journal_article"}, {"citing_doi": "10.1002/rra.1335", "type": "journal_article"}, {"citing_doi": "10.1002/9781119952497.ch34", "type": "book_content"}, {"citing_doi": "10.1002/2014MS000400", "type": "journal_article"}, {"citing_doi": "10.1016/j.aej.2015.12.011", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)EE.1943-7870.0000598", "type": "journal_article"}, {"citing_doi": "10.1080/02723646.2024.2335740", "type": "journal_article"}, {"citing_doi": "10.1007/s11069-023-06393-0", "type": "journal_article"}, {"citing_doi": "10.3133/sir20215067", "type": "report_paper_content"}, {"citing_doi": "10.1002/esp.1684", "type": "journal_article"}, {"citing_doi": "10.1016/j.ejrh.2023.101580", "type": "journal_article"}, {"citing_doi": "10.2737/PNW-GTR-1009", "type": "report_paper_title"}, {"citing_doi": "10.5194/esurf-12-493-2024", "type": "journal_article"}, {"citing_doi": "10.1890/1051-0761(2006)016[2123:MDITAA]2.0.CO;2", "type": "journal_article"}, {"citing_doi": "10.1111/1752-1688.12961", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.2012.00682.x", "type": "journal_article"}, {"citing_doi": "10.1007/s40808-017-0407-8", "type": "journal_article"}, {"citing_doi": "10.1029/2021WR031490", "type": "journal_article"}, {"citing_doi": "10.1029/2000WR900065", "type": "journal_article"}, {"citing_doi": "10.1038/s41467-018-02991-w", "type": "journal_article"}, {"citing_doi": "10.1002/lno.12207", "type": "journal_article"}, {"citing_doi": "10.1017/9781009222136.020", "type": "book_content"}, {"citing_doi": "10.1016/j.jhydrol.2017.04.044", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2023.129670", "type": "journal_article"}, {"citing_doi": "10.1029/2005WR004226", "type": "journal_article"}, {"citing_doi": "10.1002/ece3.6251", "type": "journal_article"}, {"citing_doi": "10.1029/2025JF008614", "type": "journal_article"}, {"citing_doi": "10.1029/WR010i005p00969", "type": "journal_article"}, {"citing_doi": "10.1016/j.advwatres.2010.01.010", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3919", "type": "journal_article"}, {"citing_doi": "10.1002/rra.1189", "type": "journal_article"}, {"citing_doi": "10.1016/j.icarus.2015.05.034", "type": "journal_article"}, {"citing_doi": "10.3390/hydrology13020060", "type": "journal_article"}, {"citing_doi": "10.1007/s10533-023-01027-w", "type": "journal_article"}, {"citing_doi": "10.1016/B978-0-12-374739-6.00006-3", "type": "book_content"}, {"citing_doi": "10.1029/2023WR036128", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.1978.tb02120.x", "type": "journal_article"}, {"citing_doi": "10.1080/03736245.2002.9713774", "type": "journal_article"}, {"citing_doi": "10.1002/rra.3938", "type": "journal_article"}, {"citing_doi": "10.3390/w12030861", "type": "journal_article"}, {"citing_doi": "10.1002/rra.906", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.2006.tb03843.x", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-030-79634-1_9", "type": "book_content"}, {"citing_doi": "10.1002/nafm.10337", "type": "journal_article"}, {"citing_doi": "10.1029/91WR03034", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)HE.1943-5584.0001875", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.13952", "type": "journal_article"}, {"citing_doi": "10.3389/frwa.2020.580727", "type": "journal_article"}, {"citing_doi": "10.1029/1999WR900339", "type": "journal_article"}, {"citing_doi": "10.1016/S0341-8162(02)00126-1", "type": "journal_article"}, {"citing_doi": "10.1029/2007JF000968", "type": "journal_article"}, {"citing_doi": "10.1080/15715124.2021.1961793", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2003.07.003", "type": "journal_article"}, {"citing_doi": "10.1073/pnas.2410736121", "type": "journal_article"}, {"citing_doi": "10.1177/0309133317692411", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2007.11.015", "type": "journal_article"}, {"citing_doi": "10.1029/WR013i003p00587", "type": "journal_article"}, {"citing_doi": "10.1016/j.advwatres.2003.11.003", "type": "journal_article"}, {"citing_doi": "10.5194/hess-30-183-2026", "type": "journal_article"}, {"citing_doi": "10.1029/2018WR023877", "type": "journal_article"}, {"citing_doi": "10.1080/15715124.2004.9635218", "type": "journal_article"}, {"citing_doi": "10.1017/9781009222136.018", "type": "book_content"}, {"citing_doi": "10.1007/978-3-031-49163-4_13", "type": "book_content"}, {"citing_doi": "10.1007/s11629-024-8812-8", "type": "journal_article"}, {"citing_doi": "10.1061/40792(173)605", "type": "conference_paper"}, {"citing_doi": "10.1306/eg.0728040019", "type": "journal_article"}, {"citing_doi": "10.1111/j.1538-4632.1972.tb00470.x", "type": "journal_article"}, {"citing_doi": "10.1109/CONIITI51147.2020.9240314", "type": "conference_paper"}, {"citing_doi": "10.3390/w13050721", "type": "journal_article"}, {"citing_doi": "10.1007/s12517-019-4576-9", "type": "journal_article"}, {"citing_doi": "10.3390/rs14236060", "type": "journal_article"}, {"citing_doi": "10.1002/2015JF003706", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.1992.tb03996.x", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2020.107562", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-10-705-2022", "type": "journal_article"}, {"citing_doi": "10.1029/2019TC005933", "type": "journal_article"}, {"citing_doi": "10.1002/rra.924", "type": "journal_article"}, {"citing_doi": "10.1007/s00267-016-0818-8", "type": "journal_article"}, {"citing_doi": "10.70675/1c2d9ef3z19b6z4ad2zb5f7zdd43faa4f1f2", "type": "dissertation"}, {"citing_doi": "10.1177/030913338000400302", "type": "journal_article"}, {"citing_doi": "10.1016/B978-0-12-374739-6.00025-7", "type": "book_content"}, {"citing_doi": "10.1007/s11600-018-0110-9", "type": "journal_article"}, {"citing_doi": "10.1016/0033-5894(74)90067-2", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.7199", "type": "journal_article"}, {"citing_doi": "10.1029/2019JF005414", "type": "journal_article"}, {"citing_doi": "10.1002/esp.2033", "type": "journal_article"}, {"citing_doi": "10.33764/2618-981X-2022-4-102-108", "type": "journal_article"}, {"citing_doi": "10.1088/1748-9326/acd407", "type": "journal_article"}, {"citing_doi": "10.1021/acsestwater.4c01203", "type": "journal_article"}, {"citing_doi": "10.1080/09715010.2017.1409089", "type": "journal_article"}, {"citing_doi": "10.1038/s44221-023-00124-2", "type": "journal_article"}, {"citing_doi": "10.1177/030913338100500101", "type": "journal_article"}, {"citing_doi": "10.70675/f9f183cfz29f4z48e8z8743zc10f4bec6d03", "type": "dissertation"}, {"citing_doi": "10.1002/2015WR017780", "type": "journal_article"}, {"citing_doi": "10.1002/esp.2178", "type": "journal_article"}, {"citing_doi": "10.1002/jgrf.20046", "type": "journal_article"}, {"citing_doi": "10.5194/gmd-12-5213-2019", "type": "journal_article"}, {"citing_doi": "10.71367/3034-4638-2025-4-4-58-98", "type": "journal_article"}, {"citing_doi": "10.1126/sciadv.aav7710", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.9738", "type": "journal_article"}, {"citing_doi": "10.1029/2019JF005443", "type": "journal_article"}, {"citing_doi": "10.70675/d61c02d3za557z4e0cz9aadzdd83603cad2f", "type": "dissertation"}, {"citing_doi": "10.1016/j.advwatres.2005.02.002", "type": "journal_article"}, {"citing_doi": "10.1017/9781316107072", "type": "book_title"}, {"citing_doi": "10.15406/bij.2024.07.00208", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)HE.1943-5584.0000681", "type": "journal_article"}, {"citing_doi": "10.1029/2024JF007984", "type": "journal_article"}, {"citing_doi": "10.3189/S0022143000011709", "type": "journal_article"}, {"citing_doi": "10.1007/s12665-019-8394-x", "type": "journal_article"}, {"citing_doi": "10.1016/S0378-1127(03)00056-2", "type": "journal_article"}, {"citing_doi": "10.1007/s11600-025-01560-2", "type": "journal_article"}, {"citing_doi": "10.1029/2004WR003196", "type": "journal_article"}, {"citing_doi": "10.1177/0309133310365300", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-031-77693-9_12", "type": "book_content"}, {"citing_doi": "10.1016/j.mex.2026.103804", "type": "journal_article"}, {"citing_doi": "10.1016/S0022-1694(00)00351-6", "type": "journal_article"}, {"citing_doi": "10.3390/w18030417", "type": "journal_article"}, {"citing_doi": "10.1016/S0022-1694(96)03293-3", "type": "journal_article"}, {"citing_doi": "10.5194/npg-21-1007-2014", "type": "journal_article"}, {"citing_doi": "10.1111/jfr3.12766", "type": "journal_article"}, {"citing_doi": "10.1051/alr/2017003", "type": "journal_article"}, {"citing_doi": "10.1029/2019JF005287", "type": "journal_article"}, {"citing_doi": "10.1007/BF00394339", "type": "journal_article"}, {"citing_doi": "10.1029/98WR01474", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2010.02.033", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)1084-0699(2007)12:1(4)", "type": "journal_article"}, {"citing_doi": "10.1029/2019WR024938", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.3360090503", "type": "journal_article"}, {"citing_doi": "10.70675/1c218f89z0ff5z42efz985bz86e015bc53ba", "type": "dissertation"}, {"citing_doi": "10.70675/95f366ebza671z4a18zb7d2zf19e3a34d43e", "type": "dissertation"}, {"citing_doi": "10.5575/geosoc.117.172", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.2012.00647.x", "type": "journal_article"}, {"citing_doi": "10.1016/B978-0-12-374739-6.00374-2", "type": "book_content"}, {"citing_doi": "10.1002/2014WR016109", "type": "journal_article"}, {"citing_doi": "10.1080/15481603.2016.1162345", "type": "journal_article"}, {"citing_doi": "10.1007/s00267-004-0088-8", "type": "journal_article"}, {"citing_doi": "10.1111/sed.70134", "type": "journal_article"}, {"citing_doi": "10.1111/jpy.12260", "type": "journal_article"}, {"citing_doi": "10.36253/979-12-215-0213-8", "type": "book_title"}, {"citing_doi": "10.1002/hyp.10784", "type": "journal_article"}, {"citing_doi": "10.1002/2017WR021765", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)HY.1943-7900.0000352", "type": "journal_article"}, {"citing_doi": "10.1029/WR024i005p00713", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2008.12.014", "type": "journal_article"}, {"citing_doi": "10.1111/j.1467-8306.1985.tb00095.x", "type": "journal_article"}, {"citing_doi": "10.1515/quageo-2016-0028", "type": "journal_article"}, {"citing_doi": "10.1111/1752-1688.70148", "type": "journal_article"}, {"citing_doi": "10.1111/j.1467-8306.2004.00408.x", "type": "journal_article"}, {"citing_doi": "10.1144/SP408.11", "type": "journal_article"}, {"citing_doi": "10.1017/9781009222136.003", "type": "book_content"}, {"citing_doi": "10.1061/(ASCE)0733-9429(2006)132:4(393)", "type": "journal_article"}, {"citing_doi": "10.1038/sdata.2018.309", "type": "journal_article"}, {"citing_doi": "10.5194/hess-13-1583-2009", "type": "journal_article"}, {"citing_doi": "10.2208/jscejhe.71.I_1033", "type": "journal_article"}, {"citing_doi": "10.1061/40737(2004)440", "type": "conference_paper"}, {"citing_doi": "10.1007/s10666-012-9316-4", "type": "journal_article"}, {"citing_doi": "10.3390/rs11222684", "type": "journal_article"}, {"citing_doi": "10.1111/j.1365-2117.2006.00298.x", "type": "journal_article"}, {"citing_doi": "10.1111/j.1365-2427.2011.02716.x", "type": "journal_article"}, {"citing_doi": "10.1016/j.ijsrc.2016.03.003", "type": "journal_article"}, {"citing_doi": "10.1177/0959683615585843", "type": "journal_article"}, {"citing_doi": "10.1016/j.scitotenv.2023.163444", "type": "journal_article"}, {"citing_doi": "10.70675/b25ed2a6z80f3z482ez8275zcf1a7c6cba24", "type": "dissertation"}, {"citing_doi": "10.1029/1999WR900236", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)HE.1943-5584.0000332", "type": "journal_article"}, {"citing_doi": "10.1016/j.ijsrc.2015.01.002", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2006.08.012", "type": "journal_article"}, {"citing_doi": "10.3390/s23042035", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.70062", "type": "journal_article"}, {"citing_doi": "10.1139/L09-013", "type": "journal_article"}, {"citing_doi": "10.1029/2000WR900393", "type": "journal_article"}, {"citing_doi": "10.1002/eap.1552", "type": "journal_article"}, {"citing_doi": "10.3390/rs12152370", "type": "journal_article"}, {"citing_doi": "10.1029/2003WR001981", "type": "journal_article"}, {"citing_doi": "10.34133/remotesensing.0271", "type": "journal_article"}, {"citing_doi": "10.1109/JSTARS.2026.3735355", "type": "journal_article"}, {"citing_doi": "10.5194/hess-14-2011-2010", "type": "journal_article"}, {"citing_doi": "10.1016/S0169-555X(99)00084-7", "type": "journal_article"}, {"citing_doi": "10.1016/j.ijsrc.2017.04.002", "type": "journal_article"}, {"citing_doi": "10.70675/7237e194z4bc2z4a6ezb22ezcefa278b8875", "type": "dissertation"}, {"citing_doi": "10.1061/(ASCE)HE.1943-5584.0000007", "type": "journal_article"}, {"citing_doi": "10.9734/ajgr/2023/v6i4199", "type": "journal_article"}, {"citing_doi": "10.4018/978-1-5225-8054-6.ch067", "type": "book_content"}, {"citing_doi": "10.1029/2025WR041177", "type": "journal_article"}, {"citing_doi": "10.1029/2022JF006716", "type": "journal_article"}, {"citing_doi": "10.3389/fevo.2023.1147834", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)1084-0699(1996)1:3(103)", "type": "journal_article"}, {"citing_doi": "10.1016/B978-044452107-1/50007-1", "type": "book_content"}, {"citing_doi": "10.1002/esp.2132", "type": "journal_article"}, {"citing_doi": "10.1111/j.1467-2979.2012.00470.x", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)HY.1943-7900.0001137", "type": "journal_article"}, {"citing_doi": "10.1080/10641260500341619", "type": "journal_article"}, {"citing_doi": "10.1029/92WR00805", "type": "journal_article"}, {"citing_doi": "10.1126/science.1151716", "type": "journal_article"}, {"citing_doi": "10.1002/2013WR014664", "type": "journal_article"}, {"citing_doi": "10.1177/03091333261425151", "type": "journal_article"}, {"citing_doi": "10.70675/4cb16283z0feaz4cedzbe8dz2806025bd44c", "type": "dissertation"}, {"citing_doi": "10.1002/2016GL070535", "type": "journal_article"}, {"citing_doi": "10.1029/2024EF005681", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-6-77-2018", "type": "journal_article"}, {"citing_doi": "10.3390/w12030669", "type": "journal_article"}, {"citing_doi": "10.3389/fenvs.2025.1554900", "type": "journal_article"}, {"citing_doi": "10.5194/hess-18-4883-2014", "type": "journal_article"}, {"citing_doi": "10.1029/2017WR021985", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2017.01.038", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1559", "type": "journal_article"}, {"citing_doi": "10.1109/IEMCON.2019.8936151", "type": "conference_paper"}, {"citing_doi": "10.1134/S0016852120030048", "type": "journal_article"}, {"citing_doi": "10.70675/36d1708dza1b8z4418z8fa4z3492608c2cc6", "type": "dissertation"}, {"citing_doi": "10.70675/e4fa1945za18dz4a20z8f7cz5534c93febc4", "type": "dissertation"}, {"citing_doi": "10.1029/2026JG009760", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-319-32589-7_16", "type": "book_content"}, {"citing_doi": "10.1061/(ASCE)0733-9429(2001)127:11(911)", "type": "journal_article"}, {"citing_doi": "10.1007/s12517-019-4693-5", "type": "journal_article"}, {"citing_doi": "10.1061/40517(2000)350", "type": "conference_paper"}, {"citing_doi": "10.1073/pnas.2011639118", "type": "journal_article"}, {"citing_doi": "10.70675/a59ff9c0z340dz4bdfza5f3z7070e39fb9a6", "type": "dissertation"}, {"citing_doi": "10.1002/2016WR019817", "type": "journal_article"}, {"citing_doi": "10.1016/S0277-3791(03)00143-4", "type": "journal_article"}, {"citing_doi": "10.5194/hess-25-2459-2021", "type": "journal_article"}, {"citing_doi": "10.1016/0022-1694(88)90185-0", "type": "journal_article"}, {"citing_doi": "10.5194/bg-10-7323-2013", "type": "journal_article"}, {"citing_doi": "10.1016/j.catena.2022.106793", "type": "journal_article"}, {"citing_doi": "10.4000/geomorphologie.9933", "type": "journal_article"}, {"citing_doi": "10.1029/2005WR004277", "type": "journal_article"}, {"citing_doi": "10.1029/WR024i007p00969", "type": "journal_article"}, {"citing_doi": "10.1038/35001562", "type": "journal_article"}, {"citing_doi": "10.5194/hess-22-3261-2018", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-031-37897-3_8", "type": "book_content"}, {"citing_doi": "10.1061/(ASCE)HY.1943-7900.0001135", "type": "journal_article"}, {"citing_doi": "10.1002/esp.4344", "type": "journal_article"}, {"citing_doi": "10.1002/esp.4695", "type": "journal_article"}, {"citing_doi": "10.1029/WR016i002p00391", "type": "journal_article"}, {"citing_doi": "10.1016/j.catena.2022.106494", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)0733-950X(1986)112:1(1)", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3586", "type": "journal_article"}, {"citing_doi": "10.1029/2025GL115713", "type": "journal_article"}, {"citing_doi": "10.1029/2020WR027477", "type": "journal_article"}, {"citing_doi": "10.1016/S0169-555X(01)00182-9", "type": "journal_article"}, {"citing_doi": "10.3390/rs8121005", "type": "journal_article"}, {"citing_doi": "10.1007/s12665-021-09852-8", "type": "journal_article"}, {"citing_doi": "10.1002/9781119217374.refs", "type": "book_content"}, {"citing_doi": "10.1016/j.jhydrol.2025.132676", "type": "journal_article"}, {"citing_doi": "10.1016/0022-1694(70)90003-X", "type": "journal_article"}, {"citing_doi": "10.1007/s10021-021-00618-8", "type": "journal_article"}, {"citing_doi": "10.1126/sciadv.1501768", "type": "journal_article"}, {"citing_doi": "10.1002/esp.2099", "type": "journal_article"}, {"citing_doi": "10.1007/s12204-019-2048-8", "type": "journal_article"}, {"citing_doi": "10.1130/GES02420.1", "type": "journal_article"}, {"citing_doi": "10.1002/2013JF002843", "type": "journal_article"}, {"citing_doi": "10.1007/s12517-023-11382-5", "type": "journal_article"}, {"citing_doi": "10.1177/0309133318776488", "type": "journal_article"}, {"citing_doi": "10.1029/2023GL103924", "type": "journal_article"}, {"citing_doi": "10.1029/1999JD900905", "type": "journal_article"}, {"citing_doi": "10.1002/lno.12706", "type": "journal_article"}, {"citing_doi": "10.1111/j.1365-2117.2007.00337.x", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-030-53897-2_1", "type": "book_content"}, {"citing_doi": "10.1029/2020WR027822", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.1997.tb03556.x", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.3360070408", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.1972.tb05976.x", "type": "journal_article"}, {"citing_doi": "10.1144/gsjgs.156.4.0749", "type": "journal_article"}, {"citing_doi": "10.1061/9780784482353.013", "type": "conference_paper"}, {"citing_doi": "10.1111/j.1440-1770.2007.00324.x", "type": "journal_article"}, {"citing_doi": "10.4096/jssj.72.39", "type": "journal_article"}, {"citing_doi": "10.1007/s00267-008-9174-7", "type": "journal_article"}, {"citing_doi": "10.1016/j.apgeog.2011.02.002", "type": "journal_article"}, {"citing_doi": "10.1177/030913338901300104", "type": "journal_article"}, {"citing_doi": "10.1002/lno.11256", "type": "journal_article"}, {"citing_doi": "10.1007/s00477-021-02041-w", "type": "journal_article"}, {"citing_doi": "10.1029/2019JF005141", "type": "journal_article"}, {"citing_doi": "10.1016/j.jenvman.2005.02.002", "type": "journal_article"}, {"citing_doi": "10.1126/sciadv.aav2366", "type": "journal_article"}, {"citing_doi": "10.1080/02723646.2020.1764168", "type": "journal_article"}, {"citing_doi": "10.1002/esp.5275", "type": "journal_article"}, {"citing_doi": "10.3390/w13162269", "type": "journal_article"}, {"citing_doi": "10.7780/kjrs.2025.41.1.2", "type": "journal_article"}, {"citing_doi": "10.1111/j.1749-8198.2010.00404.x", "type": "journal_article"}, {"citing_doi": "10.1007/s10021-022-00802-4", "type": "journal_article"}, {"citing_doi": "10.1177/0309133314567584", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2022.128428", "type": "journal_article"}, {"citing_doi": "10.1111/j.1502-3885.1972.tb00148.x", "type": "journal_article"}, {"citing_doi": "10.1002/9781119952497.ch12", "type": "book_content"}, {"citing_doi": "10.1109/LGRS.2019.2920225", "type": "journal_article"}, {"citing_doi": "10.1002/aqc.532", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1062", "type": "journal_article"}, {"citing_doi": "10.1016/j.advwatres.2013.06.007", "type": "journal_article"}, {"citing_doi": "10.1080/00221686.2014.939113", "type": "journal_article"}, {"citing_doi": "10.1002/jgrf.20050", "type": "journal_article"}, {"citing_doi": "10.5194/essd-18-6973-2026", "type": "journal_article"}, {"citing_doi": "10.1111/1752-1688.70140", "type": "journal_article"}, {"citing_doi": "10.1016/B978-0-12-398256-8.00002-5", "type": "book_content"}, {"citing_doi": "10.1111/1752-1688.70126", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)0733-9429(1986)112:1(43)", "type": "journal_article"}, {"citing_doi": "10.1038/nature11982", "type": "journal_article"}, {"citing_doi": "10.1111/j.1467-8306.1983.tb01861.x", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2006.01.031", "type": "journal_article"}, {"citing_doi": "10.1002/esp.2023", "type": "journal_article"}, {"citing_doi": "10.1002/esp.5335", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2006.09.028", "type": "journal_article"}, {"citing_doi": "10.3390/w8100432", "type": "journal_article"}, {"citing_doi": "10.1029/96WR00897", "type": "journal_article"}, {"citing_doi": "10.4000/geomorphologie.10497", "type": "journal_article"}, {"citing_doi": "10.5194/essd-17-2063-2025", "type": "journal_article"}, {"citing_doi": "10.1029/WR025i004p00691", "type": "journal_article"}, {"citing_doi": "10.4157/grj1984a.73.10_746", "type": "journal_article"}, {"citing_doi": "10.5194/hess-16-4303-2012", "type": "journal_article"}, {"citing_doi": "10.1007/s11069-022-05270-6", "type": "journal_article"}, {"citing_doi": "10.1029/2020WR029430", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3290060603", "type": "journal_article"}, {"citing_doi": "10.1002/esp.4058", "type": "journal_article"}, {"citing_doi": "10.70675/db5994ccze58ez455az95bbz5b2e88391740", "type": "dissertation"}, {"citing_doi": "10.24850/j-tyca-2026-04-09", "type": "journal_article"}, {"citing_doi": "10.1029/2019WR025455", "type": "journal_article"}, {"citing_doi": "10.1029/2000WR900250", "type": "journal_article"}, {"citing_doi": "10.2110/jsr.2016.77", "type": "journal_article"}, {"citing_doi": "10.1126/sciadv.abc1505", "type": "journal_article"}, {"citing_doi": "10.1007/BF01028963", "type": "journal_article"}, {"citing_doi": "10.5194/bg-11-5809-2014", "type": "journal_article"}, {"citing_doi": "10.3390/w14101593", "type": "journal_article"}, {"citing_doi": "10.1111/jawr.12238", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2020.125035", "type": "journal_article"}, {"citing_doi": "10.3390/w16131844", "type": "journal_article"}, {"citing_doi": "10.1016/j.envres.2015.01.002", "type": "journal_article"}, {"citing_doi": "10.1029/2018WR022831", "type": "journal_article"}, {"citing_doi": "10.1111/jfr3.70135", "type": "journal_article"}, {"citing_doi": "10.1002/2016GL068364", "type": "journal_article"}, {"citing_doi": "10.1029/1999JD900200", "type": "journal_article"}, {"citing_doi": "10.1007/s40899-022-00700-6", "type": "journal_article"}, {"citing_doi": "10.1029/1999JC000115", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)HE.1943-5584.0000760", "type": "journal_article"}, {"citing_doi": "10.1029/2020JF006048", "type": "journal_article"}, {"citing_doi": "10.46453/jader.1545943", "type": "journal_article"}, {"citing_doi": "10.1038/s41561-021-00720-5", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2020.107438", "type": "journal_article"}, {"citing_doi": "10.1029/2008WR007536", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1723", "type": "journal_article"}, {"citing_doi": "10.1002/esp.70211", "type": "journal_article"}, {"citing_doi": "10.3390/w14142166", "type": "journal_article"}, {"citing_doi": "10.1038/s41467-026-74292-6", "type": "journal_article"}, {"citing_doi": "10.1007/s10021-003-0143-y", "type": "journal_article"}, {"citing_doi": "10.5194/adgeo-9-31-2006", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.2000.tb04293.x", "type": "journal_article"}, {"citing_doi": "10.1371/journal.pone.0130228", "type": "journal_article"}, {"citing_doi": "10.1016/j.advwatres.2004.12.013", "type": "journal_article"}, {"citing_doi": "10.1002/2016JF004073", "type": "journal_article"}, {"citing_doi": "10.5194/hess-24-2655-2020", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-10-875-2022", "type": "journal_article"}, {"citing_doi": "10.1002/lno.12306", "type": "journal_article"}, {"citing_doi": "10.1111/j.1538-4632.1997.tb00942.x", "type": "journal_article"}, {"citing_doi": "10.1002/esp.4043", "type": "journal_article"}, {"citing_doi": "10.1144/SP296.9", "type": "journal_article"}, {"citing_doi": "10.3390/f15010186", "type": "journal_article"}, {"citing_doi": "10.1177/030913339501900301", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1580", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2011.08.031", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2012.03.007", "type": "journal_article"}, {"citing_doi": "10.1029/2020WR029035", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.13520", "type": "journal_article"}, {"citing_doi": "10.3390/w12061717", "type": "journal_article"}, {"citing_doi": "10.1007/s10021-008-9181-9", "type": "journal_article"}, {"citing_doi": "10.5194/nhess-24-375-2024", "type": "journal_article"}, {"citing_doi": "10.1029/2002WR001846", "type": "journal_article"}, {"citing_doi": "10.1002/esp.4478", "type": "journal_article"}, {"citing_doi": "10.2737/RMRS-GTR-411", "type": "report_paper_title"}, {"citing_doi": "10.1007/s11367-017-1430-8", "type": "journal_article"}, {"citing_doi": "10.1002/ece3.6479", "type": "journal_article"}, {"citing_doi": "10.1016/j.jenvman.2012.12.024", "type": "journal_article"}, {"citing_doi": "10.1111/j.1467-8306.1989.tb00277.x", "type": "journal_article"}, {"citing_doi": "10.1029/WR012i001p00011", "type": "journal_article"}, {"citing_doi": "10.1002/9781119952497.ch32", "type": "book_content"}, {"citing_doi": "10.1002/wat2.70036", "type": "journal_article"}, {"citing_doi": "10.1029/2023WR034583", "type": "journal_article"}, {"citing_doi": "10.17295/ataunidcd.1461010", "type": "journal_article"}, {"citing_doi": "10.1002/esp.364", "type": "journal_article"}, {"citing_doi": "10.1002/rra.3296", "type": "journal_article"}, {"citing_doi": "10.1029/WR016i001p00241", "type": "journal_article"}, {"citing_doi": "10.5194/hess-15-3741-2011", "type": "journal_article"}, {"citing_doi": "10.4157/grj1984a.63.2_55", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)HY.1943-7900.0000978", "type": "journal_article"}, {"citing_doi": "10.1623/hysj.53.2.323", "type": "journal_article"}, {"citing_doi": "10.1017/9781108164108", "type": "book_title"}, {"citing_doi": "10.1002/wat2.1752", "type": "journal_article"}, {"citing_doi": "10.1016/j.jenvman.2008.11.011", "type": "journal_article"}, {"citing_doi": "10.1111/j.1365-2427.1981.tb01238.x", "type": "journal_article"}, {"citing_doi": "10.1023/A:1017068821781", "type": "journal_article"}, {"citing_doi": "10.13047/KJEE.2024.38.2.178", "type": "journal_article"}, {"citing_doi": "10.70675/fcf4738fz7b24z4ba3zbcffz176109dc5c31", "type": "dissertation"}, {"citing_doi": "10.1002/hyp.1076", "type": "journal_article"}, {"citing_doi": "10.1890/14-1684.1", "type": "journal_article"}, {"citing_doi": "10.1016/j.ecolind.2018.09.005", "type": "journal_article"}, {"citing_doi": "10.1038/s41586-024-07964-2", "type": "journal_article"}, {"citing_doi": "10.3390/eesp2026044038", "type": "conference_paper"}, {"citing_doi": "10.5194/gmd-11-4755-2018", "type": "journal_article"}, {"citing_doi": "10.2110/jsr.2021.134", "type": "journal_article"}, {"citing_doi": "10.1002/esp.5957", "type": "journal_article"}, {"citing_doi": "10.1080/02723646.2013.847311", "type": "journal_article"}, {"citing_doi": "10.70675/21b88ed0z26fcz4ac9zaf64zc32a46707005", "type": "dissertation"}, {"citing_doi": "10.1002/2016WR020132", "type": "journal_article"}, {"citing_doi": "10.3390/rs12091510", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2012.01.005", "type": "journal_article"}, {"citing_doi": "10.1029/2024RG000848", "type": "journal_article"}, {"citing_doi": "10.3390/w13162236", "type": "journal_article"}, {"citing_doi": "10.1029/2019WR025883", "type": "journal_article"}, {"citing_doi": "10.1002/9781119535409.ref", "type": "book_content"}, {"citing_doi": "10.1029/WR018i004p01184", "type": "journal_article"}, {"citing_doi": "10.1029/2021GL095305", "type": "journal_article"}, {"citing_doi": "10.1002/rra.2803", "type": "journal_article"}, {"citing_doi": "10.1144/jgs2022-048", "type": "journal_article"}, {"citing_doi": "10.3390/w12051250", "type": "journal_article"}, {"citing_doi": "10.1016/j.ecolind.2021.108283", "type": "journal_article"}, {"citing_doi": "10.1029/2022JG007048", "type": "journal_article"}, {"citing_doi": "10.1046/j.1365-3121.2001.00374.x", "type": "journal_article"}, {"citing_doi": "10.1111/1752-1688.13116", "type": "journal_article"}, {"citing_doi": "10.15406/mojes.2017.02.00056", "type": "journal_article"}, {"citing_doi": "10.1007/s11270-026-09211-y", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.5984", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-319-79014-5_7", "type": "book_content"}, {"citing_doi": "10.5194/hess-26-6121-2022", "type": "journal_article"}, {"citing_doi": "10.1046/j.1365-3091.2000.00008.x", "type": "journal_article"}, {"citing_doi": "10.1002/rra.2636", "type": "journal_article"}, {"citing_doi": "10.2307/1312552", "type": "journal_article"}, {"citing_doi": "10.1080/02626667.2020.1808220", "type": "journal_article"}, {"citing_doi": "10.1657/1938-4246-46.2.344", "type": "journal_article"}, {"citing_doi": "10.1002/rra.3461", "type": "journal_article"}, {"citing_doi": "10.1038/s41597-021-01048-w", "type": "journal_article"}, {"citing_doi": "10.1023/A:1015745629794", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.11369", "type": "journal_article"}, {"citing_doi": "10.3390/w10040396", "type": "journal_article"}, {"citing_doi": "10.70675/e1b33546za183z4a6aza38ezb35a812dbe05", "type": "dissertation"}, {"citing_doi": "10.1029/2018WR024083", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.1972.tb05211.x", "type": "journal_article"}, {"citing_doi": "10.1080/02626667.2019.1591623", "type": "journal_article"}, {"citing_doi": "10.1002/2015WR017296", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2024.131562", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.13591", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1596", "type": "journal_article"}, {"citing_doi": "10.1080/15481603.2022.2143670", "type": "journal_article"}, {"citing_doi": "10.1073/pnas.1617454114", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2024.131814", "type": "journal_article"}, {"citing_doi": "10.1007/978-94-011-2430-0_22", "type": "book_content"}, {"citing_doi": "10.5194/hess-24-1367-2020", "type": "journal_article"}, {"citing_doi": "10.3934/energy.2021051", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2021.127167", "type": "journal_article"}, {"citing_doi": "10.31305/rrijm.2026.v11.n04.022", "type": "journal_article"}, {"citing_doi": "10.5194/nhess-26-1745-2026", "type": "journal_article"}, {"citing_doi": "10.5194/hess-22-4815-2018", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1584", "type": "journal_article"}, {"citing_doi": "10.1002/eco.2513", "type": "journal_article"}, {"citing_doi": "10.1029/2019WR026476", "type": "journal_article"}, {"citing_doi": "10.1002/esp.5260", "type": "journal_article"}, {"citing_doi": "10.70675/fe593abaz2879z4a58z9f88z007d25636d96", "type": "dissertation"}, {"citing_doi": "10.1046/j.1365-2117.1998.00088.x", "type": "journal_article"}, {"citing_doi": "10.1002/eco.2691", "type": "journal_article"}, {"citing_doi": "10.3390/rs8100834", "type": "journal_article"}, {"citing_doi": "10.1029/2024WR037997", "type": "journal_article"}, {"citing_doi": "10.1191/0959683605hl807rp", "type": "journal_article"}, {"citing_doi": "10.3390/e19120641", "type": "journal_article"}, {"citing_doi": "10.1080/10643380600966426", "type": "journal_article"}, {"citing_doi": "10.1002/rra.2631", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.1994.tb03304.x", "type": "journal_article"}, {"citing_doi": "10.1016/j.ecoleng.2010.02.006", "type": "journal_article"}, {"citing_doi": "10.1029/2024WR038852", "type": "journal_article"}, {"citing_doi": "10.1029/2023GL105066", "type": "journal_article"}, {"citing_doi": "10.1029/2022GB007419", "type": "journal_article"}, {"citing_doi": "10.1007/s12665-024-11714-y", "type": "journal_article"}, {"citing_doi": "10.1029/2023WR036733", "type": "journal_article"}, {"citing_doi": "10.1051/lhb/2016032", "type": "journal_article"}, {"citing_doi": "10.1029/2023MS003922", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-030-79634-1_16", "type": "book_content"}, {"citing_doi": "10.1007/978-3-030-66161-8_5", "type": "book_content"}, {"citing_doi": "10.1002/edn3.137", "type": "journal_article"}, {"citing_doi": "10.1080/02626667.2024.2401094", "type": "journal_article"}, {"citing_doi": "10.1007/s11356-014-3903-7", "type": "journal_article"}, {"citing_doi": "10.5194/hess-23-573-2019", "type": "journal_article"}, {"citing_doi": "10.1029/2022WR032688", "type": "journal_article"}, {"citing_doi": "10.1093/oso/9780198516101.001.0001", "type": "book_title"}, {"citing_doi": "10.1029/WR023i003p00501", "type": "journal_article"}, {"citing_doi": "10.5194/essd-16-3873-2024", "type": "journal_article"}, {"citing_doi": "10.70675/953a1c72z4fe8z44a5za5c9z7b50289ff053", "type": "dissertation"}, {"citing_doi": "10.1080/02626667.2025.2566266", "type": "journal_article"}, {"citing_doi": "10.1038/s41612-025-01257-9", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-8-447-2020", "type": "journal_article"}, {"citing_doi": "10.1080/09715010.2023.2269127", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2014.08.057", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.10792", "type": "journal_article"}, {"citing_doi": "10.1029/2006GL027182", "type": "journal_article"}, {"citing_doi": "10.1007/978-94-011-2430-0_3", "type": "book_content"}, {"citing_doi": "10.1002/9781118877517.ch9", "type": "book_content"}, {"citing_doi": "10.1111/j.1752-1688.2011.00623.x", "type": "journal_article"}, {"citing_doi": "10.1029/2023WR035631", "type": "journal_article"}, {"citing_doi": "10.1080/00224561.2007.12435964", "type": "journal_article"}, {"citing_doi": "10.1007/BF03161677", "type": "journal_article"}, {"citing_doi": "10.1656/058.019.0410", "type": "journal_article"}, {"citing_doi": "10.1080/23863781.2022.2037474", "type": "journal_article"}, {"citing_doi": "10.1016/j.sedgeo.2011.09.005", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.2002.tb00986.x", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)HE.1943-5584.0001709", "type": "journal_article"}, {"citing_doi": "10.1002/eap.2939", "type": "journal_article"}, {"citing_doi": "10.1111/bre.70014", "type": "journal_article"}, {"citing_doi": "10.1016/S0341-8162(02)00128-5", "type": "journal_article"}, {"citing_doi": "10.5194/essd-16-5563-2024", "type": "journal_article"}, {"citing_doi": "10.1061/40737(2004)419", "type": "conference_paper"}, {"citing_doi": "10.1111/fwb.12990", "type": "journal_article"}, {"citing_doi": "10.3390/w17213105", "type": "journal_article"}, {"citing_doi": "10.1061/41147(392)109", "type": "conference_paper"}, {"citing_doi": "10.1016/j.jenvrad.2008.05.006", "type": "journal_article"}, {"citing_doi": "10.1016/j.apcbee.2012.03.034", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2013.12.033", "type": "journal_article"}, {"citing_doi": "10.1111/jawr.12007", "type": "journal_article"}, {"citing_doi": "10.1016/j.rse.2016.03.019", "type": "journal_article"}, {"citing_doi": "10.1016/j.advwatres.2009.06.004", "type": "journal_article"}, {"citing_doi": "10.5194/hess-23-4491-2019", "type": "journal_article"}, {"citing_doi": "10.1007/s12685-013-0076-0", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.14564", "type": "journal_article"}, {"citing_doi": "10.1016/j.advwatres.2014.06.006", "type": "journal_article"}, {"citing_doi": "10.1016/j.envsoft.2020.104643", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.1997.tb03526.x", "type": "journal_article"}, {"citing_doi": "10.2208/jscej.1991.429_57", "type": "journal_article"}, {"citing_doi": "10.5194/gmd-10-4577-2017", "type": "journal_article"}, {"citing_doi": "10.1029/WR017i001p00131", "type": "journal_article"}, {"citing_doi": "10.3390/rs13224695", "type": "journal_article"}, {"citing_doi": "10.1007/s10666-017-9576-0", "type": "journal_article"}, {"citing_doi": "10.1016/j.earscirev.2019.04.028", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1969", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-4-567-2016", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2019.07.004", "type": "journal_article"}, {"citing_doi": "10.1016/B978-0-12-822931-6.00029-0", "type": "book_content"}, {"citing_doi": "10.1016/j.jhydrol.2021.127287", "type": "journal_article"}, {"citing_doi": "10.1002/rra.2752", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-13-403-2025", "type": "journal_article"}, {"citing_doi": "10.1029/94WR00323", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-5-1-2017", "type": "journal_article"}, {"citing_doi": "10.1029/1999JB900120", "type": "journal_article"}, {"citing_doi": "10.5194/tc-12-1461-2018", "type": "journal_article"}, {"citing_doi": "10.1177/030913339602000217", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1981", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.6098", "type": "journal_article"}, {"citing_doi": "10.1029/JS082i028p04016", "type": "journal_article"}, {"citing_doi": "10.61389/geofronter.v10.8881", "type": "journal_article"}, {"citing_doi": "10.5194/gmd-16-3291-2023", "type": "journal_article"}, {"citing_doi": "10.1029/2024JG008592", "type": "journal_article"}, {"citing_doi": "10.5194/gmd-11-4965-2018", "type": "journal_article"}, {"citing_doi": "10.1002/2014WR016178", "type": "journal_article"}, {"citing_doi": "10.2208/jscej.1989.411_151", "type": "journal_article"}, {"citing_doi": "10.1029/2007JF000873", "type": "journal_article"}, {"citing_doi": "10.3390/w3030923", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.1990.tb01380.x", "type": "journal_article"}, {"citing_doi": "10.1038/s43247-022-00454-1", "type": "journal_article"}, {"citing_doi": "10.35305/curiham.v30i.e06", "type": "journal_article"}, {"citing_doi": "10.1002/esp.70438", "type": "journal_article"}, {"citing_doi": "10.1002/9780470692318.refs", "type": "book_content"}, {"citing_doi": "10.1002/hyp.7755", "type": "journal_article"}, {"citing_doi": "10.2478/jlecol-2019-0007", "type": "journal_article"}, {"citing_doi": "10.1007/s11069-025-07144-z", "type": "journal_article"}, {"citing_doi": "10.1002/esp.5962", "type": "journal_article"}, {"citing_doi": "10.1016/B978-0-444-41728-2.50010-2", "type": "book_content"}, {"citing_doi": "10.1016/j.jglr.2022.01.021", "type": "journal_article"}, {"citing_doi": "10.1007/s12517-017-3205-8", "type": "journal_article"}, {"citing_doi": "10.1111/j.1365-2427.2012.02856.x", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2013.06.013", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3855", "type": "journal_article"}, {"citing_doi": "10.1016/j.proeng.2016.07.535", "type": "journal_article"}, {"citing_doi": "10.70675/8c992431z052cz4fdazac3ez9a5118ce14de", "type": "dissertation"}, {"citing_doi": "10.1016/j.jfranklin.2008.04.005", "type": "journal_article"}, {"citing_doi": "10.1002/esp.2187", "type": "journal_article"}, {"citing_doi": "10.1002/esp.5072", "type": "journal_article"}, {"citing_doi": "10.1111/1752-1688.70142", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1573", "type": "journal_article"}, {"citing_doi": "10.3390/s19153386", "type": "journal_article"}, {"citing_doi": "10.2208/jscejhe.67.I_787", "type": "journal_article"}, {"citing_doi": "10.1029/2020WR029090", "type": "journal_article"}, {"citing_doi": "10.1111/j.1365-3091.2010.01176.x", "type": "journal_article"}, {"citing_doi": "10.1080/20442041.2026.2679574", "type": "journal_article"}, {"citing_doi": "10.1111/geb.12887", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-4-831-2016", "type": "journal_article"}, {"citing_doi": "10.1146/annurev-earth-053018-060212", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2024.131413", "type": "journal_article"}, {"citing_doi": "10.3390/w9020118", "type": "journal_article"}, {"citing_doi": "10.1038/s44221-026-00675-0", "type": "journal_article"}, {"citing_doi": "10.1007/s12040-019-1130-9", "type": "journal_article"}, {"citing_doi": "10.1177/0309133317718133", "type": "journal_article"}, {"citing_doi": "10.1029/2021WR031701", "type": "journal_article"}, {"citing_doi": "10.1002/esp.5604", "type": "journal_article"}, {"citing_doi": "10.1177/030913339501900103", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2006.07.015", "type": "journal_article"}, {"citing_doi": "10.1029/2020EF001869", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.1987.tb00842.x", "type": "journal_article"}, {"citing_doi": "10.70675/4e0bc086za444z4533za574z5d424649d050", "type": "dissertation"}, {"citing_doi": "10.1029/2020WR028150", "type": "journal_article"}, {"citing_doi": "10.1002/9781119412632.ch32", "type": "book_content"}, {"citing_doi": "10.1029/2023WR036217", "type": "journal_article"}, {"citing_doi": "10.1002/2016GL069824", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2010.10.012", "type": "journal_article"}, {"citing_doi": "10.1007/s11431-010-0054-z", "type": "journal_article"}, {"citing_doi": "10.5194/hess-30-5491-2026", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2014.01.017", "type": "journal_article"}, {"citing_doi": "10.1002/rra.4394", "type": "journal_article"}, {"citing_doi": "10.1029/2021JF006535", "type": "journal_article"}, {"citing_doi": "10.1002/2014JF003281", "type": "journal_article"}, {"citing_doi": "10.70675/b9553005z3531z4181z9d59zb29790e6d5d3", "type": "dissertation"}, {"citing_doi": "10.1029/2019MS001648", "type": "journal_article"}, {"citing_doi": "10.1029/WR019i003p00627", "type": "journal_article"}, {"citing_doi": "10.1006/ecss.2001.0791", "type": "journal_article"}, {"citing_doi": "10.1007/s10661-008-0642-6", "type": "journal_article"}, {"citing_doi": "10.1029/2019GL086405", "type": "journal_article"}, {"citing_doi": "10.1007/s11442-020-1826-4", "type": "journal_article"}, {"citing_doi": "10.1029/JZ069i016p03395", "type": "journal_article"}, {"citing_doi": "10.1002/jgrf.20113", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3545", "type": "journal_article"}, {"citing_doi": "10.1038/s41597-024-03916-7", "type": "journal_article"}, {"citing_doi": "10.1111/1475-5661.00084", "type": "journal_article"}, {"citing_doi": "10.1029/95WR03819", "type": "journal_article"}, {"citing_doi": "10.3390/w11040718", "type": "journal_article"}, {"citing_doi": "10.1007/978-981-16-7535-5_19", "type": "book_content"}, {"citing_doi": "10.1029/WR013i006p01006", "type": "journal_article"}, {"citing_doi": "10.1029/008WSA04", "type": "book_content"}, {"citing_doi": "10.1126/science.aat0636", "type": "journal_article"}, {"citing_doi": "10.1111/1752-1688.12661", "type": "journal_article"}, {"citing_doi": "10.1002/2017WR021859", "type": "journal_article"}, {"citing_doi": "10.1111/bre.12460", "type": "journal_article"}, {"citing_doi": "10.1002/2013WR013725", "type": "journal_article"}, {"citing_doi": "10.1016/j.catena.2022.106165", "type": "journal_article"}, {"citing_doi": "10.1007/s10668-015-9739-6", "type": "journal_article"}, {"citing_doi": "10.3390/rs10091385", "type": "journal_article"}, {"citing_doi": "10.3390/w13152038", "type": "journal_article"}, {"citing_doi": "10.1007/978-0-387-34918-3_8", "type": "book_content"}, {"citing_doi": "10.1002/2017JF004213", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-8-303-2020", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-8-51-2020", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2005.07.034", "type": "journal_article"}, {"citing_doi": "10.1029/2007GL031256", "type": "journal_article"}, {"citing_doi": "10.1002/2013JF002806", "type": "journal_article"}, {"citing_doi": "10.1007/978-981-99-3660-1_15", "type": "book_content"}, {"citing_doi": "10.1029/WR015i001p00095", "type": "journal_article"}, {"citing_doi": "10.1071/MF24152", "type": "journal_article"}, {"citing_doi": "10.1016/S0169-555X(00)00090-8", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.10363", "type": "journal_article"}, {"citing_doi": "10.1002/esp.5574", "type": "journal_article"}, {"citing_doi": "10.1029/2023JF007519", "type": "journal_article"}, {"citing_doi": "10.1029/2021JG006610", "type": "journal_article"}, {"citing_doi": "10.5772/intechopen.107232", "type": "book_content"}, {"citing_doi": "10.1002/hyp.7007", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)HE.1943-5584.0001018", "type": "journal_article"}, {"citing_doi": "10.1029/WR010i006p01178", "type": "journal_article"}, {"citing_doi": "10.1002/asna.201211966", "type": "journal_article"}, {"citing_doi": "10.1007/s40808-019-00578-y", "type": "journal_article"}, {"citing_doi": "10.1029/2006WR005484", "type": "journal_article"}, {"citing_doi": "10.1016/0143-6228(91)90003-R", "type": "journal_article"}, {"citing_doi": "10.70675/3470fe8fzb559z4a8cz929az42c06f9f705b", "type": "dissertation"}, {"citing_doi": "10.1007/s10021-018-0236-2", "type": "journal_article"}, {"citing_doi": "10.1002/esp.4966", "type": "journal_article"}, {"citing_doi": "10.1002/9781119952497.ch29", "type": "book_content"}, {"citing_doi": "10.5194/tc-16-2245-2022", "type": "journal_article"}, {"citing_doi": "10.1111/j.1749-8198.2010.00324.x", "type": "journal_article"}, {"citing_doi": "10.1016/j.procs.2022.12.151", "type": "journal_article"}, {"citing_doi": "10.1016/j.sedgeo.2025.106820", "type": "journal_article"}, {"citing_doi": "10.1029/WR008i006p01506", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-7-17-2019", "type": "journal_article"}, {"citing_doi": "10.4236/jgis.2016.83030", "type": "journal_article"}, {"citing_doi": "10.21523/gcj3.16010101", "type": "journal_article"}, {"citing_doi": "10.1029/2019WR026756", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2014.08.044", "type": "journal_article"}, {"citing_doi": "10.1680/wama.1000031", "type": "journal_article"}, {"citing_doi": "10.1007/978-94-011-7115-1_3", "type": "book_content"}, {"citing_doi": "10.1080/24705357.2020.1858724", "type": "journal_article"}, {"citing_doi": "10.1657/1523-0430-41.1.69", "type": "journal_article"}, {"citing_doi": "10.1126/sciadv.abo1082", "type": "journal_article"}, {"citing_doi": "10.3390/hydrology9050088", "type": "journal_article"}, {"citing_doi": "10.1007/s12517-015-2280-y", "type": "journal_article"}, {"citing_doi": "10.4236/ojmh.2012.23008", "type": "journal_article"}, {"citing_doi": "10.1061/9780784484258.031", "type": "conference_paper"}, {"citing_doi": "10.1016/S0169-555X(98)00029-4", "type": "journal_article"}, {"citing_doi": "10.1029/2025MS005234", "type": "journal_article"}, {"citing_doi": "10.3390/w15112139", "type": "journal_article"}, {"citing_doi": "10.3390/en14154406", "type": "journal_article"}, {"citing_doi": "10.1061/40976(316)623", "type": "conference_paper"}, {"citing_doi": "10.1111/1752-1688.12533", "type": "journal_article"}, {"citing_doi": "10.1007/s11269-024-03973-y", "type": "journal_article"}, {"citing_doi": "10.21105/joss.06145", "type": "journal_article"}, {"citing_doi": "10.70675/06d901dezcb17z4563z91a7z863cb5029ea6", "type": "dissertation"}, {"citing_doi": "10.1061/(ASCE)HE.1943-5584.0001588", "type": "journal_article"}, {"citing_doi": "10.5194/hess-18-2305-2014", "type": "journal_article"}, {"citing_doi": "10.3390/hydrology13110282", "type": "journal_article"}, {"citing_doi": "10.1016/S0304-3800(96)00064-6", "type": "journal_article"}, {"citing_doi": "10.1007/s40808-021-01334-x", "type": "journal_article"}, {"citing_doi": "10.1177/0309133319859807", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3290010302", "type": "journal_article"}, {"citing_doi": "10.1371/journal.pone.0274167", "type": "journal_article"}, {"citing_doi": "10.1029/2006JF000745", "type": "journal_article"}, {"citing_doi": "10.1080/02626667.2021.1925285", "type": "journal_article"}, {"citing_doi": "10.1029/2021JF006239", "type": "journal_article"}, {"citing_doi": "10.1177/0309133319851027", "type": "journal_article"}, {"citing_doi": "10.3189/S0022143000032263", "type": "journal_article"}, {"citing_doi": "10.1016/B978-0-12-374739-6.00322-5", "type": "book_content"}, {"citing_doi": "10.5194/esurf-6-583-2018", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-11-979-2023", "type": "journal_article"}, {"citing_doi": "10.1016/j.pocean.2006.02.001", "type": "journal_article"}, {"citing_doi": "10.1144/GSL.SP.1995.085.01.02", "type": "journal_article"}, {"citing_doi": "10.1029/2005WR004516", "type": "journal_article"}, {"citing_doi": "10.1016/j.wsj.2018.09.001", "type": "journal_article"}, {"citing_doi": "10.1002/wat2.1749", "type": "journal_article"}, {"citing_doi": "10.1002/gdj3.209", "type": "journal_article"}, {"citing_doi": "10.5194/hess-27-3733-2023", "type": "journal_article"}, {"citing_doi": "10.1029/2024MS004593", "type": "journal_article"}, {"citing_doi": "10.1029/2023WR035795", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2013.01.014", "type": "journal_article"}, {"citing_doi": "10.1002/esp.265", "type": "journal_article"}, {"citing_doi": "10.1016/S0169-555X(02)00360-4", "type": "journal_article"}, {"citing_doi": "10.1016/B978-0-408-10735-8.50013-3", "type": "book_content"}, {"citing_doi": "10.1016/j.jhydrol.2023.130409", "type": "journal_article"}, {"citing_doi": "10.1002/wat2.1120", "type": "journal_article"}, {"citing_doi": "10.1111/1752-1688.12598", "type": "journal_article"}, {"citing_doi": "10.1029/2023JF007177", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1887", "type": "journal_article"}, {"citing_doi": "10.53974/unza.jonas.2.1.358", "type": "journal_article"}, {"citing_doi": "10.1002/rra.70040", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.2001.tb03667.x", "type": "journal_article"}, {"citing_doi": "10.1002/esp.4726", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1020", "type": "journal_article"}, {"citing_doi": "10.1002/rra.3531", "type": "journal_article"}, {"citing_doi": "10.1080/02723646.2021.1978139", "type": "journal_article"}, {"citing_doi": "10.3390/w17202992", "type": "journal_article"}, {"citing_doi": "10.1002/2014WR016862", "type": "journal_article"}, {"citing_doi": "10.1002/rra.4336", "type": "journal_article"}, {"citing_doi": "10.1007/s12665-016-5692-4", "type": "journal_article"}, {"citing_doi": "10.3390/rs12081244", "type": "journal_article"}, {"citing_doi": "10.1061/40927(243)30", "type": "conference_paper"}, {"citing_doi": "10.1061/(ASCE)0733-9429(1984)110:8(1021)", "type": "journal_article"}, {"citing_doi": "10.1002/2015JG003009", "type": "journal_article"}, {"citing_doi": "10.1130/0016-7606(2002)114\u003c1131:NMOFST\u003e2.0.CO;2", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-030-22871-2_41", "type": "book_content"}, {"citing_doi": "10.1016/j.jhydrol.2006.09.021", "type": "journal_article"}, {"citing_doi": "10.2118/143723-MS", "type": "conference_paper"}, {"citing_doi": "10.3390/w8040161", "type": "journal_article"}, {"citing_doi": "10.1002/lno.70019", "type": "journal_article"}, {"citing_doi": "10.1016/S0169-555X(01)00046-0", "type": "journal_article"}, {"citing_doi": "10.1029/2023GL105344", "type": "journal_article"}, {"citing_doi": "10.1111/j.1541-0064.1974.tb00114.x", "type": "journal_article"}, {"citing_doi": "10.1016/B978-0-12-374739-6.00229-3", "type": "book_content"}, {"citing_doi": "10.1080/01431161.2019.1701213", "type": "journal_article"}, {"citing_doi": "10.1029/2004JF000259", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.70516", "type": "journal_article"}, {"citing_doi": "10.1080/07011784.2024.2430776", "type": "journal_article"}, {"citing_doi": "10.1139/l2012-113", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.2010.00467.x", "type": "journal_article"}, {"citing_doi": "10.1080/00040851.1970.12003589", "type": "journal_article"}, {"citing_doi": "10.1016/j.advwatres.2017.11.015", "type": "journal_article"}, {"citing_doi": "10.1038/s41597-025-04710-9", "type": "journal_article"}, {"citing_doi": "10.1177/030913337900300302", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.8429", "type": "journal_article"}, {"citing_doi": "10.1111/1467-8306.9302002", "type": "journal_article"}, {"citing_doi": "10.1111/j.1747-6593.1998.tb00208.x", "type": "journal_article"}, {"citing_doi": "10.3389/ffgc.2021.611380", "type": "journal_article"}, {"citing_doi": "10.3390/rs17061020", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)0733-9429(1995)121:4(312)", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-9-47-2021", "type": "journal_article"}, {"citing_doi": "10.1029/2020WR027603", "type": "journal_article"}, {"citing_doi": "10.1080/02723646.2023.2216954", "type": "journal_article"}, {"citing_doi": "10.1002/lno.70173", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-030-96447-4_10", "type": "book_content"}, {"citing_doi": "10.1109/IGARSS.2011.6049857", "type": "conference_paper"}, {"citing_doi": "10.3389/feart.2015.00074", "type": "journal_article"}, {"citing_doi": "10.1029/2021WR031712", "type": "journal_article"}, {"citing_doi": "10.5194/hess-22-6335-2018", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.2001.tb03636.x", "type": "journal_article"}, {"citing_doi": "10.1002/2013JG002552", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1016", "type": "journal_article"}, {"citing_doi": "10.1086/730251", "type": "journal_article"}, {"citing_doi": "10.5194/tc-19-2779-2025", "type": "journal_article"}, {"citing_doi": "10.1002/esp.4258", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2013.12.023", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2015.09.001", "type": "journal_article"}, {"citing_doi": "10.1016/j.icarus.2011.03.004", "type": "journal_article"}, {"citing_doi": "10.1016/j.scitotenv.2018.03.205", "type": "journal_article"}, {"citing_doi": "10.1029/2018WR023463", "type": "journal_article"}, {"citing_doi": "10.1029/2021WR031236", "type": "journal_article"}, {"citing_doi": "10.1080/24705357.2019.1576021", "type": "journal_article"}, {"citing_doi": "10.70675/01cae777z6472z43a5z87bdza042af8ef9c0", "type": "dissertation"}, {"citing_doi": "10.3390/w15030430", "type": "journal_article"}, {"citing_doi": "10.3390/rs11091064", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2023.129567", "type": "journal_article"}, {"citing_doi": "10.3390/ijerph19148389", "type": "journal_article"}, {"citing_doi": "10.3390/w17131878", "type": "journal_article"}, {"citing_doi": "10.1002/lol2.10423", "type": "journal_article"}, {"citing_doi": "10.3390/atmos11080791", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2025.133049", "type": "journal_article"}, {"citing_doi": "10.2134/jeq2005.0341", "type": "journal_article"}, {"citing_doi": "10.3390/rs18081127", "type": "journal_article"}, {"citing_doi": "10.1029/2022GL102201", "type": "journal_article"}, {"citing_doi": "10.1016/S1001-6279(12)60004-3", "type": "journal_article"}, {"citing_doi": "10.1002/ppp.1867", "type": "journal_article"}, {"citing_doi": "10.1111/sjtg.12204", "type": "journal_article"}, {"citing_doi": "10.5194/hess-27-2535-2023", "type": "journal_article"}, {"citing_doi": "10.1029/WR026i001p00109", "type": "journal_article"}, {"citing_doi": "10.1029/2006WR005035", "type": "journal_article"}, {"citing_doi": "10.1029/2019JF005309", "type": "journal_article"}, {"citing_doi": "10.3133/sir20225059", "type": "report_paper_content"}, {"citing_doi": "10.1016/j.rsase.2017.05.001", "type": "journal_article"}, {"citing_doi": "10.1007/s10533-015-0177-1", "type": "journal_article"}, {"citing_doi": "10.1007/s40808-020-00804-y", "type": "journal_article"}, {"citing_doi": "10.1029/2020GL090493", "type": "journal_article"}, {"citing_doi": "10.1002/esp.70338", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-319-65124-8_2", "type": "book_content"}, {"citing_doi": "10.1016/j.geomorph.2006.07.014", "type": "journal_article"}, {"citing_doi": "10.1061/40737(2004)408", "type": "conference_paper"}, {"citing_doi": "10.1002/esp.3462", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2013.08.051", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.1971.tb05054.x", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-031-21086-0_11", "type": "book_content"}, {"citing_doi": "10.1177/030913338500900101", "type": "journal_article"}, {"citing_doi": "10.1002/2014EF000290", "type": "journal_article"}, {"citing_doi": "10.1016/S0167-5648(04)80152-7", "type": "book_content"}, {"citing_doi": "10.1002/lno.70155", "type": "journal_article"}, {"citing_doi": "10.1002/2015WR018062", "type": "journal_article"}, {"citing_doi": "10.70675/9f893854za097z43e4z8d39zafe3a4899193", "type": "dissertation"}, {"citing_doi": "10.1029/WR018i004p01029", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1078", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)0733-9429(1988)114:1(54)", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.2006.tb04490.x", "type": "journal_article"}, {"citing_doi": "10.5194/hess-25-6437-2021", "type": "journal_article"}, {"citing_doi": "10.1002/rra.3529", "type": "journal_article"}, {"citing_doi": "10.1002/esp.70212", "type": "journal_article"}, {"citing_doi": "10.1140/epjp/s13360-026-08432-8", "type": "journal_article"}, {"citing_doi": "10.3390/w13121620", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3290200203", "type": "journal_article"}, {"citing_doi": "10.3389/frwa.2023.1296434", "type": "journal_article"}, {"citing_doi": "10.1007/s10652-023-09936-y", "type": "journal_article"}, {"citing_doi": "10.1002/eco.70108", "type": "journal_article"}, {"citing_doi": "10.1111/fwb.12639", "type": "journal_article"}, {"citing_doi": "10.3390/app142310854", "type": "journal_article"}, {"citing_doi": "10.1016/B978-0-08-040190-4.50009-5", "type": "book_content"}, {"citing_doi": "10.1093/tafafs/vnag037", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-030-53897-2_6", "type": "book_content"}, {"citing_doi": "10.5194/gmd-15-7287-2022", "type": "journal_article"}, {"citing_doi": "10.5194/hess-19-2701-2015", "type": "journal_article"}, {"citing_doi": "10.1002/esp.4166", "type": "journal_article"}, {"citing_doi": "10.1007/978-981-97-0759-1_3", "type": "book_content"}, {"citing_doi": "10.1029/95WR01952", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)1084-0699(1997)2:1(1)", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1421", "type": "journal_article"}, {"citing_doi": "10.1016/j.catena.2020.104723", "type": "journal_article"}, {"citing_doi": "10.1002/2013JG002415", "type": "journal_article"}, {"citing_doi": "10.70675/9d962d1bzcdb7z4fbfz8787zaf8dae56de17", "type": "dissertation"}, {"citing_doi": "10.1002/esp.5484", "type": "journal_article"}, {"citing_doi": "10.1007/s12046-007-0017-7", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2019.124292", "type": "journal_article"}, {"citing_doi": "10.3389/frwa.2021.724596", "type": "journal_article"}, {"citing_doi": "10.1029/2021GL094378", "type": "journal_article"}, {"citing_doi": "10.1007/BF01866339", "type": "journal_article"}, {"citing_doi": "10.1029/WR017i004p01014", "type": "journal_article"}, {"citing_doi": "10.1127/zfg/22/1978/182", "type": "journal_article"}, {"citing_doi": "10.1007/978-981-99-6026-2_38", "type": "book_content"}, {"citing_doi": "10.1029/WR012i003p00487", "type": "journal_article"}, {"citing_doi": "10.1002/esp.4391", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2025.109737", "type": "journal_article"}, {"citing_doi": "10.1007/s12040-014-0465-5", "type": "journal_article"}, {"citing_doi": "10.1007/s11368-017-1684-6", "type": "journal_article"}, {"citing_doi": "10.3390/hydrology8040143", "type": "journal_article"}, {"citing_doi": "10.1111/geoj.12155", "type": "journal_article"}, {"citing_doi": "10.1002/esp.350", "type": "journal_article"}, {"citing_doi": "10.2110/jsr.2018.38", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)0733-9429(1993)119:1(81)", "type": "journal_article"}, {"citing_doi": "10.1029/2002JF000002", "type": "journal_article"}, {"citing_doi": "10.5194/essd-11-1003-2019", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-319-73250-3_3", "type": "book_content"}, {"citing_doi": "10.1002/esp.3290030403", "type": "journal_article"}, {"citing_doi": "10.1017/CBO9780511549984.010", "type": "book_content"}, {"citing_doi": "10.1002/esp.1433", "type": "journal_article"}, {"citing_doi": "10.2166/hydro.2025.217", "type": "journal_article"}, {"citing_doi": "10.3390/hydrology13010021", "type": "journal_article"}, {"citing_doi": "10.70675/9b125d8ezbd1fz4a11z8252z2ee4c20346a2", "type": "dissertation"}, {"citing_doi": "10.1002/esp.4885", "type": "journal_article"}, {"citing_doi": "10.1016/S0309-1708(03)00081-2", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.10918", "type": "journal_article"}, {"citing_doi": "10.4000/developpementdurable.10585", "type": "journal_article"}, {"citing_doi": "10.1111/jfb.70570", "type": "journal_article"}, {"citing_doi": "10.1016/j.jag.2012.06.008", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3290060608", "type": "journal_article"}, {"citing_doi": "10.1029/2022WR032114", "type": "journal_article"}, {"citing_doi": "10.1111/sed.13062", "type": "journal_article"}, {"citing_doi": "10.1098/rstb.2009.0303", "type": "journal_article"}, {"citing_doi": "10.3390/rs10121915", "type": "journal_article"}, {"citing_doi": "10.1109/IGARSS.2015.7325867", "type": "conference_paper"}, {"citing_doi": "10.1111/j.1752-1688.1997.tb03539.x", "type": "journal_article"}, {"citing_doi": "10.1002/eco.2683", "type": "journal_article"}, {"citing_doi": "10.1029/2019JF005286", "type": "journal_article"}, {"citing_doi": "10.1002/rra.4466", "type": "journal_article"}, {"citing_doi": "10.1007/s00267-014-0231-0", "type": "journal_article"}, {"citing_doi": "10.1007/978-0-387-36699-9_51", "type": "book_content"}, {"citing_doi": "10.2489/jswc.69.5.374", "type": "journal_article"}, {"citing_doi": "10.1029/WR015i002p00507", "type": "journal_article"}, {"citing_doi": "10.1038/s41467-020-17337-8", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2014.12.003", "type": "journal_article"}, {"citing_doi": "10.3389/fenvs.2021.657354", "type": "journal_article"}, {"citing_doi": "10.1051/e3sconf/202458502004", "type": "journal_article"}, {"citing_doi": "10.2139/ssrn.4052431", "type": "posted_content"}, {"citing_doi": "10.3390/w15020258", "type": "journal_article"}, {"citing_doi": "10.1029/2021MS002653", "type": "journal_article"}, {"citing_doi": "10.1002/esp.5666", "type": "journal_article"}, {"citing_doi": "10.2747/0272-3646.28.6.474", "type": "journal_article"}, {"citing_doi": "10.1029/2025GB008743", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.2011.00567.x", "type": "journal_article"}, {"citing_doi": "10.1016/j.sedgeo.2017.10.001", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-319-17719-9_12", "type": "book_content"}, {"citing_doi": "10.1130/G38879.1", "type": "journal_article"}, {"citing_doi": "10.1175/2008EI257.1", "type": "journal_article"}, {"citing_doi": "10.1007/s002540050079", "type": "journal_article"}, {"citing_doi": "10.1029/1999WR900286", "type": "journal_article"}, {"citing_doi": "10.1029/2008JE003132", "type": "journal_article"}, {"citing_doi": "10.3389/feart.2023.1290509", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2019.124406", "type": "journal_article"}, {"citing_doi": "10.3390/w17172580", "type": "journal_article"}, {"citing_doi": "10.1002/rvr2.70043", "type": "journal_article"}, {"citing_doi": "10.1111/1752-1688.12652", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3345", "type": "journal_article"}, {"citing_doi": "10.1002/9781118648551.ch17", "type": "book_content"}, {"citing_doi": "10.1029/95WR01348", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)HY.1943-7900.0001172", "type": "journal_article"}, {"citing_doi": "10.1002/2016WR019244", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-8-37-2020", "type": "journal_article"}, {"citing_doi": "10.1016/j.advwatres.2010.10.001", "type": "journal_article"}, {"citing_doi": "10.1088/1748-9326/ae692c", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1117", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2018.01.021", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3290200707", "type": "journal_article"}, {"citing_doi": "10.1002/9781118526576.ch7", "type": "book_content"}, {"citing_doi": "10.1021/es052281m", "type": "journal_article"}, {"citing_doi": "10.1016/B978-0-12-374739-6.00252-9", "type": "book_content"}, {"citing_doi": "10.1002/esp.3290080209", "type": "journal_article"}, {"citing_doi": "10.1098/rsos.181428", "type": "journal_article"}, {"citing_doi": "10.1002/edn3.430", "type": "journal_article"}, {"citing_doi": "10.1002/rra.2666", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)0733-9429(2002)128:4(426)", "type": "journal_article"}, {"citing_doi": "10.1080/13241583.2006.11465280", "type": "journal_article"}, {"citing_doi": "10.1029/2007WR006133", "type": "journal_article"}, {"citing_doi": "10.1002/2017MS000986", "type": "journal_article"}, {"citing_doi": "10.1007/s11600-019-00273-7", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2018.05.021", "type": "journal_article"}, {"citing_doi": "10.1002/esp.5306", "type": "journal_article"}, {"citing_doi": "10.1111/sed.12752", "type": "journal_article"}, {"citing_doi": "10.1162/artl_a_00347", "type": "journal_article"}, {"citing_doi": "10.1017/aaq.2023.94", "type": "journal_article"}, {"citing_doi": "10.1002/rra.1080", "type": "journal_article"}, {"citing_doi": "10.5194/hess-14-1767-2010", "type": "journal_article"}, {"citing_doi": "10.1002/9780470750643.refs", "type": "book_content"}, {"citing_doi": "10.1029/2006WR005810", "type": "journal_article"}, {"citing_doi": "10.1038/s41598-020-61533-x", "type": "journal_article"}, {"citing_doi": "10.1007/s10750-005-2674-z", "type": "journal_article"}, {"citing_doi": "10.3390/w13060804", "type": "journal_article"}, {"citing_doi": "10.1016/0143-6228(84)90029-8", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-031-85971-7_4", "type": "book_content"}, {"citing_doi": "10.1002/9781118872086.ch8", "type": "book_content"}, {"citing_doi": "10.1111/j.1752-1688.2002.tb01530.x", "type": "journal_article"}, {"citing_doi": "10.1007/s11004-006-9033-0", "type": "journal_article"}, {"citing_doi": "10.1111/1752-1688.12572", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.70444", "type": "journal_article"}, {"citing_doi": "10.1007/978-981-16-7535-5_10", "type": "book_content"}, {"citing_doi": "10.1029/WR018i006p01643", "type": "journal_article"}, {"citing_doi": "10.1002/esp.403", "type": "journal_article"}, {"citing_doi": "10.1111/1752-1688.12717", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.1994.tb03308.x", "type": "journal_article"}, {"citing_doi": "10.70675/504abb17z6027z4a0dz899dz4951359cf9f8", "type": "dissertation"}, {"citing_doi": "10.1029/97WR02573", "type": "journal_article"}, {"citing_doi": "10.1007/BF01091855", "type": "journal_article"}, {"citing_doi": "10.1111/jfr3.12327", "type": "journal_article"}, {"citing_doi": "10.1144/M58-2021-18", "type": "journal_article"}, {"citing_doi": "10.3390/rs12010018", "type": "journal_article"}, {"citing_doi": "10.1007/s11769-020-1143-y", "type": "journal_article"}, {"citing_doi": "10.2110/jsr.2021.037", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3977", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.2009.00360.x", "type": "journal_article"}, {"citing_doi": "10.1111/j.2164-0947.1958.tb00590.x", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.9775", "type": "journal_article"}, {"citing_doi": "10.1080/02626667.2020.1859115", "type": "journal_article"}, {"citing_doi": "10.1002/2013JF002981", "type": "journal_article"}, {"citing_doi": "10.1177/0309133317732922", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2017.09.031", "type": "journal_article"}, {"citing_doi": "10.70675/4b51c532zf0b7z4a83zb32ez1d898ec8f232", "type": "dissertation"}, {"citing_doi": "10.1002/esp.3290070602", "type": "journal_article"}, {"citing_doi": "10.1029/2025JF008594", "type": "journal_article"}, {"citing_doi": "10.1007/BF02065787", "type": "journal_article"}, {"citing_doi": "10.1007/s12517-021-06577-7", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-10-247-2022", "type": "journal_article"}, {"citing_doi": "10.1038/s41558-023-01620-9", "type": "journal_article"}, {"citing_doi": "10.1086/629038", "type": "journal_article"}, {"citing_doi": "10.1029/2006JF000549", "type": "journal_article"}, {"citing_doi": "10.1029/2008WR007424", "type": "journal_article"}, {"citing_doi": "10.3917/arco.fort.2015.01.0311", "type": "book_content"}, {"citing_doi": "10.1016/j.jhydrol.2017.11.038", "type": "journal_article"}, {"citing_doi": "10.1029/2024JG008369", "type": "journal_article"}, {"citing_doi": "10.1029/2023JF007148", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2006.07.011", "type": "journal_article"}, {"citing_doi": "10.1002/2013JF003020", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)0733-9429(1989)115:3(309)", "type": "journal_article"}, {"citing_doi": "10.70675/e6ebe0fcz41bez45a4z8ddbz02bc3988e351", "type": "dissertation"}, {"citing_doi": "10.1016/j.geomorph.2011.09.018", "type": "journal_article"}, {"citing_doi": "10.1016/j.enconman.2017.06.053", "type": "journal_article"}, {"citing_doi": "10.1111/sed.12865", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)0733-9429(2001)127:11(919)", "type": "journal_article"}, {"citing_doi": "10.1144/GSL.SP.2000.180.01.10", "type": "journal_article"}, {"citing_doi": "10.1007/s00027-005-0790-5", "type": "journal_article"}, {"citing_doi": "10.1016/S0140-1963(18)31751-8", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-8-103-2020", "type": "journal_article"}, {"citing_doi": "10.15406/ijh.2018.02.00077", "type": "journal_article"}, {"citing_doi": "10.1038/s41598-019-44347-4", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3290090306", "type": "journal_article"}, {"citing_doi": "10.1016/S0928-2025(07)11112-3", "type": "book_content"}, {"citing_doi": "10.1016/j.jhydrol.2018.01.021", "type": "journal_article"}, {"citing_doi": "10.5194/hess-25-6359-2021", "type": "journal_article"}, {"citing_doi": "10.1029/2003WR002082", "type": "journal_article"}, {"citing_doi": "10.3390/app13127109", "type": "journal_article"}, {"citing_doi": "10.3390/app16031581", "type": "journal_article"}, {"citing_doi": "10.1007/978-94-011-1098-3_22", "type": "book_content"}, {"citing_doi": "10.1061/(ASCE)EE.1943-7870.0000930", "type": "journal_article"}, {"citing_doi": "10.1017/9781009222136.005", "type": "book_content"}, {"citing_doi": "10.1061/(ASCE)0733-9496(1999)125:2(100)", "type": "journal_article"}, {"citing_doi": "10.1007/s11629-025-9920-9", "type": "journal_article"}, {"citing_doi": "10.5194/hess-22-5967-2018", "type": "journal_article"}, {"citing_doi": "10.1029/2022GL101097", "type": "journal_article"}, {"citing_doi": "10.1080/00224561.1989.12456295", "type": "journal_article"}, {"citing_doi": "10.1007/s11069-019-03797-9", "type": "journal_article"}, {"citing_doi": "10.1139/er-2023-0094", "type": "journal_article"}, {"citing_doi": "10.1111/jawr.12029", "type": "journal_article"}, {"citing_doi": "10.1017/9781009222136.016", "type": "book_content"}, {"citing_doi": "10.1016/0198-9715(88)90022-1", "type": "journal_article"}, {"citing_doi": "10.1029/2021GL094591", "type": "journal_article"}, {"citing_doi": "10.1029/2020WR027199", "type": "journal_article"}, {"citing_doi": "10.1007/s10230-023-00937-3", "type": "journal_article"}, {"citing_doi": "10.1002/dep2.267", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)0733-9429(1994)120:6(737)", "type": "journal_article"}, {"citing_doi": "10.1016/B978-0-12-374739-6.00012-9", "type": "book_content"}, {"citing_doi": "10.1002/esp.328", "type": "journal_article"}, {"citing_doi": "10.1002/2015GL064935", "type": "journal_article"}, {"citing_doi": "10.1002/2015JF003715", "type": "journal_article"}, {"citing_doi": "10.3390/su11216022", "type": "journal_article"}, {"citing_doi": "10.1111/1752-1688.12865", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)0733-9496(1984)110:4(497)", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.2008.00175.x", "type": "journal_article"}, {"citing_doi": "10.1093/jhered/esag056", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.14124", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.7811", "type": "journal_article"}, {"citing_doi": "10.1680/jwama.17.00043", "type": "journal_article"}, {"citing_doi": "10.1029/98WR00982", "type": "journal_article"}, {"citing_doi": "10.1029/2017JF004576", "type": "journal_article"}, {"citing_doi": "10.1016/j.hydres.2020.04.002", "type": "journal_article"}, {"citing_doi": "10.70675/65633e07zec4bz4ce9z9e5bz65948145c458", "type": "dissertation"}, {"citing_doi": "10.1029/2018WR022615", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-9-379-2021", "type": "journal_article"}, {"citing_doi": "10.1080/02626667.2014.990965", "type": "journal_article"}, {"citing_doi": "10.1016/j.jglr.2022.08.014", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2014.02.050", "type": "journal_article"}, {"citing_doi": "10.1111/tgis.13083", "type": "journal_article"}, {"citing_doi": "10.1007/BF01820171", "type": "journal_article"}, {"citing_doi": "10.1080/00045600801944160", "type": "journal_article"}, {"citing_doi": "10.4018/IJAGR.2018010102", "type": "journal_article"}, {"citing_doi": "10.1029/2001JE001505", "type": "journal_article"}, {"citing_doi": "10.1002/jgre.20081", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-662-59402-5_12", "type": "book_content"}, {"citing_doi": "10.1029/2019GL084921", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-6-763-2018", "type": "journal_article"}, {"citing_doi": "10.3389/frwa.2020.595538", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.7730", "type": "journal_article"}, {"citing_doi": "10.1103/PhysRevE.87.052204", "type": "journal_article"}, {"citing_doi": "10.1080/02626667.2018.1557336", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-030-83553-8_14", "type": "book_content"}, {"citing_doi": "10.1016/S0928-2025(07)11153-6", "type": "book_content"}, {"citing_doi": "10.70675/e6af6ea9z9cdcz4663z90a4zcc40621093d7", "type": "dissertation"}, {"citing_doi": "10.1016/j.geomorph.2015.04.027", "type": "journal_article"}, {"citing_doi": "10.1002/ecs2.2546", "type": "journal_article"}, {"citing_doi": "10.1007/s43217-020-00039-y", "type": "journal_article"}, {"citing_doi": "10.1139/cjfas-2020-0120", "type": "journal_article"}, {"citing_doi": "10.1002/2014WR015597", "type": "journal_article"}, {"citing_doi": "10.1007/s11269-026-04894-8", "type": "journal_article"}, {"citing_doi": "10.1029/2018WR022783", "type": "journal_article"}, {"citing_doi": "10.1111/j.1749-8198.2009.00225.x", "type": "journal_article"}, {"citing_doi": "10.1002/rra.1362", "type": "journal_article"}, {"citing_doi": "10.1002/2017WR021543", "type": "journal_article"}, {"citing_doi": "10.1016/j.catena.2023.107173", "type": "journal_article"}, {"citing_doi": "10.1038/s43247-025-02812-1", "type": "journal_article"}, {"citing_doi": "10.1016/j.envsoft.2008.08.008", "type": "journal_article"}, {"citing_doi": "10.1002/2016JG003555", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.3360020305", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.10461", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2022.127612", "type": "journal_article"}, {"citing_doi": "10.1016/S0304-3800(03)00189-3", "type": "journal_article"}, {"citing_doi": "10.1111/j.1467-8306.1994.tb01881.x", "type": "journal_article"}, {"citing_doi": "10.1002/rra.1316", "type": "journal_article"}, {"citing_doi": "10.2208/jscej.1986.375_117", "type": "journal_article"}, {"citing_doi": "10.1007/s13201-018-0646-5", "type": "journal_article"}, {"citing_doi": "10.1002/2014GC005490", "type": "journal_article"}, {"citing_doi": "10.7202/032821ar", "type": "journal_article"}, {"citing_doi": "10.1029/96WR00273", "type": "journal_article"}, {"citing_doi": "10.1146/annurev-earth-060614-105405", "type": "journal_article"}, {"citing_doi": "10.3390/w11040735", "type": "journal_article"}, {"citing_doi": "10.1016/S0022-1694(03)00069-6", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-8-195-2020", "type": "journal_article"}, {"citing_doi": "10.1007/978-1-4684-5392-8_2", "type": "book_content"}, {"citing_doi": "10.1002/wrcr.20521", "type": "journal_article"}, {"citing_doi": "10.1016/j.scitotenv.2022.159065", "type": "journal_article"}, {"citing_doi": "10.1038/s41467-026-76433-3", "type": "journal_article"}, {"citing_doi": "10.1016/j.coldregions.2009.10.006", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)HY.1943-7900.0001064", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)EE.1943-7870.0001901", "type": "journal_article"}, {"citing_doi": "10.1002/esp.5517", "type": "journal_article"}, {"citing_doi": "10.5194/bg-14-5003-2017", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3760050303", "type": "journal_article"}, {"citing_doi": "10.1007/s10980-007-9097-3", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2014.11.004", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3290040205", "type": "journal_article"}, {"citing_doi": "10.3986/AGS50202", "type": "journal_article"}, {"citing_doi": "10.3390/w12061828", "type": "journal_article"}, {"citing_doi": "10.1002/esp.4053", "type": "journal_article"}, {"citing_doi": "10.61186/jsaeh.11.2.41", "type": "journal_article"}, {"citing_doi": "10.1007/s11629-018-4984-4", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.1994.tb03321.x", "type": "journal_article"}, {"citing_doi": "10.1002/ar.1092230302", "type": "journal_article"}, {"citing_doi": "10.1177/030913338601000101", "type": "journal_article"}, {"citing_doi": "10.1080/15715124.2023.2274463", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2026.110429", "type": "journal_article"}, {"citing_doi": "10.1016/j.jher.2009.01.005", "type": "journal_article"}, {"citing_doi": "10.1023/A:1007527800434", "type": "journal_article"}, {"citing_doi": "10.1093/evolut/qpaf253", "type": "journal_article"}, {"citing_doi": "10.1002/lol2.10115", "type": "journal_article"}, {"citing_doi": "10.1029/2017JF004578", "type": "journal_article"}, {"citing_doi": "10.3390/w11010146", "type": "journal_article"}, {"citing_doi": "10.1002/esp.1471", "type": "journal_article"}, {"citing_doi": "10.70675/3fae7888ze196z4a03z8a49z568e4a8382fc", "type": "dissertation"}, {"citing_doi": "10.1007/s10533-008-9282-8", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3290080509", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-030-66906-5_18", "type": "book_content"}, {"citing_doi": "10.1111/j.1749-8198.2009.00228.x", "type": "journal_article"}, {"citing_doi": "10.1029/2025WR041131", "type": "journal_article"}, {"citing_doi": "10.1029/91WR01363", "type": "journal_article"}, {"citing_doi": "10.70675/a65fd9b1z90cbz48aez8a81zb866d06a198a", "type": "dissertation"}, {"citing_doi": "10.1016/j.jhydrol.2023.129550", "type": "journal_article"}, {"citing_doi": "10.1051/e3sconf/20184002046", "type": "journal_article"}, {"citing_doi": "10.4000/belgeo.52790", "type": "journal_article"}, {"citing_doi": "10.1002/2017WR021868", "type": "journal_article"}, {"citing_doi": "10.1117/1.JRS.18.024503", "type": "journal_article"}, {"citing_doi": "10.1007/s10750-025-05913-2", "type": "journal_article"}, {"citing_doi": "10.1002/wrcr.20148", "type": "journal_article"}, {"citing_doi": "10.1029/98WR00983", "type": "journal_article"}, {"citing_doi": "10.2166/wpt.2020.080", "type": "journal_article"}, {"citing_doi": "10.5194/hess-20-1413-2016", "type": "journal_article"}, {"citing_doi": "10.1002/esp.5603", "type": "journal_article"}, {"citing_doi": "10.1080/00224561.1988.12456201", "type": "journal_article"}, {"citing_doi": "10.1029/2023WR035589", "type": "journal_article"}, {"citing_doi": "10.1016/j.hydroa.2019.100027", "type": "journal_article"}, {"citing_doi": "10.1177/030913337900300401", "type": "journal_article"}, {"citing_doi": "10.1029/2022JG006954", "type": "journal_article"}, {"citing_doi": "10.70675/08b8493az7608z4750za9c6z2c937a89c4fa", "type": "dissertation"}, {"citing_doi": "10.1029/2011GL047619", "type": "journal_article"}, {"citing_doi": "10.1007/s40996-025-02045-4", "type": "journal_article"}, {"citing_doi": "10.3133/sir20265001", "type": "report_paper_content"}, {"citing_doi": "10.1029/96WR00752", "type": "journal_article"}, {"citing_doi": "10.3390/w13233319", "type": "journal_article"}, {"citing_doi": "10.1029/2022GL097897", "type": "journal_article"}, {"citing_doi": "10.5194/gmd-15-6085-2022", "type": "journal_article"}, {"citing_doi": "10.1007/s40899-024-01059-6", "type": "journal_article"}, {"citing_doi": "10.1002/9781118305454.oth1", "type": "book_content"}, {"citing_doi": "10.1002/ird.1818", "type": "journal_article"}, {"citing_doi": "10.1002/2017MS001209", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.2009.00364.x", "type": "journal_article"}, {"citing_doi": "10.1007/s10661-021-09641-7", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2006.03.009", "type": "journal_article"}, {"citing_doi": "10.1046/j.1365-2427.2002.00785.x", "type": "journal_article"}, {"citing_doi": "10.1080/24749508.2020.1752501", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.2012.00645.x", "type": "journal_article"}, {"citing_doi": "10.1002/2014WR016227", "type": "journal_article"}, {"citing_doi": "10.70675/e8dd39dfza56fz45daz8954z6114f03c6c37", "type": "dissertation"}, {"citing_doi": "10.1029/WR020i002p00161", "type": "journal_article"}, {"citing_doi": "10.3986/hacq-2025-0019", "type": "journal_article"}, {"citing_doi": "10.1098/rsta.2010.0335", "type": "journal_article"}, {"citing_doi": "10.2208/jscejhe.70.I_1051", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2006.06.032", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-319-90427-6_9", "type": "book_content"}, {"citing_doi": "10.1111/fwb.13282", "type": "journal_article"}, {"citing_doi": "10.1002/esp.4104", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2018.08.031", "type": "journal_article"}, {"citing_doi": "10.3390/buildings14041015", "type": "journal_article"}, {"citing_doi": "10.1016/j.catena.2014.04.017", "type": "journal_article"}, {"citing_doi": "10.1007/s12040-017-0904-1", "type": "journal_article"}, {"citing_doi": "10.1029/2024GL111789", "type": "journal_article"}, {"citing_doi": "10.1029/2025GL118412", "type": "journal_article"}, {"citing_doi": "10.1029/2023WR035337", "type": "journal_article"}, {"citing_doi": "10.1177/25148486231151807", "type": "journal_article"}, {"citing_doi": "10.1002/esp.70087", "type": "journal_article"}, {"citing_doi": "10.1029/WR025i003p00463", "type": "journal_article"}, {"citing_doi": "10.1007/s12040-023-02229-4", "type": "journal_article"}, {"citing_doi": "10.1038/s41559-023-02220-8", "type": "journal_article"}, {"citing_doi": "10.1029/2024JG008117", "type": "journal_article"}, {"citing_doi": "10.1111/j.1541-0064.1979.tb00648.x", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.13561", "type": "journal_article"}, {"citing_doi": "10.1111/fwb.13379", "type": "journal_article"}, {"citing_doi": "10.1007/BF02047075", "type": "journal_article"}, {"citing_doi": "10.2110/jsr.2017.1", "type": "journal_article"}, {"citing_doi": "10.1007/s12517-021-07979-3", "type": "journal_article"}, {"citing_doi": "10.1007/978-94-009-4678-1_9", "type": "book_content"}, {"citing_doi": "10.1073/pnas.1317606111", "type": "journal_article"}, {"citing_doi": "10.70675/c80ca763z841ez48f0z8613z40d3e945269a", "type": "dissertation"}, {"citing_doi": "10.1007/s10533-026-01327-x", "type": "journal_article"}, {"citing_doi": "10.1134/S0097807821060178", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2022.127962", "type": "journal_article"}, {"citing_doi": "10.1111/j.1752-1688.1984.tb04752.x", "type": "journal_article"}, {"citing_doi": "10.1002/esp.4154", "type": "journal_article"}, {"citing_doi": "10.1029/2019GL084529", "type": "journal_article"}, {"citing_doi": "10.1002/hyp.8301", "type": "journal_article"}, {"citing_doi": "10.1029/2004WR003408", "type": "journal_article"}, {"citing_doi": "10.1061/9780784412725.ch10", "type": "book_content"}, {"citing_doi": "10.1002/esp.4163", "type": "journal_article"}, {"citing_doi": "10.3390/rs12162533", "type": "journal_article"}, {"citing_doi": "10.1127/zfg/5/1961/226", "type": "journal_article"}, {"citing_doi": "10.1002/2014WR016816", "type": "journal_article"}, {"citing_doi": "10.2166/wcc.2023.233", "type": "journal_article"}, {"citing_doi": "10.1038/s43017-022-00282-z", "type": "journal_article"}, {"citing_doi": "10.1002/esp.3290160108", "type": "journal_article"}, {"citing_doi": "10.1080/00049189108703043", "type": "journal_article"}, {"citing_doi": "10.5194/esurf-8-87-2020", "type": "journal_article"}, {"citing_doi": "10.1002/esp.70269", "type": "journal_article"}, {"citing_doi": "10.1029/2018JF004971", "type": "journal_article"}, {"citing_doi": "10.1016/j.jhydrol.2025.132849", "type": "journal_article"}, {"citing_doi": "10.1111/fwb.12939", "type": "journal_article"}, {"citing_doi": "10.1016/B978-0-12-374739-6.00238-4", "type": "book_content"}, {"citing_doi": "10.1016/j.jhydrol.2017.06.039", "type": "journal_article"}, {"citing_doi": "10.1007/978-3-319-11023-3_9", "type": "book_content"}, {"citing_doi": "10.1007/s11442-022-2049-7", "type": "journal_article"}, {"citing_doi": "10.70675/7c8644b3z56f4z4f68za77az5f14b049de56", "type": "dissertation"}, {"citing_doi": "10.1061/(ASCE)0733-9429(1998)124:8(869)", "type": "journal_article"}, {"citing_doi": "10.1061/(ASCE)0733-9429(2005)131:11(931)", "type": "journal_article"}, {"citing_doi": "10.1016/B978-0-12-405890-3.00009-9", "type": "book_content"}, {"citing_doi": "10.1029/2024JH000173", "type": "journal_article"}, {"citing_doi": "10.70675/098387a8z4e9fz4485zaba2zf55a3c970452", "type": "dissertation"}, {"citing_doi": "10.1002/9781118782323.ch08", "type": "book_content"}, {"citing_doi": "10.1016/j.jhydrol.2004.06.006", "type": "journal_article"}, {"citing_doi": "10.1002/2016WR020233", "type": "journal_article"}, {"citing_doi": "10.5194/hess-25-5287-2021", "type": "journal_article"}, {"citing_doi": "10.1038/s44221-026-00665-2", "type": "journal_article"}, {"citing_doi": "10.1111/j.1749-8198.2008.00206.x", "type": "journal_article"}, {"citing_doi": "10.1016/j.geomorph.2013.04.011", "type": "journal_article"}, {"citing_doi": "10.1007/s11434-007-0516-2", "type": "journal_article"}, {"citing_doi": "10.1061/9780784412725.ch11", "type": "book_content"}, {"citing_doi": "10.1029/2007GL031931", "type": "journal_article"}, {"citing_doi": "10.1017/9781009222136.013", "type": "book_content"}, {"citing_doi": "10.5194/hess-21-117-2017", "type": "journal_article"}, {"citing_doi": "10.1002/rra.3053", "type": "journal_article"}, {"citing_doi": "10.1002/esp.4874", "type": "journal_article"}, {"citing_doi": "10.70675/9c098e05zab34z41b6z8b4fza50fa6d6a440", "type": "dissertation"}, {"citing_doi": "10.1016/j.jhydrol.2007.03.021", "type": "journal_article"}, {"citing_doi": "10.1002/2013WR014944", "type": "journal_article"}, {"citing_doi": "10.1007/s10652-025-10072-y", "type": "journal_article"}, {"citing_doi": "10.1111/j.1467-8306.1994.tb01870.x", "type": "journal_article"}, {"citing_doi": "10.1080/02626667.2021.1912756", "type": "journal_article"}, {"citing_doi": "10.1029/2008JF000989", "type": "journal_article"}, {"citing_doi": "10.70675/915ec477za669z4820zae85z6fe13dd34d9a", "type": "dissertation"}];
+                            // console.log(data);
+                            fetch('/get_citation_data', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json', 
+                                },
+                                body: JSON.stringify(data), 
+                            })
+                            .then(response => {
+                                
+                                if (!response.ok) throw new Error('Network response was not ok');
+                                return response.json(); 
+                            })
+                            .then(data => {  
+                                let data_response = data.response;
+                                let modal_list = document.getElementById('modal_list');
+                                
+                                for (let i = 0; i < data_response.length; i++){
+                                    
+                                    let newDiv = document.createElement("div");
+    
+                                    newDiv.textContent = data_response[i].formatted_citation;
+                                    newDiv.className = "citation-modal-list-element";
+                                    
+                                    modal_list.appendChild(newDiv);
+                                }
+                                
+                                modal_has_been_opened = true;
+                                loading_indicator.hidden = true;
+                                
+                            })
+                            .catch(error => console.error('Fetch error:', error))
+                            .finally(() => {});
+    
+                        }).then((event) => {
+                            
+                            resolve();
+                        }).catch((error) => {
+                            console.error(error.message); 
+                        }).finally(() => {});
+                    }
+                });
+                
+                
+                var event = new CustomEvent("pubswh-page-loaded", 
+                { 
+                    
+                    "detail": {
+                        "message": "post-load actions completed.",
+                        "summary": postLoadActionSummary
+                         }
+                });
+                resolve(event);
+                
+                
+            });
+        }).then((event) => {
+            document.dispatchEvent(event);
+        })
+        .catch((error) => {
+            console.error(error.message); 
+        })
+        .finally(() => {
+            
+        });
+    
+    </script>
+
+
+    </div>
+
+
+        </main>
+        <footer class="usa-footer" role="contentinfo">
+    <nav class="usa-footer__primary-section" aria-label="Footer Navigation">
+        <div class="usgs-footer-nav">
+            <a class="usgs-footer-link" href="https://www.doi.gov/privacy">DOI Privacy Policy</a> |
+            <a class="usgs-footer-link" href="https://www.usgs.gov/policies-and-notices">Legal</a> |
+            <a class="usgs-footer-link" href="https://www.usgs.gov/accessibility-and-us-geological-survey">Accessibility</a> |
+            <a class="usgs-footer-link" href="https://www.usgs.gov/sitemap.html">Site Map</a> |
+            <a class="usgs-footer-link" href="https://answers.usgs.gov/">Contact USGS</a>
+        </div>
+        <div class="usgs-footer-nav">
+            <a class="usgs-footer-link" href="https://www.doi.gov/">U.S. Department of the Interior</a> |
+            <a class="usgs-footer-link" href="https://www.doioig.gov/">DOI Inspector General</a> |
+            <a class="usgs-footer-link" href="https://www.whitehouse.gov/">White House</a> |
+            <a class="usgs-footer-link" href="https://www.whitehouse.gov/omb/management/egov/">E-gov</a> |
+            <a class="usgs-footer-link" href="https://www.doi.gov/pmb/eeo/no-fear-act">No Fear Act</a> |
+            <a class="usgs-footer-link" href="https://www.usgs.gov/about/organization/science-support/foia">FOIA</a>
+        </div>
+    </nav>
+</footer>
+        
+    
+    <script defer>
+        window.addEventListener('DOMContentLoaded', () => {
+            SystemJS.import("https://pubs.usgs.gov/static/scripts/pubswh_plugins.8fc0c943.js");
+        });
+    </script>
+    <!-- <script async type="application/javascript"
+            src="https://www2.usgs.gov/scripts/analytics/usgs-analytics.js"></script> -->
+
+   
+
+
+   <script>
+       var GA = {};
+       (function (i, s, o, g, r, a, m) {
+           i['GoogleAnalyticsObject'] = r;
+           i[r] = i[r] || function () {
+                   (i[r].q = i[r].q || []).push(arguments)
+               }, i[r].l = 1 * new Date();
+           a = s.createElement(o),
+               m = s.getElementsByTagName(o)[0];
+           a.async = 1;
+           a.src = g;
+           m.parentNode.insertBefore(a, m)
+       })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+       ga('create', 'UA-10113280-1', 'auto');
+       ga('send', 'pageview');
+
+       GA.trackGAEvent = function (category, actions, labels, values) {
+           ga('send', 'event', category, actions, labels, values);
+       };
+   </script>
+
+    <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a534c205ff109989',t:'MTc5MzQ3MTcwOQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a534c205ff109989',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

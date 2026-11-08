@@ -17,10 +17,10 @@ sys.path.insert(0, str(ROOT))
 import numpy as np
 import psutil
 
-from terrain_pipeline.fine_domain_mosaic import audit_saved_mosaic, partition_saved_window, partition_fan_geometry
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.surface_domain import audit_saved_mosaic, partition_saved_window, partition_fan_geometry
+from terrain_pipeline.common_infra import file_sha256
 from terrain_pipeline.single_domain_surface_consumer import load_consumer_manifest
-from terrain_pipeline.surface_adaptive_water import load_consumer_adaptive_frame
+from terrain_pipeline.adaptive_mesh import load_consumer_adaptive_frame
 from tools.verify_td_native_domain_partition import verify_size
 
 MANIFEST = ROOT / "verification/single-domain-consumer/adaptive-amr-20261004-03/manifest.json"

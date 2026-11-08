@@ -1,0 +1,356 @@
+{
+  "schema": "delta-engineering-delivery-v1",
+  "date": "2026-11-03",
+  "status": "finite_window_engineering_accepted; natural morphology remains limited",
+  "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+  "world_seed": 20261020,
+  "world_seed_status": "historical frozen benchmark, not new formal world",
+  "native_td_spacing_m": 30.0,
+  "simulation_spacing_m": 100.0,
+  "extent_km": [
+    45,
+    45
+  ],
+  "equivalent_years": 5.0,
+  "new_physical_duration_s": 180000.0,
+  "rendering": "read-only from saved checkpoints",
+  "files": [
+    {
+      "path": "data/full-final-event1.json",
+      "bytes": 292409,
+      "sha256": "574a1c813019a8340097eb4c5caa8f9f01212f5e73b1d8ec72b88c3ebc65f7e8"
+    },
+    {
+      "path": "data/full-final-event1.npz",
+      "bytes": 2708323,
+      "sha256": "44617954def0f33b78046acd953ee38e797b7b8469d82376c00e726b320cae3e"
+    },
+    {
+      "path": "data/full-final-event2.json",
+      "bytes": 298256,
+      "sha256": "e28d998de2dee10ab9274845959304d32d9ebbf853bd42fe6f24d784d397c106"
+    },
+    {
+      "path": "data/full-final-event2.npz",
+      "bytes": 2711470,
+      "sha256": "9b621162bce7164fb0fd88c929aff778808f529538eef775f1718159d9493ad7"
+    },
+    {
+      "path": "data/full-final-formed.json",
+      "bytes": 284215,
+      "sha256": "e523c363ec2b1a47b859c5abde9d02b1545d904e5c73d82184011dc8a3257322"
+    },
+    {
+      "path": "data/full-final-formed.npz",
+      "bytes": 2696553,
+      "sha256": "cae7bb72eb07520204e7daf374a0fc21c0807a03e7228bb8dc789e39c1e02370"
+    },
+    {
+      "path": "data/full-final-initial.json",
+      "bytes": 77656,
+      "sha256": "f5124a8b4f20c92bbabf9c8cb14d2d8215725cdbd538da92a018780a7f52c20a"
+    },
+    {
+      "path": "data/full-final-initial.npz",
+      "bytes": 1410653,
+      "sha256": "8e6aa151d5ec9a9a52be881cb8ad5536b1f3d317968cd287c396a1bcd83df3b7"
+    },
+    {
+      "path": "evidence/full-avulsion-contract.md",
+      "bytes": 4973,
+      "sha256": "f9e187db23e94dbe86b61c3cb02d52ae8c78f67faa8e30beb6582bc23d268e54"
+    },
+    {
+      "path": "evidence/full-final-case.py",
+      "bytes": 2396,
+      "sha256": "5a451c62d4ef6f8d2b64abdd06af14ceb1b42f9084b1a7d51611c9dc50a9ba8d"
+    },
+    {
+      "path": "evidence/full-final-events.py",
+      "bytes": 1530,
+      "sha256": "a3e45b951c024e69009f2983db1fa8b0da8b6050bcd322262e3991af03ed8493"
+    },
+    {
+      "path": "evidence/full-final-report.json",
+      "bytes": 15462,
+      "sha256": "adbcf68d06d195b072953a8d03936a48ce55efb361bad5156a909c60dcb1cc2b"
+    },
+    {
+      "path": "evidence/full-final-result.md",
+      "bytes": 1424,
+      "sha256": "782934795f14c0b2eb10983f52626a2c1923b33aaaeef1d3150310381681dcc7"
+    },
+    {
+      "path": "evidence/full-hydraulics-contract.md",
+      "bytes": 1295,
+      "sha256": "b47b31faa0e3b3646b520a8f82aa12ba42c831e5b3f7058405bd03581c6c720d"
+    },
+    {
+      "path": "evidence/full-publication-render.py",
+      "bytes": 21152,
+      "sha256": "376b01084f8e3b124d007154c30a212673a6bb6d869b8b8a9f0b4246337329f4"
+    },
+    {
+      "path": "evidence/full-source-contract.md",
+      "bytes": 2674,
+      "sha256": "2d9aaabdc1a66dbc21e52c60f1cd7ea905f8d5b082a6d0f4f7f325d59fd7265c"
+    },
+    {
+      "path": "evidence/land-stability.json",
+      "bytes": 1096,
+      "sha256": "508df97e313d989c069264b36a994a8e7284050fec97a00329274ad452bbf04c"
+    },
+    {
+      "path": "evidence/main-full-active-continuation-probe.json",
+      "bytes": 345,
+      "sha256": "cf806d403a9e5e21a7631dc24b1d04caedce7439067aded7a9d07f31101a538e"
+    },
+    {
+      "path": "evidence/main-full-active-continuation-probe.py",
+      "bytes": 2142,
+      "sha256": "3c25d2663976aa7943e67f03867cf2daf008c31787865b63296443fad2bc8d38"
+    },
+    {
+      "path": "evidence/main-full-evolution-accept.json",
+      "bytes": 39387,
+      "sha256": "0a27e8da6e4e4090759dd7544bc41a272b56c4abf7222ad7069e4c8a944e3e72"
+    },
+    {
+      "path": "evidence/main-full-evolution-accept.py",
+      "bytes": 7254,
+      "sha256": "a25a24e4c0445c49d62ddc94421b5b3f49cc4504aabc1ba7ec254333806da8cb"
+    },
+    {
+      "path": "evidence/main-full-hydraulics-accept.json",
+      "bytes": 557,
+      "sha256": "1dda6b21bc07133543d77bc70952066a130162d7a20aa932d12db6927d940e95"
+    },
+    {
+      "path": "evidence/main-full-review.md",
+      "bytes": 4352,
+      "sha256": "5635541d3a9124658d1975b12acb5ec1904c4be2234a2dc9374e63a593d7cee9"
+    },
+    {
+      "path": "evidence/main-full-routes-accept.json",
+      "bytes": 705,
+      "sha256": "e0623426ffb3e642a9dcd85c603ddcf88921def27185b61fbfd9817977bf8f92"
+    },
+    {
+      "path": "evidence/main-full-source-accept.json",
+      "bytes": 474,
+      "sha256": "31975e64e073cc58514c4a2928b641c19c3cc0099b7fd69c37484fde4e6980c3"
+    },
+    {
+      "path": "figures/01-full-window.png",
+      "bytes": 335392,
+      "sha256": "4cdfe907fb6456adf9f7022c8ca8503b2703cd6c50e33ba65df269275356f1d3"
+    },
+    {
+      "path": "figures/01b-local-comparison.png",
+      "bytes": 93612,
+      "sha256": "e0d0fcaa92eb6e39d191853526cacdd39dfe84f8027612aafc41ada42bbd2877"
+    },
+    {
+      "path": "figures/02-mouth.png",
+      "bytes": 68580,
+      "sha256": "4fca458faf76a8135c056a7660df22a54bfd344735ef80232c00c26d847bb903"
+    },
+    {
+      "path": "figures/03-change-profile.png",
+      "bytes": 179512,
+      "sha256": "b8e14a20d710c921e0a1e741d5bf734394ae8b6c0e59778c5648e2d64331bfe9"
+    },
+    {
+      "path": "figures/manifest.json",
+      "bytes": 22177,
+      "sha256": "8e1bdf8ea8deb777975975da71a9da66b8b8baf2ffa8a50b1954023f6cf162d5"
+    },
+    {
+      "path": "figures/report.md",
+      "bytes": 876,
+      "sha256": "96403731509886de03663caed0dd579f906d82ac0b879d7df39c0e645988f056"
+    },
+    {
+      "path": "issues/05-emergent-delta-plain.md",
+      "bytes": 3558,
+      "sha256": "ab7b9156b82c4792a8e5adb5108959a9570a793c745a28ef3267f555fb74d42c"
+    },
+    {
+      "path": "issues/07-upstream-sections-floodplain.md",
+      "bytes": 3069,
+      "sha256": "d3c72a90a1094d0214f495511d76efcc89e8b3619476994b96f4fd3cc79e9893"
+    },
+    {
+      "path": "issues/08-evolution-integration.md",
+      "bytes": 1672,
+      "sha256": "ea98669b014e54104b30f757b38e588d9d370fad8f5798765abeedf1836a8c8d"
+    },
+    {
+      "path": "issues/09-morphology-and-multibranch.md",
+      "bytes": 1289,
+      "sha256": "5a5cfd2d21d4b23b14b43ce4062b86d14b4c3a4276fd020070fd20de3a9c7a66"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2331,
+      "sha256": "ce88ce4f5ba337a83eb337c9ff2ec1f7018c559b7fe4e3a09271f0c15c2a1b5c"
+    },
+    {
+      "path": "snapshot/CONTRIBUTING.md",
+      "bytes": 7828,
+      "sha256": "b495956400f2a436846f3bdf50973f5a1fb3462063f0ccf1b8d839762da6740e"
+    },
+    {
+      "path": "snapshot/terrain_pipeline/coastal_delta_avulsion.py",
+      "bytes": 17112,
+      "sha256": "6b6e3bc6517b16d7a89cd0c9cfbca6f5234332c1e564e9eb44848a0aeb73823f"
+    },
+    {
+      "path": "snapshot/terrain_pipeline/coastal_delta_branching.py",
+      "bytes": 41376,
+      "sha256": "86bac4e067a55895fe47729b3849c7c1d3e128ff708c5081def0ee2483fc5f95"
+    },
+    {
+      "path": "snapshot/terrain_pipeline/coastal_delta_evolution.py",
+      "bytes": 30874,
+      "sha256": "38980a0341ac4f1d3fe579f65ee56a5695ddadbacd209623935f67fcf3149df2"
+    },
+    {
+      "path": "snapshot/terrain_pipeline/coastal_delta_hydraulics.py",
+      "bytes": 13470,
+      "sha256": "661b69367ecc95cea8ec03e6503ced9221e2691436e499b84768e0350cec3730"
+    },
+    {
+      "path": "snapshot/terrain_pipeline/coastal_delta_plain.py",
+      "bytes": 4708,
+      "sha256": "96ef0963f3e1f8cda9cd7f3a24e3e22dbe1f67baba85b3c5cd9fb2c2626dd022"
+    },
+    {
+      "path": "snapshot/terrain_pipeline/coastal_delta_product.py",
+      "bytes": 34440,
+      "sha256": "f63c117ba0bf848b7cb5450036019927566f86893f0c36ebd1955257745026a9"
+    },
+    {
+      "path": "snapshot/terrain_pipeline/coastal_delta_routes.py",
+      "bytes": 17639,
+      "sha256": "7a4052b5bf86f1b25789855fb997889514237ed1f5413ac451a465e56092ba64"
+    },
+    {
+      "path": "snapshot/terrain_pipeline/coastal_delta_window.py",
+      "bytes": 10079,
+      "sha256": "d05f26b1daab2ac574a19526a44bd165b8fd9d87debd7dd246c1b5fe3ca0dd55"
+    },
+    {
+      "path": "snapshot/terrain_pipeline/coastal_marine_longterm.py",
+      "bytes": 9160,
+      "sha256": "40eb3ba6720677db620eca95e815be42d34d55c69fd005a35902bd7fc3cc9452"
+    },
+    {
+      "path": "snapshot/terrain_pipeline/coastal_marine_product.py",
+      "bytes": 5156,
+      "sha256": "c1a4ed4af2420c67cd900e50827a8a48a04ce46e7f0e284bd53b6f33be1c94a4"
+    },
+    {
+      "path": "snapshot/terrain_pipeline/coastal_marine_sediment.py",
+      "bytes": 16765,
+      "sha256": "cc719dc7144d15602e29378f45b2eac42787694cd6b0f065f04c266765fcc63b"
+    },
+    {
+      "path": "snapshot/terrain_pipeline/surface_rivers/formative_section.py",
+      "bytes": 5295,
+      "sha256": "1160a2d701e717aae65e153b8ea7b743833dd2fd4eba37d07e1449a41db6efbc"
+    },
+    {
+      "path": "snapshot/terrain_pipeline/surface_rivers/metric_coastal_transport.py",
+      "bytes": 22315,
+      "sha256": "d0c239092c50fb8f3bdb2c596aaac8569652103e8b0466fc4d4fc7ab976ac250"
+    },
+    {
+      "path": "snapshot/terrain_pipeline/surface_rivers/metric_fv_coastal_sediment.py",
+      "bytes": 13579,
+      "sha256": "47bd10ac502a845a8ce399304f9ba5b4ca6f3e86c1499bd7dd334091504c14ca"
+    },
+    {
+      "path": "snapshot/tests/test_coastal_delta_avulsion.py",
+      "bytes": 8157,
+      "sha256": "17e43f29bd257b4a0eb4284c7c882ed0f7b099d055a9a8dec80c132e1e66d2a8"
+    },
+    {
+      "path": "snapshot/tests/test_coastal_delta_branching.py",
+      "bytes": 16570,
+      "sha256": "fb25b16630c4e4a834240ed7200cba54dfe4e072154effc96fb5935fbba719f0"
+    },
+    {
+      "path": "snapshot/tests/test_coastal_delta_evolution.py",
+      "bytes": 13332,
+      "sha256": "4ae8b0cb07cf13b31fa64806e53a0bd197056141a35aa3a0d4c3c3df13359391"
+    },
+    {
+      "path": "snapshot/tests/test_coastal_delta_hydraulics.py",
+      "bytes": 7942,
+      "sha256": "4ac6da9750f30a6ebd60eb74f526ae98e6204b448627585d8ca9bbcbd729f0db"
+    },
+    {
+      "path": "snapshot/tests/test_coastal_delta_plain.py",
+      "bytes": 3896,
+      "sha256": "b43b0478ce2cfbc96f16c06759fbfb9a7d94c1bcf7a57b8a623cccf0887e2bbf"
+    },
+    {
+      "path": "snapshot/tests/test_coastal_delta_routes.py",
+      "bytes": 5609,
+      "sha256": "0cf676d081d3062f03bff6dd60b0cceb4ed9fbea54a190b7a8ee0823490a2a4a"
+    },
+    {
+      "path": "snapshot/tests/test_coastal_delta_window.py",
+      "bytes": 3327,
+      "sha256": "c4b7eac4d7b66ea74d7dc258ad060c9a1c1d810c3965cc8a5ac9f24786ca0089"
+    },
+    {
+      "path": "snapshot/tests/test_coastal_marine_longterm.py",
+      "bytes": 5378,
+      "sha256": "899638a113460e6741f5b7b959c89b2a7a306efe3bcb8dd47d569e48e958fc02"
+    },
+    {
+      "path": "snapshot/tests/test_coastal_marine_sediment.py",
+      "bytes": 9354,
+      "sha256": "dd93327141fbd2e437b7127e6aca38b6cce581cc60a909b88d55469a6048bd49"
+    },
+    {
+      "path": "snapshot/无限世界地形生成评价标准.md",
+      "bytes": 6208,
+      "sha256": "b7310c44a4b7475dc24ad2370d19a26aa657ec10d37b8696dd0c71864fc6e16d"
+    },
+    {
+      "path": "source/full-routes-initial.json",
+      "bytes": 3357,
+      "sha256": "aa0de90482c7184b0082162c6489acc3cfce93df5ae25c84b7f5a16d2a3c80f9"
+    },
+    {
+      "path": "source/full-routes-initial.npz",
+      "bytes": 6256802,
+      "sha256": "f5336e0bc580ffcc945a15469aba05efe17060ee9ab0205460a4cd48b7d9868d"
+    },
+    {
+      "path": "source/manifest.json",
+      "bytes": 3987,
+      "sha256": "88c8a2d85ec2e47d1aa9d20ec6eaab611771d4361ef2b5151a51afe2a49a21bc"
+    },
+    {
+      "path": "source/source.npz",
+      "bytes": 1917195,
+      "sha256": "c95f3bc2fda697ad05fdf0e827b20edb2c778e13517b95a6a5ecba49a11b3240"
+    },
+    {
+      "path": "source/state.npz",
+      "bytes": 1410653,
+      "sha256": "8e6aa151d5ec9a9a52be881cb8ad5536b1f3d317968cd287c396a1bcd83df3b7"
+    },
+    {
+      "path": "工程验收与接口.md",
+      "bytes": 7707,
+      "sha256": "949673febbd056a830541e0c50ba72e062216dbd686573a784be7b1e4049cbe0"
+    }
+  ],
+  "payload_bytes_excluding_manifest": 21228091,
+  "snapshot_scope": "selected related source/tests only, not a standalone package"
+}

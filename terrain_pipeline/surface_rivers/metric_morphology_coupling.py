@@ -5,13 +5,13 @@ import math
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity, load_bundle, readonly, save_bundle
+from terrain_pipeline.common_infra import identity, load_bundle, readonly, save_bundle
 from terrain_pipeline.surface_rivers.metric_channel_product import (
     make_channel_product, validate_channel_product,
 )
-from terrain_pipeline.surface_rivers.metric_channel_geometry import _modified_bed_slope, validate_channel_geometry
-from terrain_pipeline.surface_rivers.metric_channel_solver import solve_channel
-from terrain_pipeline.surface_rivers.metric_channel_state import ChannelConfig, ChannelForcing, ChannelNetwork
+from terrain_pipeline.channel_geometry import _modified_bed_slope, validate_channel_geometry
+from terrain_pipeline.surface_hydraulics import solve_channel
+from terrain_pipeline.channel_geometry import ChannelConfig, ChannelForcing, ChannelNetwork, receiver_distances
 from terrain_pipeline.surface_rivers.metric_sediment import (
     MaterialParameters, SedimentConfig, SedimentDomain, SedimentForcing,
     solve_sediment, validate_sediment,
@@ -168,7 +168,22 @@ def _network(base, node_bed, slope, geometry_id):
     return ChannelNetwork(base.receiver.copy(), base.length_m.copy(), base.width_m.copy(),
                           node_bed.copy(), slope.copy(), base.roughness.copy(),
                           base.max_depth_m.copy(), base.terminal_kind.copy(), geometry_id,
-                          "recoupled canonical PL node bed and shared section", base.roughness_source)
+                          "recoupled canonical PL node bed and shared section", base.roughness_source,
+                          receiver_distance_m=base.receiver_distance_m.copy())
+
+
+def _water_distance(geometry, arrays):
+    expected = receiver_distances(geometry["arrays"]["node_xz_m"], arrays["network_receiver"])
+    distance = arrays.get("network_receiver_distance_m", expected)
+    if not np.allclose(distance, expected, rtol=0., atol=1e-8):
+        raise ValueError("water receiver distances differ from canonical centerline")
+    return distance
+
+
+def _validate_water(geometry, water):
+    distance = _water_distance(geometry, water["arrays"])
+    validate_channel_product(water, legacy_receiver_distance_m=
+                             distance if "network_receiver_distance_m" not in water["arrays"] else None)
 
 
 def _pack(arrays, metadata, name, bundle):
@@ -272,6 +287,8 @@ def couple_morphology(geometry, network, forcing, material, *, initial_water_vol
     if any(np.any(x < 0.) for x in (initial_water_volume_m3, initial_mobile_solid_m3, initial_alluvium_bulk_m3)):
         raise ValueError("negative initial inventory")
     basis, areas, triangle_area = _basis(geometry)
+    if not np.allclose(network.receiver_distance_m, receiver_distances(a["node_xz_m"], network.receiver), rtol=0., atol=1e-8):
+        raise ValueError("network receiver distances differ from canonical centerline")
     expected_lengths = np.zeros(n, np.float64)
     for i, j in enumerate(network.receiver):
         if j >= 0:
@@ -526,7 +543,7 @@ def validate_morphology_coupling(bundle):
             raise ValueError("committed mesh geological floor violation")
     for i, record in enumerate(m["intervals"]):
         water = _unpack(a, m, "water_" + str(i)); sediment = _unpack(a, m, "sediment_" + str(i))
-        validate_channel_product(water); validate_sediment(sediment)
+        _validate_water(geometry, water); validate_sediment(sediment)
         wa, sa = water["arrays"], sediment["arrays"]
         if (record["geometry_identity_sha256"] != _geometry_id(geometry["identity_sha256"], a["mesh_bed_m"][i], i)
                 or record["next_geometry_identity_sha256"] != _geometry_id(geometry["identity_sha256"], a["mesh_bed_m"][i + 1], i + 1)
@@ -550,7 +567,8 @@ def validate_morphology_coupling(bundle):
         base = ChannelNetwork(wa["network_receiver"], wa["network_length_m"], wa["network_width_m"],
             wa["network_bed_elevation_m"], wa["network_bed_slope"], wa["network_roughness"],
             wa["network_max_depth_m"], wa["network_terminal_kind"], record["geometry_identity_sha256"],
-            "cold reconstructed section", "cold reconstructed roughness")
+            "cold reconstructed section", "cold reconstructed roughness",
+            receiver_distance_m=_water_distance(geometry, wa))
         expected_node, expected_slope, expected_port = _sections(geometry, a["mesh_bed_m"][i], base, config)
         if not np.allclose(expected_node, a["node_bed_m"][i], rtol=0., atol=1e-9) or not np.allclose(expected_slope, wa["network_bed_slope"], rtol=0., atol=1e-10):
             raise ValueError("updated PL section or slope mismatch")
@@ -604,7 +622,7 @@ def validate_morphology_coupling(bundle):
             raise ValueError("material and mesh volume ledger mismatch")
     if m["status"] == "failed_prefix":
         rejected_water = _unpack(a, m, "rejected_water")
-        validate_channel_product(rejected_water)
+        _validate_water(geometry, rejected_water)
         wa = rejected_water["arrays"]
         gid = _geometry_id(geometry["identity_sha256"], a["mesh_bed_m"][-1], k)
         if (rejected_water["metadata"]["network_source_identity_sha256"] != gid
@@ -618,7 +636,8 @@ def validate_morphology_coupling(bundle):
             raise ValueError("rejected water candidate is detached from parent state or forcing")
         base = ChannelNetwork(wa["network_receiver"], wa["network_length_m"], wa["network_width_m"],
             wa["network_bed_elevation_m"], wa["network_bed_slope"], wa["network_roughness"],
-            wa["network_max_depth_m"], wa["network_terminal_kind"], gid, "rejected section", "rejected roughness")
+            wa["network_max_depth_m"], wa["network_terminal_kind"], gid, "rejected section", "rejected roughness",
+            receiver_distance_m=_water_distance(geometry, wa))
         expected_node, expected_slope, _ = _sections(geometry, a["mesh_bed_m"][-1], base, config)
         if (not np.allclose(expected_node, wa["network_bed_elevation_m"], rtol=0., atol=1e-9)
                 or not np.allclose(expected_slope, wa["network_bed_slope"], rtol=0., atol=1e-10)):
@@ -672,7 +691,8 @@ def validate_morphology_coupling(bundle):
                         last_water["network_width_m"], last_water["network_bed_elevation_m"],
                         last_water["network_bed_slope"], last_water["network_roughness"],
                         last_water["network_max_depth_m"], last_water["network_terminal_kind"],
-                        rejected_water["metadata"]["network_source_identity_sha256"], "witness", "witness")
+                        rejected_water["metadata"]["network_source_identity_sha256"], "witness", "witness",
+                        receiver_distance_m=_water_distance(geometry, last_water))
                     try:
                         _sections(geometry, trial_mesh, witness_network, config)
                     except ValueError as error:
@@ -697,7 +717,8 @@ def validate_morphology_coupling(bundle):
             final_water["network_width_m"], a["node_bed_m"][-1], a["final_bed_slope"],
             final_water["network_roughness"], final_water["network_max_depth_m"],
             final_water["network_terminal_kind"], _geometry_id(geometry["identity_sha256"], a["mesh_bed_m"][-1], k),
-            "cold final section", "cold roughness")
+            "cold final section", "cold roughness",
+            receiver_distance_m=_water_distance(geometry, final_water))
         _, slope, port = _sections(geometry, a["mesh_bed_m"][-1], final_network, config)
         depth = a["water_volume_m3"][-1] / (final_network.width_m * final_network.length_m)
         area_water = final_network.width_m * depth

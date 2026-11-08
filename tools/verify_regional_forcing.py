@@ -8,10 +8,10 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from terrain_pipeline.regional_surface_source import load_source
-from terrain_pipeline.regional_surface_forcing import generate_forcing, load_forcing
-from terrain_pipeline.rainfall_runoff import RunoffParameters
-from terrain_pipeline.mountain_storm_forcing import StormParameters
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.climate_forcing import regional_generate_forcing as generate_forcing, regional_load_forcing as load_forcing
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+from terrain_pipeline.climate_forcing import StormParameters
+from terrain_pipeline.common_infra import file_sha256
 from tools.verify_mountain_source_adapter import write_json, snapshot, assert_unchanged
 
 def main():
@@ -33,7 +33,7 @@ def main():
         report['cases'][name] = {'path': str(destination / name), 'manifest_sha256': manifest_sha, 'seconds': time.perf_counter() - started, 'cold_static_passed': True, **{key: generated[key] for key in ('total_rain_m3', 'total_et_m3', 'total_runoff_to_B_m3', 'whole_account_residual_m3', 'max_cell_residual_m3')}}
         write_json(destination / (name + '-completed.json'), report['cases'][name])
     report['frozen_after'] = assert_unchanged(before)
-    report['delivery_sha256'] = {name: file_sha256(ROOT / name) for name in ('terrain_pipeline/regional_surface_forcing.py', 'tools/verify_regional_forcing.py')}
+    report['delivery_sha256'] = {name: file_sha256(ROOT / name) for name in ('terrain_pipeline/climate_forcing.py', 'tools/verify_regional_forcing.py')}
     write_json(destination / 'handoff-manifest.json', report)
     print(json.dumps({'directory': str(destination), **report}, ensure_ascii=False, indent=2))
 if __name__ == '__main__':

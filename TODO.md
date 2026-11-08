@@ -1,4 +1,301 @@
+**2026-11-08 三角洲当前进展另存独立检查点。** 第一阶段形态、代码、同址图集和物理续算已打包，798 个文件逐项校验通过；原 v5 基线保持不变。[存档与回执](.scratch/delta-archives/README.md) · [接下来的自然度优化顺序](.scratch/delta-naturalness-20261108/checkpoint-next-steps.md)。本次仅存档和记录方案。
+
+**2026-11-08 三角洲自然度第一阶段已验证。** 保留独立 v5 归档，冻结同一主要河网后改善河形、低地绕行与连续断面；100／30 m 同节点同路径，12 口／5 环保持，保护高丘切动和中心线阻塞均为 0。100 m 最新剖面完成 600 秒水沙、账差 0 和冷读逐位续算，89 项相关测试通过；100 m 宽平原数组保持原值。完整多尺度平原、漫滩微地形、差异填湾、潮汐、新旧河道和新版百公里案例仍待推进。[本轮验收](.scratch/delta-naturalness-20261108/phase1-review.md) · [同址图集](验收图片/三角洲自然度-河形与断面-20261108/README.md) · [下一项](.scratch/delta-naturalness-20261108/issues/02-plain-relief.md)。
+
+**2026-11-08 三角洲有限域链已交付：参考图纠偏形态＋水沙续算＋百公里平原。** 已取消数圆拼接和强制口外沙洲，以真实低地/水深和有限地质库存构造宽阔平原，保留湾汊与山丘；基准连续平原267.03 km²、原口左右宽7.15／3.25 km。相同算法百公里内部跨度100.3 km（口门跨度24.57 km）；两例均完成600秒、固体账差0、冷读续算逐位一致，65项相关回归通过。潮流反转、长期漫滩/迁汊未接，30 m诊断有岸边切山及拓扑变化，多尺度未通过。用户反馈本版明显改善，已存为[独立归档基线](.scratch/delta-archives/README.md)；下一轮按[自然度方案](.scratch/delta-naturalness-20261108/plan.md)逐步比较。[图集](验收图片/地形约束三角洲v5-水沙与百公里-20261108/README.md) · [验收及后续边界](.scratch/delta-completion-20261107/final-review.md) · [形成过程与参考图修正](research/三角洲形成过程与参考图修正-20261108.md)。
+
+**2026-11-07 世界过程集成实施中。** 用户批准将水力/侵蚀沉积、500Ma事件地质历史和季节环境并入默认世界任务；2km粗预览先发布、重点TD区域续算，新增CPU目标180秒。规格与分工见[本轮任务](.scratch/world-process-integration-20261107/spec.md)，完成状态以实测与验收记录为准。
+
+2026-11-08最新复验：v2基础1600km/2km世界已按原门槛实跑，墙钟162.71秒、CPU142.64秒、峰值2.89GB；独立水沙账、实际地图读取、查询顺序及真实round08分支冷恢复一致。环境仍partial-or-pending。地下水、冻融、冰川、生态化学、潮浪等13项进入[完整接入任务](.scratch/world-environment-integration-20261108/spec.md)，逐项按[消费者与收支矩阵](.scratch/world-environment-integration-20261108/acceptance-matrix.md)验收；不把基础世界通过当作环境链完成。[二阶段完善程度](.scratch/world-process-integration-20261107/closure-20261108/stage2-readiness.md)。
+
+新增环境接入当前受资源阻塞：默认v3、完整状态/年度续算、根系/Manning消费者和地图后台已实现；暖/冷真实TD六类库存账、45项冷恢复数组及水盐/生物量反馈通过。季节地冰最大85.293mm水当量，非多年冻土认证；预热湖水初始数组及分阶段出流修复后，真实TD默认一年预热、一年输出、冷读再续算一年及保存数组水量账通过。整1600km、最终候选冰川/潮浪同源精算、全域成本和图件未验。连续三轮资源拒绝，最新attempt04可用2.155GB＜要求3.991GB，原生TD主机/GPU也拒绝；未启动，没有在途生成。目标标blocked、不标完成，资源可用后继续原来源。[元素表](.scratch/world-environment-integration-20261108/integration-status.md) · [局部证据](.scratch/world-environment-integration-20261108/continuation-lake-acceptance.json) · [阻塞及恢复审计](.scratch/world-environment-integration-20261108/resource-blocked-audit.json)。
+
+**2026-11-08 火山岛体量与Voronoi纹理已修正为v5候选。** 按用户反馈拆开紧凑上锥与低缓熔岩裙坡，去除侵蚀型放射硬槽；固定种子、扭曲平滑Voronoi实际改变堆积厚薄、口缘与岛岸，`volcanic_lava_strength`可关闭。主工程148项与织梦31项通过，旧v4精确回放；15张同址新旧/关闭/开启图供用户继续判断自然度，不代表岩浆物理或游戏验收。普通岛仍按>25km²处理。[验收](.scratch/volcanic-islands-refinement-20261108/review.md) · [图集](验收图片/火山岛Voronoi形态修正-20261108/README.md) · [接口](docs/ocean-islands.md#特殊火山岛)。
+
+**2026-11-07 岛屿山系面积条件已放宽。** 默认实际露海面积严格>25km²即可准备山系，无默认腹地宽度门槛；25–100km²岛requested峰高为300m加固定±10%波动，较大岛沿用原300–3000m面积曲线。普通世界生成已接线，CPU任务pending，显式GPU任务复用既有TD链；两遍整岛raw统计/共同scale保护海岸与区块接缝。真实TD单块及最终世界消费已验证，完整真实岛峰高仍因内存门槛未验。[当前规则](docs/island-mountains-current.md) · [放宽记录与统计](.scratch/ocean-islands-20261106/area25-relaxation/review.md) · [原模型验收](.scratch/ocean-islands-20261106/area100-world-system-v3/review.md)。
+
+**2026-11-07 海洋岛屿与岛链v3有限域已验证。** GPT-6.1 Sol实现、主端审查：分层米制噪波、无四向强制谷切、有界海底平滑拼接；正式64万格及全部局部冷读通过，固定交线坡跳0.481184→0.000373m/m、无新增陆桥。织梦实际公开CLI生成和加强审计通过，修复闭合负床误变陆；45.80秒、抽样RSS约440.21MiB。大型岛显式TD资格与派生链已实现，默认面积≥2000km²且3km岸缓冲后连续腹地内接圆直径≥20km；真实主源最大323km²，未触发模型。完整无限源及真实TD山形响应另验。[调用说明](docs/ocean-islands.md) · [大型岛TD](docs/island-mountains.md) · [审查](.scratch/ocean-islands-20261106/review.md) · [图集](验收图片/板块海洋岛链-20261106/README.md)。
+
+**2026-11-05 历史交接（已由当前状态修正）。** 评估、河网统一及输沙调查曾暂停；之后复杂三角洲形态已推进到v4，并有三组DEM和图包，不能再称代码/形态尚未开始。v4尚未耦合实际水沙、海侧沉积和库存续算。当前以[2026-11-07完成任务](.scratch/delta-completion-20261107/spec.md)为准；历史交接保留供追溯。
+
+**2026-11-04 三角洲45°转折/90°禁行已验。** 共用不规则路径接入倒数转向代价，动态分汊/挂接检查入出边与重汇接续；原两处急转作登记局部重建，保留四口和三组分合。169节点/171边/173种真实转接最大87.404°、≥90°为0。相关38项测试有通过记录，主端600秒/22项独立检查及三态冷读通过，泥沙账差0、无漫岸；扇面不裁剪沉积或洲体。仍属构造初态及短事件。[新图包](验收图片/三角洲转向约束与局部分合-20261104/README.md) · [验收](.scratch/delta-braided-acceptance-20261104/angle-acceptance.md)。
+
+**2026-11-04 四口三角洲已补三组局部分合。** 在已验洲体上新增实际分开—重汇河槽，保留原四海口；171节点/173唯一边，新增3个独立环。600秒末态新臂Q约100–130m³/s、有效宽49–91m，全网无漫岸；施工挖方单列储备、固体账差0，相关24项回归与主端冷读通过。扇面仅用于河流方向，未裁剪地质/海洋沉积域或洲体形状。属于显式初始构造，长期自组织辫状河与百公里仍未完成。[用户图包](验收图片/三角洲多分汊与局部分合-20261104/README.md) · [主端验收](.scratch/delta-braided-acceptance-20261104/acceptance.md)。
+
+**2026-11-04 四口三角洲形态重新验收已交付。** 复用现有地质沉积、分级河网/河宽和实际边图，真实TD32km/100m窗形成28.62km²连岸低平洲体，沿岸8.8km、向海约4km，三处分叉含child、四独立湿流海口。正常Q1500无漫岸，600s事件库存/源/冷读重算全部通过；属于显式地质构造初态与短事件，复杂潮沟洲岛/长期自发及百公里保持未完成。[用户图包](验收图片/四口三角洲形态验收-20261104/README.md) · [主端验收](.scratch/delta-morphology-acceptance-20261104/acceptance.md)。
+
+**2026-11-04 山体方向更新及世界粗山系候选已交付。** 当前为大陆基底→世界粗山系→TD局部山地与特殊形态；历史独立局部试验不再作为TD替代主线。GPT-6.1 Sol双代理完成核心/导出，主端审查修正C0跳变并独立冷读。真实1600×1280km大陆、5km预览/2km正式、16bit灰度与浮点数组已保存；2km512000格prepare2.123秒、采样RSS158.24MiB，18项相关检查及全部格心/源身份/灰度/快照核验通过。粗布局可读，串珠/模板感保留，5/2km栅格不能直接混接；TD局部接线、水文、无限增量及默认替换未做。[主端E1–E9](.scratch/world-mountain-belts-20261104/review.md) · [图集](验收图片/大陆基底与世界粗山系-20261104/README.md) · [规格](.scratch/world-mountain-belts-20261104/spec.md)。Terra可用性探针仍503。
+
+**2026-11-04 动态分汊接线及未触发对照已验。** GPT-6.1 Sol开发，主端加两子代理共最多3活跃。显式登记、真实双臂Q/湿深/有效宽、有限候选与床升消费接通；有限库存机制两次沉积触发新汊与再分叉。主端22项回归通过；真实TD14km/100m半年+25h四态库存/重算通过，但section淤高未达.1m、未增新汊，成熟三角洲保持未完成。[主端验收](.scratch/delta-reference-shapes-20261104/main-dynamic-e-review.md) · [新图包](验收图片/三角洲动态分汊接线与未触发对照-20261104/README.md) · [后续局地输沙24](.scratch/delta-reference-shapes-20261104/issues/24-hydraulic-sediment-capacity.md)。
+
+**2026-11-04 已交付：分级山脊骨架与可变截面试验。** Terra渠道503后经用户授权由主端实现与审查；两级弯曲主支脊、三种同几何截面与低幅背景/Advanced组合完成。七组401²60m、16bit灰度/float64阶段、关闭细节峰体及剖面已保存，65项相关检查与冷读通过，512²近/远10.66/9.89秒。三向分叉模板与沿脊细线保留，源间峰—鞍连接、真实次峰与谷线为后续方向；自然度/水文/默认替换未完成。[主端审查](.scratch/mountain-skeleton/review.md) · [图集](验收图片/分级山脊骨架与可变截面-20261104/README.md) · [规格](.scratch/mountain-skeleton/spec.md)。
+
+**2026-11-04 局部两组分合与水沙演化已验收、形态仍partial。** Terra实测503，按用户授权由GPT-6.1 Sol完成物理边图接线、有限拓岸/实际成形Q及显式年度容量平衡。真实TD 14km/100m两组分合、半年冲淤+25h潮汐保持Q1500，四态库存/湿路/冷读通过；第一环是原陆地、第二环仍水下，远海边界沉积浓集与新生多汊待改，不能称成熟三角洲。[图包](验收图片/三角洲两组分合与水沙演化-20261104/README.md) · [主端范围](.scratch/delta-reference-shapes-20261104/main-c-review.md) · [远海沉积22](.scratch/delta-reference-shapes-20261104/issues/22-marine-boundary-deposition.md) · [动态新汊23](.scratch/delta-reference-shapes-20261104/issues/23-dynamic-bars-and-multibranch.md)。
+
+**2026-11-04 河宽复用反馈已验收。** GPT-6.1 Terra完成固定占地multicell链：复用现有断面与材料参数，事件侵蚀/年度沉积反馈下一步设计宽，实际宽受占地约束，保存同态水力；年度输沙显式限容量并保留超额库存。主端30项测试及真实TD100m、2s案例8项独立检查通过。主动拓岸、实际水文成形Q和连续复杂分合未完成。[主端验收](.scratch/delta-reference-shapes-20261104/main-width-review.md) · [具体任务](.scratch/delta-reference-shapes-20261104/issues/10-existing-width-feedback.md)。
+
+**2026-11-04 恢复开发：按参考图验证复杂分汊、分后汇合和沙洲。** 局部优先100m，世界概览约1km并保留主要水系；先修多格占地/共同水头分流，再接分合水沙与同源沙洲演化，最终完成百公里案例。GPT-6.1 Terra实施，主端验收，pyDeltaRCM仅参考。[最新规格与顺序](.scratch/delta-reference-shapes-20261104/spec.md) · [验收清单](.scratch/delta-reference-shapes-20261104/acceptance.md) · [当前派工](.scratch/delta-reference-shapes-20261104/progress.md)。
+
+**2026-11-04 已交付：局部胞状体量叠加与深沟壑试验、图形学方法研究。** 保留原宏观，只截局部体量乘原山体后叠加；负雕刻最大由约131m加深至315m，近零坡度淡入。五组401²灰度/剖面、48项回归和独立解码通过，512²近远11.46/11.69秒；自然度和水文仍未通过。[主端审查](.scratch/mountain-local-volume/review.md) · [灰度图集](验收图片/局部Voronoi体量与深沟壑-20261104/README.md) · [10类图形学方法筛选](research/图形学地形生成方法筛选-20261104.md)。后续优先研究分级曲线骨架和可变截面，不将研究建议视作已实现。
+
+**2026-11-04 已交付：连续山脊乘胞状体量的灰度山脉试验。** 固定种子20260903，先组合宏观再驱动Advanced；主窗alpha0/0.65/1与负窗四组401²、60m的16bit灰度高度图、8bit预览及float64数组已发布。54项相关测试和主端独立解码通过，512²近远5.34/5.31秒；平滑后胞边界伪影减轻，部分沿脊细线及宽缓峰形仍保留，水文未接入。[主端审查](.scratch/mountain-product/review.md) · [灰度图集](验收图片/连续山脊乘Voronoi-20261104/README.md) · [规格](.scratch/mountain-product/spec.md)。自然度未通过，默认来源不变。
+
+**2026-11-04 已交付：独立山体直脊柔化与局部破缺功能候选。** GPT-6.1 Terra实现，主端独立冷读与图审；世界锚定高斯、结构弯曲、正脊切低及小幅岩面噪波完成，75项相关测试通过。512²近远生成18.04/17.82秒，四组数值与优化前逐值一致；蜂窝组织和碎山仍明显，参考山自然度及真实河网保护未通过。[主端E1–E9审查](.scratch/mountain-ridge-breakup/review.md) · [图集](验收图片/山脊柔化与破缺-20261104/README.md) · [规格](.scratch/mountain-ridge-breakup/spec.md)。默认世界来源未切换。
+
+**2026-11-03 活动目标：百公里扇区分级河网通过完整25h，继续接沉积触发新汊。** 真实路径加入顶点/扇面、层深3/单河侧汊2/口门8上限及折返/绕行限制，实际5口。主端14项回归和独立事件检查通过，低均高潮五口湿路成立；厚沉积体106.23×50.73km。初始网形仍由规划形成，长期自发分汊未完成。[本轮报告与图集](.scratch/delta-hundred-km-20261103/fan-event-review.md) · [进行中反馈任务](.scratch/delta-hundred-km-20261103/multicell-feedback-task.md) · [规格](.scratch/delta-hundred-km-20261103/spec.md)。pyDeltaRCM仅参考。
+
+**2026-11-03 当前完成：三角洲构造算法有限域交付。** 已继承原床面与库存，复用非规则河道、标准阈值动态分汊及共享水沙链；后续2等效年与25h潮浪形成两个主要水下叶瓣，三口实际移动约703/308/376m。111项相关测试及四阶段冷读8项通过，最终存档副本已校验并重载。[约5.3MB图集与存档](验收图片/三角洲沉积叶瓣与口门演化-20261103/README.md) · [逐要求主端验收](.scratch/delta-material-lobes-20261103/main-completion-review.md) · [接口](.scratch/delta-material-lobes-20261103/implementation-guide.md)。演化200m，100km仅为来源图幅；最终低潮一口、均潮两口、高潮三口通流，粗网格出口规则仍需改进。当前构造目标已关闭，成熟平原/岛洲潮沟及百公里案例继续由[09后续任务](.scratch/coast-marine-reorganization-20261102/issues/09-morphology-and-multibranch.md)跟踪，用户自然形态验收保留。以下为历史阶段记录。
+
+**2026-11-03 阶段交付：三角洲非规则河网与五年海洋输运。** 已共享既有谷线寻路内核，真实坐标/河段长度接入水力、输沙、库存及有限切沙延口；标准阈值下单主路实际新增两汊，形成三个通海口门。年度与事件海洋输运现共享真实口门流量/方向，不重复供沙；新增事件逐口过沙记录。整合108项测试通过；年度显式海侧交付及同源0.05年续算另验通过；额外五年海洋续算及末态25h潮浪通过主端来源、沿线床水面、共享流量和水沙账冷读。第一口前移200m；出现连续近海沉积，但独立叶瓣及成熟自然形态尚未通过，完整目标保持开放。[约5MB图集与末存档](验收图片/三角洲非规则河网与五年沉积-20261103/README.md) · [完整范围](.scratch/delta-irregular-reuse-20261103/spec.md) · [主端审查](.scratch/delta-irregular-reuse-20261103/main-current-review.md)。
+
+**2026-11-03 用户验收候选：100km区域三角洲图已交付，形态尚未通过。** 100×100km视域、200m网格、原生TD30m，3个实际活动口门及水沙/共同断面/保存冷读通过；主要连续出露块约15×7km，口门集中且有明显直角，不称百公里大型三角洲。2年阶段为河道/漫滩，低阈值情景启用新汊后另算25h潮浪，未完成多年海洋搬运。[候选图集与约17MB数据](验收图片/大区域三角洲候选-100km-20261103/README.md) · [主端审查](.scratch/delta-large-acceptance-20261103/main-review.md)。
+
+**2026-11-03 当前交付：三角洲连续演化工程初版。** 45km窗口、100m计算、同源TD30m与历史库存守恒迁移；实际断面/水沙→分流→有限漫滩/冲淤→潮浪/口门追岸→新汊反馈和保存续算已闭环。5等效年后新增一条实际通水分汊，再完成两次25h事件；主端来源/床面/水面/预算独立检查通过，83个不同相关测试通过。Q150为情景，末态只通过16.819m³/s，其余留账。自然形态仍有D4直角与长直段，多级分汊/稳定平原尚未全验：[交付与接口](.scratch/coast-marine-reorganization-20261102/main-full-delivery.md) · [约21MB图集与存档](验收图片/三角洲连续演化工程初版-20261103/README.md) · [已验08](.scratch/coast-marine-reorganization-20261102/issues/08-evolution-integration.md) · [剩余形态09](.scratch/coast-marine-reorganization-20261102/issues/09-morphology-and-multibranch.md)。百公里、默认世界、前端与500km未启动；冰川先讨论。
+
+**2026-11-03 历史进度：统计潮滩与分汊河流水面接线已验收，继续实际断面和漫滩。** 本轮主端34项相关测试通过（潮滩/长期11项、水面/分汊23项）；已修同址湿干库存、河流海位误判及嵌套分流。最终25小时末五支有水，但假定3m上游水头下总接收仅109.631m³/s，3000m³/s输入的大部分明确待交付，完整三角洲仍未完成。[最新河网/水面图集](验收图片/分汊河流水面接线-20261103/README.md) · [潮滩机制图集](验收图片/统计潮滩与分汊复核-20261103/README.md) · [下一步07实际断面与漫滩](.scratch/coast-marine-reorganization-20261102/issues/07-upstream-sections-floodplain.md) → [05稳定平原](.scratch/coast-marine-reorganization-20261102/issues/05-emergent-delta-plain.md)。06机制已resolved；百公里暂缓，冰川先讨论，500km不恢复。
+
+**2026-11-02 河宽与三角洲原任务。** 河宽生产接线先行，三角洲依赖上述新海岸前置任务。[任务规格](.scratch/river-width-delta-20261102/spec.md) · [进行中审查](.scratch/river-width-delta-20261102/main-feedback.md)。
+
+当前进展：河宽生产接线及同断面下一水沙步骤已通过[01 验收](.scratch/river-width-delta-20261102/issues/01-width.md)。V7 修复虚假海路阻断，库存与潮汐时钟续算接口已发布；三角洲多轮共同床面反馈仍在集成。用户已选择新增独立浅大陆架情景用于百公里例，保留原 TD/全部陆地；[底图契约](.scratch/river-width-delta-20261102/shelf-contract.md)与[主端核查](.scratch/river-width-delta-20261102/main-shelf-v2-check.json)。不把地质底图调整计作河流沉积，未宣称新大型三角洲已完成。
+
+**2026-11-02 已交付：约45/114/255 km 三组真实 TD 沿岸复合三角洲初版 DEM 与分汊河网。** 77页来源完成，主端核查来源、保存床面、连通和流量/沉积预算通过。沿岸细长形态及深盆地填积为明确限制；三尺度已有各自冻结几何的25小时地理潮汐证据，大型局部岸顶超高5.22m和时间步敏感性尚未通过，不宣称完整动态三角洲算法完成。[中文对比与来源](验收图片/多尺度三角洲-20261102/README.md) · [主端验收](.scratch/delta-scale-suite-20261102/main-review.md) · [后续动力学修复](.scratch/delta-scale-suite-20261102/issues/04-tidal-quality.md)。
+
+**2026-11-02 已交付：三角洲潮汐、波浪与有限冲淤工程闭环。** 同源 30 天无潮/潮汐/潮汐加波浪三组完成，100 段河槽、3 个口门接双向水沙、河岸交换和床面反馈；主端修正过高水位并独立验收，25 项相关测试通过。规则矩形湿区来自 300 m 常水位投影，保守重建后明显减轻，波浪情景仍有网格痕迹。原生 DEM 30 m、海岸水动力 300 m，不称自发长成大型多汊三角洲或完整 30 m 水动力。[主端验收](.scratch/delta-tides-bars-20261102/main-review.md) · [图片与产品](验收图片/三角洲潮汐冲淤v6-20261102/README.md) · [实施任务](.scratch/delta-tides-bars-20261102/spec.md)。默认世界接线、细潮沟和长期自然拓扑演化仍后续；冰川先讨论，500 km 不自动恢复。
+
+**2026-11-02 已交付：约25km沿岸三角洲地貌初版。** 同源原生TD上形成124.16km²连续新生低地，接入两级分叉、3个活动入海口与30天已知水沙情景；主端已核查实际床面、水位、来源与库存并检查图片。地质形成初态不冒充30天增长，活动河网只覆盖其中一侧；潮沟、周期潮汐、沙洲持续演化及默认世界消费者接线仍留后续。[图片与数据](验收图片/大三角洲活动河网v12-20261101/README.md) · [主端验收](.scratch/large-delta-20261101/main-review.md)。冰川先讨论，500km不自动恢复。
+
+**2026-11-01 一阶段新大陆河网工程版已交付，形态待审阅。** 同一50km总图与多处分汊细图已发布；原生30m水量、湖泊连接、低地规则、稳定归属和修正产品只读接口已验收，7条小流量缺陷明确保留。见[最终交付与范围](.scratch/river-upgrade-20261101/stage1-delivery.md)、[图片](验收图片/原生河湖三角洲50km遥感合成-20261101-final/README.md)。二阶段按04起继续，冰川先讨论。以下为历史记录。
+
+**2026-11-01 当前：50km初版河网已生成并接回低地规则；完整一阶段与三角洲继续推进。** [主端进度](.scratch/river-upgrade-20261101/main-progress.md) · [最新河网图](.scratch/river-upgrade-20261101/game-grade-lowland/river-map.png) · [工程顺序](.scratch/river-upgrade-20261101/spec.md)。已复用16页真实TD，122.88km支持域按90m求汇流、50km窗口展示30m床面；低地河线减少约15%，汇水总量不变，上游主河连续。实际流量/季节河分类、湖泊湿连通和三角洲仍待接线，不把候选河线或潜在湖面称为完整动态水文。按用户要求放宽游戏用途精度验收；[万公里粗DEM跑团用途预评估](.scratch/rpg-world-dem-20261101/assessment.md)已完成，全球尚未实测，美学另行负责。GPT-6.1 Terra实现、主端验收；冰川到时先讨论，500km原高精度验收及自然袭夺仍暂停。
+
+**2026-11-01 已交付：按用户Coastal v1参考图完成轻量细化，并已阅读工程交接。** 保留同一64.08km旧TD山脉/平原/湾岬，仅恢复近岸被压制的TD细节，不叠独立噪波。1.32%格点发生微调，变化格点绝对床变中位4.6cm，幅度≤6m，可解析岛屿6→6；岸线距离P95 30m，独立子窗差0，主端34项测试通过。[验收与图片](.scratch/coastal-v1-refine-20261101/main-review.md) · [交接阅读](.scratch/coastal-v1-refine-20261101/handoff-reading.md)。新板块TD的任务02仍claimed，旧参考微调不代替新世界验收；500km保持暂停。
+
+**2026-11-01 当前：新板块条件真实TD已生成；海岸形态被否决，任务02继续claimed。** 129页与913源窗生成、冷读成功，同页复跑逐位一致；跨请求大小重叠仍有最大9.77mm差异。强度1独立噪波改写过大且偏离TD风格，用户否决；已保存零噪波同源诊断，进一步发现宏观二次合成抹平TD原有湾谷。下一步保留TD局部地形，约束宏观纠偏，禁止以噪波堆岛。[最新复核](.scratch/plate-td-source-20261101/real-inference-review.md) · [原始TD对照](验收图片/板块条件TD接线-20261101/README.md)。此前联合39项、主端来源25项测试通过。一二阶段[任务补充矩阵](.scratch/world-generation-sequence-20261101/phase12-task-additions.md)已并入02—08，500km仍暂停。
+
+**2026-11-01 当前：区域性海岸与群岛工程已完成主端验收。** Terra 实现、主端修订与独立验收；选定 regional-relief-v3 强度 1.0，同一 64.08 km 窗口可解析岛屿 6→25，总面积 1.4706→2.3445 km²，保留平静岸段。14 项相关测试通过，全幅及独立子窗重算差 0 m。[验收报告](.scratch/coastal-archipelago-20261101/main-review.md) · [全图和细节](验收图片/海岸群岛改进-20261101/README.md)。当前为旧保存 TD 上的初始地形塑形；新 Voronoi 大陆条件 TD、河流消费者接线、沉积与潮汐尚未完成。全深海核心对照通过，单独 v3 对照产品因内存预检未发布。已在海岸收尾后核对工程文档及实际河流链：[七项改进与来源接线评审](.scratch/coastal-archipelago-20261101/river-source-chain-review.md)，优先接通冻结板块条件 TD，再统一床面、河床连通、跨区边界、湖泊、季节多口及来沙；本轮未修改河流代码。
+
+**2026-11-01 当前：海岸初版离线算法已完成。** GPT-6.1 Terra medium实现，主端独立验收：连续近岸合成、最终床面统一海洋分类、prepare/冷读及真实TD同址对照；10项海岸测试与23项相关回归通过，真实TD接缝误差0m，冷读失败不发布，同输入重跑身份一致。[主端验收](.scratch/plate-formation-coast-20261101/coast-main-review.md) · [64km与海岸细节图](验收图片/海岸初版-20261101/README.md)。最新多形状板块v4同址适配已实跑，该窗口全深海，不能冒称新板块海岸TD。现有河流算法已完成只读审查与主端复核，[六项优先改进](.scratch/plate-formation-coast-20261101/river-algorithm-review.md)涵盖同源床面、河床连通、跨区边界、湖泊水账、季节河口和来沙；河网重算/消费者接线、沉积与潮汐演化、新板块条件TD推理、大型三角洲和500km扩域后置。
+
+**2026-11-01 历史：实施与生成全面暂停，先确认待办。** 用户明确参考图为恒河三角洲，要求扩大三角洲影响范围，先讨论大陆、海岸、三角洲和现有缺陷的优先级。[待办事项栏（讨论稿）](.scratch/tectonic-coastal-base-20261101/backlog.md)。当时只整理任务；已有研究和64 km成果保留，500 km不执行。
+
+**2026-11-01 500 km 生成暂停，优先修正大陆与海岸来源。** 用户要求大陆由板块构造驱动，Voronoi 只作初始板块分区，宏观界面展示计算后的大陆；当前板块演化尚未实现。[当前范围](.scratch/world-scale-acceptance-20261031/spec.md) · [海岸与三角洲研究](research/海岸岛链生成与三角洲耦合-20261101.md)。季节积雪已改为 35% 不透明度的地理遮罩，[同源三图](验收图片/64km季节积雪遮罩-20261101/README.md)另存；本模拟年全年残留候选为 0，不冒称永久雪或冰川。宏观基底待按新方向重做；TD、汇流/盆地、河湖/高程已有 64 km 实跑证据，500 km 不继续执行，旧基底形态未通过验收。以下为历史记录。
+
+**2026-11-01 64 km 同源世界样图交付，待用户审阅。** 独立单大陆布局，90 m 全域、30 m 河口；真实 TD、气候降水、现行不规则河网、湖泊、土壤植被、积雪与河口水沙已联合实跑，交付 10 张遥感式/专题图（含一张仅宏观规划定位图）。[用户图片](验收图片/64km世界联合验收-20261101/README.md) · [实测与待查项](.scratch/world-acceptance-64km-20261031/acceptance.md) · [后续计划](.scratch/world-scale-acceptance-20261031/spec.md)。宏观基底→TD合成→汇流/盆地→河湖/派生高程在本窗口均已执行；500 km 等用户审阅后扩展。一次土壤守恒异常未复现，完整重算通过但原因未确认，不标为全面验收通过；袭夺仍暂停。
+
+**2026-10-31 三角洲顺流方向与潮道组织改进已交付。** 按用户纠正取消同岸大U，原4条主分汊向海，32条可解析潮路径中8条贯穿切岛；独立主向逆向长度为0。潮坪可达储量约束断面，湾岸与平台共同构造；明确选择有文献依据的3m理想潮差。46项联合测试、同源年度48子步、两潮周期水盐、全尺寸冷读/续算通过。[正式四图及实测](.scratch/delta-process-natural-20261031/acceptance.md) · [文献与独立形态比较](.scratch/delta-process-natural-20261031/research.md) · [使用说明](docs/delta-engineering.md)。实现收口，形态交用户验收；曲折度改善有限、两个断面有设计限幅，未称真实DEM标定或通用科学自然度认证。宏观基底→TD沿用保存来源；汇流与盆地分析复用上游与水力树；河湖及必要高程调整完成本轮方向/潮坪改进和实测；袭夺暂停。以下保留历史进度。
+
+**2026-10-31 三角洲工程版开发完成：密集潮沟与破碎岸线。** 新增49处根沟口、164条三级潮沟，实际写入床面；原4个主出口全年48子步通海。37项联合测试、两实际潮周期水盐收支、全尺寸冷读及追加1小时恢复通过。交付[四张实测图与验收记录](.scratch/delta-tidal-finish-20261031/acceptance.md)、[使用说明](docs/delta-engineering.md)，[任务](.scratch/delta-tidal-finish-20261031/spec.md)已resolved。宏观基底→TD地形合成沿用保存来源；汇流与盆地分析复用上游及连续分汊水力树；河湖及必要高程调整完成本工程版三角洲收口。构造初始地形、年度水沙与简化潮汐交换分别记账；视觉自然度交用户验收，自发长期多汊、高沙挑战与真实DEM标定未转通过；袭夺暂停。以下保留历史进度。
+
+**2026-10-31 三角洲自然形态改进已交付。** 修正逆折/回接海口，采用固定种子错站分叉、受约束弯曲与相邻河槽控制洲体；新增650m有限近岸槽床过渡，初始水下挖方单列。四个实际出口同源同年度水沙48子步全连通，24项相关测试和主端材料/海床/几何冷读通过。[同尺度新旧图与验收](.scratch/delta-natural-shape-20261031/acceptance.md)。形态仍偏平滑，交用户验收；自然长期演化和高沙挑战未转通过。宏观基底→TD沿用；汇流/盆地沿用上游并更新分汊几何；河湖及必要高程调整完成本轮形态与年度计算，袭夺暂停。
+
+**2026-10-31 完整构造版三角洲已交付，形态待用户验收。** 按用户允许初始分汊构造的决定，复用既有16km场景与多级水力水沙；800×800、20m保存栅格，5出口含1次级分汊，48子步沿程通水并连通海边界。45项相关回归通过，主端全尺寸冷读及追加一小时续算通过，只发新水沙包。[成品、实测图与使用](.scratch/complete-delta-20261031/acceptance.md)。初始填挖和有限泥沙分别记账；分汊偏直、继承基底有拼接痕迹，高沙挑战失败，未称自然长期多汊完成。宏观基底→TD地形合成沿用并重采样；汇流与盆地分析保持既有上游并接多出口水力树；河湖及必要高程调整完成本构造版年度水沙和恢复；袭夺暂停。
+
+**2026-10-31 大范围三角洲工程试验完成。** 固定种子、原生30m、128×128（3.84km×3.84km）域已完成单主槽→泛滥平原→浅海坡的二维水沙增长，第四面板改为实际面通量绝对值。12h账本闭合，但仍只有单主槽出口弧形沙体，未形成自然连续多汊；0.6m有限海床已触底。TD细节尚未接入，现实DEM仅作机制与窗口参考。[验收记录](.scratch/large-delta-trial-20261031/acceptance.md) · [现实三角洲资料与DEM](D:/geography/11-现实三角洲DEM与算法/研究报告与索引.md)。宏观基底→TD地形合成→汇流与盆地分析→河湖及必要高程调整：分别为已扩展、接口输入、二维FV、有限床变完成；自然多汊保持未认证。
+
+**2026-10-31 五组河口条件形态实测完成。** 新增向海缓坡、150m宽口门、0.3m潮汐与0.3m入射波四例24h供沙，并复用平床基线，输出五张真实床面/水深/床变/潮汐图。[结果与图片](.scratch/delta-forms-20261031/acceptance.md)。10项相关测试通过，水沙预算闭合；仍为水下口门沙体，不认证成熟多汊。宏观基底→TD沿用，汇流/盆地保持新版图，河湖及必要高程调整扩展本轮有限形态对照；袭夺暂停。
+
+**2026-10-31 三角洲48h实测与六张验收图已交付。** 固定种子、原生30m、有限可蚀海床，完成平床/微扰两组24h供沙及连续清水涨落水至48h；新6项测试通过。两组出现水下沙体两侧实际输水，但沿程连续槽形仍不足，48h完整沙洲保持指标未通过（两侧路径仍连通）。[实测、图片与使用](.scratch/delta-distributary-20261031/acceptance.md)，待用户形态验收；原总体自然多汊任务未关闭。宏观基底→TD沿用，汇流/盆地沿用新不规则图，河湖及必要高程调整完成本轮局部实测，袭夺暂停。
+
+**2026-10-31 三角洲入口与二维水沙计算已交付，持续自然分汊未通过。** 已解除真实源图的八邻格入口限制，接通保存世界河口、二维床水反馈、潮浪响应、保存与冷续算；37项测试及8个子测试通过。12h有限供沙形成水下口门沙体，退水至7200s仍未形成可验的持续自然分汊；预设障碍岛绕流只作为机制控制。[交付与使用](.scratch/delta-development-20261030/acceptance.md)、[形态验证及未完成项](.scratch/delta-development-20261030/morphology-validation.md)、[现实案例资料](D:/geography/10-现实三角洲案例/研究报告与索引.md)。宏观基底→TD沿用，汇流/盆地沿用新版不规则图，河湖及必要高程调整增加动态三角洲；河流袭夺继续暂停。以下为历史记录。
+
+**2026-10-30 二阶段有限工程版已完成（最新）。** 按用户放宽后的验收口径，补齐G6土壤/根区水→覆盖→实际生长、环境出口→既有Manning/Exner水沙床变、相邻独立河段保存/只消费一次/冷续算，以及同世界河口→既有三角洲沉积/海盆水热。[交付与使用说明](.scratch/stage2-finish-20261030/acceptance.md)；[世界接线01–04](.scratch/stage2-world-integration/spec.md)与[G9–G20](.scratch/stage2-g9-g20/spec.md)按工程范围resolved。最终联合选择13项测试通过，复用既有案例证据，不累计重叠测试数。宏观基底→TD沿用；新汇流/盆地保持；河湖及必要高程调整完成有限工程接线。世界级动态覆盖、完整逆坡/回水、长期自然地貌和真实物性标定另列后续；河流袭夺继续暂停。资料整理到[D:/geography/09-二阶段环境水文接线](D:/geography/09-二阶段环境水文接线/)。以下为历史记录。
+
+**2026-10-30 重构与随后季节接线已验收。** 公共存储、环境职责和旧Java准备/只读查询完成[重构](.scratch/codebase-refactor-20261030/spec.md)，旧行为基线保持。随后接通G2→G9材料、G3/G4→G7→G5→保存河网及逐格ET次步回收，[联合验收134/134](.scratch/stage2-world-integration/seasonal-validation.md)通过。宏观基底→TD沿用，新汇流/盆地保持，河湖增加有限季节供水；64×64固定域不代表世界动态覆盖。默认下渗结果与零交换交接对照分别保存。下一步补G6母质/覆盖、实际水动力及独立域持久交接，见[任务卡](.scratch/stage2-world-integration/spec.md)；河流袭夺暂停。
+
+**2026-10-30 G9–G20有状态联合首版完成。** 十二项有限机制已接成可保存、冷读、续算的环境产品，固定内陆/海岸TD样例验证物质与能量收支、实际消费者及来源不变。[逐G验收与剩余任务](.scratch/stage2-g9-g20/acceptance.md)。宏观基底→TD沿用；汇流/盆地增加局部床变后归属提交；河湖/高程增加多过程反馈。接下来依次补同世界季节驱动、完整水动力/动态侵蚀消费、跨区域持久状态及长期地貌案例；原G9–G20完整目标和二阶段整体未全部完成。
+
+**2026-10-30 新河网下游模块补验。** 已盘点157个直接/间接相关生产模块，补查水沙、降雨传播、河槽、跨域动态及冷读，修复真实边长、原点传递和旧成品只读兼容等遗漏。[联合验收与剩余边界](.scratch/river-generation-review/module-validation.md)。低流量细支流隐藏但保留累计来水；42km实源证据继续有效；完整水动力连通、新世界动态侵蚀仍未完成，G9–G20本轮局部共同联动见上条。
+
+**2026-10-30 活动D8替换范围验收与河网显示筛选完成。** 新不规则图已在42×42 km、196万格同源TD上实算，928个湿湖、71条普通河段和18个完整盆地跨请求接缝，原始源未改。[实测与河网图](.scratch/river-generation-review/real-source-acceptance.md) · [退役审计](.scratch/river-generation-review/d8-retirement-audit.md) · [显示阈值](.scratch/river-generation-review/display-filter-spec.md)。旧D8证据仅作历史；G9–G20按[任务卡](.scratch/stage2-g9-g20/spec.md)继续，未自动标完。
+
+**2026-10-30 42km跨区域水文交接完成，二阶段计划已复核。** 宏观基底沿用；TD分块合成196万格；汇流/盆地与河湖/高程在磁盘模式统一计算，37条完整河道边、17个完整盆地跨原请求界，独立水量账与冷读通过，78.77秒/600.91MiB。[任务08](.scratch/large-world-first-pass/issues/08-disk-region-handoff.md) · [四阶段实测](.scratch/large-world-first-pass/disk-region-handoff-validation.md)。世界级稳定域边界/永久归属与增量调度仍由[任务06](.scratch/large-world-first-pass/issues/06-demand-connected-world.md)跟踪。双风格地图[Claude实施交接](.scratch/world-atlas/CLAUDE-HANDOFF.md)已就绪，UI未实施；二阶段已标有限完成，后续按[同世界环境→雨影产流→雪冰入河→海岸交换](.scratch/stage2-world-integration/spec.md)推进。
+
+**2026-10-20 石柱群真三维程序化生成 + VDM 柱壁雕刻原型已跑通（用户明确要求：不做二维高度场，用 VDM 在柱壁上雕刻）。** 用户先问「石柱群底座应该是圆的吗」，再定方向。诊断成立：现路线是高度场（[`metric_special_terrain_forms.py`](terrain_pipeline/metric_special_terrain_forms.py) 位移场 → [`metric_special_terrain_surface.py`](terrain_pipeline/metric_special_terrain_surface.py) 规则网格），每个 `(row, col)` 只有一个 `z`，所以**截面只能是等高线**（代码里 `rx == rz`，就是那个圆盘），**竖直柱壁 / 铁帽外凸 / 凹龛根本表达不了**。改为**真三维闭合实体**：复用仓内 [`hybrid_rock_boolean.py`](terrain_pipeline/hybrid_rock_boolean.py) + [`hybrid_cave_geometry.py`](terrain_pipeline/hybrid_cave_geometry.py)（不新内核）——节理网络用抖动栅格 Voronoi 胞给每个柱一个**不规则多边形截面**，内缩 3 m 出真节理缝，然后每顶点沿外法线横向位移（`taper` 上细下粗 / 两级 `striation` 节理横纹 / 两级 `flute` 纵向凹槽 / 顶部 30 m `cap` 铁帽外凸），`combine` 成一体。**三个真实根因（都是先出结论、被探针推翻，均勿重犯）**：①**报 `no consistent winding found` 的其实是容差不是绕向**——手搓 double 体积与 MESH64 差 ~1.7e-6 相对量（MESH64 会重焊近重合顶点），仓内 `_volume_gate` 的 1e-9 是给 `to_mesh64()` 往返记录用的，改用仓内 `save_manifold` 导出即从构造上对齐；②**墙三角化按 CCW 环走 → 法线朝内**，MESH64 的 `volume()` **带符号**，`volume() > 0` 把唯一合法盖组合漏掉了（盖 4 种翻转须**各配一次全局反转**）；③**`taper` 一开始用「到世界原点的距离」当径向**，它沿周长任意变化、还随柱子在场地里的位置变，把壁面整段拉折——改为**绕自身质心的精确相似收缩**（正相似变换把简单多边形映成简单多边形，**可证不折**），满深度柱 8/16 → **14/16**。另有：mitre 角局部曲率半径≈0，内缩超过它就折（不平滑时 15/16 柱在离底 4–16 m 折掉）→ 环须 `resample(1.5 m)` + `smooth(4 遍)`；环顶点 ~12 m 而凹槽波长 11 m 会**混叠**（呼应 `SAMPLES_PER_FEATURE = 4`）。**实测**（candidate，仅原型）：plain 16 柱 / 3 755 顶点 / 11 985 720.22 m³；carved 16 柱 / 97 981 顶点 / 11 378 293.13 m³ / 满深度 14/16 / `components = 1` / 闭合实体门 passed / 逐水平截面均简单；两分支 exit 0。**资料**：张家界石英砂岩峰林硬事实（多组垂直节理控制形态、棱角平直、金鞭岩「四棱分明」/ 御笔峰「方正如削·上细下粗」、铁帽 ~30 m、演化四阶段）已逐项标等级并入文。**文档** [`docs/special-terrain-pillars-3d-20261020.md`](docs/special-terrain-pillars-3d-20261020.md) · [对比图](.scratch/special-terrain/pillars3d-20261020/pillars3d-prototype.png) · 原型与数组 `.scratch/special-terrain/pillars3d-20261020/`（三脚本已从归档位置重跑验证）。**已落仓（用户答「可以」后执行）**：新模块 [`terrain_pipeline/special_terrain_pillars3d.py`](terrain_pipeline/special_terrain_pillars3d.py)（1127 行，`td-special-terrain-l1-pillars3d-v1` / `…-report-v1`、`ALGORITHM=joint-controlled-sandstone-pillar-field-with-vdm-carved-vertical-walls-v1`、`SUPERSEDES` 声明 **`sandstone_pillar_field` 旧高度场值作废**并指名 `metric-special-terrain-v1` + `-surface-v2`；`status=candidate`、六能力位全 False；**被 pin 的 `metric_*`/`diffusion/*` 零改动，`verification/` 零写入**）。产物 `.scratch/special-terrain/l1-preview-20261020/pillars3d/`：`report.json` sha256 `e00b359f…82269`、`carved.npz` `2efaa000…d2b0`、`plain.npz` `51f2737b…5dd9`、identity `a44932dd…5477`，数字与归档原型**逐位吻合**（plain 3755/7506/11985720.215367893 m³；carved 97981/195958/11378293.132742487 m³ / 满深度 14/16 / `carve_scales=[1,1,.5,1,1,1,1,1,.7,1,1,1,1,1,1,1]` / components 1 / 七个见证全 true）。报告顶层另带 `pillar_footprints`（16 项节理胞环 + 面积）、`level_schedule`、`plateau_ring_xz_m`。**已接进 `web-preview` 真三维展示**（第四项地形输入工作区「石柱群 · 真三维闭合实体」）：只读适配器 [`web-preview/pillars3d.py`](web-preview/pillars3d.py)（报告按 sha256+identity、两份 npz 按 digest **四重硬 pin**，被改动即拒读）、[`web-preview/pillars3d.js`](web-preview/pillars3d.js)（三层：雕刻实体 / 未雕刻棱柱线框对照 / 柱顶节理胞轮廓；二维平面画**多边形节理胞而非圆盘**，着色可切「柱高 / 雕刻深度 step」，两根未满深柱以锈色跳出）、`bridge.py` 三条 `/api/pillars3d/*` 路由 + 静态白名单、`index.html`/`app.js` 五处挂接。**验收**：契约单测 [`tests/test_pillars3d_preview.py`](tests/test_pillars3d_preview.py) **15/15 OK**；真浏览器验收（CDP + node 内置 WebSocket，不依赖 playwright）[`tools/verify_pillars3d_browser.mjs`](tools/verify_pillars3d_browser.mjs) **17/17**，含「只留雕刻层仍 rasterise（lit 823095）」「平面 lit 208942」「切雕刻着色出现锈色像素 172995」「`full_depth==14`/`components==1`/见证全 true」「supersedes 指名旧 schema」。**落仓时新发现的两个真缺陷（勿重犯）**：①**截面简单性门是假阴性**——共享竖边上的交点被相邻两个三角各算一遍、二者差 ~1e-11 m，而 shapely `polygonize` 要求端点**精确相等**，于是**笔直棱柱**也返回 0 个多边形（plain 报 208/256「折」）；**真因是容差不是几何**，修法是缝合前把端点吸附到 1e-6 m（修后 plain/carved 均 **256/0**），该容差说明已随产物写进见证的 `method_note`；②**`overlap_removed_m3` 恰为 0 是对的**——节理缝让 16 柱互不相交、基座整体在 y<0，输入互不重叠则并集不减材料；真正可测的是 `carved_removed_m3 = 607427.08 m³`。另：柱环面积比 15.7（角部 0.82 m² vs 内部 12936 m²）是 **Voronoi 边界胞被裁剪的真几何**，不是缺陷。**仍未认证（必须如实说）**：**自交专项检查未做**（`self_intersection_verified` 保持 False；只保证**逐水平截面**简单 256/0，**不保证整体三角网无自交**）；未做规模/性能验收（16 柱 vs 真实 3000+ 柱 / 369 km²）；柱径 / 柱间距 / 节理间距 / 高宽比分布**仍全部是显式假设**（台账 §3 硬缺口）；未做 Minecraft 导出。
+
+**2026-10-20 特殊地形 3D 审查工作区已交付（用户明确要求：用已有 `web-preview/` 前端以 3D 展示）。** 未新起前端工程、未改算法。新增 [`web-preview/special_surface.py`](web-preview/special_surface.py)（只读适配器：清单本身 SHA256 硬 pin `d1f12249…`，四个 bundle 再按 sha256+identity 双重校验，路径必须在工程根内；`catalog()` / `descriptor(kind)` / `binary(kind,name)`；**收敛声明由读取端复算**——用 `relaxation_maximum_excess_m <= relaxation_tolerance_m` 重新推导，与台账布尔不符即 raise，这就是 v2 验收器拦下的那类缺陷在读取侧的堵法）、[`web-preview/special-surface.js`](web-preview/special-surface.js)（Three.js 轨道相机 + 全分辨率保存地表 + 解析参考面线框 + 侵蚀变化顶点色发散色带 + 保护区点云 + 二维变化/高程图 + `Raycaster` 与反投影双路点选 + 审查导出；四个能力位硬编码 false）、[`tests/test_special_surface_preview.py`](tests/test_special_surface_preview.py)（**11/11 OK**）。后端 [`bridge.py`](web-preview/bridge.py) 加三条 GET：`/api/special/catalog`、`/api/special/frame/<kind>`、`/api/special/array/<kind>/<name>`（后者 `application/octet-stream`），三条均拒 query；`special-surface.js` 入静态白名单（不然 403）。前端 [`index.html`](web-preview/index.html)（面板 `#specialControls` + `script`）/ [`app.js`](web-preview/app.js)（`reviewCategories` 归入「地形输入」、「setWorkspace」分支、`reset`、`reviewRecord`、`getSelection` 五处）/ [`style.css`](web-preview/style.css)（`.special-canvas`）挂接。**二进制沿用 `saved_surface` 范式**：JSON descriptor 带 `arrays[name]={dtype,shape,bytes,url}`（顶点减 AABB 最小、`<f4`/`<u4`/`<u1`），数组另走 octet-stream；**拓扑复用不重建**（`surface_triangles` 即存储 `triangles`，`(2(r-1)(c-1),3)`）——既省一次三角化，也让「显示的是保存几何」在代码层成立。**实测**：catalog 4 forms/candidate；四 kind（inselberg 276×476@8 m、karst 491²@1 m、sandstone 321²@0.5 m、volcanic_plug 411²@1 m）的 `frame` + 20 个数组 URL 全 200 且长度与声明逐一相符；带 query frame → 400、未知 kind → 500、`/api/special/frame` 形状不匹配 → 404、`/special-surface-nope.js` → 403。**回归 40/40 OK**（underground/fault/river-results/l1-cave 四个桥接测试）；`py_compile`、两个 JS `node --check`、HTML id 无缺失无重复均通过。**真浏览器验收 14/14**：本机无 playwright，但 Edge headless 可用 → 新写自包含验收器 [`tools/verify_special_surface_browser.mjs`](tools/verify_special_surface_browser.mjs)（**CDP + node 内置 WebSocket，不依赖 playwright**；自起桥接与无头浏览器，从页面内 `readPixels` 数非空像素），报告 `.scratch/special-surface-browser-report.json`。**一个只有浏览器实测才能抓到的真缺陷（勿重犯）**：`view3d` 点击后 canvas 仍 `hidden`、非空像素 **0**——`saved-surface.js:157` 的共享控件自我订阅（`['view2d','view3d','verticalScale']`）**漏抄**，而 `app.js` 的 `renderWorkspace()` 只调 `surfaceRenderer.render()`、不驱动本模块，所以三维从未显示；补上后 `lit` 0 → **780416**。教训：照抄模板时「不显眼的那几行」往往就是接通的那一根线。**文档** [`docs/special-terrain-3d-preview-20261020.md`](docs/special-terrain-3d-preview-20261020.md) · [`web-preview/README.md`](web-preview/README.md) 已加节。入口 `http://127.0.0.1:8765/?workspace=special`。**未做**：工作区未登记进 `fixed_catalog()["workspaces"]`（展示登记，前端导航不读它）。
+
+**2026-10-20 离线地形图渲染器已交付：遥感图 / 地形图两种版式（用户方向 A）。** 针对用户「预览要按照遥感图和地形图的格式来做」的明确要求（B 实时无限预览用户定为**可选开关、默认关**，C/D 本轮不做）。新增 [`terrain_pipeline/terrain_map_style.py`](terrain_pipeline/terrain_map_style.py)（**全仓唯一样式层**：六段 relief 色带此前有 3 份逐字副本、陆/海色带 9 份，故不再抄第 4 份）、[`tools/render_terrain_map.py`](tools/render_terrain_map.py)（`remote` 连续色带+物理 hillshade+常流实线/非常流虚线；`topo` 离散分级+每条带边等值线+公里网格+比例尺+指北针）、[`tests/test_terrain_map_style.py`](tests/test_terrain_map_style.py)（**25/25 OK**）。**三处此前真空白**：①分级等高色带全仓**不存在**（此前一律连续 `Normalize`）→ `banded_relief_rgb` + `validate_band_edges`（首边须=海平面、严格递增）+ 颜色数==边数-1；②经纬网全仓 **0 处** → **分两层**：默认米制坐标框，**可选**声明式经纬网（`--declare-metres-per-degree-east/north` + origin，缺一即拒、拒绝猜测换算，产物 stamp `declared_graticule_not_a_projection` 且标签标 `*`）——因为本工程地形在**无限瓦片像素坐标**上，`geography_v*.py` 的 `latitude = 22*np.sin(z/96)` **不是真实地理纬度**，直接照画就是伪造地理信息；③比例尺此前仅 1 个脚本有。**两处被自己实测拦下的真缺陷（勿重犯）**：①`colour_range_m` 把大 TD 的冻结区间 `(0.609,536.184)` 当**全局默认**，使 208 m 的喀斯特图被拉到 536 m 量程、色带被压成 2.6 倍宽，而报告并列 `plotted_max_m=208` 会让人以为色带是对的 → 改为**默认取该图幅自身范围**，只对 `DEFAULT_SOURCE` 保留冻结对以与既有 `verification/` 图并置；②默认 `graticule_step_km=10` 在 0.16 km 图上**零根线**，报告却写 `planar_kilometre_grid` → 改为按跨度推导 `nice_graticule_step_km`，且 `draw_metre_graticule` **返回实际画了几根线**，报告改写这个记录而非重复请求值。**实测**：五组场景（1280²@30 m=38.37 km 大 TD；四类特殊地形 0.16–3.80 km）+ 一个经纬网变体，全部 exit 0；各图色带保留自身范围（karst 0..208、sandstone 0..158、inselberg 0..369、volcanic_plug 0..285），网格按跨度（38 km 图 5 km/x8·y7，0.16 km 图 20 m/x9·y9）；**两条拒绝路径实测触发**（无溯源 bundle、篡改 sha256）；`guard_output` 拒绝写 `verification/`。**坑（已记）**：图幅 y 轴**倒置**（z 向南增大），家具必须用**有符号** y 跨度定位，故 `screen_frame` 返回 signed span；北箭头指向 z 减小方向；验箭头**不能**用 `FancyArrowPatch.get_path().vertices`（那是 patch 私有坐标系），要用 `Annotation.xy/get_position()`。**文档** [`docs/terrain-map-renderer-20261020.md`](docs/terrain-map-renderer-20261020.md) · 产物 `.scratch/terrain-map-preview-20261020/<场景>/{*-remote.png,*-topo.png,report.json}`。**未认证**：产物 `status=candidate`、四能力位全 False；被 pin 的 `metric_*`/`diffusion/*` **零改动**（`fixed_hillshade` 等旧副本**故意保留字节不变**，因其 PNG 在 `verification/` 作为证据）；色带断点/颜色/hillshade 权重**均属声明式风格（显式假设）**。**未做**：B 实时无限预览、群系图（需先给米制气候补纬度）、尺度提升到参考图的 ~500 km（差 ~13 倍，需多分辨率金字塔）、海深扩容到 −6000 m。
+
+**2026-10-20 特殊地形表面 v2 已交付：加面粗糙度 + 水力侵蚀（复用仓内内核）。** 针对用户「形态太规整，为什么不用噪波」「再加水力侵蚀，多复用已有算法」两点。新模块 [`terrain_pipeline/metric_special_terrain_surface.py`](terrain_pipeline/metric_special_terrain_surface.py)（`metric-special-terrain-surface-v2` / `special-terrain-facet-noise-hydraulic-dissection-v2`，`SUPERSEDES_ALGORITHM=…-v1`）消费 L0 四类父 bundle：面粗糙度调 `diffusion/geographic_noise.field`，水力切割调 `route_diagnostic` + `accumulate_local_discharge` + `conservative_diffusion_step` + `relax_mobile_slopes` + `phase_record`（全部只 import，五个内核 sha256 写进 metadata `kernel_revisions`，既有 `metric_*` / `diffusion/*` 零改动）。**验收**：单测 11/11 OK；独立冷读验收器 [`tools/audit_special_terrain_surface.py`](tools/audit_special_terrain_surface.py) 不 import 生成器、自实现噪波内核与岩石下限、重放 target 足迹、从磁盘重算五内核哈希。**三条实测语义**（前两条是初稿判断被自己的探针推翻，第三条是验收器拦下的真缺陷，均勿重犯）：①「整面铺松散壳再松弛到休止角」会毁地形（搬 1.8e7 m³ vs 切 5.2e3 m³，塔损失 36.5 m，喀斯特反被抬高 104 m）→ 正确做法是仓内原生 `mobile_base` 语义（只在途柱、3.9e5 m³）；②切割必须由**声明的岩石下限**约束而非活动柱；③**`relaxation_converged` 曾被独立验收器当成必须为 True 的门槛**——但 `relax_mobile_slopes` 的契约本就允许返回「未收敛的有限停步态」，真问题在 `surface_preset` 里 `tolerance_m=1e-6 / max_sweeps=8` 这两个**从未实测过**的常量。改为：把判据的每个操作数记进台账、验收器**复算**该布尔而非相信它；预算按实测定值（`tolerance_m=1e-3`、`max_sweeps=512`）。实测 20000 扫下四类 12 步全收敛（最大 2031 扫），证明残差是预算问题而非结构性下限。**文档** [`docs/special-terrain-surface-20261020.md`](docs/special-terrain-surface-20261020.md) · 参数台账 [`.scratch/special-terrain/parameters-and-sources.md`](.scratch/special-terrain/parameters-and-sources.md) §5.1/§5.2 · 产物 `.scratch/special-terrain/surface-20261020/`（bundle + 独立审计）与 `surface-preview-20261020/`（三栏对照 + 剖面 + 侵蚀变化图）。**未认证**：四能力位全 False（`hydraulic_ready` 仍 False——本轮切割是**声明式**水流功率项，不是水文合法性证明）；`simulate_fluvial_morphodynamics` 需 pyDeltaRCM 未装故未用；TD 真实 1 m 床上的 v2 端到端、Java 接入、`TGMCMT01` 新版本均未做。参数除「继承父模块 / 原生语义 / 内核对内惯例」外**全为显式假设**（无公开资料给出这四类地形的表面微起伏量级）。
+
+**2026-10-19 特殊地形离线几何与预览已交付（独立于三角洲主线）。** 六类特殊地形分两路实现：L0 四类（魔鬼塔/乌鲁鲁主体/张家界石柱群/喀斯特峰林）走新模块 `terrain_pipeline/metric_special_terrain_forms.py`（`metric-special-terrain-v1` 场式位移）并在真实 TD 1 m 床上薄适配；L1 四项（天坑竖井+坑底暗河+天窗、溶洞—天窗—天生桥、魔鬼岩石蛋堆、Uluru flared slope）走 `hybrid_rock_boolean` 体积路线，四个新模块 `terrain_pipeline/special_terrain_l1_*.py`。[交付文档](docs/special-terrain-offline-20261019.md) · [盘点](docs/special-terrain-recon-20261019.md) · [规格](.scratch/special-terrain/spec.md)。**验收**：L0 独立冷读 4/4 pass（`max_replay_difference_m=0.0`、perimeter 四边 0）、L1 主代理侧独立冷读 54 条探针 + 29 条 record + 全部布尔见证通过、产物 figures sha256 与紧凑性校验通过；合计 86 用例 OK（L0/适配 32 + L1 54）。**未认证**：Java 9 步接入、`TGMCMT01` 新版本、天坑水文三项前置本轮均未做；所有产物 `status=candidate`、能力位全 False；形态参数多数无来源（显式假设，非实测）。冻结基线 `hybrid_cave_geometry.py`/`hybrid_rock_boolean.py` 哈希未变，既有 `metric_*` 身份常量零改动。
+
+**2026-10-19 最新实现：床沙再悬浮、剪切相关沉降、湿岸侧移与薄水床载修复已完成。** v3同父96秒严格匹配对照通过；v4修复微米过岸水层触发的超量床载，31项测试及连续1200秒压缩潮位周期独立水沙/载流检查通过，有限新供沙已耗尽并自动转清水。全部保存状态新增干露仍0、未形成持续分汊，陆侧平原和完整自然形态尚未通过。全部计算结束。[实现、结果与末检查点](docs/delta-finite-exchange-v3-20261019.md)。下方为历史记录。
+
+**2026-10-19 下一阶段更新：** 扩大域独立来河初态与8步沉积短验已完成，7项测试通过；定位了原生水面与流速截顶不一致，暂不进行长程生长。600秒同床FV及20区间水/动量独立核对通过，下一步接入有限供沙沉积的水流输入。实际新陆干露仍0，完整三角洲未完成。[结果与下一步](docs/delta-natural-deposition-progress-20261018.md)。
+
 # 工程 TODO
+
+**2026-10-30 宏观基底→TD合成→盆地汇流→河湖链路完成有限页验收。** [任务05](.scratch/large-world-first-pass/issues/05-base-td-water-chain.md) · [实测与使用](.scratch/large-world-first-pass/terrain-water-chain-validation.md)。千岛及大陆共用全域海洋规划，千湖先陆地再按来水形成湖泊；14项新增测试通过，真实TD源三种局部路径跑通。千湖形成356.69 m有限小积水面，海岸2096河道格；实际切深保持海陆约束。Terra实现、主端审查；本轮未运行GPU。跨页完整流域、溢流湖链与全幅30 m仍未完成，海岸运行峰值RSS749.66 MiB超出512 MiB软观测目标。
+
+**2026-10-29 新布局单页TD实跑已完成，湖岸目标未通过。** 用户批准兼容监测后仅运行一次：RTX2080s、54.08s、生成器显存3.06GiB、RSS2.95GiB。真实页已保存，但8278个设计湖格全部高于0m水位，不能按设计掩膜冒真实湖运行河槽。[高程对照与完整结果](.scratch/large-world-first-pass/natural-layout-validation.md)。未换页、未改水位、未再次GPU推理；下一项为条件控制与实际水体识别一致性。
+
+**2026-10-29 可控大世界自然布局修正已通过CPU验收，实际TD待运行。** 规则格子改为具有疏密和大小差异的连续场，补连续湖盆与岸坡条件，57项本轮测试通过。独立16km采样得1120湖类分量、983陆岛分量，水比误差<0.015个百分点。[新版图、实测与固定页](.scratch/large-world-first-pass/natural-layout-validation.md)。Terra实现、主端审查；这仍是布局/条件图，待确认allocator监测范围后单次实际TD验证。
+
+**2026-10-29 大世界首轮部分交付，GPU实跑受阻。** [使用说明](.scratch/large-world-first-pass/README.md) · [实测](.scratch/large-world-first-pass/validation.md)。12,288km三模式布局概览、岩性＋代表Q→河槽宽深与冷读已实现；60项针对性测试通过，旧真实TD样本3665河道格、重叠8986共同complete格Q/硬度/宽深差0。新布局单页GPU尝试因WDDM无法测PID显存停止，未生成新页、不自动重试；未宣大世界端到端或无限河网完成。
+
+**2026-10-29 用户恢复可控大世界首轮实现。** [当前规格与任务](.scratch/large-world-first-pass/spec.md)：超过10,000 km×10,000 km有限世界，千湖/千岛/大陆布局，内部按需30 m地形/河网，复用岩性＋代表流量→河槽宽深；动态侵蚀单列验证。GPT-6.1 Terra编码，主端发布任务、审查验收。下面18:23暂停为历史记录，本次只恢复上述范围，不自动重开其他工作。
+
+**2026-10-29 18:23 用户要求暂时停止工程，当前已暂停。** [暂停交接与恢复入口](.scratch/stage2-g1-g9/HANDOFF-PAUSED-20261029.md)。本轮计划13/20任务完成（非算法完成率）；所有在途代理已结束/中断，本会话后台命令0，未运行新GPU源页。河线正式lossless模式尚未主跑，G1布局/条件适配仍有失败与中断半成品；旧成果和失败现场均保留。等待用户明确恢复后才继续测试、实现、推理与catalog更新。下方2026-10-28「尚未编码或验收」为当时记录，当前进度以本交接和acceptance.md为准。
+
+**2026-10-28 最新批准：五代理并发河网预计算与G1–G9**：[共享规格与首卡入口](.scratch/stage2-g1-g9/spec.md)。按依赖多波完成G1地形、G2物性、G3温度、G4风雨影、G5水分、G6土壤覆盖、G7雪冰融水、G8海洋海岸、G9风化成土；河流生产prepare/query及保真可先交。当前五线核复用/白名单，尚未编码或验收，不宣九项完成。G10–G20、Java及冻结源修改不因本批准自动放行。下列旧顺序/执行树编号为历史，现以本入口和当前计划树为准。
+
+**2026-10-28 二阶段已启动（用户指令）**：[协调入口](.scratch/stage2-coordination-20261028.md)。按四阶段路线进入Python地理环境/气候/材料/生态首批同坐标环境链；VMH DeepSeek实现、主端审查报告。并行保留有限水系扩域实算，及“主干/重要支流预计算—走廊依赖索引—小支流按需细算”的复用与最小原型准备；不是宣称无限河网或G1–G20候选全量完成/全量开工。
+
+**2026-10-28 有限样本已交付（M1–M4通过）**：[使用说明](artifacts/finite-river-sample-v1-README.md) · [正式包](artifacts/finite-river-sample-v1-delivery.zip) · [M4主端验收](.scratch/finite-river-sample/m4-default-v1/DELIVERY-M4.md)。3951格真实完整汇水/89格河道、有限事件接收湖、降雨soil真实供水、2/4块与新进程恢复、现Python默认query均已验。仅所交6h安全库存范围内有限产品完成，不宣全无限世界/瞬变水动力/Java。旧失败与后续R/S路线保留，不阻塞本次交付。
+
+**2026-10-28 当前交付目标（用户最新决定）**：[有限闭合河网样本](.scratch/finite-river-sample/spec.md)。阶段一按M1静态河网与合法终点、M2真实产流供水、M3实际跨块与冷恢复、M4 Python默认消费分里程碑交付；每项通过单独承认，M4通过即交付本次有限产品，不等待R1–R9/S1–S6全部通过。旧W1失败与世界目录扩展保留，25tile不再是主线前锁；全量认证仍是长期范围，不冒已完成。唯一当前执行树p10。
+
+**2026-10-27 最新批准全量收官**：[无限世界河网收官](.scratch/infinite-river-completion/plan.md)与[G01–G24缺口矩阵](.scratch/infinite-river-completion/acceptance.md)。包含高地源区、稳定区域主河、合法终点、降雨冰雪/湖动态、回水洪泛、水沙床变反馈、依赖加载/恢复及R1–R9/S1–S6认证；通过后精简。当前接续源区安全准备与D/H验收，55项P0及重封攻击过不等整体完成。下方旧路线保留历史。
+
+**2026-10-26 最新批准路线**：[固定高地源区与区域主河](.scratch/highland-mainstem-world/plan.md)。先冻结高地源区和区域主河，再按相交走廊与依赖加载/显示；低地降雨沿地形补给，计算范围按预算选择，不固定50km。当前阶段A核来源一致性与规格，尚未实现新源区链。下列旧整合计划保留历史成果，不结转未通过门。
+
+**2026-10-26 已批准续作（历史顺序，已由上方路线替代）**：[河湖与无限世界整合](.scratch/river-lake-world-integration/plan.md)。先整合当前成果并完成河湖/跨块联合验收，后精简代码；当前规格已审，下一项为结构域候选及主干实现。M1余项并入整合验收，不视为已完成；冻结源码修改仍须专项批准。
+
+**2026-10-26 阶段一现行入口（本表只留总览，细节看新文件）**：一阶段的「已实现有界能力 / 未闭合主要问题 / M1 工程收口 / 待讨论建议」集中在 [阶段一当前状态与问题导航](.scratch/river-stage1-completion/current-status.md)。它只是**导航与核对快照**，不覆盖契约与原始证据，也不改旧报告。
+下方总览表保留作总览；本文件**按日期保留历史**（六门读数来自不同日期、不同基底，**不得全表定性为 10 km，也不得把 30 m 局部 pass 外推**），现行判定须与 [30 m 重判](.scratch/fine-terrain-40km/acceptance-matrix-30m.md)、[continuation 矩阵](.scratch/river-stage1-completion/continuation-matrix.md) 与 [final gate](.scratch/river-stage1-completion/final-stage1-gate-20261025-v1.md) 联读。阶段一仍**未完成**，单测数与局部 pass 不相加成完成度。
+
+**2026-10-24 河流算法增量**：已实现有限联合receiver图诊断汇流和未知上游传播（不是继续调制图）。13项新单测+33项跨页回归通过；4049²真实TD联合图16,297,369格完整处理，水量相对残差6.22e-17；旧分块保留区29个差异格经独立上游子树核算验证。未认证无限世界、动态水力/Qs/床变和默认消费接线。见[实现与验收记录](.scratch/river-network-accumulation/report.md)。DeepSeek本次调用401无产出，由主端完成实现与验算。
+
+
+**2026-10-21 四阶段详细规划表确认**：用户确认 [.scratch/terrain-four-stage-review-20261021/algorithm-components-review.md](.scratch/terrain-four-stage-review-20261021/algorithm-components-review.md) 是四阶段详细组成依据（R1–R9/G1–G20/V1–V8，审阅稿，非全量实施批准）；详细边界见 [四阶段路线](docs/terrain-diffusion-four-stage-roadmap.md)。旧阶段 0–5 总规划已弃用并归档于 [deprecated-plans/](deprecated-plans/README.md)。
+
+**四阶段任务总览**：权威路线与详细证据分别见 [四阶段路线](docs/terrain-diffusion-four-stage-roadmap.md)、[算法组成审阅稿](.scratch/terrain-four-stage-review-20261021/algorithm-components-review.md)（R/G/V 组成分类是审阅参考，不是全量实现授权）。本表只记录当前阶段和主要节点状态；旧专题编号不换算为四阶段完成率。
+
+| 阶段 | 当前状态 | 主要节点与进度 | 当前待办 / 边界 |
+|---|---|---|---|
+| **1. 无限世界河网（Python）** | **进行中，端到端未完成** | **2026-10-23 基底已改为 TD 直接生成的 30 m 原生网格**（用户拍板，旧 10 km 插值面不再作开发/验收基准）。40 km @30 m 三项验收：**选区已完成**（43.4124 km² 闭合盆地、盆底 50.4492 m、鞍口 120.7850 m、窗口原点米 [1265190, 1286220]、覆盖 40.08 km、29 tests OK）；**湖盆已完成**（9.5571 km²、盆底 982.4127 m、鞍口 1268.5966 m、A(h)/V(h) 与独立复算差 0、35 tests OK）；**跨区域已完成**（重叠 1024×2049 差异 2042 格 0.097% 全在最外一列，距边≥6 格的 206 万格逐位相同、33 tests OK）。**河段已完成**（汇水 10.3797 km²/4515.3 m，43 结点 Manning 断面中位 0.104 m，三本账全闭：水 2.5e-16/固 4.8e-15/Exner 1.23e-10；限制：均匀 Q、stride=3、床变量级未验）；**微洼地溢流门已定稿**（61 tests OK；门后 131、截断另计 208、改判 12409；**单格 6392 → 0**；恒等式两条都闭）；**跨区流路/出口/累积量已完成**（D8 301476 格零分歧、2000 条流路真实分歧 0、累积计数干净格 100% 相同）。R1–R4：基础地形、海陆、域归属和有界拓扑已有实现；几何/归属/出口接缝有局部证据。R5：水量、泥沙与耦合账本已有；水量相关风化源可选、默认关闭且未标定。R6：有限域河道几何适配层已实现，尚未认证或由R7消费。R7：原床运动波候选适配 v2 已交付，18 项定向测试通过；固定顺序累计已修复跨 NumPy 版本的覆盖摘要差异，旧失败产品保留；动态回水与守恒洪泛仍缺。R8：均摊增床反馈已进入候选包；侵蚀写入、沿程分布和水力重验仍缺。R9：`publish_domain_bundle.py` 已由用户指定并登记为**未验证的默认消费者入口**（仅显式调用，不自动调度/无限生成）；有限tile（core+margin）闭合门在写入前验证点选域；未选域按C方案保留为未验证附带数据，索引明确数量与whole_tile_certified=false，79项回归通过。所有产品 `hydraulic_ready/natural_outlet_verified/publishable` 仍为false，role不代表产品认证。 | 待完成：**① Q/Qs 的物理量跨瓦片一致（本轮只比了格计数）；② 30 m 目标尺度拒绝率普查；③ 30 m 产物接入默认消费链；④ 河段：R5/R6 物理/几何独立验收、动态回水、床变量级标定；⑤ R7 回水/洪泛/床变重算**。旧六门矩阵（2026-10-22，基于 10 km 基底）见 [阶段一验收矩阵](.scratch/river-stage1-acceptance-20261022/acceptance-matrix.md)：条件1–5 partial、第6项 blocked；该矩阵**需在 30 m 面上重判**，新判定见 [30 m 六门重判](.scratch/fine-terrain-40km/acceptance-matrix-30m.md)（条件1/2 基本成立、条件3 partial、条件4/5/6 partial）。详见 [河网计划与契约](.scratch/river-infinite-world/plan.md)、[40 km 验收规格](.scratch/river-infinite-world/fine-terrain-40km-spec.md)、[R5 水沙耦合契约](.scratch/river-infinite-world/domain-coupled-spec.md)。 |
+
+| **2. 地理环境与地表表现（Python）** | **局部原型存在；统一环境链未完成** | G1：合成地形/海陆背景有局部实现；G2：合成材料场有，完整岩性/层序未完成；G3–G5：合成气候、风、地形增雨/雨影及局部水文模块有；G6：土壤代理与温雨—地貌分类规则有；G7：冻结高程诊断有；G8：有限海岸原型有。G9–G20：候选审阅项。 | 先按 [地理依赖矩阵](docs/terrain-geography-dependency-matrix.md) 逐项确认范围和接线；尚未形成同坐标环境—生态完整链。G9–G20、板块、洋流、冰川、地下水等不因列入审阅稿而自动开工。 |
+| **3. 非高度场三维地貌（Python）** | **离线原型存在；无限世界集成未完成** | V1–V7：洞穴、天坑、天然桥、石柱、悬挑等局部几何/预览原型；部分有局部体积或见证点记录。V8：统一交付和消费者接线尚未完成。 | 按 [非高度场地貌目录](docs/terrain-non-heightfield-landforms-inventory.md) 建立统一 TD 拼接、跨瓦片、拓扑、水路和消费者契约；离线原型不能作为无限世界联合结果。 |
+| **4. Java / Minecraft Mod** | **按计划尚未启动** | 等阶段 1–3 的算法、产物身份、跨窗口行为和目标表现成熟后启动。 | Java 只负责转换 Python 产物、资源映射和游戏交付；当前未接线不是算法缺陷。 |
+
+**总览口径**：生产默认入口 role=`production_default_consumer_unvalidated` 只表示用户指定入口；只在显式提供坐标和输出目录时运行，不能自动生成无限世界。所有认证claims保持false。R5/R6初次交付未运行测试；本轮R7–R9证据限定见 [候选接线记录](.scratch/river-infinite-world/r7-r9-candidate-integration.md)；阶段一仍未完成。
+
+**2026-10-19 本轮验收已收口：完整自然三角洲未通过。** [验收结论与证据](docs/delta-natural-acceptance-20261019.md)。有限供沙、状态继承及已运行的水床反馈检查通过；实际露陆、未截断扇缘、陆侧平原和最终新床潮浪联合形态未通过或未验证。任务13仍实施中，扩大域仅为几何准备。
+
+**2026-10-19 续算验收更新：** [任务13](.scratch/delta-completion/issues/13-natural-deposition-delta.md)仍未完成。新增有限27.11万m³固体的341包续生长已结束；海平面以上床面9,675m²、几何连陆5,275m²，但新床1,500秒平均海位FV检查实际干露仍0。左边界已截断沉积叶瓣，需扩大计算范围并处理新旧床接缝。旧床完整44,714秒潮期及300秒波开/关反馈对照已完成独立核对；波浪造成最大床差2.5mm，不能称成熟岸线塑形。正式预览和逐格证据见[当前记录](docs/delta-natural-deposition-progress-20261018.md)。
+
+**2026-10-19 当前三角洲主任务：自然沉积与涌现分汊，实施中。** 用户指出构造平原、长直河槽和预设分汊不接近现实，已转回[任务13](.scratch/delta-completion/issues/13-natural-deposition-delta.md)，[输入、规模与实施记录](docs/delta-natural-deposition-progress-20261018.md)。TD原近岸完整自然沉积与同源零供沙对照已完成，出现水下脊槽但原生水场实际干露仍0；真实有限体积潮汐、波动员与双向床变正在独立计算和审查。单次声明追加9m有限上游岩层的来源账已核对，原生检查点续生长已启动，不重复年度沙或重置基底库存。原年度有限供沙31,101.986m³固体最多约47,849m³含孔隙沉积，不能冒充可在一年生成广阔平原。下方任务12完成只指构造地形上的顺序耦合实验，不能作为自然沉积三角洲完成证据。唯一GPT-6.1 Sol编码，主协调审查运行，原始资料与旧正式失败链保留。
+
+**2026-10-18 A-P0 已完成：中心线搜索取消「以参考路径为上限」的自指接受规则，身份 v6→v7。** [决策记录](docs/adr/0002-centerline-entry-independent-turn-ceiling.md) · [实施状态与证据](docs/river-algorithm-improvement-list-20261018.md) · [v6 证书作废声明](verification/td-terrain-generated-rivers/CENTERLINE-V6-SUPERSEDED.md)。旧接受判据是「候选的 ordinary/junction 的 max 与 p95 四个转角数不得超过参考路径自身对应值」，而参考路径就是搜索起点：上限自指、入口决定结果（实测同算法同参数仅改传不传 `reference_points`，转角能量差 27 倍）、且四数全局互斥。现改为**入口无关的三层上限**：声明式解析上限 `ANALYTIC_TURN_BOUND_DEGREES = 90°/90°` 只做严格程度封顶；有效上限 `turn_ceiling(baseline) = max(声明上限, 基线 movable 转角最大值)`（不看参考路径，又给脏基线留下降余量——一次性硬墙实测会把搜索堵死、接受 0 步）；只约束**可移动节点**，锚点宽转角转记 `anchor_turn_exemption` 诊断字段。起点归一：`reference_points` 不再充当搜索起点，只做验收对齐诊断。三处副本同源化；6 个新 policy 诊断字段。**验收**：三入口（传原始台阶参考/不传参考/传扰动参考）最终路径逐节点完全相同（偏移 0）。**回归**：24 个受影响模块 22 OK；`test_metric_td_generated_rivers`/`test_audit_td_generated_rivers` 各 3 error 与改动前基线逐条一致（既有 HiGHS 技术债，非本次引入）。**未做**：A-P1 静默拒绝补账、A-P3 走廊三分类、A-P2 依赖与台账比对修复；v7 生产尺寸证据尚未重新生成（既有 v6 证据不得继续引用为其接受依据）。
+
+**2026-10-18 三角洲最新交付：16km TD派生分汊—潮汐—波浪集成实验已验收。** [结果与限制](docs/delta-integrated-td-coastal-20261018.md) · [任务12](.scratch/delta-completion/issues/12-integrated-td-coastal-delta.md)。最终`verification/fluvial-delta/td-coastal-delta-20261018-02/`保留五终端/真实二级分支，实际有限潮浪输运、三潮位水面和四组对照；低潮无开挖表面排水至首个连通海水，修复正来水河口算干。52项测试、123条独立数组检查、198数组精确冷重放通过。潮间淹没范围差9.4964km²，净床变−0.230008至+0.611497m，源到海固体账残差5.44e−10m³。构造土方、有限既有地质活动层和30961.761041m³年度终端供沙分别记账，不称自然一年长成；海岸与河流顺序耦合、规定流量准稳态水面，尚非完整双向二维水动力。旧[任务11报告](docs/delta-terrain-diffusion-tide-wave-20261018.md)已撤销不一致TD海陆掩膜和静态条纹的集成证据。原始TD、scene15、年度基准、默认世界与游戏保持不变。
+
+**2026-10-17 已完成本轮修正：支汊首次入海终止与岸陆变化。** [验收与结果](docs/delta-coast-bounded-acceptance-20261017.md) · [任务09](.scratch/delta-completion/issues/09-coast-bounded-distributaries.md)。新版独立scene02展宽主干/三支至200/170/145/120m，增加连续低脊、浅湾与不均匀岸缘；三支在首次入海处停止，旧跨海岛槽1428格全部恢复。34项独立测试、实际图审、5倍来水一年、故意失效默认场景的精确冷重放和主协调数组检查通过。海域零河槽切方、年度零储沙/床变；年供沙31101.986m³、留存8509.043m³、外排22592.943m³，无实际新增干地。施工地形独立记账，海侧羽流未建模；下方旧scene09及03/增流量结果保留为历史，未通过本轮首次入海约束。Terrain Diffusion地形演算仍为后续阶段。
+
+**2026-10-17 已完成：增流量三角洲对照。** 原情景2/5/10倍来水已分别重算有限上游侵蚀供沙与三角洲反馈；[报告](docs/delta-discharge-scenarios-20261017.md) · [任务08](.scratch/delta-completion/issues/08-discharge-scenarios.md)。25项聚焦测试、三档精确冷重放和独立数组检查通过，原始输入及03基准保持。年供沙受同一份耗尽库存限制，均约31102m³固体；5倍档陆侧至少1mm淤积面积从0.0376增至0.2204km²，但增流量档陆侧均未达到1cm沉积，无实际新增干地。更大流量增加外排，10倍档约92.9%泥沙入海。算法成熟后，再基于Terrain Diffusion生成地形的河网、坡度、汇水与材料输入进行演算；该阶段尚未实施。
+
+**2026-10-17 当前完成：16km风格化三角洲统一算法。** [完成与验收报告](docs/delta-integrated-completion-20261017.md) · [任务07](.scratch/delta-completion/issues/07-integrated-16km.md)。已将有限上游供沙、实际床变、动态水位/分流和陆侧沉积接入同一800×800场景，最终结果为`verification/fluvial-delta/integrated-16km-20261017-03/`。101项测试、11个子测试通过，冷重放与来源保持通过。实际年供沙31101.986m³、净留存27598.190m³；三支接海，清水不改床。采用准稳态河道树近似，构造土方独立记账，未接入游戏。以下v10及局部模型分开、三角洲未完成等描述为历史检查点；本条为当前状态。
+
+**2026-10-17 最新完成：风格化陆侧三角洲v10已集成主工程。** [结果与验收报告](docs/delta-landward-v10-20261017.md) · [已完成任务](.scratch/delta-completion/issues/02-complete-stylized-landward-delta.md)。16km场景09已生成，原陆地旧槽带外改造5.0076km²，三支陆侧分汊连海；主工程6项测试、37份来源hash和精确重放通过。有限供沙反馈02继续有效；大场景挖填独立记账，静态设计水位，尚非供沙自然长成的完整水动力三角洲，未发布默认世界。下方停止、v7失败和待实施描述为历史记录，以本条和报告为准。
+
+**2026-10-17 最新动态供沙验收：** [修复与同源空间反馈报告](docs/delta-dynamic-outlet-acceptance-20261017.md)完成。DeepSeek编码、主协调审查集成；修正沉积/外排颠倒及零水外排，移除分支编号偏置，空间对照复用已有有限水沙内核。80项测试与11个子测试通过；2.88km同源全年供沙重放精确一致，单个海侧出口分配变化最高5.91个百分点，清水对照不变；原陆地沉积4500m²，原海洋内新增出露0。四份输入hash及v10三个实现文件/场景09存档保持一致；实际图审与逐数组独立冷读通过。16km构造场景与局部供沙模型尚未统一，不标完整水动力三角洲完成。
+
+旧[非空间对照](docs/delta-river-dominant-comparison-20261017.md)与[空间对照](docs/delta-spatial-river-dominant-20261017.md)的2项/16项测试记录属于修复前历史，未覆盖后来发现的问题，不能作为物理正确性的证据；以本次验收为准。
+
+**2026-10-17 恢复实施前验收历史：三角洲仍未完成，现保存进度。** 详见[验收与接续记录](docs/delta-acceptance-handoff-20261017.md)。Claude 工作树中的06场景已生成，v6保存结果自身检查有效但形态未通过；当时v7代码聚焦测试3通过、2失败，存在未定义变量和上游不连海，无法重放06。当时未合并或发布。本条覆盖下方“06尚未生成”的历史状态。
+
+**2026-10-16 最新交接：用户要求停止，由 Claude 接续。** 见[Claude 三角洲接续文档](docs/claude-delta-handoff-20261016.md)。上游供沙与逐日反馈有限案例已验收；16km场景05形态仍被用户要求修正，06代码修改未验证、尚未生成。编程子智能体已中断，相关计算进程已结束；保留全部代码和归档，不再自动继续。
+
+研究工具接入：[SRHarness/MDB 本地验证](research/srharness-mdbench-local-integration-20261016.md)与[任务12](.scratch/deepseek-harness/issues/12-srharness-mdbench-bridge.md)。已跑通 DeepSeek 三轮公式搜索→冻结候选→MDB 独立评分；合成沉降速度与净受力探针在训练/ID/OOD均通过数值及符号等价。三角洲供沙与陆侧平原仍按下述任务推进，工具接通不算地形验收完成。
+
+当前状态与接续入口：[河口三角洲最新进度（2026-10-16）](docs/delta-progress-handoff-20261016.md)。已验收有限同源供沙与逐日床变/正常流反馈：84节点、365日，实际交付67932.416m³固体，原陆地净沉积146.054m³/4500m²；59项测试和14个子测试通过。此例只延入陆侧约99m，大范围陆侧设计平原任务10仍在实施，不能凭小范围沉积标完成。唯一GPT-6.1-Sol编程、主协调审查；不再使用DeepSeek。结果、准稳态限制与原档入口见进度文档，原16km场景和旧演化结果保留。
+
+湖泊可作为入湖河段终点及出湖河段起点，简化河→湖→河已支持；鄱阳湖式完整干流侧接、顶托倒灌与湖内泥沙尚未接通。入湖口、汇流、冲积扇、宽谷、沙洲等复用评估见[河湖与泥沙评估](docs/lake-sediment-reuse-and-topology-review-20261016.md)。下列旧三角洲运行段落保留历史记录，以最新进度为准。
+
+工程地图：[交互总览](docs/river-engineering-map.html) · [可编辑源文档](docs/river-engineering-map.md)。Markmap 已安装为工程本地工具，修改源文档后按[使用说明](tools/markmap/README.md)重新生成。
+
+当前对话移交：[成果与设计方向可视化记录（2026-10-15）](docs/river-visual-overview-handoff-20261015.md)。包含现有成果入口、二维/三维顺序及 Markmap 安装接续说明。
+
+当前验收：v6水路由修复已通过连续4步/2+2恢复证明，并从冻结v5/4096正式续至4224后正常退出。材料/原床通过；本批lost约3.22e−6m³，但几何连陆750m²、岸进25m、持续双支false，实际连续干露连陆0，整体三角洲尚未完成。本128步全海域净增31121m³，同时固定参考近海平面带净冲刷6454m³，需据实际区域变化与原始论文决定下一对照，不自动延长运行或更改门槛。证据见[任务17](.scratch/hydrological-planning-domain/issues/17-water-routing-continuous-evolution.md)。
+
+DeepSeek已完成[4步扩散消融](.scratch/deepseek-harness/issues/04-delta-diffusion-ablation.md)及[128步独立对照](.scratch/deepseek-harness/issues/05-delta-diffusion-128-step.md)。同4224父点至4352，开启/关闭扩散的固定近SL区域净变化分别为−6514.86/−3156.83m³，几何连陆775/750m²，实际连续干露连陆均0、持续分汊均false。材料检查通过，但关闭扩散未解决形态。所有诊断另存且不可恢复，正式链保持4224；[已有实体河床采样](.scratch/deepseek-harness/issues/06-saved-bed-grid.md)29项检查通过，[真实接海定位](.scratch/deepseek-harness/issues/07-saved-bed-mouth.md)已读出14.14km中心线，14153点无未知：实际床约8.242km过零，约8.323km进入父30m海洋标签。同plan单河来水提取结果如下。只保留一名子智能体负责DeepSeek派发、机械集成和运行，主协调审查。
+
+[同源单河来水提取](.scratch/deepseek-harness/issues/08-saved-river-seasonal-supply.md)已实现并验收，9项检查通过。8470上游25格/2500km²，365天Q范围31.06至109.90m³/s、均值62.54m³/s；该河段占8600海口全年水量35.22%，其余支流独立记账。七口逐日核账最大差2.24e−8m³，月界土壤差0，源文件未变。数据在`.scratch/hydrological-planning-domain/saved-river-seasonal-supply-20261016-01/`。下一步核对实际8m断面与近岸水位，接入保留河床的初始化，并补同源输沙；尚未完成水沙耦合或16km连续三角洲。
+
+用户最新允许夸张三角洲/湿地，[风格化连续河口湿地](.scratch/deepseek-harness/issues/09-stylized-river-mouth-wetland.md)已完成首版并通过主协调实际图审：16km×16km、20m、800×800，真实河口/保存河床纵剖/同源季节Q为基础，主河展宽并构造三支水道、不规则浅湾和岛洲。最终成果在`.scratch/hydrological-planning-domain/stylized-mouth-16km-20261016-02/`，含实际床面、水面、水深、总图、细节及前后对照。3项聚焦测试通过，上游接海及三支内部D4连通通过，36条源hash未变。平台内核92.03%为连通水，识别出5个独立干岛，属于浅水岛湾风格；挖填独立记账，不称为旧自然演化验收通过。DeepSeek编写，唯一子智能体集成运行，主协调审查并查看三张实际图。
+
+用户进一步指出三角洲应包含原河口陆地；[陆侧三角洲平原任务10](.scratch/deepseek-harness/issues/10-landward-delta-plain.md)已完成只读库存、尚未实现。口前2km旧床171.94m而场景base26.16m，需先协调高程、保留上游参考并明确过渡段，再将分汊和低平原延入陆地。此前海侧01/02保留，无scene03。DeepSeek编写，唯一子智能体集成运行，主协调审查。
+
+[统一上游供沙任务11](.scratch/deepseek-harness/issues/11-upstream-sediment-supply.md)已登记、尚未实现：硬度/可蚀材料和水流共同确定侵蚀与输沙，沿程沉积滞留单独记账，河口仅消费实际出口交付。优先库存同源材料、水力及现有输沙模块的接口，避免把Q或河槽挖方直接当作河口泥沙；低供沙可无明显三角洲。湖口、汇流和内陆复用以及未来袭夺的拓扑/域边界更新已写入进度快照，尚未派发这些扩展。
+
+2026-10-16用户要求实施[三角洲完成路线](docs/delta-completion-plan-20261016.md)：先完成[水路由修复与连续演化（任务17）](.scratch/hydrological-planning-domain/issues/17-water-routing-continuous-evolution.md)，再解决连陆生长、稳定分汊并建设连续16km河口场景。此前16km范围示意图不满足用户请求，不算三角洲交付。
+
+- [x] 完成[河流主导三角洲有限机制首版](.scratch/hydrological-planning-domain/issues/13-fluvial-delta.md)：TD海口32阶段水沙与床面反馈通过；真实TD仍为水下沉积，合成浅水例验证出露。尚非成熟细河槽三角洲，见[结果与预览](docs/td-fluvial-delta-20261015.md)。
+- [x] 实现[局部细化与覆盖层再侵蚀](docs/td-fluvial-remobilization-20261015.md)：TD 海口 5 m 栅格、16 阶段水沙与库存冷读通过，累计再侵蚀735.637 m³，清水最大净降床0.8 m；合成淤堵失败保留。
+- [x] 完成[实际连续分汊床与有界近岸衔接](.scratch/hydrological-planning-domain/issues/15-fluvial-distributary-bed.md)有限验收：合成/TD各96阶段，TD主槽30m、两支670/700m，连续3阶段真实床面与材料冷读通过；33项关键回归全过。[报告与图集](docs/td-fluvial-distributary-20261015.md)。近岸供材单独计账，旧覆盖层gate仍false。
+- [ ] 实施[河流主导二维水沙演化与连片沉积体](.scratch/hydrological-planning-domain/issues/16-fluvial-delta-morphodynamics.md)：v3已修新增陡崖，v5已修实际交换舍入并跑完4096；几何连陆1100m²、岸进40m、持续双支仍未过，现定位末期路由预算耗尽与水场异常。旧失败保留。[报告与图集](docs/td-fluvial-morphodynamics-20261015.md)。用户要求继续完成三角洲、不限时间。
+- [ ] 三角洲潮汐下一版：河流主导版验收后先与用户讨论，再实施潮汐及其水沙交换。
+- [ ] 三角洲波浪作用：后续加入波浪搬运、沿岸输沙及岸线重塑；当前河流主导版不实施。
+- [ ] 接入 DeepSeek 任务派发：已通过用户配置的阿里云 deepseek-v4.1-flash 真实派发并集成[首个三角洲代码任务](.scratch/deepseek-harness/issues/02-delta-inlet-weights.md)，相关12项测试通过；[任务、回复、返工与验收记录](.scratch/deepseek-harness/tasks/delta-inlet-weights-20261016-01/conversation.md)已落盘。已有[本地配置窗口](.scratch/deepseek-harness/README.md#本地配置窗口)。MCP 注册、统一历史界面与自主代码执行尚未完成；现由协调方审查、落盘和测试。
+
+- [x] 实现[汇流流量、岩性与河槽宽深](.scratch/hydrological-planning-domain/issues/12-discharge-rock-channel-geometry.md)：同源38.4km产物13项检查通过，209处汇流增流、204处展宽、207处加深；[断面、粗栅格限制及三角洲讨论起点](docs/td-discharge-rock-channel-geometry-20261015.md)。
+
+- [x] 完成[季节背景与短时强降雨联动](.scratch/hydrological-planning-domain/issues/11-seasonal-storm-response.md)：同源38.4km TD地形72小时强雨情景及22项产物检查通过，季节河道虚线展示；[结果与剩余问题](docs/td-lowland-runoff-20261014.md)。
+
+- [x] 实现[低地径流承接与可见河道分离](.scratch/hydrological-planning-domain/issues/10-lowland-runoff-receivers.md)：同一38.4km TD大图低地河道密度含季节性下降43.30%，保留完整产流水量和主干连续性，非河道承接对象同等沿地形接纳；11项关键测试及31项冷读检查通过。[本轮报告](docs/td-lowland-runoff-20261014.md)保留未校准、未达周期稳定和未解终点限制。
+
+- [x] 修复[38.4km大图粗标签矩形截河](.scratch/hydrological-planning-domain/issues/09-remove-coarse-label-walls.md)：原生TD汇水重规划移除64个内部人工端口，64/64个问题位置均有300m内继续下游路径；汇流400、最长连续路径66.142km。产物与图审见[原生重规划报告](docs/td-large-map-native-replan-20261014.md)。仍保留窗口外未知和5个深洼，不代表完整水文域、自然河床或无限地图完成。
+
+2026-10-13 已完成本轮河槽修复增量与六源关键验收，未重复全套测试；见[最终报告](docs/td-river-shape-repair-20261013-final.md)。恢复、失败和参考采用历史保留。
+
+- [ ] 实施用户已确认的[水文规划域首版](.scratch/hydrological-planning-domain/spec.md)：共享山脊的海岸/内流双域，全域粗规划、局部TD细化、12月水账及算法可视化验收；Minecraft接入后置。
+- [x] 完成[有限规划与归属查询](.scratch/hydrological-planning-domain/issues/02-bounded-planning.md)：35个成功支持区、14个明确拒绝，固定依赖清册与实际排水检查；不代表全世界覆盖。
+- [x] 完成[首例季节水量循环](.scratch/hydrological-planning-domain/issues/03-seasonal-water.md)：日/半日周期轨迹与冷审通过；保留旧候选水量失败。
+- [ ] 完成[真实TD细化与图审](.scratch/hydrological-planning-domain/issues/04-td-detail-review.md)：现行v5开发样例的完整10km普通河段20片、14.142km海口29片、4.888km三臂联合床面及实际细粗接口已通过；459个已归属粗单元通向合法终点，粗纵剖面连续。v5局部混合湖的周期与190个临界水位连通通过。固定12槽多种子审查已确认地形条带、矩形平整区和部分真实约束拒绝，自然度不通过，不能授予成熟发布。执行结果与开发候选冻结见[河网本体完成任务](.scratch/hydrological-planning-domain/issues/05-algorithm-completion.md)和[实施记录](docs/hydrological-planning-domain-progress.md)；保持低资源，Minecraft后置。
+- [ ] 后续研究[严格条件下的跨水文域地下连接](.scratch/hydrological-planning-domain/issues/01-future-cross-domain-underground.md)。用户已要求登记；当前仍禁止跨域，暗河后续先限域内。跨域条件须明确水量交换、有限依赖及独立性变化，不能把已连通域继续称为完全独立。
+- [ ] 接续[固定 TD 自然度与床面失败修复](.scratch/hydrological-planning-domain/issues/06-td-naturalness-improvement.md)：调和边界位移目标与采样横断面包络已实现，固定 seed29 普通河段宏观改写量下降约35%；原失败位置60m及同一完整窗口4.04km、9/9段细床和接缝已实际生成并冷审通过。残留条带处理见[本轮同源报告](docs/td-hydrology-naturalness-improvement-20261014.md)。自然度仍未通过，旧冻结候选不升级发布。
+
+## 2026-10-12 先修实际河槽形态
+
+- [x] 完成本轮实际河槽修复增量及六源同源生成、独立冷读和78张固定图审查；22569条接受边完整保留，普通折角及底部整体改善。见[本轮任务](.scratch/td-river-shape-repair/spec.md)。
+- [ ] 继续处理残余汇流折角、局部不对称/谷侧偏位和形态单一，补宽深参数与现实尺度参考；本轮增量完成不表示所有形态问题清零。
+- [x] 本轮河槽修复后已开始水文规划域；设计基线保留在 CONTEXT.md，当前实施状态见顶部任务。
+
+## 2026-10-11 基于 TD 地形实际生成
+
+- [x] 贯通全部六份固定原始 TD 地形、噪波降雨、河网与实际河槽；22569/27336 条候选河段生成，4767 条真实超预算拒绝，最终全六独立冷读通过。见[实际生成记录](docs/td-terrain-generated-rivers-20261011.md)。
+- [x] 保存原地形/生成网/床面变化及来源，完成全六独立检查与固定视角审查；[最终图集](verification/td-terrain-generated-rivers/generated-20261011-04/render/index.html)保留实际折角、窄槽和拒绝区域，具体分工及验收见[本轮任务](.scratch/td-terrain-generated-rivers/spec.md)。
+- [ ] 本轮已降低实际几何的普通折角并改善底部；仍需改善汇流与局部形态，补足超预算洼地的湖泊/溢流和匹配尺度的现实参考验证。六源数值审核通过尚不等于贴近现实的河流生成目标完成。
+
+## 2026-10-11 TD 自然河网阶段 0–5
+
+- [x] 阶段 0–5 本轮有限实现、独立审查、评价证伪与只读交付完成；见[最终报告](docs/td-natural-river-stages-0-5-20261011-final.md)及[验收矩阵](.scratch/td-natural-river-stages/spec.md)。主协调审查，三名 GPT-6.1 Sol 编写。
+- [x] 按用户建议接入噪波气候与天气强度场，月序列派生 BIO，实际贯通原生降雨—土壤—河湖水账；12 个正式气候检查通过。
+- [x] 509 块真实参考与两独立种子正式留出：12 窗口 10 通过/2 拒绝，6 组 5 通过/1 拒绝；不按结果调门槛，保留真实失败。
+- [x] 原活动泥沙完整 900 秒空间/时间验收：128/256 级通过；最终 2048 节点正常 worker 536.16 秒、318 MiB，通过 600 秒/1 GiB，旧粗网格和恢复链资源失败保留。
+- [x] 最终 14 份补充报告绑定只读页，桌面/手机的交互、完整导出、失效清理与布局通过。
+- [ ] 全域自然可信与发布认证仍未授予；形态保持候选，独立留出拒绝区域不在已通过观测覆盖内。一般动态拓扑、含湖床反馈与 Minecraft 消费不属于本轮已认证能力。
+
+历史阶段报告保留：[阶段 0–2](docs/td-natural-river-stages-0-2-20261011.md)、[阶段 3–5 原批次](docs/td-natural-river-stages-3-5-20261011.md)、[阶段 4 旧剩余项](docs/td-natural-river-stage4-remainder-20261011.md)。旧失败不由新状态覆盖。
+
+## 2026-10-11 河网 P1 修复
+
+- [x] 明确河道床高、几何距离和坡度关系，同时修复构造、冷读与相关调用；65 项河道回归和旧版同源几何读取通过。
+- [x] 新审查发布包直接消费依赖自包含，支持离开原仓库后读取，保留旧版证据与既有前端入口；新包位于 `verification/td-river-release/portable-p1-20261011-01/`。
+
+范围与验收见 [.scratch/river-p1-correctness/spec.md](.scratch/river-p1-correctness/spec.md)。本轮仅修复物理身份和交付依赖，不提升自然出口或全域水力认证状态。
+
+## 2026-10-10 河网成果闭环与自然路径
+
+- [x] 默认验收展示真实 TD 河槽、原床/加工床/切深对比、断面及同源侵蚀沉积时间记录，保留 M7 诊断入口。
+- [x] 将原床约束中心线接入实际共享河床生成，保存真实 TD 前后结果并接入成果页；全域 50 条 owner-divide 拒绝继续单列。
+
+任务与验收见 [.scratch/river-results-loop/spec.md](.scratch/river-results-loop/spec.md)。本节区分可见成果交付与此前 M8 审查包完成状态。
+
+## 2026-10-10 河网验收默认输入
+
+- [x] 前端河网验收默认使用已保存的 Terrain Diffusion 原始地形及同源 M7/M8 成果，显示实际来源；保留旧工程对照和显式页面链接。
+
+范围与验证见 [.scratch/td-river-default/spec.md](.scratch/td-river-default/spec.md)。本项只修改默认入口和来源展示，不改变算法或既有验收状态。
+
+## 2026-10-10 M7 / M8 接续
+
+- [x] M7 限定实现：同一保存 TD 河段上的原生、均匀及固定一维局部细化，三种精度水沙均完成900s，实际交换、回粗守恒、差异指标与独立冷审通过；空间收敛未决。
+- [x] M8 最终审查包：持久化绑定 M5/M6/自然谷地成果，来源与门禁、保存后冷读、前端六案例、断面、900s 水沙、WebGL 和导出均通过；全域发布仍未通过。
+
+本轮按用户最新指示推进，具体范围见 [.scratch/m7-m8/spec.md](.scratch/m7-m8/spec.md)，实测与限制见 [验收记录](docs/td-river-m7-m8-20261010.md)。一维河段细化不等于全域二维 AMR；11/13、含湖床变反馈、CRS 和自然出口未通过的门禁继续保留。
 
 ## 2026-10-09 河网主线分类与形态事件
 
@@ -25,7 +322,7 @@
 
 ## 长期路线图接入
 
-长期阶段计划见 [`Terragenesis河流地貌长期路线图.md`](Terragenesis河流地貌长期路线图.md)，任务记录见 [.scratch/td-river-blueprint/issues/14-long-term-roadmap-integration.md](.scratch/td-river-blueprint/issues/14-long-term-roadmap-integration.md)。该路线图现在作为阶段依赖、状态命名和验收门槛的上位计划：阶段0–1对应 M0–M2，阶段2–3对应 M3–M4，阶段5对应 M6/12 的有界反馈，阶段9对应 Terraindiffusion 条件地形，阶段10对应 M7 多分辨率交换与发布审查。
+历史长期阶段计划已移至 [归档路线图](deprecated-plans/Terragenesis河流地貌长期路线图.md)，原任务记录见 [.scratch/td-river-blueprint/issues/14-long-term-roadmap-integration.md](.scratch/td-river-blueprint/issues/14-long-term-roadmap-integration.md)。下列旧阶段映射只作历史记录，不再作为上位计划；可复用的验收要求见[旧规划提炼与四阶段映射](docs/legacy-river-plan-takeaways-20261022.md)。当前开发仅遵循[四阶段总览](docs/terrain-diffusion-four-stage-roadmap.md)。
 
 - [x] 接入长期路线图，保留其对主线冻结、真实调用链、单位/时间语义、未知边界和渲染层限制的约束。
 - [ ] 完成 13 全域几何后，按路线图阶段10启动 M7；阶段4一般分流、阶段6–8曲流/三角洲/局部三维岩体仍排在后续路线。
@@ -34,7 +331,8 @@
 
 - [ ] 继续补充[11天然湖盆/回水](.scratch/td-river-blueprint/issues/11-natural-lake-merging-and-backwater.md)：TD256 2/.5 秒失败包保留；`.5/.125` 真实共同水面细化已通过固定1mm门槛，但仍限六叶瞬时平衡范围。
 - [x] 11 的 `.5/.125` 真实共同水面细化已通过固定 1mm 门槛，stage 差 0.539420mm；仅接受 TD256 六叶有限瞬时平衡范围，issue 仍开放。
-- [ ] 继续补充[13全域谷地河槽](.scratch/td-river-blueprint/issues/13-global-valley-channel-geometry.md)：45/45组件和623/673边已通过 tiled 冷审；50边全部因 owner divide 拒绝，27条中心线本身跨 owner、23条最小合法半径仍跨 owner，failure-prefix 保留，必须通过合法重路由或明确 scope exclusion。
+- [x] [13全域谷地河槽](.scratch/td-river-blueprint/issues/13-global-valley-channel-geometry.md)已完成本轮范围划分并接入前端全域覆盖页：45/45组件和623/673边通过 tiled 冷审；本轮排除既有50条 owner-divide 拒绝边。27条中心线支撑跨 owner，50条在原半径0.1倍诊断下仍跨 owner；重路由未评估，母集仍不完整。原始 failure-prefix 和新 scope-exclusion 证据均保留。
+- [ ] 继续补充13的全域覆盖：只有合法重路由或重新声明覆盖集后，才能把623/673提升为完整全域几何；当前发布标志保持 false。
 - [x] [12床变几何/水力重耦合](.scratch/td-river-blueprint/issues/12-morphology-recoupling.md)受限无湖范围验收完成；含湖、全域和拓扑变化仍依赖11/13。
 - [ ] 上述11/13实际验收后再开始[09 M7多精度交换](.scratch/td-river-blueprint/issues/09-resolution-exchange.md)。旧M3–M6限定验收有效，但本轮补充未完成项不能被旧证据覆盖。
 
@@ -68,7 +366,7 @@
 
 ## 2026-10-07 按 Claude TD 河网实施建议接续
 
-- [x] 按[用户指定实施蓝图](Terraindiffusion河网算法完整实施建议.md)完成第一轮 A-F，见[报告与真实TD证据](docs/td-river-blueprint-first-round-20261007.md)：四契约、原床D8、边界/产流适配、保存冷读及68项新旧测试通过；全域输入147456m³，残差−2.51e−10m³。450个闭合候选保留，不作为湖面或河道水力；三个诊断预览已生成。
+- [x] 按[用户指定实施蓝图（现已归档）](deprecated-plans/Terraindiffusion河网算法完整实施建议.md)完成第一轮 A-F，见[报告与真实TD证据](docs/td-river-blueprint-first-round-20261007.md)：四契约、原床D8、边界/产流适配、保存冷读及68项新旧测试通过；全域输入147456m³，残差−2.51e−10m³。450个闭合候选保留，不作为湖面或河道水力；三个诊断预览已生成。
 - [ ] 按[阶段规格与依赖任务](.scratch/td-river-blueprint/spec.md)继续M7-M8；来源/tile、排水政策/forcing及M3-M6限定基线已在10月8日完成，之后为多精度、天然湖盆/回水、床变反馈与全域几何扩展。水力/自然口/发布标志保持false，CRS缺失保持pending_provenance。主协调负责审查、发布与验收；用户已指定GPT-6 Sol实施、同时最多3智能体含主协调。既有地下接回工作保留为独立任务。
 
 ## 2026-10-07 河网算法主线接续
@@ -79,7 +377,7 @@
 
 ## 2026-10-07 动态河网渲染后续审查
 
-- [ ] 按[动态河网渲染审查任务](.scratch/frontend-review/issues/03-dynamic-river-renderer-review.md)核对模块职责、`signedEdgeQ` 与箭头端点方向、初始状态与保存区间语义、三维诊断叠加限制、`window.surfaceRenderer.flowInterval()` 与点选兼容性，并评估二维网格/河网绘制/选择投影是否需要进一步拆分。
+- [x] 按[动态河网渲染审查任务](.scratch/frontend-review/issues/03-dynamic-river-renderer-review.md)完成六项审查；2026-10-10 M8 桌面/移动端再次验证，修复床面河段点选、无参数 `flowInterval()` 和切换时间后的旧选择，保留诊断限制，不额外拆分模块。
 - [x] 基于固定 Terrain Diffusion 地形生成静态自然河网候选并完成独立只读审计；交付目录为 `verification/natural-river-network/td-claude-review-20261007-01/`。当前仅有小沟候选，全部河段需细化，水力、自然出口和发布标志保持 false。
 
 ## 2026-10-06 地下暗河 V1 与前端交付
@@ -448,6 +746,10 @@
 
 ## 支持多种基础地形算法
 
+2026-11-03 用户补充：基于 Runevision Advanced Terrain Erosion Filter 继续发展有辨识度的山体形态，参考 Yosemite、落基山脉及贡嘎群山，尤其贡嘎主峰。目标包括峰形、岩壁、刃脊、谷地和岩体结构；沟壑滤镜作为组合环节。详见[山体形态规格](.scratch/mountain-morphology/spec.md)与[一手资料研究](research/runevision-erosion-primary-sources-2026-11-03.md)。共用种子引用 [CONTRIBUTING.md](CONTRIBUTING.md#共用世界种子用户更新2026-11-03)；旧冻结产物按原种子复验。
+
+- [ ] 独立山体后端已实现首轮候选：世界坐标噪波 → Advanced底座 → 区域处理噪波，三类及混合场；固定`20260903`，高度图仅为采样输出。继续按[评价标准](无限世界地形生成评价标准.md)审查自然度、性能和世界接线；原始源码/许可已保存在`third_party/runevision_advanced_terrain_erosion/`。详见[实施与验收](.scratch/mountain-morphology/implementation-review.md)，[下一步形态深化](.scratch/mountain-morphology/issues/04-shape-refinement.md)。已按用户批准增加[Voronoi结构与沟槽保护](.scratch/mountain-voronoi/review.md)，提供同址三场、近远基准与路由变化证据；沟槽核心高程保留不等于河网保留，形态仍待深化。有限路由/扩散/冰川复用不等于整山耦合，尚未替换默认TD来源。
+
 2026-09-28 补充：将 Terrain Diffusion 作为可替换基础高程后端，工程主体负责地理条件、流域校正、侵蚀、VDM 和 Minecraft 导入。优先跑通可靠版本，再增加独立程序化后端对照，不立即从零训练同等级扩散模型。
 
 - [ ] 程序化基础后端：大陆/海陆、山脉骨架、噪声细节与侵蚀输出统一高程数据；和 Terrain Diffusion 使用相同种子/坐标约定及验收指标。
@@ -519,3 +821,13 @@
 
 The next 8-10 hour round follows `.scratch/terrain-framework/long-round-surface-network-plan.md` and `.scratch/terrain-framework/long-round-execution-checklist.md`: real DEM outlet classification, tiled topology, rainfall routing, read-only review export, then gated 3D river geometry.
 - **2026-10-02 v3 全域普通雨审计**：`A-storage-v3-ordinary-5s-20261002T001500Z` 只有输入索引，没有水力输出；已写 `incomplete.json` 与 `independent-audit.json` 明确拒绝残留冒充完成。v3 全域 ordinary/strong 门禁未通过，所有 `hydraulic_ready/transient_converged/publishable` flags 保持 false。
+
+- Task11 upstream sediment connector: completed artifact same-source-20261016-04; frozen-water approximation and 1.089495 m mouth interface bed mismatch documented in summary.json.
+
+**2026-10-31 世界尺度验收要求纠正，主图未交付。** 已核对10月初TD联合图与既有Nacrea双风格地图入口；13张局部图保留为辅助证据，任务改为partial。后续复用已有渲染器，补世界概览TD来源、粗细尺度水文与同世界环境联算，不能用条件图或放大局部图代替。[历史核对](.scratch/world-scale-acceptance-20261031/history-review.md) · [世界尺度任务及四阶段状态](.scratch/world-scale-acceptance-20261031/spec.md)。宏观基底已有世界范围；TD合成、汇流/盆地、河湖/必要高程调整已有局部成果，世界联合覆盖未完成。本轮未重跑生成或求解。
+
+**2026-10-31 一、二阶段遥感式成果图集交付。** 新增13图：42km TD/组合地形、现行不规则河网与模型湖泊、派生床和未知边界、G3月际温度、实算G4降水、雪/水/土壤/生态与有限过程、最新三角洲及同址G6多算法联合。入口 `tools/render_project_acceptance.py`；3项定向检查通过，两位GPT-6.1 Terra核对来源与覆盖，未知上游遗漏已修正。[用户图集](验收图片/遥感式验收-20261031/README.md) · [任务与证据](.scratch/project-remote-acceptance-20261031/spec.md) · [后续验收规范](docs/remote-sensing-acceptance.md)。所有新验收图需绑定TD生成地形，优先同图联合算法；季节不称长期气候，构造三角洲不称自然自发成形。宏观基底→TD合成→汇流/盆地→河湖/派生高程本轮读取既有结果，另做G4一小时CPU对照；不扩大算法认证，袭夺暂停。
+
+
+
+

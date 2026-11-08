@@ -1,0 +1,127 @@
+{
+  "schema": "zero-reference-tool-archive-v1",
+  "schema_extensions": "archive_path 为仓库相对完整路径；增加 sha256_after_move、text_references_by_category、archive_reason、r0_verdict",
+  "created": "2026-11-05",
+  "batch": "R1-1-surface-moment",
+  "description": "surface_moment 三件套及其测试（用户已决归档）",
+  "scope": "R1 低风险归档：SHA pin=0、无活跃 import、与快照 zip 字节一致；只移动不改内容。回退依据 dist/Terragenesis-algorithms-20261105.zip（SHA256 70D6346311A3CEBE4E1BD7FB7152295D1A65C93561359800E54F779F1BA4149C）。",
+  "manifest_sha256_note": "Per-file SHA256 below is the pinned trust anchor; verify before use.",
+  "files": [
+    {
+      "source_path": "terrain_pipeline/surface_moment_execution.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-1-surface-moment/terrain_pipeline/surface_moment_execution.py",
+      "bytes": 4650,
+      "sha256": "a5556238f8578bd678056eed2ea34dbf1d94598b042b22a5908d626e9274be25",
+      "sha256_after_move": "a5556238f8578bd678056eed2ea34dbf1d94598b042b22a5908d626e9274be25",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4,
+        "accept": 3
+      },
+      "archive_reason": "surface_moment 三件套及其测试（用户已决归档）",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "basin A1 / 用户已决:归档",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#terrain_pipeline/surface_moment_execution.py",
+        "info": [
+          "accept 提及 3 处",
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "terrain_pipeline/surface_moment_hydraulics.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-1-surface-moment/terrain_pipeline/surface_moment_hydraulics.py",
+      "bytes": 11560,
+      "sha256": "afa8a935cdfe0565b2307dba9b72f27981ae56b7356a1e3e93d3b4ceffe5673d",
+      "sha256_after_move": "afa8a935cdfe0565b2307dba9b72f27981ae56b7356a1e3e93d3b4ceffe5673d",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "scratch_doc": 1,
+        "docs_gen": 4,
+        "accept": 3
+      },
+      "archive_reason": "surface_moment 三件套及其测试（用户已决归档）",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "basin A2 / 用户已决:归档",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#terrain_pipeline/surface_moment_hydraulics.py",
+        "info": [
+          "accept 提及 3 处",
+          "docs_gen 提及 4 处",
+          "scratch_doc 提及 1 处"
+        ]
+      }
+    },
+    {
+      "source_path": "terrain_pipeline/surface_moment_storage.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-1-surface-moment/terrain_pipeline/surface_moment_storage.py",
+      "bytes": 5689,
+      "sha256": "3a3517f0ffad60f66e90c7ebc4f9a154d2296ae440cd42583d3f56a13148b216",
+      "sha256_after_move": "3a3517f0ffad60f66e90c7ebc4f9a154d2296ae440cd42583d3f56a13148b216",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "scratch_doc": 1,
+        "docs_gen": 4,
+        "accept": 3
+      },
+      "archive_reason": "surface_moment 三件套及其测试（用户已决归档）",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "basin A3 / 用户已决:归档",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#terrain_pipeline/surface_moment_storage.py",
+        "info": [
+          "accept 提及 3 处",
+          "docs_gen 提及 4 处",
+          "scratch_doc 提及 1 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tests/test_surface_moment_hydraulics.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-1-surface-moment/tests/test_surface_moment_hydraulics.py",
+      "bytes": 4862,
+      "sha256": "6363526f26b328078a04a34a7eb7e150d0845e67c77e8703e11319eb21e0f12f",
+      "sha256_after_move": "6363526f26b328078a04a34a7eb7e150d0845e67c77e8703e11319eb21e0f12f",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "surface_moment 三件套及其测试（用户已决归档）",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "basin A:配套测试 / 用户已决:归档",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tests/test_surface_moment_hydraulics.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    },
+    {
+      "source_path": "tests/test_surface_moment_storage.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-1-surface-moment/tests/test_surface_moment_storage.py",
+      "bytes": 5426,
+      "sha256": "447d020c73ac8f64cc20fe60e929d1cf705586e0c0ccc801399a8d23bbea5a1e",
+      "sha256_after_move": "447d020c73ac8f64cc20fe60e929d1cf705586e0c0ccc801399a8d23bbea5a1e",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "surface_moment 三件套及其测试（用户已决归档）",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "basin A:配套测试 / 用户已决:归档",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tests/test_surface_moment_storage.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    }
+  ],
+  "not_moved": []
+}

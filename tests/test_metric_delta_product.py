@@ -5,15 +5,16 @@ from pathlib import Path
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.surface_rivers.metric_contracts import TerrainGrid
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.common_infra import TerrainGrid
 from terrain_pipeline.surface_rivers.metric_delta import DeltaConfig, build_delta_candidate
 from terrain_pipeline.surface_rivers.metric_delta_product import (
     build_delta_candidate_product,
     load_delta_candidate_product,
     validate_delta_candidate_product,
 )
-from terrain_pipeline.td_basin_source import PRIMARY_PATH, load_td_source
+from terrain_pipeline.basin_storage import PRIMARY_PATH as PRIMARY_PATH
+from terrain_pipeline.basin_storage import load_td_source as load_td_source
 
 
 class DeltaCandidateProductTests(unittest.TestCase):
@@ -65,10 +66,32 @@ class DeltaCandidateProductTests(unittest.TestCase):
         changed["metadata"]["event_record"]["parameters"]["candidate_count"] = 0
         with self.assertRaises(ValueError):
             validate_delta_candidate_product(changed)
+
         changed = copy.deepcopy(product)
         changed["metadata"]["capabilities"]["publishable"] = True
         with self.assertRaises(ValueError):
             validate_delta_candidate_product(changed)
+
+    def test_boundary_provenance_rejects_rehashed_certification_and_reads_legacy(self):
+        product = build_delta_candidate_product(self.terrain, self.land, self.water, self.path, 10.,
+                                                 "b" * 64, "c" * 64, self.config)
+        evidence = product["metadata"]["boundary_evidence"]
+        self.assertEqual(evidence["land_water_classification"], "caller_supplied_unverified")
+        self.assertIn("outlet", evidence["revalidation_required"])
+        changed = copy.deepcopy(product)
+        changed["metadata"]["boundary_evidence"]["natural_outlet_verified"] = True
+        changed["identity_sha256"] = identity(changed["arrays"], changed["metadata"])
+        with self.assertRaisesRegex(ValueError, "cannot certify"):
+            validate_delta_candidate_product(changed)
+        legacy = copy.deepcopy(product)
+        del legacy["metadata"]["boundary_evidence"]
+        legacy["identity_sha256"] = identity(legacy["arrays"], legacy["metadata"])
+        with self.assertRaises(ValueError):
+            validate_delta_candidate_product(legacy)
+        legacy["metadata"]["schema"] = "terragenesis-delta-candidate-product-v1"
+        legacy["identity_sha256"] = identity(legacy["arrays"], legacy["metadata"])
+        self.assertTrue(validate_delta_candidate_product(legacy))
+        self.assertFalse(legacy["metadata"]["capabilities"]["natural_outlet"])
 
     def test_zero_candidate_paths_cold_read(self):
         land = np.zeros((2, 2), dtype=bool)

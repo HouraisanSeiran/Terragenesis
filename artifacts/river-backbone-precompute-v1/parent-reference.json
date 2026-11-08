@@ -1,0 +1,86 @@
+{
+  "assembly_digest": "a2ff1016408850fe33b795d574191f7577410754148240cd7af59ce7c755a91e",
+  "origin_native_xz": [
+    42173,
+    42874
+  ],
+  "parent_identity_pinned": true,
+  "parent_identity_sha256": "9caa2919516eef5e15ade1438caf044b89ba3e6fa2154a0307515cd72cac342b",
+  "parent_schema": "metric-world-domain-candidates-v1",
+  "plan_version": 1,
+  "schema": "river-backbone-parent-reference-v1",
+  "shape_zx": [
+    385,
+    385
+  ],
+  "source_records": [
+    {
+      "native_origin_xz": [
+        41981,
+        41364
+      ],
+      "page_key": "p00",
+      "path": ".scratch\\fine-terrain-40km\\td-pages\\td-page-41981-41364-2049.npz",
+      "schema": "td-native-page-v1",
+      "sha256": "7fcfc426d970cbe9b77cb4221661b1f5f8001d7a3f6b06189041a3f01d1a7142",
+      "shape_zx": [
+        2049,
+        2049
+      ],
+      "spacing_m": 30.0,
+      "world_seed": 20261020
+    },
+    {
+      "native_origin_xz": [
+        41981,
+        43364
+      ],
+      "page_key": "p01",
+      "path": ".scratch\\fine-terrain-40km\\td-pages\\td-page-41981-43364-2049.npz",
+      "schema": "td-native-page-v1",
+      "sha256": "efeb11a0f4db4f32b042a14d18615659cf2f73ea00b6fb3a28bc53536847b1a3",
+      "shape_zx": [
+        2049,
+        2049
+      ],
+      "spacing_m": 30.0,
+      "world_seed": 20261020
+    },
+    {
+      "native_origin_xz": [
+        43981,
+        41364
+      ],
+      "page_key": "p02",
+      "path": ".scratch\\fine-terrain-40km\\td-pages\\td-page-43981-41364-2049.npz",
+      "schema": "td-native-page-v1",
+      "sha256": "6bf2594c3796466764e66ed44cfe06d951b77bef705eec71553262dc9a0ebcaf",
+      "shape_zx": [
+        2049,
+        2049
+      ],
+      "spacing_m": 30.0,
+      "world_seed": 20261020
+    },
+    {
+      "native_origin_xz": [
+        43981,
+        43364
+      ],
+      "page_key": "p03",
+      "path": ".scratch\\fine-terrain-40km\\td-pages\\td-page-43981-43364-2049.npz",
+      "schema": "td-native-page-v1",
+      "sha256": "9b74e605a81246e103c31a799b7486f94bacc76e7bdecb0ec22dc8485061a1d2",
+      "shape_zx": [
+        2049,
+        2049
+      ],
+      "spacing_m": 30.0,
+      "world_seed": 20261020
+    }
+  ],
+  "spacing_m": 30.0,
+  "support_identity_sha256": "71375050ccf4ba8feb32f2cc4254f97a24335da051a1963e023d622a5c91d48b",
+  "support_name": "p2",
+  "world_seed": 20261020
+}

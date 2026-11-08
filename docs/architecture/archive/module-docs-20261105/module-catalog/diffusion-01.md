@@ -1,0 +1,26 @@
+# diffusion 模块表 1
+
+职责原文不代表认证；静态调用者只含Python AST本地导入。完整符号/依赖/hash见 catalog.json。
+
+| 模块 | 类别／阶段 | 职责说明 | 说明依据 | 顶层符号／静态导入者数 |
+| --- | --- | --- | --- | --- |
+| [diffusion/__init__.py](../../../diffusion/__init__.py) | generation-support / shared-or-unmapped | True learned terrain generation; never falls back to procedural mountain shapes. | source-docstring | (无顶层命名声明) / 1 |
+| [diffusion/__main__.py](../../../diffusion/__main__.py) | generation-support / shared-or-unmapped | 职责待人工核对；仅登记可确认的静态结构 | unreviewed | main / 0 |
+| [diffusion/backend.py](../../../diffusion/backend.py) | generation-support / shared-or-unmapped | Pinned upstream model adapter. One seed at a time; caller serializes access. | source-docstring | TerrainDiffusionBackend / 10 |
+| [diffusion/config.py](../../../diffusion/config.py) | generation-support / shared-or-unmapped | Immutable generation identity, shared by cache and runtime protocol. | source-docstring | GenerationConfig / 19 |
+| [diffusion/geographic_noise.py](../../../diffusion/geographic_noise.py) | generation-support / shared-or-unmapped | Tile-independent smooth noise from absolute conditioning-grid coordinates. | source-docstring | _mix, _hash, smooth_noise, field / 13 |
+| [diffusion/geography.py](../../../diffusion/geography.py) | generation-support / shared-or-unmapped | Seeded geographic conditioning for the unchanged five-channel diffusion model. Coordinates are the upstream conditioning grid, not Minecraft blocks. The field is sampled from absolute coordinates so tile order and bound… | source-docstring | _geography, make_geographic_map_factory / 3 |
+| [diffusion/geography_physical.py](../../../diffusion/geography_physical.py) | generation-support / shared-or-unmapped | Coordinate-continuous physical conditioning, not model-generated terrain. | source-docstring | sample_physical, make_physical_map_factory / 9 |
+| [diffusion/geography_v2.py](../../../diffusion/geography_v2.py) | generation-support / shared-or-unmapped | Versioned geographic conditioning with wider, intermittent mountain masses. | source-docstring | _geography, make_geographic_map_factory / 7 |
+| [diffusion/geography_v3.py](../../../diffusion/geography_v3.py) | generation-support / shared-or-unmapped | Versioned low-relief geographic conditioning for the metre-scale consumer. | source-docstring | _geography, make_geographic_map_factory / 4 |
+| [diffusion/geography_v4.py](../../../diffusion/geography_v4.py) | generation-support / shared-or-unmapped | Versioned metre-scale conditioning with bounded ocean depth. | source-docstring | _geography, make_geographic_map_factory / 2 |
+| [diffusion/geography_v5.py](../../../diffusion/geography_v5.py) | generation-support / shared-or-unmapped | Coordinate-continuous soft-knee base conditioning with separate relief. | source-docstring | compress_positive_base, _components, _geography, make_geographic_map_factory / 4 |
+| [diffusion/paths.py](../../../diffusion/paths.py) | generation-support / shared-or-unmapped | Keep runtime, model and derived artifacts under the project root. | source-docstring | configure, inside / 31 |
+| [diffusion/physical_backend.py](../../../diffusion/physical_backend.py) | generation-support / shared-or-unmapped | Opt-in local TD inference; no legacy runtime or game-coordinate conversion. | source-docstring | window_budget, _peak_cuda_mib, _reset_peak_cuda, PhysicalTerrainDiffusionBackend / 11 |
+| [diffusion/physical_config.py](../../../diffusion/physical_config.py) | generation-support / shared-or-unmapped | Independent metre-space identity; never a Minecraft generation profile. | source-docstring | PhysicalGenerationConfig, main / 20 |
+| [diffusion/preview.py](../../../diffusion/preview.py) | generation-support / shared-or-unmapped | Export unmodified model output, slope and provenance before any erosion. | source-docstring | export / 1 |
+| [diffusion/service.py](../../../diffusion/service.py) | generation-support / shared-or-unmapped | Serialized model access, bounded HTTP protocol; raw meters remain in persistent cache. | source-docstring | TerrainService, serve / 2 |
+| [diffusion/store.py](../../../diffusion/store.py) | generation-support / shared-or-unmapped | Atomic, checksummed raw diffusion tiles. World seed and model settings isolate caches. | source-docstring | TerrainTileStore / 2 |
+| [diffusion/world_demand_backend.py](../../../diffusion/world_demand_backend.py) | source-generation / S2/large-world-first-pass | Fixed physical TD page grid and supervised on-demand generation; resume pinned pages and retain failure records. | manual-reviewed | plan_source_pages, _worker, _supervise, run_source_page / 2 |
+| [diffusion/world_layout_backend.py](../../../diffusion/world_layout_backend.py) | layout-generation-backend / S2/G1 | 独立新布局单页TD入口，绝对坐标与一致种子、Windows spawn和资源停止；默认PID监测，WDDM不可测时拒绝；显式allocator选项仅限PyTorch配额/峰值，不覆盖驱动和其他进程。 | manual-reviewed | BudgetExceeded, describe_budgets, _device_memory_mib, _child_rss_mib, _child_gpu_mib / 4 |
+| [diffusion/world_layout_conditioning.py](../../../diffusion/world_layout_conditioning.py) | layout-conditioning / S2/G1 | 连续布局场转换为湖盆岸坡TD条件通道，确定性选岸边局部页并遵守上游signed-sqrt输入协议；气候为声明占位。 | manual-reviewed | _finite, WorldLayoutGenerationConfig, layout_elevation_m, select_nonempty_window, make_conditioning_map / 6 |

@@ -4,8 +4,16 @@ import math
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, load_bundle, readonly, save_bundle, publish_bytes
-from terrain_pipeline.td_basin_storage_v10_io import load_storage, validate_storage
+from terrain_pipeline.common_infra import (
+    file_sha256,
+    identity,
+    load_bundle,
+    readonly,
+    save_bundle,
+    publish_bytes,
+)
+from terrain_pipeline.basin_storage import storagev10_load_storage as load_storage
+from terrain_pipeline.basin_storage import validate_storage as validate_storage
 
 
 MAX_CELLS = 250000

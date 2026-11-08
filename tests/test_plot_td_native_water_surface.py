@@ -3,7 +3,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
 from terrain_pipeline.td_native_water_surface import build_water_surface, save_water_surface
 from tests.test_td_native_channel_geometry import fixture
 from tools.plot_td_native_water_surface import plot, read_record

@@ -7,17 +7,17 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity, file_sha256, save_bundle
+from terrain_pipeline.common_infra import identity, file_sha256, save_bundle
 from terrain_pipeline.single_domain_surface_archive import (
     _page_coverage, _validate_hour, audit_single_domain_chain,
     load_accepted_single_domain_chain, load_single_domain_index,
 )
-from tests import test_td_native_weather_storage_v10_io as native_fixture
+from tests import test_basin_weather_pages as native_fixture
 
 
 class SingleDomainSurfaceArchiveTests(unittest.TestCase):
     def setUp(self):
-        self.fixture = native_fixture.NativeWeatherV10IoTests()
+        self.fixture = native_fixture.NativeWeatherStorageProfile10IoNativeWeatherV10IoTests()
         self.fixture.setUp()
         self.root = self.fixture.root
         self.storage = copy.deepcopy(self.fixture.storage)

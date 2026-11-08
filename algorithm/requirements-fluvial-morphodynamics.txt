@@ -1,0 +1,2 @@
+# Install in the task-local system-site-packages venv; do not replace global NumPy.
+pyDeltaRCM==2.3.0

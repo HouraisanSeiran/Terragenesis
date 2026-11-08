@@ -1,0 +1,133 @@
+{
+  "source_identity": "a306c5127b7510e5f6b7e1359cfb36dfd342c3023cb7dc576a4f6cb97436c60c",
+  "final": {
+    "path_count": 4,
+    "unique_outlet_count": 4,
+    "routes_simple": true,
+    "acyclic": true,
+    "internal_Q_residual_m3_s": 2.2737367544323206e-13,
+    "inlet_Q_m3_s": 3000.0,
+    "outlet_Q_m3_s": 3000.0000000000005,
+    "paths_wet": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "shallowest_path_bed_m": [
+      -0.34999999999999787,
+      -0.34999999999999964,
+      -0.34999999999999964,
+      -0.34999999999999964
+    ],
+    "base_exact": true,
+    "valid_exact": true,
+    "original_land_change_m": 0.0,
+    "minimum_stock_m3": 0.0,
+    "solid_residual_m3": 4.76837158203125e-07,
+    "old_records_unchanged": true,
+    "record_count": 1,
+    "physical_elapsed_s": 0.0,
+    "physical_water_increment_m3": 0.0
+  },
+  "event": {
+    "path_count": 4,
+    "unique_outlet_count": 4,
+    "routes_simple": true,
+    "acyclic": true,
+    "internal_Q_residual_m3_s": 2.2737367544323206e-13,
+    "inlet_Q_m3_s": 3000.0,
+    "outlet_Q_m3_s": 3000.0000000000005,
+    "paths_wet": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "shallowest_path_bed_m": [
+      -0.3110435654912642,
+      -0.34550012503229355,
+      -0.21447454428584312,
+      -0.34550012503229355
+    ],
+    "base_exact": true,
+    "valid_exact": true,
+    "original_land_change_m": 4.053630898860627e-05,
+    "minimum_stock_m3": 0.0,
+    "solid_residual_m3": 2.384185791015625e-07,
+    "old_records_unchanged": true,
+    "record_count": 1,
+    "physical_elapsed_s": 90000.0,
+    "physical_water_increment_m3": 0.0
+  },
+  "event_progress_unchanged": true,
+  "event_solid_residual_m3": -2.384185791015625e-07,
+  "event_max_rise_m": 0.13552545571415653,
+  "event_max_lowering_m": 0.004065299066313699,
+  "stale_progress_rejected": true,
+  "unchanged_control_no_proposal": true,
+  "cut_solid_m3": 435874.77408702736,
+  "new_route": {
+    "parent": 1,
+    "fork_index": 45,
+    "path": [
+      [
+        204,
+        428
+      ],
+      [
+        205,
+        428
+      ],
+      [
+        206,
+        428
+      ],
+      [
+        207,
+        428
+      ],
+      [
+        208,
+        428
+      ],
+      [
+        208,
+        427
+      ]
+    ],
+    "excavation": [
+      [
+        204,
+        428,
+        3.3306690738754696e-16
+      ],
+      [
+        205,
+        428,
+        0.9402367781613531
+      ],
+      [
+        206,
+        428,
+        0.7644871235494554
+      ],
+      [
+        207,
+        428,
+        0.3132148672106142
+      ]
+    ],
+    "bar_rise_m": 4.767477006450633,
+    "old_capacity_depth_m": 0.34999999999999964,
+    "new_capacity_depth_m": 0.35,
+    "control_depth_loss_m": 0.6500000000000001,
+    "score": 0.45367687184642974,
+    "min_bar_rise_m": 0.05
+  },
+  "files_sha256": {
+    "branch-feedback-v3-split.npz": "a571d492cd7b3a3a718777f760fb45afb0878922b5b95a109e17e080c6502071",
+    "branch-feedback-v3-stage.npz": "53d544b8cb4200649631be859ef5bfcff849223f903be5cdd83110d72e401e30",
+    "branch-feedback-v3-event.npz": "6a1d46be4cb68b870b64ad5c2994478d08ab9f09df809537c171e74e9962e21a"
+  }
+}

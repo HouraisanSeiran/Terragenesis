@@ -1,7 +1,7 @@
 """Full real-TD regional source and saved static routing diagnostics."""
 import numpy as np
-from terrain_pipeline.mountain_source_adapter import load_physical_source, identity, readonly, save_bundle, load_bundle
-from terrain_pipeline.mountain_depression_geometry import load_mountain_geometry
+from terrain_pipeline.common_infra import load_physical_source, identity, readonly, save_bundle, load_bundle
+from terrain_pipeline.lake import load_mountain_geometry as load_mountain_geometry
 RAW_SHA256 = 'e1dc646b990388af3bf284b614b10c2a834d0259429539d2a7d3d2cc844712ae'
 SCHEMA = 'regional-surface-source-v1'
 KEYS = {'height_m', 'receiver', 'downstream_first_order', 'outlet_owner', 'outlet_cells', 'contributing_area_m2', 'diagnostic_lake_id', 'boundary_mask', 'protected_mask', 'hydrology_mask', 'channel_mask'}
@@ -10,7 +10,7 @@ def build_source(raw_path, geometry_path, *, geometry_sha256, channel_area_m2=10
     if not np.isfinite(channel_area_m2) or channel_area_m2 <= 0:
         raise ValueError('positive independent channel threshold required')
     source = load_physical_source(raw_path, expected_sha256=RAW_SHA256, boundary={'policy': 'all_edges_open', 'halo_cells': 0, 'upstream_contribution': 'excluded_finite_experiment'})
-    from terrain_pipeline.mountain_source_adapter import file_sha256
+    from terrain_pipeline.common_infra import file_sha256
     if file_sha256(geometry_path) != geometry_sha256:
         raise ValueError('external geometry SHA mismatch')
     geometry = load_mountain_geometry(geometry_path, trusted_height=source['arrays']['height_m'], source_binding={'source_identity': source['identity_sha256']})

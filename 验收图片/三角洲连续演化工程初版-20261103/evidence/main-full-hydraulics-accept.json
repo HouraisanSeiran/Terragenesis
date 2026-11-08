@@ -1,0 +1,25 @@
+{
+  "algorithm": "river-sections-v1",
+  "accepted_q_m3_s": 149.99999776482582,
+  "rejected_q_m3_s": 2.2351741790771484e-06,
+  "upstream_stage_m": 2.320855862092742,
+  "mouth_centre_stage_m": 0.3232493150214336,
+  "minimum_depth_m": 0.8913606251756333,
+  "profile_difference_m": 1.6304445349391017e-08,
+  "unique_nodes": true,
+  "node_q_residual_m3_s": 0.0,
+  "real_exterior_faces": [
+    [
+      [
+        280,
+        153
+      ],
+      [
+        281,
+        152
+      ]
+    ]
+  ],
+  "no_state_modification": true,
+  "pass": true
+}

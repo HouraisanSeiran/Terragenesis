@@ -9,11 +9,12 @@ import ctypes
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_basin_storage import load_basin_storage
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_storage import load_basin_storage as load_basin_storage
 from terrain_pipeline.td_surface_reaches import load_surface_reaches, _plain
-from terrain_pipeline.td_basin_spill_network import save_basin_spill_bundle, load_basin_spill_bundle
+from terrain_pipeline.basin_topology import save_basin_spill_bundle as save_basin_spill_bundle
+from terrain_pipeline.basin_topology import load_basin_spill_bundle as load_basin_spill_bundle
 
 
 def peak_process_memory():
@@ -114,7 +115,7 @@ def verify():
               "spill": pin, "summary": _plain(result["summary"]), "audit": {"passed": True, "checked_faces": checked_faces, "method": "streaming semantic LCA/sill/owner/terminal validation plus per-chunk independent face pair/directional integral check"},
               "flags": _plain(result["flags"]), "flux_scope": _plain(result["flux_scope"]), "limitations": result["limitations"],
               "cold_read_passed": True,
-              "implementation_sha256": {name: file_sha256(ROOT / name) for name in ("terrain_pipeline/td_basin_spill_network.py", "tests/test_td_basin_spill_network.py", "tools/verify_td_basin_spill_network.py")}}
+              "implementation_sha256": {name: file_sha256(ROOT / name) for name in ('terrain_pipeline/basin_topology.py', "tests/test_td_basin_spill_network.py", "tools/verify_td_basin_spill_network.py")}}
     report["resources"] = {"peak_process_memory": peak_process_memory(), "json_bytes": path.stat().st_size,
                            "face_json_bytes": sum(chunk["bytes"] for chunk in result["face_chunks"]), "max_chunk_faces": 2048, "budget_bytes": 1024 ** 3}
     report["resources"]["within_1GiB"] = max(report["resources"]["peak_process_memory"].values()) <= 1024 ** 3

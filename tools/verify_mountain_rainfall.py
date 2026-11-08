@@ -331,10 +331,10 @@ def write_review(output, report, panels):
 
 
 def verify_one(output, name, dt_s=900.0):
-    from terrain_pipeline.rainfall_runoff import (
-        RunoffParameters, simulate_rainfall_runoff, save_rainfall_runoff_npz,
-        load_rainfall_runoff_npz,
-    )
+    from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+    from terrain_pipeline.runoff import simulate_rainfall_runoff as simulate_rainfall_runoff
+    from terrain_pipeline.runoff import save_rainfall_runoff_npz as save_rainfall_runoff_npz
+    from terrain_pipeline.runoff import load_rainfall_runoff_npz as load_rainfall_runoff_npz
     from unittest.mock import patch
 
     source = load_source(name)
@@ -368,7 +368,7 @@ def verify_one(output, name, dt_s=900.0):
                                          parameters=parameters, source_id=source_identity)
         native_artifact = output / f"{name}-{scenario}-runoff.npz"
         save_rainfall_runoff_npz(native_artifact, result)
-        with patch("terrain_pipeline.rainfall_runoff.simulate_rainfall_runoff",
+        with patch('terrain_pipeline.runoff.simulate_rainfall_runoff',
                    side_effect=AssertionError("Reload must not simulate rainfall")):
             native_loaded = load_rainfall_runoff_npz(native_artifact)
         for key, value in result.items():
@@ -482,8 +482,8 @@ def main():
               "code_sha256": {str(path.relative_to(ROOT)).replace("\\", "/"): sha256(path)
                               for path in (Path(__file__), ROOT / "tests/test_mountain_rainfall.py",
                                            ROOT / "docs/mountain-rainfall-v1.md",
-                                           ROOT / "terrain_pipeline/rainfall_runoff.py",
-                                           ROOT / "tests/test_rainfall_runoff.py",
+                                           ROOT / 'terrain_pipeline/runoff.py',
+                                           ROOT / 'tests/test_runoff.py',
                                            ROOT / "docs/rainfall-runoff-v1.md")}}
     panels = {}
     for name in SOURCE_NAMES:

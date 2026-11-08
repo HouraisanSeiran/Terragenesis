@@ -1,0 +1,32 @@
+{
+  "data_hash_matches": true,
+  "marine_hash_matches": true,
+  "source_identity_matches": true,
+  "td_page_metadata_hashes_match": [
+    true,
+    true
+  ],
+  "river_length_m": 18241.463197058358,
+  "stage_monotone": true,
+  "centre_minimum_depth_m": 0.7087911346815474,
+  "actual_surface_samples_finite": true,
+  "actual_surface_minimum_depth_m": 0.708770751953125,
+  "wet_cells_connected": true,
+  "independent_minimum_section_capacity_m3_s": 167.226593178381,
+  "derived_cut_bulk_m3": 1707695.3003068832,
+  "bed_cut_identity_error_m": 1.52587890625e-05,
+  "port_bed_m": -0.9980016350746155,
+  "marine_port_after_m": -0.993724406277634,
+  "marine_port_wet": true,
+  "original_base_exact": true,
+  "new_packet_count": 1,
+  "old_records_unchanged": true,
+  "delivered_solid_m3": 7200.0,
+  "delivered_water_m3": 13499999.999999998,
+  "unconsumed_solid_m3": 0.0,
+  "first_delivery_solid_m3": 4592.25359135448,
+  "solid_inventory_residual_m3": -4.76837158203125e-07,
+  "water_input_increment_m3": 13500000.000000004,
+  "physical_elapsed_s": 180000.0,
+  "minimum_marine_stock_m3": 0.0
+}

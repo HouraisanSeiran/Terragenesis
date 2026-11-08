@@ -9,15 +9,15 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_source import load_td_source_bundle
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_basin_storage import load_basin_storage
-from terrain_pipeline.td_material_field import load_material_field
-from terrain_pipeline.td_basin_candidates import run_candidate_coupling
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_storage import load_td_source_bundle as load_td_source_bundle
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_storage import load_basin_storage as load_basin_storage
+from terrain_pipeline.geology import load_material_field
+from terrain_pipeline.basin_topology import run_candidate_coupling as run_candidate_coupling
 
 
-EXECUTION_SOURCE = ROOT / "terrain_pipeline/td_basin_storage_refinement.py"
+EXECUTION_SOURCE = ROOT / 'terrain_pipeline/basin_storage.py'
 
 
 def execution_code_manifest(*, output_path=None):
@@ -31,7 +31,7 @@ def execution_code_manifest(*, output_path=None):
     manifest = {
         "schema": "td-basin-execution-code-v1",
         "execution_source": {
-            "path": "terrain_pipeline/td_basin_storage_refinement.py",
+            "path": 'terrain_pipeline/basin_storage.py',
             "sha256": hashlib.sha256(source).hexdigest(),
             "source_utf8": source.decode("utf-8"),
         },
@@ -119,9 +119,9 @@ def verify(inputs_path, destination, *, inputs_sha256):
         raise ValueError("candidate source inputs changed")
     publish_bytes(Path(destination) / "baseline-inputs.json", json.dumps(records, ensure_ascii=False, indent=2, allow_nan=False).encode("utf-8"))
     report = {"inputs": records, "input_index_sha256": inputs_sha256, "input_hashes_unchanged": True, "selected": result["selected_candidate_id"],
-        "code_sha256": {name: file_sha256(ROOT / name) for name in ("terrain_pipeline/td_basin_candidates.py",
-            "terrain_pipeline/td_basin_storage.py", "terrain_pipeline/td_basin_storage_implicit.py",
-            "terrain_pipeline/td_basin_storage_refinement.py", "tools/verify_td_basin_candidates.py")},
+        "code_sha256": {name: file_sha256(ROOT / name) for name in ('terrain_pipeline/basin_topology.py',
+            'terrain_pipeline/basin_storage.py', 'terrain_pipeline/basin_storage.py',
+            'terrain_pipeline/basin_storage.py', "tools/verify_td_basin_candidates.py")},
         "execution_code": execution,
         "numerical_scope": "baseline covered-subtree sensitivity only; candidates require their own sensitivity; no auto adoption",
         "candidate_counts": len(result["candidates"]), "changed_candidates": sum(value.get("changed_cells", 0) > 0 for value in result["candidates"])}

@@ -4,7 +4,7 @@ import unittest
 import numpy as np
 
 from tests import test_td_hour_pages_review as review_fixture
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 from terrain_pipeline.td_hour_pages_review import export_hour_pages_review
 from tools.audit_td_hour_pages_binary import audit, decode
 

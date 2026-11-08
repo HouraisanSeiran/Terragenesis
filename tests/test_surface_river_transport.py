@@ -40,6 +40,10 @@ class SurfaceRiverTransportTests(unittest.TestCase):
         later = route_sediment(replace(data, max_steps=8))
         self.assertGreater(later.exported_solid, 0.)
         self.assertAlmostEqual(later.deposited_solid + later.exported_solid + later.mobile_solid.sum(), 10.)
+        # A continuous graph reach enters the first coastal cell, not its far endpoint.
+        longer = route_sediment(replace(data, main_path=((0, 4), (5, 4)), max_steps=0))
+        self.assertEqual(longer.mouth, (2, 4))
+        self.assertEqual(longer.mobile_solid[2, 4], 10.)
 
     def test_disconnected_ocean_does_not_receive_sediment(self):
         shape = (5, 5); land = np.ones(shape, bool); land[2, 2] = False

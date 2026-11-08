@@ -5,7 +5,7 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.surface_rivers.metric_channel_geometry import build_channel_geometry
+from terrain_pipeline.channel_geometry import build_channel_geometry
 from terrain_pipeline.surface_rivers.metric_sediment import solve_sediment, SedimentConfig
 from tools.verify_td_river_geometry import fixture
 from tools.verify_td_river_sediment import benchmark

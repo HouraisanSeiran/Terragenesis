@@ -1,0 +1,154 @@
+{
+  "source_identity": "454292b47a107628748a3ba7d76093cbd2d7df4785884490f55418f9ebe368ce",
+  "world_seed": 20261020,
+  "native_td_spacing_m": 30,
+  "calculation_spacing_m": 200,
+  "source_window_km": [
+    100,
+    100
+  ],
+  "algorithm_status": "annual outlet forcing and five-year finite case reviewed; mature lobes remain open",
+  "terrain_basis": "frozen TD plus inherited coastal bed and finite sediment stocks",
+  "sources": {
+    ".scratch\\delta-large-acceptance-20261103\\case-source\\source.npz": "c41b43e751a744419a21e5e70cc3fa36553312da471ee3a6993313a67dbaf983",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-irregular-reuse-20261103\\dynamic\\source-manifest.json": "a9941744fd2cc3f903f742a5e2538c0ddcd47fb4a891df8b396da05d5821f39a",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-irregular-reuse-20261103\\accepted\\initial.npz": "63b13663f054a37c1e3b86fcf05b63819123e7467ee659861b20606270487ee4",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-irregular-reuse-20261103\\accepted\\initial.json": "a9a4356ee9d83f629757721c969b12b71906d34d33d7e2af837215d8c844a0cf",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-irregular-reuse-20261103\\continuation\\start.npz": "40b13956a5cffb637fda31b416c027026d6fdd06f1fc60948883f0db3bcfe7be",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-irregular-reuse-20261103\\continuation\\start.json": "ccf295a93a389abc0506e2561d1b891aaeae37906d534a4c8c7d940bd33e2da1",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-irregular-reuse-20261103\\continuation\\stage-100.npz": "a42562ee455247abf8f08bf6b9eb03f9fda710570feca9ee964a48c008feb510",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-irregular-reuse-20261103\\continuation\\stage-100.json": "76db480a273eb087be6d2c2e3be0afa9e4f1ec8f1dfb2da0f6133c0b715337d6",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-irregular-reuse-20261103\\longterm\\year5.npz": "9b749746cd2ea6052cdd2c7648f0a4ca05d623e9feb8a18c976ed35e2999a186",
+    "D:\\codexwork\\山川形意Terragenesis\\.scratch\\delta-irregular-reuse-20261103\\longterm\\year5.json": "a1c4dbefd7c7ad606913912a5a7b3417246746965ec39c4115f8feb77217bf66"
+  },
+  "images": {
+    "01-evolution.png": {
+      "sha256": "78a4afcd6910966f769103d38978a199f2d1e9ea81ee439a3ccbee6a02accd7b",
+      "terrain_basis": "same frozen TD source and inherited coastal stocks",
+      "algorithms": [
+        "irregular river paths",
+        "shared channel hydraulics",
+        "annual river and marine sediment",
+        "25h tidal-wave event"
+      ],
+      "coverage_status": "partial",
+      "notes": "Finite local window; true stored geometry and bed differences. No assertion of mature delta lobes."
+    },
+    "02-bed-change.png": {
+      "sha256": "068311e75a242ea7d089fa1f7439b6769b678ef85b3abc627fd999fcbfbf0ce9",
+      "terrain_basis": "same frozen TD source and inherited coastal stocks",
+      "algorithms": [
+        "irregular river paths",
+        "shared channel hydraulics",
+        "annual river and marine sediment",
+        "25h tidal-wave event"
+      ],
+      "coverage_status": "partial",
+      "notes": "Finite local window; true stored geometry and bed differences. No assertion of mature delta lobes."
+    }
+  },
+  "files": {
+    "01-evolution.png": "78a4afcd6910966f769103d38978a199f2d1e9ea81ee439a3ccbee6a02accd7b",
+    "02-bed-change.png": "068311e75a242ea7d089fa1f7439b6769b678ef85b3abc627fd999fcbfbf0ce9",
+    "event-report.json": "3e1da16575713cd8a801c26b0fc2e6de4e1924a490ee922fc97790beedc67b5f",
+    "final.json": "29865ba97636af13965c192d693e4f712d95c9e62dffd4d264a8ee17d8d592f2",
+    "final.npz": "685badd40a0b7095014818db190bbd4904f5dd709df72f238534d0038cde282d",
+    "five-year-code-hashes.json": "c2635ad669c2e804e79906f1a655a911e3c49387651d670329ffd828e789ec72",
+    "main-accept.json": "6d986fe0822483a73af774c9bfae5c1c862f37862e74b4776f3bfe75df6d945b",
+    "README.md": "ca53905b1f6590f3941f6bf8025cbc66f86114adfd97dc871c2d7e39a7beb29d",
+    "render-settings.json": "2598234bf73a95ea2d8f3144202cd6f0c6c847991b391e26b422106536935a2d"
+  },
+  "validation": {
+    "related_tests_passed": 108,
+    "saved_checkpoint_checks": {
+      "sources_and_inventory": true,
+      "actual_irregular_geometry": true,
+      "actual_wet_routes": true,
+      "along_line_clearance": true,
+      "shared_discharge": true,
+      "single_sediment_ledger": true,
+      "physical_water_ledger": true,
+      "active_sea_outlets": true
+    },
+    "latest_handoff": {
+      "source": "longterm/year5",
+      "source_identity": "454292b47a107628748a3ba7d76093cbd2d7df4785884490f55418f9ebe368ce",
+      "added_years": 0.05,
+      "annual_record": {
+        "event": "integrated_years",
+        "input_id": "main-explicit-mouth-005",
+        "years": 0.05,
+        "accepted_q_m3_s": 22.110720723867416,
+        "route_q_m3_s": [
+          8.463136226041717,
+          7.9224165174740975,
+          5.7251679803516
+        ],
+        "mouth_handoff_algorithm": "exterior-face-q-v1",
+        "mouth_handoffs": [
+          {
+            "mouth_zx": [
+              240,
+              189
+            ],
+            "exterior_zx": [
+              240,
+              190
+            ],
+            "gross_solid_m3": 2582.8884429526934
+          },
+          {
+            "mouth_zx": [
+              242,
+              190
+            ],
+            "exterior_zx": [
+              242,
+              191
+            ],
+            "gross_solid_m3": 1896.4643386330706
+          },
+          {
+            "mouth_zx": [
+              252,
+              180
+            ],
+            "exterior_zx": [
+              253,
+              180
+            ],
+            "gross_solid_m3": 1034.081027020684
+          }
+        ],
+        "river_deposited_solid_m3": 2867.0489137588393,
+        "mouth_delivered_solid_m3": 5513.433808606448,
+        "marine_deposited_solid_m3": 4248.529339757762,
+        "floodplain": {
+          "deposited_solid_m3": 4733.955528813187,
+          "diverted_water_m3": 1639816.9613443643,
+          "rewetted_solid_m3": 3506.496034306512,
+          "new_solid_m3": 10226.484752715198
+        }
+      },
+      "final_q_m3_s": [
+        8.435077969488553,
+        7.8961509358703985,
+        5.70618704613145
+      ],
+      "code_sha256": "69962ae137c43d24a623d06a5d1eaa7f868bd48bc92482bd6b695f9b9d168df2"
+    },
+    "latest_handoff_checks": {
+      "sources_and_inventory": true,
+      "actual_irregular_geometry": true,
+      "actual_wet_routes": true,
+      "along_line_clearance": true,
+      "shared_discharge": true,
+      "single_sediment_ledger": true,
+      "physical_water_ledger": true,
+      "active_sea_outlets": true
+    }
+  },
+  "pass": true,
+  "pass_scope": "file/source traceability and finite saved-state checks, not morphology approval",
+  "image_version_note": "Five-year figures and final snapshot precede exterior-face-q-v1 handoff fix; latest code validated separately by 0.05-year continuation from year5. No image rerun is claimed."
+}

@@ -23,14 +23,14 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.dem_domain import load_dem_candidate
-from terrain_pipeline.surface_coast_drop import load_coast_drop
-from terrain_pipeline.surface_domain_mosaic import load_domain_mosaic
-from terrain_pipeline.surface_multidomain_dynamic import load_surface_multidomain_dynamic
-from terrain_pipeline.surface_variable_storage import load_surface_variable_storage
-from terrain_pipeline.surface_engineering_prepare import load_surface_engineering, query_surface_engineering
-from terrain_pipeline.surface_fine_mosaic import load_fine_mosaic
-from terrain_pipeline.surface_land_coverage import load_surface_land_coverage, query_surface_land_coverage
+from terrain_pipeline.td_source import load_dem_candidate
+from terrain_pipeline.surface_domain import load_coast_drop
+from terrain_pipeline.surface_domain import load_domain_mosaic
+from terrain_pipeline.surface_domain import load_surface_multidomain_dynamic
+from terrain_pipeline.surface_domain import load_surface_variable_storage
+from terrain_pipeline.surface_domain import load_surface_engineering, query_surface_engineering
+from terrain_pipeline.surface_domain import load_fine_mosaic
+from terrain_pipeline.surface_domain import load_surface_land_coverage, query_surface_land_coverage
 
 OUT = Path(__file__).resolve().parent / "data" / "surface-review-v1"
 

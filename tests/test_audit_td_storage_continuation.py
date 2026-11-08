@@ -5,12 +5,13 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, save_bundle
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy, save_basin_hierarchy
-from terrain_pipeline.td_basin_source import make_td_source
-from terrain_pipeline.td_basin_storage_checkpoint_io import save_checkpoint
-from terrain_pipeline.td_basin_storage_continuation import simulate_basin_storage
-from terrain_pipeline.td_basin_storage_continuation_io import save_storage
+from terrain_pipeline.common_infra import file_sha256, identity, save_bundle
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_topology import save_basin_hierarchy as save_basin_hierarchy
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_storage import checkpointio_save_checkpoint as save_checkpoint
+from terrain_pipeline.basin_storage import continuation_simulate as simulate_basin_storage
+from terrain_pipeline.basin_storage import continuation_save_storage as save_storage
 from tools.audit_td_storage_continuation import audit_scenario
 
 

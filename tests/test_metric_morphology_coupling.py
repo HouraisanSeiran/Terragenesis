@@ -5,10 +5,10 @@ from copy import deepcopy
 from pathlib import Path
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity
-from terrain_pipeline.surface_rivers.metric_contracts import TerrainGrid
-from terrain_pipeline.surface_rivers.metric_channel_geometry import GeometryConfig, build_channel_geometry
-from terrain_pipeline.surface_rivers.metric_channel_state import ChannelNetwork, ChannelForcing
+from terrain_pipeline.common_infra import identity
+from terrain_pipeline.common_infra import TerrainGrid
+from terrain_pipeline.channel_geometry import GeometryConfig, build_channel_geometry
+from terrain_pipeline.channel_geometry import ChannelNetwork, ChannelForcing, receiver_distances
 from terrain_pipeline.surface_rivers.metric_morphology_coupling import (
     couple_morphology, load_morphology_coupling, save_morphology_coupling,
     validate_morphology_coupling, _sample_nodes, _sections, MorphologyConfig, _pack, _unpack,
@@ -29,7 +29,8 @@ class MorphologyCouplingTests(unittest.TestCase):
         bed = _sample_nodes(geometry, geometry["arrays"]["bed_elevation_m"])
         lengths = np.array([.5, 1., .5]); network = ChannelNetwork(receiver, lengths, np.ones(3),
             bed, np.array([1., 1., 1.]), np.full(3, .03), np.full(3, 1.),
-            np.array(["interior", "interior", "open_outflow"]), geometry["identity_sha256"], "test", "test")
+            np.array(["interior", "interior", "open_outflow"]), geometry["identity_sha256"], "test", "test",
+            receiver_distance_m=receiver_distances(points, receiver))
         forcing = ChannelForcing(np.array([0., 1.]), np.zeros((1, 3)), "b" * 64)
         return geometry, network, forcing
 
@@ -46,7 +47,8 @@ class MorphologyCouplingTests(unittest.TestCase):
         geometry, network, forcing = self.fixture()
         bad = ChannelNetwork(np.array([2, 2, -1], np.int64), network.length_m, network.width_m,
             network.bed_elevation_m, network.bed_slope, network.roughness, network.max_depth_m,
-            network.terminal_kind, geometry["identity_sha256"], "test", "test")
+            network.terminal_kind, geometry["identity_sha256"], "test", "test",
+            receiver_distance_m=receiver_distances(geometry["arrays"]["node_xz_m"], np.array([2, 2, -1], np.int64)))
         with self.assertRaises(ValueError):
             couple_morphology(geometry, bad, forcing, MaterialParameters(),
                 initial_water_volume_m3=np.full(3, .01), initial_mobile_solid_m3=np.zeros(3),
@@ -107,13 +109,18 @@ class MorphologyCouplingTests(unittest.TestCase):
                 half = np.linalg.norm(a["node_xz_m"][i] - a["node_xz_m"][j]) / 2.
                 lengths[i] += half; lengths[j] += half
         bed = _sample_nodes(geometry, a["bed_elevation_m"])
+        distance = receiver_distances(a["node_xz_m"], receiver)
+        initial_slope = np.ones(n)
+        interior = receiver >= 0
+        initial_slope[interior] = (bed[interior] - bed[receiver[interior]]) / distance[interior]
         draft = ChannelNetwork(receiver, lengths, a["width_m"], bed,
-            np.ones(n), np.full(n, .035), np.full(n, 2.),
-            np.where(receiver < 0, "open_outflow", "interior"), geometry["identity_sha256"], "Y", "Y")
+            initial_slope, np.full(n, .035), np.full(n, 2.),
+            np.where(receiver < 0, "open_outflow", "interior"), geometry["identity_sha256"], "Y", "Y",
+            receiver_distance_m=distance)
         _, slope, _ = _sections(geometry, a["bed_elevation_m"], draft, MorphologyConfig())
         network = ChannelNetwork(receiver, lengths, a["width_m"], bed, slope,
             draft.roughness, draft.max_depth_m, draft.terminal_kind,
-            geometry["identity_sha256"], "Y", "Y")
+            geometry["identity_sha256"], "Y", "Y", receiver_distance_m=distance)
         forcing = ChannelForcing(np.array([0., 1.]), np.zeros((1, n)), "b" * 64)
         result = couple_morphology(geometry, network, forcing,
             MaterialParameters(settling_velocity_m_s=.0001, sediment_critical_shear_pa=1e9,

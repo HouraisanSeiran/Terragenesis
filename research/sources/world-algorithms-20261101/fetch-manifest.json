@@ -1,0 +1,109 @@
+{
+  "platec-core": {
+    "url": "https://api.github.com/repos/Mindwerks/plate-tectonics/contents/src/lithosphere.cpp?ref=2a27c4fb137c657517bca62122b9de80e6b8c255",
+    "status": 200,
+    "bytes": 30054,
+    "sha256": "12315287c0416cad1149db1526651dfce2ce6f7c4cd3c2420afc3e7c1d429bc5",
+    "raw_url": "https://raw.githubusercontent.com/Mindwerks/plate-tectonics/2a27c4fb137c657517bca62122b9de80e6b8c255/src/lithosphere.cpp"
+  },
+  "platec-binding": {
+    "url": "https://api.github.com/repos/Mindwerks/plate-tectonics/contents/pybindings/platec_src/platecmodule.cpp?ref=2a27c4fb137c657517bca62122b9de80e6b8c255",
+    "status": 200,
+    "bytes": 4877,
+    "sha256": "28a59f1013c502abf44ef4508a01bf1265b801dd36e1edc4d13eb38c1a5ba275",
+    "raw_url": "https://raw.githubusercontent.com/Mindwerks/plate-tectonics/2a27c4fb137c657517bca62122b9de80e6b8c255/pybindings/platec_src/platecmodule.cpp"
+  },
+  "platec-license": {
+    "url": "https://api.github.com/repos/Mindwerks/plate-tectonics/contents/LICENSE?ref=2a27c4fb137c657517bca62122b9de80e6b8c255",
+    "status": 200,
+    "bytes": 7633,
+    "sha256": "f01e58b813eff5ca78ae5c6710983974df7d336b106d26aea7a837d007ed7d0e",
+    "raw_url": "https://raw.githubusercontent.com/Mindwerks/plate-tectonics/2a27c4fb137c657517bca62122b9de80e6b8c255/LICENSE"
+  },
+  "tectonics-core": {
+    "url": "https://api.github.com/repos/davidson16807/tectonics.js/contents/noncompiled/models/lithosphere/Lithosphere.js?ref=e43927ce88e766b63e35e896f36bfb882a4c8de4",
+    "status": 200,
+    "bytes": 24948,
+    "sha256": "2bd786740b43b8bd68fc8e4538fb0aae5144bfea6ef45f73b1f71b8ffa6b13f9",
+    "raw_url": "https://raw.githubusercontent.com/davidson16807/tectonics.js/e43927ce88e766b63e35e896f36bfb882a4c8de4/noncompiled/models/lithosphere/Lithosphere.js"
+  },
+  "tectonics-license": {
+    "url": "https://api.github.com/repos/davidson16807/tectonics.js/contents/LICENSE.txt?ref=e43927ce88e766b63e35e896f36bfb882a4c8de4",
+    "status": 200,
+    "bytes": 18651,
+    "sha256": "2a82ac9bbc3e3ee066908381e8d373896db5a6025d083fbd59692fe9ccfb9111",
+    "raw_url": "https://raw.githubusercontent.com/davidson16807/tectonics.js/e43927ce88e766b63e35e896f36bfb882a4c8de4/LICENSE.txt"
+  },
+  "deltarcm-default": {
+    "url": "https://api.github.com/repos/DeltaRCM/pyDeltaRCM/contents/pyDeltaRCM/default.yml?ref=develop",
+    "status": 200,
+    "bytes": 3175,
+    "sha256": "e37552b3186e59d3668c080f8d065897595e80cf9a65f5102d06a7924e549f68",
+    "raw_url": "https://raw.githubusercontent.com/DeltaRCM/pyDeltaRCM/develop/pyDeltaRCM/default.yml"
+  },
+  "deltarcm-license": {
+    "url": "https://api.github.com/repos/DeltaRCM/pyDeltaRCM/contents/LICENSE?ref=develop",
+    "status": 200,
+    "bytes": 1110,
+    "sha256": "cd0aba3952936706f2a7d07e6790a152e00ac12e99fb14864d73354150df023e",
+    "raw_url": "https://raw.githubusercontent.com/DeltaRCM/pyDeltaRCM/develop/LICENSE"
+  },
+  "gplates-intro": {
+    "url": "https://www.gplates.org/docs/pygplates/pygplates_introduction.html",
+    "final_url": "https://www.gplates.org/docs/pygplates/pygplates_introduction.html",
+    "status": 200,
+    "bytes": 18919,
+    "sha256": "be48750585916974f4c2be08647d715aa8271263879de85a81564ab35d2f1288"
+  },
+  "usgs-width": {
+    "url": "https://pubs.usgs.gov/publication/pp252",
+    "final_url": "https://pubs.usgs.gov/publication/pp252",
+    "status": 200,
+    "bytes": 144468,
+    "sha256": "0d1ced86268c424ddb802f7bc9bc8830414c4d0d03a75c24dff19e75871f5f0b"
+  },
+  "gbm-scale": {
+    "url": "https://esurf.copernicus.org/articles/7/231/2019/esurf-7-231-2019.xml",
+    "final_url": "https://esurf.copernicus.org/articles/7/231/2019/esurf-7-231-2019.xml",
+    "status": 200,
+    "bytes": 150789,
+    "sha256": "8246febc35dd6f4f18631a0b52833e4bf27fc7860b5ed498efcc5b12b94b5f26"
+  },
+  "delta-process": {
+    "url": "https://esurf.copernicus.org/articles/3/67/2015/esurf-3-67-2015.xml",
+    "final_url": "https://esurf.copernicus.org/articles/3/67/2015/esurf-3-67-2015.xml",
+    "status": 200,
+    "bytes": 185152,
+    "sha256": "3886a371066ed44e3c696ac46bbc37f8060f0da05fa7bf33d1f65546057893a4"
+  },
+  "worldengine-plates": {
+    "url": "https://api.github.com/repos/Mindwerks/worldengine/contents/worldengine/plates.py",
+    "status": 200,
+    "bytes": 3906,
+    "sha256": "bb081326288d1009a0b95fdf22d0546abb572b47affba4bd9ee36ffed2ce5566"
+  },
+  "deltarcm-init": {
+    "url": "https://api.github.com/repos/DeltaRCM/pyDeltaRCM/contents/pyDeltaRCM/init_tools.py?ref=develop",
+    "status": 200,
+    "bytes": 49690,
+    "sha256": "20976cd7654a6570ccaf9ea083c401f97822383de7839bbc8144f8cc8dd0b9e6"
+  },
+  "deltarcm-water": {
+    "url": "https://api.github.com/repos/DeltaRCM/pyDeltaRCM/contents/pyDeltaRCM/water_tools.py?ref=develop",
+    "status": 200,
+    "bytes": 43140,
+    "sha256": "6a79cd916bdb786ec3cd7ff56b92f3fa3059e63036236b46009fdcb536e3461e"
+  },
+  "parker1978": {
+    "url": "https://api.crossref.org/works/10.1017/S0022112078002505",
+    "status": 200,
+    "bytes": 7598,
+    "sha256": "5661dccf545d3d4271ee6cad14cfc152574ed78d1e9faf7b1a7150a7bab15a8b"
+  },
+  "ikeda1990": {
+    "url": "https://api.crossref.org/works/10.1029/WR026i010p02353",
+    "status": 200,
+    "bytes": 6916,
+    "sha256": "875bdcd717c6191b8e5014fdc1fd4894a0f413a3fe4d371d0407e4e3f8589c67"
+  }
+}

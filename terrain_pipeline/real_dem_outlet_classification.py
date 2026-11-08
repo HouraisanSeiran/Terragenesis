@@ -7,11 +7,14 @@ from rasterio.crs import CRS
 from rasterio.warp import transform
 
 from terrain_pipeline.artifacts.contracts import canonical_json, digest, finite_number
-from terrain_pipeline.dem_domain import validate_dem_candidate
-from terrain_pipeline.real_dem_surface_network import build_real_dem_network
+from terrain_pipeline.td_source import validate_dem_candidate
+from terrain_pipeline.drainage import build_real_dem_network as build_real_dem_network
+from terrain_pipeline.drainage import grid_mesh as grid_mesh
+from terrain_pipeline.drainage import receiver_edges_valid as receiver_edges_valid
+from terrain_pipeline.drainage import segments_clear as segments_clear
 
 
-ALGORITHM = "real-dem-outlet-classification-v1"
+ALGORITHM = "real-dem-irregular-outlet-classification-v2"
 FORMAT = "real-dem-outlet-classification-report-v1"
 VECTOR_ALGORITHM = "hydrovector-evidence-v1"
 VECTOR_FIELDS = {"schema_version", "algorithm", "created_utc", "coordinate_order", "crs",
@@ -309,8 +312,8 @@ def _validate_vectors(vectors, audit, candidate):
     return by_id, scopes, _basins_reference(audit, bbox, halo)
 
 
-def _network(height, valid):
-    network = build_real_dem_network(height, valid)
+def _network(height, valid, mesh=None):
+    network = build_real_dem_network(height, valid, mesh=mesh)
     receiver = np.asarray(network.receiver)
     order = np.asarray(network.order)
     valid_ids = np.flatnonzero(valid.ravel())
@@ -327,10 +330,9 @@ def _network(height, valid):
     if (np.any(~valid.ravel()[destinations])
             or np.any(height.ravel()[destinations] >= height.ravel()[sources])):
         raise ValueError("receiver must be valid and strictly downhill")
-    source_rows, source_cols = np.divmod(sources, height.shape[1])
-    target_rows, target_cols = np.divmod(destinations, height.shape[1])
-    if np.any(np.maximum(abs(source_rows - target_rows), abs(source_cols - target_cols)) != 1):
-        raise ValueError("receiver is not D8 adjacent")
+    mesh = (network.mesh if network.mesh is not None else grid_mesh(height.shape, dx_m=90.)) if mesh is None else mesh
+    if not receiver_edges_valid(receiver, mesh) or not segments_clear(sources, destinations, valid).all():
+        raise ValueError("receiver must use an unobstructed irregular graph edge")
     positions = np.full(height.size, -1, np.int64)
     positions[order] = np.arange(order.size)
     if np.any(positions[sources] >= positions[destinations]):
@@ -393,17 +395,18 @@ def _nearest(points, by_id):
 
 
 def build_outlet_classification(candidate, vectors, audit, *, match_distance_m=180.0):
-    """Rebuild strict-downhill D8 and cross-reference every terminal in metres."""
+    """Rebuild strict metric graph and cross-reference every terminal in metres."""
     threshold = finite_number(match_distance_m, "match_distance_m", positive=True)
     validate_dem_candidate(candidate, verify_source=False)
     by_id, scopes, basins_reference = _validate_vectors(vectors, audit, candidate)
     arrays = candidate["arrays"]
     height, valid = arrays["height_m"], arrays["valid_mask"]
     grid = candidate["manifest"]["identity"]["grid"]
-    terminals, accumulation = _network(height, valid)
+    mesh = grid_mesh(height.shape, x0_m=grid["origin_x_m"], z0_m=grid["origin_z_m"],
+        dx_m=grid["spacing_x_m"], dz_m=grid["spacing_z_m"])
+    terminals, accumulation = _network(height, valid, mesh)
     rows, cols = np.divmod(terminals, height.shape[1])
-    points = np.column_stack((grid["origin_x_m"] + cols * grid["spacing_x_m"],
-                              -(grid["origin_z_m"] + rows * grid["spacing_z_m"])))
+    points = np.column_stack((mesh.node_x_m[terminals], -mesh.node_z_m[terminals]))
     longitude, latitude = transform("EPSG:32651", "EPSG:4326", points[:, 0], points[:, 1])
     lonlat = np.column_stack((longitude, latitude))
     if not np.isfinite(points).all() or not np.isfinite(lonlat).all():
@@ -413,7 +416,8 @@ def build_outlet_classification(candidate, vectors, audit, *, match_distance_m=1
     for index, cell_id in enumerate(terminals):
         row, col = int(rows[index]), int(cols[index])
         boundary = row in (0, height.shape[0] - 1) or col in (0, height.shape[1] - 1)
-        unknown = bool(np.any(~valid[max(0, row - 1):row + 2, max(0, col - 1):col + 2]))
+        adjacent = mesh.indices[mesh.indptr[cell_id]:mesh.indptr[cell_id + 1]]
+        unknown = bool(np.any(~valid.ravel()[adjacent]))
         classification = "internal_sink"
         if boundary:
             classification = "boundary_clip"
@@ -432,9 +436,9 @@ def build_outlet_classification(candidate, vectors, audit, *, match_distance_m=1
                                                 "matched": bool(distances[index] <= threshold),
                                                 "product_terminal": downstream == 0,
                                                 "downstream_scope": scopes[river_id]}})
-    parameters = {"match_distance_m": threshold, "connectivity": 8, "projected_crs": "EPSG:32651",
+    parameters = {"match_distance_m": threshold, "topology": "irregular_Delaunay", "projected_crs": "EPSG:32651",
                   "distance": "nearest_projected_polyline_segment", "tie_break": "minimum_HYRIV_ID",
-                  "routing": "strict_downhill_lowest_neighbor_no_flat_resolution"}
+                  "routing": "strict_downhill_maximum_metric_slope_no_flat_resolution"}
     identity = {"algorithm": ALGORITHM, "parameters": parameters, "parameters_sha256": digest(parameters),
                 "candidate_content_sha256": candidate["manifest"]["content_sha256"],
                 "candidate_array_hashes": dict(candidate["manifest"]["array_hashes"]),

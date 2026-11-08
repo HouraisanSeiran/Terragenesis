@@ -1,0 +1,1387 @@
+{
+ "schema": "algorithm-categories-v1",
+ "categories": {
+  "A": "山脉与基础地形：TD 扩散、构造/山脉、世界地形底图、海岸底图产品线",
+  "B": "河网：排水、汇水、湖泊、水力、河道几何",
+  "B1": "河网/三角洲：三角洲网络、分汊、口门、潮汐",
+  "B2": "河网/泥沙与沉积：输沙、海洋沉积",
+  "C": "三维地形：hybrid 几何/水力、特殊地形、VDM、地下",
+  "D": "地理环境：气候、冰雪、岩性、风化、PET、生态、环境强迫",
+  "infra": "公共底层：哈希/种子/artifact 存储/外部源适配",
+  "?": "待用户确认，不要硬猜"
+ },
+ "modules": {
+  "diffusion/__init__.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/__main__.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/backend.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/config.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/geographic_noise.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/geography.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/geography_physical.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/geography_v2.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/geography_v3.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/geography_v4.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/geography_v5.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/paths.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/physical_backend.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/physical_config.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/plate_td_backend.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/plate_td_conditioning.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/preview.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/service.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/store.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/world_demand_backend.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/world_layout_backend.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "diffusion/world_layout_conditioning.py": {
+   "category": "A",
+   "reason": "TD 扩散后端/条件场/存储"
+  },
+  "terrain_pipeline/__init__.py": {
+   "category": "infra",
+   "reason": "包入口"
+  },
+  "terrain_pipeline/adaptive_mesh.py": {
+   "category": "B",
+   "reason": "M5 functional consolidation"
+  },
+  "terrain_pipeline/artifacts/__init__.py": {
+   "category": "infra",
+   "reason": "可移植产物存储/契约，公共底层"
+  },
+  "terrain_pipeline/artifacts/bundles.py": {
+   "category": "infra",
+   "reason": "可移植产物存储/契约，公共底层"
+  },
+  "terrain_pipeline/artifacts/contracts.py": {
+   "category": "infra",
+   "reason": "可移植产物存储/契约，公共底层"
+  },
+  "terrain_pipeline/artifacts/encoding.py": {
+   "category": "infra",
+   "reason": "可移植产物存储/契约，公共底层"
+  },
+  "terrain_pipeline/artifacts/storage.py": {
+   "category": "infra",
+   "reason": "可移植产物存储/契约，公共底层"
+  },
+  "terrain_pipeline/basin_storage.py": {
+   "category": "B",
+   "reason": "M4 functional consolidation"
+  },
+  "terrain_pipeline/basin_topology.py": {
+   "category": "B",
+   "reason": "M4 functional consolidation"
+  },
+  "terrain_pipeline/channel_geometry.py": {
+   "category": "B",
+   "reason": "M5 functional consolidation"
+  },
+  "terrain_pipeline/climate_forcing.py": {
+   "category": "D",
+   "reason": "M3 functional consolidation"
+  },
+  "terrain_pipeline/coastal_delta_avulsion.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_bank_formation.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_branch_attachment.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_branching.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_deposition_scaling.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_evolution.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_formation.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_geological.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_geological_network.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_graph_hydraulics.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_growth.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_hydraulic_capacity.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_hydraulic_event.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_hydraulics.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_lobes.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_morphology.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_mouth_extension.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_multicell.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_multicell_avulsion.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_network_plan.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_node_inventory.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_pipeline.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_plain.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_product.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_regional.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_routes.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_delta_window.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/coastal_marine_base.py": {
+   "category": "B2",
+   "reason": "泥沙与沉积/海洋沉积"
+  },
+  "terrain_pipeline/coastal_marine_longterm.py": {
+   "category": "B2",
+   "reason": "泥沙与沉积/海洋沉积"
+  },
+  "terrain_pipeline/coastal_marine_product.py": {
+   "category": "B2",
+   "reason": "泥沙与沉积/海洋沉积"
+  },
+  "terrain_pipeline/coastal_marine_sediment.py": {
+   "category": "B2",
+   "reason": "泥沙与沉积/海洋沉积"
+  },
+  "terrain_pipeline/coastal_river_connector.py": {
+   "category": "B2",
+   "reason": "泥沙与沉积/海洋沉积"
+  },
+  "terrain_pipeline/coastal_terrain.py": {
+   "category": "A",
+   "reason": "M1 functional consolidation"
+  },
+  "terrain_pipeline/common_infra.py": {
+   "category": "infra",
+   "reason": "公共底层设施"
+  },
+  "terrain_pipeline/complete_delta.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/conversion.py": {
+   "category": "infra",
+   "reason": "导出适配（Minecraft 竖向重映射），用户 2026-11-05 定为公共底层"
+  },
+  "terrain_pipeline/delta_network_site.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/delta_network_skeleton.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/delta_network_skeleton_v2.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/delta_network_skeleton_v3.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/delta_network_skeleton_v4.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/delta_network_terrain.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/delta_network_terrain_v2.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/delta_network_terrain_v3.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/delta_network_terrain_v4.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/delta_tidal_validation.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/drainage.py": {
+   "category": "B",
+   "reason": "M4 functional consolidation"
+  },
+  "terrain_pipeline/environment_coastal_delta.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/environment_contract.py": {
+   "category": "D",
+   "reason": "M3 functional consolidation"
+  },
+  "terrain_pipeline/environment_delta_fv.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/environment_delta_source.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/environment_processes.py": {
+   "category": "D",
+   "reason": "M3 functional consolidation"
+  },
+  "terrain_pipeline/environment_product.py": {
+   "category": "D",
+   "reason": "M3 functional consolidation"
+  },
+  "terrain_pipeline/environment_query.py": {
+   "category": "D",
+   "reason": "M3 functional consolidation"
+  },
+  "terrain_pipeline/environment_regional_hydraulics.py": {
+   "category": "D",
+   "reason": "M3 functional consolidation"
+  },
+  "terrain_pipeline/fictional_world_overview.py": {
+   "category": "A",
+   "reason": "山脉/基础地形/海岸底图（按前缀）"
+  },
+  "terrain_pipeline/fine_subgrid.py": {
+   "category": "B",
+   "reason": "M5 functional consolidation"
+  },
+  "terrain_pipeline/geology.py": {
+   "category": "D",
+   "reason": "M3 functional consolidation"
+  },
+  "terrain_pipeline/hybrid_geometry.py": {
+   "category": "C",
+   "reason": "M2 functional consolidation"
+  },
+  "terrain_pipeline/hybrid_hydraulics.py": {
+   "category": "C",
+   "reason": "M2 functional consolidation"
+  },
+  "terrain_pipeline/hydrology_detail.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/hydrology_detail_conditioning.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/hydrology_detail_projection.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/hydrology_detail_ridge.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/hydrology_detail_tributaries.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/hydrology_detail_tributary_finite.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/hydrology_macro_channel_feasibility.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/hydrology_planning.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/lake.py": {
+   "category": "B",
+   "reason": "M4 functional consolidation"
+  },
+  "terrain_pipeline/large_delta_active_network.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_active_source.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_coupled.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_evolution.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_formation_source.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_forward.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_landform_prototype.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_landform_regional.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_landform_v2.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_shelf_fan.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_shelf_product.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_shelf_scenario.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_source.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_state.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_suite.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_suite_event.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_suite_network.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_suite_source.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_suite_tidal.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_terrain_product.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_tidal_dynamics.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_tidal_product.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_tidal_product_v4.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_tidal_reconstruction.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_delta_tidal_source.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/large_scale_resource_preflight.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/large_scale_surface_network.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/large_scale_surface_tiles.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/large_surface_network_validation.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/legacy_region.py": {
+   "category": "infra",
+   "reason": "区域存储，用户 2026-11-05 定为公共底层"
+  },
+  "terrain_pipeline/metric_region.py": {
+   "category": "infra",
+   "reason": "区域存储，用户 2026-11-05 定为公共底层"
+  },
+  "terrain_pipeline/metric_region_storage.py": {
+   "category": "infra",
+   "reason": "区域存储，用户 2026-11-05 定为公共底层"
+  },
+  "terrain_pipeline/minecraft_export.py": {
+   "category": "infra",
+   "reason": "导出适配，用户 2026-11-05 定为公共底层"
+  },
+  "terrain_pipeline/minecraft_preset.py": {
+   "category": "infra",
+   "reason": "导出适配，用户 2026-11-05 定为公共底层"
+  },
+  "terrain_pipeline/mountain_forms.py": {
+   "category": "A",
+   "reason": "M1 functional consolidation"
+  },
+  "terrain_pipeline/mountain_source_adapter.py": {
+   "category": "infra",
+   "reason": "公共底层设施"
+  },
+  "terrain_pipeline/native_hierarchical_delta.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/natural_outlet_certification.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_delta.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/new_world_game_connectivity.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_game_delta.py": {
+   "category": "B1",
+   "reason": "三角洲族（按前缀/职责）"
+  },
+  "terrain_pipeline/new_world_game_hydrology.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_game_river_detail.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_hydrology.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_native_event.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_native_event_correction.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_native_event_v3.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_native_geometry.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_native_network.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_native_network_v2.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_native_network_v3.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_native_network_v4.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_native_water.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_river_acceptance.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_river_lifecycle.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_river_scene.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_rivers.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_sediment.py": {
+   "category": "B2",
+   "reason": "泥沙与沉积/海洋沉积"
+  },
+  "terrain_pipeline/new_world_stage1.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_stage1_checkpoint.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/new_world_stage1_derived_phases.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/procedural_mountain_erosion.py": {
+   "category": "A",
+   "reason": "山脉地形外观/侵蚀滤波（职责为山体生成，前缀未覆盖）"
+  },
+  "terrain_pipeline/real_dem_outlet_classification.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/regional_hydraulics_archive.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/regional_hydraulics_mesh.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/regional_surface_review.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/regional_surface_source.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/river_connectivity_audit.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/runoff.py": {
+   "category": "B",
+   "reason": "M4 functional consolidation"
+  },
+  "terrain_pipeline/shallow_water.py": {
+   "category": "B",
+   "reason": "M5 functional consolidation"
+  },
+  "terrain_pipeline/single_domain_surface_archive.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/single_domain_surface_consumer.py": {
+   "category": "B",
+   "reason": "河网/水力（按前缀）"
+  },
+  "terrain_pipeline/skeleton_mountains.py": {
+   "category": "A",
+   "reason": "山脉/基础地形/海岸底图（按前缀）"
+  },
+  "terrain_pipeline/soil_water.py": {
+   "category": "D",
+   "reason": "M3 functional consolidation"
+  },
+  "terrain_pipeline/special_terrain.py": {
+   "category": "C",
+   "reason": "M2 functional consolidation"
+  },
+  "terrain_pipeline/surface_domain.py": {
+   "category": "B",
+   "reason": "M5 functional consolidation"
+  },
+  "terrain_pipeline/surface_hydraulics.py": {
+   "category": "B",
+   "reason": "M5 functional consolidation"
+  },
+  "terrain_pipeline/surface_identity.py": {
+   "category": "B",
+   "reason": "M5 functional consolidation"
+  },
+  "terrain_pipeline/surface_rivers/__init__.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/backbone_shape_fidelity.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/branches.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/bridge.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/contracts.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/delta.py": {
+   "category": "B1",
+   "reason": "三角洲沉积几何"
+  },
+  "terrain_pipeline/surface_rivers/diagnostics.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/finite_river_block_schedule.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/finite_river_event.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/finite_river_product.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/hydraulics.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/large_world_river_geometry.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_backbone_precompute.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_backbone_product.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_bed_update.py": {
+   "category": "B2",
+   "reason": "泥沙推移/悬移/海岸输沙（前缀不含 sediment，以职责归 B2）"
+  },
+  "terrain_pipeline/surface_rivers/metric_boundary_coupling.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_channel_product.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_coast_bounded_delta.py": {
+   "category": "B1",
+   "reason": "三角洲沉积几何"
+  },
+  "terrain_pipeline/surface_rivers/metric_coastal_transport.py": {
+   "category": "B2",
+   "reason": "泥沙推移/悬移/海岸输沙（前缀不含 sediment，以职责归 B2）"
+  },
+  "terrain_pipeline/surface_rivers/metric_cohort_calibration.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_contracts.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_coupled_product.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_cross_region.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_delta.py": {
+   "category": "B1",
+   "reason": "三角洲沉积几何"
+  },
+  "terrain_pipeline/surface_rivers/metric_delta_product.py": {
+   "category": "B1",
+   "reason": "三角洲沉积几何"
+  },
+  "terrain_pipeline/surface_rivers/metric_delta_sediment_product.py": {
+   "category": "B1",
+   "reason": "三角洲沉积几何"
+  },
+  "terrain_pipeline/surface_rivers/metric_depression_gate.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_distribution_calibration.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_domain_bed_feedback.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_domain_closed_gate.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_domain_closure.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_domain_coupled.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_domain_flow.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_domain_pipeline.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_domain_sediment.py": {
+   "category": "B2",
+   "reason": "泥沙"
+  },
+  "terrain_pipeline/surface_rivers/metric_dynamic_feedback.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_fluvial_delta.py": {
+   "category": "B1",
+   "reason": "三角洲沉积几何"
+  },
+  "terrain_pipeline/surface_rivers/metric_fluvial_distributary.py": {
+   "category": "B1",
+   "reason": "三角洲生长/潮汐汊道/分汊形态（前缀不含 delta，以职责归 B1）"
+  },
+  "terrain_pipeline/surface_rivers/metric_fluvial_morphodynamics.py": {
+   "category": "B1",
+   "reason": "三角洲生长/潮汐汊道/分汊形态（前缀不含 delta，以职责归 B1）"
+  },
+  "terrain_pipeline/surface_rivers/metric_fluvial_native_routers.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_fluvial_slope_stability.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_fluvial_water_diagnostic.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_fluvial_water_repair.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_fv_bedload_v4.py": {
+   "category": "B2",
+   "reason": "泥沙推移/悬移/海岸输沙（前缀不含 sediment，以职责归 B2）"
+  },
+  "terrain_pipeline/surface_rivers/metric_fv_coastal_coupling.py": {
+   "category": "B2",
+   "reason": "泥沙推移/悬移/海岸输沙（前缀不含 sediment，以职责归 B2）"
+  },
+  "terrain_pipeline/surface_rivers/metric_fv_coastal_sediment.py": {
+   "category": "B2",
+   "reason": "泥沙"
+  },
+  "terrain_pipeline/surface_rivers/metric_fv_exchange_v3.py": {
+   "category": "B2",
+   "reason": "泥沙推移/悬移/海岸输沙（前缀不含 sediment，以职责归 B2）"
+  },
+  "terrain_pipeline/surface_rivers/metric_fv_growth_core.py": {
+   "category": "B1",
+   "reason": "三角洲生长/潮汐汊道/分汊形态（前缀不含 delta，以职责归 B1）"
+  },
+  "terrain_pipeline/surface_rivers/metric_fv_growth_coupling_v4.py": {
+   "category": "B1",
+   "reason": "三角洲生长/潮汐汊道/分汊形态（前缀不含 delta，以职责归 B1）"
+  },
+  "terrain_pipeline/surface_rivers/metric_fv_incident_wave_vectorized.py": {
+   "category": "B2",
+   "reason": "泥沙推移/悬移/海岸输沙（前缀不含 sediment，以职责归 B2）"
+  },
+  "terrain_pipeline/surface_rivers/metric_fv_suspended_supply.py": {
+   "category": "B2",
+   "reason": "泥沙推移/悬移/海岸输沙（前缀不含 sediment，以职责归 B2）"
+  },
+  "terrain_pipeline/surface_rivers/metric_highland_sources.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_integrated_delta.py": {
+   "category": "B1",
+   "reason": "三角洲沉积几何"
+  },
+  "terrain_pipeline/surface_rivers/metric_large_source.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_morphology_coupling.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_morphology_events.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_morphology_product.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_morphology_topology.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_natural_delta.py": {
+   "category": "B1",
+   "reason": "三角洲沉积几何"
+  },
+  "terrain_pipeline/surface_rivers/metric_natural_delta_continuation.py": {
+   "category": "B1",
+   "reason": "三角洲沉积几何"
+  },
+  "terrain_pipeline/surface_rivers/metric_naturalness_audit.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_network_discharge_product.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_output.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_product.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_reference_erosion.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_resolution_exchange.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_resolution_series.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_river_dominant_delta.py": {
+   "category": "B1",
+   "reason": "三角洲沉积几何"
+  },
+  "terrain_pipeline/surface_rivers/metric_river_release.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_saved_river_supply.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_sediment.py": {
+   "category": "B2",
+   "reason": "泥沙"
+  },
+  "terrain_pipeline/surface_rivers/metric_source.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_stylized_wetland.py": {
+   "category": "B",
+   "reason": "河网湿地，用户 2026-11-05 定为 B"
+  },
+  "terrain_pipeline/surface_rivers/metric_td_delta_initialization.py": {
+   "category": "B1",
+   "reason": "三角洲沉积几何"
+  },
+  "terrain_pipeline/surface_rivers/metric_td_generated_rivers.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_td_generated_source.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_td_native_planning.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_td_single_source_review.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_tidal_creek_construction.py": {
+   "category": "B1",
+   "reason": "三角洲生长/潮汐汊道/分汊形态（前缀不含 delta，以职责归 B1）"
+  },
+  "terrain_pipeline/surface_rivers/metric_tidal_island_geometry.py": {
+   "category": "B1",
+   "reason": "三角洲生长/潮汐汊道/分汊形态（前缀不含 delta，以职责归 B1）"
+  },
+  "terrain_pipeline/surface_rivers/metric_tide_wave_morphology.py": {
+   "category": "B1",
+   "reason": "三角洲生长/潮汐汊道/分汊形态（前缀不含 delta，以职责归 B1）"
+  },
+  "terrain_pipeline/surface_rivers/metric_upstream_sediment.py": {
+   "category": "B2",
+   "reason": "泥沙"
+  },
+  "terrain_pipeline/surface_rivers/metric_water_cycle.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_world_domains.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/metric_world_reaches.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/native_30m_hydrology_event.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/native_30m_hydrology_ledger.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/native_30m_reach_chain.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/native_30m_reach_selection.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/native_30m_source.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/natural_outlet_status.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/pipeline.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/postvalidate.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/transport.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/water.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/world_channel_dynamics.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/world_channel_graph.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/surface_rivers/world_grid_bed_coupling.py": {
+   "category": "B",
+   "reason": "surface_rivers 河网子包"
+  },
+  "terrain_pipeline/td_accepted_water_morphology.py": {
+   "category": "B2",
+   "reason": "水沙形态/单轮泥沙账本"
+  },
+  "terrain_pipeline/td_basin_morphology.py": {
+   "category": "B2",
+   "reason": "水沙形态/单轮泥沙账本"
+  },
+  "terrain_pipeline/td_bounded_conditioning.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_candidate_weather_jobs.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_catchment_dynamic_review.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_entry_pulse_execution_v2.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_entry_pulse_incremental.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_entry_pulse_propagation.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_entry_shallow_water.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_fine_bed_hydraulics.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_fine_bed_material.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_fine_bed_raster.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_fine_bed_shards.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_hour_pages_acceptance_io.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_hour_pages_review.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_native_channel_geometry.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_native_channel_surface.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_native_channel_surface_review.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_native_channel_tiles.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_native_channel_valley_paths.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_native_domain_partition.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_native_dynamic_scale_preflight.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_native_partition_transport.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_native_water_surface.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_native_weather_storage_inputs.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_native_weather_storage_io.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_native_weather_storage_v10_io.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_native_weather_v10_review.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_natural_bed_identity.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_natural_outlet_certification.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_natural_river_network.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_ported_junction.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_ported_network_composition.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_shared_channel_fine.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_shared_port_channel.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_source.py": {
+   "category": "A",
+   "reason": "M1 functional consolidation"
+  },
+  "terrain_pipeline/td_surface_reaches.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_surface_river_edges.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/td_weather_checkpoint_recovery.py": {
+   "category": "B",
+   "reason": "TD 河网/汇水/水力产品（前缀 td_，按职责归 B）"
+  },
+  "terrain_pipeline/tectonic.py": {
+   "category": "A",
+   "reason": "M1 functional consolidation"
+  },
+  "terrain_pipeline/terrain_map_style.py": {
+   "category": "infra",
+   "reason": "地图样式，用户 2026-11-05 定为公共底层"
+  },
+  "terrain_pipeline/underground_rivers.py": {
+   "category": "C",
+   "reason": "M2 functional consolidation"
+  },
+  "terrain_pipeline/vdm_cuts.py": {
+   "category": "C",
+   "reason": "M2 functional consolidation"
+  },
+  "terrain_pipeline/world_acceptance_delta.py": {
+   "category": "B1",
+   "reason": "把本地工程三角洲模拟绑定到真实河口"
+  },
+  "terrain_pipeline/world_irregular_channels.py": {
+   "category": "B",
+   "reason": "河网/汇水/河谷/水体求解（前缀未覆盖，以职责归 B）"
+  },
+  "terrain_pipeline/world_river_network_io.py": {
+   "category": "B",
+   "reason": "河网/汇水/河谷/水体求解（前缀未覆盖，以职责归 B）"
+  },
+  "terrain_pipeline/world_seed.py": {
+   "category": "infra",
+   "reason": "公共底层设施"
+  },
+  "terrain_pipeline/world_water_formation.py": {
+   "category": "B",
+   "reason": "河网/汇水/河谷/水体求解（前缀未覆盖，以职责归 B）"
+  },
+  "terrain_pipeline/world_water_layout.py": {
+   "category": "A",
+   "reason": "绝对坐标水陆多尺度布局场，属基础地形布局"
+  },
+  "vdm_diffusion/__init__.py": {
+   "category": "C",
+   "reason": "VDM 三维扩散/位移"
+  },
+  "vdm_diffusion/__main__.py": {
+   "category": "C",
+   "reason": "VDM 三维扩散/位移"
+  },
+  "vdm_diffusion/checkpoint.py": {
+   "category": "C",
+   "reason": "VDM 三维扩散/位移"
+  },
+  "vdm_diffusion/conditions.py": {
+   "category": "C",
+   "reason": "VDM 三维扩散/位移"
+  },
+  "vdm_diffusion/config.py": {
+   "category": "C",
+   "reason": "VDM 三维扩散/位移"
+  },
+  "vdm_diffusion/data.py": {
+   "category": "C",
+   "reason": "VDM 三维扩散/位移"
+  },
+  "vdm_diffusion/export.py": {
+   "category": "C",
+   "reason": "VDM 三维扩散/位移"
+  },
+  "vdm_diffusion/landforms.py": {
+   "category": "C",
+   "reason": "VDM 三维扩散/位移"
+  },
+  "vdm_diffusion/network.py": {
+   "category": "C",
+   "reason": "VDM 三维扩散/位移"
+  },
+  "vdm_diffusion/postprocess.py": {
+   "category": "C",
+   "reason": "VDM 三维扩散/位移"
+  },
+  "vdm_diffusion/process.py": {
+   "category": "C",
+   "reason": "VDM 三维扩散/位移"
+  },
+  "vdm_diffusion/sample.py": {
+   "category": "C",
+   "reason": "VDM 三维扩散/位移"
+  },
+  "vdm_diffusion/train.py": {
+   "category": "C",
+   "reason": "VDM 三维扩散/位移"
+  },
+  "terrain_pipeline/ocean_islands.py": {
+   "category": "A",
+   "reason": "冻结板块上的海岛/岛链及栅格消费，世界生成S2/G1，关联G8/R2；仅文档分类"
+  },
+  "terrain_pipeline/ocean_island_consumers.py": {
+   "category": "A",
+   "reason": "冻结板块上的海岛/岛链及栅格消费，世界生成S2/G1，关联G8/R2；仅文档分类"
+  },
+  "terrain_pipeline/island_mountains.py": {
+   "category": "A",
+   "reason": "冻结海岛筛选与显式TD局部山地接入，S2/G1关联R1/G8；仅文档分类"
+  }
+ }
+}

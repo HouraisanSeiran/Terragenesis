@@ -6,12 +6,10 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
-from terrain_pipeline.single_domain_surface_geometry import (
-    build_geometry, build_water_frame, load_geometry, load_water_frame,
-    save_geometry, save_water_frame, validate_geometry, validate_water_frame,
-)
-from terrain_pipeline.td_basin_storage_v10_io import FLUX, LEDGERS
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.fine_subgrid import build_geometry, build_water_frame, load_geometry, load_water_frame, save_geometry, save_water_frame, validate_geometry, validate_water_frame
+from terrain_pipeline.basin_storage import FLUX as FLUX
+from terrain_pipeline.basin_storage import LEDGERS as LEDGERS
 from tests.test_td_native_channel_geometry import fixture
 
 
@@ -166,8 +164,8 @@ class SingleDomainSurfaceGeometryTests(unittest.TestCase):
                                                 ("frame", frame, save_water_frame, load_water_frame)):
                 path = Path(directory) / (name + ".npz")
                 saver(path, result)
-                with patch("terrain_pipeline.single_domain_surface_geometry.build_geometry", side_effect=AssertionError), \
-                        patch("terrain_pipeline.single_domain_surface_geometry.build_water_frame", side_effect=AssertionError):
+                with patch('terrain_pipeline.fine_subgrid.build_geometry', side_effect=AssertionError), \
+                        patch('terrain_pipeline.fine_subgrid.build_water_frame', side_effect=AssertionError):
                     loaded = loader(path, expected_sha256=file_sha256(path), expected_identity=result["identity_sha256"])
                 self.assertEqual(loaded["identity_sha256"], result["identity_sha256"])
                 self.assertTrue(all(not value.flags.writeable for value in loaded["arrays"].values()))

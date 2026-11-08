@@ -12,7 +12,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.dem_domain import load_dem_candidate
+from terrain_pipeline.td_source import load_dem_candidate
 from tools import verify_real_dem_rainfall_routing as rainfall_exporter
 from tools.verify_real_dem_outlet_classification import (
     DEFAULT_CANDIDATE, canonical_bytes, check_unchanged, confined_file, file_sha256,
@@ -39,7 +39,7 @@ def layers(candidate, raw, flat, flat_report):
             "flat_distance_to_exit_edges": flat["distance_to_exit"].tolist(),
             "terminals": flat_report["terminals"],
             "unknown_semantics": "null heights are missing evidence, not ocean; no triangles across missing cells",
-            "raw_flat_difference": "exact_equal_height_D8_connectivity_only_no_filling_or_carving",
+            "raw_flat_difference": "exact_equal_height_irregular_graph_connectivity_only_no_filling_or_carving",
             "natural_outlet_verified": False, "ocean_outlet_certified": False}
 
 
@@ -108,7 +108,7 @@ def check_output(output, inputs):
 def identity():
     return {"exporter_sha256": file_sha256(__file__),
             "rainfall_exporter_sha256": file_sha256(rainfall_exporter.__file__),
-            "rainfall_core_sha256": file_sha256(importlib.import_module("terrain_pipeline.real_dem_rainfall_routing").__file__)}
+            "rainfall_core_sha256": file_sha256(importlib.import_module('terrain_pipeline.runoff').__file__)}
 
 
 def make_manifest(directory, inputs):

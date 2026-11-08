@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from terrain_pipeline.regional_surface_review import read_bounded_json
-from terrain_pipeline.mountain_source_adapter import publish_bytes, file_sha256
+from terrain_pipeline.common_infra import publish_bytes, file_sha256
 
 
 def build_landing(index, *, root=ROOT):

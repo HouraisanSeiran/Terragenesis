@@ -12,10 +12,13 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_overflow import OverflowParameters, load_overflow_topology
-from terrain_pipeline.td_basin_overflow_implicit import (ALGORITHM, load_stable_overflow,
-                                                        save_stable_overflow, simulate_stable_overflow)
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_storage import OverflowParameters as OverflowParameters
+from terrain_pipeline.basin_storage import load_overflow_topology as load_overflow_topology
+from terrain_pipeline.basin_storage import STABLE_OVERFLOW_ALGORITHM as ALGORITHM
+from terrain_pipeline.basin_storage import load_stable_overflow as load_stable_overflow
+from terrain_pipeline.basin_storage import save_stable_overflow as save_stable_overflow
+from terrain_pipeline.basin_storage import simulate_stable_overflow as simulate_stable_overflow
 from tools.audit_td_original_bed_overflow import audit_saved_arrays
 
 
@@ -127,7 +130,7 @@ def run(saved_index, expected_index_sha256, output, *, max_level=MAX_REFINEMENT_
               "resources": {"counted_face_leaf_steps": work, "saved_event_bytes": disk_bytes,
                             "work_limit": MAX_WORK, "disk_limit_bytes": MAX_DISK_BYTES, "event_array_limit_bytes": 128 * 1024**2},
               "thresholds": {"stage_m": HEIGHT_TOLERANCE_M, "flux_relative_l1": FLUX_RELATIVE_TOLERANCE},
-              "code_sha256": {"solver": file_sha256(ROOT / "terrain_pipeline/td_basin_overflow_implicit.py"),
+              "code_sha256": {"solver": file_sha256(ROOT / 'terrain_pipeline/basin_storage.py'),
                               "runner": file_sha256(Path(__file__))},
               "natural_outlet_verified": False, "hydraulic_ready": False, "publishable": False}
     write_json(output / "index.json", result)

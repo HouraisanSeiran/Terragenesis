@@ -6,13 +6,23 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.td_basin_source import make_td_source, save_td_source
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy, save_basin_hierarchy
-from terrain_pipeline.td_basin_storage import simulate_basin_storage, save_basin_storage
-from terrain_pipeline.td_material_field import make_material_field, save_material_field
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_storage import save_td_source as save_td_source
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_topology import save_basin_hierarchy as save_basin_hierarchy
+from terrain_pipeline.basin_storage import simulate_threshold_storage as simulate_basin_storage
+from terrain_pipeline.basin_storage import save_basin_storage as save_basin_storage
+from terrain_pipeline.geology import make_material_field, save_material_field
 from terrain_pipeline.td_basin_morphology import generate_morphology, save_morphology
-from terrain_pipeline.td_basin_review import ALGORITHM, export_basin_review, export_comparison_navigation, load_basin_review, load_candidate_comparison, load_review_inputs, load_selection_proof, make_basin_review
+from terrain_pipeline.basin_storage import BASIN_REVIEW_ALGORITHM as ALGORITHM
+from terrain_pipeline.basin_storage import export_basin_review as export_basin_review
+from terrain_pipeline.basin_storage import export_comparison_navigation as export_comparison_navigation
+from terrain_pipeline.basin_storage import load_basin_review as load_basin_review
+from terrain_pipeline.basin_storage import load_candidate_comparison as load_candidate_comparison
+from terrain_pipeline.basin_storage import load_review_inputs as load_review_inputs
+from terrain_pipeline.basin_storage import load_selection_proof as load_selection_proof
+from terrain_pipeline.basin_storage import make_basin_review as make_basin_review
 
 
 def fixtures(directory, *, with_storage=True, with_morphology=False):
@@ -41,7 +51,7 @@ class BasinReviewTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary)
             records = fixtures(directory)
-            with patch("terrain_pipeline.td_material_field.make_material_field", side_effect=AssertionError("forbidden")), patch("terrain_pipeline.td_basin_storage.simulate_basin_storage", side_effect=AssertionError("forbidden")), patch("terrain_pipeline.td_basin_hierarchy.build_basin_hierarchy", side_effect=AssertionError("forbidden")):
+            with patch('terrain_pipeline.geology.make_material_field', side_effect=AssertionError("forbidden")), patch('terrain_pipeline.basin_storage.simulate_threshold_storage', side_effect=AssertionError("forbidden")), patch('terrain_pipeline.basin_topology.build_basin_hierarchy', side_effect=AssertionError("forbidden")):
                 inputs = load_review_inputs(records)
                 review = make_basin_review(inputs)
                 manifest = export_basin_review(records, directory / "review")
@@ -135,7 +145,7 @@ class BasinReviewTests(unittest.TestCase):
             self.assertEqual(data["schema"], "td-basin-review-v1")
 
     def test_lod_reports_omitted_points_footprint_water_and_keeps_native_arrays(self):
-        from terrain_pipeline.td_basin_review import make_basin_review
+        from terrain_pipeline.basin_storage import make_basin_review as make_basin_review
         height = np.linspace(70, 1, 70).reshape((70, 1))
         source = make_td_source(height, spacing_m=1)
         hierarchy = build_basin_hierarchy(source)
@@ -164,7 +174,7 @@ class BasinReviewTests(unittest.TestCase):
             path = directory / "records.json"
             path.write_text(json.dumps(index), encoding="utf-8")
             digest = file_sha256(path)
-            with patch("terrain_pipeline.td_basin_storage.simulate_basin_storage", side_effect=AssertionError("forbidden")):
+            with patch('terrain_pipeline.basin_storage.simulate_threshold_storage', side_effect=AssertionError("forbidden")):
                 comparison = load_candidate_comparison(path, expected_sha256=digest, baseline_records=baseline)
             self.assertFalse(comparison["flags"]["transient_converged"])
             self.assertEqual(comparison["selected_candidate_id"], "baseline")

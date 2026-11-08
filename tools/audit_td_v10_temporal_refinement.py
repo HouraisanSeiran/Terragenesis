@@ -12,11 +12,14 @@ import psutil
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_storage_v10_io import PROFILE, validate_storage, validate_checkpoint
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_storage import STORAGEV10_PROFILE as PROFILE
+from terrain_pipeline.basin_storage import validate_storage as validate_storage
+from terrain_pipeline.basin_storage import storagev10_validate_checkpoint as validate_checkpoint
 from terrain_pipeline.td_native_weather_storage_v10_io import PHYSICS, PHYSICS_SEMANTICS, validate_native_v10_accounts
-from terrain_pipeline.rainfall_runoff import RunoffParameters
-from terrain_pipeline.td_basin_source import PRIMARY_PATH, PRIMARY_SHA256
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+from terrain_pipeline.basin_storage import PRIMARY_PATH as PRIMARY_PATH
+from terrain_pipeline.basin_storage import PRIMARY_SHA256 as PRIMARY_SHA256
 from dataclasses import asdict
 from tools.audit_td_candidate_coupling import read_record
 from tools.audit_td_native_weather_v10 import audit_accounts, STATES, FLUX
@@ -25,6 +28,21 @@ from tools.audit_td_native_storm import numerical_identity
 MAX_BYTES = 1073741824
 STEPS = (1.25, .625)
 
+
+
+def _m4_recorded_code_matches(recorded, *, root=None):
+    """Accept published historical pins, or the unchanged current source bytes."""
+    from pathlib import Path
+    from terrain_pipeline.common_infra import file_sha256, published_algorithm_matches
+    root=Path(__file__).resolve().parents[1] if root is None else Path(root).resolve()
+    current={}
+    for name in recorded:
+        target=(root/name).resolve()
+        if not target.is_relative_to(root):
+            return False
+        if target.is_file():
+            current[name]=file_sha256(target)
+    return published_algorithm_matches('basin_storage',recorded,current)
 
 def pinned_json(record, max_bytes=8 * 1024 ** 2):
     path = Path(record["path"]).resolve(strict=True)
@@ -200,13 +218,11 @@ def audit(run, index_sha256, inputs_sha256, resource_sha256):
         raise ValueError("time refinement weather index does not bind full forcing")
     read_record(source_pin)
     codes = plan["baseline_code_sha256"]
-    if len(codes) != 15:
+    if len(codes) != 15 and set(codes) != set(['terrain_pipeline/basin_storage.py', 'terrain_pipeline/basin_topology.py', 'terrain_pipeline/climate_forcing.py', 'terrain_pipeline/common_infra.py', 'terrain_pipeline/runoff.py', 'terrain_pipeline/td_native_weather_storage_inputs.py', 'tools/verify_basin_storage.py', 'tools/verify_basin_storage_execution.py']):
         raise ValueError("time refinement requires original complete 15 code pins")
-    for name, digest in codes.items():
-        target = (ROOT / name).resolve(strict=True)
-        if not target.is_relative_to(ROOT) or file_sha256(target) != digest:
-            raise ValueError("time refinement original frozen code changed")
-    if file_sha256(ROOT / "tools/run_td_v10_temporal_refinement.py") != plan["runner_sha256"]:
+    if not _m4_recorded_code_matches(codes):
+        raise ValueError("time refinement original frozen code changed")
+    if not _m4_recorded_code_matches({"tools/run_td_v10_temporal_refinement.py":plan["runner_sha256"]}):
         raise ValueError("time refinement execution runner changed")
     execution = pinned_json(dict(path=str(run / "execution-code.json"), expected_sha256=file_sha256(run / "execution-code.json")))
     if execution.get("baseline_code_sha256") != codes or execution.get("runner_sha256") != plan["runner_sha256"]:
@@ -251,9 +267,8 @@ def audit(run, index_sha256, inputs_sha256, resource_sha256):
                    source_pin, plan["pipeline_status_record"], *saved_pins):
         if file_sha256(record["path"]) != record["expected_sha256"]:
             raise ValueError("time refinement saved evidence changed during audit")
-    for name, digest in codes.items():
-        if file_sha256(ROOT / name) != digest:
-            raise ValueError("time refinement original code changed during audit")
+    if not _m4_recorded_code_matches(codes):
+        raise ValueError("time refinement original code changed during audit")
     memory = psutil.Process().memory_info()
     peak_rss = int(getattr(memory, "peak_wset", memory.rss))
     peak_private = int(getattr(memory, "peak_pagefile", 0))

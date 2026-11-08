@@ -1,0 +1,209 @@
+{
+  "product_path": "D:\\codexwork\\\u5c71\u5ddd\u5f62\u610fTerragenesis\\.scratch\\plate-td-source-20261101\\review913",
+  "world_seed": 20261020,
+  "images": {
+    "comparison.png": {
+      "sha256": "31de8fc5ca3bbbb9ca53a9075462121e36f7c66076bca9e43af157d25f7cf7b1",
+      "terrain_basis": "actual frozen-plate-conditioned TD",
+      "product_identity": "a5c996799fd1a6d92a4c72183690572c4bd640d2566aad73fa3e298400d60580",
+      "raw_td_sha256": "a0db2265dec974d62f86684b2b90171497ca4bef110fbb6772d3c8c5c428c551",
+      "plate_identity": "b4c8bbdba29111b8c3ba3270e2f0d3a4fed3544655249fa07c506654b8ae6af9",
+      "algorithms": [
+        "same-source legacy sign-lock formula",
+        "continuous coastal composition",
+        "regional-relief-v3"
+      ],
+      "coverage_status": "partial",
+      "bounds_xmin_zmin_xmax_zmax_m": [
+        -8865,
+        -2685,
+        6525,
+        12705
+      ],
+      "physical_spacing_m": 30,
+      "display_sampling_m": 30,
+      "time": "static initial bed",
+      "rendering": "elevation tint 0..3000m, sea depth 0..100m, shared NW hillshade; vertical exaggeration1; no actual vegetation/materials; purple enclosed below datum, gray unknown",
+      "coverage_note": "513x513 terrain complete; final classification retains 1309 unknown wet cells at crop edge (1.1781 km2). Not full hydrology or material coverage."
+    },
+    "overview.png": {
+      "sha256": "95a4f7b6ce6408b66a34e1f965b4c522d0b989ba413d958b5f0f3eb820c4d8c8",
+      "terrain_basis": "actual frozen-plate-conditioned TD",
+      "product_identity": "a5c996799fd1a6d92a4c72183690572c4bd640d2566aad73fa3e298400d60580",
+      "raw_td_sha256": "a0db2265dec974d62f86684b2b90171497ca4bef110fbb6772d3c8c5c428c551",
+      "plate_identity": "b4c8bbdba29111b8c3ba3270e2f0d3a4fed3544655249fa07c506654b8ae6af9",
+      "algorithms": [
+        "plate-conditioned TD",
+        "continuous coastal composition",
+        "regional-relief-v3",
+        "connected-ocean classification"
+      ],
+      "coverage_status": "partial",
+      "bounds_xmin_zmin_xmax_zmax_m": [
+        -8865,
+        -2685,
+        6525,
+        12705
+      ],
+      "physical_spacing_m": 30,
+      "display_sampling_m": 30,
+      "time": "static initial bed",
+      "rendering": "elevation tint 0..3000m, sea depth 0..100m, shared NW hillshade; vertical exaggeration1; no actual vegetation/materials; purple enclosed below datum, gray unknown",
+      "coverage_note": "513x513 terrain complete; final classification retains 1309 unknown wet cells at crop edge (1.1781 km2). Not full hydrology or material coverage."
+    },
+    "bed-change.png": {
+      "sha256": "769028edae7539d25df081492b708ca03a5ee50cbde321c91b20a829ca31acc9",
+      "terrain_basis": "actual frozen-plate-conditioned TD",
+      "product_identity": "a5c996799fd1a6d92a4c72183690572c4bd640d2566aad73fa3e298400d60580",
+      "raw_td_sha256": "a0db2265dec974d62f86684b2b90171497ca4bef110fbb6772d3c8c5c428c551",
+      "plate_identity": "b4c8bbdba29111b8c3ba3270e2f0d3a4fed3544655249fa07c506654b8ae6af9",
+      "algorithms": [
+        "saved-bed difference"
+      ],
+      "coverage_status": "complete_in_window",
+      "bounds_xmin_zmin_xmax_zmax_m": [
+        -8865,
+        -2685,
+        6525,
+        12705
+      ],
+      "physical_spacing_m": 30,
+      "display_sampling_m": 30,
+      "time": "static initial bed",
+      "rendering": "signed bed difference, -350..350m, no hillshade",
+      "coverage_note": "513x513 terrain complete; final classification retains 1309 unknown wet cells at crop edge (1.1781 km2). Not full hydrology or material coverage."
+    }
+  },
+  "metrics": {
+    "hard_lock": {
+      "min_m": -554.1596069335938,
+      "max_m": 329.54290771484375,
+      "std_m": 171.82025146484375,
+      "land_gain_from_hard_km2": 0.0,
+      "land_loss_from_hard_km2": 0.0,
+      "shore_cells": 516,
+      "unknown_cells": 0,
+      "islands": {
+        "count": 0,
+        "total_area_km2": 0,
+        "largest_area_km2": 0,
+        "islands": [],
+        "excluded_components": {
+          "unknown_or_nonmarine": 1,
+          "outside_view": 0,
+          "small_or_narrow": 0,
+          "narrow_gap": 0
+        },
+        "definition": "8-connected land, 4-neighbour exterior entirely anchored ocean, complete within review window; area>=0.01km2, max EDT inner cell distance>=60m, other-land cell-centre separation minus30m>=90m within4-cell halo. Distances are raster proxies, not surveyed shore widths."
+      }
+    },
+    "continuous": {
+      "min_m": -554.1831665039062,
+      "max_m": 329.5412292480469,
+      "std_m": 171.86854553222656,
+      "land_gain_from_hard_km2": 3.771,
+      "land_loss_from_hard_km2": 0.045899999999999996,
+      "shore_cells": 716,
+      "unknown_cells": 0,
+      "islands": {
+        "count": 0,
+        "total_area_km2": 0,
+        "largest_area_km2": 0,
+        "islands": [],
+        "excluded_components": {
+          "unknown_or_nonmarine": 1,
+          "outside_view": 0,
+          "small_or_narrow": 3,
+          "narrow_gap": 0
+        },
+        "definition": "8-connected land, 4-neighbour exterior entirely anchored ocean, complete within review window; area>=0.01km2, max EDT inner cell distance>=60m, other-land cell-centre separation minus30m>=90m within4-cell halo. Distances are raster proxies, not surveyed shore widths."
+      }
+    },
+    "relief": {
+      "min_m": -554.1831665039062,
+      "max_m": 329.5412292480469,
+      "std_m": 181.2402801513672,
+      "land_gain_from_hard_km2": 18.881999999999998,
+      "land_loss_from_hard_km2": 12.654,
+      "shore_cells": 2395,
+      "unknown_cells": 1309,
+      "islands": {
+        "count": 3,
+        "total_area_km2": 0.9297,
+        "largest_area_km2": 0.4932,
+        "islands": [
+          {
+            "area_km2": 0.0513,
+            "max_inner_cell_distance_m": 94.86832980505139,
+            "x_m": 233.15789473684345,
+            "z_m": 5930.526315789473,
+            "bounds_xmin_zmin_xmax_zmax_m": [
+              105.0,
+              5775.0,
+              375.0,
+              6075.0
+            ],
+            "local_gap_m": 139.7056274847714
+          },
+          {
+            "area_km2": 0.4932,
+            "max_inner_cell_distance_m": 313.20919526731655,
+            "x_m": 705.3284671532856,
+            "z_m": 6682.390510948906,
+            "bounds_xmin_zmin_xmax_zmax_m": [
+              225.0,
+              6285.0,
+              1155.0,
+              7065.0
+            ],
+            "local_gap_m": null
+          },
+          {
+            "area_km2": 0.3852,
+            "max_inner_cell_distance_m": 283.0194339616981,
+            "x_m": -5052.686915887851,
+            "z_m": 11734.345794392524,
+            "bounds_xmin_zmin_xmax_zmax_m": [
+              -5535.0,
+              11385.0,
+              -4605.0,
+              12045.0
+            ],
+            "local_gap_m": null
+          }
+        ],
+        "excluded_components": {
+          "unknown_or_nonmarine": 3,
+          "outside_view": 0,
+          "small_or_narrow": 4,
+          "narrow_gap": 1
+        },
+        "definition": "8-connected land, 4-neighbour exterior entirely anchored ocean, complete within review window; area>=0.01km2, max EDT inner cell distance>=60m, other-land cell-centre separation minus30m>=90m within4-cell halo. Distances are raster proxies, not surveyed shore widths."
+      }
+    },
+    "shore_distance_proxy_m": {
+      "median": 942.0191080864549,
+      "p95": 2502.258979402412,
+      "max": 3077.742679302479
+    }
+  },
+  "source_and_image_checks_pass": true,
+  "strict_cross_window_reproducibility_pass": false,
+  "repeat_verification": {
+    "same_window_repeat_identity_equal": true,
+    "same_window_repeat_array_files_equal": true,
+    "different_window_overlap_max_m": 0.009767532348632812,
+    "different_window_overlap_rms_m": 0.0008316204105798101,
+    "different_window_overlap_abs_quantiles_m": [
+      0.0,
+      0.0,
+      0.0049122333526610135
+    ],
+    "different_window_land_sign_mismatches": 0,
+    "interpretation": "same-window repeat is bit-identical; differently-sized requests differ. Exact cross-window reproducibility remains open; no arbitrary tolerance promoted to acceptance.",
+    "original_source_and_registered_code_unchanged": true
+  },
+  "morphology_status": "rejected_by_user",
+  "morphology_reason": "Independent relief changes the coast too much and differs from the source TD terrain style.",
+  "recommended_for_new_world": false
+}

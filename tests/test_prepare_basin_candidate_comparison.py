@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 from tools.prepare_basin_candidate_comparison import build
 
 
@@ -46,7 +46,7 @@ class CandidateComparisonTests(unittest.TestCase):
             baseline.write_text(json.dumps({"inputs": {"saved": "fixture"}}), encoding="utf-8")
             with self.assertRaises(ValueError):
                 build(path, baseline_inputs=baseline)
-            with patch("terrain_pipeline.td_basin_review.load_candidate_comparison", return_value={"flags": {"publishable": False}}) as adapter:
+            with patch('terrain_pipeline.basin_storage.load_candidate_comparison', return_value={"flags": {"publishable": False}}) as adapter:
                 result = build(path, expected_sha256=file_sha256(path), baseline_inputs=baseline,
                                expected_baseline_sha256=file_sha256(baseline))
                 adapter.assert_called_once_with(path.resolve(), expected_sha256=file_sha256(path), baseline_records={"saved": "fixture"})

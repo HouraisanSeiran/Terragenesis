@@ -1,0 +1,161 @@
+{
+  "schema": "large-delta-suite-case-v1",
+  "source": {
+    "schema": "large-delta-regional-source-v1",
+    "world_seed": 20261020,
+    "source_identity": "c751a09a6f02e8c336b6b9b8fb4b11b5dc67386e9a8470b0b1d90858bf1ffb72",
+    "plate_identity": "b4c8bbdba29111b8c3ba3270e2f0d3a4fed3544655249fa07c506654b8ae6af9",
+    "source_manifest_sha256": "7ce130fbba28c8ecfa4030c740583e9a61ef0566c48f15a8480fb396e2a6ccc3",
+    "source_files_sha256": {
+      "bed_m": "eb37ec4d383137e61412d5d2411bf5370c3aa942de6e825df4dbebb48a3e8f45",
+      "valid_mask": "c87466771a911899c0687bc0aeec34e2a14efdb1b2ed8d282a6f7a15e6c720c3",
+      "ocean_mask": "ee6fd7f367469feab8047564d13b4e8ecf3b2947b20098eb9d6cac97a0613a68"
+    },
+    "files_sha256": {
+      "bed_m": "617d99bf64a96de441bd17dd3308f233f4c8e988db0e9b0e651e74e54e8c0cd7",
+      "valid": "23c160c1c4743129d7c0ae6ffe0f9ba64c4816643afb30dbfecdf0e35f2c93cd",
+      "ocean": "54b27fd1b388ae9d31d7f7e58cb96908978c9b8a10fef4327fc63efbf1b5e0d3"
+    },
+    "shape_zx": [
+      500,
+      500
+    ],
+    "origin_xz_m": [
+      -5940,
+      -61440
+    ],
+    "spacing_m": 120,
+    "sea_m": 0,
+    "sampling": "native cell centre integer decimation; no interpolation",
+    "known": [
+      "source coordinates",
+      "world seed",
+      "TD source identity",
+      "finite valid mask"
+    ],
+    "assumed": [
+      "finite-boundary ocean classification inherits frozen macro, not global certification"
+    ],
+    "ocean_note": "finite boundary inherits frozen macro ocean; not global hydrodynamic certification",
+    "stats": {
+      "valid_cells": 250000,
+      "ocean_cells": 86179,
+      "shallow_ocean_minus_50_to_0_cells": 18901
+    }
+  },
+  "regional_source_manifest_sha256": "86447be266536c34b4158fe5b109884882970c88474b25207674e25bda9eadf8",
+  "scenario": {
+    "name": "40km-game-scenario",
+    "anchor_xz_m": [
+      28260,
+      -24240
+    ],
+    "radius_m": 30000,
+    "catchment_km2": 60000,
+    "denudation_m": 20,
+    "delivery_fraction": 0.5,
+    "discharge_m3_s": 600,
+    "porosity": 0.4,
+    "toe_depth_m": 250,
+    "plain_slope_m_per_m": 4e-05,
+    "coastal_plain_height_m": 0.7,
+    "full_fill_depth_fraction": 0.8,
+    "lobes_xzr_m": []
+  },
+  "hydrology": "Chosen scenario, not measured external flow: runoff 0.31536 m/year; solid event input 0.03 m3/s.",
+  "initialization": {
+    "required_solid_m3": 28137912588.064327,
+    "retained_solid_m3": 28137912588.064327,
+    "unplaced_solid_m3": 571862087411.9357,
+    "landform_area_m2": 541324800.0,
+    "landform_span_zx_m": [
+      39600,
+      44520
+    ],
+    "core_2km_area_m2": 92116800.0,
+    "core_2km_span_zx_m": [
+      23640,
+      15120
+    ],
+    "max_interior_distance_m": 5495.161508090549,
+    "anchor_cell_zx": [
+      310,
+      285
+    ],
+    "plain_target_elevation_range_m": [
+      0.7020176962909677,
+      1.9000000000000001
+    ]
+  },
+  "solid_inventory_m3": 600000000000.0,
+  "network": {
+    "outlet_zx": [
+      [
+        363,
+        416
+      ],
+      [
+        378,
+        258
+      ],
+      [
+        273,
+        361
+      ],
+      [
+        299,
+        418
+      ],
+      [
+        409,
+        342
+      ]
+    ],
+    "inlet_zx": [
+      226,
+      207
+    ],
+    "corridor_seed": 5818407055904234443,
+    "branch_count": 9,
+    "length_m": 85955.1749834778,
+    "river_span_zx_m": [
+      21960,
+      25320
+    ],
+    "plain_fraction_within_2km_of_reach": 0.4702064268993403,
+    "all_2km_core_fraction_within_2km_of_reach": 0.8445828505214369,
+    "max_initial_stage_above_uncut_land_m": 0.5,
+    "deposit_excavation_bulk_m3": 38997896.720663056,
+    "original_excavation_bulk_m3": 1802918.7085010689
+  },
+  "event": {
+    "river_node_count": 9,
+    "water_residual_m3": 5.21540641784668e-08,
+    "solid_residual_m3": -3.3609239835641347e-09,
+    "source_water_m3": 25920000.0,
+    "sea_water_in_m3": 1882327.1483116997,
+    "sea_water_out_m3": 32448959.902502004,
+    "source_solid_m3": 1295.999999999895,
+    "sea_solid_out_m3": 275.1278142854234,
+    "timestep_s": 10,
+    "hourly_stage_max_difference_vs_5s_m": 0.007257499184765592
+  },
+  "sections_columns": [
+    "reach",
+    "x_m",
+    "z_m",
+    "row",
+    "column",
+    "stage_m",
+    "width_m",
+    "nominal_depth_m",
+    "discharge_m3_s",
+    "cut_bed_m"
+  ],
+  "event_scope": "12 h M2/S2 reduced storage graph of represented river reaches and separate offshore buffers; no floodplain or regional ocean solve. Event bed response is in event.npz, not applied to the regional raster.",
+  "caveat": "250 m bounded accommodation is explicit scenario fill over source TD, not native shoreline. Grid spacing 120 m does not resolve all analytic channel widths. Original cut retained separately.",
+  "output_sha256": {
+    "product.npz": "9d066bffc935ec76832447a1f952669178b124866747c06282b77d8c13e564a9",
+    "event.npz": "b8e241acacc7f6f2c65cd506e8494920e6aa07aba9311a23c0fc90effd53904b"
+  }
+}

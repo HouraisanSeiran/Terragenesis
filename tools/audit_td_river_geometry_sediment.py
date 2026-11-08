@@ -9,28 +9,48 @@ from unittest.mock import patch
 import numpy as np
 from scipy.spatial import cKDTree
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.surface_rivers.metric_channel_geometry import load_channel_geometry
-from terrain_pipeline.surface_rivers.metric_channel_product import load_channel_product
+from terrain_pipeline.common_infra import file_sha256, load_bundle, publish_bytes
+from terrain_pipeline.channel_geometry import load_channel_geometry
+from terrain_pipeline.surface_rivers.metric_channel_product import MAX_BYTES, validate_channel_product
+from terrain_pipeline.channel_geometry import receiver_distances
 from terrain_pipeline.surface_rivers.metric_sediment import load_sediment
 from terrain_pipeline.surface_rivers.metric_product import load_diagnostic_product
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
 from tools.verify_td_river_geometry import mesh_evidence, shape_evidence, TD_DIRECTORY, TD_PRODUCT_SHA, TD_PRODUCT_ID
 from tools.verify_td_river_sediment import sample_saved_mesh, solid_budget
 
 
 DISABLED = (
-    "terrain_pipeline.surface_rivers.metric_channel_geometry.build_channel_geometry",
+    'terrain_pipeline.channel_geometry.build_channel_geometry',
     "terrain_pipeline.surface_rivers.metric_sediment.solve_sediment",
-    "terrain_pipeline.surface_rivers.metric_channel_solver.solve_channel",
+    'terrain_pipeline.surface_hydraulics.solve_channel',
     "terrain_pipeline.surface_rivers.metric_boundary_coupling.solve_coupled",
-    "terrain_pipeline.surface_rivers.metric_drainage.route_diagnostic",
-    "terrain_pipeline.surface_rivers.metric_drainage.accumulate_local_discharge",
-    "terrain_pipeline.surface_rivers.metric_runoff.runoff_from_forcing",
-    "terrain_pipeline.surface_rivers.metric_large_runoff.runoff_from_forcing_large",
+    'terrain_pipeline.drainage.route_diagnostic',
+    'terrain_pipeline.drainage.accumulate_local_discharge',
+    'terrain_pipeline.runoff.runoff_from_forcing',
+    'terrain_pipeline.runoff.runoff_from_forcing_large',
     "terrain_pipeline.surface_rivers.metric_product.build_diagnostic_product",
-    "terrain_pipeline.td_basin_hierarchy.build_basin_hierarchy",
+    'terrain_pipeline.basin_topology.build_basin_hierarchy',
 )
+
+
+def load_geometry_water(path, pin, geometry):
+    """Cold-load water using the already validated, persisted M5 geometry."""
+    geometry_arrays = geometry["arrays"]
+    distance = receiver_distances(geometry_arrays["node_xz_m"], geometry_arrays["receiver"])
+
+    def validate(water):
+        legacy = water["metadata"].get("schema") == "terragenesis-channel-diagnostic-v1"
+        validate_channel_product(water, legacy_receiver_distance_m=distance if legacy else None)
+        if (water["identity_sha256"] != pin["identity_sha256"]
+                or water["metadata"]["network_source_identity_sha256"] != geometry["identity_sha256"]):
+            raise ValueError("water product or geometry identity mismatch")
+        if not np.array_equal(water["arrays"]["network_receiver"], geometry_arrays["receiver"]):
+            raise ValueError("water receiver differs from persisted M5 geometry")
+        if not legacy and not np.array_equal(water["arrays"]["network_receiver_distance_m"], distance):
+            raise ValueError("water receiver distance differs from persisted M5 geometry")
+
+    return load_bundle(path, expected_sha256=pin["sha256"], validator=validate, max_bytes=MAX_BYTES)
 
 
 def cold_preview(geometries, output):
@@ -375,8 +395,7 @@ def audit(geometry_directory, sediment_directory, output):
         if np.any(pa["source_height_m"][pa["lake_mask"]] >= geometries["td_lake_fine"]["metadata"]["lake_stage_m"]):
             raise AssertionError("declared original lake support not wet at saved stage")
         wp = sm["td_water"]
-        water = load_channel_product(sediment_directory / wp["path"], expected_sha256=wp["sha256"],
-                                     expected_identity=wp["identity_sha256"])
+        water = load_geometry_water(sediment_directory / wp["path"], wp, td)
         wa = water["arrays"]
         np.testing.assert_array_equal(wa["network_receiver"], receiver)
         edge_lengths = np.linalg.norm(np.diff(ga["node_xz_m"], axis=0), axis=1)
@@ -424,7 +443,7 @@ def audit(geometry_directory, sediment_directory, output):
                   "sediment_manifest_sha256": file_sha256(sediment_directory / "acceptance.json"),
                   "glb": glb,
                   "code_sha256": {str(p): file_sha256(Path(__file__).resolve().parents[1] / p) for p in (
-                      "terrain_pipeline/surface_rivers/metric_channel_geometry.py",
+                      "terrain_pipeline/channel_geometry.py",
                       "terrain_pipeline/surface_rivers/metric_sediment.py",
                       "terrain_pipeline/surface_rivers/metric_bed_update.py",
                       "tools/verify_td_river_geometry.py", "tools/verify_td_river_sediment.py",

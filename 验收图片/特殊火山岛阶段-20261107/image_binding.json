@@ -1,0 +1,112 @@
+{
+  "schema": "volcanic-island-v4-primary-review-v1",
+  "world_seed": 20260903,
+  "actual_product_identity": "b13e7d77aa1a792ef9583e4333b58b8c4487ab0fbe74194d12eebfae477daa9e",
+  "actual_product_sha256": "4de797adec70e8b9b8171e591eb504a06a2d74c7482eabf5d5cdb9309e823766",
+  "actual_config": {
+    "arc_offset_m": 45000.0,
+    "arcs": true,
+    "atolls": true,
+    "boundary_spacing_m": 65000.0,
+    "candidate_cell_m": 160000.0,
+    "density": "high",
+    "detail_strength": 1.0,
+    "hotspot_count": 25,
+    "max_age_steps": 80.0,
+    "max_boundary_segments": 100000,
+    "max_candidates": 100000,
+    "max_chain_length_m": 300000.0,
+    "max_features": 10000,
+    "max_local_features": 64,
+    "max_query_points": 4194304,
+    "max_source_cells": 262144,
+    "max_speed_m_per_step": 20000.0,
+    "max_support_radius_m": 90000.0,
+    "max_working_bytes": 268435456,
+    "min_hotspot_spacing_m": 110000.0,
+    "ridge": true,
+    "seabed_join_softness_m": 320.0,
+    "stages": 7,
+    "valley_strength": 1.0,
+    "volcanic_fraction": 0.2,
+    "warm_water_scenario": true,
+    "world_seed": 20260903,
+    "world_type": "archipelago"
+  },
+  "actual_world_shape": [
+    800,
+    800
+  ],
+  "actual_world_spacing_m": 2000.0,
+  "actual_all_fields_cold_query_equal": true,
+  "feature_stage_counts": {
+    "none": 43,
+    "young": 2,
+    "mature": 1
+  },
+  "exposed_special_components": 3,
+  "special_islands_excluded_from_generic_td": true,
+  "ordinary_td_components": 21,
+  "plan_identity": "4f90890c6c42a2642abc45d3d3f97a6192f62ed36e300c74029a795c39909bbb",
+  "model_started": false,
+  "same_site_scenario": {
+    "selection": "first sorted stage-0 hotspot with complete .35-radius support in source bounds",
+    "feature_id": "hotspot:20260903:-1:-3:stage:0",
+    "centre_xz_m": [
+      -47762.449676417324,
+      -387403.2163951492
+    ],
+    "spacing_m": 99.76672369319931,
+    "semantics": "explicitly selected static morphology variants of one saved feature; not four default-world islands or an eruption history",
+    "stages": [
+      {
+        "stage": "young",
+        "product_identity": "7fd2182edc1d4706edd9e2855bd91d27e39f4737d696134fe527f12ee8cfc2c7",
+        "product_sha256": "a48cd0dc018e75787f972bf5f5d416eb1509baad9cdc20b8d430dc00ab2b4f28",
+        "peak_sample_m": 1511.7916988210409,
+        "centre_sample_m": 1258.8627065690662,
+        "samples_sha256": "a9f3fc15de63748347c2e1927556f00f45e45ed249a7d59ed452333cc4f65158",
+        "section_sha256": "bc4d6e097d14350fb9f88b6fc2fa6b78972b8370d3bd2956b680199f30af2b0d"
+      },
+      {
+        "stage": "mature",
+        "product_identity": "f2d020f64abdc6dbd0066918332daf1597f08fa1fe5f1fb70b4b599094b1a950",
+        "product_sha256": "9df48d89024c720b5e499e258ea62a81b264f4029bc9fe8e4e98b39e7221a9f2",
+        "peak_sample_m": 1786.6377781796023,
+        "centre_sample_m": 1662.7045472203527,
+        "samples_sha256": "7171d9266d907cd8b9e5bffa14ad3120cea9d88049be6f1837a0d67fbdf6737f",
+        "section_sha256": "0b34fe5acea27eaac0b0ba9d35d05883c6dd0a387c736ff96f4e367b4ef1df38"
+      },
+      {
+        "stage": "caldera",
+        "product_identity": "052950d1f854ec29512ac6be522abab53e3b23aad9f0134f914791e1a3834714",
+        "product_sha256": "3f9fb69a32f6fbca4f3febba0f5cac9369739bd9b77ea3edfd1056f0ac93f647",
+        "peak_sample_m": 1090.3167502663828,
+        "centre_sample_m": 215.99752827574775,
+        "samples_sha256": "16657d40d8118eccf7ac4f8b3d4ee1037204bad1a9178af3a2931d6cae59e1ea",
+        "section_sha256": "5418464cf4ebb7e6d76036bb7295f5f00575c48c2510cff10c3ab443bb6a5b4d"
+      },
+      {
+        "stage": "eroded",
+        "product_identity": "9be3a49fe5ee83e32e8eb39503d37b6892e9ce4a0b29ba0a88822e9aeb9eff06",
+        "product_sha256": "97b4980251b4875c8f0b389363608af5b64345d819bcc7f64b64b25c670e830c",
+        "peak_sample_m": 799.8300635953633,
+        "centre_sample_m": 653.0999455921356,
+        "samples_sha256": "a21d1db0583a1b42d6cb0108e49c5dda30182a1b0e0b0668c3c7fe87a1834350",
+        "section_sha256": "d808bda073fff1e4579d5cdf4ec9153b19944acd884fb06cbb0e50eb94954d26"
+      }
+    ]
+  },
+  "source_sha256": {
+    "terrain_pipeline/ocean_islands.py": "e6416975d97b494b3b6093e5eb180769e6870d9aae96ae72b62b8226223a9f78",
+    "terrain_pipeline/island_volcanoes.py": "9bb61448f288371d5d83a5c5bf1a1e8ebbd11e0c2bfb90697f48211d9a7136c0",
+    "terrain_pipeline/island_mountains.py": "c1cf6326a9a093a2a5f08dde76d906b075921f410cbef911998db0ba75e4db92",
+    "terrain_pipeline/ocean_island_consumers.py": "0b80d6973286dd77bab6ad8eb4dc5ae17965a6584b0f5b706f39465fa371a4b5",
+    "tools/prepare_ocean_islands.py": "33448c8654daa041fb8a262ecaf49ed0ddcfe9a7a87a0a2d7042cbaeee7bae8c"
+  },
+  "image_sha256": {
+    ".scratch\\volcanic-islands-20261107\\stage-comparison\\volcano_stages.png": "d7edd3947ad9ef94887c04295691b729978f0d2db8d46023d928265d6550eee6",
+    "验收图片\\特殊火山岛阶段-20261107\\volcano_stages.png": "d7edd3947ad9ef94887c04295691b729978f0d2db8d46023d928265d6550eee6",
+    "验收图片\\特殊火山岛阶段-20261107\\default_world.png": "3eb33883ca3431a269f340889ccf7a235e422d3a9a1e12b983bedd60e2b3c227"
+  }
+}

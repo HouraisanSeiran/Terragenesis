@@ -1,6 +1,6 @@
 # Claude TD 河网蓝图：M1 / M2 交付
 
-本轮完成用户指定的编号 Milestone 1「静态诊断排水」和 Milestone 2「时间变产流」，并补齐 M0 的来源登记与 tile 窗口前提。依据为根目录 [完整实施建议](../Terraindiffusion河网算法完整实施建议.md)，具体规格与状态见 [.scratch 任务](../.scratch/td-river-blueprint/spec.md)。Main 发布任务、审查与集成，两名用户指定 GPT-6 Sol 实施；同时最多三个智能体。
+本轮完成用户指定的编号 Milestone 1「静态诊断排水」和 Milestone 2「时间变产流」，并补齐 M0 的来源登记与 tile 窗口前提。依据为根目录 [完整实施建议（现已归档）](../deprecated-plans/Terraindiffusion河网算法完整实施建议.md)，具体规格与状态见 [.scratch 任务](../.scratch/td-river-blueprint/spec.md)。Main 发布任务、审查与集成，两名用户指定 GPT-6 Sol 实施；同时最多三个智能体。
 
 ## 实现
 

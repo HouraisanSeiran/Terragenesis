@@ -11,9 +11,9 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_basin_storage import load_basin_storage
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_storage import load_basin_storage as load_basin_storage
 from terrain_pipeline.td_surface_river_edges import build_td_surface_river_edges, write_report
 
 
@@ -25,8 +25,8 @@ def verify(destination):
                       "expected_identity": "cdb39ff2866281e23ca0cd4f5388ddfa0a158b621fb1fe8dd9d635e887b73998"},
         "ordinary": {"path": str(storage_path), "expected_sha256": "8ec55ed5cf750f93f821e97a0abf5fd74b2fe870f20ce1785a70f84097382dd2",
                      "expected_identity": "3c19fe7ab54b0373051fb25d59733130d3117a105b3d905a68f389687983a49b"}}
-    with patch("terrain_pipeline.td_basin_hierarchy.build_basin_hierarchy", side_effect=AssertionError("cold build")), patch(
-            "terrain_pipeline.td_basin_storage.simulate_basin_storage", side_effect=AssertionError("cold solve")):
+    with patch('terrain_pipeline.basin_topology.build_basin_hierarchy', side_effect=AssertionError("cold build")), patch(
+            'terrain_pipeline.basin_storage.simulate_threshold_storage', side_effect=AssertionError("cold solve")):
         hierarchy = load_basin_hierarchy(**pins["hierarchy"])
         storage = load_basin_storage(**pins["ordinary"])
         result = build_td_surface_river_edges(hierarchy, storage=storage)

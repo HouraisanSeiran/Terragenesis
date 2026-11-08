@@ -5,8 +5,8 @@ from pathlib import Path
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, save_bundle
-from terrain_pipeline.surface_rivers.metric_contracts import BoundaryGrid, TerrainGrid
+from terrain_pipeline.common_infra import file_sha256, identity, save_bundle
+from terrain_pipeline.common_infra import BoundaryGrid, TerrainGrid
 from terrain_pipeline.surface_rivers.metric_source import (load_source_registration,
                                                           register_source, save_source_registration,
                                                           slice_tile)

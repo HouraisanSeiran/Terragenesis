@@ -3,7 +3,7 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity
+from terrain_pipeline.common_infra import identity
 from terrain_pipeline.td_shared_port_channel import (
     FragmentComposer, _cut_at, build_midpoint_port, build_node_piece, select_fragment)
 from test_td_ported_junction import fixture

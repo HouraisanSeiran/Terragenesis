@@ -6,9 +6,9 @@ import shutil
 import tempfile
 from pathlib import Path
 import numpy as np
-from terrain_pipeline.rainfall_runoff import _strict_json
+from terrain_pipeline.runoff import _strict_json as _strict_json
 from terrain_pipeline.regional_surface_source import validate_source
-from terrain_pipeline.mountain_source_adapter import publish_bytes, file_sha256
+from terrain_pipeline.common_infra import publish_bytes, file_sha256
 
 
 def read_bounded_json(path, *, expected_sha256, max_bytes=16 * 1024 * 1024):

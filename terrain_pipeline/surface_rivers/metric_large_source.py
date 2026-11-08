@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 
 from diffusion.physical_config import PhysicalGenerationConfig
-from terrain_pipeline.mountain_source_adapter import checked_archive, file_sha256, identity, readonly
+from terrain_pipeline.common_infra import checked_archive, file_sha256, identity, readonly
 
 
 SOURCE_SIZE = 1024

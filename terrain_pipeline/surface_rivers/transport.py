@@ -72,9 +72,17 @@ def route_sediment(inputs: TransportInput) -> TransportResult:
             raise ValueError("Path cell is invalid")
         if not (0 <= point[0] < shape[0] and 0 <= point[1] < shape[1]):
             raise ValueError("Path leaves grid")
+    sampled_path = [path[0]] if path else []
     for a, b in zip(path, path[1:]):
-        if max(abs(a[0]-b[0]), abs(a[1]-b[1])) != 1:
-            raise ValueError("Path must have adjacent, distinct cells")
+        steps = max(abs(a[0]-b[0]), abs(a[1]-b[1]))
+        if not steps:
+            raise ValueError("Path must have distinct consecutive nodes")
+        # Deposit at the first wet shore crossed by the supplied reach, even
+        # when graph endpoints span several native ocean control cells.
+        sampled_path.extend((int(round(a[0] + (b[0]-a[0])*t/steps)),
+                             int(round(a[1] + (b[1]-a[1])*t/steps)))
+                            for t in range(1, steps+1))
+    path = tuple(sampled_path)
     wet = ocean & (depth > 0)
     mouth = next((b for a, b in zip(path, path[1:]) if land[a] and wet[b]), None)
     height_delta = np.zeros(shape, dtype=float)

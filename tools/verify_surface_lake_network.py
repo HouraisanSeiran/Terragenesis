@@ -15,11 +15,12 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from tests.test_surface_lake_network import high_tailwater_case, joint_case
-from terrain_pipeline.surface_network_prepare import SurfaceNetworkBudget
-from terrain_pipeline.surface_lake_network import (
-    evaluate_surface_lake_network, load_surface_lake_network,
-    save_surface_lake_network, surface_lake_network_hash, validate_surface_lake_network,
-)
+from terrain_pipeline.surface_domain import SurfaceNetworkBudget
+from terrain_pipeline.lake import evaluate_surface_lake_network as evaluate_surface_lake_network
+from terrain_pipeline.lake import load_surface_lake_network as load_surface_lake_network
+from terrain_pipeline.lake import save_surface_lake_network as save_surface_lake_network
+from terrain_pipeline.lake import surface_lake_network_hash as surface_lake_network_hash
+from terrain_pipeline.lake import validate_surface_lake_network as validate_surface_lake_network
 
 
 def independent_checks(result):

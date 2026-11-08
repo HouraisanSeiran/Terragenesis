@@ -11,9 +11,11 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_basin_escape_plan import make_basin_escape_plan, save_basin_escape_plan, load_basin_escape_plan
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_topology import make_basin_escape_plan as make_basin_escape_plan
+from terrain_pipeline.basin_topology import save_basin_escape_plan as save_basin_escape_plan
+from terrain_pipeline.basin_topology import load_basin_escape_plan as load_basin_escape_plan
 from terrain_pipeline.td_surface_reaches import _plain
 from tools.verify_td_basin_spill_network import peak_process_memory
 
@@ -109,7 +111,7 @@ def verify():
               "plan": pin, "seed_selection": "explicitly enumerate every saved allowed engineering boundary receiver terminal, at its original bed level; no natural outlet inference",
               "summary": _plain(result["summary"]), "audit": audit, "cold_read_passed": True,
               "resources": {"peak_process_memory": memory, "json_bytes": path.stat().st_size, "within_1GiB": max(memory.values()) <= 1024 ** 3},
-              "implementation_sha256": {name: file_sha256(ROOT / name) for name in ("terrain_pipeline/td_basin_escape_plan.py", "tests/test_td_basin_escape_plan.py", "tools/verify_td_basin_escape_plan.py")}}
+              "implementation_sha256": {name: file_sha256(ROOT / name) for name in ('terrain_pipeline/basin_topology.py', "tests/test_td_basin_escape_plan.py", "tools/verify_td_basin_escape_plan.py")}}
     if not report["resources"]["within_1GiB"]:
         publish_bytes(output / "failed-resource.json", json.dumps(report, indent=2).encode())
         raise RuntimeError("resource budget exceeded")

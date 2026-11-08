@@ -11,7 +11,7 @@ import numpy as np
 import rasterio
 from rasterio.transform import from_origin
 
-from terrain_pipeline.dem_domain import prepare_dem_candidate, save_dem_candidate
+from terrain_pipeline.td_source import prepare_dem_candidate, save_dem_candidate
 from tools import verify_real_dem_outlet_classification as exporter
 
 

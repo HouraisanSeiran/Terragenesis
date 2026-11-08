@@ -1,0 +1,17 @@
+# 大类 infra 公共底层 模块表 1
+
+职责原文不代表认证；静态调用者只含Python AST本地导入。完整符号/依赖/hash见 catalog.json。
+
+| 模块 | 类别／阶段 | 职责说明 | 说明依据 | 顶层符号／静态导入者数 |
+| --- | --- | --- | --- | --- |
+| [terrain_pipeline/__init__.py](../../../terrain_pipeline/__init__.py) | algorithm-or-io / X1；S1/R1；S1/R9；S3/V8 | Terrain Diffusion height -> vector displacement -> local sculpting. | source-docstring | (无顶层命名声明) / 139 |
+| [terrain_pipeline/artifacts/__init__.py](../../../terrain_pipeline/artifacts/__init__.py) | algorithm-or-io / X1；S1/R1；S1/R9；S3/V1；S3/V8 | Portable terrain artifacts, independent of game consumers. | source-docstring | (无顶层命名声明) / 10 |
+| [terrain_pipeline/artifacts/contracts.py](../../../terrain_pipeline/artifacts/contracts.py) | algorithm-or-io / X1；S1/R1；S1/R9；S3/V1；S3/V8 | Validated physical coordinates and immutable artifact payloads. | source-docstring | canonical_json, digest, immutable_array, array_hash, finite_number / 46 |
+| [terrain_pipeline/common_infra.py](../../../terrain_pipeline/common_infra.py) | algorithm-or-io / X1；S1/R1；S1/R9；S3/V1；S3/V8 | Shared low-level infrastructure: hashing, canonical JSON, seeds, coordinates, atomic IO, mmap. One home for helpers that were copied into dozens of modules. Every function here reproduces the byte/value output of named… | source-docstring | file_sha256, file_sha256_and_size, file_record, is_sha256_hex, require_sha256_hex / 588 |
+| [terrain_pipeline/conversion.py](../../../terrain_pipeline/conversion.py) | algorithm-or-io / S4/J2；S3/V8 | Lossless geometry conversion after explicit Minecraft vertical remapping. | source-docstring | height_to_vdm / 1 |
+| [terrain_pipeline/legacy_region.py](../../../terrain_pipeline/legacy_region.py) | algorithm-or-io / S1/R9；S4/J1 | Explicit import and read-only consumption of legacy region results. | source-docstring | _no_duplicate_keys, _reject_constant, _load_json, _scalar, _json_scalar / 2 |
+| [terrain_pipeline/metric_region.py](../../../terrain_pipeline/metric_region.py) | algorithm-or-io / S2/G1；S1/R1；S1/R9；S3/V8 | Physical-metre regional landform processing. | source-docstring | RegionRecipe, RegionResult, _smooth, _gaussian, process_region / 11 |
+| [terrain_pipeline/metric_region_storage.py](../../../terrain_pipeline/metric_region_storage.py) | algorithm-or-io / S1/R9；S2/G1；S3/V8 | Explicit publication and read-only loading for metric region results. | source-docstring | MetricRegion, prepare_metric_region, _sha256, load_metric_region / 5 |
+| [terrain_pipeline/minecraft_export.py](../../../terrain_pipeline/minecraft_export.py) | algorithm-or-io / S4/J1；S1/R9；S3/V8 | Explicit, checked snapshot for the read-only Minecraft surface adapter. | source-docstring | validate_minecraft_surface_heights, export_metric_minecraft / 4 |
+| [terrain_pipeline/minecraft_preset.py](../../../terrain_pipeline/minecraft_preset.py) | algorithm-or-io / S4/J2；S1/R9 | Pure export mapping; no changes to physical terrain or old binary exporters. | source-docstring | MinecraftExportPreset / 2 |
+| [terrain_pipeline/terrain_map_style.py](../../../terrain_pipeline/terrain_map_style.py) | algorithm-or-io / X3 | Single source of truth for offline terrain-map styling. Every terrain figure in this repository draws the *same* physical hillshade, the same hypsometric ramps and the same map furniture, so that two figures can be comp… | source-docstring | physical_hillshade, apply_hillshade, relief_colormap, ocean_colormap, band_colors / 15 |

@@ -1,0 +1,473 @@
+{
+  "schema": "full-publication-atlas-v1",
+  "status": "read-only rendering; visual review required",
+  "figures": [
+    {
+      "terrain_basis": "saved marine checkpoint bed, derived from window100-v2 and TD pages; not satellite imagery",
+      "source_chain": {
+        "source_manifest": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\window100-v2\\manifest.json",
+        "source_manifest_sha256": "88c8a2d85ec2e47d1aa9d20ec6eaab611771d4361ef2b5151a51afe2a49a21bc",
+        "source_npz": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\window100-v2\\source.npz",
+        "source_sha256": "c95f3bc2fda697ad05fdf0e827b20edb2c778e13517b95a6a5ecba49a11b3240",
+        "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+        "td_pages": [
+          {
+            "page_xz": [
+              -1,
+              -1
+            ],
+            "identity": "1ddb05a325179aadae5ddee4ed6b40ff3be239acb9975f0853bbb760d389e468",
+            "raw_td_sha256": "77705a39fb93397d22cebaeece6659e80f4a9d243ff1073cc9504651af480d33",
+            "manifest_sha256": "e90833603644318cbfab0f8f5780ad93e06dd2dde5196dff73fe611370c3f4b3",
+            "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_-1"
+          },
+          {
+            "page_xz": [
+              0,
+              -1
+            ],
+            "identity": "7ad4b2bfee232e4d65ab43a0c397d25f09e12d0746e02b799be5b46a973a5179",
+            "raw_td_sha256": "a0c0b5ee6cdd8c4b1cbd92781e82d91e5e8712515726a9d614d7ce809887df8f",
+            "manifest_sha256": "eccb987fe1a724dfb340315273120ce8b160887c20d80270eb000514ab5f5261",
+            "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_-1"
+          },
+          {
+            "page_xz": [
+              -1,
+              0
+            ],
+            "identity": "a4b5a09c2f232b30598896567f5bd02815207a09635fa618c51a44f8a8c64bad",
+            "raw_td_sha256": "46a59645068cd8a9c413939a256b44a8b341c468da830d7e42d278e25080f59f",
+            "manifest_sha256": "7df387601f02756d8dde00a2bcb50c641f3b5bfc1faa0687f7f67a801512a887",
+            "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_+0"
+          },
+          {
+            "page_xz": [
+              0,
+              0
+            ],
+            "identity": "ed91c6c3806c4446f56c987f68bb4c1293f8eacca1ef651a994301e9016d0eda",
+            "raw_td_sha256": "adf0cbb99bd9c98af164925ffa96d8ae29f22e2bc1f64b2a5634f0c9f964f9c6",
+            "manifest_sha256": "0575ed6267c0dc55a132d5e2a2daef835190e48deff174700b412aa7e79a0d92",
+            "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_+0"
+          }
+        ],
+        "source_algorithm": "fixed-owner-nearest30-parent-edge-overlap-v2"
+      },
+      "inputs": [
+        {
+          "prefix": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\full-final-initial",
+          "npz_sha256": "8e6aa151d5ec9a9a52be881cb8ad5536b1f3d317968cd287c396a1bcd83df3b7",
+          "json_sha256": "f5124a8b4f20c92bbabf9c8cb14d2d8215725cdbd538da92a018780a7f52c20a",
+          "time": {
+            "physical_time_s": 190800.0,
+            "equivalent_years": 0.0
+          },
+          "scenario": {
+            "discharge_m3_s": 150.0,
+            "solid_rate_m3_s": 0.08
+          }
+        },
+        {
+          "prefix": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\full-final-formed",
+          "npz_sha256": "cae7bb72eb07520204e7daf374a0fc21c0807a03e7228bb8dc789e39c1e02370",
+          "json_sha256": "e523c363ec2b1a47b859c5abde9d02b1545d904e5c73d82184011dc8a3257322",
+          "time": {
+            "physical_time_s": 190800.0,
+            "equivalent_years": 5.0
+          },
+          "scenario": {
+            "discharge_m3_s": 150.0,
+            "solid_rate_m3_s": 0.08
+          }
+        },
+        {
+          "prefix": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\full-final-event2",
+          "npz_sha256": "9b621162bce7164fb0fd88c929aff778808f529538eef775f1718159d9493ad7",
+          "json_sha256": "e28d998de2dee10ab9274845959304d32d9ebbf853bd42fe6f24d784d397c106",
+          "time": {
+            "physical_time_s": 370800.0,
+            "equivalent_years": 5.0
+          },
+          "scenario": {
+            "discharge_m3_s": 150.0,
+            "solid_rate_m3_s": 0.08
+          }
+        }
+      ],
+      "sampling_m": 100,
+      "native_td_m": 30,
+      "coordinates": "cell centres [z,x], X east, Z south",
+      "unknown_wet": "original unknown ocean classification, not invalid DEM; magenta base, computed freshwater may overlay",
+      "algorithms": [
+        "saved marine bed",
+        "boundary-connected classify_ocean",
+        "matplotlib LightSource azimuth 315 altitude 45 vertical exaggeration 1"
+      ],
+      "coverage_status": "partial",
+      "file": "01-full-window.png",
+      "sha256": "4cdfe907fb6456adf9f7022c8ca8503b2703cd6c50e33ba65df269275356f1d3",
+      "description": "same-source initial and formed 45 km terrain comparison",
+      "colour_range_m": [
+        -307.15582396490885,
+        1495.7110595703125
+      ],
+      "locked_light_and_colour": true
+    },
+    {
+      "terrain_basis": "saved marine checkpoint bed, derived from window100-v2 and TD pages; not satellite imagery",
+      "source_chain": {
+        "source_manifest": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\window100-v2\\manifest.json",
+        "source_manifest_sha256": "88c8a2d85ec2e47d1aa9d20ec6eaab611771d4361ef2b5151a51afe2a49a21bc",
+        "source_npz": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\window100-v2\\source.npz",
+        "source_sha256": "c95f3bc2fda697ad05fdf0e827b20edb2c778e13517b95a6a5ecba49a11b3240",
+        "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+        "td_pages": [
+          {
+            "page_xz": [
+              -1,
+              -1
+            ],
+            "identity": "1ddb05a325179aadae5ddee4ed6b40ff3be239acb9975f0853bbb760d389e468",
+            "raw_td_sha256": "77705a39fb93397d22cebaeece6659e80f4a9d243ff1073cc9504651af480d33",
+            "manifest_sha256": "e90833603644318cbfab0f8f5780ad93e06dd2dde5196dff73fe611370c3f4b3",
+            "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_-1"
+          },
+          {
+            "page_xz": [
+              0,
+              -1
+            ],
+            "identity": "7ad4b2bfee232e4d65ab43a0c397d25f09e12d0746e02b799be5b46a973a5179",
+            "raw_td_sha256": "a0c0b5ee6cdd8c4b1cbd92781e82d91e5e8712515726a9d614d7ce809887df8f",
+            "manifest_sha256": "eccb987fe1a724dfb340315273120ce8b160887c20d80270eb000514ab5f5261",
+            "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_-1"
+          },
+          {
+            "page_xz": [
+              -1,
+              0
+            ],
+            "identity": "a4b5a09c2f232b30598896567f5bd02815207a09635fa618c51a44f8a8c64bad",
+            "raw_td_sha256": "46a59645068cd8a9c413939a256b44a8b341c468da830d7e42d278e25080f59f",
+            "manifest_sha256": "7df387601f02756d8dde00a2bcb50c641f3b5bfc1faa0687f7f67a801512a887",
+            "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_+0"
+          },
+          {
+            "page_xz": [
+              0,
+              0
+            ],
+            "identity": "ed91c6c3806c4446f56c987f68bb4c1293f8eacca1ef651a994301e9016d0eda",
+            "raw_td_sha256": "adf0cbb99bd9c98af164925ffa96d8ae29f22e2bc1f64b2a5634f0c9f964f9c6",
+            "manifest_sha256": "0575ed6267c0dc55a132d5e2a2daef835190e48deff174700b412aa7e79a0d92",
+            "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_+0"
+          }
+        ],
+        "source_algorithm": "fixed-owner-nearest30-parent-edge-overlap-v2"
+      },
+      "inputs": [
+        {
+          "prefix": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\full-final-initial",
+          "npz_sha256": "8e6aa151d5ec9a9a52be881cb8ad5536b1f3d317968cd287c396a1bcd83df3b7",
+          "json_sha256": "f5124a8b4f20c92bbabf9c8cb14d2d8215725cdbd538da92a018780a7f52c20a",
+          "time": {
+            "physical_time_s": 190800.0,
+            "equivalent_years": 0.0
+          },
+          "scenario": {
+            "discharge_m3_s": 150.0,
+            "solid_rate_m3_s": 0.08
+          }
+        },
+        {
+          "prefix": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\full-final-formed",
+          "npz_sha256": "cae7bb72eb07520204e7daf374a0fc21c0807a03e7228bb8dc789e39c1e02370",
+          "json_sha256": "e523c363ec2b1a47b859c5abde9d02b1545d904e5c73d82184011dc8a3257322",
+          "time": {
+            "physical_time_s": 190800.0,
+            "equivalent_years": 5.0
+          },
+          "scenario": {
+            "discharge_m3_s": 150.0,
+            "solid_rate_m3_s": 0.08
+          }
+        },
+        {
+          "prefix": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\full-final-event2",
+          "npz_sha256": "9b621162bce7164fb0fd88c929aff778808f529538eef775f1718159d9493ad7",
+          "json_sha256": "e28d998de2dee10ab9274845959304d32d9ebbf853bd42fe6f24d784d397c106",
+          "time": {
+            "physical_time_s": 370800.0,
+            "equivalent_years": 5.0
+          },
+          "scenario": {
+            "discharge_m3_s": 150.0,
+            "solid_rate_m3_s": 0.08
+          }
+        }
+      ],
+      "sampling_m": 100,
+      "native_td_m": 30,
+      "coordinates": "cell centres [z,x], X east, Z south",
+      "unknown_wet": "original unknown ocean classification, not invalid DEM; magenta base, computed freshwater may overlay",
+      "algorithms": [
+        "saved marine bed",
+        "boundary-connected classify_ocean",
+        "matplotlib LightSource azimuth 315 altitude 45 vertical exaggeration 1"
+      ],
+      "coverage_status": "partial",
+      "file": "01b-local-comparison.png",
+      "sha256": "e0d0fcaa92eb6e39d191853526cacdd39dfe84f8027612aafc41ada42bbd2877",
+      "description": "same-scale local comparison and quantitative bed change",
+      "bounds_xz_km": [
+        -8.1,
+        1.9,
+        12.0,
+        2.0
+      ],
+      "terrain_colour_range_m": [
+        -307.15582396490885,
+        1495.7110595703125
+      ],
+      "local_bed_change_range_m": [
+        -2.1962587614643105,
+        2.1962587614643105
+      ]
+    },
+    {
+      "terrain_basis": "saved marine checkpoint bed, derived from window100-v2 and TD pages; not satellite imagery",
+      "source_chain": {
+        "source_manifest": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\window100-v2\\manifest.json",
+        "source_manifest_sha256": "88c8a2d85ec2e47d1aa9d20ec6eaab611771d4361ef2b5151a51afe2a49a21bc",
+        "source_npz": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\window100-v2\\source.npz",
+        "source_sha256": "c95f3bc2fda697ad05fdf0e827b20edb2c778e13517b95a6a5ecba49a11b3240",
+        "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+        "td_pages": [
+          {
+            "page_xz": [
+              -1,
+              -1
+            ],
+            "identity": "1ddb05a325179aadae5ddee4ed6b40ff3be239acb9975f0853bbb760d389e468",
+            "raw_td_sha256": "77705a39fb93397d22cebaeece6659e80f4a9d243ff1073cc9504651af480d33",
+            "manifest_sha256": "e90833603644318cbfab0f8f5780ad93e06dd2dde5196dff73fe611370c3f4b3",
+            "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_-1"
+          },
+          {
+            "page_xz": [
+              0,
+              -1
+            ],
+            "identity": "7ad4b2bfee232e4d65ab43a0c397d25f09e12d0746e02b799be5b46a973a5179",
+            "raw_td_sha256": "a0c0b5ee6cdd8c4b1cbd92781e82d91e5e8712515726a9d614d7ce809887df8f",
+            "manifest_sha256": "eccb987fe1a724dfb340315273120ce8b160887c20d80270eb000514ab5f5261",
+            "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_-1"
+          },
+          {
+            "page_xz": [
+              -1,
+              0
+            ],
+            "identity": "a4b5a09c2f232b30598896567f5bd02815207a09635fa618c51a44f8a8c64bad",
+            "raw_td_sha256": "46a59645068cd8a9c413939a256b44a8b341c468da830d7e42d278e25080f59f",
+            "manifest_sha256": "7df387601f02756d8dde00a2bcb50c641f3b5bfc1faa0687f7f67a801512a887",
+            "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_+0"
+          },
+          {
+            "page_xz": [
+              0,
+              0
+            ],
+            "identity": "ed91c6c3806c4446f56c987f68bb4c1293f8eacca1ef651a994301e9016d0eda",
+            "raw_td_sha256": "adf0cbb99bd9c98af164925ffa96d8ae29f22e2bc1f64b2a5634f0c9f964f9c6",
+            "manifest_sha256": "0575ed6267c0dc55a132d5e2a2daef835190e48deff174700b412aa7e79a0d92",
+            "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_+0"
+          }
+        ],
+        "source_algorithm": "fixed-owner-nearest30-parent-edge-overlap-v2"
+      },
+      "inputs": [
+        {
+          "prefix": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\full-final-initial",
+          "npz_sha256": "8e6aa151d5ec9a9a52be881cb8ad5536b1f3d317968cd287c396a1bcd83df3b7",
+          "json_sha256": "f5124a8b4f20c92bbabf9c8cb14d2d8215725cdbd538da92a018780a7f52c20a",
+          "time": {
+            "physical_time_s": 190800.0,
+            "equivalent_years": 0.0
+          },
+          "scenario": {
+            "discharge_m3_s": 150.0,
+            "solid_rate_m3_s": 0.08
+          }
+        },
+        {
+          "prefix": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\full-final-formed",
+          "npz_sha256": "cae7bb72eb07520204e7daf374a0fc21c0807a03e7228bb8dc789e39c1e02370",
+          "json_sha256": "e523c363ec2b1a47b859c5abde9d02b1545d904e5c73d82184011dc8a3257322",
+          "time": {
+            "physical_time_s": 190800.0,
+            "equivalent_years": 5.0
+          },
+          "scenario": {
+            "discharge_m3_s": 150.0,
+            "solid_rate_m3_s": 0.08
+          }
+        },
+        {
+          "prefix": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\full-final-event2",
+          "npz_sha256": "9b621162bce7164fb0fd88c929aff778808f529538eef775f1718159d9493ad7",
+          "json_sha256": "e28d998de2dee10ab9274845959304d32d9ebbf853bd42fe6f24d784d397c106",
+          "time": {
+            "physical_time_s": 370800.0,
+            "equivalent_years": 5.0
+          },
+          "scenario": {
+            "discharge_m3_s": 150.0,
+            "solid_rate_m3_s": 0.08
+          }
+        }
+      ],
+      "sampling_m": 100,
+      "native_td_m": 30,
+      "coordinates": "cell centres [z,x], X east, Z south",
+      "unknown_wet": "original unknown ocean classification, not invalid DEM; magenta base, computed freshwater may overlay",
+      "algorithms": [
+        "saved marine bed",
+        "boundary-connected classify_ocean",
+        "matplotlib LightSource azimuth 315 altitude 45 vertical exaggeration 1"
+      ],
+      "coverage_status": "partial",
+      "file": "02-mouth.png",
+      "sha256": "4fca458faf76a8135c056a7660df22a54bfd344735ef80232c00c26d847bb903",
+      "description": "final mouth raster bed and computed freshwater ribbons on saved effective routes",
+      "hydraulics_saved": true,
+      "wet_nodes": 135,
+      "wet_nodes_on_original_unknown": 44,
+      "wet_segments": 144,
+      "effective_routes": 2,
+      "bounds_xz_km": [
+        -8.1,
+        1.9,
+        12.0,
+        2.0
+      ],
+      "display": "freshwater ribbon joins adjacent saved nodes with stage > section bed and Q > 0; display width max(section width, 100 m), capped at twice section width; subgrid width, not raster river width"
+    },
+    {
+      "terrain_basis": "saved marine checkpoint bed, derived from window100-v2 and TD pages; not satellite imagery",
+      "source_chain": {
+        "source_manifest": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\window100-v2\\manifest.json",
+        "source_manifest_sha256": "88c8a2d85ec2e47d1aa9d20ec6eaab611771d4361ef2b5151a51afe2a49a21bc",
+        "source_npz": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\window100-v2\\source.npz",
+        "source_sha256": "c95f3bc2fda697ad05fdf0e827b20edb2c778e13517b95a6a5ecba49a11b3240",
+        "source_identity": "778970b3c367bc5896e86e69b6eb17b30998482da96cd05d9d5ed7be796beb19",
+        "td_pages": [
+          {
+            "page_xz": [
+              -1,
+              -1
+            ],
+            "identity": "1ddb05a325179aadae5ddee4ed6b40ff3be239acb9975f0853bbb760d389e468",
+            "raw_td_sha256": "77705a39fb93397d22cebaeece6659e80f4a9d243ff1073cc9504651af480d33",
+            "manifest_sha256": "e90833603644318cbfab0f8f5780ad93e06dd2dde5196dff73fe611370c3f4b3",
+            "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_-1"
+          },
+          {
+            "page_xz": [
+              0,
+              -1
+            ],
+            "identity": "7ad4b2bfee232e4d65ab43a0c397d25f09e12d0746e02b799be5b46a973a5179",
+            "raw_td_sha256": "a0c0b5ee6cdd8c4b1cbd92781e82d91e5e8712515726a9d614d7ce809887df8f",
+            "manifest_sha256": "eccb987fe1a724dfb340315273120ce8b160887c20d80270eb000514ab5f5261",
+            "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_-1"
+          },
+          {
+            "page_xz": [
+              -1,
+              0
+            ],
+            "identity": "a4b5a09c2f232b30598896567f5bd02815207a09635fa618c51a44f8a8c64bad",
+            "raw_td_sha256": "46a59645068cd8a9c413939a256b44a8b341c468da830d7e42d278e25080f59f",
+            "manifest_sha256": "7df387601f02756d8dde00a2bcb50c641f3b5bfc1faa0687f7f67a801512a887",
+            "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_-1_+0"
+          },
+          {
+            "page_xz": [
+              0,
+              0
+            ],
+            "identity": "ed91c6c3806c4446f56c987f68bb4c1293f8eacca1ef651a994301e9016d0eda",
+            "raw_td_sha256": "adf0cbb99bd9c98af164925ffa96d8ae29f22e2bc1f64b2a5634f0c9f964f9c6",
+            "manifest_sha256": "0575ed6267c0dc55a132d5e2a2daef835190e48deff174700b412aa7e79a0d92",
+            "path": ".scratch\\river-upgrade-20261101\\source50-pages\\page_+0_+0"
+          }
+        ],
+        "source_algorithm": "fixed-owner-nearest30-parent-edge-overlap-v2"
+      },
+      "inputs": [
+        {
+          "prefix": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\full-final-initial",
+          "npz_sha256": "8e6aa151d5ec9a9a52be881cb8ad5536b1f3d317968cd287c396a1bcd83df3b7",
+          "json_sha256": "f5124a8b4f20c92bbabf9c8cb14d2d8215725cdbd538da92a018780a7f52c20a",
+          "time": {
+            "physical_time_s": 190800.0,
+            "equivalent_years": 0.0
+          },
+          "scenario": {
+            "discharge_m3_s": 150.0,
+            "solid_rate_m3_s": 0.08
+          }
+        },
+        {
+          "prefix": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\full-final-formed",
+          "npz_sha256": "cae7bb72eb07520204e7daf374a0fc21c0807a03e7228bb8dc789e39c1e02370",
+          "json_sha256": "e523c363ec2b1a47b859c5abde9d02b1545d904e5c73d82184011dc8a3257322",
+          "time": {
+            "physical_time_s": 190800.0,
+            "equivalent_years": 5.0
+          },
+          "scenario": {
+            "discharge_m3_s": 150.0,
+            "solid_rate_m3_s": 0.08
+          }
+        },
+        {
+          "prefix": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\coast-marine-reorganization-20261102\\full-final-event2",
+          "npz_sha256": "9b621162bce7164fb0fd88c929aff778808f529538eef775f1718159d9493ad7",
+          "json_sha256": "e28d998de2dee10ab9274845959304d32d9ebbf853bd42fe6f24d784d397c106",
+          "time": {
+            "physical_time_s": 370800.0,
+            "equivalent_years": 5.0
+          },
+          "scenario": {
+            "discharge_m3_s": 150.0,
+            "solid_rate_m3_s": 0.08
+          }
+        }
+      ],
+      "sampling_m": 100,
+      "native_td_m": 30,
+      "coordinates": "cell centres [z,x], X east, Z south",
+      "unknown_wet": "original unknown ocean classification, not invalid DEM; magenta base, computed freshwater may overlay",
+      "algorithms": [
+        "saved marine bed",
+        "boundary-connected classify_ocean",
+        "matplotlib LightSource azimuth 315 altitude 45 vertical exaggeration 1"
+      ],
+      "coverage_status": "partial",
+      "file": "03-change-profile.png",
+      "sha256": "b8e14a20d710c921e0a1e741d5bf734394ae8b6c0e59778c5648e2d64331bfe9",
+      "description": "formed minus initial bed; formed saved route profile",
+      "bed_change_range_m": [
+        -2.1962587614643105,
+        2.1962587614643105
+      ],
+      "profile_route_available": true,
+      "historical_fine_profile": true,
+      "historical_route_data_sha256": "f5336e0bc580ffcc945a15469aba05efe17060ee9ab0205460a4cd48b7d9868d",
+      "profile_limit": "saved historical fine centre bed and effective route only; no invented upstream extension"
+    }
+  ]
+}

@@ -15,14 +15,15 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.rainfall_runoff import RunoffParameters
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_basin_overflow import load_overflow_topology
-from terrain_pipeline.td_basin_runoff_exchange import load_runoff_exchange
-from terrain_pipeline.td_basin_source import load_td_source, load_td_source_bundle
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_storage import load_overflow_topology as load_overflow_topology
+from terrain_pipeline.basin_storage import load_runoff_exchange as load_runoff_exchange
+from terrain_pipeline.basin_storage import load_td_source as load_td_source
+from terrain_pipeline.basin_storage import load_td_source_bundle as load_td_source_bundle
 from terrain_pipeline.td_bounded_conditioning import DEFAULT_PARAMETERS, load_conditioning
-from terrain_pipeline.td_material_field import load_material_field
+from terrain_pipeline.geology import load_material_field
 from tools.audit_td_runoff_exchange import audit_arrays, verify_controls
 
 BASELINE_SHA = "cd78c2f2ce9c6a1abbd98ae7ee528079dfb2ee1b5ce2905458e64137aa868e5f"
@@ -31,25 +32,25 @@ SPILL_SHA = "f1d6e89b3bb642f6ede52d231fa340bb41a8a03aa479ab4e889c648f361565af"
 CASES = {"normal-spatial-recession-24h": (30., 86400.),
          "strong-spatial-recession-6h": (120., 21600.)}
 CANDIDATES = ("baseline", "limited_fill", "limited_breach", "mixed")
-CODE = {"terrain_pipeline/td_bounded_conditioning.py", "terrain_pipeline/td_basin_source.py",
-        "terrain_pipeline/td_basin_hierarchy.py", "terrain_pipeline/td_basin_overflow.py",
-        "terrain_pipeline/td_basin_runoff_exchange.py", "terrain_pipeline/td_basin_overflow_radau.py",
-        "terrain_pipeline/rainfall_runoff.py", "tools/prepare_td_conditioning_comparison.py"}
+CODE = {"terrain_pipeline/td_bounded_conditioning.py", 'terrain_pipeline/basin_storage.py',
+        'terrain_pipeline/basin_topology.py', 'terrain_pipeline/basin_storage.py',
+        'terrain_pipeline/basin_storage.py', 'terrain_pipeline/basin_storage.py',
+        'terrain_pipeline/runoff.py', "tools/prepare_td_conditioning_comparison.py"}
 FLAGS = {"hydraulic_ready", "natural_outlet_verified", "publishable", "transient_converged",
          "full_coupled_timestep_refinement_passed", "permanent_trunk_ready", "tailwater_verified",
          "continuous_fine_corridor_ready", "natural", "hydraulic", "dynamic_erosion_or_deposition"}
 FORBIDDEN = (
     "terrain_pipeline.td_bounded_conditioning.build_conditioning_candidates",
-    "terrain_pipeline.td_basin_hierarchy.build_basin_hierarchy",
-    "terrain_pipeline.td_basin_overflow.build_overflow_topology",
-    "terrain_pipeline.td_basin_overflow.simulate_overflow",
-    "terrain_pipeline.td_basin_runoff_exchange.simulate_runoff_exchange",
-    "terrain_pipeline.td_basin_runoff_exchange.simulate_rainfall_runoff",
-    "terrain_pipeline.td_basin_runoff_exchange.Radau",
-    "terrain_pipeline.td_basin_overflow_radau.simulate_radau_overflow",
-    "terrain_pipeline.td_basin_overflow_radau.Radau",
-    "terrain_pipeline.rainfall_runoff.simulate_rainfall_runoff",
-    "terrain_pipeline.td_material_field.make_material_field",
+    'terrain_pipeline.basin_topology.build_basin_hierarchy',
+    'terrain_pipeline.basin_storage.build_overflow_topology',
+    'terrain_pipeline.basin_storage.simulate_overflow',
+    'terrain_pipeline.basin_storage.simulate_runoff_exchange',
+    'terrain_pipeline.runoff.simulate_rainfall_runoff',
+    'scipy.integrate.Radau',
+    'terrain_pipeline.basin_storage.simulate_radau_overflow',
+    'scipy.integrate.Radau',
+    'terrain_pipeline.runoff.simulate_rainfall_runoff',
+    'terrain_pipeline.geology.make_material_field',
 )
 
 

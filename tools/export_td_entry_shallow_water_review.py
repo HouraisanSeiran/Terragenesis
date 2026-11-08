@@ -18,7 +18,7 @@ import psutil
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, load_bundle, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, identity, load_bundle, publish_bytes
 
 MAX_JSON_BYTES = 64 * 1024**2
 MAX_RSS_BYTES = 1024**3

@@ -6,12 +6,15 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, save_bundle
-from terrain_pipeline.surface_rivers.metric_contracts import BoundaryGrid, RoutingGraph, TerrainGrid
-from terrain_pipeline.surface_rivers.metric_drainage import accumulate_local_discharge
-from terrain_pipeline.surface_rivers.metric_routing_comparison import (
-    compare_routing_policies, decode_routing_comparison, load_routing_comparison,
-    route_priority_flood, save_routing_comparison)
+from terrain_pipeline.common_infra import file_sha256, identity, save_bundle
+from terrain_pipeline.common_infra import BoundaryGrid, RoutingGraph, TerrainGrid
+from terrain_pipeline.drainage import accumulate_local_discharge as accumulate_local_discharge
+from terrain_pipeline.drainage import diagnostic_mesh as diagnostic_mesh
+from terrain_pipeline.drainage import compare_routing_policies as compare_routing_policies
+from terrain_pipeline.drainage import decode_routing_comparison as decode_routing_comparison
+from terrain_pipeline.drainage import load_routing_comparison as load_routing_comparison
+from terrain_pipeline.drainage import route_priority_flood as route_priority_flood
+from terrain_pipeline.drainage import save_routing_comparison as save_routing_comparison
 
 
 def fixture(height, *, outlets=(), unknown=(), dx=3., dz=4.):
@@ -36,10 +39,10 @@ class RoutingComparisonTests(unittest.TestCase):
         terrain, boundary = fixture([[5., 5., 5.], [5., 0., 4.], [5., 5., 2.]], outlets=[(2, 2)])
         original = terrain.elevation_m.copy()
         result = route_priority_flood(terrain, boundary)
-        self.assertEqual(result["working_elevation_m"][1, 1], 2.)
-        self.assertEqual(result["fill_depth_m"][1, 1], 2.)
+        self.assertEqual(result["working_elevation_m"][1, 1], 4.)
+        self.assertEqual(result["fill_depth_m"][1, 1], 4.)
         self.assertEqual(result["graph"].outlet_kind[8], "open_outflow")
-        self.assertEqual(result["graph"].receiver[4], 8)
+        self.assertEqual(result["graph"].receiver[4], 5)
         np.testing.assert_array_equal(terrain.elevation_m, original)
 
     def test_closed_or_unknown_components_are_not_assumed_open(self):
@@ -66,7 +69,7 @@ class RoutingComparisonTests(unittest.TestCase):
         self.assertEqual(result["working_elevation_m"][1, 1], 0.)
         self.assertEqual(result["working_elevation_m"][1, 2], 1.)
         self.assertEqual(result["working_elevation_m"][1, 3], 4.)
-        self.assertEqual(result["metadata"]["flood_reached_valid_cells"], 1)
+        self.assertEqual(result["metadata"]["flood_reached_valid_cells"], 2)
         with self.assertRaises(ValueError):
             result["working_elevation_m"][1, 1] = 99.
 
@@ -80,29 +83,30 @@ class RoutingComparisonTests(unittest.TestCase):
         self.assertTrue(result["unknown_catchment_excluded_mask"][1, 1])
         self.assertGreater(result["metadata"]["unknown_catchment_excluded_cells"], 0)
 
-    def test_comparison_keeps_adapted_d4_distinct_and_cold_loads_without_rerouting(self):
+    def test_comparison_keeps_metric_flat_irregular_distinct_and_cold_loads_without_rerouting(self):
         terrain, boundary = fixture([[6., 6., 6.], [6., 4., 6.], [6., 6., 0.]], outlets=[(2, 2)])
         result = compare_routing_policies(terrain, boundary)
         graphs = decode_routing_comparison(result)
-        self.assertEqual(set(graphs), {"original_bed_d8", "priority_flood_d8", "adapted_d4"})
-        self.assertEqual(graphs["original_bed_d8"].receiver[4], 8)
-        self.assertNotEqual(graphs["adapted_d4"].receiver[4], 8)
-        self.assertEqual(result["metadata"]["policies"]["adapted_d4"]["relation_to_frozen_td_d4"],
-                         "new_boundary_adapter_not_frozen_td_hierarchy")
+        self.assertEqual(set(graphs), {"original_bed_irregular", "priority_flood_irregular", "metric_flat_irregular"})
+        self.assertNotEqual(graphs["original_bed_irregular"].policy,
+                            graphs["metric_flat_irregular"].policy)
+        self.assertEqual(graphs["original_bed_irregular"].outlet_kind[4], "lake_preserved")
+        self.assertEqual(result["metadata"]["policies"]["metric_flat_irregular"]["relation_to_frozen_td_d4"],
+                         "independent_metric_plateau_not_frozen_td_hierarchy")
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "comparison.npz"
             save_routing_comparison(path, result)
-            with patch("terrain_pipeline.surface_rivers.metric_routing_comparison.route_diagnostic",
+            with patch('terrain_pipeline.drainage.route_diagnostic',
                        side_effect=AssertionError("cold load rerouted")), patch(
-                           "terrain_pipeline.surface_rivers.metric_routing_comparison.route_priority_flood",
+                           'terrain_pipeline.drainage.route_priority_flood',
                            side_effect=AssertionError("cold load reflooded")), patch(
-                               "terrain_pipeline.surface_rivers.metric_routing_comparison._route_d4",
+                               'terrain_pipeline.drainage._route_metric_flat',
                                side_effect=AssertionError("cold load rebuilt D4")):
                 cold = load_routing_comparison(path, expected_sha256=file_sha256(path),
                                                expected_identity=result["identity_sha256"])
             self.assertEqual(cold["identity_sha256"], result["identity_sha256"])
-            self.assertEqual(decode_routing_comparison(cold)["adapted_d4"].identity_sha256,
-                             graphs["adapted_d4"].identity_sha256)
+            self.assertEqual(decode_routing_comparison(cold)["metric_flat_irregular"].identity_sha256,
+                             graphs["metric_flat_irregular"].identity_sha256)
             with self.assertRaises(ValueError):
                 load_routing_comparison(path, expected_sha256="0" * 64)
 
@@ -112,11 +116,15 @@ class RoutingComparisonTests(unittest.TestCase):
         first = compare_routing_policies(terrain, boundary)
         second = compare_routing_policies(terrain, boundary)
         self.assertEqual(first["identity_sha256"], second["identity_sha256"])
-        graph = decode_routing_comparison(first)["original_bed_d8"]
-        self.assertEqual(graph.receiver[4], 8)
-        self.assertEqual(graph.edge_length_m[4], 5.)
-        self.assertEqual(graph.edge_slope[4], 1.)
-        self.assertEqual(first["metadata"]["policies"]["original_bed_d8"]["tie_break"],
+        graph = decode_routing_comparison(first)["original_bed_irregular"]
+        mesh = diagnostic_mesh(terrain)
+        source, target = 4, int(graph.receiver[4])
+        distance = np.hypot(mesh.node_x_m[target] - mesh.node_x_m[source],
+                            mesh.node_z_m[target] - mesh.node_z_m[source])
+        self.assertAlmostEqual(graph.edge_length_m[source], distance)
+        self.assertAlmostEqual(graph.edge_slope[source],
+                               (terrain.elevation_m.flat[source] - terrain.elevation_m.flat[target]) / distance)
+        self.assertEqual(first["metadata"]["policies"]["original_bed_irregular"]["tie_break"],
                          "steepest_metric_slope_then_cell_id; plateau_bfs_distance_then_cell_id")
 
     def test_flat_multi_outlet_and_prescribed_boundary_ledger(self):
@@ -183,14 +191,14 @@ class RoutingComparisonTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             forged = {"arrays": {key: value.copy() for key, value in original["arrays"].items()},
                       "metadata": copy.deepcopy(original["metadata"])}
-            graph = decode_routing_comparison(original)["original_bed_d8"]
-            ids = forged["arrays"]["original_bed_d8_lake_id"]
+            graph = decode_routing_comparison(original)["original_bed_irregular"]
+            ids = forged["arrays"]["original_bed_irregular_lake_id"]
             ids[ids >= 0] = 99
             changed = RoutingGraph(graph.receiver, graph.order_downstream_first, graph.valid_mask,
                                    graph.edge_length_m, graph.edge_slope, graph.outlet_kind, ids,
                                    graph.terrain_identity_sha256, graph.boundary_identity_sha256,
                                    policy=graph.policy)
-            forged["metadata"]["policies"]["original_bed_d8"]["graph_identity_sha256"] = changed.identity_sha256
+            forged["metadata"]["policies"]["original_bed_irregular"]["graph_identity_sha256"] = changed.identity_sha256
             forged["metadata"]["flood"]["original_bed_graph_identity_sha256"] = changed.identity_sha256
             forged["identity_sha256"] = identity(forged["arrays"], forged["metadata"])
             path = Path(directory) / "lake.npz"

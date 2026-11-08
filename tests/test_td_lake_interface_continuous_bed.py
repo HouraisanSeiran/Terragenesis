@@ -1,7 +1,7 @@
 import unittest
 
-from terrain_pipeline.td_lake_interface_continuous_bed import (
-    build_lake_interface_continuous_bed, validate_lake_interface_continuous_bed)
+from terrain_pipeline.lake import build_lake_interface_continuous_bed as build_lake_interface_continuous_bed
+from terrain_pipeline.lake import validate_lake_interface_continuous_bed as validate_lake_interface_continuous_bed
 
 
 class LakeInterfaceContinuousBedTests(unittest.TestCase):

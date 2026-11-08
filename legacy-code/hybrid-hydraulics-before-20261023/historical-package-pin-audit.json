@@ -1,0 +1,267 @@
+{
+  "manifest_sha256": "8bea4e029f8625c0f8ed8e163877cd1e1d9d60bd02735fcef9e43f17a1665209",
+  "packages": [
+    {
+      "completed_cases": [],
+      "index_path": "verification/natural-river-network/hybrid-river-hydraulics-20261006-02/index.json",
+      "index_sha256": "34b46006fcc674b050890f97e377c2050f399e57c3562054d14e202cc3e29d23",
+      "schema": "td-hybrid-river-hydraulics-preparation-v2",
+      "source_pin_findings": [],
+      "status": "failed_partial"
+    },
+    {
+      "completed_cases": [],
+      "index_path": "verification/natural-river-network/hybrid-river-hydraulics-20261006-03/index.json",
+      "index_sha256": "896306c923c99ebd329574e83d014fcbfdfdc9306046b730fd4fd0038aff6f17",
+      "schema": "td-hybrid-river-hydraulics-preparation-v3",
+      "source_pin_findings": [
+        {
+          "captured_before_edit": "8ef6cf10d292accc0df83fd3a6f5dd1c1fce7a6d2afba4463813fd5a917fa296",
+          "expected": "472f3114a235d8c68fe449b4a514beceb8069853722abeb1664c822473a7311d",
+          "path": "terrain_pipeline/hybrid_river_hydraulics_v3.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "c7f92d6dbfd40538f4b820731b1d9998810f8c307988caa2bc279c41bb73a048",
+          "expected": "a5a39e40b89eee6de525f50b3475f34e2036f4737f3f39dd061ccb389f0c9301",
+          "path": "tools/prepare_hybrid_river_hydraulics_v3.py",
+          "status": "preexisting_pin_mismatch"
+        }
+      ],
+      "status": "failed_partial"
+    },
+    {
+      "completed_cases": [],
+      "index_path": "verification/natural-river-network/hybrid-river-hydraulics-20261006-05/index.json",
+      "index_sha256": "1db577eea79cac7daa053361185376f9d052d9fb7ce5f6c2f6c84b2aefa060e3",
+      "schema": "td-hybrid-river-hydraulics-preparation-v4",
+      "source_pin_findings": [
+        {
+          "captured_before_edit": "8ef6cf10d292accc0df83fd3a6f5dd1c1fce7a6d2afba4463813fd5a917fa296",
+          "expected": "472f3114a235d8c68fe449b4a514beceb8069853722abeb1664c822473a7311d",
+          "path": "terrain_pipeline/hybrid_river_hydraulics_v3.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "c7f92d6dbfd40538f4b820731b1d9998810f8c307988caa2bc279c41bb73a048",
+          "expected": "a5a39e40b89eee6de525f50b3475f34e2036f4737f3f39dd061ccb389f0c9301",
+          "path": "tools/prepare_hybrid_river_hydraulics_v3.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "c5052f94a3562f2f31648ffed9febc15a84d674f5981f7b368a23de3697d1a22",
+          "expected": "b04920036fcc17ce7a3a681df1e1beb96efc5faf2aa5c2ca810e507e18d2465e",
+          "path": "tools/prepare_hybrid_river_hydraulics_v4.py",
+          "status": "preexisting_pin_mismatch"
+        }
+      ],
+      "status": "failed_partial"
+    },
+    {
+      "completed_cases": [
+        "pulse-base"
+      ],
+      "index_path": "verification/natural-river-network/hybrid-river-hydraulics-20261006-06/index.json",
+      "index_sha256": "c0171f6beabd861a403a8c630e89e8420bab105775a3b6fe55828e6f43f11846",
+      "schema": "td-hybrid-river-hydraulics-preparation-v5",
+      "source_pin_findings": [
+        {
+          "captured_before_edit": "8ef6cf10d292accc0df83fd3a6f5dd1c1fce7a6d2afba4463813fd5a917fa296",
+          "expected": "472f3114a235d8c68fe449b4a514beceb8069853722abeb1664c822473a7311d",
+          "path": "terrain_pipeline/hybrid_river_hydraulics_v3.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "c7f92d6dbfd40538f4b820731b1d9998810f8c307988caa2bc279c41bb73a048",
+          "expected": "a5a39e40b89eee6de525f50b3475f34e2036f4737f3f39dd061ccb389f0c9301",
+          "path": "tools/prepare_hybrid_river_hydraulics_v3.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "c5052f94a3562f2f31648ffed9febc15a84d674f5981f7b368a23de3697d1a22",
+          "expected": "b04920036fcc17ce7a3a681df1e1beb96efc5faf2aa5c2ca810e507e18d2465e",
+          "path": "tools/prepare_hybrid_river_hydraulics_v4.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "e39f5f6cbde34580bd0c948b3869f23131292ecea27267cf1c3b68521fd70260",
+          "expected": "7c9430b42d43f31a3f249ef4dd956aa2365e5bcd82ce30f60b91666e1b8100d1",
+          "path": "tools/prepare_hybrid_river_hydraulics_v5.py",
+          "status": "preexisting_pin_mismatch"
+        }
+      ],
+      "status": "failed_partial"
+    },
+    {
+      "completed_cases": [
+        "pulse-base",
+        "pulse-refined",
+        "reverse_tailwater-base"
+      ],
+      "index_path": "verification/natural-river-network/hybrid-river-hydraulics-20261006-07/index.json",
+      "index_sha256": "f9a8a355759d87fbea065d4c5e5c63744af6ac51e1a9e0d7b6fa2b23280c3295",
+      "schema": "td-hybrid-river-hydraulics-preparation-v6",
+      "source_pin_findings": [
+        {
+          "captured_before_edit": "8ef6cf10d292accc0df83fd3a6f5dd1c1fce7a6d2afba4463813fd5a917fa296",
+          "expected": "472f3114a235d8c68fe449b4a514beceb8069853722abeb1664c822473a7311d",
+          "path": "terrain_pipeline/hybrid_river_hydraulics_v3.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "c7f92d6dbfd40538f4b820731b1d9998810f8c307988caa2bc279c41bb73a048",
+          "expected": "a5a39e40b89eee6de525f50b3475f34e2036f4737f3f39dd061ccb389f0c9301",
+          "path": "tools/prepare_hybrid_river_hydraulics_v3.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "c5052f94a3562f2f31648ffed9febc15a84d674f5981f7b368a23de3697d1a22",
+          "expected": "b04920036fcc17ce7a3a681df1e1beb96efc5faf2aa5c2ca810e507e18d2465e",
+          "path": "tools/prepare_hybrid_river_hydraulics_v4.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "e39f5f6cbde34580bd0c948b3869f23131292ecea27267cf1c3b68521fd70260",
+          "expected": "7c9430b42d43f31a3f249ef4dd956aa2365e5bcd82ce30f60b91666e1b8100d1",
+          "path": "tools/prepare_hybrid_river_hydraulics_v5.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "5706ea93d5bf6ba0cf19a8ffb61c7a8c85de4f2bd5371ae50baf3210bca488af",
+          "expected": "ca8db593c8163f2c0b354827fae4023d36589563cac2e1479252d34355be4f20",
+          "path": "tools/prepare_hybrid_river_hydraulics_v6.py",
+          "status": "preexisting_pin_mismatch"
+        }
+      ],
+      "status": "failed_partial"
+    },
+    {
+      "completed_cases": [
+        "pulse-base",
+        "pulse-refined"
+      ],
+      "index_path": "verification/natural-river-network/hybrid-river-hydraulics-20261006-08/index.json",
+      "index_sha256": "011c088ec5ce6878676f8dae63a5ea54b21d95baa6258fbc6b1b947fd6b500de",
+      "schema": "td-hybrid-river-hydraulics-preparation-v7",
+      "source_pin_findings": [
+        {
+          "captured_before_edit": "8ef6cf10d292accc0df83fd3a6f5dd1c1fce7a6d2afba4463813fd5a917fa296",
+          "expected": "472f3114a235d8c68fe449b4a514beceb8069853722abeb1664c822473a7311d",
+          "path": "terrain_pipeline/hybrid_river_hydraulics_v3.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "c7f92d6dbfd40538f4b820731b1d9998810f8c307988caa2bc279c41bb73a048",
+          "expected": "a5a39e40b89eee6de525f50b3475f34e2036f4737f3f39dd061ccb389f0c9301",
+          "path": "tools/prepare_hybrid_river_hydraulics_v3.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "c5052f94a3562f2f31648ffed9febc15a84d674f5981f7b368a23de3697d1a22",
+          "expected": "b04920036fcc17ce7a3a681df1e1beb96efc5faf2aa5c2ca810e507e18d2465e",
+          "path": "tools/prepare_hybrid_river_hydraulics_v4.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "e39f5f6cbde34580bd0c948b3869f23131292ecea27267cf1c3b68521fd70260",
+          "expected": "7c9430b42d43f31a3f249ef4dd956aa2365e5bcd82ce30f60b91666e1b8100d1",
+          "path": "tools/prepare_hybrid_river_hydraulics_v5.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "5706ea93d5bf6ba0cf19a8ffb61c7a8c85de4f2bd5371ae50baf3210bca488af",
+          "expected": "ca8db593c8163f2c0b354827fae4023d36589563cac2e1479252d34355be4f20",
+          "path": "tools/prepare_hybrid_river_hydraulics_v6.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "eee00d865bac45b932a181b3e75264b2d6c6c7ecbeb5178531e72e97b18abce2",
+          "expected": "51823e8b39c06369b1fdad34569201eb5d3a7a3da2ea2ffde7a0facccb851846",
+          "path": "tools/prepare_hybrid_river_hydraulics_v7.py",
+          "status": "preexisting_pin_mismatch"
+        }
+      ],
+      "status": "failed_partial"
+    },
+    {
+      "completed_cases": [],
+      "index_path": "verification/natural-river-network/hybrid-river-hydraulics-20261006-09/index.json",
+      "index_sha256": "0c169f289678cea76eb635a2170d9dbe80f07ded42b1d9ddef59151187975311",
+      "schema": "td-hybrid-river-hydraulics-preparation-v8",
+      "source_pin_findings": [
+        {
+          "captured_before_edit": "8ef6cf10d292accc0df83fd3a6f5dd1c1fce7a6d2afba4463813fd5a917fa296",
+          "expected": "472f3114a235d8c68fe449b4a514beceb8069853722abeb1664c822473a7311d",
+          "path": "terrain_pipeline/hybrid_river_hydraulics_v3.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "c7f92d6dbfd40538f4b820731b1d9998810f8c307988caa2bc279c41bb73a048",
+          "expected": "a5a39e40b89eee6de525f50b3475f34e2036f4737f3f39dd061ccb389f0c9301",
+          "path": "tools/prepare_hybrid_river_hydraulics_v3.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "c5052f94a3562f2f31648ffed9febc15a84d674f5981f7b368a23de3697d1a22",
+          "expected": "b04920036fcc17ce7a3a681df1e1beb96efc5faf2aa5c2ca810e507e18d2465e",
+          "path": "tools/prepare_hybrid_river_hydraulics_v4.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "e39f5f6cbde34580bd0c948b3869f23131292ecea27267cf1c3b68521fd70260",
+          "expected": "7c9430b42d43f31a3f249ef4dd956aa2365e5bcd82ce30f60b91666e1b8100d1",
+          "path": "tools/prepare_hybrid_river_hydraulics_v5.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "5706ea93d5bf6ba0cf19a8ffb61c7a8c85de4f2bd5371ae50baf3210bca488af",
+          "expected": "ca8db593c8163f2c0b354827fae4023d36589563cac2e1479252d34355be4f20",
+          "path": "tools/prepare_hybrid_river_hydraulics_v6.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "eee00d865bac45b932a181b3e75264b2d6c6c7ecbeb5178531e72e97b18abce2",
+          "expected": "51823e8b39c06369b1fdad34569201eb5d3a7a3da2ea2ffde7a0facccb851846",
+          "path": "tools/prepare_hybrid_river_hydraulics_v7.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "00d7d00e8e0ac10eb60344fdc4f293b083b98c0703798896b0ef2af59bc7fc5c",
+          "expected": "89bca0a07c9dbaa9dfe7ebbaef29d79b515addc7fb6f395a9c8f22ab48192080",
+          "path": "tools/prepare_hybrid_river_hydraulics_v8.py",
+          "status": "preexisting_pin_mismatch"
+        }
+      ],
+      "status": "failed_partial"
+    },
+    {
+      "completed_cases": [],
+      "index_path": "verification/natural-river-network/hybrid-river-hydraulics-diagnostic-20261006-04/index.json",
+      "index_sha256": "5e51ffffe45637c2e5d1b0e8c6c72f56a1f3f2786b14275b9f011c2743d67d17",
+      "schema": "td-hybrid-river-hydraulics-preparation-v4",
+      "source_pin_findings": [
+        {
+          "captured_before_edit": "8ef6cf10d292accc0df83fd3a6f5dd1c1fce7a6d2afba4463813fd5a917fa296",
+          "expected": "472f3114a235d8c68fe449b4a514beceb8069853722abeb1664c822473a7311d",
+          "path": "terrain_pipeline/hybrid_river_hydraulics_v3.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "c7f92d6dbfd40538f4b820731b1d9998810f8c307988caa2bc279c41bb73a048",
+          "expected": "a5a39e40b89eee6de525f50b3475f34e2036f4737f3f39dd061ccb389f0c9301",
+          "path": "tools/prepare_hybrid_river_hydraulics_v3.py",
+          "status": "preexisting_pin_mismatch"
+        },
+        {
+          "captured_before_edit": "c5052f94a3562f2f31648ffed9febc15a84d674f5981f7b368a23de3697d1a22",
+          "expected": "b04920036fcc17ce7a3a681df1e1beb96efc5faf2aa5c2ca810e507e18d2465e",
+          "path": "tools/prepare_hybrid_river_hydraulics_v4.py",
+          "status": "preexisting_pin_mismatch"
+        }
+      ],
+      "status": "failed_partial"
+    }
+  ],
+  "read_only": true,
+  "schema": "td-hybrid-hydraulics-historical-pin-evidence-v1"
+}

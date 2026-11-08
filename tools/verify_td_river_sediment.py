@@ -11,10 +11,10 @@ import numpy as np
 from scipy.integrate import solve_ivp
 from scipy.spatial import cKDTree
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.surface_rivers.metric_channel_geometry import load_channel_geometry
-from terrain_pipeline.surface_rivers.metric_channel_state import ChannelNetwork, ChannelForcing, ChannelConfig
-from terrain_pipeline.surface_rivers.metric_channel_solver import solve_channel
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.channel_geometry import load_channel_geometry
+from terrain_pipeline.channel_geometry import ChannelNetwork, ChannelForcing, ChannelConfig
+from terrain_pipeline.surface_hydraulics import solve_channel
 from terrain_pipeline.surface_rivers.metric_channel_product import make_channel_product, save_channel_product
 from terrain_pipeline.surface_rivers.metric_sediment import (
     MaterialParameters, SedimentConfig, SedimentDomain, SedimentForcing, solve_sediment,
@@ -208,7 +208,7 @@ def verify(geometry_directory, output):
                               np.full(n, .035), np.full(n, .25),
                               np.where(receiver < 0, "open_outflow", "interior"), geometry["identity_sha256"],
                               "explicit rectangular hydraulic section on accepted canonical M5 bed; banks external",
-                              "uncalibrated Manning n=.035")
+                              "uncalibrated Manning n=.035", receiver_distance_m=np.r_[edge_lengths, 0.])
     sp = manifest["td_source"]
     source = load_diagnostic_product(sp["path"], expected_sha256=sp["sha256"], expected_identity=sp["identity_sha256"])
     sa = source["arrays"]

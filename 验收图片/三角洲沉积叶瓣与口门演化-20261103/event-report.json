@@ -1,0 +1,114 @@
+{
+  "input_id": "material-lobes-event-25h",
+  "water_m3": 13500000.0,
+  "solid_m3": 7200.0,
+  "delivered_water_m3": 1408118.550851941,
+  "delivered_solid_m3": 750.9965604543686,
+  "undelivered_water_m3": 12091881.449148059,
+  "undelivered_solid_m3": 6449.003439545631,
+  "internal_transfer_solid_m3": 397305.3837632222,
+  "entrained_solid_m3": 16613.678263925813,
+  "outlet_delivery": [
+    {
+      "mouth_zx": [
+        240,
+        193
+      ],
+      "exterior_face_zx": [
+        239,
+        193
+      ],
+      "gross_solid_m3": 86.18492484128039
+    },
+    {
+      "mouth_zx": [
+        240,
+        193
+      ],
+      "exterior_face_zx": [
+        240,
+        194
+      ],
+      "gross_solid_m3": 600.6354928696409
+    },
+    {
+      "mouth_zx": [
+        240,
+        193
+      ],
+      "exterior_face_zx": [
+        241,
+        193
+      ],
+      "gross_solid_m3": 2366.6124907070594
+    },
+    {
+      "mouth_zx": [
+        243,
+        191
+      ],
+      "exterior_face_zx": [
+        243,
+        192
+      ],
+      "gross_solid_m3": 6458.224929344088
+    },
+    {
+      "mouth_zx": [
+        253,
+        181
+      ],
+      "exterior_face_zx": [
+        254,
+        181
+      ],
+      "gross_solid_m3": 4569.527670757339
+    }
+  ],
+  "capacity_concentration": 0.01,
+  "active_layer_m": 0.5,
+  "max_velocity_m_s": 2.0,
+  "floodplain": {
+    "diverted_water_m3": 70405.92754259698,
+    "returned_water_m3": 70405.92754259698,
+    "deposited_solid_m3": 328.59926517701945,
+    "stranded_solid_m3": 323.866909832214,
+    "rewetted_solid_m3": 10.254914079496519,
+    "new_solid_m3": 652.4661750092331,
+    "wet_area_m2": 386814.8914307902,
+    "parameters": {
+      "exchange_fraction": 0.05,
+      "settling_velocity_m_s": 0.0001,
+      "residence_s": 3600.0,
+      "max_lateral_distance_m": 400.0,
+      "max_solid_fraction": 0.01
+    }
+  },
+  "elapsed_wall_s": 428.8241396000003,
+  "material_settling_algorithm": "velocity-subtidal-capacity-v1",
+  "marine_config": {
+    "sea_level_m": 0.0,
+    "tide_amplitude_m": 0.3,
+    "tide_period_s": 44712.0,
+    "wave_height_m": 0.5,
+    "wave_direction_xz": [
+      1.0,
+      0.0
+    ],
+    "transport_rate_s": 1e-06,
+    "entrainment_rate_s": 1e-07,
+    "settling_rate_s": 0.0,
+    "export_rate_s": 0.0,
+    "step_s": 300.0,
+    "transverse_diffusivity_m2_s": 10.0,
+    "active_sediment_layer_m": 0.1,
+    "same_cell_wet_dry": false,
+    "settling_velocity_m_s": 0.001,
+    "minimum_depth_m": 1.0,
+    "material_source": "engineering homogeneous default MaterialParameters; not measured"
+  },
+  "source_sha256": {
+    ".json": "a9ed206d92be936a2bf7704433494d44744bbc9cad48fd404167b5d03c06477b",
+    ".npz": "e533fcbdf67dd6868dec884d8d164df958ef9e5c817380ef0cc7634c4f4674cf"
+  }
+}

@@ -5,12 +5,15 @@ from unittest.mock import patch
 
 import numpy as np
 
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy
-from terrain_pipeline.td_basin_overflow import OverflowParameters, build_overflow_topology
-from terrain_pipeline.td_basin_overflow_implicit import (load_stable_overflow, save_stable_overflow,
-                                                        simulate_stable_overflow, validate_stable_overflow)
-from terrain_pipeline.td_basin_source import make_td_source
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_storage import OverflowParameters as OverflowParameters
+from terrain_pipeline.basin_storage import build_overflow_topology as build_overflow_topology
+from terrain_pipeline.basin_storage import load_stable_overflow as load_stable_overflow
+from terrain_pipeline.basin_storage import save_stable_overflow as save_stable_overflow
+from terrain_pipeline.basin_storage import simulate_stable_overflow as simulate_stable_overflow
+from terrain_pipeline.basin_storage import validate_stable_overflow as validate_stable_overflow
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.common_infra import file_sha256, identity
 from tools.audit_td_original_bed_overflow import audit_saved_arrays
 
 
@@ -98,7 +101,7 @@ class StableOverflowTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "event.npz"
             save_stable_overflow(event, path, topology)
-            with patch("terrain_pipeline.td_basin_overflow_implicit.simulate_stable_overflow", side_effect=AssertionError("solver forbidden")):
+            with patch('terrain_pipeline.basin_storage.simulate_stable_overflow', side_effect=AssertionError("solver forbidden")):
                 loaded = load_stable_overflow(path, expected_sha256=file_sha256(path), expected_identity=event["identity_sha256"], topology=topology)
             self.assertEqual(loaded["identity_sha256"], event["identity_sha256"])
             self.assertFalse(loaded["arrays"]["volume_m3"].flags.writeable)

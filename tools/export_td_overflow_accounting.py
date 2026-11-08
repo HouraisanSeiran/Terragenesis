@@ -8,10 +8,12 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_overflow import (add_saved_overflow_accounting, load_overflow_event,
-                                               load_overflow_topology, save_overflow_event,
-                                               save_overflow_topology)
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_storage import add_saved_overflow_accounting as add_saved_overflow_accounting
+from terrain_pipeline.basin_storage import load_overflow_event as load_overflow_event
+from terrain_pipeline.basin_storage import load_overflow_topology as load_overflow_topology
+from terrain_pipeline.basin_storage import save_overflow_event as save_overflow_event
+from terrain_pipeline.basin_storage import save_overflow_topology as save_overflow_topology
 from tools.audit_td_original_bed_overflow import audit_saved_arrays
 
 
@@ -52,7 +54,7 @@ def export(saved_index, *, expected_index_sha256, output):
               "topology": {"path": str(topology_path), "sha256": file_sha256(topology_path),
                            "identity_sha256": topology["identity_sha256"]},
               "code_sha256": {"exporter": file_sha256(Path(__file__)),
-                              "accounting": file_sha256(ROOT / "terrain_pipeline/td_basin_overflow.py")},
+                              "accounting": file_sha256(ROOT / 'terrain_pipeline/basin_storage.py')},
               "cold_read": True, "solver_advanced": False, "event_model_advanced": False,
               "semantics": "original stages, inventories, rain and directional exchanges copied unchanged; v2 adds derived accounting only",
               "hydraulic_ready": False, "natural_outlet_verified": False, "publishable": False}

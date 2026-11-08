@@ -1,0 +1,28 @@
+{
+  "source_identity": "454292b47a107628748a3ba7d76093cbd2d7df4785884490f55418f9ebe368ce",
+  "checks": {
+    "source_hash": true,
+    "state_hash": true,
+    "identity": true,
+    "extent_100km": true,
+    "valid_finite": true,
+    "ocean_base_not_emerged": true,
+    "nonmarine_base_unchanged": true,
+    "unknown_not_ocean": true,
+    "common_base": true,
+    "finite_stocks": true,
+    "native_td_samples": true,
+    "inventory_transfer": true
+  },
+  "inventory_total_m3": 865667740.3358886,
+  "migration_residual_m3": 1.1920928955078125e-07,
+  "native_sample_differences_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "pass": true
+}

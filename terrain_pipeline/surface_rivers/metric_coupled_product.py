@@ -3,16 +3,18 @@
 from dataclasses import asdict
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity, load_bundle, readonly, save_bundle
-from .metric_channel_state import ChannelConfig, ChannelNetwork
-from .metric_lake_storage import LakeStorage, LakeOutlet
+from terrain_pipeline.common_infra import identity, load_bundle, readonly, save_bundle
+from terrain_pipeline.channel_geometry import ChannelConfig, ChannelNetwork, GEOMETRY_SEMANTICS
+from .metric_channel_product import NETWORK_FIELDS, LEGACY_NETWORK_FIELDS
+from terrain_pipeline.lake import LakeStorage as LakeStorage
+from terrain_pipeline.lake import LakeOutlet as LakeOutlet
 from .metric_boundary_coupling import BoundarySeries, CoupledForcing
 
 
-SCHEMA = "terragenesis-channel-lake-boundary-v1"
+SCHEMA = "terragenesis-channel-lake-boundary-v2"
 ALGORITHM = "manning-lake-boundary-explicit-v1"
 MAX_BYTES = 128 * 1024 * 1024
-NETWORK = ("receiver", "length_m", "width_m", "bed_elevation_m", "bed_slope", "roughness", "max_depth_m", "terminal_kind")
+NETWORK = NETWORK_FIELDS
 BOUNDARY = ("node_ids", "kinds", "allow_inflow", "time_seconds", "stage_m", "discharge_m3_s", "conductance_m2_s")
 TRACE = ("time_seconds", "channel_volume_m3", "lake_volume_m3", "channel_stage_m", "lake_stage_m",
          "channel_q_m3_s", "lake_outlet_q_m3_s", "boundary_q_m3_s", "channel_local_q_m3_s",
@@ -20,7 +22,8 @@ TRACE = ("time_seconds", "channel_volume_m3", "lake_volume_m3", "channel_stage_m
          "lake_external_volume_m3", "channel_residual_m3", "lake_residual_m3", "stability_number")
 SEMANTICS = {"state": "initial_and_committed_internal_step_endpoints", "Q": "pre_step_interval_average",
              "positive_boundary_Q": "out_of_domain", "exchange": "same_step_equal_volume_debit_and_credit",
-             "lake_footprint": "finite_source_support_level_pool_not_contribution_mask"}
+             "lake_footprint": "finite_source_support_level_pool_not_contribution_mask",
+             "geometry": GEOMETRY_SEMANTICS}
 LIMITATIONS = ["rectangular channel and finite fixed-support lake",
                "prescribed stage uses explicit conductance, not backwater",
                "no sediment, bed change, or natural outlet certification"]
@@ -68,7 +71,8 @@ def make_coupled_product(network, lakes, outlets, channel_to_lake, forcing, boun
 
 def decode_coupled_product(product):
     arrays, meta = product["arrays"], product["metadata"]
-    network = ChannelNetwork(**{key: arrays["network_" + key] for key in NETWORK}, **meta["network"])
+    fields = LEGACY_NETWORK_FIELDS if meta["schema"] == "terragenesis-channel-lake-boundary-v1" else NETWORK
+    network = ChannelNetwork(**{key: arrays["network_" + key] for key in fields}, **meta["network"])
     lakes = []
     for index, record in enumerate(meta["lakes"]):
         start, stop = arrays["lake_offsets"][index:index + 2]
@@ -222,13 +226,16 @@ def next_failure_reason(network, lakes, outlets, mapping, forcing, boundaries, c
 
 def validate_coupled_product(product):
     arrays, meta = product["arrays"], product["metadata"]
-    expected = {"network_" + key for key in NETWORK} | {"boundary_" + key for key in BOUNDARY} | {"trace_" + key for key in TRACE}
+    legacy = meta.get("schema") == "terragenesis-channel-lake-boundary-v1"
+    fields = LEGACY_NETWORK_FIELDS if legacy else NETWORK
+    semantics = {key: value for key, value in SEMANTICS.items() if key != "geometry"} if legacy else SEMANTICS
+    expected = {"network_" + key for key in fields} | {"boundary_" + key for key in BOUNDARY} | {"trace_" + key for key in TRACE}
     expected |= {"lake_offsets", "lake_cell_ids", "lake_bed_elevation_m", "lake_cell_area_m2", "channel_to_lake",
                  "forcing_time_seconds", "forcing_channel_local_q_m3_s", "forcing_lake_local_q_m3_s"}
     if (set(product) != {"arrays", "metadata", "identity_sha256"} or set(arrays) != expected
             or set(meta) != {"schema", "result", "unfinished_time_seconds", "semantics", "network", "lakes", "outlets", "forcing_source_identity_sha256",
                              "boundary_source_identity_sha256", "hydraulic_ready", "natural_outlet_verified", "publishable"}
-            or meta["schema"] != SCHEMA or meta["semantics"] != SEMANTICS
+            or meta["schema"] != ("terragenesis-channel-lake-boundary-v1" if legacy else SCHEMA) or meta["semantics"] != semantics
             or any(meta[key] is not False for key in ("hydraulic_ready", "natural_outlet_verified", "publishable"))
             or product["identity_sha256"] != identity(arrays, meta)
             or sum(value.nbytes for value in arrays.values()) > MAX_BYTES):

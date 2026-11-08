@@ -9,7 +9,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
 from terrain_pipeline.regional_surface_source import load_source
 from terrain_pipeline.regional_surface_review import export_review, read_bounded_json
 from terrain_pipeline.regional_hydraulics_mesh import water_columns, validate_water_columns

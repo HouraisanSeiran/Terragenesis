@@ -1,0 +1,115 @@
+{
+  "active": [
+    true,
+    true,
+    false,
+    true,
+    true
+  ],
+  "saved_active": [
+    true,
+    true,
+    false,
+    true,
+    true
+  ],
+  "actual_shares": [
+    0.4799999999999994,
+    0.16999999999999993,
+    0.0,
+    0.1700000000000001,
+    0.18000000000000055
+  ],
+  "actual_outlet_Q_m3_s": [
+    1439.9999999999982,
+    509.9999999999998,
+    0.0,
+    510.0000000000003,
+    540.0000000000016
+  ],
+  "dry_route_Q_zero": true,
+  "inlet_Q_m3_s": 3000.0,
+  "outlet_Q_m3_s": 3000.0,
+  "internal_Q_residual_m3_s": 0.0,
+  "solid_residual_including_pending_m3": 4.76837158203125e-07,
+  "new_input_count": 1,
+  "new_inputs": [
+    {
+      "input_id": "active-routes-v1-inlet",
+      "source_id": "branch-event-inlet",
+      "start_s": 190800.0,
+      "end_s": 280800.0,
+      "known": true,
+      "row": 214,
+      "col": 401,
+      "direction_xz": [
+        0,
+        1
+      ],
+      "water_m3": 270000000.0,
+      "solid_m3": 144000.0,
+      "delivered_water_m3": 270000000.0,
+      "delivered_solid_m3": 92160.0,
+      "pending_solid_m3": 0.0,
+      "undelivered_solid_m3": 51840.0,
+      "undelivered_water_m3": 0.0,
+      "record_kind": "branch_event"
+    }
+  ],
+  "old_inputs_preserved": true,
+  "base_exact": true,
+  "source_exact": true,
+  "minimum_stock_m3": 0.0,
+  "clock_delta_s": 90000.0,
+  "activity_history": [
+    {
+      "event": "route_activity",
+      "input_id": "active-routes-v1-inlet",
+      "time_s": 190800.0,
+      "active": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "actual_shares": [
+        0.17999999999999944,
+        0.16999999999999993,
+        0.3,
+        0.1700000000000001,
+        0.18000000000000055
+      ]
+    },
+    {
+      "event": "route_activity",
+      "input_id": "active-routes-v1-inlet",
+      "time_s": 243000.0,
+      "active": [
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "actual_shares": [
+        0.4799999999999994,
+        0.16999999999999993,
+        0.0,
+        0.1700000000000001,
+        0.18000000000000055
+      ]
+    }
+  ],
+  "pass": true,
+  "flush": {
+    "released_solid_m3": 51840.0,
+    "physical_time_unchanged": true,
+    "input_id_count": 1,
+    "solid_residual_m3": 0.0,
+    "change_only_at_inlet": true,
+    "released_to_inlet_m3": 51840.0,
+    "pending_remaining_m3": 0.0,
+    "source_unchanged": true
+  }
+}

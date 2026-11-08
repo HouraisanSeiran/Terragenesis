@@ -1,0 +1,57 @@
+{
+  "initial_total_m3": 865667740.3358886,
+  "formed_total_m3": 870685751.2991693,
+  "event_total_m3": 870690452.1941441,
+  "initial_extra": {
+    "exported_solid_m3": 1153617669.351998,
+    "unresolved_solid_m3": 0.0
+  },
+  "formed_extra": {
+    "exported_solid_m3": 1153617669.351998,
+    "unresolved_solid_m3": 0.0
+  },
+  "event_extra": {
+    "exported_solid_m3": 1153617669.351998,
+    "unresolved_solid_m3": 0.0
+  },
+  "routes": [
+    {
+      "mouth_world_xz_m": [
+        -4700.0,
+        8100.0
+      ],
+      "length_km": 3.4,
+      "q_m3_s": 67.71571466950041,
+      "exterior_faces": 1
+    },
+    {
+      "mouth_world_xz_m": [
+        -2700.0,
+        7900.0
+      ],
+      "length_km": 5.2,
+      "q_m3_s": 50.19661569483682,
+      "exterior_faces": 2
+    },
+    {
+      "mouth_world_xz_m": [
+        -700.0,
+        8100.0
+      ],
+      "length_km": 12.6,
+      "q_m3_s": 26.5576654323432,
+      "exterior_faces": 2
+    }
+  ],
+  "formed_land_largest_km2": 31.16,
+  "formed_largest_bbox_x_km": [
+    -4.5,
+    10.3
+  ],
+  "formed_largest_bbox_z_km": [
+    1.3,
+    8.1
+  ],
+  "all_finite_bed": true,
+  "source_identity": "454292b47a107628748a3ba7d76093cbd2d7df4785884490f55418f9ebe368ce"
+}

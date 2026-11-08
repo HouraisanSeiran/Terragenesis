@@ -1,0 +1,290 @@
+{
+ "algorithms": {
+  "terrain_pipeline/coastal_delta_avulsion.py": "160a041308d9dd617c151be3ae73bb5a220f93f9383299ac8b334171a6f90d35",
+  "terrain_pipeline/coastal_delta_bank_formation.py": "980a86c35afdf9edad70b876a746e871c99bddf0a38afbf43023c48d67423fa6",
+  "terrain_pipeline/coastal_delta_branch_attachment.py": "2b566230e77dad9e691df6771325a39602b47c74775463289693629a2867b337",
+  "terrain_pipeline/coastal_delta_branching.py": "94ae3aaa142c6aeb72a338babbb485a2bffd99dc04febe748832c1730788f36f",
+  "terrain_pipeline/coastal_delta_deposition_scaling.py": "5d6e3673db0c0ee3fb7d5e81d259a180933c4845b6f33ec851b071550a58d940",
+  "terrain_pipeline/coastal_delta_evolution.py": "9c94570592c67b0844d22ce2fe7a663571e26b259cde885e3d6c7154bebc653e",
+  "terrain_pipeline/coastal_delta_formation.py": "558e5d5640d269de445b45600866303639874ad3bdae15017c99ee4b61f4eced",
+  "terrain_pipeline/coastal_delta_geological.py": "32e8215e488da58190fbbfb21e60bc69c709412e8c9fce04bab9a19c1b1eaa96",
+  "terrain_pipeline/coastal_delta_geological_network.py": "5016a72a15c6f86b23379f9924c06b6cfef3f20a25efffbcc8cfa7acbedbc739",
+  "terrain_pipeline/coastal_delta_graph_hydraulics.py": "ea289f2bf3972ec57878acde8b3b5e45f962e176eb051f87704f2c04c01593d6",
+  "terrain_pipeline/coastal_delta_growth.py": "dd46a75e427acb7382f5b1f32a80eab4990231d8ba673f9736ffeb2aa6a8f48e",
+  "terrain_pipeline/coastal_delta_hydraulic_capacity.py": "b6cdeeb244db7bea0876898a53bfe4467cdb13852a14617583b744d8d5fb477c",
+  "terrain_pipeline/coastal_delta_hydraulic_event.py": "9811f5f178b74e8c640e20f3dbf81842578ff3a6220b520cc0d31710ba08a11d",
+  "terrain_pipeline/coastal_delta_hydraulics.py": "b5da29badd6886ed783605d1e1238df26857d5c41cb80356a1d49b6ac932a003",
+  "terrain_pipeline/coastal_delta_lobes.py": "6b50d284963099e85bd4b3204fe114739059ae437f3c4a96ec7e127f183fd0f9",
+  "terrain_pipeline/coastal_delta_morphology.py": "c9243c7431c35f786aa163c09fbdb6deb062f82c4e7ebc735b758ea678e7e7c9",
+  "terrain_pipeline/coastal_delta_mouth_extension.py": "28a23cc4d82e481f15d01feed7a656eb0602b8da444a1da1b3aa00e5c19ff10c",
+  "terrain_pipeline/coastal_delta_multicell.py": "db0fc02ec7910d6612edbf4797fbd6780337ee9e5f8cf55853b439d120b48131",
+  "terrain_pipeline/coastal_delta_multicell_avulsion.py": "ad62204dea09e77c0c054be0e28bd9551d32f99bd988f14bde6b625f940b665a",
+  "terrain_pipeline/coastal_delta_network_plan.py": "56386a5e19e36f1c1f763002f959fc4f484451c8bdb9450ed0575d0644156da8",
+  "terrain_pipeline/coastal_delta_node_inventory.py": "fe70fb3e98625185cd2a9cb598b14c1683d6ff95308ea896574f21a9ba59bea9",
+  "terrain_pipeline/coastal_delta_pipeline.py": "f313f6d49fe265a83699c6bc87fc2920f5cbe521aa5ba8a8752cd70c15195a72",
+  "terrain_pipeline/coastal_delta_plain.py": "96ef0963f3e1f8cda9cd7f3a24e3e22dbe1f67baba85b3c5cd9fb2c2626dd022",
+  "terrain_pipeline/coastal_delta_product.py": "88da39219f77a0d694cb9d07d60229cf58f5880b49a00c4162f29f9f0ae23a57",
+  "terrain_pipeline/coastal_delta_regional.py": "78f10665f8bbafb6b8da25fe829e57da99defd3411d1e3aaa4d5bd32c6faa9d4",
+  "terrain_pipeline/coastal_delta_routes.py": "e8bb78fd57c9da7e45c512512994c42eec6d0b7a6897786e049a1fb62c502b11",
+  "terrain_pipeline/coastal_delta_window.py": "d05f26b1daab2ac574a19526a44bd165b8fd9d87debd7dd246c1b5fe3ca0dd55",
+  "terrain_pipeline/coastal_marine_sediment.py": "0721b9ea30f61354b2d823d6067c4e8c1eeac5557b2eb8864090cda15af2848a",
+  "terrain_pipeline/delta_network_coupling.py": "012aa6fe390f651f1546149ff10abda51bdfe279210a48af890a81097da25f60",
+  "tools/run_delta_network_coupled.py": "c8b28f8b6d91ff1cd56166653c7d01cad2d285f5086c24d5fdc4f787d8e0472f"
+ },
+ "cases": {
+  "base": {
+   "accepted_q_m3_s": 8000.0,
+   "actual_mouth_q_m3_s": [
+    [
+     108,
+     228,
+     3.999999993682999e-09
+    ],
+    [
+     109,
+     229,
+     3.999999993682999e-09
+    ],
+    [
+     111,
+     230,
+     481.9976202743777
+    ],
+    [
+     115,
+     232,
+     385.2589640816444
+    ],
+    [
+     156,
+     354,
+     218.10990218579755
+    ],
+    [
+     167,
+     344,
+     500.35102601622197
+    ],
+    [
+     214,
+     256,
+     1928.834353162071
+    ],
+    [
+     237,
+     259,
+     739.5869627324173
+    ],
+    [
+     242,
+     320,
+     98.54038741193696
+    ],
+    [
+     249,
+     261,
+     1524.8678911096067
+    ],
+    [
+     250,
+     263,
+     1863.8862738311675
+    ],
+    [
+     254,
+     303,
+     258.56661919076225
+    ]
+   ],
+   "arrays_match_checkpoint": true,
+   "bed_delta_min_max_m": [
+    -0.06304759683069205,
+    0.006461874843483706
+   ],
+   "channel_exterior_deposition": {
+    "cell_zx": [
+     212,
+     255
+    ],
+    "model_xz_m": [
+     -4450.0,
+     11250.0
+    ],
+    "outside_all_channel_footprints": true,
+    "receiver_classification": "unclassified; may be bay, estuary or open water",
+    "rise_m": 0.006461874843483706,
+    "solid_increase_m3": 38.771249060902235,
+    "world_xz_m": [
+     39250.0,
+     -19550.0
+    ]
+   },
+   "channel_exterior_rise_cells": 656,
+   "complete_saved_product_bytes": 13849597,
+   "continuation": {
+    "arrays_bitwise_equal": {
+     "base_bed_m": true,
+     "bed_solid_m3": true,
+     "mobile_solid_m3": true,
+     "stranded_solid_m3": true
+    },
+    "boundary": "only equal complete physical event ticks; arbitrary cuts are not equivalent",
+    "progress_equal": true,
+    "same_time_s": true,
+    "split_after_ticks": 1,
+    "tested": true
+   },
+   "final_stock_solid_m3": 774001200.0,
+   "grid_shape": [
+    430,
+    600
+   ],
+   "independent_cold_ledger_residual_m3": 0.0,
+   "initial_stock_solid_m3": 774000000.0,
+   "input_solid_m3": 1200.0,
+   "max_node_residual_m3_s": 3.986918012740495e-09,
+   "max_scaled_equation_residual": 4.99558727717897e-13,
+   "mouth_sum_q_m3_s": 8000.000000004003,
+   "numerical_near_zero_mouths": 2,
+   "physical": ".scratch\\delta-completion-20261107\\physical-source-controlled-base-r3-r2",
+   "physical_code_hashes_match": true,
+   "physical_hash_files": 10,
+   "physical_seconds": 600.0,
+   "resolved_flow_mouths": 10,
+   "resources": {
+    "dem_spacing_m": 100.0,
+    "elapsed_seconds": 83.0826556999964,
+    "grid_shape": [
+     430,
+     600
+    ],
+    "hydraulic_control_spacing_m": 1200.0,
+    "initialization_seconds": 45.3347122999985,
+    "output_bytes": 13823096,
+    "peak_working_set_bytes": 284348416
+   },
+   "source": ".scratch\\delta-completion-20261107\\source-controlled-v5-100m-r3\\base",
+   "source_binding_matches": true,
+   "source_hash_files": 22,
+   "spacing_m": 100.0
+  },
+  "hundred-km": {
+   "accepted_q_m3_s": 30000.0,
+   "actual_mouth_q_m3_s": [
+    [
+     264,
+     785,
+     8133.120719291072
+    ],
+    [
+     346,
+     702,
+     5224.317381809081
+    ],
+    [
+     405,
+     619,
+     9593.293708167059
+    ],
+    [
+     444,
+     540,
+     7049.268200730536
+    ]
+   ],
+   "arrays_match_checkpoint": true,
+   "bed_delta_min_max_m": [
+    -0.022170309886837103,
+    0.00014377500434648027
+   ],
+   "channel_exterior_deposition": {
+    "cell_zx": [
+     267,
+     789
+    ],
+    "model_xz_m": [
+     17950.0,
+     8750.0
+    ],
+    "outside_all_channel_footprints": true,
+    "receiver_classification": "unclassified; may be bay, estuary or open water",
+    "rise_m": 0.00014377500434648027,
+    "solid_increase_m3": 0.8626500260788816,
+    "world_xz_m": [
+     17950.0,
+     13749.999999999998
+    ]
+   },
+   "channel_exterior_rise_cells": 203,
+   "complete_saved_product_bytes": 42156693,
+   "continuation": {
+    "arrays_bitwise_equal": {
+     "base_bed_m": true,
+     "bed_solid_m3": true,
+     "mobile_solid_m3": true,
+     "stranded_solid_m3": true
+    },
+    "boundary": "only equal complete physical event ticks; arbitrary cuts are not equivalent",
+    "progress_equal": true,
+    "same_time_s": true,
+    "split_after_ticks": 1,
+    "tested": true
+   },
+   "final_stock_solid_m3": 2708401200.0,
+   "grid_shape": [
+    740,
+    1220
+   ],
+   "independent_cold_ledger_residual_m3": 0.0,
+   "initial_stock_solid_m3": 2708400000.0,
+   "input_solid_m3": 1200.0,
+   "max_node_residual_m3_s": 2.26220436161384e-07,
+   "max_scaled_equation_residual": 1.0874236132595021e-10,
+   "mouth_sum_q_m3_s": 30000.000009997748,
+   "numerical_near_zero_mouths": 0,
+   "physical": ".scratch\\delta-completion-20261107\\physical-hundred-km-v3",
+   "physical_code_hashes_match": true,
+   "physical_hash_files": 10,
+   "physical_seconds": 600.0,
+   "resolved_flow_mouths": 4,
+   "resources": {
+    "dem_spacing_m": 100.0,
+    "elapsed_seconds": 199.33362060000218,
+    "grid_shape": [
+     740,
+     1220
+    ],
+    "hydraulic_control_spacing_m": 1200.0,
+    "initialization_seconds": 50.372660600005474,
+    "output_bytes": 42130279,
+    "peak_working_set_bytes": 657063936
+   },
+   "source": ".scratch\\delta-completion-20261107\\hundred-km-source-controlled-v3",
+   "source_binding_matches": true,
+   "source_hash_files": 31,
+   "spacing_m": 100.0
+  }
+ },
+ "corrected_read_only_figures": [
+  "hundred-km-detail-100m.png",
+  "hundred-km-source-construction.png"
+ ],
+ "coverage_status": "complete_in_window",
+ "event": "600 physical seconds; fixed graph, Manning hydraulics, shear capacity, finite stocks and receiving-water sediment",
+ "figures": {
+  "base-main.png": "c1289885d27d1393f61d1d99067a9c9a25ecf5fef5cc4e8710a60a07b73b1f6d",
+  "base-source-and-change.png": "c1def14ba11ce010c48016ac06e6878e07b16833e252b5058d70fcfa5b8166f2",
+  "hundred-km-detail-100m.png": "f2c6207fdba6c6f11c0b147cc7e8e0221f40118e3598bdb7e2273e82d92cb172",
+  "hundred-km-overview.png": "5dafbd9273927b899c2c29a99478926f844bdb8c1578948b4b8f8ab1467a5c88",
+  "hundred-km-source-construction.png": "96ed76c30d32e783e8b6008a2a47f28a172cff989550a6c0535023419949da87",
+  "physical-bed-change-600s.png": "38b6c132e07a899bf306a5c12773c48ed50a7fe229c4aab94ce81c7be59a15a1"
+ },
+ "geometry": "source-controlled geological construction at t=0; not 600 s of delta formation",
+ "morphology_reports": [
+  ".scratch/delta-completion-20261107/morphology-report.md",
+  ".scratch/delta-completion-20261107/hundred-km-final-report.md"
+ ],
+ "physical_figures": "read-only rendering of saved bed delta; no AI imagery",
+ "source_world_seed": 20261020,
+ "world_seed": 20260903
+}

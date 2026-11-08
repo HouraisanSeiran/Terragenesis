@@ -13,7 +13,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import publish_bytes, file_sha256
+from terrain_pipeline.common_infra import publish_bytes, file_sha256
 from terrain_pipeline.regional_surface_source import load_source
 from terrain_pipeline.regional_surface_review import read_bounded_json, adapt_B_index, export_review
 from terrain_pipeline.regional_hydraulics_archive import read_arrays, GEOMETRY

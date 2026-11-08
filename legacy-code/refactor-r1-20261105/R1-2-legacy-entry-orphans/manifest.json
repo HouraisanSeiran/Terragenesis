@@ -1,0 +1,106 @@
+{
+  "schema": "zero-reference-tool-archive-v1",
+  "schema_extensions": "archive_path 为仓库相对完整路径；增加 sha256_after_move、text_references_by_category、archive_reason、r0_verdict",
+  "created": "2026-11-05",
+  "batch": "R1-2-legacy-entry-orphans",
+  "description": "旧入口与孤儿模块（new_world_native_network_v5、bake、render、preview_terrain_pipeline）",
+  "scope": "R1 低风险归档：SHA pin=0、无活跃 import、与快照 zip 字节一致；只移动不改内容。回退依据 dist/Terragenesis-algorithms-20261105.zip（SHA256 70D6346311A3CEBE4E1BD7FB7152295D1A65C93561359800E54F779F1BA4149C）。",
+  "manifest_sha256_note": "Per-file SHA256 below is the pinned trust anchor; verify before use.",
+  "files": [
+    {
+      "source_path": "terrain_pipeline/new_world_native_network_v5.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-2-legacy-entry-orphans/terrain_pipeline/new_world_native_network_v5.py",
+      "bytes": 14628,
+      "sha256": "e866231e282155a39613c81cea77dbc135a0e0ef2dbc0fa61fa64c6b413cd4bf",
+      "sha256_after_move": "e866231e282155a39613c81cea77dbc135a0e0ef2dbc0fa61fa64c6b413cd4bf",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_dated": 1,
+        "scratch_doc": 2
+      },
+      "archive_reason": "旧入口与孤儿模块（new_world_native_network_v5、bake、render、preview_terrain_pipeline）",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "world A-1",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#terrain_pipeline/new_world_native_network_v5.py",
+        "info": [
+          "docs_dated 提及 1 处",
+          "scratch_doc 提及 2 处"
+        ]
+      }
+    },
+    {
+      "source_path": "terrain_pipeline/bake.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-2-legacy-entry-orphans/terrain_pipeline/bake.py",
+      "bytes": 1069,
+      "sha256": "061baf30d017b6f4f00c5a9eeb33f81bc42824da542bd0d7ca747c4a0e3401de",
+      "sha256_after_move": "061baf30d017b6f4f00c5a9eeb33f81bc42824da542bd0d7ca747c4a0e3401de",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 3,
+        "accept": 3
+      },
+      "archive_reason": "旧入口与孤儿模块（new_world_native_network_v5、bake、render、preview_terrain_pipeline）",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "world W-4(弱)",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#terrain_pipeline/bake.py",
+        "info": [
+          "accept 提及 3 处",
+          "docs_gen 提及 3 处"
+        ]
+      }
+    },
+    {
+      "source_path": "terrain_pipeline/render.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-2-legacy-entry-orphans/terrain_pipeline/render.py",
+      "bytes": 1850,
+      "sha256": "3ce47bbcb5c21229ca08b47c934757953c8c165ea15bab22c749d3326355e9a6",
+      "sha256_after_move": "3ce47bbcb5c21229ca08b47c934757953c8c165ea15bab22c749d3326355e9a6",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 3,
+        "accept": 3
+      },
+      "archive_reason": "旧入口与孤儿模块（new_world_native_network_v5、bake、render、preview_terrain_pipeline）",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "world W-4(弱)",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#terrain_pipeline/render.py",
+        "info": [
+          "accept 提及 3 处",
+          "docs_gen 提及 3 处"
+        ]
+      },
+      "r1_precheck_override": "人工复核放行：预检命中的 .scratch/coast-marine-reorganization-20261102/main-full-publish.py（字符串 full-publication-render.py）、.scratch/delta-material-lobes-20261103/publish.py（render-settings.json、main-render.py）、.scratch/terrain-framework/pdf-runtime/pypdfium2_cli/_parsers.py（注释 ./render.py）都是无关同名子串；全仓 import 扫描（terrain_pipeline/tools/tests/diffusion/app/web-preview/docs）只有 tools/preview_terrain_pipeline.py 引用 terrain_pipeline.render，该文件同批归档。",
+      "r1_precheck_overridden_reasons": [
+        "新出现引用: .scratch/coast-marine-reorganization-20261102/main-full-publish.py, .scratch/delta-material-lobes-20261103/publish.py, .scratch/terrain-framework/pdf-runtime/pypdfium2_cli/_parsers.py"
+      ]
+    },
+    {
+      "source_path": "tools/preview_terrain_pipeline.py",
+      "archive_path": "legacy-code/refactor-r1-20261105/R1-2-legacy-entry-orphans/tools/preview_terrain_pipeline.py",
+      "bytes": 3333,
+      "sha256": "733e7ad6ca64b8f0e4086fd4088b835e42d5b2469d3fb46f7dc5d758da8d22e6",
+      "sha256_after_move": "733e7ad6ca64b8f0e4086fd4088b835e42d5b2469d3fb46f7dc5d758da8d22e6",
+      "active_code_references": 0,
+      "frozen_evidence_references": 0,
+      "text_references_by_category": {
+        "docs_gen": 4
+      },
+      "archive_reason": "旧入口与孤儿模块（new_world_native_network_v5、bake、render、preview_terrain_pipeline）",
+      "r0_verdict": {
+        "verdict": "A",
+        "src": "tools-tests A-2",
+        "ref": ".scratch/algorithm-refactor-20261105/r0/verdict.json#tools/preview_terrain_pipeline.py",
+        "info": [
+          "docs_gen 提及 4 处"
+        ]
+      }
+    }
+  ],
+  "not_moved": []
+}

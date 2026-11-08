@@ -21,9 +21,9 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline import real_dem_rainfall_routing as rainfall
-from terrain_pipeline.rainfall_runoff import RunoffParameters
-from terrain_pipeline.real_dem_surface_network import RealDemNetwork
+import terrain_pipeline.runoff as rainfall
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+from terrain_pipeline.drainage import RealDemNetwork as RealDemNetwork
 from tools import verify_real_dem_flat_routing as flat_exporter
 from tools.verify_real_dem_outlet_classification import (
     DEFAULT_AUDIT, DEFAULT_CANDIDATE, DEFAULT_VECTORS, canonical_bytes,
@@ -42,7 +42,7 @@ DT_S = 3600.0
 BATCH_CELLS = 100000
 SPEED_M_S = 1.0
 LEDGER_KEYS = rainfall.RUNOFF_KEYS + rainfall.ROUTING_KEYS
-MEMBERS = set(rainfall.ARRAY_KEYS) | {"ledger_" + name for name in LEDGER_KEYS}
+MEMBERS = set(rainfall.DEM_RAINFALL_ARRAY_KEYS) | {"ledger_" + name for name in LEDGER_KEYS}
 MAX_JSON_BYTES = 4 * 1024 * 1024
 
 
@@ -63,10 +63,10 @@ def scenario_forcing(name):
 
 def algorithm_identity():
     return {"version": ALGORITHM, "export_code_sha256": file_sha256(__file__),
-            "rainfall_algorithm": rainfall.ALGORITHM,
+            "rainfall_algorithm": rainfall.DEM_RAINFALL_ALGORITHM,
             "rainfall_code_sha256": file_sha256(rainfall.__file__),
-            "runoff_code_sha256": file_sha256(importlib.import_module("terrain_pipeline.rainfall_runoff").__file__),
-            "flat_code_sha256": file_sha256(importlib.import_module("terrain_pipeline.real_dem_flat_routing").__file__),
+            "runoff_code_sha256": file_sha256(importlib.import_module('terrain_pipeline.runoff').__file__),
+            "flat_code_sha256": file_sha256(importlib.import_module('terrain_pipeline.drainage').__file__),
             "flat_export_code_sha256": file_sha256(flat_exporter.__file__)}
 
 
@@ -111,16 +111,16 @@ def configuration(engineering):
 def resource_budget(candidate):
     cells = int(candidate["arrays"]["valid_mask"].sum())
     retained = 8 * ((2 * STEPS + 5) * cells + STEPS + len(LEDGER_KEYS) * STEPS)
-    if STEPS > rainfall.MAX_STEPS or STEPS * cells > rainfall.MAX_ENTRIES or retained > rainfall.MAX_BYTES:
+    if STEPS > rainfall.DEM_RAINFALL_MAX_STEPS or STEPS * cells > rainfall.DEM_RAINFALL_MAX_ENTRIES or retained > rainfall.DEM_RAINFALL_MAX_BYTES:
         raise ValueError("rainfall retained array/entry budget exceeded")
     return {"valid_cells": cells, "steps": STEPS, "retained_array_bytes_per_scenario": retained,
-            "max_retained_array_bytes": rainfall.MAX_BYTES,
+            "max_retained_array_bytes": rainfall.DEM_RAINFALL_MAX_BYTES,
             "scope": "retained arrays only, not peak total memory; graph/batches/temporaries excluded",
             "scenario_processing": "write and release one scenario at a time"}
 
 
 def saved_arrays(result):
-    return {**{name: result[name] for name in rainfall.ARRAY_KEYS},
+    return {**{name: result[name] for name in rainfall.DEM_RAINFALL_ARRAY_KEYS},
             **{"ledger_" + name: result["ledger"][name] for name in LEDGER_KEYS}}
 
 
@@ -155,7 +155,7 @@ def expected_shapes(cells):
 def load_saved(path, record, cells):
     shapes = expected_shapes(cells)
     budget = sum(int(np.prod(shape)) * 8 for shape in shapes.values())
-    if budget > rainfall.MAX_BYTES or Path(path).stat().st_size > budget + len(MEMBERS) * 4096:
+    if budget > rainfall.DEM_RAINFALL_MAX_BYTES or Path(path).stat().st_size > budget + len(MEMBERS) * 4096:
         raise ValueError("scenario archive exceeds retained byte budget")
     with zipfile.ZipFile(path) as archive:
         members = archive.infolist()
@@ -176,7 +176,7 @@ def load_saved(path, record, cells):
     ledger = {key: arrays["ledger_" + key] for key in LEDGER_KEYS}
     if canonical_bytes(record["ledger"]) != canonical_bytes({key: value.tolist() for key, value in ledger.items()}):
         raise ValueError("saved ledger report/archive mismatch")
-    return {**{name: arrays[name] for name in rainfall.ARRAY_KEYS},
+    return {**{name: arrays[name] for name in rainfall.DEM_RAINFALL_ARRAY_KEYS},
             "ledger": ledger, "metadata": record["metadata"], "summary": record["summary"]}
 
 

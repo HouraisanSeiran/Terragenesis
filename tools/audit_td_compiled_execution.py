@@ -12,12 +12,13 @@ import psutil
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity, publish_bytes
-from terrain_pipeline.rainfall_runoff import RunoffParameters
-from terrain_pipeline.td_basin_hierarchy import build_basin_hierarchy
-from terrain_pipeline.td_basin_source import make_td_source
-from terrain_pipeline.td_basin_storage_compiled import advance_hour, PROFILE
-from terrain_pipeline.td_basin_storage_continuation import simulate_basin_storage
+from terrain_pipeline.common_infra import file_sha256, identity, publish_bytes
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
+from terrain_pipeline.basin_topology import build_basin_hierarchy as build_basin_hierarchy
+from terrain_pipeline.basin_storage import make_td_source as make_td_source
+from terrain_pipeline.basin_storage import advance_hour_compensated as advance_hour
+from terrain_pipeline.basin_storage import COMPILED_HOUR_PROFILE as PROFILE
+from terrain_pipeline.basin_storage import continuation_simulate as simulate_basin_storage
 
 STATES = ("depth_m", "soil_mm", "fast_mm", "slow_mm")
 ERRORS = ("error_depth", "error_soil", "error_fast", "error_slow")
@@ -117,7 +118,7 @@ def audit():
     return {"schema": "td-independent-compiled-execution-v1", "profile": PROFILE,
             "scope": "12 tiny beds, three exact steps and four forcing intervals, complete continuation inventory and ledger comparisons",
             "cases": cases, "passed": all(value["passed"] for value in cases), "resource": resource,
-            "kernel_sha256": file_sha256(ROOT / "terrain_pipeline/td_basin_storage_compiled.py"),
+            "kernel_sha256": file_sha256(ROOT / 'terrain_pipeline/basin_storage.py'),
             "auditor_sha256": file_sha256(__file__), "original_TD_verified": False,
             "hydraulic_ready": False, "publishable": False,
             "limitations": "Raw kernel controlled-input equivalence only; public validation, cold IO, physical timestep refinement and large domain are separate gates."}

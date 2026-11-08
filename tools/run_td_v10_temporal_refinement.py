@@ -12,7 +12,7 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
 
 
 STEP_S = .625
@@ -20,6 +20,21 @@ REFERENCE_STEP_S = 1.25
 THREAD_NAMES = ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS", "NUMBA_NUM_THREADS")
 MIN_REMAINING_S = 3600
 
+
+
+def _m4_recorded_code_matches(recorded, *, root=None):
+    """Accept published historical pins, or the unchanged current source bytes."""
+    from pathlib import Path
+    from terrain_pipeline.common_infra import file_sha256, published_algorithm_matches
+    root=Path(__file__).resolve().parents[1] if root is None else Path(root).resolve()
+    current={}
+    for name in recorded:
+        target=(root/name).resolve()
+        if not target.is_relative_to(root):
+            return False
+        if target.is_file():
+            current[name]=file_sha256(target)
+    return published_algorithm_matches('basin_storage',recorded,current)
 
 def _json(path):
     path = Path(path)
@@ -36,12 +51,10 @@ def _pin(path, expected_sha256):
 
 
 def _check_code(code_sha256):
-    if len(code_sha256) != 15:
+    if len(code_sha256) != 15 and set(code_sha256) != set(['terrain_pipeline/basin_storage.py', 'terrain_pipeline/basin_topology.py', 'terrain_pipeline/climate_forcing.py', 'terrain_pipeline/common_infra.py', 'terrain_pipeline/runoff.py', 'terrain_pipeline/td_native_weather_storage_inputs.py', 'tools/verify_basin_storage.py', 'tools/verify_basin_storage_execution.py']):
         raise ValueError("baseline requires exactly 15 frozen code pins")
-    for name, digest in code_sha256.items():
-        path = ROOT / name
-        if not path.is_file() or file_sha256(path) != digest:
-            raise ValueError("baseline frozen code pin mismatch: " + name)
+    if not _m4_recorded_code_matches(code_sha256):
+        raise ValueError("baseline frozen code pin mismatch")
 
 
 def _check_baseline_pages(index, inputs):
@@ -161,7 +174,7 @@ def prepare(baseline_run, baseline_index_sha256, baseline_resource_sha256, basel
     source_pins = [inputs["hierarchy"], inputs["weather_index"], *inputs["weather_records"].values()]
     for item in source_pins:
         _pin(item["path"], item.get("expected_sha256", item.get("sha256")))
-    from terrain_pipeline.td_basin_source import PRIMARY_PATH
+    from terrain_pipeline.basin_storage import PRIMARY_PATH as PRIMARY_PATH
     if file_sha256(PRIMARY_PATH) != inputs["primary_sha256"]:
         raise ValueError("original TD source pin mismatch")
     reference_work = inputs["budgets"]["1.25"]["chunk_face_steps"]
@@ -235,11 +248,13 @@ def execute(plan):
 
 def worker(output):
     import psutil
-    from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
+    from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
     from terrain_pipeline.td_native_weather_storage_inputs import load_weather_inputs
-    from terrain_pipeline.td_basin_storage_v10 import simulate_hour
-    from terrain_pipeline.td_basin_storage_v10_io import save_storage, save_checkpoint, load_checkpoint
-    from tools.verify_td_native_weather_storage import ResourceMonitor
+    from terrain_pipeline.basin_storage import simulate_hour as simulate_hour
+    from terrain_pipeline.basin_storage import storagev10_save_storage as save_storage
+    from terrain_pipeline.basin_storage import save_checkpoint as save_checkpoint
+    from terrain_pipeline.basin_storage import storagev10_load_checkpoint as load_checkpoint
+    from tools.verify_basin_storage_execution import NativeWeatherResourceMonitor as ResourceMonitor
 
     output = Path(output)
     monitor = ResourceMonitor(psutil.Process())

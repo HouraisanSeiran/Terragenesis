@@ -13,9 +13,9 @@ import math
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline import td_source_conforming_banks as source
+from terrain_pipeline.common_infra import file_sha256
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline import channel_geometry as source
 from terrain_pipeline.td_shared_channel_fine import (
     FLAGS, MAX_BYTES, MAX_CELLS, MAX_RSS, MAX_TILES, PARAMETERS, PARAMETERS_IDENTITY_SHA256,
     POLICY, POLICY_IDENTITY_SHA256, SCHEMA, SPACING_M, TILE_CELLS, BudgetExceeded,
@@ -100,7 +100,7 @@ def load_channel(index_pin, audit_pin):
         expected_identity=hierarchy_pin["identity_sha256"])
     sections = read_pin(inputs["06_sections"])
     protection = read_pin(inputs["wet_protection_manifest"])["wet_protection"]
-    context = source._context(hierarchy, sections["selected_leaf_ids"], protection)
+    context = source._i46__context(hierarchy, sections["selected_leaf_ids"], protection)
     return index, audit, artifacts, context
 
 

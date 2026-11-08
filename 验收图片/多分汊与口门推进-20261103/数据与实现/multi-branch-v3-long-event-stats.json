@@ -1,0 +1,116 @@
+{
+  "input_id": "multi-branch-v3-long-event-inlet",
+  "water_m3": 270000000.0,
+  "solid_m3": 144000.0,
+  "internal_transfer_solid_m3": 66440634.18470575,
+  "entrained_solid_m3": 4668722.9153939225,
+  "capacity_concentration": 0.01,
+  "active_layer_m": 0.5,
+  "max_velocity_m_s": 2.0,
+  "wet_paths": [
+    true,
+    true,
+    false,
+    true,
+    true
+  ],
+  "max_bed_change_m": 1.9624960704980348,
+  "mass_residual_m3": 4.76837158203125e-07,
+  "clock_start_s": 190800.0,
+  "clock_end_s": 280800.0,
+  "water_delta_m3": 270000000.0,
+  "record_count": 1,
+  "event_reload_matches": true,
+  "mobile_before_m3": 5293946.305343761,
+  "mobile_after_m3": 7784703.782225042,
+  "outlets": [
+    [
+      225,
+      415
+    ],
+    [
+      198,
+      433
+    ],
+    [
+      213,
+      429
+    ],
+    [
+      211,
+      430
+    ],
+    [
+      230,
+      392
+    ]
+  ],
+  "exterior_faces": [
+    [
+      [
+        226,
+        415
+      ],
+      [
+        225,
+        414
+      ]
+    ],
+    [
+      [
+        198,
+        434
+      ],
+      [
+        199,
+        433
+      ],
+      [
+        197,
+        433
+      ]
+    ],
+    [
+      [
+        213,
+        430
+      ],
+      [
+        214,
+        429
+      ],
+      [
+        212,
+        429
+      ]
+    ],
+    [
+      [
+        211,
+        431
+      ],
+      [
+        212,
+        430
+      ],
+      [
+        210,
+        430
+      ]
+    ],
+    [
+      [
+        230,
+        393
+      ],
+      [
+        231,
+        392
+      ],
+      [
+        230,
+        391
+      ]
+    ]
+  ]
+}

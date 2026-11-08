@@ -5,7 +5,7 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, identity
+from terrain_pipeline.common_infra import file_sha256, identity
 from terrain_pipeline.td_native_channel_geometry import build_channel_geometry
 from terrain_pipeline.td_native_channel_tiles import build_channel_tile, save_channel_tile, split_window_2x2
 from tests.test_td_native_channel_geometry import fixture

@@ -13,8 +13,9 @@ from scipy.linalg import expm
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.mountain_source_adapter import file_sha256, publish_bytes
-from terrain_pipeline.td_basin_storage_implicit import exchange, parameters
+from terrain_pipeline.common_infra import file_sha256, publish_bytes
+from terrain_pipeline.basin_storage import exchange_strang_two_sweep as exchange
+from terrain_pipeline.basin_storage import parameters_strang_split as parameters
 
 
 def audit_numerics():
@@ -86,12 +87,12 @@ def audit_numerics():
                         "reference_cross_difference_m": matrix_difference, "comparisons": errors})
     return {"schema": "td-face-independent-numerical-audit-v1", "utc": datetime.now(timezone.utc).isoformat(),
             "cases": results, "auditor_sha256": file_sha256(__file__),
-            "solver_sha256": file_sha256(ROOT / "terrain_pipeline/td_basin_storage_implicit.py"),
+            "solver_sha256": file_sha256(ROOT / 'terrain_pipeline/basin_storage.py'),
             "scope": "unforced six-cell exchange; not rainfall, TD full-domain or momentum equation certification"}
 
 
 def audit_compiled_pairs():
-    from terrain_pipeline.td_basin_storage_refinement import _compiled_exchange
+    from terrain_pipeline.basin_storage import refinement_compiled_exchange as _compiled_exchange
 
     generator = np.random.default_rng(20261002)
     maximum_error = 0.0
@@ -146,7 +147,7 @@ def main():
     report = audit_numerics()
     if args.compiled:
         report["compiled_pairs"] = audit_compiled_pairs()
-        report["compiled_solver_sha256"] = file_sha256(ROOT / "terrain_pipeline/td_basin_storage_refinement.py")
+        report["compiled_solver_sha256"] = file_sha256(ROOT / 'terrain_pipeline/basin_storage.py')
     publish_bytes(args.output, json.dumps(report, ensure_ascii=False, allow_nan=False, indent=2).encode("utf-8"))
     print(json.dumps(report["cases"]))
     if args.compiled:

@@ -7,12 +7,12 @@ import re
 import numpy as np
 import psutil
 
-from terrain_pipeline.mountain_source_adapter import identity, load_bundle, file_sha256
-from terrain_pipeline.td_basin_hierarchy import load_basin_hierarchy
-from terrain_pipeline.td_basin_storage_dispatch_io import _storage_headers
-from terrain_pipeline.td_basin_spill_network import _read_json
+from terrain_pipeline.common_infra import identity, load_bundle, file_sha256
+from terrain_pipeline.basin_topology import load_basin_hierarchy as load_basin_hierarchy
+from terrain_pipeline.basin_storage import _storage_headers as _storage_headers
+from terrain_pipeline.basin_topology import _read_json as _read_json
 from terrain_pipeline.td_surface_reaches import _freeze
-from terrain_pipeline.rainfall_runoff import RunoffParameters
+from terrain_pipeline.runoff import RunoffParameters as RunoffParameters
 
 STATES = ("depth_m", "soil_mm", "fast_mm", "slow_mm")
 FLUXES = ("face_forward_m3", "face_reverse_m3", "active_forward_s", "active_reverse_s", "routed_volume_m3", "wet_duration_s")

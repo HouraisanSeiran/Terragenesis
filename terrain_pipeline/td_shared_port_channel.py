@@ -6,8 +6,8 @@ import math
 
 import numpy as np
 
-from terrain_pipeline import td_source_conforming_banks as geometry
-from terrain_pipeline import td_source_conforming_banks_v3 as fans
+from terrain_pipeline import channel_geometry as geometry
+from terrain_pipeline import channel_geometry as fans
 from terrain_pipeline import td_ported_junction as junction
 from terrain_pipeline.td_ported_network_composition import match_ports, _contact, check_memory
 
@@ -153,7 +153,7 @@ def select_fragment(hierarchy, paths, sections, *, wet_protection, max_nodes=MAX
         raise ValueError("max_nodes must be an integer from 2 to 256")
     _check_parents(hierarchy, paths, sections)
     nodes, arcs, profiles = _maps(paths, sections)
-    context = geometry._context(hierarchy, sections["selected_leaf_ids"], wet_protection)
+    context = geometry._i46__context(hierarchy, sections["selected_leaf_ids"], wet_protection)
     original_nodes = sorted({node_id for arc in arcs.values() for node_id in arc["node_ids"]})
     components = _components(original_nodes, arcs.values())
     mother = set(components[0]) if components else set()
@@ -311,7 +311,7 @@ def build_midpoint_port(hierarchy, paths, sections, *, arc_id, wet_protection, i
     _check_parents(hierarchy, paths, sections)
     nodes, arcs, profiles = _maps(paths, sections)
     arc = arcs[arc_id]
-    context = geometry._context(hierarchy, sections["selected_leaf_ids"], wet_protection)
+    context = geometry._i46__context(hierarchy, sections["selected_leaf_ids"], wet_protection)
     first, second = [np.asarray(nodes[node_id]["xyz_m"])[[0, 2]] for node_id in arc["node_ids"]]
     length = float(np.linalg.norm(second - first))
     if length <= 1e-8:
@@ -507,7 +507,7 @@ def build_node_piece(hierarchy, paths, sections, *, node_id, midpoint_ports, wet
     _check_parents(hierarchy, paths, sections)
     nodes, arcs, profiles = _maps(paths, sections)
     index, section = profiles[node_id]
-    context = geometry._context(hierarchy, sections["selected_leaf_ids"], wet_protection)
+    context = geometry._i46__context(hierarchy, sections["selected_leaf_ids"], wet_protection)
     reasons, center_sample = _safety(nodes[node_id], section, context)
     reasons = set(reasons)
     ports = sorted(midpoint_ports, key=lambda item: item["arc_id"])

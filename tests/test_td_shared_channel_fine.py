@@ -4,8 +4,8 @@ import unittest
 
 import numpy as np
 
-from terrain_pipeline.mountain_source_adapter import identity
-from terrain_pipeline import td_source_conforming_banks as source
+from terrain_pipeline.common_infra import identity
+from terrain_pipeline import channel_geometry as source
 from terrain_pipeline.td_shared_channel_fine import (
     SPACING_M, TILE_CELLS, BudgetExceeded, _center_cut, build_tile, compact_node_fans,
     plan_tiles, seal, verify_integral_conservation)
@@ -27,7 +27,7 @@ def fixture():
         "contribution_owner": np.zeros((3, 3), np.int64), "node_unknown_contact": np.zeros(1, bool)}
     metadata = {"origin_m_xz": [0., 0.], "spacing_m": 1., "source_identity_sha256": "a" * 64}
     hierarchy = {"arrays": arrays, "metadata": metadata, "identity_sha256": identity(arrays, metadata)}
-    context = source._context(hierarchy, [0], {"covered_native_cell_ids": [], "stage_by_leaf": []})
+    context = source._i46__context(hierarchy, [0], {"covered_native_cell_ids": [], "stage_by_leaf": []})
     return record, {"origin_m_xz": [0., 0.], "spacing_m": SPACING_M, "tile_cells": TILE_CELLS}, context
 
 

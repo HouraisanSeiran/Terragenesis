@@ -7,7 +7,7 @@ import numpy as np
 from urllib.error import HTTPError
 from urllib.request import urlopen,Request
 
-from terrain_pipeline.mountain_source_adapter import file_sha256
+from terrain_pipeline.common_infra import file_sha256
 from terrain_pipeline.single_domain_surface_consumer import BUDGETS,SCHEMA,array_roles,copy_payload,load_consumer_manifest,readonly_server
 
 

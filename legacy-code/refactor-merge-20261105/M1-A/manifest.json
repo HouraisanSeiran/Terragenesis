@@ -1,0 +1,270 @@
+{
+ "batch": "M1-A",
+ "date": "2026-11-06",
+ "moved": [
+  {
+   "source_path": "terrain_pipeline/advanced_terrain_filter.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\advanced_terrain_filter.py",
+   "sha256": "e0dc26f2e5405f28cec05465b44a0d76bcf278d1d2bb8a732ab446f92ef3b4f3",
+   "bytes": 10776,
+   "target_module": "terrain_pipeline/mountain_forms.py",
+   "function": "外观雕刻滤波（Advanced filter）",
+   "reason": "并入 mountain_forms；符号改名为 ADVANCED_ALGORITHM_ID"
+  },
+  {
+   "source_path": "terrain_pipeline/product_mountains.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\product_mountains.py",
+   "sha256": "894b420b9a97256e1b51d739b00544d4091ddc001e9ee9b639ed0544cfa2b32a",
+   "bytes": 6941,
+   "target_module": "terrain_pipeline/mountain_forms.py",
+   "function": "产品级山体采样",
+   "reason": "并入 mountain_forms；ALGORITHM_ID→PRODUCT_ALGORITHM_ID"
+  },
+  {
+   "source_path": "terrain_pipeline/local_volume_mountains.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\local_volume_mountains.py",
+   "sha256": "290c5528d2e33776f624d9f056af36841bd79db9c9ab6fea4dc2b11ba1c8f067",
+   "bytes": 7318,
+   "target_module": "terrain_pipeline/mountain_forms.py",
+   "function": "局部站点体量",
+   "reason": "并入 mountain_forms；ALGORITHM_ID→LOCAL_VOLUME_ALGORITHM_ID"
+  },
+  {
+   "source_path": "terrain_pipeline/procedural_mountains.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\procedural_mountains.py",
+   "sha256": "b048210af45b63ec2190c7c19767eacd20bab615a74f011c5573c531fdde6f43",
+   "bytes": 10447,
+   "target_module": "terrain_pipeline/mountain_forms.py",
+   "function": "程序化山体",
+   "reason": "并入 mountain_forms；rasterize/sample_stages 等改名"
+  },
+  {
+   "source_path": "terrain_pipeline/voronoi_mountains.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\voronoi_mountains.py",
+   "sha256": "58b77e1813f3e9e62d2a8e411604885f656689a446ad625c0fb3e430731704a9",
+   "bytes": 10116,
+   "target_module": "terrain_pipeline/mountain_forms.py",
+   "function": "Voronoi 山体",
+   "reason": "并入 mountain_forms；rasterize/sample_stages 等改名"
+  },
+  {
+   "source_path": "terrain_pipeline/ridge_breakup.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\ridge_breakup.py",
+   "sha256": "89849ab2367af8309428e961bb68ab83f4c345c9cf43e5a7356cdb0e90a2fd74",
+   "bytes": 9798,
+   "target_module": "terrain_pipeline/mountain_forms.py",
+   "function": "山脊破碎",
+   "reason": "并入 mountain_forms；rasterize/sample_stages 等改名"
+  },
+  {
+   "source_path": "terrain_pipeline/world_mountain_belts.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\world_mountain_belts.py",
+   "sha256": "bff851aaf3a0f77d3086233510f1397d7254f8ad5851b282a8b97dad19a3aa1f",
+   "bytes": 28512,
+   "target_module": "terrain_pipeline/mountain_forms.py",
+   "function": "世界山带产品",
+   "reason": "并入 mountain_forms；save/load_product 改名"
+  },
+  {
+   "source_path": "terrain_pipeline/procedural_mountain_processes.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\procedural_mountain_processes.py",
+   "sha256": "6ca9df7561b24ec9031221c708fb3258f41e55b39ca4d3433937cff52d0cd514",
+   "bytes": 3691,
+   "target_module": "terrain_pipeline/mountain_forms.py",
+   "function": "山体过程证据",
+   "reason": "并入 mountain_forms"
+  },
+  {
+   "source_path": "terrain_pipeline/dem_domain.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\dem_domain.py",
+   "sha256": "9c97b4d9dc62248bdab338c4bb238f78efe849855172282f8d8cce6909380aed",
+   "bytes": 29988,
+   "target_module": "terrain_pipeline/td_source.py",
+   "function": "真实 DEM 候选域",
+   "reason": "并入 td_source；ALGORITHM/FORMAT/MAX_CELLS 加 DEM_ 前缀"
+  },
+  {
+   "source_path": "terrain_pipeline/geography_preparation_inventory.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\geography_preparation_inventory.py",
+   "sha256": "c6c352410b3c7e52d6700324bdd5a74ab223f27fad85d41344310f2390bd2ea2",
+   "bytes": 19614,
+   "target_module": "terrain_pipeline/td_source.py",
+   "function": "地理准备清单（hard pin）",
+   "reason": "并入 td_source；prepare→prepare_inventory"
+  },
+  {
+   "source_path": "terrain_pipeline/hydrology_detail_td.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\hydrology_detail_td.py",
+   "sha256": "e8b4a797e69d79d2f8b2de722dab8204a20bce0062f15905f29c622d66173539",
+   "bytes": 9807,
+   "target_module": "terrain_pipeline/td_source.py",
+   "function": "canonical TD 像素源（hard pin）",
+   "reason": "并入 td_source；ALGORITHM→HYDROLOGY_TD_ALGORITHM"
+  },
+  {
+   "source_path": "terrain_pipeline/new_world_source_mosaic.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\new_world_source_mosaic.py",
+   "sha256": "bfa48a2cf2e30355c5a8736e537901f5d730c4be1e839b948687ffb5ca4ceb3f",
+   "bytes": 11727,
+   "target_module": "terrain_pipeline/td_source.py",
+   "function": "世界源拼接页",
+   "reason": "并入 td_source；prepare_pages/read_product/identity 改名"
+  },
+  {
+   "source_path": "terrain_pipeline/new_world_terrain.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\new_world_terrain.py",
+   "sha256": "be5c8e3e0637b6f761aa5f6b74f346b9cb2a9dc630d597c65035e1b4d777db0d",
+   "bytes": 12765,
+   "target_module": "terrain_pipeline/td_source.py",
+   "function": "有限世界 30m 地形产品",
+   "reason": "并入 td_source；prepare/read_product/query_window 改名"
+  },
+  {
+   "source_path": "terrain_pipeline/world_acceptance_terrain.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\world_acceptance_terrain.py",
+   "sha256": "ff11ee12e2327f37529d9beaac64562743949c871e5543d1fa397310be838086",
+   "bytes": 23538,
+   "target_module": "terrain_pipeline/td_source.py",
+   "function": "世界验收地形",
+   "reason": "并入 td_source；ALGORITHM→ACCEPTANCE_ALGORITHM"
+  },
+  {
+   "source_path": "terrain_pipeline/world_terrain_composition.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\world_terrain_composition.py",
+   "sha256": "d56f76e72b2bd0ea9f55e69fd69469fa6b825e688d7f1402fbc619c93be1af71",
+   "bytes": 10374,
+   "target_module": "terrain_pipeline/td_source.py",
+   "function": "世界地形合成",
+   "reason": "并入 td_source；SCHEMA→COMPOSITION_SCHEMA"
+  },
+  {
+   "source_path": "terrain_pipeline/world_terrain_disk_store.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\world_terrain_disk_store.py",
+   "sha256": "baf9cc724569f93d9bdb53f6089cb5c1ab36b487b4b1d18d79284ab7b376cf77",
+   "bytes": 8242,
+   "target_module": "terrain_pipeline/td_source.py",
+   "function": "世界地形磁盘存储",
+   "reason": "并入 td_source；prepare/plan/open_registry/read_manifest 改名"
+  },
+  {
+   "source_path": "terrain_pipeline/world_terrain_mosaic.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\world_terrain_mosaic.py",
+   "sha256": "9eda0e6a06b0ee3c7893540bb9b54577f28ac6db95e982b6439538ea2b654944",
+   "bytes": 9267,
+   "target_module": "terrain_pipeline/td_source.py",
+   "function": "世界地形拼接窗口",
+   "reason": "并入 td_source"
+  },
+  {
+   "source_path": "terrain_pipeline/world_terrain_store.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\world_terrain_store.py",
+   "sha256": "a29ccfe046b9769f7b2e56a238e7af7269b910244649a93eae5c86ac40b4cce6",
+   "bytes": 9052,
+   "target_module": "terrain_pipeline/td_source.py",
+   "function": "世界地形区域存储",
+   "reason": "并入 td_source；prepare/plan/open_registry/read_component 改名"
+  },
+  {
+   "source_path": "terrain_pipeline/surface_rivers/metric_fine_terrain.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\surface_rivers\\metric_fine_terrain.py",
+   "sha256": "3ece24194685fa903e9f648ca00241a93847c2d3b14d7b8cd19e6d42887046a9",
+   "bytes": 21307,
+   "target_module": "terrain_pipeline/td_source.py",
+   "function": "米制精细地形拼接",
+   "reason": "并入 td_source"
+  },
+  {
+   "source_path": "terrain_pipeline/coastal_archipelago.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\coastal_archipelago.py",
+   "sha256": "1ff8c886de5283aefdbc9f387647b3576212d416d983946394115859f92b1928",
+   "bytes": 2183,
+   "target_module": "terrain_pipeline/coastal_terrain.py",
+   "function": "群岛起伏",
+   "reason": "并入 coastal_terrain；relief/SUBSEED 保留原名"
+  },
+  {
+   "source_path": "terrain_pipeline/coastal_archipelago_product.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\coastal_archipelago_product.py",
+   "sha256": "03166112e8d35e92c71e2f4cd9c4da12befb71749c2a4d74c207d0f013a2cab2",
+   "bytes": 7397,
+   "target_module": "terrain_pipeline/coastal_terrain.py",
+   "function": "群岛产品",
+   "reason": "并入 coastal_terrain；prepare/read_product/identity/anchor_for 改名"
+  },
+  {
+   "source_path": "terrain_pipeline/coastal_detail_product.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\coastal_detail_product.py",
+   "sha256": "353f03409aab8bcb90432a5375d9b3d6509b064668fc4b35b7138ad78fc18c4c",
+   "bytes": 13535,
+   "target_module": "terrain_pipeline/coastal_terrain.py",
+   "function": "海岸细化产品",
+   "reason": "并入 coastal_terrain；prepare/read_product/identity/array_hash 改名"
+  },
+  {
+   "source_path": "terrain_pipeline/coastal_detail_refinement.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\coastal_detail_refinement.py",
+   "sha256": "45c1e9a8229d1f0f7d6b9003141efdab3b980e26263ed020b3a74cf338fabd48",
+   "bytes": 5706,
+   "target_module": "terrain_pipeline/coastal_terrain.py",
+   "function": "海岸细化滤波",
+   "reason": "并入 coastal_terrain；符号保留原名"
+  },
+  {
+   "source_path": "terrain_pipeline/coastal_terrain_product.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\coastal_terrain_product.py",
+   "sha256": "060bc1f705d7718e3c963eaad624eb12dabae73dfaa134e3243141df280e84d8",
+   "bytes": 10730,
+   "target_module": "terrain_pipeline/coastal_terrain.py",
+   "function": "海岸底图产品",
+   "reason": "并入 coastal_terrain；prepare/read_product/array_hash 改名"
+  },
+  {
+   "source_path": "terrain_pipeline/tectonic_formation.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\tectonic_formation.py",
+   "sha256": "baa5d1928aa5dbfb3af891f6c793e989e2824597a68640a89270046fdee499c0",
+   "bytes": 18995,
+   "target_module": "terrain_pipeline/tectonic.py",
+   "function": "板块几何形成",
+   "reason": "并入 tectonic；符号保留原名"
+  },
+  {
+   "source_path": "terrain_pipeline/tectonic_product.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\tectonic_product.py",
+   "sha256": "a25453c23c2c29c53ce48e1e41d067c94d4a2d8ef19d1e444601865e9fac6236",
+   "bytes": 24649,
+   "target_module": "terrain_pipeline/tectonic.py",
+   "function": "冻结板块产品",
+   "reason": "并入 tectonic；prepare→prepare_frozen_product、ALGORITHM→TECTONIC_ALGORITHM"
+  },
+  {
+   "source_path": "terrain_pipeline/tectonic_shapes.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\tectonic_shapes.py",
+   "sha256": "4941bf19b7167e9b9c28ec03f6a566bf65b69330093bb10655df341b19b07ac8",
+   "bytes": 5562,
+   "target_module": "terrain_pipeline/tectonic.py",
+   "function": "板块形状参数",
+   "reason": "并入 tectonic；符号保留原名"
+  },
+  {
+   "source_path": "terrain_pipeline/plate_td_product.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\terrain_pipeline\\plate_td_product.py",
+   "sha256": "3f0f8b3138d6290ad86bb9182e13106cc5fe0ea4c4f31137846c014a8f4b33c2",
+   "bytes": 14972,
+   "target_module": "terrain_pipeline/tectonic.py",
+   "function": "板块条件 TD 源产品",
+   "reason": "并入 tectonic；prepare/read_product 改名"
+  }
+ ],
+ "renamed": [
+  {
+   "source_path": "terrain_pipeline/tectonic_evolution.py",
+   "archive_path": "legacy-code\\refactor-merge-20261105\\M1-A\\pre-rename\\tectonic_evolution.py",
+   "sha256": "efb3eaa4159fa1c4cc67f91afa273881a31e8ace46246837525fd6bb1a281503",
+   "bytes": 18607,
+   "target_module": "terrain_pipeline/tectonic.py",
+   "function": "板块构造演化",
+   "reason": "文件改名为 terrain_pipeline/tectonic.py（同一实现，非归档）"
+  }
+ ],
+ "tests_moved": []
+}

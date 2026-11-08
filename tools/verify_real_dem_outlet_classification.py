@@ -18,7 +18,7 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from terrain_pipeline.dem_domain import file_sha256, load_dem_candidate
+from terrain_pipeline.td_source import file_sha256, load_dem_candidate
 
 DEFAULT_CANDIDATE = ROOT / "verification/dem-domain/run-20261001T135530750135Z/dem-candidate.npz"
 DEFAULT_VECTORS = ROOT / "verification/hydrovector-evidence/run-20260930T060422593821Z/selected_vectors.json"

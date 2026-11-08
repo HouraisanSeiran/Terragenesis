@@ -2,8 +2,8 @@
 import json
 from pathlib import Path
 import numpy as np
-from terrain_pipeline.mountain_source_adapter import file_sha256,identity
-from terrain_pipeline.td_native_storm_forcing import load_native_storm
+from terrain_pipeline.common_infra import file_sha256, identity
+from terrain_pipeline.climate_forcing import load_native_storm
 
 
 def load_weather_inputs(path,*,expected_sha256,hierarchy):

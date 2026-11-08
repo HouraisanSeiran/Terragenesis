@@ -1,0 +1,203 @@
+{
+  "capture": "2026-10-23-before-VC-04-edits",
+  "files": {
+    "terrain_pipeline/hybrid_river_graph.py": {
+      "bytes": 14743,
+      "module": "terrain_pipeline.hybrid_river_graph",
+      "sha256": "063b2a3d037f366647aeb585161834a44a5eb18301dee919bb76b2b24052f8f6"
+    },
+    "terrain_pipeline/hybrid_river_hydraulics.py": {
+      "bytes": 26565,
+      "module": "terrain_pipeline.hybrid_river_hydraulics",
+      "sha256": "896abd3ef8ec79bbbbdfe3638076361b83f2c2b61a1b0405378711366e372649"
+    },
+    "terrain_pipeline/hybrid_river_hydraulics_v3.py": {
+      "bytes": 15927,
+      "module": "terrain_pipeline.hybrid_river_hydraulics_v3",
+      "sha256": "8ef6cf10d292accc0df83fd3a6f5dd1c1fce7a6d2afba4463813fd5a917fa296"
+    },
+    "terrain_pipeline/hybrid_river_hydraulics_v4.py": {
+      "bytes": 31100,
+      "module": "terrain_pipeline.hybrid_river_hydraulics_v4",
+      "sha256": "18b34e7e505b786e3a8f0469ff9ce44fd337090eb9e71c7064167078e9c7cdcd"
+    },
+    "terrain_pipeline/hybrid_river_hydraulics_v5.py": {
+      "bytes": 41182,
+      "module": "terrain_pipeline.hybrid_river_hydraulics_v5",
+      "sha256": "b170ddc31f62cf0c2b369be1ac5cec2633cc33ffa636aefdc6295536e1153443"
+    },
+    "terrain_pipeline/hybrid_river_hydraulics_v6.py": {
+      "bytes": 46545,
+      "module": "terrain_pipeline.hybrid_river_hydraulics_v6",
+      "sha256": "851f387c19287db1eac37033c2f54c34a03528779be02bf0d66107874c0fbd44"
+    },
+    "terrain_pipeline/hybrid_river_hydraulics_v7.py": {
+      "bytes": 45811,
+      "module": "terrain_pipeline.hybrid_river_hydraulics_v7",
+      "sha256": "9350f8efd3adcadb45924f5829a33c5eb1bf7c048dba5a73d343a4911d63c758"
+    },
+    "terrain_pipeline/hybrid_river_hydraulics_v8.py": {
+      "bytes": 4865,
+      "module": "terrain_pipeline.hybrid_river_hydraulics_v8",
+      "sha256": "bcf9bb22aa7dd40af8cdf65a26dd05d472911848d393136945ba24ee4e9e42ba"
+    },
+    "terrain_pipeline/hybrid_river_sections_v2.py": {
+      "bytes": 8507,
+      "module": "terrain_pipeline.hybrid_river_sections_v2",
+      "sha256": "a2dc77c77eee42620c8dd43822b48a40a30ba6dec8a957b8c25caed4ba4fe4ac"
+    },
+    "tests/test_hybrid_river_graph.py": {
+      "bytes": 4750,
+      "module": "tests.test_hybrid_river_graph",
+      "sha256": "a59b7ee534c3b74da2d9e513772bb0e703486f705d00f577ab2e64099aa28010"
+    },
+    "tests/test_hybrid_river_hydraulics.py": {
+      "bytes": 3249,
+      "module": "tests.test_hybrid_river_hydraulics",
+      "sha256": "05de70386884fcb6e74a82c445ebf1a940c3048b17dd3eea362fa5103c2f96cf"
+    },
+    "tests/test_hybrid_river_hydraulics_saved_audit.py": {
+      "bytes": 4879,
+      "module": "tests.test_hybrid_river_hydraulics_saved_audit",
+      "sha256": "f6ff7f59dff0e119f3d6478d7cd8f56a1f86fe67e8625b9b57a01ba31f8501b9"
+    },
+    "tests/test_hybrid_river_hydraulics_v3.py": {
+      "bytes": 4983,
+      "module": "tests.test_hybrid_river_hydraulics_v3",
+      "sha256": "d1e6dd64db328de47c21d586363781ccfa2a7b50f850131e02280e0a81f81b2a"
+    },
+    "tests/test_hybrid_river_hydraulics_v4.py": {
+      "bytes": 6197,
+      "module": "tests.test_hybrid_river_hydraulics_v4",
+      "sha256": "afd1c59e756dfd7f9fa91b61adabc8fc5088ed346be7462b33e6aa7c5b74fb64"
+    },
+    "tests/test_hybrid_river_hydraulics_v5.py": {
+      "bytes": 6691,
+      "module": "tests.test_hybrid_river_hydraulics_v5",
+      "sha256": "2bb9c3f1962e461eb4d8fb74cef2b49136d16dce334e1d5b44d2b8679a2d99eb"
+    },
+    "tests/test_hybrid_river_hydraulics_v6.py": {
+      "bytes": 9615,
+      "module": "tests.test_hybrid_river_hydraulics_v6",
+      "sha256": "57b3e9b1ff004af1acd3e148d42fc7c1a6517f64617df88ebadd44aa67254099"
+    },
+    "tests/test_hybrid_river_hydraulics_v7.py": {
+      "bytes": 5240,
+      "module": "tests.test_hybrid_river_hydraulics_v7",
+      "sha256": "4df514105470ad1df7bf4c43382a90823382478d316813fb1d8acf736958cc66"
+    },
+    "tests/test_hybrid_river_hydraulics_v8.py": {
+      "bytes": 5844,
+      "module": "tests.test_hybrid_river_hydraulics_v8",
+      "sha256": "ed69569a265844c0d6e862715ce5c4990d941cff428ca73d37af0a216cde54aa"
+    },
+    "tests/test_hybrid_river_hydraulics_v8_saved_audit.py": {
+      "bytes": 4209,
+      "module": "tests.test_hybrid_river_hydraulics_v8_saved_audit",
+      "sha256": "93ebc6969c0ca8011f13787223f7677da2900157174b6e0d5d716b82967e5886"
+    },
+    "tests/test_hybrid_river_sections_v2.py": {
+      "bytes": 5622,
+      "module": "tests.test_hybrid_river_sections_v2",
+      "sha256": "b148f8c26c16721f4c187a714f8184452b6ba640ace21eca589f00515573ab8b"
+    },
+    "tools/audit_hybrid_river_hydraulics.py": {
+      "bytes": 52018,
+      "module": "tools.audit_hybrid_river_hydraulics",
+      "sha256": "1e7d964a9356b2ae41dec381bd45e412a41b67cbe3d62ab394f2ca75061e3ce6"
+    },
+    "tools/audit_hybrid_river_hydraulics_diagnostic.py": {
+      "bytes": 7519,
+      "module": "tools.audit_hybrid_river_hydraulics_diagnostic",
+      "sha256": "c1dabc023272ac41ab7528671a06760c30351ad480df47da0497837b1b406f0e"
+    },
+    "tools/audit_hybrid_river_hydraulics_v8.py": {
+      "bytes": 16695,
+      "module": "tools.audit_hybrid_river_hydraulics_v8",
+      "sha256": "832f818ed9ae563e6a8c210be017fd60a658ecc1693dfd6e661e1c08d52cbbcd"
+    },
+    "tools/export_hybrid_river_hydraulics_review.py": {
+      "bytes": 7959,
+      "module": "tools.export_hybrid_river_hydraulics_review",
+      "sha256": "af2ebca91471236e7d905a29ad39fa5fb86051f67d406c8402ed963b7e3e1a8e"
+    },
+    "tools/prepare_hybrid_river_hydraulics.py": {
+      "bytes": 21482,
+      "module": "tools.prepare_hybrid_river_hydraulics",
+      "sha256": "90a77f2813a33836787de400e45ce968b9f1a50369079bb6f7669b38a0e9f810"
+    },
+    "tools/prepare_hybrid_river_hydraulics_v2.py": {
+      "bytes": 11887,
+      "module": "tools.prepare_hybrid_river_hydraulics_v2",
+      "sha256": "bae884207976be09c341e3dfdf148cc4bd53ea63681b7492e5bbd9ea031b2829"
+    },
+    "tools/prepare_hybrid_river_hydraulics_v3.py": {
+      "bytes": 12360,
+      "module": "tools.prepare_hybrid_river_hydraulics_v3",
+      "sha256": "c7f92d6dbfd40538f4b820731b1d9998810f8c307988caa2bc279c41bb73a048"
+    },
+    "tools/prepare_hybrid_river_hydraulics_v4.py": {
+      "bytes": 17513,
+      "module": "tools.prepare_hybrid_river_hydraulics_v4",
+      "sha256": "c5052f94a3562f2f31648ffed9febc15a84d674f5981f7b368a23de3697d1a22"
+    },
+    "tools/prepare_hybrid_river_hydraulics_v5.py": {
+      "bytes": 18728,
+      "module": "tools.prepare_hybrid_river_hydraulics_v5",
+      "sha256": "e39f5f6cbde34580bd0c948b3869f23131292ecea27267cf1c3b68521fd70260"
+    },
+    "tools/prepare_hybrid_river_hydraulics_v6.py": {
+      "bytes": 28315,
+      "module": "tools.prepare_hybrid_river_hydraulics_v6",
+      "sha256": "5706ea93d5bf6ba0cf19a8ffb61c7a8c85de4f2bd5371ae50baf3210bca488af"
+    },
+    "tools/prepare_hybrid_river_hydraulics_v7.py": {
+      "bytes": 22704,
+      "module": "tools.prepare_hybrid_river_hydraulics_v7",
+      "sha256": "eee00d865bac45b932a181b3e75264b2d6c6c7ecbeb5178531e72e97b18abce2"
+    },
+    "tools/prepare_hybrid_river_hydraulics_v8.py": {
+      "bytes": 13741,
+      "module": "tools.prepare_hybrid_river_hydraulics_v8",
+      "sha256": "00d7d00e8e0ac10eb60344fdc4f293b083b98c0703798896b0ef2af59bc7fc5c"
+    },
+    "tools/td_shared_channel_fine_saved_audit.py": {
+      "bytes": 26258,
+      "module": "tools.td_shared_channel_fine_saved_audit",
+      "sha256": "f654e5a9730280e5fdd5e03206be1d3de8cb9b92852aeb047b86cee91655b0a9"
+    }
+  },
+  "roots": [
+    "terrain_pipeline/hybrid_river_hydraulics.py",
+    "terrain_pipeline/hybrid_river_hydraulics_v3.py",
+    "terrain_pipeline/hybrid_river_hydraulics_v4.py",
+    "terrain_pipeline/hybrid_river_hydraulics_v5.py",
+    "terrain_pipeline/hybrid_river_hydraulics_v6.py",
+    "terrain_pipeline/hybrid_river_hydraulics_v7.py",
+    "terrain_pipeline/hybrid_river_hydraulics_v8.py",
+    "terrain_pipeline/hybrid_river_sections_v2.py",
+    "tests/test_hybrid_river_hydraulics.py",
+    "tests/test_hybrid_river_hydraulics_saved_audit.py",
+    "tests/test_hybrid_river_hydraulics_v3.py",
+    "tests/test_hybrid_river_hydraulics_v4.py",
+    "tests/test_hybrid_river_hydraulics_v5.py",
+    "tests/test_hybrid_river_hydraulics_v6.py",
+    "tests/test_hybrid_river_hydraulics_v7.py",
+    "tests/test_hybrid_river_hydraulics_v8.py",
+    "tests/test_hybrid_river_hydraulics_v8_saved_audit.py",
+    "tests/test_hybrid_river_sections_v2.py",
+    "tools/audit_hybrid_river_hydraulics.py",
+    "tools/audit_hybrid_river_hydraulics_diagnostic.py",
+    "tools/audit_hybrid_river_hydraulics_v8.py",
+    "tools/export_hybrid_river_hydraulics_review.py",
+    "tools/prepare_hybrid_river_hydraulics.py",
+    "tools/prepare_hybrid_river_hydraulics_v2.py",
+    "tools/prepare_hybrid_river_hydraulics_v3.py",
+    "tools/prepare_hybrid_river_hydraulics_v4.py",
+    "tools/prepare_hybrid_river_hydraulics_v5.py",
+    "tools/prepare_hybrid_river_hydraulics_v6.py",
+    "tools/prepare_hybrid_river_hydraulics_v7.py",
+    "tools/prepare_hybrid_river_hydraulics_v8.py"
+  ],
+  "schema": "td-hybrid-hydraulics-frozen-source-closure-v1"
+}

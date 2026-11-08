@@ -1,0 +1,77 @@
+{
+  "schema": "new-world-river-render-baseline-v1",
+  "completion": false,
+  "base_only": true,
+  "terrain_basis": "authenticated Terrain Diffusion terrain-v3",
+  "terrain_identity": "c751a09a6f02e8c336b6b9b8fb4b11b5dc67386e9a8470b0b1d90858bf1ffb72",
+  "source_identity": "390bbffbf248b1d79c9c33ed82ba92736bba30b8fd0d0c12e5e16c5c00911f6e",
+  "plate_identity": "b4c8bbdba29111b8c3ba3270e2f0d3a4fed3544655249fa07c506654b8ae6af9",
+  "world_seed": 20261020,
+  "source_path": "D:\\codexwork\\山川形意Terragenesis\\.scratch\\river-upgrade-20261101\\terrain-v3",
+  "source_manifest_sha256": "7ce130fbba28c8ecfa4030c740583e9a61ef0566c48f15a8480fb396e2a6ccc3",
+  "source_file_sha256": {
+    "bed_m": "eb37ec4d383137e61412d5d2411bf5370c3aa942de6e825df4dbebb48a3e8f45",
+    "raw_td_m": "eb37ec4d383137e61412d5d2411bf5370c3aa942de6e825df4dbebb48a3e8f45",
+    "valid_mask": "c87466771a911899c0687bc0aeec34e2a14efdb1b2ed8d282a6f7a15e6c720c3",
+    "ocean_mask": "ee6fd7f367469feab8047564d13b4e8ecf3b2947b20098eb9d6cac97a0613a68",
+    "closed_below_sea_mask": "80ef1165c9a29f13fcc08a8653a36c964a951127badafd1c21828536f749bd53",
+    "unknown_mask": "f4903829bcd77c0e520739e700a8c98465c6ca6b0b2fcef82f7cf6c0d5180d6c",
+    "climate_base": "4928b201efdd91c8f7360a6a7030c9cb50c5324ebeff02726cdff19162a451cf"
+  },
+  "renderer_sha256": "5e14c7e067c82ab967cde86e5b6848e5e71e72b16a7f9127cce46afbb3d74e05",
+  "figure": "terrain-baseline.png",
+  "figure_sha256": "c4cfdcf2165202218038a7402674efce9be9ce4e97be54ec410591494147fc32",
+  "bounds_xz_m": [
+    -26170,
+    23830,
+    -19990,
+    30010
+  ],
+  "cell_spacing_m": 30,
+  "cell_extent_xz_m": [
+    -26175.0,
+    23835.0,
+    30015.0,
+    -19995.0
+  ],
+  "orientation": "north up, X east, Z south; cell centres",
+  "time": "not applicable to static terrain",
+  "forcing": "not applicable; native water not supplied",
+  "algorithms": [
+    "authenticated cold read",
+    "elevation tone",
+    "four-direction hillshade"
+  ],
+  "hillshade": {
+    "azimuth_degrees": [
+      45,
+      135,
+      225,
+      315
+    ],
+    "altitude_degrees": 45,
+    "vertical_exaggeration": 1
+  },
+  "coverage_status": {
+    "terrain": "complete_in_window",
+    "ocean_classification": "complete_in_window",
+    "river_lake_water": "not_available",
+    "network": "not_available",
+    "delta": "not_available"
+  },
+  "known_unknowns": [
+    "ocean mask inherits finite macro boundary; not global hydrodynamic certification",
+    "closed below-datum cells are not classified as water",
+    "surface tone is not observed vegetation or material",
+    "native water and delta are not available",
+    "independent source page overlap differences are documented in source50-report.md"
+  ],
+  "window_cell_counts": {
+    "ocean_mask": 1382146,
+    "unknown_mask": 0,
+    "valid_mask": 2778889,
+    "closed_below_sea_mask": 9109
+  },
+  "available_memory_preflight_bytes": 2851512320,
+  "minimum_memory_preflight_bytes": 1887436800
+}

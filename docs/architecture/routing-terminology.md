@@ -33,11 +33,13 @@
 
 ## 5. 与外部工程的对照
 
-dreamulator 的河网确实是规则栅格 D8（`media/canvas_hydrology.flow_directions`）：固定 8 邻域、对角 √2、`(level, 全局 index)` 破平，并用 ε 坡化让平地也有方向。两边的共同点是**单流向最陡坡**，不是"都用 D8"。详细对照见 [dreamulator 河网算法对比](../research/dreamulator-河网算法对比-20261108.md)。
+dreamulator 的河网确实是规则栅格 D8（`media/canvas_hydrology.flow_directions`）：固定 8 邻域、对角 √2、`(level, 全局 index)` 破平，并用 ε 坡化让平地也有方向。两边的共同点是**单流向最陡坡**，不是"都用 D8"。详细对照见 [dreamulator 河网算法对照](../research/dreamulator-河网算法对照-20261108.md)。
 
 ## 6. 历史名称的处理
 
 - 代码 docstring、工具说明与测试注释中的 "strict-D8" / "严格 D8" 已统一改为"图接收点（不规则图严格下坡）"（2026-11-08）。
 - 已保存产物、metadata 键、算法身份字符串中的 `d8` 一律**保留原字面**：它们对应的是宏观格 D8 的真实语义，且改名会破坏哈希与冷读校验。`finite_river_event.ROUTING_POLICY` 这类持久化策略名同理，保留 `d8` 拼写并在 docstring 注明它指图接收点。
 - 新增代码禁止使用栅格 D8 做河网流向（2026-11-05 用户决定，记录见 `third_party/textingdream-terrain-20261108/docs/river-routing-d8-deprecated.md`）。
-- **机生成台账的同步状态**：`CONTEXT.md`、源 docstring、`docs/architecture/module-catalog/annotations.json` 与 `docs/architecture/module-map.{md,json}` 已同步。`docs/architecture/world-generation-system/{stage-1.md,modules.json,support.md}` 与 `module-catalog/{catalog.json,category-B-01.md,tools-02.md}` 仍是旧措辞，需在下一轮 `tools/build_module_catalog.py --write`（及对应台账生成器）时一并刷新；当前工作树含未跟踪的在途模块，提前重生成会把它们写进台账，故不在本次提交内混做。`docs/architecture/archive/` 为冻结历史，**不**回改。
+- **机生成台账的同步状态**：`CONTEXT.md`、源 docstring、`docs/architecture/module-catalog/annotations.json` 与 `docs/architecture/module-map.{md,json}` 已同步。`docs/architecture/world-generation-system/{stage-1.md,modules.json,support.md}` 与 `module-catalog/{catalog.json,category-B-01.md,tools-02.md}` 仍是旧措辞。
+  刷新方式：`runtime/venv/Scripts/python.exe -B tools/build_module_catalog.py --write`，以及生成 `world-generation-system/` 台账的对应工具。
+  **暂缓原因与决定（用户 2026-11-08）**：当前工作树含未跟踪的在途气候/环境模块，提前重生成会把它们写进台账；**等气候库落库后统一刷新，并单独提交**。`docs/architecture/archive/` 为冻结历史，**不**回改。

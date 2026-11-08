@@ -1,1 +1,43 @@
+# 全仓禁用行尾与编码转换。
+# 本工程对源码做 SHA-256 身份固定（ArtifactIdentity / 源码 pin / 审计器复算哈希），
+# 任何换行改写都会让已保存的验收记录失效，因此不做任何 text 归一化。
 * -text
+
+# 二进制产物：不做文本 diff、不做合并。
+# 这些扩展名多数已被 .gitignore 排除；此处声明用于保护第三方或历史索引中的同名文件。
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.pdf binary
+*.npz binary
+*.npy binary
+*.zip binary
+*.jar binary
+*.tgz binary
+*.whl binary
+*.exe binary
+*.dll binary
+*.safetensors binary
+*.pt binary
+*.pth binary
+*.ckpt binary
+*.mca binary
+*.obj binary
+*.tif binary
+*.mrdv binary
+*.rmraw binary
+*.rmr binary
+*.rmh binary
+*.rmp binary
+*.tgmc binary
+
+# ---- Git LFS（默认关闭） ----
+# 验收图集当前不入库。若要改为 LFS 纳管：
+#   1. git lfs install
+#   2. 取消下面两行注释
+#   3. 删除 .gitignore 中 "验收图片/**/*.png|jpg|jpeg" 三行
+#   4. git add --renormalize . 之后提交
+# *.png filter=lfs diff=lfs merge=lfs -text
+# *.jpg filter=lfs diff=lfs merge=lfs -text

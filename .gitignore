@@ -56,3 +56,27 @@ research/**/*.webp
 research/**/*.gif
 research/**/*.html
 research/sources/*.txt
+
+# ---- 本地探测与临时产物（2026-11-08 版本管理收口） ----
+# 根目录 temp_* 为一次性探针脚本与探针输出，不是算法入口，不进版本库。
+temp_*.py
+temp_*.json
+temp_*.npy
+temp_*.txt
+temp_cases/
+temp_probe/
+
+# ---- 工具缓存 ----
+.ruff_cache/
+
+# ---- 备份副本 ----
+# 内容已在提交历史或 legacy-code/<批次>/ 中保留；此处只是本地草稿副本。
+backups/
+
+# ---- 验收图集 ----
+# 索引、清单与说明入库；图像与数组是大型验证产物，按 docs/source-publication.md
+# 的既有政策留在工作区，与 verification/、preview/ 同口径。
+# 若将来改用 Git LFS 纳管，删除以下三行并按 .gitattributes 的 LFS 段落启用。
+验收图片/**/*.png
+验收图片/**/*.jpg
+验收图片/**/*.jpeg

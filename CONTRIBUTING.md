@@ -34,6 +34,55 @@
 - 非法输入、超界和非有限值尽早拒绝；失败不应留下部分更新的账本或成品文件。
 - 算法身份变更与存储格式变更分别记录。开发阶段不要求旧测试世界迁移，实验版本保持明确隔离。
 
+## 版本管理（2026-11-08 收口）
+
+本节约束提交、忽略边界、模块版本命名与历史复验。此前工作树自 `fc794da` 起连续两周未提交，积累 499 个迁移删除与约 3.2k 个新增文件；`baseline-20261108` 是那次收口的快照，之后按本节执行。
+
+### 什么进库、什么不进库
+
+| 进库 | 不进库 |
+| --- | --- |
+| `terrain_pipeline/`、`diffusion/`、`tools/`、`tests/`、`src/`、`build.gradle` | `verification/`、`.scratch/`、`preview/`、`runtime/`、`models/`、`vendor/`、`cache/`、`data/` |
+| `docs/`、`research/` 的 Markdown 与清单 | `backups/`、`temp_*` 探针、`temp_cases/`、`temp_probe/`、`.ruff_cache/` |
+| `legacy-code/<批次>/` 冻结历史源码 | `验收图片/**/*.png`、`*.npz`、`*.npy` 等大型验证产物 |
+| `验收图片/` 的 `README.md`、`目录.md`、清单 CSV、manifest JSON | 模型权重、JAR、ZIP、venv |
+
+边界依据是 [docs/source-publication.md](docs/source-publication.md)：仓库交付源码与证据**索引**，不交付可再生的体积产物。图集二进制留在工作区；若改用 Git LFS，按 [.gitattributes](.gitattributes) 末尾的步骤启用并同时删除 `.gitignore` 中对应三行。
+
+`.gitattributes` 的 `* -text` 不得改成自动换行归一化。审计器与 `ArtifactIdentity` 对源码做逐字节 SHA-256 固定，任何行尾改写都会让已保存的验收记录失效。
+
+### 提交粒度与消息
+
+- 一个提交只做一件事：结构重构、算法调参、证据补充、文档修订分开，沿用[变更与验收](#变更与验收)的既有要求。
+- 消息格式：`type(scope): 主题`，空行后写**为什么**（不是改了什么）。
+- `type` 用 `feat` / `fix` / `refactor` / `perf` / `test` / `docs` / `chore` / `audit`；`scope` 用目录或模块名，如 `delta`、`river`、`tests`、`git`。
+- 提交前必须让 `git status --short` 只剩本次意图内的改动；跨主题的残留改动另行提交或还原，不塞进同一个提交。
+
+### 模块版本命名
+
+- **禁止**新增 `xxx_v2.py` 这类文件名版本。版本写在模块内的 `VERSION` / 身份常量里，历史差异由 Git 承担。
+- 需要在运行时并存两个语义时，用**职责名**区分（如 `_radau` / `_bdf`），不用序号。
+- 退休实现移入 `legacy-code/<批次>/`，保留原字节与原哈希，供历史复验显式引用；不在活跃目录保留副本。
+- 现存待收敛族：`delta_network_skeleton`、`delta_network_terrain`、`new_world_native_network`（各 v1–v4）。收敛方法沿用 [.scratch/module-version-consolidation-20261022/plan.md](.scratch/module-version-consolidation-20261022/plan.md) 的 A 方案。
+
+### 分支与标签
+
+- `main` 保持随时可跑的基线；较大的重构或算法替换在短分支完成后合并。
+- 里程碑打附注标签，命名 `baseline-YYYYMMDD`（工作树收口）、`stage<N>-<名称>-YYYYMMDD`（阶段交付）；已有 `baseline-20261108`。
+- 复验历史实现用 `git show <tag>:<path>` 或 `git checkout <tag> -- <path>`，不要复制旧文件回活跃目录。
+- 回滚本次交付前先 `git tag` 一个可比对点，避免"不知道回滚到哪"。
+
+### 日常回路
+
+```powershell
+git status --short
+runtime/venv/Scripts/python.exe -B -X utf8 -m pytest tests/<受影响文件> -q
+git add -A
+git commit -m "type(scope): 主题"
+```
+
+若 `git commit` 报 `could not lock config file .git/config` 或 `Permission denied` 写 `.git` 失败，说明 `.git` 带着另一台机器遗留的权限项，先修复该目录的 Windows 文件权限再重试；这不是仓库配置问题。
+
 ## 共用世界种子（用户更新，2026-11-03）
 
 项目共用变量为 `WORLD_SEED = 20260903`，对应项目正式开始日期 2026-09-03；写入配置和产物元数据时字段名使用 `world_seed`。本节是当前种子约定的唯一权威定义，其他文档引用本节。后续新建正式世界、山体形态实验与连续测试统一使用此值，不因重跑而换种子。地形噪波、气候、降雨、光照相关噪波及其他随机过程使用由该世界种子确定性派生的固定子种子；不同用途分离子种子。

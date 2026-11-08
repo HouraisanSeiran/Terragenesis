@@ -1,4 +1,4 @@
-"""Synthetic duals for finite-event supply: soil kernel + strict-D8 receiver + lake stock."""
+"""Synthetic duals for finite-event supply: soil kernel + graph receiver + lake stock."""
 import unittest
 
 import numpy as np

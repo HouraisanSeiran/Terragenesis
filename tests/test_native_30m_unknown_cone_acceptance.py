@@ -36,7 +36,7 @@ Closing the hole legally, instead of feeding an illegal graph
 Digging a hole makes the *previous* receiver of that cell stale. This file never
 hands such a graph to production and then calls the outcome an unknown-propagation
 bug. Instead, every window is rebuilt from its own validity mask, so what reaches
-production is the legal strict-D8 graph of that window. ``test_hole_is_closed_
+production is the legal irregular graph of that window. ``test_hole_is_closed_
 legally_and_never_reached_by_a_receiver`` additionally proves the closure is
 explicit: no receiver of a resolved cell is the hole, the hole's former donors
 are re-targeted onto resolved cells (the changed set is exactly the hole plus
@@ -52,7 +52,7 @@ in float64 and "bit-identical" below is a real statement, not a tolerance.
 
 What this file does not claim
 -----------------------------
-That the strict-D8 kernel itself is right (other tests own that), that the
+That the graph-receiver kernel itself is right (other tests own that), that the
 diagnostic product authenticates its inputs, or that any number here is
 hydraulically usable: ``hydraulic_ready`` and ``publishable`` stay false.
 """

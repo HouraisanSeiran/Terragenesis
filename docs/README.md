@@ -31,6 +31,7 @@
 | [architecture/module-map.md](architecture/module-map.md) | 模块地图 |
 | [architecture/implementation-guide.md](architecture/implementation-guide.md) | 四阶段实现与数据流 |
 | [architecture/river-module-classification-20261009.md](architecture/river-module-classification-20261009.md) | 河网模块主线分类 |
+| [architecture/routing-terminology.md](architecture/routing-terminology.md) | 路由术语与旧名清理（图接收点 / 宏观格 D8 / D4 分组） |
 | [adr/](adr/) | 架构决策记录 |
 | [agents/](agents/) | 本地任务 / 标签 / 领域文档约定 |
 

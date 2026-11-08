@@ -1,11 +1,11 @@
-"""Block-scheduled finite event: per-block soil, cell-ready strict-D8 dispatch, real cross-block
+"""Block-scheduled finite event: per-block soil, cell-ready graph-receiver dispatch, real cross-block
 port exchange, and checkpointed continuation in a fresh process.
 
-Scope: the same finite support, the same frozen soil kernel, the same strict-D8 receiver and the
+Scope: the same finite support, the same frozen soil kernel, the same graph receiver and the
 same ``quasi_steady_d8_no_channel_storage`` model as ``finite_river_event``. What is new here is
 only *scheduling* and *persistence*: a spatial block computes its own soil slice, a **cell-level**
 readiness count (never a block-level DAG - the block graph is cyclic on this support) drives the
-strict-D8 routing, every cross-block edge transfers its flux exactly once as a recorded port
+graph-receiver routing, every cross-block edge transfers its flux exactly once as a recorded port
 event, and a checkpoint can be reloaded by a new process and continued on the physical time axis.
 
 No soil equation and no routing law is re-derived here: the per-cell increment is the same

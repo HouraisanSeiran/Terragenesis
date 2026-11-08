@@ -89,7 +89,7 @@ def bed(rows=ROWS, columns=COLUMNS):
 
 
 def independent_receiver(height):
-    """Analytic strict-D8 receiver, recomputed with an explicit neighbour loop.
+    """Analytic graph receiver, recomputed with an explicit mesh-neighbour loop.
 
     Deliberately *not* the production kernel and not the module under test: this
     is the file's own statement of what the fixture's drainage is.

@@ -30,7 +30,7 @@ Flow, in this order and no other:
    preserved and never filled, extrapolated or repaired here either;
 5. the geometry bundle is built and then **fully validated** by
    ``metric_highland_sources.validate_highland_sources`` -- the validator rebuilds the
-   strict D8, the contribution and the completeness from the stored field and mask;
+   graph receiver, the contribution and the completeness from the stored field and mask;
 6. only a successful validation is written, into a fresh output directory created
    exclusively (``exist_ok=False``): an existing destination is refused and **no
    partial product is ever left behind**;
@@ -322,7 +322,7 @@ def head_diagnostics(bundle):
             "both_conditions": both,
             "geometry_certified": sum(1 for item in rows if item["geometry_certified"]),
         },
-        "statement": ("own_upstream_complete (strict-D8 upstream of this head) and "
+        "statement": ("own_upstream_complete (graph-receiver upstream of this head) and "
                       "region_complete (status of the patch it sits in) are the two "
                       "conjuncts of certification and are reported separately, never "
                       "merged; a pending region does not mean a pending own upstream"),
@@ -564,7 +564,7 @@ def check_unresolved_pattern(window):
 
 
 def validate_bundle(bundle):
-    """Full validation: the strict D8, counts, completeness and heads are rebuilt."""
+    """Full validation: the graph receiver, counts, completeness and heads are rebuilt."""
     from terrain_pipeline.surface_rivers import metric_highland_sources as highland
 
     report = highland.validate_highland_sources(bundle)
@@ -704,7 +704,7 @@ def _write_package_files(destination, *, support_name, origin, shape, entry, req
             "heads_stored": validation["heads_stored"],
             "routing_origin": validation["routing_origin"],
             "head_census_independent": validation["head_census_independent"],
-            "note": ("the validator rebuilt the strict D8, the contribution, the "
+            "note": ("the validator rebuilt the graph receiver, the contribution, the "
                      "completeness, the region members and the head table from the "
                      "stored field and mask; it is not a re-hash of the bundle"),
         },

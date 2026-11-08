@@ -70,7 +70,7 @@
     "stage": "X4；S1/R1；S1/R2；S2/G1；S2/G3；S2/G4"
   },
   "terrain_pipeline/surface_rivers/large_world_river_geometry.py": {
-    "purpose": "复用原生D8/累计、精确节点岩性和既有流量宽深核，按完整性生成有限派生河床；海湖保护、未知上游pending、保存冷读查询，未接动态侵蚀。",
+    "purpose": "复用原生图接收点/累计、精确节点岩性和既有流量宽深核，按完整性生成有限派生河床；海湖保护、未知上游pending、保存冷读查询，未接动态侵蚀。",
     "role": "river-geometry-adapter",
     "stage": "S1/R6；S1/R4；S1/R9"
   },
@@ -135,7 +135,7 @@
     "stage": "X4"
   },
   "terrain_pipeline/surface_rivers/finite_river_block_schedule.py": {
-    "purpose": "同一完整有限域按cell就绪跨2/4空间块调度土壤产流与D8端口一次交付，确定性归并，保存绑定前缀水账的interval末完整检查点并冷恢复；不含时延、脏状态或默认消费。",
+    "purpose": "同一完整有限域按cell就绪跨2/4空间块调度土壤产流与图接收点端口一次交付，确定性归并，保存绑定前缀水账的interval末完整检查点并冷恢复；不含时延、脏状态或默认消费。",
     "role": "finite-block-scheduler-and-checkpoint",
     "stage": "X2；S1/R9"
   },
@@ -145,7 +145,7 @@
     "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
   },
   "terrain_pipeline/surface_rivers/finite_river_event.py": {
-    "purpose": "在已验上游闭合有限域复用土壤桶与D8累计，推进有限事件真实产流及湖库存，精确V(h)和水账；拒绝裁断入边，准稳态无河槽库存/时延，不含默认消费或恢复认证。",
+    "purpose": "在已验上游闭合有限域复用土壤桶与图接收点累计，推进有限事件真实产流及湖库存，精确V(h)和水账；拒绝裁断入边，准稳态无河槽库存/时延，不含默认消费或恢复认证。",
     "role": "finite-event-supply-orchestration",
     "stage": "S1/R7；S1/R6；S1/R8；S1/R9"
   },
@@ -155,7 +155,7 @@
     "stage": "X4；S1/R5；S1/R6；S1/R7；S1/R8；S1/R9；S2/G5"
   },
   "terrain_pipeline/surface_rivers/metric_highland_sources.py": {
-    "purpose": "固定30m世界规则下筛选高地D4源区及严格D8首次贡献跨越河头，分离源区与上游完整性并独立校验身份/拒绝表；仅几何候选，不认证来水或常年河。",
+    "purpose": "固定30m世界规则下筛选高地D4源区及图接收点（不规则图严格下坡）首次贡献跨越河头，分离源区与上游完整性并独立校验身份/拒绝表；仅几何候选，不认证来水或常年河。",
     "role": "highland-source-geometry",
     "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
   },
@@ -185,7 +185,7 @@
     "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
   },
   "terrain_pipeline/surface_rivers/metric_world_domains.py": {
-    "purpose": "在预声明P2预算内复用严格D8与累计核，构造世界坐标成员、唯一owner、未知传播和结构主干候选并重算验证；retained仍待盆地证据，不认证自然水文域。",
+    "purpose": "在预声明P2预算内复用图接收点与累计核，构造世界坐标成员、唯一owner、未知传播和结构主干候选并重算验证；retained仍待盆地证据，不认证自然水文域。",
     "role": "bounded-structural-domain-adapter",
     "stage": "S1/R3；S1/R1；S1/R2；S1/R4；S1/R6；S1/R9"
   },
@@ -200,7 +200,7 @@
     "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R6；S1/R9"
   },
   "tools/audit_world_domains.py": {
-    "purpose": "不import生产terrain_pipeline的独立结构审计，先验NPY头预算再读数组，复算D8/成员/未知/主干/候选ID并绑定support副本；同版双完整root跨窗比较，零可比不PASS。",
+    "purpose": "不import生产terrain_pipeline的独立结构审计，先验NPY头预算再读数组，复算图接收点/成员/未知/主干/候选ID并绑定support副本；同版双完整root跨窗比较，零可比不PASS。",
     "role": "independent-structural-audit",
     "stage": "X4；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9"
   },
@@ -230,7 +230,7 @@
     "stage": "X4"
   },
   "tools/native_30m_saved_source.py": {
-    "purpose": "读取外部SHA约束的保存装配，核seed/30m/原点/覆盖及receiver与严格D8一致；不复用旧Q，不冒充原始TD页真实性证明。",
+    "purpose": "读取外部SHA约束的保存装配，核seed/30m/原点/覆盖及receiver与图接收点一致；不复用旧Q，不冒充原始TD页真实性证明。",
     "role": "saved-source-adapter",
     "stage": "X4；S1/R1；S1/R5；S1/R9；S2/G5"
   },
@@ -280,7 +280,7 @@
     "stage": "X4"
   },
   "tests/test_native_30m_rejection_contract.py": {
-    "purpose": "注入错误HRU面积和路由映射验证拒绝，核私有D8不调用粗规划与预算原因次序/未实现stage语义。",
+    "purpose": "注入错误HRU面积和路由映射验证拒绝，核私有图接收点不调用粗规划与预算原因次序/未实现stage语义。",
     "role": "test",
     "stage": "X4；S1/R1；S1/R2；S1/R3；S1/R4；S1/R5；S1/R6；S1/R9；S2/G5"
   },
@@ -375,7 +375,7 @@
     "stage": "X4"
   },
   "terrain_pipeline/surface_rivers/native_30m_source.py": {
-    "purpose": "校验固定种子原生30m TD页SHA并复用跨页装配与严格下坡D8，保留边缘未知；不生成地形、不认证跨窗路由。",
+    "purpose": "校验固定种子原生30m TD页SHA并复用跨页装配与图接收点（不规则图严格下坡），保留边缘未知；不生成地形、不认证跨窗路由。",
     "role": "native-source-adapter",
     "stage": "S1/R1；S1/R9"
   },
@@ -675,7 +675,7 @@
     "stage": "S1/R1；S1/R2；S1/R9；S2/G1"
   },
   "terrain_pipeline/drainage.py": {
-    "purpose": "磁盘映射全域优先洪泛、D8、有限盆地蓄满溢流和带邻域的河槽生成，内部IO块不充当水文出口。；以磁盘原床严格D8归属核验盆地未知上游和成员泄漏，等价复用原生湖盆汇水语义。；在已装配有限receiver拓扑上确定性累计已知诊断流量并向下游传播上游未知标记；不重算D8、不认证联合路由或无限世界。",
+    "purpose": "磁盘映射全域优先洪泛、图接收点、有限盆地蓄满溢流和带邻域的河槽生成，内部IO块不充当水文出口。；以磁盘原床图接收点归属核验盆地未知上游和成员泄漏，等价复用原生湖盆汇水语义。；在已装配有限receiver拓扑上确定性累计已知诊断流量并向下游传播上游未知标记；不重算图接收点、不认证联合路由或无限世界。",
     "role": "water-formation；basin-certification；water-budget",
     "stage": "S1/R4；S1/R2；S1/R3；S1/R5；S1/R6；S1/R9"
   },

@@ -12,6 +12,7 @@
 | [TODO.md](TODO.md) | 工程进度总览与逐日记录 |
 | [无限世界地形生成评价标准.md](无限世界地形生成评价标准.md) | E1–E9 评价项与四档交付状态；算法选型与验收以此为准 |
 | [CONTEXT.md](CONTEXT.md) | 领域词汇与系统语境 |
+| [docs/architecture/routing-terminology.md](docs/architecture/routing-terminology.md) | 路由术语：图接收点 / 宏观格 D8 / D4 分组，以及 `strict-D8` 旧名的处理边界 |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | 编码规则、共用世界种子、版本管理、验收约定 |
 | [docs/terrain-diffusion-four-stage-roadmap.md](docs/terrain-diffusion-four-stage-roadmap.md) | 四阶段主线、边界与未完成项 |
 | [docs/architecture/world-generation-system/README.md](docs/architecture/world-generation-system/README.md) | 模块总览与四阶段分类（机生成台账） |

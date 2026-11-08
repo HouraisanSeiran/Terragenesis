@@ -1,16 +1,19 @@
-"""Finite-event water supply over an already-certified strict-D8 support.
+"""Finite-event water supply over an already-certified graph-receiver support.
 
 Scope, stated once so later milestones cannot read more into it: this module orchestrates a
 *finite* event. It does not solve soil water, does not route terrain and does not add channel
 storage. The caller supplies the frozen soil kernel (``regional_surface_forcing.advance_soil``),
-the already-certified strict-D8 receiver graph, the physical domain (reach plus lake-bed cells)
+the already-certified strict irregular-graph receiver, the physical domain (reach plus lake-bed cells)
 and one declared safety level. Here we only prepare and validate that finite domain, advance the
 per-interval state, deliver each interval's real local water exactly once to the single retained
 terminal, and keep the lake's exact piecewise-linear stage/volume curve.
 
 Routing is ``quasi_steady_d8_no_channel_storage``: an interval's real local release is
-accumulated along the certified strict-D8 receiver to the lake terminal inside that same
+accumulated along the certified graph receiver to the lake terminal inside that same
 interval. No channel storage, travel time, peak timing or transient hydraulics are claimed.
+The persisted policy id keeps its historical ``d8`` spelling for product identity; the receiver
+it names is the irregular graph, not a raster 8-neighbourhood
+(see ``docs/architecture/routing-terminology.md``).
 Soil infiltration and percolation are internal transfers and are never external losses.
 
 Nothing here is a climate, calibration or permanent-water-surface claim.
@@ -28,7 +31,7 @@ from terrain_pipeline.drainage import accumulate_network_discharge as accumulate
 ROUTING_POLICY = 'quasi_steady_d8_no_channel_storage'
 ROUTING_SEMANTICS = (
     'quasi_steady_d8_no_channel_storage: each interval real local release is accumulated once '
-    'along the certified strict-D8 receiver to the single retained lake terminal inside the same '
+    'along the certified graph receiver to the single retained lake terminal inside the same '
     'interval; no channel storage, travel time, peak timing or transient hydraulics are claimed')
 BALANCE_ABSOLUTE_M3 = 1e-8
 BALANCE_RELATIVE = 1e-10

@@ -419,7 +419,7 @@ class HeadDiagnosticsTest(unittest.TestCase):
         # A pending region does not make the head's own upstream incomplete, and the
         # table must say so in two separate fields. ``twin_window(140)`` is the
         # configuration whose patch reaches the support edge, so the region is pending
-        # while the head's own strict-D8 upstream is already complete.
+        # while the head's own graph-receiver upstream is already complete.
         from tests.test_metric_highland_sources import twin_window
         bundle, _ = self._bundle(twin_window(140))
         table = p.head_diagnostics(bundle)

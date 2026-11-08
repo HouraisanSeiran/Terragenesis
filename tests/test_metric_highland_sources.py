@@ -81,7 +81,7 @@ def valley_terrain(*, origin=DEFAULT_ORIGIN, inset=20, width=100, depth=90,
     """A V-shaped valley inside a highland patch, draining into lowland outside it.
 
     This is the configuration that separates the two head rules: inside the patch the
-    valley collects a long strict-D8 corridor, and downstream, in the lowland, the
+    valley collects a long graph-receiver corridor, and downstream, in the lowland, the
     contribution keeps growing to the window maximum. "Largest upstream count" would name
     that lowland cell; the declared rule names the first crossing inside the patch.
     """
@@ -768,7 +768,7 @@ class HeadTest(unittest.TestCase):
 
 
 # --------------------------------------------------------------------------- #
-# the strict D8 is the only routing authority; unknown upstream is never washed
+# the graph receiver is the only routing authority; unknown upstream is never washed
 # --------------------------------------------------------------------------- #
 class RoutingAuthorityTest(unittest.TestCase):
     def test_same_receiver_as_build_without_a_graph(self):

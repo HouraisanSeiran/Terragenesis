@@ -1,4 +1,4 @@
-"""Behaviour tests for the native 30 m source stage and its strict-D8 topology.
+"""Behaviour tests for the native 30 m source stage and its strict irregular-graph topology.
 
 Two rules for every test here:
 
@@ -361,7 +361,7 @@ class AssemblyTests(TempPages):
 
 
 # --------------------------------------------------------------------------- #
-# 4. strict-D8 topology
+# 4. strict irregular-graph topology
 # --------------------------------------------------------------------------- #
 MARGIN = 20  # page margin around the window, so the window is page-interior
 
